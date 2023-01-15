@@ -32,7 +32,15 @@ h1, h2 {
   width: 100%;
   
 }
-
+.logo{
+	
+	width:60px;
+	height:60px
+	border: none;
+	float:left;
+	margin-right:10px;
+	
+}
 #installContainer button {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -51,7 +59,7 @@ h1, h2 {
   /background-color: rgba(0, 0, 0, 0.3);
   width: 95%;
   text-align:center;
-  /border: 1px solid #DAD5CF;
+  / border: 1px solid #DAD5CF;
   color:#fff;
  
  
