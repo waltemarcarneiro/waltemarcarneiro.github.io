@@ -40,12 +40,11 @@ h1, h2 {
     margin: 0;
     position: absolute;
     top: 50%;
-	left: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     border: 1px solid #eef5ff;
     text-align: center;
     width: 95%;
-
 }
 
 table {
@@ -59,9 +58,10 @@ table {
     font-weight: normal;
     text-decoration: none;
 }
+
 @media only screen and (max-width: 480px) {
-  img {
-    width: 80%;
-	height: 80%
-  }
+    img {
+        width: 80%;
+        height: 80%
+    }
 }

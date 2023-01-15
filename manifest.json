@@ -3,97 +3,97 @@
     "name": "Waltemar Carneiro",
     "description": "Waltemar Appp",
     "icons": [
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon48.png",
-        "sizes": "48x48",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon48.png",
-        "sizes": "48x48",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon72.png",
-        "sizes": "72x72",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon72.png",
-        "sizes": "72x72",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon96.png",
-        "sizes": "96x96",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon96.png",
-        "sizes": "96x96",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon128.png",
-        "sizes": "128x128",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon128.png",
-        "sizes": "128x128",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon192.png",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon384.png",
-        "sizes": "384x384",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/icon384.png",
-        "sizes": "384x384",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/splash512x512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any"
-      },
-      {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/main/img/splash512x512.png",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "maskable"
-      }
+        {
+            "src": "img/icon-square/icon48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-square/icon48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/icon-square/icon72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-square/icon72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/icon96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/icon-square/icon128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-square/icon128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/icon-square/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-square/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/icon-square/icon384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-square/icon384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/icon-square/splash512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/icon-square/splash512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
     ],
-    "theme_color": "#FAC81F",
+    "theme_color": "#ff5722",
     "start_url": "/",
     "background_color": "#e5e7eb",
     "display": "standalone",
     "scope": "/",
     "categories": [
-      "business"
+        "business"
     ]
-  }
+}
