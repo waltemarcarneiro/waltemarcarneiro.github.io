@@ -34,6 +34,7 @@
       por favor <a>recarregue esta página via HTTPS</a>
             .
         
+        
         </p>
         <!-- start div content -->
         <div id="content">
@@ -44,13 +45,20 @@
             <!-- end div content -->
             <!-- Install button, hidden by default -->
             <div id="installContainer" class="hidden">
-                <button id="butInstall" type="button">Instalar agora?</button>
-            </div>
-            <!-- import the webpage's javascript file -->
-            <script src="script.js" defer></script>
-            <!-- include the Glitch button to show what the webpage is about and
+                <button id="butInstall" type="button">
+                    <div style="font-weight:bold; font-size:20px;color:#ff5722; text-align:left; margin-bottom:5px;">Instalar o Aplicativo? 🎁</div>
+                    <img style="float:left; margin-right: 10px" src="img/icon-rounded/icon512.png" border="0" height="80" width="80"/>
+                    <strong style="font-size: 18px; color: #555; font-weight: 400;">Você poderá desfazer esta ação a qualquer momento.</strong>
+                    <br/>
+                    <strong style="font-size: 0.95rem; color: #555">
+                        Leve e Confiavél.<a href="/" style="color:#ff5722;">Saiba mais!</a>
+                    </strong>
+                </button>
+                <!-- import the webpage's javascript file -->
+                <script src="script.js" defer></script>
+                <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
-            <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-            <script src="https://button.glitch.me/button.js"></script>
+                <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+                <script src="https://button.glitch.me/button.js"></script>
     </body>
 </html>
