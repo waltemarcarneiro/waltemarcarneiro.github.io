@@ -1,62 +1,66 @@
+*{margin: 0px;}
 body {
-    background-color: #eef5ff;
-    color: #252e48;
-    font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin:0px;
+  background-color: #eef5ff;
+  background: url(img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ 
+  color: #252e48;
+  font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 a, a:visited {
-    color: #0066ff;
-    text-decoration: none;
+  color: #000000;
 }
 
 h1, h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 #installContainer {
-    position: absolute;
-    bottom: 1em;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  position: fixed;
+  bottom: 1em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  
 }
 
 #installContainer button {
-    background-color: #06c;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 1em;
-    padding: 0.75em;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  color: #444;
+  font-size: 1em;
+  padding: 0.75em;
+  width: 350px;
+  text-align: left;
 }
-
-#content {
-    background: #eef5ff;
-    padding: 10px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid #eef5ff;
-    text-align: center;
-    width: 95%;
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /background-color: rgba(0, 0, 0, 0.3);
+  width: 95%;
+  text-align:center;
+  /border: 1px solid #DAD5CF;
+  color:#fff;
+ 
+ 
 }
-
-table {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-#content table {
-    font-size: 16px;
-    color: #999999;
-    font-weight: normal;
-    text-decoration: none;
+  
+.content a{
+  color: #fff;
+  text-decoration: none;
+      
 }
 
 @media only screen and (max-width: 480px) {
@@ -64,4 +68,3 @@ table {
         width: 80%;
         height: 80%
     }
-}
