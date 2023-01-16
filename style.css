@@ -1,74 +1,73 @@
-*{margin: 0px;}
+* {
+    margin: 0px;
+}
+
 body {
-  margin:0px;
-  background-color: #eef5ff;
-  background: url(img/bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
- 
-  color: #252e48;
-  font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0px;
+    background-color: #eef5ff;
+    background: url(img/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: #252e48;
+    font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 a, a:visited {
-  color: #000000;
+    color: #000000;
 }
 
 h1, h2 {
-  text-align: center;
+    text-align: center;
 }
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
 #installContainer {
-  position: fixed;
-  bottom: 0.3em;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  
+    position: fixed;
+    bottom: 0.3em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
-.logo{
-	
-	width:60px;
-	height:60px;
-	border: none;
-	float:left;
-	margin-right:10px;
-	
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border: none;
+    float: left;
+    margin-right: 10px;
 }
+
 #installContainer button {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  color: #444;
-  font-size: 1em;
-  padding: 10px;
-  width: 95%;
-  text-align: left;
+    background-color: #fff;
+    border: 1px solid #eef5ff;
+    border-radius: 15px;
+    color: #444;
+    font-size: 16px;
+    padding: 10px;
+    width: 95%;
+    text-align: left;
 }
-.content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /background-color: rgba(0, 0, 0, 0.3);
-  width: 95%;
-  text-align:center;
-  / border: 1px solid #DAD5CF;
-  color:#fff;
- 
- 
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /background-color: rgba(0, 0, 0, 0.3);
+    width: 95%;
+    text-align: center;
+    / border: 1px solid #DAD5CF;
+    color: #fff;
 }
-  
-.content a{
-  color: #fff;
-  text-decoration: none;
-      
+
+.content a {
+    color: #fff;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 480px) {
@@ -76,17 +75,14 @@ h1, h2 {
         width: 80%;
         height: 80%
     }
-	
-.pagar{
-  position: absolute;
-  top: 88%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.0);
-  width: 70%;
-  height:50px;
-  text-align:center;
-  
-   
- 
-}
+
+    .pagar {
+        position: absolute;
+        top: 88%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.0);
+        width: 70%;
+        height: 50px;
+        text-align: center;
+    }
