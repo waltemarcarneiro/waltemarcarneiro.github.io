@@ -5,8 +5,8 @@
 body {
     margin: 0px;
     
-    background-color: rgba(0, 0, 0, 0.5);
-    background: url(img/bg.jpg) no-repeat center center fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-image: url(img/bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
