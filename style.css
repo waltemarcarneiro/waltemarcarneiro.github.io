@@ -4,8 +4,8 @@
 
 body {
     margin: 0px;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-image: url(https://raw.githubusercontent.com/waltemarcarneiro/mobile/main/images/girl-bk.png) no-repeat center center fixed;
+    background-color: #eef5ff;
+    background: url(img/bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -48,7 +48,7 @@ h1, h2 {
     border-radius: 15px;
     color: #555555;
     font-size: 16px;
-    padding: 5px;
+    padding: 10px;
     width: 95%;
     text-align: left;
 }
@@ -58,10 +58,10 @@ h1, h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /background-color: rgba(0, 0, 0, 0.5);
+    /background-color: rgba(0, 0, 0, 0.3);
     width: 95%;
     text-align: center;
-    /border: 1px solid #DAD5CF;
+    / border: 1px solid #DAD5CF;
     color: #fff;
 }
 
