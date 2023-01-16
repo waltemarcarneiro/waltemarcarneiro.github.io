@@ -5,7 +5,6 @@
 body {
     margin: 0px;
     
-    background-color: rgba(0, 0, 0, 0.7);
     background-image: url(img/bg.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -59,7 +58,7 @@ h1, h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 95%;
     text-align: center;
     / border: 1px solid #DAD5CF;
