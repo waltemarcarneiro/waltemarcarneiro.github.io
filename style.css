@@ -2,15 +2,17 @@
     margin: 0px;
 }
 
-body {
+html, body {
     margin: 0px;
-    background-color: #eef5ff;
-    background: url(img/bg.jpg) no-repeat center center fixed;
+    padding: 0px;
+    background: no-repeat center center fixed;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url(img/cover.png);
+    background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: #252e48;
+    color: #000000;
     font-family: Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
@@ -28,61 +30,48 @@ h1, h2 {
 
 #installContainer {
     position: fixed;
-    bottom: 0.3em;
+    bottom: 5px;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
+#installContainer button {
+    background-color: #00000066;
+    border: 1px solid #fdeeff70;
+    border-radius: 10px;
+    color: #555555;
+    font-size: 16px;
+    padding: 5px;
+    width: 95%;
+    text-align: left;
+}
 .logo {
     width: 60px;
     height: 60px;
     border: none;
     float: left;
-    margin-right: 10px;
+    margin-right: 5px;
 }
-
-#installContainer button {
-    background-color: #fff;
-    border: 1px solid #eef5ff;
-    border-radius: 15px;
-    color: #555555;
-    font-size: 16px;
-    padding: 10px;
-    width: 95%;
-    text-align: left;
-}
-
 .content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     /background-color: rgba(0, 0, 0, 0.3);
-    width: 95%;
+    width: 100%;
+    /border: 1px solid #fff ;
     text-align: center;
-    / border: 1px solid #DAD5CF;
-    color: #fff;
+    color: #ffffff3b;
+    /display: grid;
+    align-items: center;
+}
+
+.content img {
+    height: 400px
 }
 
 .content a {
     color: #fff;
     text-decoration: none;
 }
-
-@media only screen and (max-width: 480px) {
-    img {
-        width: 80%;
-        height: 80%
-    }
-
-    .pagar {
-        position: absolute;
-        top: 88%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.0);
-        width: 70%;
-        height: 50px;
-        text-align: center;
-    }
