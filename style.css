@@ -38,9 +38,9 @@ h1, h2 {
 
 #installContainer button {
     background-color: #00000066;
-    border: 1px solid #fdeeff70;
+    border: 1px solid #ffffff2e;
     border-radius: 10px;
-    color: #555555;
+    color: #aaaaaa;
     font-size: 16px;
     padding: 5px;
     width: 95%;
@@ -62,7 +62,7 @@ h1, h2 {
     width: 100%;
     /border: 1px solid #fff ;
     text-align: center;
-    color: #ffffff3b;
+    color: #ffffff75;
     /display: grid;
     align-items: center;
 }
