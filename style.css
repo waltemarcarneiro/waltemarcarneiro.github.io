@@ -38,15 +38,14 @@ h1, h2 {
 
 #installContainer button {
     background-color: #00000066;
-    border: 1px solid #ffffff2e;
-    border-radius: 10px;
+    border-top: 1px solid #ffffff2e;
+    border-radius: 15px;
     color: #aaaaaa;
     font-size: 16px;
     padding: 5px;
     width: 100%;
     text-align: left;
-    margin-left: 5px;
-    margin-right: 5px;
+    
 }
 
 .logo {
