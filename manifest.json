@@ -1,7 +1,7 @@
 {
     "short_name": "Waltemar",
-    "name": "Waltemar Mobile",
-    "description": "App Teste",
+    "name": "ולטר קרניירו",
+    "description": "App em modo Teste",
     "icons": [
       {
         "src": "img/icon-square/icon48.png",
@@ -16,7 +16,7 @@
         "purpose": "maskable"
       },
       {
-        "src": "img/icon-square/icon72.png",
+        "src": " img/icon-square/icon72.png",
         "sizes": "72x72",
         "type": "image/png",
         "purpose": "any"
@@ -89,10 +89,10 @@
       }
     ],
     "theme_color": "#ffffff",
-    "start_url": "/mobile/",
+    "start_url": "/",
     "background_color": "#ffffff",
     "display": "standalone",
-    "scope": "/mobile/",
+    "scope": "/",
     "categories": [
       "business"
     ]
