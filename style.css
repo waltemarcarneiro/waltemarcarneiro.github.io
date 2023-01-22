@@ -1,0 +1,96 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin:0px;
+	padding:0px;
+}
+
+
+body{
+	font-family: 'Rubik', sans-serif;
+	}
+.logo img{ height:30px; width:113px; float:left;}
+.profile img{ height:30px; width:30px; float:right; margin-right:5%}
+#header {
+	background: #fff;
+	text-align:left;
+	height:35px;
+	width:100%;
+	position:fixed;
+	padding-top:5px;
+	padding-left:10px;
+	
+	border-bottom:1px solid #ccc;
+}
+#content {
+	background:#fff;
+	color: #003;
+	text-align:justify;
+	font-size:16pt;
+	
+}
+iframe {
+  
+  
+  background:#fff;
+  height: 100vh;
+  margin-top:32px;
+  margin-bottom:50px;
+   
+}
+#footer {
+	background: #fff;
+	color:#000;
+	text-align:center;
+	height:50px;
+	width:100%;
+	padding-top:3px;
+	position:fixed;
+	bottom:0px;
+	border-top:1px solid #ccc;
+}
+ul{ margin:0px; padding:0px;}
+li{
+	
+	display: inline;
+	list-style:none;
+	text-align:center;
+		
+	}	
+.menu img{
+	
+	height:40px;
+	width:48px;
+	padding-right:5px;
+	padding-left:5px;
+	}
+.hover{
+ background-image: url("img/bg-menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;	
+}
+a:link:hover {
+	background-image: url("img/bg-menu.png");
+	 background-repeat: no-repeat;
+	background-position: top;
+	background-size: 50px;
+	
+	}
+    a:visited:hover {
+	background-image: url("img/bg-menu.png");
+	background-size: cover;	
+	}
+#service {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    color: #000;
+    
+    align-items: center;
+}
+.kw{ text-align:center;}
