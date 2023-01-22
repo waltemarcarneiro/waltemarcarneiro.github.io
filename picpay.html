@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>PicPay</title>
+    </head>
+    <style type="text/css">
+        body {
+            background: #fff;
+            color: #000000;
+            font-size: 15pt;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"></link>
+        <script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
+        <div align="center">
+            <style>
+                input {
+                    color: #fffff1;
+                    background: #ffffff;
+                    border: none;
+                    opacity: 0;
+                }
+
+                input:focus {
+                    outline: none;
+                }
+
+                input::selection {
+                    color: #fffff1;
+                    visibility: hidden;
+                    opacity: 0;
+                }
+
+                .key {
+                    font-size: 12px;
+                    color: #000;
+                }
+            </style>
+            <script>
+                function copiarTexto() {
+                    let textoCopiado = document.getElementById("texto");
+                    textoCopiado.select();
+                    textoCopiado.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    swal('<h1 style="font-size:28px;text-transform:uppercase;line-height:1.1;color:#11C56E">Código Pix Copiado com Sucesso</h1>', '<strong style="font-size:20px;text-transform:uppercase;">Use a opção <b style="color: #11C56E">copia e cola</b> no aplicativo do seu banco.</strong>', 'success');
+                }
+            </script>
+            <input id="texto" name="texto" readonly="" type="text" value="00020126580014br.gov.bcb.pix01369a67ab58-916c-4b62-89a1-a28d45af50fb5204000053039865802BR5922Waltemar Lima Carneiro6009Sao Paulo62070503***6304293E"/>
+        </div>
+        <div align="center">
+            <img src="img/picpay-700x368.webp" border="0" width="100%"/>
+            <br/>
+            <br/>
+            <div>
+                <div style="margin-top: 20px; text-align: center;">
+                    <button onclick="copiarTexto()" style="background:#fff; font-weight:bold; border-radius: 30px; border:2px solid #11C56E; color:#11C56E; cursor: pointer; font-size: 1.2rem; margin-top: 5px; padding: 10px 20px;">Copiar Código do QRcode</button>
+                </div>
+                <br/>
+                <div>
+                    <img height="150" src="img/picpay-qrcode.webp" width="150"/>
+                    <br/>
+                    <br/>
+                    <b class="key">9a67ab58-916c-4b62-89a1-a28d45af50fb</b>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
