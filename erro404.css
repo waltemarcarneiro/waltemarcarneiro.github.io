@@ -31,10 +31,10 @@ h1, h2 {
 	width: 100%;
 }
 #installContainer button {
-	background-color: #f4107545;
-	border: 1px solid #fdeeff70;
+	background-color: #fff;
+	border: 1px solid #ff5722;
 	border-radius: 10px;
-	color: #555555;
+	color: #333;
 	font-size: 16px;
 	padding: 5px;
 	width: 95%;
@@ -61,7 +61,7 @@ h1, h2 {
 	align-items: center;
 }
 .content img {
-	height: 400px
+	height: 300px;
 }
 .content a {
 	color: #49ff97;
