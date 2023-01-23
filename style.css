@@ -30,6 +30,22 @@ body{
 	font-size:16pt;
 	
 }
+#post{
+	background:#fff;
+	color: #003;
+	text-align:justify;
+	font-size:16pt;
+	padding:0px 15px 0px 15px;
+	line-height:1;
+	}
+#post h1{
+	padding-bottom: 15px;
+	padding-top: 15px;
+	
+	}
+#post img{
+	text-align: center;
+	}	
 iframe {
   
   
