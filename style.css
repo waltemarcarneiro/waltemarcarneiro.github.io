@@ -112,3 +112,31 @@ a:visited:hover {
 	align-items: center;
 }
 
+.hidden {
+	display: none !important;
+}
+#installContainer {
+	position: fixed;
+	bottom: 5px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#installContainer button {
+	background-color: #fff;
+	border: 1px solid #ff5722;
+	border-radius: 10px;
+	color: #333;
+	font-size: 16px;
+	padding: 5px;
+	width: 95%;
+	text-align: left;
+}
+.logo {
+	width: 60px;
+	height: 60px;
+	border: none;
+	float: left;
+	margin-right: 5px;
+}
