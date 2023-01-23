@@ -5,13 +5,21 @@
 	margin:0px;
 	padding:0px;
 }
-
-
-body{
+body {
 	font-family: 'Rubik', sans-serif;
-	}
-.logo img{ height:30px; width:113px; float:left;}
-.profile img{ height:30px; width:30px; float:right; margin-right:5%}
+	background:#fff;
+}
+.logo img {
+	height:30px;
+	width:113px;
+	float:left;
+}
+.profile img {
+	height:30px;
+	width:30px;
+	float:right;
+	margin-right:5%
+}
 #header {
 	background: #fff;
 	text-align:left;
@@ -20,7 +28,6 @@ body{
 	position:fixed;
 	padding-top:5px;
 	padding-left:10px;
-	
 	border-bottom:1px solid #ccc;
 }
 #content {
@@ -28,32 +35,28 @@ body{
 	color: #003;
 	text-align:justify;
 	font-size:16pt;
-	
 }
-#post{
+#post {
 	background:#fff;
 	color: #003;
 	text-align:justify;
 	font-size:16pt;
 	padding:0px 15px 0px 15px;
 	line-height:1.5;
-	}
-#post h1{
+}
+#post h1 {
 	padding-bottom: 15px;
 	padding-top: 15px;
-	
-	}
-.meio-img{
+}
+.meio-img {
 	text-align: center;
-	}	
+}
 iframe {
-  
-  
-  background:#fff;
-  height: 100vh;
-  margin-top:32px;
-  margin-bottom:50px;
-   
+	background:#fff;
+	height: 80vh;
+	margin-top:32px;
+	margin-bottom:50px;
+	width: 100%;
 }
 #footer {
 	background: #fff;
@@ -66,47 +69,47 @@ iframe {
 	bottom:0px;
 	border-top:1px solid #ccc;
 }
-ul{ margin:0px; padding:0px;}
-li{
-	
+ul {
+	margin:0px;
+	padding:0px;
+}
+li {
 	display: inline;
 	list-style:none;
 	text-align:center;
-		
-	}	
-.menu img{
-	
+}
+.menu img {
 	height:40px;
 	width:48px;
 	padding-right:5px;
 	padding-left:5px;
-	}
-.hover{
- background-image: url("img/bg-menu.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;	
+}
+.hover {
+	background-image: url("img/bg-menu.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 a:link:hover {
 	background-image: url("img/bg-menu.png");
-	 background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	background-position: top;
 	background-size: 50px;
-	
-	}
-    a:visited:hover {
-	background-image: url("img/bg-menu.png");
-	background-size: cover;	
-	}
-#service {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-    color: #000;
-    
-    align-items: center;
 }
-.kw{ text-align:center;}
+a:visited:hover {
+	background-image: url("img/bg-menu.png");
+	background-size: cover;
+}
+#service {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	text-align: center;
+	color: #000;
+	align-items: center;
+}
+.kw {
+	text-align:center;
+}
