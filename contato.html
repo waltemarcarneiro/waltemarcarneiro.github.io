@@ -108,14 +108,20 @@ li, img {
 
 <!-- [ START BUTTON PWA] -->
 
+<p id="requireHTTPS" class="hidden"> <b>PARE!</b> A página <b>deve</b> deve está em um servidor HTTPS.
+  por favor <a>recarregue esta página via HTTPS</a> . </p>
 <!-- Install button, hidden by default -->
 <div id="installContainer" class="hidden">
+<button id="butInstall" type="button">
+<div style="font-weight:bold; font-size:20px;color:#000; text-align:left; margin-bottom:5px;">Instalar o App? 🎁</div>
+<img class="logo" src="https://waltemarcarneiro.github.io/img/icon-rounded/icon512.png"/> <strong style="font-weight: 400; color:333;">Você poderá desfazer esta ação a qualquer momento.</strong> <br/>
+<strong> Leve e Confiavél.<a href="/" style="color:#333;">Saiba mais!</a> </strong>
+</button>
 <!-- import the webpage's javascript file -->
 <script src="script.js" defer></script>
 <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
 <div class="glitchButton" style="position:fixed;top:20px;"></div>
-<script src="https://button.glitch.me/button.js"></script>
 
 <!-- [ END BUTTON PWA] -->
 
