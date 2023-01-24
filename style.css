@@ -42,13 +42,13 @@ body {
 }
 
 #content {
-    text-align: justify;
-    font-size: 16pt;
+    
+    
 }
 
 #post {
     text-align: justify;
-    font-size: 16pt;
+    font-size: 14pt;
     padding: 0px 15px 0px 15px;
     line-height: 1.5;
 }
@@ -153,5 +153,5 @@ a:visited:hover {
 @media(max-width: 1080px) {
     body {
     font-family: 'Poppins', sans-serif;
-    
+    font-size: 14pt;
     }
