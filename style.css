@@ -149,3 +149,9 @@ a:visited:hover {
     float: left;
     margin-right: 5px;
 }
+
+@media(max-width: 1080px) {
+    body {
+    font-family: 'Poppins', sans-serif;
+    
+    }
