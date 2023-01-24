@@ -1,143 +1,151 @@
-@charset "utf-8";
-/* CSS Document */
-
+@charset "utf-8"; /* CSS Document */
 * {
-	margin:0px;
-	padding:0px;
+    margin: 0px;
+    padding: 0px;
 }
+
 iframe {
-	
-	height: 90vh;
-	margin-top:32px;
-	margin-bottom:50px;
-	width: 100%;
+    height: 90vh;
+    margin-top: 32px;
+    margin-bottom: 50px;
+    width: 100%;
 }
+
 body {
-	font-family: 'Poppins', sans-serif;
-	background:#f1f4f9;
-	color: #003;
+    font-family: 'Poppins', sans-serif;
+    background: #f1f4f9;
+    color: #003;
 }
+
 .logo img {
-	height:30px;
-	width:113px;
-	float:left;
+    height: 30px;
+    width: 113px;
+    float: left;
 }
+
 .profile img {
-	height:30px;
-	width:30px;
-	float:right;
-	margin-right:5%
+    height: 30px;
+    width: 30px;
+    float: right;
+    margin-right: 5%
 }
+
 #header {
-	background: #fff;
-	text-align:left;
-	height:35px;
-	width:100%;
-	position:fixed;
-	padding-top:5px;
-	padding-left:10px;
-	border-bottom:1px solid #ccc;
+    background: #fff;
+    text-align: left;
+    height: 35px;
+    width: 100%;
+    position: fixed;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-bottom: 1px solid #ccc;
 }
+
 #content {
-	background:#fff;
-	
-	text-align:justify;
-	font-size:16pt;
+    text-align: justify;
+    font-size: 16pt;
 }
+
 #post {
-	background:#fff;
-	
-	text-align:justify;
-	font-size:16pt;
-	padding:0px 15px 0px 15px;
-	line-height:1.5;
+    text-align: justify;
+    font-size: 16pt;
+    padding: 0px 15px 0px 15px;
+    line-height: 1.5;
 }
+
 #post h1 {
-	padding-bottom: 15px;
-	padding-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
+
 .meio-img {
-	text-align: center;
+    text-align: center;
 }
 
 #footer {
-	background: #fff;
-	
-	text-align:center;
-	height:50px;
-	width:100%;
-	padding-top:3px;
-	position:fixed;
-	bottom:0px;
-	border-top:1px solid #ccc;
+    background: #fff;
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    padding-top: 3px;
+    position: fixed;
+    bottom: 0px;
+    border-top: 1px solid #ccc;
 }
+
 ul {
-	margin:0px;
-	padding:0px;
+    margin: 0px;
+    padding: 0px;
 }
+
 li {
-	display: inline;
-	list-style:none;
-	text-align:center;
+    display: inline;
+    list-style: none;
+    text-align: center;
 }
+
 .menu img {
-	height:40px;
-	width:48px;
-	padding-right:5px;
-	padding-left:5px;
+    height: 40px;
+    width: 48px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
+
 .hover {
-	background-image: url("img/bg-menu.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+    background-image: url("img/bg-menu.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
 a:link:hover {
-	background-image: url("img/bg-menu.png");
-	background-repeat: no-repeat;
-	background-position: top;
-	background-size: 50px;
+    background-image: url("img/bg-menu.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 50px;
 }
+
 a:visited:hover {
-	background-image: url("img/bg-menu.png");
-	background-size: cover;
+    background-image: url("img/bg-menu.png");
+    background-size: cover;
 }
+
 .center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	text-align: center;
-	
-	align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    align-items: center;
 }
 
 .hidden {
-	display: none !important;
+    display: none !important;
 }
+
 #installContainer {
-	position: fixed;
-	bottom: 150px;
-	display: flex;
-	justify-content: center;
-	width: 100%;
+    position: fixed;
+    bottom: 150px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 #installContainer button {
-	background-color: #fff;
-	border: 1px solid #ff5722;
-	border-radius: 10px;
-	
-	font-size: 16px;
-	padding: 5px;
-	width: 95%;
-	text-align: left;
+    background-color: #fff;
+    border: 1px solid #ff5722;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px;
+    width: 95%;
+    text-align: left;
 }
+
 .logo {
-	width: 60px;
-	height: 60px;
-	border: none;
-	float: left;
-	margin-right: 5px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    float: left;
+    margin-right: 5px;
 }
