@@ -15,6 +15,7 @@ iframe {
 body {
 	font-family: 'Poppins', sans-serif;
 	background:#f1f4f9;
+	color: #003;
 }
 .logo img {
 	height:30px;
@@ -39,13 +40,13 @@ body {
 }
 #content {
 	background:#fff;
-	color: #003;
+	
 	text-align:justify;
 	font-size:16pt;
 }
 #post {
 	background:#fff;
-	color: #003;
+	
 	text-align:justify;
 	font-size:16pt;
 	padding:0px 15px 0px 15px;
@@ -61,7 +62,7 @@ body {
 
 #footer {
 	background: #fff;
-	color:#000;
+	
 	text-align:center;
 	height:50px;
 	width:100%;
@@ -108,7 +109,7 @@ a:visited:hover {
 	transform: translate(-50%, -50%);
 	width: 100%;
 	text-align: center;
-	color: #000;
+	
 	align-items: center;
 }
 
@@ -127,7 +128,7 @@ a:visited:hover {
 	background-color: #fff;
 	border: 1px solid #ff5722;
 	border-radius: 10px;
-	color: #333;
+	
 	font-size: 16px;
 	padding: 5px;
 	width: 95%;
