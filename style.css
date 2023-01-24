@@ -27,7 +27,7 @@ body {
     height: 30px;
     width: 30px;
     float: right;
-    margin-right: 5%
+    margin-right: 5%;
 }
 
 #header {
@@ -43,7 +43,7 @@ body {
 
 #content {
     
-    
+
 }
 
 #post {
@@ -82,14 +82,14 @@ li {
     display: inline;
     list-style: none;
     text-align: center;
+    
 }
 
 .menu img {
     height: 40px;
     width: 48px;
-    padding-right: 5px;
-    padding-left: 5px;
-}
+    padding: 2px 3px 10px 3px;
+   }
 
 .hover {
     background-image: url("img/bg-menu.png");
@@ -149,9 +149,3 @@ a:visited:hover {
     float: left;
     margin-right: 5px;
 }
-
-@media(max-width: 1080px) {
-    body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14pt;
-    }
