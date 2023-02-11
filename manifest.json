@@ -83,7 +83,7 @@
       },
       {
         "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/splash-screen.png",
-        "sizes": "1280x1920",
+        "sizes": "1080x1920",
         "type": "image/png",
         "purpose": "maskable"
       }
