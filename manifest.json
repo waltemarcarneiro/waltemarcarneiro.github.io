@@ -90,10 +90,10 @@
     ],
     "theme_color": "#FE5722",
     "orientation": "portrait-primary",
-    "start_url": "/mobile/",
+    "start_url": "/",
     "background_color": "#FE5722",
     "display": "standalone",
-    "scope": "/mobile/",
+    "scope": "/",
     "categories": [
       "business"
     ]
