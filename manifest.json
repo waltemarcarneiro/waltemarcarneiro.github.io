@@ -96,7 +96,7 @@
   ]
     "theme_color": "#FE5722",
     "orientation": "portrait-primary",
-    "start_url": ".",
+    "start_url": "index.html",
     "background_color": "#FE5722",
     "display": "standalone",
     "scope": "/",
