@@ -33,11 +33,22 @@
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
+        
+        .center {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 100%;
+	    text-align: center;
+	    align-items: center;
+        }
+               
     </style>
-    <body>
+<body>
         <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"></link>
         <script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
-        <div align="center">
+        <div align="center" class="center">
             <style>
                 input {
                     color: #fffff1;
