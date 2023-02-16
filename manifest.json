@@ -88,6 +88,12 @@
         "purpose": "maskable"
       }
     ],
+    "cache": [
+    "/",
+    "index.html",
+    "app.js",
+    "styles.css"
+  ]
     "theme_color": "#FE5722",
     "orientation": "portrait-primary",
     "start_url": ".",
