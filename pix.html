@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <title>
+            ולטר קרניירו<</title>
+        <meta charset="utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+            <!-- import the webpage's stylesheet -->
+            <link rel="stylesheet" href="style.css"/>
+            <!-- Manifest -->
+            <link rel="manifest" href="manifest.json"/>
+            <!-- favicon -->
+            <link href="https://waltemarcarneiro.github.io/img/favicon.ico" rel="icon" type="image/x-icon"/>
+            <link rel="icon" type="image/png" sizes="16x16" href="https://waltemarcarneiro.github.io/img/favicon-16x16.png"/>
+            <link rel="icon" type="image/png" sizes="32x32" href="https://waltemarcarneiro.github.io/img/favicon-32x32.png"/>
+            <meta name="msapplication-TileColor" content="#ffffff"/>
+            <meta content="#ffffff" name="msapplication-navbutton-color"/>
+            <meta content="#ffffff" name="apple-mobile-web-app-mobile-bar-style"/>
+            <!-- lighthouse config PWA -->
+            <meta content="#ffffff" name="theme-color"/>
+            <meta content="PIX | Bradesco." name="description"/>
+           
+            <link href="https://waltemarcarneiro.github.io/img/apple-touch-icon180.png" sizes="180x180" rel="apple-touch-icon"/>
+            <!-- [ Meta Tag OG ] -->
+            <meta content="website" property="og:type"/>
+            <meta content="https://waltemarcarneiro.github.io/img/og-image.jpg" property="og:image"/>
+            <meta content="Og Image Logo" property="og:image:alt"/>
+            <meta content="PIX | Bradesco" property="og:description"/>
+            <meta content="PIX | Bradesco" property="og:site_name"/>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <div class="center">
+            <div>
+            
+                    <script src="https://unpkg.com/sweetalert2@7.12.15/dist/sweetalert2.all.js"></script>
+        <div align="center">
+            <script>
+                function copiarTexto() {
+                    let textoCopiado = document.getElementById("texto");
+                    textoCopiado.select();
+                    textoCopiado.setSelectionRange(0, 99999)
+                    document.execCommand("copy");
+                    swal('<h1 class="sucesso">Código Pix Copiado com Sucesso</h1>', '<b class="swal">Use a opção copia e cola no aplicativo do seu banco.</b>', 'success');
+                }
+            </script>
+            <input class="input-pix" id="texto" name="texto" readonly type="text" value="00020126580014BR.GOV.BCB.PIX0136edcebd46-2b0e-4822-9eda-538c32196c565204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63049FDD"/>
+        </div>
+        <div align="center>
+   <div>
+    <div style=" text-align: center;>
+            <img src="img/banner-pix.png" border="0" width="227"/>
+            <br/>
+            <br/>
+            <button onclick="copiarTexto()" class="button-pix">Copiar Código do QRcode</button>
+        </div>
+        <br/>
+        <div style="text-align: center;">
+            <br/>
+            <img src="https://bit.ly/3eNVPrJ" height="150" width="150"/>
+            <br/>Chave aleatória<br/>
+            <b class="key">edcebd46-2b0e-4822-9eda-538c32196c56</b>
+        </div>
+            
+            </div>
+        </div>
+    </body>
+</html>
