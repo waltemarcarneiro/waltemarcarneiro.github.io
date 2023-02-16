@@ -149,3 +149,27 @@ a:visited:hover {
     float: left;
     margin-right: 5px;
 }
+.input-pix {
+	color: #fff;
+	background: #000;
+	border: none;
+	opacity: 0;
+}
+.key{
+    font-family: 'Poppins', sans-serif;
+}
+.button-pix {
+	background: #C70039;
+	font-weight: bold;
+	border-radius: 30px;
+	border: 2px solid #ffffff;
+	color: #ffffff;
+	cursor: pointer;
+	margin-top: 5px;
+	padding: 10px 20px;
+	font-size: 14pt;
+}
+.sucesso {
+	font-size: 26px;
+	color: #C70039;
+}
