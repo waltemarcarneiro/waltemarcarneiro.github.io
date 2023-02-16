@@ -91,7 +91,7 @@
     "cache": [
     "/",
     "index.html",
-    "app.js",
+    "service-worker.js",
     "styles.css"
   ]
     "theme_color": "#FE5722",
