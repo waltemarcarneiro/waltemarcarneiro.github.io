@@ -76,6 +76,18 @@
         "purpose": "maskable"
       },
       {
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "maskable"
+      },
+      {
         "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/splash.png",
         "sizes": "1080x1920",
         "type": "image/png",
