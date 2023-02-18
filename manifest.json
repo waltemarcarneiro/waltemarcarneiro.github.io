@@ -1,88 +1,88 @@
 {
-    "short_name": "San 2023",
-    "name": "San 2023",
+    "short_name": "וולטר קרניירו",
+    "name": "וולטר קרניירו",
     "description": "San 2023 | Apps",
     "icons": [
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon48.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon48.png",
         "sizes": "48x48",
         "type": "image/png",
         "purpose": "any"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon48.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon48.png",
         "sizes": "48x48",
         "type": "image/png",
         "purpose": "maskable"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon72.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon72.png",
         "sizes": "72x72",
         "type": "image/png",
         "purpose": "any"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon72.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon72.png",
         "sizes": "72x72",
         "type": "image/png",
         "purpose": "maskable"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon96.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon96.png",
         "sizes": "96x96",
         "type": "image/png",
         "purpose": "any"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon96.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon96.png",
         "sizes": "96x96",
         "type": "image/png",
         "purpose": "maskable"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon128.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon128.png",
         "sizes": "128x128",
         "type": "image/png",
         "purpose": "any"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon128.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon128.png",
         "sizes": "128x128",
         "type": "image/png",
         "purpose": "maskable"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon192.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon192.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "any"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon192.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon192.png",
         "sizes": "192x192",
         "type": "image/png",
         "purpose": "maskable"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon384.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon384.png",
         "sizes": "384x384",
         "type": "image/png",
         "purpose": "any"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon384.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon384.png",
         "sizes": "384x384",
         "type": "image/png",
         "purpose": "maskable"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon512.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "any"
       },
       {
-        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-square/icon512.png",
+        "src": "https://raw.githubusercontent.com/waltemarcarneiro/waltemarcarneiro.github.io/main/img/icon-circle/icon512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable"
