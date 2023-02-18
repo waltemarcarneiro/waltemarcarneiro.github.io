@@ -100,10 +100,10 @@
         "purpose": "maskable"
       }
     ],
-    "theme_color": "#FE5722",
+    "theme_color": "#39b5a4",
     "orientation": "portrait-primary",
     "start_url": "/",
-    "background_color": "#FE5722",
+    "background_color": "#ffffff",
     "display": "standalone",
     "scope": "/",
     "categories": [
