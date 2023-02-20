@@ -100,9 +100,9 @@
         "purpose": "maskable"
       }
     ],
-    "theme_color": "#39b5a4",
+    "theme_color": "#ffffff",
     "orientation": "portrait-primary",
-    "start_url": "/",
+    "start_url": "/index.html",
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "/",
