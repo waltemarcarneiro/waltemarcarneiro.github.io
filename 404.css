@@ -32,7 +32,6 @@ h1, h2 {
 }
 #installContainer button {
 	background-color: #fff;
-	border: 1px solid #ff5722;
 	border-radius: 10px;
 	color: #333;
 	font-size: 16px;
@@ -52,12 +51,9 @@ h1, h2 {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
- /background-color: rgba(0, 0, 0, 0.3);
 	width: 100%;
- /border: 1px solid #fff;
 	text-align: center;
 	color: #fff;
- /display: grid;
 	align-items: center;
 }
 .content img {
