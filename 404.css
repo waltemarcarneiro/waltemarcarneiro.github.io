@@ -32,7 +32,7 @@ h1, h2 {
 }
 #installContainer button {
 	background-color: #fff;
-	border: 1px solid #fff;
+	border: none;
 	border-radius: 10px;
 	color: #333;
 	font-size: 16px;
