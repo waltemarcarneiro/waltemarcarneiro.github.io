@@ -8,7 +8,7 @@
 	"dir": "ltr",
 	"background_color": "#ff4906",
 	"theme_color": "#ff4906",
-	"start_url": "/index.html",
+	"start_url": "/app.html",
 	"orientation": "portrait",
 	"scope": "/",
 	"splash_pages": "/splash.html",
