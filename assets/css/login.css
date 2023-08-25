@@ -125,14 +125,14 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     max-width: 300px;
     width: 80%;
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.5;
     font-size: 22px;
 }
@@ -140,9 +140,19 @@ button:hover {
 .popup-close {
     position: absolute;
     top: 10px;
-    right: 15px;
-    font-size: 20px;
+    right: 11px;
+    font-size: 30px;
     cursor: pointer;
+    padding: 7px;
+    background-color: #FFA500;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    /* display: inline-table; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
 }
 .popup a{
     color: #E37700;
