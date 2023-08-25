@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+     margin: 0;
+     padding: 0;
+     font-size: 18px;
+     font-family: 'Roboto', sans-serif;
+     font-weight: 400;
+     color: #4a4a4a; 
+     background: #fff;
+ }
+
+.content {
+    margin-top: 45px;
+    background-color: white;
+    padding: 10px;
+    height: calc(100% - 45px);
+}
+
+
+ h1{
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+a {
+    color: #ec7000;
+    text-decoration: none;
+}
+       
+p{
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    background-color: #ec7000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 2;
+}
+
+button, i {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.header-icon-left {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    
+    margin-left: 1px;
+    display: flex;
+    align-items: center;
+}
+
+blockquote{
+    background-color: #FFECDE;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+
+.post{
+    text-align: justify;    
+}
+
+.post a{
+    color: #ec7000;    
+}
+
+.post img{
+    border-radius: 10px;
+}

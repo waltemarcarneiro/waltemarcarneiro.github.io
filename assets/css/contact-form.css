@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #FFF;
+    color: #4a4a4a;
+}
+
+.header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F2F2F2;
+    padding: 7px;
+    border-bottom: 1px solid #EAEAEA;  
+}
+.header-logo {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+ }   
+.logo img {
+    height: 40px; /* Ajuste a altura conforme necessário */
+}
+
+.header-icons-right{
+    margin-right: 25px;
+}
+
+.header-icons-right i, .header-icon-left i{
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #4a4a4a;
+}
+.header-icon-left {
+    color: #4a4a4a;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+    margin-left: 11px;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    position: relative;
+}
+.container {
+
+    max-width: 600px;
+    margin: 100px 20px;
+    padding: 20px 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form {
+    display: grid;
+    gap: 30px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-size: 14px;
+    color: #999;
+    pointer-events: none;
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.input-container input,
+.input-container textarea {
+    width: calc(100% - 24px); /* Leva em conta as margens horizontais */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: border-color 0.3s;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.input-container input:invalid:required {
+    
+}
+
+.input-container:focus-within input,
+.input-container:focus-within textarea {
+    /border-color: #e37700;
+
+}
+
+.input-container:focus-within .input-label,
+.input-container input:valid + .input-label,
+.input-container textarea:invalid {
+    top: -22px; /* Ajuste para subir mais 10px quando clicado */
+    font-size: 12px;
+    color: #e37700;
+}
+
+#to {
+    display: none; /* Oculta o campo de e-mail do destinatário */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+}
+.clear-button{
+    background-color: #f1f1f1;
+    color: #828282;
+    font-weight: 500;
+    border: 1px solid #828282;
+}
+.clear-button:hover{
+    background-color: #f1f1f1;
+    color: #828282;
+    font-weight: 500;
+}
+h1{
+    font-size: 28px;
+}
+button .material-icons {
+    font-size: 20px;
+}

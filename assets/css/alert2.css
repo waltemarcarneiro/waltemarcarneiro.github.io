@@ -1,0 +1,161 @@
+
+        /* Adicione os estilos para o ícone de compartilhamento */
+        .share-icon {
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilos para o aviso */
+        .centered-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            /*border: 2px solid #ddd;*/
+            text-align: center;
+            /*background-color: #fff; */
+            border-radius: 10px; /* Raio de borda de 10px */
+            padding: 16px; /* Espaçamento interno */
+            display: none; /* Oculta o aviso por padrão */
+        }
+
+        /* Estilos para o fundo laranja da palavra "Aviso" */
+        .aviso-bg {
+            /background: linear-gradient(0deg, rgba(254,172,71,1) 0%, rgba(255,209,51,1) 100%); 
+            background: radial-gradient(circle, rgba(136,136,136,1) 0%, rgba(51,51,51,1) 100%);
+            border-top-left-radius: 10px; /* Raio de borda de 10px no canto superior esquerdo */
+            border-top-right-radius: 10px; /* Raio de borda de 10px no canto superior direito */
+            padding: 8px; /* Espaçamento interno para destacar o texto */
+        }
+
+        /* Estilos para o botão de fechamento */
+        .close-button {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 32px;
+            height: 32px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-button-icon {
+            width: 20px;
+            height: 20px;
+            fill: #888;
+            transition: fill 0.2s ease;
+        }
+
+        .close-button-icon:hover {
+            fill: #000;
+        }
+
+        /* Estilos para o link do WhatsApp */
+        .whatsapp-link {
+            
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 16px;
+            font-size: 18px; /* Aumenta o tamanho da fonte */
+        }
+
+        /* Estilos para a palavra "Aviso" */
+        .aviso-text {
+            color: #fff; /* Cor branca */
+            font-size: 24px; /* Aumenta o tamanho da fonte */
+            font-weight: bold;
+        }
+
+        /* Estilos para a div do conteúdo */
+        .content-box {
+            background-color: #FFE7E5; /* Fundo cinza */
+            padding: 16px;
+            border-bottom-left-radius: 10px; /* Raio de borda de 10px no canto inferior esquerdo */
+            border-bottom-right-radius: 10px; /* Raio de borda de 10px no canto inferior direito */
+            box-shadow: 0px 8px 30px 0px rgba(2, 24, 95, 0.3);
+        }
+
+        /* Estilos para o conteúdo da página */
+        .content {
+            margin-top: 25px;
+            background-color: #fff; /* Fundo branco */
+            border-radius: 10px; /* Raio de borda de 10px */
+            padding: 16px; /* Espaçamento interno */
+        }
+
+        /* Estilo do menu inferior */
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1;
+}
+
+.bottom-menu nav {
+  display: flex;
+  justify-content: space-evenly; /* Distribuir os itens na horizontal */
+}
+
+.bottom-menu a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  justify-content: center; /* Alinhar ícone e texto verticalmente */
+}
+.bottom-menu a:focus{
+    color: #ff4900;
+}
+
+/* Estilize o nome abaixo de cada ícone */
+.bottom-menu span {
+  font-size: 12px;
+  margin-top: -4px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+        input {
+        opacity: 0;
+        }
+        .dica{
+            line-height: 1.5;
+        }
+        .conta td {
+        border-bottom: 1px solid #ddd;
+        line-height: 35px;
+        font-size: 12px;
+}
+     
+/* botao proprities */
+
+.button-copy {
+        border-radius: 2em;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 400;
+        padding: 0.75em 1.5em;
+        
+        background: linear-gradient(134deg,#ff5631,#ff164b);
+        border-color: #ff5631;
+        box-shadow: 0px 8px 30px 0px rgba(2, 24, 95, 0.3);
+        /animation: pulse-red 1.5s infinite;
+}
