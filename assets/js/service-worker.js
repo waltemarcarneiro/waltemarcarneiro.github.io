@@ -7,13 +7,10 @@ const offlineFallbackPage = "offline.html";
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
+  '/app.html',
   '/offline.html',
-  '/profile.html',
-  '/playlist.html',
   '/bank/itau.html',
   '/bank/bradesco.html',
-  '/hero.html',
 ];
 
 
