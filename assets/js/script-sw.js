@@ -1,4 +1,3 @@
-<script>
     if ("serviceWorker" in navigator) {
       if (navigator.serviceWorker.controller) {
         console.log("active service worker found, no need to register");
@@ -13,4 +12,3 @@
           });
       }
     }
-  </script>
