@@ -1,0 +1,220 @@
+{
+	"name": "Waltemar App",
+	"short_name": "Waltemar",
+	"description": "Serviços Digitais",
+	"display": "standalone",
+	"iarc_rating_id": "ESRB_E",
+	"lang": "pt-BR",
+	"dir": "ltr",
+	"background_color": "#ff4906",
+	"theme_color": "#ff4906",
+	"start_url": "/index.html",
+	"orientation": "portrait",
+	"scope": "/",
+	"splash_pages": "/splash.html",
+	"prefer_related_applications": false,
+	"protocol_handlers": [],
+	"related_applications": [],
+	"icons": [{
+			"src": "icons/icon48.png",
+			"sizes": "48x48",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon48.png",
+			"sizes": "48x48",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon72.png",
+			"sizes": "72x72",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon72.png",
+			"sizes": "72x72",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon96.png",
+			"sizes": "96x96",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon96.png",
+			"sizes": "96x96",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon144.png",
+			"sizes": "144x144",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon144.png",
+			"sizes": "144x144",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon152.png",
+			"sizes": "152x152",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon152.png",
+			"sizes": "152x152",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon256.png",
+			"sizes": "256x256",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon256.png",
+			"sizes": "256x256",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon384.png",
+			"sizes": "384x384",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon384.png",
+			"sizes": "384x384",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/icon512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "icons/icon512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	],
+	"shortcuts": [{
+			"name": "Abrir o App",
+			"description": "Waltemar App",
+			"url": "/",
+			"icons": [{
+				"src": "icons/logowc96.png",
+				"sizes": "96x96",
+				"type": "image/png"
+			}]
+		},
+		{
+			"name": "Pix Bradesco",
+			"url": "/bank/bradesco.html",
+			"description": "Pix Bradesco",
+			"icons": [{
+				"src": "icons/bradesco96.png",
+				"sizes": "96x96",
+				"type": "image/png"
+			}]
+		},
+		{
+			"name": "Pix Itau",
+			"url": "/bank/itau.html",
+			"description": "Pix Itau",
+			"icons": [{
+				"src": "icons/itau96.png",
+				"sizes": "96x96",
+				"type": "image/png"
+			}]
+		},
+		{
+			"name": "Contato",
+			"url": "https://api.whatsapp.com/send/?phone=5592993623739",
+			"description": "Contato",
+			"icons": [{
+				"src": "icons/whatsapp96.png",
+				"sizes": "96x96",
+				"type": "image/png"
+			}]
+		}
+	],
+	"screenshots": [{
+			"src": "screenshots/1.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "screenshots/2.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "screenshots/3.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "screenshots/4.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "screenshots/5.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "screenshots/6.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		},
+		{
+			"src": "screenshots/7.jpg",
+			"sizes": "1080x1920",
+			"type": "image/jpg"
+		}
+	],
+	"categories": [
+		"entertainment",
+		"productivity"
+	],
+	"share_target": [{
+		"action": "/shared-content-receiver/",
+		"method": "GET",
+		"params": {
+			"title": "Pix Itau",
+			"text": "Tranferencia via Pix Itau",
+			"url": "/bank/itau.html"
+		}
+	}],
+	"display_override": [
+		"standalone"
+	]
+}

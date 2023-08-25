@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulário de Contato</title>
+  <meta name="description" content="Página de contato via email" />
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="assets/css/posts.css">
+  <link rel="stylesheet" href="assets/css/contato.css">
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- FAVICON-->
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#ec7000" />
+  <meta name="msapplication-TileColor" content="#ec7000" />
+  <meta name="theme-color" content="#ec7000" />
+  <link rel="shortcut icon" href="icons/favicon-32x32.png" />
+
+  <!-- SEO | OG -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="keywords" content="Waltemar Carneiro" />
+  <meta property="og:title" content="Formuláriod de Contato" />
+  <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-image.png" />
+  <meta content='website' property='og:type' />
+  <meta property="og:site_name" content="Waltemar Carneiro." />
+  <meta property="og:description" content="Entre em contato usando nosso formulário de e-mail." />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+
+</head>
+
+<body>
+
+    <div class="header">
+
+    <button id="backButton"><i class="material-icons">arrow_back</i></button>
+    
+    <p style="color: #fff">Formulário de Contato</p>
+
+    <button id="shareButton"><i class="material-icons">share</i></button>
+
+    </div>
+
+
+
+<div><!-- START CONTENT -->
+
+<br><br>
+ <div class="form-container">
+    
+        <form id="email-form"><!-- INICIO FORMULARIO CONTATO -->
+            <div class="input-container">
+                <input type="email" id="to" name="to" value="canapum.contato@gmail.com" readonly>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="name" name="name" required>
+                <label class="input-label">NOME:</label>
+            </div>
+            
+            <div class="input-container">
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{*}" required>
+                <label class="input-label">DDD + TELEFONE:</label>
+            </div>
+            
+            <div class="input-container">
+                <input type="text" id="subject" name="subject" required>
+                <label class="input-label">ASSUNTO:</label>
+            </div>
+            
+            <div class="input-container">
+                <textarea id="body" name="body" rows="4" cols="50" required></textarea>
+                <label class="input-label">MENSAGEM:</label>
+            </div>
+            
+        <div class="btn-footer">
+        
+        <button type="button" id="clear-button" class="clear-button">Limpar</button>
+        
+ <button type="button" id="send-button" class="send-button"><i class="material-icons">send</i></button>
+        
+        </div>
+        
+        </form>
+
+ </div>
+
+</div><!-- END CONTENT -->
+
+        
+<div class="extra-space"></div>
+
+
+
+
+
+
+
+<script src="assets/js/script-sw.js"></script>
+<script src="assets/js/back-share.js"></script>
+<script src="assets/js/form.js"></script>
+
+
+</body>
+</html>

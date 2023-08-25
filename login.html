@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
+<title>Login</title>
+    
+<link rel="stylesheet" href="assets/css/login.css">
+    
+</head>
+
+<body>
+    <div class="login-container">
+    <div class="logo-container">
+            <img src="icons/logo-login.png" width="75" alt="Logo">
+        </div>
+        <h2>Digite sua senha!</h2>
+        <div class="input-container">
+            <label for="passwordInput" class="icon"><i class="fa fa-lock"></i></label>
+            <input type="password" id="passwordInput" placeholder="Senha">
+        </div>
+        <button id="loginButton">Entrar</button>
+        <div class="additional-info">
+            <p>Esqueceu a senha? <a href="#" id="recoverPasswordLink">Recuperar senha</a></p>
+        </div>
+    </div>
+
+<!--popup-->
+    <div id="errorPopup" class="popup">
+        <div class="popup-content">
+            <p>Senha incorreta.</p>
+        </div>
+    </div>
+
+    <div id="recoverPopup" class="popup">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closeRecoverPopup()">&times;</span>
+            <br><b>😱 Ainda não é nosso cliente?</b><br>Entre em contato através do nosso WhatsApp <a href="https://api.whatsapp.com/send?phone=5581971027858&text=%F0%9F%98%81%20Ol%C3%A1%2C%20ainda%20n%C3%A3o%20sou%20cliente!"><i class="fa fa-whatsapp" style="font-size:28px;color:#e37700"></i></a> ou mande-nos um e-Mail <a href="contato.html"><i class="fa fa-envelope"></i></a>.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function() {
+            performLogin();
+        });
+
+        document.getElementById("passwordInput").addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                performLogin();
+            }
+        });
+
+        document.getElementById("recoverPasswordLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            openRecoverPopup();
+        });
+
+        function performLogin() {
+            var enteredPassword = document.getElementById("passwordInput").value;
+            var encodedPassword = "cmVjaWZl"; // Senha "*"
+
+            if (btoa(enteredPassword) === encodedPassword) {
+                window.location.href = "dashboard.html"; // Redirecionar para a página após o login bem-sucedido
+            } else {
+                openErrorPopup();
+            }
+        }
+
+        function openErrorPopup() {
+            document.getElementById("errorPopup").style.display = "block";
+            setTimeout(closeErrorPopup, 2000); // Fecha o popup de erro após 2 segundos
+            clearPasswordInput(); // Limpa o campo de senha
+        }
+
+        function closeErrorPopup() {
+            document.getElementById("errorPopup").style.display = "none";
+        }
+
+        function openRecoverPopup() {
+            document.getElementById("recoverPopup").style.display = "block";
+        }
+
+        function closeRecoverPopup() {
+            document.getElementById("recoverPopup").style.display = "none";
+        }
+
+        // Fechar o popup de recuperação de senha quando clicar fora dele
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("recoverPopup")) {
+                closeRecoverPopup();
+            }
+        };
+
+        // Fechar o popup de recuperação de senha quando pressionar a tecla Enter
+        document.onkeyup = function(event) {
+            if (event.key === "Enter") {
+                closeRecoverPopup();
+            }
+        };
+
+        // Fechar o popup de recuperação de senha quando pressionar a tecla Esc
+        document.onkeydown = function(event) {
+            if (event.key === "Escape") {
+                closeRecoverPopup();
+            }
+        };
+
+        function clearPasswordInput() {
+            document.getElementById("passwordInput").value = "";
+        }
+    </script>
+ <script src="assets/js/script-sw.js"></script>
+</body>
+</html>
