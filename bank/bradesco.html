@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <title>Itaú | Waltemar Carneiro</title>
+    <title>Bradesco | Waltemar Carneiro</title>
     <meta name="description" content="Você tem uma transferência Pix para Waltemar Carneiro" />
     <meta content="#ec7000" name="theme-color" />
     
@@ -28,7 +28,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="keywords" content="Waltemar, Carneiro" />
     <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
-    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-itau.png" />
+    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-bradesco.png" />
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
         
 </head>
@@ -37,7 +37,7 @@
 
     <div class="header">
         <div>
-            <i class="material-icons" id="backButton">arrow_back</i>
+            <i class="material-icons" id="backButton2">arrow_back</i>
         </div>
         <div>Pagamentos & Transferências</div>
         <div class="share-icon">
@@ -53,7 +53,7 @@
     <div class="content">
 
         <!-- Conteúdo da página -->
-        <h2 style="margin-bottom: 5px;">Transferência Pix Itaú</h2>
+        <h2 style="margin-bottom: 5px;">Transferência Pix Bradesco</h2>
 
         <script src="sweetalert2.all.js"></script>
 
@@ -70,7 +70,7 @@
         </div>
         
         <div align="center" style="margin-top:0; padding-bottom: 0;"><img
-                src="image/qrcode-itau.png" width="100">
+                src="image/qrcode-bradesco.png" width="100">
             
         </div>
 
@@ -78,22 +78,22 @@
 
             <div class="table-row">
                 <div class="table-cell1">Chave Pix:</div>
-                <div class="table-cell2">064f9f69-cf66-440d-a2b9-95c3f2742c16</div>
+                <div class="table-cell2">edcebd46-2b0e-4822-9eda-538c32196c56</div>
             </div>
 
             <div class="table-row">
                 <div class="table-cell1">Instituição:</div>
-                <div class="table-cell2">Itaú Unibanco S.A.</div>
+                <div class="table-cell2">BCO BRADESCO S.A.</div>
             </div>
 
             <div class="table-row">
                 <div class="table-cell1">Agência:</div>
-                <div class="table-cell2">8131</div>
+                <div class="table-cell2">3733</div>
             </div>
 
             <div class="table-row">
                 <div class="table-cell1">Conta:</div>
-                <div class="table-cell2">65172-4</div>
+                <div class="table-cell2">99681-2</div>
             </div>
 
             <div class="table-row">
@@ -125,7 +125,7 @@
 
     <script>
         // Adicione o evento de clique ao ícone de seta à esquerda
-        document.getElementById('backButton').addEventListener('click', () => {
+        document.getElementById('backButton2').addEventListener('click', () => {
             // Volta para a página anterior
             history.back();
         });
@@ -155,14 +155,15 @@
 
 <div align="center">
         <input id="codepix" name="texto" readonly="" type="text"
-            value="00020126580014BR.GOV.BCB.PIX0136064f9f69-cf66-440d-a2b9-95c3f2742c165204000053039865802BR5922WALTEMAR LIMA CARNEIRO6009SAO PAULO622605222hCnIuIwMXKmzZggFDNlp06304A6B1" />
+            value="00020126580014BR.GOV.BCB.PIX0136edcebd46-2b0e-4822-9eda-538c32196c565204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63049FDD" />
         </div>
-
+        
+        <!-- CONTEUDO DO POPUP -->
 <div id="popup-overlay">
         <div id="popup">
             <button id="close-button"><i class="material-icons">close</i></button>
             
-            <!-- CONTEUDO DO POPUP -->
+            
             <div   class="aviso-content">
         <strong>Transfira</strong><br>
         rapidamente<br><strong style="font-size: 40px;">via pix.</strong><br><br><strong style="font-size: 30px;">Dúvidas?</strong><br>Acesse nosso <strong style="font-size: 30px;">WhatsApp!</strong><br><br>
@@ -170,13 +171,13 @@
         <a  href="https://api.whatsapp.com/send?phone=558171027858&text=%F0%9F%98%80%20Ol%C3%A1%2C%20estou%20com%20d%C3%BAvidas!"
         target="_blank"><img src="../image/button-whatsapp.png" width="20%" height="" /></a>
         </div>
-        </div><!-- END CONTEUDO DO POPUP -->
+        </div>
 
         </div>
-    </div>
+    </div><!-- END CONTEUDO DO POPUP -->
+
 
 <script src="../assets/js/script-sw.js"></script>
-
 </body>
 
 </html>
