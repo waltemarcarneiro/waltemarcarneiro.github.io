@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
-<title>Login</title>
-    
-<link rel="stylesheet" href="assets/css/login.css">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
+    <title>Login | Waltemar Carneiro</title>
+
+    <link rel="stylesheet" href="assets/css/login.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#E77000" />
+    <meta name="msapplication-TileColor" content="#E77000" />
+    <meta name="theme-color" content="#E77000" />
+    <link rel="shortcut icon" href="icons/favicon-32x32.png" />
 </head>
 
 <body>
     <div class="login-container">
-    <div class="logo-container">
+        <div class="logo-container">
             <img src="icons/logo-login.png" width="75" alt="Logo">
         </div>
         <h2>Digite sua senha!</h2>
@@ -26,7 +34,7 @@
         </div>
     </div>
 
-<!--popup-->
+    <!--popup-->
     <div id="errorPopup" class="popup">
         <div class="popup-content">
             <p>Senha incorreta.</p>
@@ -36,22 +44,25 @@
     <div id="recoverPopup" class="popup">
         <div class="popup-content">
             <span class="popup-close" onclick="closeRecoverPopup()">&times;</span>
-            <br><b>😱 Ainda não é nosso cliente?</b><br>Entre em contato através do nosso WhatsApp <a href="https://api.whatsapp.com/send?phone=5581971027858&text=%F0%9F%98%81%20Ol%C3%A1%2C%20ainda%20n%C3%A3o%20sou%20cliente!"><i class="fa fa-whatsapp" style="font-size:28px;color:#e37700"></i></a> ou mande-nos um e-Mail <a href="contato.html"><i class="fa fa-envelope"></i></a>.</p>
+            <br><b>😱 Ainda não é nosso cliente?</b><br>Entre em contato através do nosso WhatsApp <a
+                href="https://api.whatsapp.com/send?phone=5581971027858&text=%F0%9F%98%81%20Ol%C3%A1%2C%20ainda%20n%C3%A3o%20sou%20cliente!"><i
+                    class="fa fa-whatsapp" style="font-size:28px;color:#e37700"></i></a> ou mande-nos um e-Mail <a
+                href="contato.html"><i class="fa fa-envelope"></i></a>.</p>
         </div>
     </div>
 
     <script>
-        document.getElementById("loginButton").addEventListener("click", function() {
+        document.getElementById("loginButton").addEventListener("click", function () {
             performLogin();
         });
 
-        document.getElementById("passwordInput").addEventListener("keyup", function(event) {
+        document.getElementById("passwordInput").addEventListener("keyup", function (event) {
             if (event.keyCode === 13) {
                 performLogin();
             }
         });
 
-        document.getElementById("recoverPasswordLink").addEventListener("click", function(event) {
+        document.getElementById("recoverPasswordLink").addEventListener("click", function (event) {
             event.preventDefault();
             openRecoverPopup();
         });
@@ -86,21 +97,21 @@
         }
 
         // Fechar o popup de recuperação de senha quando clicar fora dele
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == document.getElementById("recoverPopup")) {
                 closeRecoverPopup();
             }
         };
 
         // Fechar o popup de recuperação de senha quando pressionar a tecla Enter
-        document.onkeyup = function(event) {
+        document.onkeyup = function (event) {
             if (event.key === "Enter") {
                 closeRecoverPopup();
             }
         };
 
         // Fechar o popup de recuperação de senha quando pressionar a tecla Esc
-        document.onkeydown = function(event) {
+        document.onkeydown = function (event) {
             if (event.key === "Escape") {
                 closeRecoverPopup();
             }
@@ -110,5 +121,7 @@
             document.getElementById("passwordInput").value = "";
         }
     </script>
+
 </body>
+
 </html>
