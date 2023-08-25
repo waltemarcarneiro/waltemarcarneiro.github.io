@@ -26,7 +26,7 @@
   animation: spinner 1s infinite linear;
   border-radius: 50%;
   border: 3px solid rgba(0, 0, 0, 0.2);
-  border-top-color: #FD4A36;
+  border-top-color: #E77000;
   height: 150px;
   margin: 0 auto 3.5em auto;
   width: 150px;
@@ -49,7 +49,7 @@
 .ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
   -webkit-animation: letters-loading 4s infinite;
   animation: letters-loading 4s infinite;
-  color: #000000;
+  color: #E77000;
   content: attr(data-text-preloader);
   left: 0;
   opacity: 0;
