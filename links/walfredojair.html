@@ -5,50 +5,85 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <title>AppCanapum Downloads!</title>
+    <title>O Rei do Bolero | Walfredo Jair</title>
     <meta name="description" content="Você tem uma transferência Pix para Waltemar Carneiro" />
-    <meta content="#ec7000" name="theme-color" />
+    <meta content="#0f0f0f" name="theme-color" />
 
     <link rel="stylesheet" href="../assets/css/links.css" />
     <link rel="manifest" href="../manifest.json">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- favicon -->
+    <link rel="shortcut icon" href="../icons/favicon-32x32.png"/>
     <link href="../icons/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.pmg">
     <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#ffffff">
-    <meta name="msapplication-TileColor" content="#e37700">
-    <!-- SEO | OG -->
+    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#0f0f0f">
+    <meta name="msapplication-TileColor" content="#0f0f0f">
+        <!-- SEO | OG -->
     <meta property='og:type' content='website' />
-    <meta property="og:site_name" content="waltemar Carneiro" />
+    <meta property="og:site_name" content="Waltemar Carneiro" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="keywords" content="Waltemar" />
-    <meta property="og:title" content="AppCanapum Downloads" />
-    <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-appcanapum.png" />
-    <meta property="og:description" content="Downloads sem ADS" />
-    
+    <meta name="keywords" content="Waltemar, Carneiro, Design, Developer" />
+    <meta property="og:title" content="O Rei do Bolero | Walfredo Jair" />
+    <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-wj.png" />
+    <meta property="og:description" content="Playlist Vol.2 do Rei do bolero Walfredo Jair" />
+  <style type="text/css">
+      body{
+        background-color: #0f0f0f;
+      }
+      header{
+        background-color: #111111;
+      }
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-content {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>
+  </style>  
 
 </head>
 <body>
 <header>
   <button class="icon-left" id="backButton"><i class="material-icons material-icons-button ">arrow_back</i></button>
-  <div><h2>AppCanapum - Downloads</h2></div>
+  <div class="marquee-container">
+  <div class="marquee-content">
+    🎵 Playlist Walfredo Jair Vol. II
+  </div>
+</div>
   <button class="icon-right" id="share-Button"><i class="material-icons material-icons-button">share</i></button>
 </header>
-<iframe class="content" src="https://appcanapum.blogspot.com" frameborder="0"></iframe>
+
+
+<!-- URL DE PLAYLIST -->
+<iframe class="content" width="100%" height="" src="https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLf7Ld_SZyNJK3B9N2nkMIj7JnJr9VwexW" frameborder="0" allowfullscreen></iframe>
+
+
 
 
 <div class="centered-box" id="alertBox"><!-- START BANNER ALERTA -->
         <div class="aviso-bg">
-            <div class="aviso-title">Boms downloads!</div>
+            <div class="aviso-title">Relaxe!</div>
         </div>
         <div class="content-box">
             <div   class="aviso-content">
-                😉 Fique a vontade para contribuir com uma doação<br><br>
+                😉 <br>Fique a vontade caso deseje contribuir.<br><br>
                 <div>
-                    <a target="_parent" href="../bank/bradesco.html"
-                        target="_blank"><img src="doar.png" width="250" /></a>
+                    <a target="_parent" href="../bank/itau.html"
+                        target="_blank"><img src="doar.png" width="150" /></a>
                 </div>
             </div>
         </div>
@@ -81,9 +116,9 @@
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Compartilhar',
-          text: 'Confira este site interessante!',
-          url: 'https://appcanapum.blogspot.com'
+          title: '🎵 Walfredo Jair 👑 O Rei do Bolero',
+          text: '🎶 Sinta a Potênca da Voz de Walfredo Jair, O 👑 Rei do Bolero.',
+          url: 'https://bit.ly/walfredojair'
         });
         console.log('Conteúdo compartilhado com sucesso!');
       } catch (error) {
