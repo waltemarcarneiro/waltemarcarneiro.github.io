@@ -5,7 +5,7 @@
       } else {
         // Register the service worker
         navigator.serviceWorker
-          .register("../../assets/js/service-worker.js", {
+          .register("assets/js/service-worker.js", {
             scope: "/"
           })
           .then(function (reg) {
