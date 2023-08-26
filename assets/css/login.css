@@ -16,10 +16,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #4a4a4a;
 }
-h2{
-    font-size: 20px;
-    font-weight: 600;
-}
+
 .login-container {
     width: 80%;
     max-width: 400px;
@@ -46,7 +43,8 @@ h2{
 h2 {
     margin-top: 0;
     margin-bottom: 20px;
-    
+    font-size: 20px;
+    font-weight: 400;
 }
 
 input[type="password"] {
