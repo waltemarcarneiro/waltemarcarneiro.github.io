@@ -213,7 +213,7 @@ body{
 }
 .music-list ul{
   margin: 10px 0;
-  max-height: 700px;
+  max-height: 350px;
   overflow: auto;
 }
 .music-list ul::-webkit-scrollbar{
