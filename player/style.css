@@ -245,3 +245,12 @@ ul li.playing{
   pointer-events: none;
   color: var(--orangedark);
 }
+button{
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+.title-player{
+  color: var(--orangedark) !important;
+  font-weight: 500;
+}
