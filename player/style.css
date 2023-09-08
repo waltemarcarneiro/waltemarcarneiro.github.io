@@ -22,7 +22,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  
   background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
 }
 .wrapper{
