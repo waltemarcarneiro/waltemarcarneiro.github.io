@@ -161,4 +161,42 @@ closemoreMusic.addEventListener("click", () => {
   moreMusicBtn.click();
 });
 
+//funcao botao looped
+
+const repeatBtn = wrapper.querySelector("#repeat-plist");
+
+repeatBtn.addEventListener("click", () => {
+  let getText = repeatBtn.innerText;
+  switch (getText) {
+    case "repeat":
+      repeatBtn.innerText = "repeat_one";
+      repeatBtn.setAttribute("title", "Song looped");
+      mainAudio.loop = true;
+      break;
+    case "repeat_one":
+      repeatBtn.innerText = "shuffle";
+      repeatBtn.setAttribute("title", "Playback shuffled");
+      mainAudio.loop = false;
+      break;
+    case "shuffle":
+      repeatBtn.innerText = "repeat";
+      repeatBtn.setAttribute("title", "Playlist looped");
+      break;
+  }
+});
+
+//função da timeline
+
+// Atualize a função progressArea para ouvir o evento "click"
+progressArea.addEventListener("click", (e) => {
+  const progressWidth = progressArea.clientWidth; // Obtém a largura da barra de progresso
+  const clickedOffsetX = e.offsetX; // Obtém o valor do deslocamento X do clique
+  const songDuration = mainAudio.duration; // Obtém a duração total da música
+  
+  // Calcula o tempo da música com base na posição clicada
+  mainAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
+  playMusic();
+});
+
+
 updatePlaylistTime();
