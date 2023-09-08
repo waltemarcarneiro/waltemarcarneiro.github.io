@@ -198,5 +198,9 @@ progressArea.addEventListener("click", (e) => {
   playMusic();
 });
 
+//evento ended
+mainAudio.addEventListener("ended", () => {
+  nextMusic();
+});
 
 updatePlaylistTime();
