@@ -14,7 +14,7 @@ let allMusic = [
   },
   {
     name: "Hero",
-    artist: "Mariah carey",
+    artist: "Mariah Carey",
     img: "./covers/cover-3.jpg",
     src: "https://archive.org/download/mariah-carey-hero_202308/Mariah-Carey-Hero.mp3"
   },
