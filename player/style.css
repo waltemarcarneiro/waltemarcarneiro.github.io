@@ -255,3 +255,17 @@ button{
   color: var(--orangedark) !important;
   font-weight: 500;
 }
+.footer{
+  height: 30px;
+  background: none;
+  padding: 5px 20px;
+  color: var(--lightblack);
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 12px;
+  font-weight: 300;
+}
