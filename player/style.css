@@ -49,6 +49,7 @@ body{
 }
 .top-bar i:first-child{
   margin-left: -7px;
+  margin-right: -7px;
 }
 .top-bar span{
   font-size: 18px;
