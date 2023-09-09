@@ -22,7 +22,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  
   background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
 }
 .wrapper{
@@ -32,7 +31,7 @@ body{
   position: relative;
   background: var(--white);
   box-shadow: 0px 6px 15px var(--lightbshadow);
-  height: calc(100vh - 30px);
+  height: calc(100vh - 0px);
 }
 .wrapper i{
   cursor: pointer;
@@ -255,17 +254,15 @@ button{
   color: var(--orangedark) !important;
   font-weight: 500;
 }
-.footer{
+.copyright{
+  position: absolute;
   height: 30px;
-  background: var(--white);
   padding: 5px 20px;
   color: var(--lightblack);
   bottom: 0;
-  position: fixed;
-  width: 410px;
-  display: flex;
+  width: 370px;
   align-items: center;
-  justify-content: space-around;
   font-size: 12px;
   font-weight: 300;
+  
 }
