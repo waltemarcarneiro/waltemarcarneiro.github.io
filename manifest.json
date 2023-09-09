@@ -129,7 +129,7 @@
 			"description": "Waltemar App",
 			"url": "/app.html",
 			"icons": [{
-				"src": "icons/wc96.png",
+				"src": "shortcuts/open.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
@@ -139,7 +139,7 @@
 			"url": "/bank/bradesco.html",
 			"description": "Pix Bradesco",
 			"icons": [{
-				"src": "icons/bradesco96.png",
+				"src": "shortcuts/pix.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
@@ -149,7 +149,7 @@
 			"url": "/bank/itau.html",
 			"description": "Pix Itau",
 			"icons": [{
-				"src": "icons/pix96.png",
+				"src": "shortcuts/pix.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
@@ -159,7 +159,7 @@
 			"url": "https://api.whatsapp.com/send/?phone=5581971027858",
 			"description": "Contato",
 			"icons": [{
-				"src": "icons/whatsapp96.png",
+				"src": "shortcuts/whatsapp.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
@@ -169,7 +169,7 @@
 			"url": "tel:01581971027858",
 			"description": "Ligar",
 			"icons": [{
-				"src": "icons/phone96.png",
+				"src": "shortcuts/phone.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
