@@ -32,7 +32,7 @@ body{
   position: relative;
   background: var(--white);
   box-shadow: 0px 6px 15px var(--lightbshadow);
-  height: 100vh;
+  height: calc(100vh - 35px);
 }
 .wrapper i{
   cursor: pointer;
