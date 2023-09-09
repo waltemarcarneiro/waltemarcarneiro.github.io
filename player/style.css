@@ -255,7 +255,7 @@ button{
   font-weight: 500;
 }
 .copyright{
-  position: absolute;
+  position: fixed;
   height: 30px;
   padding: 5px 20px;
   color: var(--lightblack);
