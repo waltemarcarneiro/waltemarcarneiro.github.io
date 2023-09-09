@@ -257,12 +257,12 @@ button{
 }
 .footer{
   height: 30px;
-  background: none;
+  background: var(--white);
   padding: 5px 20px;
-  color: var(--white);
+  color: var(--lightblack);
   bottom: 0;
   position: fixed;
-  width: 100%;
+  width: 410px;
   display: flex;
   align-items: center;
   justify-content: space-around;
