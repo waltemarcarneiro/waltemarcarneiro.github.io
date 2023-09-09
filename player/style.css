@@ -259,7 +259,7 @@ button{
   height: 30px;
   background: none;
   padding: 5px 20px;
-  color: var(--lightblack);
+  color: var(--white);
   bottom: 0;
   position: fixed;
   width: 100%;
