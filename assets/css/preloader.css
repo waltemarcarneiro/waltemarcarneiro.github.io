@@ -1,3 +1,27 @@
+/*config page*/
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background:#ECE5DD;
+    color: #545f7e;
+    text-align: center;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.video{
+    width:95vw;
+}
+
+/* configuração da animação */
+
 .ctn-preloader {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -215,7 +239,7 @@
     width: 8em;
   }
   .ctn-preloader .animation-preloader .txt-loading {
-    font: bold 3.5em "Poppins", sans-serif;
+    font: bold 3.5em "Montserrat", sans-serif;
   }
 }
 
@@ -225,6 +249,6 @@
     width: 7em;
   }
   .ctn-preloader .animation-preloader .txt-loading {
-    font: bold 2em "Poppins", sans-serif;
+    font: bold 2em "Montserrat", sans-serif;
   }
 }
