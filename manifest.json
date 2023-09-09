@@ -127,7 +127,7 @@
 	"shortcuts": [{
 			"name": "Abrir o App",
 			"description": "Waltemar App",
-			"url": "/",
+			"url": "/app.html",
 			"icons": [{
 				"src": "icons/wc96.png",
 				"sizes": "96x96",
@@ -155,7 +155,7 @@
 			}]
 		},
 		{
-			"name": "WhatsApp",
+			"name": "Contato WhatsApp",
 			"url": "https://api.whatsapp.com/send/?phone=5581971027858",
 			"description": "Contato",
 			"icons": [{
