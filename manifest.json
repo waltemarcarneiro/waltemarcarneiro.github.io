@@ -1,12 +1,12 @@
 {
-	"name": "Waltemar Apps",
-	"short_name": "Waltemar Apps",
-	"description": "Web Apps",
+	"name": "W.Carneiro",
+	"short_name": "W.Carneiro",
+	"description": "Aplicativos Web",
 	"display": "standalone",
 	"iarc_rating_id": "ESRB_E",
 	"lang": "pt-BR",
 	"dir": "ltr",
-	"background_color": "#f2f2f2",
+	"background_color": "#ECE5DD",
 	"theme_color": "#e77000",
 	"start_url": "/index.html",
 	"orientation": "portrait",
@@ -129,7 +129,7 @@
 			"description": "Waltemar App",
 			"url": "/",
 			"icons": [{
-				"src": "icons/logowc96.png",
+				"src": "icons/wc96.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
@@ -149,17 +149,27 @@
 			"url": "/bank/itau.html",
 			"description": "Pix Itau",
 			"icons": [{
-				"src": "icons/itau96.png",
+				"src": "icons/pix96.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
 		},
 		{
-			"name": "Contato",
+			"name": "WhatsApp",
 			"url": "https://api.whatsapp.com/send/?phone=5581971027858",
 			"description": "Contato",
 			"icons": [{
 				"src": "icons/whatsapp96.png",
+				"sizes": "96x96",
+				"type": "image/png"
+			}]
+		},
+		{
+			"name": "Ligar",
+			"url": "tel:01581971027858",
+			"description": "Ligar",
+			"icons": [{
+				"src": "icons/phone96.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
