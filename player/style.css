@@ -19,8 +19,8 @@
   --lightbshadow: rgba(0,0,0,0.15);
 }
 body{
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
   color: var(--lightblack);
 }
@@ -33,8 +33,7 @@ body{
   box-shadow: 0px 6px 15px var(
   --lightbshadow);
   height: calc(100vh - 30px);
-  /top: 0;
-  /bottom: 0;
+  margin: 0 auto;
 }
 .wrapper i{
   cursor: pointer;
