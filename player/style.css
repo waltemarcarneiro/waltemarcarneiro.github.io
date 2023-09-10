@@ -255,14 +255,15 @@ button{
   font-weight: 500;
 }
 .copyright{
+  
   position: fixed;
   height: 30px;
-  padding: 5px 0px;
+  padding: 5px 0;
   color: var(--lightblack);
   bottom: 0;
+  left: 0;
+  right: 0;
   font-size: 12px;
   font-weight: 400;
-  margin-right: 20px;
-  width: -webkit-fill-available;
   text-align: center;
 }
