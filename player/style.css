@@ -261,12 +261,12 @@ button{
   position: fixed;
   height: 30px;
   padding: 5px 0;
-  
   bottom: 0;
   left: 0;
   right: 0;
   font-size: 12px;
   font-weight: 400;
   text-align: center;
-  background: #fff;
+  background: #e77000;
+  color:#fff;
 }
