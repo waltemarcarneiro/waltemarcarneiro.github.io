@@ -257,12 +257,12 @@ button{
 .copyright{
   position: fixed;
   height: 30px;
-  padding: 5px 20px;
+  padding: 5px 0px;
   color: var(--lightblack);
   bottom: 0;
-  width: 350px;
-  align-items: center;
   font-size: 12px;
-  font-weight: 300;
-  
+  font-weight: 400;
+  margin-right: 20px;
+  width: -webkit-fill-available;
+  text-align: center;
 }
