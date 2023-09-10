@@ -25,7 +25,7 @@ body{
   color: var(--lightblack);
 }
 .wrapper{
-  width: 410px;
+  max-width: 410px;
   padding: 25px 20px 0px 20px;
   overflow: hidden;
   position: relative;
