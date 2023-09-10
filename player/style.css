@@ -29,7 +29,7 @@ body{
   padding: 25px 20px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: #ece5dd;
   box-shadow: 0px 6px 15px var(
   --lightbshadow);
   height: calc(100vh - 30px);
@@ -267,4 +267,5 @@ button{
   font-size: 12px;
   font-weight: 400;
   text-align: center;
+  background: #fff;
 }
