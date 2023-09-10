@@ -20,9 +20,9 @@
 }
 body{
   display: flex;
-  align-items: center;
   justify-content: center;
   background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
+  color: var(--lightblack);
 }
 .wrapper{
   width: 410px;
@@ -261,12 +261,12 @@ button{
   position: fixed;
   height: 30px;
   padding: 5px 0;
-  color: #fff;
+  
   bottom: 0;
   left: 0;
   right: 0;
   font-size: 12px;
   font-weight: 400;
   text-align: center;
-  background: #e77000;
+  background: #ece5dd;
 }
