@@ -32,8 +32,9 @@ body{
   background: #ece5dd;
   box-shadow: 0px 6px 15px var(
   --lightbshadow);
-  height: calc(100vh - 0px);
-  top: 0;
+  height: calc(100vh - 30px);
+  /top: 0;
+  /bottom: 0;
 }
 .wrapper i{
   cursor: pointer;
@@ -268,5 +269,5 @@ button{
   font-size: 12px;
   font-weight: 400;
   text-align: center;
-  background: #ece5dd;
+  background: #fff;
 }
