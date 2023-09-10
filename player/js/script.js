@@ -217,7 +217,7 @@ document.getElementById('shareButton').addEventListener('click', () => {
 if (navigator.share) {
        navigator.share({
        title: document.title,
-       url: window.location.href
+       url: 'https://bit.ly/wcplayer'
        }).then(() => {
        console.log('Página compartilhada com sucesso!');
        }).catch((error) => {
