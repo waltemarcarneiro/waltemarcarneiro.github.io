@@ -19,21 +19,24 @@
   --lightbshadow: rgba(0,0,0,0.15);
 }
 body{
-  /* display: flex; */
-  /* justify-content: center; */
-  background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
+  background: #ece5dd;
   color: var(--lightblack);
+  justify-content:center;
+  align-items: center;
 }
 .wrapper{
   max-width: 410px;
-  padding: 25px 20px 0px 20px;
+  padding: 20px 20px 0px 20px;
   overflow: hidden;
   position: relative;
   background: #ece5dd;
-  box-shadow: 0px 6px 15px var(
+  /box-shadow: 0px 6px 15px var(
   --lightbshadow);
-  height: calc(100vh - 30px);
-  margin: 0 auto;
+  left: 0;
+  top: 0px;
+  position: absolute;
+  right: 0;
+  margin: auto;
 }
 .wrapper i{
   cursor: pointer;
@@ -127,7 +130,7 @@ body{
   color: var(--lightblack);
 }
 .controls{
-  margin: 100px 0 5px 0;
+  margin: 40px 0 40px 0;
 }
 .controls i{
   font-size: 28px;
@@ -258,15 +261,23 @@ button{
 }
 .copyright{
   
-  position: fixed;
-  height: 30px;
-  padding: 5px 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 12px;
-  font-weight: 400;
-  text-align: center;
-  background: #e77000;
-  color:#fff;
+position: fixed;
+  
+height: 30px;
+  
+padding: 5px 0;
+  
+bottom: 0;
+  
+left: 0;
+  
+right: 0;
+  
+font-size: 12px;
+  
+font-weight: 400;
+  
+text-align: center;
+  
+
 }
