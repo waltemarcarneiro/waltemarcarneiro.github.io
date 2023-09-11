@@ -127,7 +127,7 @@ body{
   color: var(--lightblack);
 }
 .controls{
-  margin: 40px 0 5px 0;
+  margin: 100px 0 5px 0;
 }
 .controls i{
   font-size: 28px;
