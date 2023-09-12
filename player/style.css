@@ -290,7 +290,7 @@ button{
   
 }
 #volumeMuteButton{
-  color: #ffa500;
+  color: var(--lightblack);
   align-items: center;
   display: flex;
   margin-right: 10px;
@@ -316,8 +316,8 @@ button{
 
         #volumeSlider::-webkit-slider-thumb {
             appearance: none;
-            width: 15px; /* Largura do polegar personalizável */
-            height: 15px; /* Altura do polegar personalizável */
-            background-color: #ffa500; /* Cor do polegar personalizável */
+            width: 12px; /* Largura do polegar personalizável */
+            height: 12px; /* Altura do polegar personalizável */
+            background-color: var(--lightblack); /* Cor do polegar personalizável */
             border-radius: 50%; /* Para tornar o polegar circular */
         }
