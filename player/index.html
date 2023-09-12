@@ -33,15 +33,25 @@
     <div class="top-bar">
       <button id="backButton"><i class="material-icons">arrow_back</i></button>
       <span class="title-player">Love Songs</span>
+      <div class="volume-control">
+  
+  
+</div>
+      <audio id="main-audio" src=""></audio>
       <button id="shareButton"><i class="material-icons">more_vert</i></button>
     </div>
     <div class="img-area">
       <img src="" alt="">
     </div>
+
     <div class="song-details">
       <p class="name"></p>
       <p class="artist"></p>
+    <div>
+      <button id="volumeMuteButton"><i class="material-icons">volume_up</i></button>
+      <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.5"></div>
     </div>
+
     <div class="progress-area">
       <div class="progress-bar">
         <audio id="main-audio" src=""></audio>
@@ -50,7 +60,9 @@
         <span class="current-time">0:00</span>
         <span class="max-duration">0:00</span>
       </div>
+      
     </div>
+
     <div class="controls">
       <i id="repeat-plist" class="material-icons" title="Playlist looped">repeat</i>
       <i id="prev" class="material-icons" title="Voltar">skip_previous</i>
