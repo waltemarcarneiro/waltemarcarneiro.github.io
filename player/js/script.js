@@ -229,3 +229,37 @@ if (navigator.share) {
 // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
        }
 });
+
+//controle do volume
+
+// ...
+
+const volumeSlider = document.getElementById('volumeSlider');
+const volumeMuteButton = document.getElementById('volumeMuteButton');
+
+volumeSlider.addEventListener('input', function () {
+  const volumeValue = parseFloat(volumeSlider.value);
+  mainAudio.volume = volumeValue;
+  updateVolumeIcon(volumeValue);
+});
+
+volumeMuteButton.addEventListener('click', function () {
+  if (mainAudio.volume === 0) {
+    mainAudio.volume = parseFloat(volumeSlider.value) || 0.5;
+  } else {
+    mainAudio.volume = 0;
+  }
+  updateVolumeIcon(mainAudio.volume);
+});
+
+function updateVolumeIcon(volumeValue) {
+  if (volumeValue === 0) {
+    volumeMuteButton.innerHTML = '<i class="material-icons">volume_off</i>';
+  } else if (volumeValue < 0.5) {
+    volumeMuteButton.innerHTML = '<i class="material-icons">volume_down</i>';
+  } else {
+    volumeMuteButton.innerHTML = '<i class="material-icons">volume_up</i>';
+  }
+}
+
+// ...
