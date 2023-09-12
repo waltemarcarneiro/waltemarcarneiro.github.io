@@ -18,6 +18,7 @@
   --pinkshadow: #ffcbdd;
   --lightbshadow: rgba(0,0,0,0.15);
 }
+html{ background:#ece5dd; }
 body{
   display: flex;
   align-items: center;
