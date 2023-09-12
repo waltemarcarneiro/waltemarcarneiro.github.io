@@ -28,10 +28,11 @@ body{
   width: 410px;
   padding: 40px 20px;
   overflow: hidden;
-  position: relative;
+  position: fixed;
   background: #ece5dd;
   box-shadow: 0px 6px 15px var(--lightbshadow);
   min-height: 100vh; /* Defina a altura mínima como 100% da altura da viewport */
+  top: 0px;
 }
 }
 .wrapper i{
@@ -42,7 +43,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  /position: sticky;
 }
 .top-bar{
   display: flex;
@@ -78,9 +79,11 @@ body{
   margin-top: 25px;
   border-radius: 15px;
   box-shadow: 0px 6px 12px var(--lightbshadow);
+
+  
 }
 .img-area img{
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   object-fit: cover;
 }
