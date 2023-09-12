@@ -26,7 +26,7 @@ body{
 }
 .wrapper{
   width: 410px;
-  padding: 25px 20px;
+  padding: 40px 20px;
   overflow: hidden;
   position: relative;
   background: #ece5dd;
@@ -48,12 +48,15 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 0px;
   background: #ece5dd;
   padding: 10px 0;
   z-index: 1;
-  width: 100%;
+  max-width: 360px;
+  left: 20px;
+  right: 20px;
+  margin: 0 auto;
 }
 .top-bar i{
   font-size: 30px;
