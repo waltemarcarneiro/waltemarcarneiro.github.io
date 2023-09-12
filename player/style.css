@@ -25,7 +25,7 @@ body{
   background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
 }
 .wrapper{
-  width: 400px;
+  width: 390px;
   padding: 40px 20px;
   overflow: hidden;
   position: fixed;
