@@ -293,6 +293,7 @@ button{
   color: #ffa500;
   align-items: center;
   display: flex;
+  margin-right: 10px;
 }
 
 /*ESTILO DO CONTROLE DE VOLUME*/
@@ -307,7 +308,7 @@ button{
         #volumeSlider {
             
             background: #fff;
-            width: 90%;
+            width: 85%;
             height: 3px;
             appearance: none;
             
