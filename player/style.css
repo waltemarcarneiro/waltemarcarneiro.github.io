@@ -284,3 +284,6 @@ button{
   color: var(--orangedark) !important;
   font-weight: 500;
 }
+#volumeMuteButton{
+  color: #e77000;
+}
