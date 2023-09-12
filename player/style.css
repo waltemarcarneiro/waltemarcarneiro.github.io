@@ -43,7 +43,6 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /position: sticky;
 }
 .top-bar{
   display: flex;
@@ -240,6 +239,7 @@ body{
 .header #close{
   font-size: 22px;
   color: var(--lightblack);
+  cursor: pointer;
 }
 .music-list ul{
   margin: 10px 0;
@@ -284,6 +284,39 @@ button{
   color: var(--orangedark) !important;
   font-weight: 500;
 }
-#volumeMuteButton{
-  color: #e77000;
+.volume{
+  align-items: center;
+  display: flex;
+  
 }
+#volumeMuteButton{
+  color: #ffa500;
+  align-items: center;
+  display: flex;
+}
+
+/*ESTILO DO CONTROLE DE VOLUME*/
+#volumeSliderContainer {
+            position: relative;
+            width: 150px; /* Largura personalizável */
+            height: 10px; /* Altura personalizável */
+            background: #555 !important; /* Cor de fundo do controle */
+            border-radius: 5px !important; /* Borda arredondada */
+        }
+
+        #volumeSlider {
+            
+            background: #fff;
+            width: 90%;
+            height: 3px;
+            appearance: none;
+            
+        }
+
+        #volumeSlider::-webkit-slider-thumb {
+            appearance: none;
+            width: 15px; /* Largura do polegar personalizável */
+            height: 15px; /* Altura do polegar personalizável */
+            background-color: #ffa500; /* Cor do polegar personalizável */
+            border-radius: 50%; /* Para tornar o polegar circular */
+        }
