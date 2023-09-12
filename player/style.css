@@ -19,24 +19,20 @@
   --lightbshadow: rgba(0,0,0,0.15);
 }
 body{
-  background: #ece5dd;
-  color: var(--lightblack);
-  justify-content:center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
 }
 .wrapper{
-  max-width: 410px;
-  padding: 20px 20px 0px 20px;
+  width: 410px;
+  padding: 25px 20px;
   overflow: hidden;
   position: relative;
   background: #ece5dd;
-  /box-shadow: 0px 6px 15px var(
-  --lightbshadow);
-  left: 0;
-  top: 0px;
-  position: absolute;
-  right: 0;
-  margin: auto;
+  box-shadow: 0px 6px 15px var(--lightbshadow);
+  min-height: 100vh; /* Defina a altura mínima como 100% da altura da viewport */
+}
 }
 .wrapper i{
   cursor: pointer;
@@ -46,6 +42,18 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+}
+.top-bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: #ece5dd;
+  padding: 10px 0;
+  z-index: 1;
+  width: 100%;
 }
 .top-bar i{
   font-size: 30px;
@@ -130,7 +138,16 @@ body{
   color: var(--lightblack);
 }
 .controls{
-  margin: 40px 0 40px 0;
+  margin: 40px 0 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  bottom: 0; /* Controles na base da página */
+  background: #ece5dd;
+  padding: 10px 0;
+  z-index: 1;
+  width: 100%;
 }
 .controls i{
   font-size: 28px;
@@ -258,26 +275,4 @@ button{
 .title-player{
   color: var(--orangedark) !important;
   font-weight: 500;
-}
-.copyright{
-  
-position: fixed;
-  
-height: 30px;
-  
-padding: 5px 0;
-  
-bottom: 0;
-  
-left: 0;
-  
-right: 0;
-  
-font-size: 12px;
-  
-font-weight: 400;
-  
-text-align: center;
-  
-
 }
