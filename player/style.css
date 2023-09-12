@@ -301,13 +301,13 @@ button{
             position: relative;
             width: 150px; /* Largura personalizável */
             height: 10px; /* Altura personalizável */
-            background: #555 !important; /* Cor de fundo do controle */
+            background: #f0f0f0 !important; /* Cor de fundo do controle */
             border-radius: 5px !important; /* Borda arredondada */
         }
 
         #volumeSlider {
             
-            background: #fff;
+            background: #f0f0f0;
             width: 85%;
             height: 3px;
             appearance: none;
