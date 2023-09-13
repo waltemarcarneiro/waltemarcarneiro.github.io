@@ -323,3 +323,13 @@ button{
             background-color: var(--lightblack); /* Cor do polegar personalizável */
             border-radius: 50%; /* Para tornar o polegar circular */
         }
+.copyright{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  color: var(--lightblack);
+  font-size: 12px;
+}
