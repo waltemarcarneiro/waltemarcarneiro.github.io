@@ -64,8 +64,8 @@ body{
   color: var(--lightblack);
 }
 .top-bar i:first-child{
-  margin-left: -7px;
-  margin-right: -7px;
+  margin-left: 5px;
+  margin-right: 0px;
 }
 .top-bar span{
   font-size: 18px;
