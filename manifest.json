@@ -156,10 +156,20 @@
 		},
 		{
 			"name": "Contato WhatsApp",
-			"url": "https://api.whatsapp.com/send/?phone=5581971027858",
-			"description": "Contato",
+			"url": "/whatsapp.html",
+			"description": "Contato WhatsApp",
 			"icons": [{
 				"src": "shortcuts/whatsapp.png",
+				"sizes": "96x96",
+				"type": "image/png"
+			}]
+		},
+		{
+			"name": "Player",
+			"url": "/player/index.html",
+			"description": "Player Music",
+			"icons": [{
+				"src": "shortcuts/player.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
