@@ -12,25 +12,25 @@
 :root{
   --orange: #ffa500;
   --orangedark: #e77000;
-  --lightblack: #515C6F;
+  --lightblack: #ffffff;
   --white: #ffffff;
   --darkwhite: #cecaca;
   --pinkshadow: #ffcbdd;
   --lightbshadow: rgba(0,0,0,0.15);
 }
-html{ background:#ece5dd; }
+html{ background:#25252f; }
 body{
   display: flex;
   align-items: center;
-  justify-content: center;
   background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
+  justify-content: center;
 }
 .wrapper{
   width: 380px;
   padding: 40px 20px;
   overflow: hidden;
   position: fixed;
-  background: #ece5dd;
+  /background: #25252f;
   box-shadow: 0px 6px 15px var(--lightbshadow);
   min-height: 100vh; /* Defina a altura mínima como 100% da altura da viewport */
   top: 0px;
@@ -39,7 +39,7 @@ body{
 .wrapper i{
   cursor: pointer;
 }
-.top-bar, .progress-area .song-timer, 
+.top-bar, .progress-area, 
 .controls, .music-list .header, .music-list ul li{
   display: flex;
   align-items: center;
@@ -51,7 +51,7 @@ body{
   justify-content: space-between;
   position: fixed;
   top: 0px;
-  background: #ece5dd;
+  /background: #25252f;
   padding: 10px 0;
   z-index: 1;
   max-width: 360px;
@@ -73,13 +73,27 @@ body{
   color: var(--lightblack);
 }
 .img-area{
-  width: 100%;
-  height: 240px;
+  /width: 100%;
+  /height: 240px;
+  width: 380px;
+  height: 380px;
   margin: 0 auto;
   overflow: hidden;
-  margin-top: 25px;
-  border-radius: 10px;
+  /margin-top: 25px;
+  
+  margin: auto;
+  top: 0;
+  
+  left: 0;
+  right: 0;
+  /border-radius: 10px;
   box-shadow: 0px 6px 12px var(--lightbshadow);
+  z-index: 0;
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+
 
   
 }
@@ -90,10 +104,11 @@ body{
 }
 .song-details{
   text-align: center;
-  margin: 30px 0;
+  margin: 360px 0;
+  
 }
 .song-details p{
-  color: var(--lightblack);
+  color: orange;
 }
 .song-details .name{
   font-size: 21px;
@@ -106,17 +121,24 @@ body{
 }
 .progress-area{
   height: 6px;
-  width: 100%;
+  width: 340px;
   border-radius: 50px;
-  background: #f0f0f0;
+  background: #3E3E4F;
   cursor: pointer;
+  display: flex;
+  position: fixed;
+  top: 540px;
+
+
 }
 .progress-area .progress-bar{
   height: inherit;
   width: 0%;
-  position: relative;
+  position: fixed;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--orange) 0%, var(--orangedark) 100%);
+position: fixed;
+  top: 540px;
 }
 .progress-bar::before{
   content: "";
@@ -126,7 +148,7 @@ body{
   border-radius: 50%;
   top: 50%;
   right: -5px;
-  z-index: 2;
+  z-index: 10;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-50%);
@@ -137,12 +159,24 @@ body{
   opacity: 1;
   pointer-events: auto;
 }
+.song-timer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 340px;
+  position: fixed;
+  top: 550px;
+}
 .progress-area .song-timer{
-  margin-top: 2px;
+  
 }
 .song-timer span{
   font-size: 13px;
-  color: var(--lightblack);
+  color: #fff;
+  
+  
+  
+  
 }
 .controls{
   display: flex;
@@ -150,7 +184,7 @@ body{
   justify-content: space-between;
   position: fixed;
   bottom: 0; /* Controles na base da página */
-  background: #ece5dd;
+  
   padding: 10px 0;
   z-index: 1;
   left: 20px;
@@ -209,17 +243,18 @@ body{
 
 .music-list{
   position: absolute;
-  background: var(--white);
+  background: #25252f;
   width: 100%;
   left: 0;
-  bottom: -55%;
+  bottom: 0;
   opacity: 0;
   pointer-events: none;
   z-index: 5;
-  padding: 15px 30px;
+  padding: 15px 20px;
   border-radius: 15px;
   box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
   transition: all 0.15s ease-out;
+  height: -webkit-fill-available;
 }
 .music-list.show{
   bottom: 0;
@@ -245,7 +280,7 @@ body{
 }
 .music-list ul{
   margin: 10px 0;
-  max-height: 350px;
+  /max-height: 350px;
   overflow: auto;
 }
 .music-list ul::-webkit-scrollbar{
@@ -258,7 +293,7 @@ body{
   padding-bottom: 10px;
   margin-bottom: 5px;
   color: var(--lightblack);
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #3a3a47;
 }
 .music-list ul li:last-child{
   border-bottom: 0px;
@@ -283,7 +318,7 @@ button{
   background: none;
 }
 .title-player{
-  color: var(--orangedark) !important;
+  
   font-weight: 500;
 }
 .volume{
@@ -309,7 +344,7 @@ button{
 
         #volumeSlider {
             
-            background: #f0f0f0;
+            background: #3E3E4F;
             width: 85%;
             height: 3px;
             appearance: none;
@@ -330,6 +365,6 @@ button{
   position: fixed;
   display: flex;
   justify-content: center;
-  color: var(--lightblack);
+  color: #555;
   font-size: 12px;
 }
