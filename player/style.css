@@ -113,6 +113,7 @@ body{
 .song-details .name{
   font-size: 21px;
   font-weight: 500;
+  color: #fff;
 }
 .song-details .artist{
   font-size: 18px;
@@ -172,11 +173,7 @@ position: fixed;
 }
 .song-timer span{
   font-size: 13px;
-  color: #fff;
-  
-  
-  
-  
+  color: #b3b3b5;
 }
 .controls{
   display: flex;
@@ -243,7 +240,7 @@ position: fixed;
 
 .music-list{
   position: absolute;
-  background: #25252f;
+  background-color: rgba(0,0,0,0.8);
   width: 100%;
   left: 0;
   bottom: 0;
@@ -251,7 +248,7 @@ position: fixed;
   pointer-events: none;
   z-index: 5;
   padding: 15px 20px;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
   transition: all 0.15s ease-out;
   height: -webkit-fill-available;
@@ -356,7 +353,7 @@ button{
             appearance: none;
             width: 12px; /* Largura do polegar personalizável */
             height: 12px; /* Altura do polegar personalizável */
-            background-color: var(--lightblack); /* Cor do polegar personalizável */
+            background-color: #b3b3b5; /* Cor do polegar personalizável */
             border-radius: 50%; /* Para tornar o polegar circular */
         }
 .copyright{
@@ -366,6 +363,6 @@ button{
   position: fixed;
   display: flex;
   justify-content: center;
-  color: #555;
+  color: #62626c;
   font-size: 12px;
 }
