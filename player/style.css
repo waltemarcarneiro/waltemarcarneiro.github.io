@@ -134,16 +134,15 @@ body{
 }
 .progress-area .progress-bar{
   height: inherit;
-  width: 0%;
-  position: fixed;
+  width: 340px;
+ 
   border-radius: inherit;
   background: linear-gradient(90deg, var(--orange) 0%, var(--orangedark) 100%);
-position: fixed;
   top: 540px;
 }
 .progress-bar::before{
   content: "";
-  position: absolute;
+  /position: absolute;
   height: 12px;
   width: 12px;
   border-radius: 50%;
