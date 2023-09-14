@@ -123,7 +123,7 @@ function playingSong() {
     }
     if (allLiTags[j].getAttribute("li-index") == musicIndex + 1) {
       allLiTags[j].classList.add("playing");
-      audioTag.innerText = "Playing";
+      audioTag.innerText = "Tocando";
     }
     allLiTags[j].setAttribute("onclick", "clicked(this)");
   }
