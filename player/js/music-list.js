@@ -22,13 +22,13 @@ let allMusic = [
     name: "There’s Never a Forever Thing",
     artist: "A-ha",
     img: "./covers/cover-4.jpg",
-    src: "http://archive.org/download/a-ha-theres-never-a-forever-thing/A-HA-There's-Never-A-Forever-Thing.mp3"
+    src: "https://archive.org/download/a-ha-theres-never-a-forever-thing/A-HA-There's-Never-A-Forever-Thing.mp3"
   },
   {
     name: "Amazing",
     artist: "Aerosmith",
     img: "./covers/cover-5.jpg",
-    src: "http://archive.org/download/a-ha-theres-never-a-forever-thing/AEROSMITH-Amazing.mp3"
+    src: "https://archive.org/download/a-ha-theres-never-a-forever-thing/AEROSMITH-Amazing.mp3"
   },
   {
     name: "Ordinary World",
@@ -41,6 +41,12 @@ let allMusic = [
     artist: "Faith Hill",
     img: "./covers/cover-7.jpg",
     src: "https://archive.org/download/duran-duran-ordinary-world_202309/Faith-Hill_Breathe.mp3"
+  },
+  {
+    name: "Broken Wings",
+    artist: "Mr. Mister",
+    img: "./covers/cover-8.jpg",
+    src: "https://archive.org/download/mr-mister-broken-wings_202309/MrMister-Broken_Wings.mp3"
   },
 
 ];
