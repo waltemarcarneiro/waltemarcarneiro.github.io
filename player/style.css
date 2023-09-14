@@ -324,6 +324,7 @@ button{
 .volume{
   align-items: center;
   display: flex;
+  margin-top: 20px;
   
 }
 #volumeMuteButton{
