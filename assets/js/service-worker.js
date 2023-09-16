@@ -11,6 +11,7 @@ const urlsToCache = [
   '/offline.html',
   '/bank/itau.html',
   '/bank/bradesco.html',
+  '/player/index.html',
 ];
 
 
