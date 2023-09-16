@@ -7,8 +7,8 @@ menuIcon.addEventListener('click', () => {
   } else {
     dropdownMenu.style.display = 'block';
   }
-  menu.classList.toggle('show');
-
+  //menu.classList.toggle('show');
+  dropdownMenu.classList.toggle('show');
 });
 
 // Fechar o menu quando um link for clicado
