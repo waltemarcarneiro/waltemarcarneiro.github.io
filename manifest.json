@@ -1,17 +1,17 @@
 {
-	"name": "Waltemar Carneiro",
-	"short_name": "Waltemar Carneiro",
-	"description": "Aplicativos Web",
+	"name": "Waltemar",
+	"short_name": "Waltemar",
+	"description": "O Ilusionista",
 	"display": "standalone",
 	"iarc_rating_id": "ESRB_E",
 	"lang": "pt-BR",
 	"dir": "ltr",
-	"background_color": "#ECE5DD",
-	"theme_color": "#e77000",
-	"start_url": "/app.html",
+	"background_color": "#ff4906",
+	"theme_color": "#ff4906",
+	"start_url": "./index.html",
 	"orientation": "portrait",
 	"scope": "/",
-	"splash_pages": "/splash.html",
+	"splash_pages": null,
 	"prefer_related_applications": false,
 	"protocol_handlers": [],
 	"related_applications": [],
@@ -125,11 +125,11 @@
 		}
 	],
 	"shortcuts": [{
-			"name": "Abrir o App",
-			"description": "Waltemar App",
-			"url": "/app.html",
+			"name": "Conectar",
+			"description": "O Ilusionista",
+			"url": "/",
 			"icons": [{
-				"src": "shortcuts/open.png",
+				"src": "icons/logowc96.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
@@ -137,39 +137,19 @@
 		{
 			"name": "Pix Bradesco",
 			"url": "/bank/bradesco.html",
-			"description": "Pix Bradesco",
+			"description": "Transferencia via Pix Bradesco",
 			"icons": [{
-				"src": "shortcuts/pix.png",
+				"src": "icons/pix96.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
 		},
 		{
-			"name": "Pix Itau",
-			"url": "/bank/itau.html",
-			"description": "Pix Itau",
+			"name": "Contato Zap",
+			"url": "https://api.whatsapp.com/send/?phone=%2B5592991421292&text&type=phone_number&app_absent=0",
+			"description": "WhatsApp do Autor",
 			"icons": [{
-				"src": "shortcuts/pix.png",
-				"sizes": "96x96",
-				"type": "image/png"
-			}]
-		},
-		{
-			"name": "Contato Chat",
-			"url": "/whatsapp.html",
-			"description": "Contato WhatsApp",
-			"icons": [{
-				"src": "shortcuts/whatsapp.png",
-				"sizes": "96x96",
-				"type": "image/png"
-			}]
-		},
-		{
-			"name": "Player",
-			"url": "/player/index.html",
-			"description": "Player Music",
-			"icons": [{
-				"src": "shortcuts/player.png",
+				"src": "icons/whatsapp96.png",
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
