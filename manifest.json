@@ -174,16 +174,6 @@
 				"type": "image/png"
 			}]
 		},
-		{
-			"name": "Ligar",
-			"url": "tel:01581971027858",
-			"description": "Ligar",
-			"icons": [{
-				"src": "shortcuts/phone.png",
-				"sizes": "96x96",
-				"type": "image/png"
-			}]
-		}
 	],
 	"screenshots": [{
 			"src": "screenshots/1.jpg",
