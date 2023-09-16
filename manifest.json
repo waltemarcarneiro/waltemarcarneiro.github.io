@@ -173,8 +173,8 @@
 				"sizes": "96x96",
 				"type": "image/png"
 			}]
-		}
-	],
+		},
+	]
 	"screenshots": [{
 			"src": "screenshots/1.jpg",
 			"sizes": "1080x1920",
