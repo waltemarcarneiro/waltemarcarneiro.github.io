@@ -23,7 +23,7 @@ body, html {
     justify-content: center;
     
     width: 100%;
-    height: 100%;
+    
 }
 /* Estilo para dispositivos móveis (largura máxima de 768 pixels) */
 @media (max-width: 768px) {
