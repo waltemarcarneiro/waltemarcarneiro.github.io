@@ -127,12 +127,12 @@
   ],
   "shortcuts": [
     {
-      "name": "Abrir o App",
-      "description": "Waltemar App",
-      "url": "/app.html",
+      "name": "Intros",
+      "description": "Introduções Vídeos",
+      "url": "/intro/intro.html",
       "icons": [
         {
-          "src": "shortcuts/open.png",
+          "src": "shortcuts/intro.png",
           "sizes": "96x96",
           "type": "image/png"
         }
