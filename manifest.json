@@ -151,18 +151,6 @@
       ]
     },
     {
-      "name": "Pix Itau",
-      "url": "/bank/itau.html",
-      "description": "Pix Itau",
-      "icons": [
-        {
-          "src": "shortcuts/pix.png",
-          "sizes": "96x96",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
       "name": "Contato WhatsApp",
       "url": "/whatsapp.html",
       "description": "Contato WhatsApp",
