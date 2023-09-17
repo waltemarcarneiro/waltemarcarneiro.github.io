@@ -151,12 +151,12 @@
       ]
     },
     {
-      "name": "Contato WhatsApp",
-      "url": "/whatsapp.html",
-      "description": "Contato WhatsApp",
+      "name": "Love Songs",
+      "url": "/links/playlist-tube.html",
+      "description": "playlsit Love Songs",
       "icons": [
         {
-          "src": "shortcuts/whatsapp.png",
+          "src": "shortcuts/playlist.png",
           "sizes": "96x96",
           "type": "image/png"
         }
