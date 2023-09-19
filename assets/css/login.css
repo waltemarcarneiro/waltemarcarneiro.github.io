@@ -77,8 +77,8 @@ input:hover {
 
 button {
     padding: 10px 20px;
-    background-color: #FFEED5;
-    color: #e77700;
+    background-color: #e77000;
+    color: #fff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -96,7 +96,7 @@ button:hover {
 }
 
 .additional-info a {
-    color: #e37700;
+    color: #e77000;
     text-decoration: none;
 }
 
