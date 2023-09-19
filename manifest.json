@@ -6,12 +6,6 @@
     "iarc_rating_id": "ESRB_E",
     "lang": "pt-BR",
     "dir": "ltr",
-    "edge_side_panel": {
-        "preferred_width": 400
-        },
-    "launch_handler": {
-        "client_mode": "navigate-new"
-        },
     "background_color": "#ECE5DD",
     "theme_color": "#e77000",
     "start_url": "/login.html",
