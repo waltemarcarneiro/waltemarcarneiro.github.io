@@ -8,7 +8,7 @@
     "app_id": "com.android.waltemarcarneiro",
     "dir": "ltr",
     "launch_handler": {
-        "client_mode": "auto"
+        "client_mode": "navigate-new"
         }
     "background_color": "#ECE5DD",
     "theme_color": "#e77000",
@@ -21,7 +21,8 @@
         "sizes": "540x960",
         "type": "video/mp4",
         "vibrant_color": "#000000"
-    }"prefer_related_applications": false,
+    },
+    "prefer_related_applications": false,
     "protocol_handlers": [],
     "related_applications": [],
     "icons": [
