@@ -12,7 +12,7 @@
         }
     "background_color": "#ECE5DD",
     "theme_color": "#e77000",
-    "start_url": "/index.html",
+    "start_url": "/login.html",
     "orientation": "portrait",
     "scope": "/",
     "splash_screen": {
@@ -239,5 +239,6 @@
     ],
     "display_override": [
         "standalone"
+
     ]
 }
