@@ -238,4 +238,7 @@
     "browser",
     "window-controls-overlay"
   ]
+  "edge_side_panel": {
+    "preferred_width": 480
+  }
 }
