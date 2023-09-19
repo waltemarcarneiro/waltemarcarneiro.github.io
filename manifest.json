@@ -1,243 +1,244 @@
 {
-  "name": "Waltemar Carneiro",
-  "short_name": "Waltemar Carneiro",
-  "description": "Aplicativos Web",
-  "display": "standalone",
-  "iarc_rating_id": "ESRB_E",
-  "lang": "pt-BR",
-  "app_id": "com.android.waltemarcarneiro",
-  "dir": "ltr",
-  "launch_handler": {
-    "client_mode": "navigate-new"
-  },
-  "background_color": "#ECE5DD",
-  "theme_color": "#e77000",
-  "start_url": "/login.html",
-  "orientation": "portrait",
-  "scope": "/",
-  "splash_screen": {
-    "image": "/image/splash-fallback.png",
-    "video": "/splash-video.mp4",
-    "sizes": "540x960",
-    "type": "video/mp4",
-    "vibrant_color": "#000000"
-  },
-  "prefer_related_applications": false,
-  "protocol_handlers": [],
-  "related_applications": [],
-  "icons": [
-    {
-      "src": "icons/icon48.png",
-      "sizes": "48x48",
-      "type": "image/png",
-      "purpose": "any"
+    "name": "Waltemar Carneiro",
+    "short_name": "Waltemar Carneiro",
+    "description": "Aplicativos Web",
+    "display": "standalone",
+    "iarc_rating_id": "ESRB_E",
+    "lang": "pt-BR",
+    "dir": "ltr",
+    "launch_handler": {
+        "client_mode": "navigate-new"
+        },
+    "background_color": "#ECE5DD",
+    "theme_color": "#e77000",
+    "start_url": "/login.html",
+    "orientation": "portrait",
+    "scope": "/",
+    "splash_screen": {
+        "image": "/image/splash-fallback.png",
+        "video": "/splash-video.mp4",
+        "sizes": "540x960",
+        "type": "video/mp4",
+        "vibrant_color": "#000000"
     },
-    {
-      "src": "icons/icon48.png",
-      "sizes": "48x48",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon256.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon256.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "icons/icon512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Intros",
-      "description": "Introduções Vídeos",
-      "url": "/intro/intro.html",
-      "icons": [
+    "prefer_related_applications": false,
+    "protocol_handlers": [],
+    "related_applications": [],
+    "icons": [
         {
-          "src": "shortcuts/intro.png",
-          "sizes": "96x96",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Pix Bradesco",
-      "url": "/bank/bradesco.html",
-      "description": "Pix Bradesco",
-      "icons": [
+            "src": "icons/icon48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
+        },
         {
-          "src": "shortcuts/pix.png",
-          "sizes": "96x96",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Love Songs",
-      "url": "/links/playlist-tube.html",
-      "description": "playlsit Love Songs",
-      "icons": [
+            "src": "icons/icon48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
         {
-          "src": "shortcuts/playlist.png",
-          "sizes": "96x96",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Player",
-      "url": "/player/index.html",
-      "description": "Player Music",
-      "icons": [
+            "src": "icons/icon72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
         {
-          "src": "shortcuts/player.png",
-          "sizes": "96x96",
-          "type": "image/png"
+            "src": "icons/icon72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon152.png",
+            "sizes": "152x152",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon152.png",
+            "sizes": "152x152",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon256.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
         }
-      ]
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "screenshots/1.jpg",
-      "sizes": "1080x1920",
-      "type": "image/jpg"
-    },
-    {
-      "src": "screenshots/2.jpg",
-      "sizes": "1080x1920",
-      "type": "image/jpg"
-    },
-    {
-      "src": "screenshots/3.jpg",
-      "sizes": "1080x1920",
-      "type": "image/jpg"
-    },
-    {
-      "src": "screenshots/4.jpg",
-      "sizes": "1080x1920",
-      "type": "image/jpg"
-    },
-    {
-      "src": "screenshots/5.jpg",
-      "sizes": "1080x1920",
-      "type": "image/jpg"
-    },
-    {
-      "src": "screenshots/6.jpg",
-      "sizes": "1080x1920",
-      "type": "image/jpg"
-    },
-    {
-      "src": "screenshots/7.jpg",
-      "sizes": "1080x1920",
-      "type": "image/jpg"
-    }
-  ],
-  "categories": [
-    "entertainment",
-    "productivity"
-  ],
-  "share_target": [
-    {
-      "action": "/shared-content-receiver/",
-      "method": "GET",
-      "params": {
-        "title": "Pix Itau",
-        "text": "Tranferencia via Pix Itau",
-        "url": "/bank/itau.html"
-      }
-    }
-  ],
-  "display_override": [
-    "standalone"
-  ]
+    ],
+    "shortcuts": [
+        {
+            "name": "Intros",
+            "description": "Introduções Vídeos",
+            "url": "/intro/intro.html",
+            "icons": [
+                {
+                    "src": "shortcuts/intro.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Pix Bradesco",
+            "url": "/bank/bradesco.html",
+            "description": "Pix Bradesco",
+            "icons": [
+                {
+                    "src": "shortcuts/pix.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Love Songs",
+            "url": "/links/playlist-tube.html",
+            "description": "playlsit Love Songs",
+            "icons": [
+                {
+                    "src": "shortcuts/playlist.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "url": "/player/index.html",
+            "description": "Player Music",
+            "icons": [
+                {
+                    "src": "shortcuts/player.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                }
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "screenshots/1.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg"
+        },
+        {
+            "src": "screenshots/2.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg"
+        },
+        {
+            "src": "screenshots/3.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg"
+        },
+        {
+            "src": "screenshots/4.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg"
+        },
+        {
+            "src": "screenshots/5.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg"
+        },
+        {
+            "src": "screenshots/6.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg"
+        },
+        {
+            "src": "screenshots/7.jpg",
+            "sizes": "1080x1920",
+            "type": "image/jpg"
+        }
+    ],
+    "categories": [
+        "entertainment",
+        "productivity"
+    ],
+    "share_target": [
+        {
+            "action": "/shared-content-receiver/",
+            "method": "GET",
+            "params": {
+                "title": "Pix Itau",
+                "text": "Tranferencia via Pix Itau",
+                "url": "/bank/itau.html"
+            }
+        }
+    ],
+    "display_override": [
+        "standalone"
+        "browser",
+        "window-controls-overlay"
+    ]
 }
