@@ -5,10 +5,11 @@
     "display": "standalone",
     "iarc_rating_id": "ESRB_E",
     "lang": "pt-BR",
+    "app_id": "com.android.waltemarcarneiro",
     "dir": "ltr",
     "background_color": "#ECE5DD",
     "theme_color": "#e77000",
-    "start_url": "/login.html",
+    "start_url": "/index.html",
     "orientation": "portrait",
     "scope": "/",
     "splash_screen": {
@@ -17,8 +18,7 @@
         "sizes": "540x960",
         "type": "video/mp4",
         "vibrant_color": "#000000"
-    },
-    "prefer_related_applications": false,
+    }"prefer_related_applications": false,
     "protocol_handlers": [],
     "related_applications": [],
     "icons": [
@@ -234,7 +234,6 @@
         }
     ],
     "display_override": [
-        "standalone",
-        "window-controls-overlay"
+        "standalone"
     ]
 }
