@@ -7,6 +7,7 @@ const offlineFallbackPage = "offline.html";
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
   '/',
+  '/login.html',
   '/app.html',
   '/offline.html',
   '/bank/itau.html',
