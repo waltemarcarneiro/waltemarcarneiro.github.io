@@ -131,6 +131,9 @@
       "purpose": "maskable"
     }
   ],
+      "edge_side_panel": {
+          "preferred_width": 480
+  },
   "shortcuts": [
     {
       "name": "Intros",
@@ -238,7 +241,4 @@
     "browser",
     "window-controls-overlay"
   ]
-  "edge_side_panel": {
-    "preferred_width": 480
-  }
 }
