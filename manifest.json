@@ -240,5 +240,6 @@
     "standalone",
     "browser",
     "window-controls-overlay"
-  ]
+  ],
+  "id": "/login.html"
 }
