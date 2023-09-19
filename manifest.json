@@ -234,6 +234,7 @@
         }
     ],
     "display_override": [
-        "standalone"
+        "standalone",
+        "window-controls-overlay"
     ]
 }
