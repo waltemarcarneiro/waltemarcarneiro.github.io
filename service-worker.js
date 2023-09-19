@@ -74,3 +74,42 @@ function updateCache(request, response) {
     return cache.put(request, response);
   });
 }
+
+// abaixo PERIODIC SYNC
+
+// Evento de sincronização periódica
+self.addEventListener('periodicsync', (event) => {
+  // Verifica se o evento de sincronização é para a tag 'my-sync'
+  if (event.registration.tag === 'my-sync') {
+    event.waitUntil(doSync()); // Chama a função para sincronização
+  }
+});
+
+// Função para realizar a sincronização
+function doSync() {
+  // Implemente a lógica de atualização aqui, por exemplo, buscar novos dados ou atualizar o cache.
+  // Certifique-se de atualizar a lógica de acordo com suas necessidades.
+  // Você pode usar a função fetch para buscar dados do servidor.
+  // Por exemplo:
+  return fetch('/api/update-data')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Erro ao buscar dados do servidor');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Atualize o cache ou realize outras operações necessárias com os dados.
+      console.log('Dados atualizados com sucesso', data);
+    })
+    .catch((error) => {
+      console.error('Erro na sincronização periódica', error);
+    });
+}
+
+// Registro da sincronização periódica
+if ('periodicSync' in self.registration) {
+  self.registration.periodicSync.register('my-sync', {
+    minInterval: 6 * 60 * 60 * 1000, // Intervalo de sincronização em milissegundos (6 horas)
+  });
+}
