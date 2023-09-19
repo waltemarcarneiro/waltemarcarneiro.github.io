@@ -12,6 +12,7 @@
     "background_color": "#ECE5DD",
     "theme_color": "#e77000",
     "start_url": "/login.html",
+    "id": "?homescreen=1",
     "orientation": "portrait",
     "scope": "/",
     "splash_screen": {
@@ -240,6 +241,5 @@
         "standalone"
         "browser",
         "window-controls-overlay"
-    ],
-    "id": "/login.html"
+    ]
 }
