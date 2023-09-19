@@ -7,6 +7,9 @@
     "lang": "pt-BR",
     "app_id": "com.android.waltemarcarneiro",
     "dir": "ltr",
+    "launch_handler": {
+        "client_mode": "auto"
+        }
     "background_color": "#ECE5DD",
     "theme_color": "#e77000",
     "start_url": "/index.html",
