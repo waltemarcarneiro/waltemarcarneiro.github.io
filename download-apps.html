@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--fonts google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Lista de Apps para Download</title>
+
+    <link rel="stylesheet" href="assets/css/links.css" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .app-list {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 45px;
+        }
+        .app-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px dashed #ccc;
+        }
+        .app-image {
+            width: 70px;
+            height: 70px;
+            margin-right: 20px;
+            border-radius: 10px;
+
+        }
+        .app-details {
+            flex: 1;
+        }
+        .app-name {
+            font-family: 'Inter',sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .app-description {
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: justify;
+            color: #5f6368;
+        }
+        .app-size {
+            font-size: 12px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .app-link {
+            text-decoration: none;
+            color: #202124;
+            display: block;
+        }
+        .app-link:hover {
+            text-decoration: underline;
+            color: orange;
+        }
+        button a{
+            background: #e77000;
+            color: white;
+            width: 90px;
+            padding: 3px 7px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+  <button class="icon-left" id="backButton"><i class="material-icons material-icons-button ">arrow_back</i></button>
+  <div><h2>Apps - Download</h2></div>
+  <button class="icon-right" id="share-Button"><i class="material-icons material-icons-button">share</i></button>
+</header>
+
+    <div class="app-list">
+
+        <div class="app-item">
+            <div>
+            <img src="https://play-lh.googleusercontent.com/9PzlG2XGr5sQDf5925tlZhqluOreI2cwzp-FOZiuj545Kt1Gk5EE9J4IdGsD7e5xWw=w240-h480-rw" alt="App 1" class="app-image">
+            <br><button><a href="https://fibersals.com.br/blog/vizinho-nao-quer-consertar-vazamento/" target="parent">Download</button>
+        </div>
+            <div class="app-details">
+                <a href="download/app1.zip" class="app-link">
+                    <div class="app-name">Gerenciador de arquivos</div>
+                </a>
+                <div class="app-description">O Gerenciador de arquivos + é um gerenciador de arquivos fácil e potente para dispositivos Android. É gratuito, rápido e completo.</div>
+                <div class="app-size">Tamanho: 4.8 MB | Avaliação: 4.8⭐</div>
+            </div>
+        </div>
+        
+        <div class="app-item">
+            <img src="https://play-lh.googleusercontent.com/Pfck8XXM4wRBgUbDnkXl3CZMWCdqZ7tEgKrhTp95OfawYCMSVpLYTNDKLWlC7E_jmQ=w240-h480-rw" alt="App 1" class="app-image">
+            <div class="app-details">
+                <a href="download/app1.zip" class="app-link">
+                    <div class="app-name">CapCut - Editor de Vídeos</div>
+                </a>
+                <div class="app-description">CapCut é um aplicativo de edição de vídeo completo e gratuito que ajuda você a criar vídeos incríveis.</div>
+                <div class="app-size">Tamanho: 123 MB | Avaliação: 4.5⭐</div>
+            </div>
+        </div>
+
+        <div class="app-item">
+            <img src="https://play-lh.googleusercontent.com/x9WGrLbamKYykfAS6ay-70H-DlhJlUSTssQj8ywIwtsf4tXuY6jFcZx8GjD_fKM-SMM=w240-h480-rw" alt="App 1" class="app-image">
+            <div class="app-details">
+                <a href="download/app1.zip" class="app-link">
+                    <div class="app-name">Compressor vídeo - Comprimir</div>
+                </a>
+                <div class="app-description">Compressor de vídeo - o aplicativo Compact Video pode compactar e converter quase qualquer formato de vídeo.</div>
+                <div class="app-size">Tamanho: 27 MB | Avaliação: 4.9⭐</div>
+            </div>
+        </div>
+
+        <div class="app-item">
+            <img src="https://play-lh.googleusercontent.com/oWttohYyh3AtI6jYeQNQReUzhz-babbXTHf9DDosjH-BnUC1eGgh16yxJoDrJm9xxr49=s48-rw" alt="App 1" class="app-image">
+            <div class="app-details">
+                <a href="download/app1.zip" class="app-link">
+                    <div class="app-name">PhotoRoom Criar e Editar Foto</div>
+                </a>
+                <div class="app-description">Não é mais necessário ser um profissional de fotografia ou design: com o PhotoRoom, você pode transformar suas fotos em imagens de qualidade profissional em segundos.</div>
+                <div class="app-size">Tamanho: 46 MB | Avaliação: 4.8⭐</div>
+            </div>
+        </div>
+
+        <div class="app-item">
+            <img src="https://play-lh.googleusercontent.com/RX8RBGnnxFgncaU649msEAdLpQmXiSlzAZrjOtdSnvyptB16wWlQNFdRrMWNSdkIQ2tn=s124-rw" alt="App 1" class="app-image">
+            <div class="app-details">
+                <a href="download/app1.zip" class="app-link">
+                    <div class="app-name">Gravador de tela - XRecorder</div>
+                </a>
+                <div class="app-description">Gravador de Tela ajuda você a capturar suave e claro vídeos de tela, capturas de tela da maneira mais fácil. Apenas com um toque na janela flutuante, você pode gravar vídeo tutorial em HD, chamadas de vídeo.</div>
+                <div class="app-size">Tamanho: 23 MB | Avaliação: 4.8⭐</div>
+            </div>
+        </div>
+
+
+        <!-- Repita o bloco .app-item para cada app -->
+        
+    </div>
+
+<!--share script-->    
+<script>
+   // Adicione o evento de clique ao ícone de seta à esquerda
+        document.getElementById('backButton').addEventListener('click', () => {
+            // Volta para a página anterior
+            history.back();
+        });
+  const shareIcon = document.getElementById('share-Button');
+
+  shareIcon.addEventListener('click', async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Fiber Network | Login',
+          text: 'Acesse sua Aréa de Cliente',
+          url: 'https://waltemarcarneiro.github.io/blogs/fibernetwork.html'
+        });
+        console.log('Conteúdo compartilhado com sucesso!');
+      } catch (error) {
+        console.error('Erro ao compartilhar:', error);
+      }
+    } else {
+      console.log('A API de compartilhamento não é suportada neste navegador.');
+      // Aqui você pode exibir um modal ou mensagem alternativa de compartilhamento
+    }
+  });
+
+        // Adicione o evento de clique ao botão de fechamento do aviso
+        document.getElementById('closeButton').addEventListener('click', () => {
+            // Fecha o aviso
+            document.getElementById('alertBox').style.display = 'none';
+        });
+
+        // Exibe o aviso ao carregar a página
+        document.getElementById('alertBox').style.display = 'block';
+</script>    
+
+<script src="script-sw.js" defer></script>
+
+</body>
+</html>
