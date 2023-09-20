@@ -1,4 +1,4 @@
-const CACHE_NAME = 'my-site-cache-v2';
+const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
   '/',
   '/login.html',
@@ -123,4 +123,8 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     self.registration.sync.register('background-sync')
   );
+});
+//
+self.addEventListener("activate", function(event) {
+  console.log("Service Worker ativado");
 });
