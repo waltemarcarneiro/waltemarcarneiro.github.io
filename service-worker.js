@@ -56,75 +56,22 @@ function fromCache(request) {
   });
 }
 
-// Outros eventos de sincronização e registros de fundo podem ser mantidos, desde que sejam relevantes para o seu aplicativo.
-
-
-function updateCache(request, response) {
-  return caches.open(CACHE).then(function (cache) {
-    return cache.put(request, response);
-  });
-}
-
-// SYNC
-
-// Defina as páginas HTML que deseja sincronizar e atualizar
-const pagesToSync = [
-  '/',
-  '/app.html',
-];
-
-// Função para sincronizar e atualizar as páginas HTML
-function syncAndUpdatePages() {
-  return Promise.all(
-    pagesToSync.map((page) => {
-      // Realize a sincronização da página com o servidor
-      return fetch(page)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`Erro ao buscar ${page} do servidor`);
-          }
-          return response.text();
-        })
-        .then((html) => {
-          // Atualize o cache com a versão mais recente da página HTML
-          return caches.open(CACHE_NAME).then((cache) => {
-            return cache.put(page, new Response(html));
-          });
-        });
-    })
-  );
-}
-
-// Registro da sincronização periódica
-self.addEventListener('periodicsync', (event) => {
-  // Verifique se o evento de sincronização é para a tag 'periodic-sync'
-  if (event.registration.tag === 'periodic-sync') {
-    event.waitUntil(syncAndUpdatePages()); // Chama a função para sincronização
-  }
-});
-
-// Registro do evento de Background Sync
-self.addEventListener('sync', (event) => {
-  // Verifique se o evento de sincronização é para a tag 'background-sync'
-  if (event.tag === 'background-sync') {
-    event.waitUntil(syncAndUpdatePages()); // Chame a função para sincronização
-  }
-});
-
-// Registro da sincronização periódica
-if ('periodicSync' in self.registration) {
-  self.registration.periodicSync.register('periodic-sync', {
-    minInterval: 6 * 60 * 60 * 1000, // Intervalo de sincronização periódica em milissegundos (6 horas)
-  });
-}
-
-// Registro do evento de Background Sync
-self.addEventListener('install', (event) => {
+// Registro da sincronização periódica após a ativação
+self.addEventListener('activate', function(event) {
+  // Faça a ativação e, em seguida, registre a sincronização periódica e o evento de Background Sync
   event.waitUntil(
+    // Outras operações de ativação, se necessário
+
+    // Registro da sincronização periódica
+    if ('periodicSync' in self.registration) {
+      self.registration.periodicSync.register('periodic-sync', {
+        minInterval: 6 * 60 * 60 * 1000, // Intervalo de sincronização periódica em milissegundos (6 horas)
+      });
+    }
+
+    // Registro do evento de Background Sync
     self.registration.sync.register('background-sync')
   );
 });
-//
-self.addEventListener("activate", function(event) {
-  console.log("Service Worker ativado");
-});
+
+// Restante do seu código do Service Worker
