@@ -9,6 +9,9 @@ if ("serviceWorker" in navigator) {
       })
       .then(function (reg) {
         console.log("Service worker has been registered for scope: " + reg.scope);
+      })
+      .catch(function (error) {
+        console.error("Service worker registration failed: " + error);
       });
   }
 
