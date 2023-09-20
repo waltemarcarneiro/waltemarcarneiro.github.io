@@ -55,21 +55,3 @@ function fromCache(request) {
     });
   });
 }
-
-// Registro da sincronização periódica após a ativação
-self.addEventListener('activate', function(event) {
-  // Faça a ativação e, em seguida, registre a sincronização periódica e o evento de Background Sync
-  event.waitUntil(
-    // Outras operações de ativação, se necessário
-
-    // Registro da sincronização periódica
-    if ('periodicSync' in self.registration) {
-      self.registration.periodicSync.register('periodic-sync', {
-        minInterval: 6 * 60 * 60 * 1000, // Intervalo de sincronização periódica em milissegundos (6 horas)
-      });
-    }
-
-    // Registro do evento de Background Sync
-    self.registration.sync.register('background-sync')
-  );
-});
