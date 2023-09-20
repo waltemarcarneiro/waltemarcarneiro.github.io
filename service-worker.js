@@ -73,5 +73,3 @@ self.addEventListener('activate', function(event) {
     self.registration.sync.register('background-sync')
   );
 });
-
-// Restante do seu código do Service Worker
