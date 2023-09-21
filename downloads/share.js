@@ -10,8 +10,8 @@
       try {
         await navigator.share({
           title: 'Downloads Premium',
-          text: 'Baixe os Apps mais usados pelos profissionais da web',
-          url: '/downloads.html'
+          text: 'Baixe os melhores apps na versão premium',
+          url: 'https://waltemarcarneiro.github.io/downloads/downloads.html'
         });
         console.log('Conteúdo compartilhado com sucesso!');
       } catch (error) {
