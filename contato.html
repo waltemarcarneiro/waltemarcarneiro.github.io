@@ -1,20 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Contato</title>
-    <meta name="description" content="Página de contato via email" />
-
-    <link rel="stylesheet" href="assets/css/posts.css">
-    <link rel="stylesheet" href="assets/css/contato.css">
-
-
+    <meta name="description" content="Entre em contato através conosco!" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" type="text/css" href="assets/css/posts.css">
     <!-- FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
@@ -35,13 +27,68 @@
     <meta property="og:description" content="Entre em contato usando nosso formulário de e-mail." />
     <meta name="mobile-web-app-capable" content="yes" />
 
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
 
+        }
+        body {
+            
+            background-color: #ece5dd;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #F4F0EC;
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label{
+            color: #555;
+        }
+        textarea, input{
+            font-size: 18px;
+            font-family: 'Nunito Sans', sans-serif;
+        }        
+        label, select, textarea {
+            display: block;
+            margin-top: 15px;
+
+        }
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 94%;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 0;
+        }
+        input[type="submit"] {
+            background-color: #e77000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        select{
+            background-color: #fff;
+        }
+</style>
 </head>
-
 <body>
 
     <div class="header">
-
+        
         <button id="backButton"><i class="material-icons">arrow_back</i></button>
 
         <p style="color: #fff">Formulário de Contato</p>
@@ -50,58 +97,61 @@
 
     </div>
 
+    <div class="container">
+        <h1>Formulário de Contato</h1>
+        <form id="contact-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="assunto">Assunto:</label>
+            <input type="text" id="assunto" name="assunto" required>
+            
+            <label for="email">e-mail:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+            
+            <label for="comodeseja">Como deseja ser contatado?</label>
+            <select id="comodeseja" name="comodeseja" required>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="e-Mail">e-mail</option>
+                <option value="Telefone">Telefone</option>
+            </select>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
 
-    <div><!-- START CONTENT -->
+            // Obtenha os valores dos campos do formulário
+            var nome = document.getElementById("nome").value;
+            var assunto = document.getElementById("assunto").value;
+            var email = document.getElementById("email").value;
+            var telefone = document.getElementById("telefone").value;
+            var comodeseja = document.getElementById("comodeseja").value;
+            var mensagem = document.getElementById("mensagem").value;
 
-        <br><br>
-        <div class="form-container">
+            // Monta a URL do link 'mailto:' com o assunto pré-preenchido
+            var mailtoLink = "mailto:waltemarcarneiro@icloud.com" +
+                "?subject=" + encodeURIComponent(assunto) +
+                "&body=Nome: " + encodeURIComponent(nome) +
+                "%0D%0AEmail: " + encodeURIComponent(email) +
+                "%0D%0ATelefone: " + encodeURIComponent(telefone) +
+                "%0D%0AComo deseja ser contatado?: " + encodeURIComponent(comodeseja) +
+                "%0D%0AMensagem: " + encodeURIComponent(mensagem);
 
-            <form id="email-form"><!-- INICIO FORMULARIO CONTATO -->
-                <div class="input-container">
-                    <input type="email" id="to" name="to" value="canapum.contato@gmail.com" readonly>
-                </div>
-
-                <div class="input-container">
-                    <input type="text" id="name" name="name" required>
-                    <label class="input-label">NOME:</label>
-                </div>
-
-                <div class="input-container">
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{*}" required>
-                    <label class="input-label">DDD + TELEFONE:</label>
-                </div>
-
-                <div class="input-container">
-                    <input type="text" id="subject" name="subject" required>
-                    <label class="input-label">ASSUNTO:</label>
-                </div>
-
-                <div class="input-container">
-                    <textarea id="body" name="body" rows="4" cols="50" required></textarea>
-                    <label class="input-label">MENSAGEM:</label>
-                </div>
-
-                <div class="btn-footer">
-
-                    <button type="button" id="clear-button" class="clear-button">Limpar</button>
-
-                    <button type="button" id="send-button" class="send-button"><i
-                            class="material-icons">send</i></button>
-
-                </div>
-
-            </form>
-        </div>
-<div align="center"><img src="image/preloader-ripple.svg" width="50"></div>
-
-    </div><!-- END CONTENT -->
-
-    <div class="extra-space"></div>
+            // Abre o cliente de e-mail do usuário com a URL do link 'mailto:'
+            window.location.href = mailtoLink;
+        });
+    </script>
 
     <script src="assets/js/back-share.js"></script>
-    <script src="assets/js/form.js"></script>
-
 </body>
-
 </html>
