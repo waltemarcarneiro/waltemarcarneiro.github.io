@@ -6,6 +6,7 @@ const urlsToCache = [
   '/offline.html',
   '/bank/itau.html',
   '/bank/bradesco.html',
+  '/contato.html',
 ];
 
 self.addEventListener("install", function (event) {
