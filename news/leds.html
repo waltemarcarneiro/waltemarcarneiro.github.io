@@ -56,7 +56,7 @@
             
         }
         .share-button i{
-            color: #000;
+            color: #e77000;
 
         }
         
@@ -140,8 +140,6 @@
         const title = encodeURIComponent(document.title);
         const description = encodeURIComponent("Descrição da página");
         const quote = encodeURIComponent("Conteúdo do blockquote");
-        const text = encodeURIComponent("Compartilhar no WhatsApp: " + document.title);
-        const whatsappURL = `whatsapp://send?text=${text}%0A${url}`;
 
         switch (platform) {
             case 'twitter':
@@ -182,6 +180,7 @@
     document.getElementById('pinterest').addEventListener('click', () => shareOnSocialMedia('pinterest'));
     document.getElementById('telegram').addEventListener('click', () => shareOnSocialMedia('telegram'));
     document.getElementById('email').addEventListener('click', () => shareOnSocialMedia('email'));
+
 
 </script>
 <!--END SCRIPT SHARE ICONS-->
