@@ -1,162 +1,166 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Login | Waltemar Carneiro</title>
-    <meta name="description" content="Página de login" />
-    <link rel="stylesheet" href="assets/css/login.css">
-    <!--PWA-->
-    <link rel="manifest" href="manifest.json" />
-    <!--THEME COLOR-->
-    <meta name="theme-color" content="#E77000" />
-    <meta name="msapplication-TileColor" content="#E77000" />
-    <!--ICONS-->
-    <link rel="mask-icon" href="https://waltemarcarneiro.github.io/icons/safari-pinned-tab.svg" color="#E77000" />
-    <link rel="icon" type="image/x-icon" href="https://waltemarcarneiro.github.io/icons/favicon.ico" />
-
-    <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon76.png" sizes="76x76">
-    <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon120.png" sizes="120x120">
-    <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon152.png" sizes="152x152">
-    <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon180.png" sizes="180x180">
-    
-    <link rel="shortcut icon" href="https://waltemarcarneiro.github.io/icons/favicon-16x16.png" sizes="16x16" />
-    <link rel="shortcut icon" href="https://waltemarcarneiro.github.io/icons/favicon-32x32.png" sizes="32x32" />
-    <link rel="shortcut icon" href="https://waltemarcarneiro.github.io/icons/icon192.png" sizes="192x192" />
-
-    <!--SCRIPTS-->
-    <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
-    
-    
-    <!-- SEO | OG -->
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="keywords" content="Waltemar" />
-    <meta property="og:title" content="Login | Waltemar Carneiro" />
-    <meta property="og:url" content="https://waltemarcarneiro.github.io" />
-    <meta property="og:image" content="https://waltemarcarneiro.github.io/icons/lock.svg" />
-    <meta content='website' property='og:type' />
-    <meta property="og:site_name" content="Waltemar Carneiro" />
-    <meta property="og:description" content="Web Developer | Android Webview" />
-    <meta name="mobile-web-app-capable" content="yes" />
-</head>
-
-<body>
-    <div class="login-container">
-        <div class="logo-container">
-            <img src="icons/logo192-login.svg" width="75" alt="logo192-login">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login | Waltemar Carneiro</title>
+        <meta name="description" content="Página de login"/>
+        <link rel="stylesheet" href="assets/css/login.css">
+        <!--PWA-->
+        <link rel="manifest" href="manifest.json"/>
+        <!--THEME COLOR-->
+        <meta name="theme-color" content="#E77000"/>
+        <meta name="msapplication-TileColor" content="#E77000"/>
+        <!--ICONS-->
+        <link rel="mask-icon" href="https://waltemarcarneiro.github.io/icons/safari-pinned-tab.svg" color="#E77000"/>
+        <link rel="icon" type="image/x-icon" href="https://waltemarcarneiro.github.io/icons/favicon.ico"/>
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon76.png" sizes="76x76">
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon180.png" sizes="180x180">
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon16.png" sizes="16x16"/>
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon32.png" sizes="32x32"/>
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon96.png" sizes="96x96"/>
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon192.png" sizes="192x192"/>
+        <!--SCRIPTS-->
+        <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
+        <!-- SEO | OG -->
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="keywords" content="Waltemar"/>
+        <meta property="og:title" content="Login | Waltemar Carneiro"/>
+        <meta property="og:url" content="https://waltemarcarneiro.github.io"/>
+        <meta property="og:image" content="https://waltemarcarneiro.github.io/icons/lock.svg"/>
+        <meta content='website' property='og:type'/>
+        <meta property="og:site_name" content="Waltemar Carneiro"/>
+        <meta property="og:description" content="Web Developer | Android Webview"/>
+        <meta name="mobile-web-app-capable" content="yes"/>
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="logo-container">
+                <img src="icons/logo192-login.svg" width="75" alt="logo192-login">
+            </div>
+            <h2>Digite sua senha!</h2>
+            <div class="input-container">
+                <!--<label for="passwordInput" class="icon"><i class="fa fa-lock"></i></label>-->
+                <label for="passwordInput" class="icon">
+                    <img src="image/lock.svg" width="12" alt="lock-icon">
+                </label>
+                <input type="password" id="passwordInput" placeholder="Senha">
+            </div>
+            <button id="loginButton">Entrar</button>
+            <div class="additional-info">
+                <p>
+                    Esqueceu a senha? <a href="#" id="recoverPasswordLink">Recuperar senha</a>
+                </p>
+                <br>
+                <div style="align-items: center; justify-content: space-around; display: flex;">
+                    <a href="https://play.google.com/store/apps/details?id=com.rhmsoft.code">
+                        <img src="image/play-store.svg" alt="logo-playstore" width="120">
+                    </a>
+                    <img src="image/preloader-ripple.svg" alt="logo-playstore" width="50">
+                    <a href="https://developer.apple.com/ios/">
+                        <img src="image/apple-store.svg" alt="logo-appstore" width="120">
+                    </a>
+                </div>
+                <br>
+                <div style="align-items: center; justify-content: space-around; display: flex;">
+                    <p style="color:#999;font-weight: 400; font-size:12px;">Waltemar Carneiro © 2001 - 2023</p>
+                </div>
+            </div>
         </div>
-        <h2>Digite sua senha!</h2>
-        <div class="input-container">
-
-            <!--<label for="passwordInput" class="icon"><i class="fa fa-lock"></i></label>-->
-            <label for="passwordInput" class="icon"><img src="image/lock.svg" width="12" alt="lock-icon"></label>
-            <input type="password" id="passwordInput" placeholder="Senha">
+        <!--popup-->
+        <div id="errorPopup" class="popup">
+            <div class="popup-content">
+                <p>Senha incorreta.</p>
+            </div>
         </div>
-        <button id="loginButton">Entrar</button>
-        <div class="additional-info">
-
-            <p>Esqueceu a senha? <a href="#" id="recoverPasswordLink">Recuperar senha</a></p><br>
-        <div style="align-items: center; justify-content: space-around; display: flex;">    
-            <a href="https://play.google.com/store/apps/details?id=com.rhmsoft.code"><img src="image/play-store.svg" alt="logo-playstore" width="120"></a>
-            <img src="image/preloader-ripple.svg" alt="logo-playstore" width="50">
-            <a href="https://developer.apple.com/ios/"><img src="image/apple-store.svg" alt="logo-appstore" width="120"></a>
+        <div id="recoverPopup" class="popup">
+            <div class="popup-content">
+                <span class="popup-close" onclick="closeRecoverPopup()">&times;</span>
+                <br>
+                Para recuperar sua senha ou solicitar outra exclusiva, use 👉 <a href="contato.html">este link</a>
+                , Preencha corretamente os dados solicitados.
+        
+            </div>
         </div>
-<br>
-        <div style="align-items: center; justify-content: space-around; display: flex;">    
-            <p style="color:#999;font-weight: 400; font-size:12px;">Waltemar Carneiro © 2001 - 2023</p>
-        </div>
-
-        </div>
-    </div>
-
-    <!--popup-->
-    <div id="errorPopup" class="popup">
-        <div class="popup-content">
-            <p>Senha incorreta.</p>
-        </div>
-    </div>
-
-    <div id="recoverPopup" class="popup">
-        <div class="popup-content">
-            <span class="popup-close" onclick="closeRecoverPopup()">&times;</span>
-            <br>Para recuperar sua senha ou solicitar outra exclusiva, use 👉 <a href="contato.html">este link</a>, Preencha corretamente os dados solicitados.
-        </div>
-    </div>
-
-    <script>
-        document.getElementById("loginButton").addEventListener("click", function () {
-            performLogin();
-        });
-
-        document.getElementById("passwordInput").addEventListener("keyup", function (event) {
-            if (event.keyCode === 13) {
+        <script>
+            document.getElementById("loginButton").addEventListener("click", function() {
                 performLogin();
+            });
+
+            document.getElementById("passwordInput").addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    performLogin();
+                }
+            });
+
+            document.getElementById("recoverPasswordLink").addEventListener("click", function(event) {
+                event.preventDefault();
+                openRecoverPopup();
+            });
+
+            function performLogin() {
+                var enteredPassword = document.getElementById("passwordInput").value;
+                var encodedPassword = "cmVjaWZl";
+                // Senha "*"
+
+                if (btoa(enteredPassword) === encodedPassword) {
+                    window.location.href = "dashboard.html";
+                    // Redirecionar para a página após o login bem-sucedido
+                } else {
+                    openErrorPopup();
+                }
             }
-        });
 
-        document.getElementById("recoverPasswordLink").addEventListener("click", function (event) {
-            event.preventDefault();
-            openRecoverPopup();
-        });
-
-        function performLogin() {
-            var enteredPassword = document.getElementById("passwordInput").value;
-            var encodedPassword = "cmVjaWZl"; // Senha "*"
-
-            if (btoa(enteredPassword) === encodedPassword) {
-                window.location.href = "dashboard.html"; // Redirecionar para a página após o login bem-sucedido
-            } else {
-                openErrorPopup();
+            function openErrorPopup() {
+                document.getElementById("errorPopup").style.display = "block";
+                setTimeout(closeErrorPopup, 2000);
+                // Fecha o popup de erro após 2 segundos
+                clearPasswordInput();
+                // Limpa o campo de senha
             }
-        }
 
-        function openErrorPopup() {
-            document.getElementById("errorPopup").style.display = "block";
-            setTimeout(closeErrorPopup, 2000); // Fecha o popup de erro após 2 segundos
-            clearPasswordInput(); // Limpa o campo de senha
-        }
-
-        function closeErrorPopup() {
-            document.getElementById("errorPopup").style.display = "none";
-        }
-
-        function openRecoverPopup() {
-            document.getElementById("recoverPopup").style.display = "block";
-        }
-
-        function closeRecoverPopup() {
-            document.getElementById("recoverPopup").style.display = "none";
-        }
-
-        // Fechar o popup de recuperação de senha quando clicar fora dele
-        window.onclick = function (event) {
-            if (event.target == document.getElementById("recoverPopup")) {
-                closeRecoverPopup();
+            function closeErrorPopup() {
+                document.getElementById("errorPopup").style.display = "none";
             }
-        };
 
-        // Fechar o popup de recuperação de senha quando pressionar a tecla Enter
-        document.onkeyup = function (event) {
-            if (event.key === "Enter") {
-                closeRecoverPopup();
+            function openRecoverPopup() {
+                document.getElementById("recoverPopup").style.display = "block";
             }
-        };
 
-        // Fechar o popup de recuperação de senha quando pressionar a tecla Esc
-        document.onkeydown = function (event) {
-            if (event.key === "Escape") {
-                closeRecoverPopup();
+            function closeRecoverPopup() {
+                document.getElementById("recoverPopup").style.display = "none";
             }
-        };
 
-        function clearPasswordInput() {
-            document.getElementById("passwordInput").value = "";
-        }
-    </script>
-    <script src="script-sw.js" defer></script>
-</body>
+            // Fechar o popup de recuperação de senha quando clicar fora dele
+            window.onclick = function(event) {
+                if (event.target == document.getElementById("recoverPopup")) {
+                    closeRecoverPopup();
+                }
+            }
+            ;
 
+            // Fechar o popup de recuperação de senha quando pressionar a tecla Enter
+            document.onkeyup = function(event) {
+                if (event.key === "Enter") {
+                    closeRecoverPopup();
+                }
+            }
+            ;
+
+            // Fechar o popup de recuperação de senha quando pressionar a tecla Esc
+            document.onkeydown = function(event) {
+                if (event.key === "Escape") {
+                    closeRecoverPopup();
+                }
+            }
+            ;
+
+            function clearPasswordInput() {
+                document.getElementById("passwordInput").value = "";
+            }
+        </script>
+        <script src="script-sw.js" defer></script>
+    </body>
 </html>
