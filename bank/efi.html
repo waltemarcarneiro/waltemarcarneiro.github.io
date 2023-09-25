@@ -11,6 +11,7 @@
     
     <link rel="stylesheet" href="bank.css" />
     <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="efi.css" />
 
     <link rel="manifest" href="../manifest.json">
 
@@ -34,7 +35,7 @@
     <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
     <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-efi.png" />
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
-        
+
 </head>
 
 <body>
@@ -54,7 +55,7 @@
 
 <!-- START CONTENT -->
 
-    <div class="content">
+<div class="content">
 
         <!-- Conteúdo da página -->
         <h2>Pix EFI</h2>
@@ -82,7 +83,8 @@
 
             <div class="table-row">
                 <div class="table-cell1">Chave Pix:</div>
-                <div class="table-cell2">f5c09df9-648f-48e5-99a3-598e613830b2</div>
+                <div class="table-cell2" class="pix-key">
+                    <button class="copy-button" onclick="copyToClipboard()"><span class="material-icons">content_copy</span></button>f5c09df9-648f-48e5-99a3-598e613830b2</div>
             </div>
 
             <div class="table-row">
@@ -109,9 +111,9 @@
                 <div class="table-cell1">CPF:</div>
                 <div class="table-cell2">***.460.372-**</div>
             </div>
-</div>
+</div><!--END TABLE-->
 
-        <!-- SCRIPT DA COPIA DOS DADOS -->
+<!-- SCRIPT COPIA QRCODE -->
 <script>
     function copiarTexto() {
     let textoCopiado = document.getElementById("codepix");
@@ -123,10 +125,9 @@
 </script>
 
 
-</div><!-- end content -->
+</div><!-- END CONTENT -->
 
-    </div>
-
+<!-- SHARE SCRIPT-->
     <script>
         // Adicione o evento de clique ao ícone de seta à esquerda
         document.getElementById('backButton').addEventListener('click', () => {
@@ -155,14 +156,16 @@
     </script>
 
     
-    <script src="popup.js"></script>
+<script src="popup.js"></script>
 
 <div align="center">
         <input id="codepix" name="texto" readonly="" type="text"
             value="00020126580014BR.GOV.BCB.PIX0136f5c09df9-648f-48e5-99a3-598e613830b25204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63040DE3" />
         </div>
 
-<div id="popup-overlay">
+
+
+<div id="popup-overlay"><!-- POPUP INTRO-->
         <div id="popup">
             <button id="close-button"><i class="material-icons">close</i></button>
             
@@ -177,9 +180,59 @@
         </div><!-- END CONTEUDO DO POPUP -->
 
         </div>
-    </div>
+</div><!-- END POPUP INTRO-->
+
+<!-- POPUP 2-->
+<div class="popup-container" id="popup2">
+
+    <p class="popup-message">
+        <h2 class="popup-title"><strong class="popup-title">Chave Aleatória</strong>
+    Copiada com sucesso!</h2>
+    Abra o app do seu banco, a maioria identifica a chave automaticamente.</p>
+    
+
+      <button class="popup-button" onclick="closePopup()">Fechar</button>
+    
+  </div>
+
+
+<!--script  text copy-->
+<script>
+function copyToClipboard() {
+      const textToCopy = 'f5c09df9-648f-48e5-99a3-598e613830b2';
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          showPopup('');
+        })
+        .catch((error) => {
+          console.error('Erro ao copiar o texto:', error);
+        });
+    }
+
+    function showPopup(message) {
+      const popup = document.getElementById('popup2');
+      const popupOverlay = document.getElementById('popup-overlay2');
+      const popupMessage = document.querySelector('.popup-message');
+      popupMessage.textContent = message;
+      popup.style.display = 'block';
+      popupOverlay.style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('popup2').style.display = 'none';
+      document.getElementById('popup-overlay2').style.display = 'none';
+    }
+</script>
+
+
+  </div>
+  <div class="popup-overlay" id="popup-overlay2" onclick="closePopup()"></div>
+
+
+
 
 <script src="../script-sw.js"></script>
+
 
 </body>
 
