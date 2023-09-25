@@ -53,11 +53,12 @@ p{
     left: 0;
     right: 0;
     height: 50px;
-    background-color: #f2f2f2;
+    background-color: #e77000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
+    color: white;
 }
 
 .icon {
