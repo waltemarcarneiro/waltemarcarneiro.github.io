@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>EFI | Waltemar Carneiro</title>
+    <meta name="description" content="Você tem uma transferência Pix para Waltemar Carneiro" />
+    <meta content="#ec7000" name="theme-color" />
+    
+    <link rel="stylesheet" href="bank.css" />
+    <link rel="stylesheet" href="popup.css" />
+
+    <link rel="manifest" href="../manifest.json">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--ICONS-->
+        <link rel="mask-icon" href="https://waltemarcarneiro.github.io/icons/safari-pinned-tab.svg" color="#E77000"/>
+        <link rel="icon" type="image/x-icon" href="https://waltemarcarneiro.github.io/icons/favicon.ico"/>
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon76.png" sizes="76x76">
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon120.png" sizes="120x120">
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon152.png" sizes="152x152">
+        <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon180.png" sizes="180x180">
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon16.png" sizes="16x16"/>
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon32.png" sizes="32x32"/>
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon96.png" sizes="96x96"/>
+        <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon192.png" sizes="192x192"/>
+    <!-- SEO | OG -->
+    <meta property='og:type' content='website' />
+    <meta property="og:site_name" content="Waltemar Carneiro" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="keywords" content="Waltemar, Carneiro" />
+    <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
+    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-efi.png" />
+    <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
+        
+</head>
+
+<body>
+
+    <div class="header">
+        <div>
+            <i class="material-icons" id="backButton">arrow_back</i>
+        </div>
+        <div>Pagamentos & Transferências</div>
+        <div class="share-icon">
+            <i class="material-icons" id="shareButton">share</i>
+        </div>
+    </div>
+
+
+
+
+<!-- START CONTENT -->
+
+    <div class="content">
+
+        <!-- Conteúdo da página -->
+        <h2>Pix EFI</h2>
+
+        <script src="sweetalert2.all.js"></script>
+
+        <section class="dica">
+            <b>1.</b> Click no botão abaixo para copiar o código de pagamento Pix.<br><br>
+            <b>2.</b> Abra o app do seu banco e acesse a área Pix.<br><br>
+            <b>3.</b> Escolha a opção <b>Copia e Cola.</b><br><br>
+            <b>4.</b> Cole o código copiado e efetue a transferência.
+        </section>
+
+
+        <div align="center">
+            <button class="button-copy" onClick="copiarTexto()">Copiar Código do QRcode</button>
+        </div>
+        
+        <div align="center" style="margin-top:0; padding-bottom: 0;"><img
+                src="image/qrcode-efi.png" width="100">
+            
+        </div>
+
+<div class="table">
+
+            <div class="table-row">
+                <div class="table-cell1">Chave Pix:</div>
+                <div class="table-cell2">f5c09df9-648f-48e5-99a3-598e613830b2</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Instituição:</div>
+                <div class="table-cell2">Efí S.A. - Instituição de Pagamento</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Agência:</div>
+                <div class="table-cell2">8131</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Conta:</div>
+                <div class="table-cell2">65172-4</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Nome:</div>
+                <div class="table-cell2">WALTEMAR LIMA CARNEIRO</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">CPF:</div>
+                <div class="table-cell2">***.460.372-**</div>
+            </div>
+</div>
+
+        <!-- SCRIPT DA COPIA DOS DADOS -->
+<script>
+    function copiarTexto() {
+    let textoCopiado = document.getElementById("codepix");
+    textoCopiado.select();
+    textoCopiado.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    swal('<b>Código Pix Copiado com Sucesso</b>', 'Use a opção <b>copia e cola</b> no aplicativo do seu banco.</b>', 'success');
+    }
+</script>
+
+
+</div><!-- end content -->
+
+    </div>
+
+    <script>
+        // Adicione o evento de clique ao ícone de seta à esquerda
+        document.getElementById('backButton').addEventListener('click', () => {
+            // Volta para a página anterior
+            history.back();
+        });
+
+        // Adicione o evento de clique ao ícone de compartilhamento
+        document.getElementById('shareButton').addEventListener('click', () => {
+            // Compartilha a página atual
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Página compartilhada com sucesso!');
+                }).catch((error) => {
+                    console.error('Erro ao compartilhar a página:', error);
+                });
+            } else {
+                console.log('Compartilhamento não suportado pelo navegador.');
+                // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
+            }
+        });
+
+    </script>
+
+    
+    <script src="popup.js"></script>
+
+<div align="center">
+        <input id="codepix" name="texto" readonly="" type="text"
+            value="00020126580014BR.GOV.BCB.PIX0136f5c09df9-648f-48e5-99a3-598e613830b25204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63040DE3" />
+        </div>
+
+<div id="popup-overlay">
+        <div id="popup">
+            <button id="close-button"><i class="material-icons">close</i></button>
+            
+            <!-- CONTEUDO DO POPUP -->
+            <div   class="aviso-content">
+        <strong>Transfira</strong><br>
+        rapidamente<br><strong style="font-size: 40px;">via pix.</strong><br><br><strong style="font-size: 30px;">Dúvidas?</strong><br>Acesse nosso <strong style="font-size: 30px;">WhatsApp!</strong><br><br>
+        <div align="center">
+        <a  href="https://api.whatsapp.com/send?phone=558171027858&text=%F0%9F%98%80%20Ol%C3%A1%2C%20estou%20com%20d%C3%BAvidas!"
+        target="_blank"><img src="../image/button-whatsapp.png" width="20%" height="" /></a>
+        </div>
+        </div><!-- END CONTEUDO DO POPUP -->
+
+        </div>
+    </div>
+
+<script src="../script-sw.js"></script>
+
+</body>
+
+</html>
