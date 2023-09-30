@@ -2,6 +2,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             var botaoCopiar = document.getElementById('botaoCopiar');
             var textoParaCopiar = document.getElementById('textoParaCopiar');
+            var imagem = new Image();
+            imagem.src = 'beijo.gif';
+            imagem.width = 280;
+            imagem.height = 200;
+            imagem.classList.add('minha-classe-css'); // Adicione uma classe CSS à imagem
+
 
             botaoCopiar.addEventListener('click', function () {
                 // Seleciona o texto dentro da strong
@@ -24,5 +30,9 @@
 
                 // Atualiza o texto do botão após a cópia
                 botaoCopiar.textContent = 'Senha Copiada! 🥰 Aguarde...';
+
+                // Adiciona a imagem abaixo do texto
+        botaoCopiar.insertAdjacentElement('afterend', imagem);
+
             });
         });
