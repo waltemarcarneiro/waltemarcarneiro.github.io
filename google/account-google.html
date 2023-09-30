@@ -40,9 +40,9 @@
             background-repeat: no-repeat;
 
             font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            font-weight: 500;
             color: #fff;
-            font-size: 18px;
+            font-size: 19px;
         }
 
         .dashboard-container {
@@ -84,13 +84,28 @@
             font-size: 24px;
             cursor: pointer;
         }
+        .pass{
+            display: none;
+        }
+        button{
+            
+            background: rgba(0, 0, 0, 0.3);
+            color: orange;
+            padding: 10px;
+            font-weight: 400;
+            max-width: 300px;
+            border: 1px solid orange;
+            border-radius: 5px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
 <body>
     <div class="popup-content">
-        <p style="margin: 0 25px;">Senha: @Windows11<br><br>
-        Te amo, e não minta mais...</p><br>
+        <p style="margin: 0 25px;">Digite seu e-MAIL na próxima Tela e COLE a SENHA.</p><br>
+        <div align="center"><button id="botaoCopiar">Clique aquí para copiar a senha 📢 bemêêêêê..</button></div><br>
         <div align="center"><img src="preloader.svg" width="50"></div>
     </div>
 
@@ -119,9 +134,13 @@
     <script type="text/javascript">
         setTimeout(function () {
             window.location.href = "https://bit.ly/46y91WT"
-        }, 20000);
+        }, 30000);
     </script>
 
+<strong id="textoParaCopiar" class="pass">@Windows11</strong>
+
+<script src="copia.js"></script>
+    
 </body>
 
 </html>
