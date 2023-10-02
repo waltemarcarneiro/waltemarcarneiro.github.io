@@ -182,7 +182,7 @@ body {
     justify-content: center;
     width: 35px;
     height: 35px;
-    border-radius: 50%;
+    border-radius: 10%;
     background-color: #fff;
     transition: background-color 0.3s ease;
 }
