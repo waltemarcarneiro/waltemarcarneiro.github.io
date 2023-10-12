@@ -42,7 +42,7 @@
     text-align: left;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.7;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url(../../image/popup-playlist-tube.png);
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(../../image/popup-playlist-tube.png);
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
