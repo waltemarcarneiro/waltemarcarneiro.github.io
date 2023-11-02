@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>PicPay | Pague com Pix | Pix</title>
+    <meta content="Você tem uma transferência Via Pix para Waltemar Carneiro" name="description" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bank.css" />
+    <!-- Manifest -->
+    <link rel="manifest" href="../manifest.json">
+    <!-- favicon -->
+    <link href="../icons/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#111111">
+    <meta name="msapplication-TileColor" content="#111111">
+    <meta content="#111111" name="msapplication-navbutton-color" />
+    <meta content="#111111" name="apple-mobile-web-app-mobile-bar-style" />
+    <meta content="#111111" name="theme-color" />
+    <link href="../icons/apple-touch-icon-180x180.png" sizes="180x180" rel="apple-touch-icon" />
+    <!-- [ Meta Tag OG ] -->
+    <meta content="website" property="og:type" />
+    <meta content="https://waltemarcarneiro.github.io/image/og-image-bradesco.png" property="og:image" />
+    <meta content="Og image logo" property="og:image:alt" />
+    <meta content="😉 Acesse o link para efetuar o pagamento" property="og:description" />
+    <meta content="Waltemar Carneiro" property="og:site_name" />
+</head>
+
+<body>
+
+    <img id="banner-picpay" src="../image/banner-picpay.png" width="100%">
+    <br>
+    <div class="content"><!-- START DIV CONTENT-->
+       <link href="bank.css" rel="stylesheet" />
+        <script src="sweetalert2.all.js"></script>
+            
+            <section>
+                    <b>1.</b>
+                    Click no botão abaixo para copiar o código de pagamento Pix.<br />
+                    <b>2.</b>
+                    Abra o app do seu banco e acesse a área Pix.<br />
+                    <b>3.</b>
+                    Escolha a opção <b>Copia e Cola</b>
+                    .<br />
+                    <b>4.</b>
+                    Cole o código copiado e efetue a transferência.<br />
+            </section>
+
+            <div style="margin-top: 20px; text-align: center;">
+
+                <button style="background:#22C25E" class="button" onClick="copiarTexto()">Copiar Código do QRcode</button>
+
+            </div>
+
+            <br />
+
+            <div style="text-align: center;">
+                <img class="qr-code" border="0" src="qrcode-picpay.png" />
+                <br />
+                    <section class="dados">
+                        <b>Chave Pix:</b><br>
+                        9a67ab58-916c-4b62-89a1-a28d45af50fb<br>
+                        <b>Nome:</b><br>
+                        Waltemar Lima Carneiro<br>
+                        <b>CPF:</b><br>
+                        ***.460.372-**<br>
+                        <b>Banco:</b><br>
+                        PicPay Serviços S.A.
+                    </section>
+            </div>
+
+                <div class="sucesso">
+                    <script>
+                        function copiarTexto() {
+                            let textoCopiado = document.getElementById("texto");
+                            textoCopiado.select();
+                            textoCopiado.setSelectionRange(0, 99999)
+                            document.execCommand("copy");
+                            swal('<b class="sucesso">Código Pix Copiado com Sucesso</b>', '<b class="sucesso2">Use a opção <b>copia e cola</b> no aplicativo do seu banco.</b>', 'success');
+                        }
+                    </script>
+
+                    <input id="texto" name="texto" readonly="" type="text"
+                    value="00020126580014br.gov.bcb.pix01369a67ab58-916c-4b62-89a1-a28d45af50fb5204000053039865802BR5922Waltemar Lima Carneiro6009Sao Paulo62070503***6304293E" />
+            </div>
+
+        </div><!-- END DIV CONTENT-->
+
+        <script src="../service-worker.js" defer></script>
+
+</body>
+
+</html>
