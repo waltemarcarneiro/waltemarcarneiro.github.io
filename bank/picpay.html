@@ -1,95 +1,184 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-    <title>PicPay | Pague com Pix | Pix</title>
-    <meta content="Você tem uma transferência Via Pix para Waltemar Carneiro" name="description" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PicPay | Waltemar Carneiro</title>
+    <meta name="description" content="Você tem uma transferência Pix para Waltemar Carneiro" />
+    <meta content="#ec7000" name="theme-color" />
+    
     <link rel="stylesheet" href="bank.css" />
-    <!-- Manifest -->
+    <link rel="stylesheet" href="popup.css" />
+
     <link rel="manifest" href="../manifest.json">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- favicon -->
-    <link href="../icons/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="../icons/favicon-32x32.png"/>
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico"/>
     <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#111111">
-    <meta name="msapplication-TileColor" content="#111111">
-    <meta content="#111111" name="msapplication-navbutton-color" />
-    <meta content="#111111" name="apple-mobile-web-app-mobile-bar-style" />
-    <meta content="#111111" name="theme-color" />
-    <link href="../icons/apple-touch-icon-180x180.png" sizes="180x180" rel="apple-touch-icon" />
-    <!-- [ Meta Tag OG ] -->
-    <meta content="website" property="og:type" />
-    <meta content="https://waltemarcarneiro.github.io/image/og-image-bradesco.png" property="og:image" />
-    <meta content="Og image logo" property="og:image:alt" />
-    <meta content="😉 Acesse o link para efetuar o pagamento" property="og:description" />
-    <meta content="Waltemar Carneiro" property="og:site_name" />
+    <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#ec7000">
+    <meta name="msapplication-TileColor" content="#ec7000">
+    <!-- SEO | OG -->
+    <meta property='og:type' content='website' />
+    <meta property="og:site_name" content="Waltemar Carneiro" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="keywords" content="Waltemar, Carneiro" />
+    <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
+    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-picpay.png" />
+    <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
+        
 </head>
 
 <body>
 
-    <img id="banner-picpay" src="../image/banner-picpay.png" width="100%">
-    <br>
-    <div class="content"><!-- START DIV CONTENT-->
-       <link href="bank.css" rel="stylesheet" />
+    <div class="header">
+        <div>
+            <i class="material-icons" id="backButton2">arrow_back</i>
+        </div>
+        <div>Pagamentos & Transferências</div>
+        <div class="share-icon">
+            <i class="material-icons" id="shareButton">share</i>
+        </div>
+    </div>
+
+
+
+
+<!-- START CONTENT -->
+
+    <div class="content">
+
+        <!-- Conteúdo da página -->
+        <h2>Pix Bradesco</h2>
+
         <script src="sweetalert2.all.js"></script>
+
+        <section class="dica">
+            <b>1.</b> Click no botão abaixo para copiar o código de pagamento Pix.<br><br>
+            <b>2.</b> Abra o app do seu banco e acesse a área Pix.<br><br>
+            <b>3.</b> Escolha a opção <b>Copia e Cola.</b><br><br>
+            <b>4.</b> Cole o código copiado e efetue a transferência.
+        </section>
+
+
+        <div align="center">
+            <button class="button-copy" onClick="copiarTexto()">Copiar Código Pix</button>
+        </div>
+        
+        <div align="center" style="margin-top:0; padding-bottom: 0;"><img
+                src="image/qrcode-picpay.png" width="100"><br>
+            <b>se preferir, leia o QR Code® Pix com seu app de pagamentos</b><br>
+            sempre confira as informações antes de pagar
+        </div>
+
+<div class="table">
+
+            <div class="table-row">
+                <div class="table-cell1">Chave Pix:</div>
+                <div class="table-cell2">9a67ab58-916c-4b62-89a1-a28d45af50fb</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Instituição:</div>
+                <div class="table-cell2">PICPAY SERVIÇOS S.A.</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Agência:</div>
+                <div class="table-cell2">0001</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Conta:</div>
+                <div class="table-cell2">67212640-0</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">Nome:</div>
+                <div class="table-cell2">WALTEMAR LIMA CARNEIRO</div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell1">CPF:</div>
+                <div class="table-cell2">***.460.372-**</div>
+            </div>
+</div>
+
+        <!-- SCRIPT DA COPIA DOS DADOS -->
+<script>
+    function copiarTexto() {
+    let textoCopiado = document.getElementById("codepix");
+    textoCopiado.select();
+    textoCopiado.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    swal('<b>Código Pix Copiado com Sucesso</b>', 'Use a opção <b>copia e cola</b> no aplicativo do seu banco.</b>', 'success');
+    }
+</script>
+
+
+</div><!-- end content -->
+
+    </div>
+
+    <script>
+        // Adicione o evento de clique ao ícone de seta à esquerda
+        document.getElementById('backButton2').addEventListener('click', () => {
+            // Volta para a página anterior
+            history.back();
+        });
+
+        // Adicione o evento de clique ao ícone de compartilhamento
+        document.getElementById('shareButton').addEventListener('click', () => {
+            // Compartilha a página atual
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Página compartilhada com sucesso!');
+                }).catch((error) => {
+                    console.error('Erro ao compartilhar a página:', error);
+                });
+            } else {
+                console.log('Compartilhamento não suportado pelo navegador.');
+                // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
+            }
+        });
+
+    </script>
+
+    
+    <script src="popup.js"></script>
+
+<div align="center">
+        <input id="codepix" name="texto" readonly="" type="text"
+            value="00020126580014br.gov.bcb.pix01369a67ab58-916c-4b62-89a1-a28d45af50fb5204000053039865802BR5922Waltemar Lima Carneiro6009Sao Paulo62070503***6304293E" />
+        </div>
+        
+        <!-- CONTEUDO DO POPUP -->
+<div id="popup-overlay">
+        <div id="popup">
+            <button id="close-button"><i class="material-icons">close</i></button>
             
-            <section>
-                    <b>1.</b>
-                    Click no botão abaixo para copiar o código de pagamento Pix.<br />
-                    <b>2.</b>
-                    Abra o app do seu banco e acesse a área Pix.<br />
-                    <b>3.</b>
-                    Escolha a opção <b>Copia e Cola</b>
-                    .<br />
-                    <b>4.</b>
-                    Cole o código copiado e efetue a transferência.<br />
-            </section>
+            
+            <div   class="aviso-content">
+        <strong>Transfira</strong><br>
+        rapidamente<br><strong style="font-size: 40px;">via pix.</strong><br><br><strong style="font-size: 30px;">Dúvidas?</strong><br>Acesse nosso <strong style="font-size: 30px;">WhatsApp!</strong><br><br>
+        <div align="center">
+        <a  href="https://api.whatsapp.com/send?phone=558171027858&text=%F0%9F%98%80%20Ol%C3%A1%2C%20estou%20com%20d%C3%BAvidas!"
+        target="_blank"><img src="../image/button-whatsapp.png" width="20%" height="" /></a>
+        </div>
+        </div>
 
-            <div style="margin-top: 20px; text-align: center;">
+        </div>
+    </div><!-- END CONTEUDO DO POPUP -->
 
-                <button style="background:#22C25E" class="button" onClick="copiarTexto()">Copiar Código do QRcode</button>
 
-            </div>
-
-            <br />
-
-            <div style="text-align: center;">
-                <img class="qr-code" border="0" src="qrcode-picpay.png" />
-                <br />
-                    <section class="dados">
-                        <b>Chave Pix:</b><br>
-                        9a67ab58-916c-4b62-89a1-a28d45af50fb<br>
-                        <b>Nome:</b><br>
-                        Waltemar Lima Carneiro<br>
-                        <b>CPF:</b><br>
-                        ***.460.372-**<br>
-                        <b>Banco:</b><br>
-                        PicPay Serviços S.A.
-                    </section>
-            </div>
-
-                <div class="sucesso">
-                    <script>
-                        function copiarTexto() {
-                            let textoCopiado = document.getElementById("texto");
-                            textoCopiado.select();
-                            textoCopiado.setSelectionRange(0, 99999)
-                            document.execCommand("copy");
-                            swal('<b class="sucesso">Código Pix Copiado com Sucesso</b>', '<b class="sucesso2">Use a opção <b>copia e cola</b> no aplicativo do seu banco.</b>', 'success');
-                        }
-                    </script>
-
-                    <input id="texto" name="texto" readonly="" type="text"
-                    value="00020126580014br.gov.bcb.pix01369a67ab58-916c-4b62-89a1-a28d45af50fb5204000053039865802BR5922Waltemar Lima Carneiro6009Sao Paulo62070503***6304293E" />
-            </div>
-
-        </div><!-- END DIV CONTENT-->
-
-        <script src="../service-worker.js" defer></script>
-
+<script src="../script-sw.js"></script>
 </body>
 
 </html>
