@@ -31,6 +31,13 @@
     <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-picpay.png" />
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
         
+        <style type="text/css">
+            .copy-button{
+                color: #e77000;
+                background: none;
+                border: none;
+            }
+        </style>
 </head>
 
 <body>
@@ -39,7 +46,7 @@
         <div>
             <i class="material-icons" id="backButton2">arrow_back</i>
         </div>
-        <div>Pagamentos & Transferências</div>
+        <div>Pagamentos</div>
         <div class="share-icon">
             <i class="material-icons" id="shareButton">share</i>
         </div>
@@ -53,7 +60,7 @@
     <div class="content">
 
         <!-- Conteúdo da página -->
-        <h2>Pix Bradesco</h2>
+        <h2>Pix PicPay</h2>
 
         <script src="sweetalert2.all.js"></script>
 
@@ -78,8 +85,11 @@
 <div class="table">
 
             <div class="table-row">
-                <div class="table-cell1">Chave Pix:</div>
-                <div class="table-cell2">9a67ab58-916c-4b62-89a1-a28d45af50fb</div>
+                <div class="table-cell1"></div>
+                <div class="table-cell2">
+                    <button id="chave" class="copy-button" onclick="copyToClipboard()"><span class="material-icons">content_copy</span></button>
+                    <b>👈 Copie a Chave Pix Aliatória</b>
+                </div>
             </div>
 
             <div class="table-row">
@@ -117,6 +127,20 @@
     document.execCommand("copy");
     swal('<b>Código Pix Copiado com Sucesso</b>', 'Use a opção <b>copia e cola</b> no aplicativo do seu banco.</b>', 'success');
     }
+</script>
+
+<!--script copia chave pix-->
+<script>
+function copyToClipboard() {
+    const textToCopy = '9a67ab58-916c-4b62-89a1-a28d45af50fb';
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            alert('Chave Aleatória Copiada com Sucesso!');
+        })
+        .catch((error) => {
+            console.error('Erro ao copiar o texto:', error);
+        });
+}
 </script>
 
 
