@@ -148,9 +148,9 @@
       ]
     },
     {
-      "name": "Pix Bradesco",
-      "url": "/bank/bradesco.html",
-      "description": "Pix Bradesco",
+      "name": "Pix PicPay",
+      "url": "/bank/picpay.html",
+      "description": "Pix PicPay",
       "icons": [
         {
           "src": "shortcuts/pix.png",
