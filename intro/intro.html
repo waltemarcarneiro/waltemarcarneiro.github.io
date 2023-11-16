@@ -2,9 +2,9 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Slide de Popups</title>
-        <link rel="stylesheet" type="text/css" href="../assets/css/intro.css">
+        <link rel="stylesheet" type="text/css" href="intro.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- FAVICON-->
         <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon-180x180.png"/>
@@ -30,8 +30,7 @@
                 <div class="popup-content">
                     <button class="close-button material-icons">close</button>
                     <div>
-                        
-                        <video class="content" src="https://docs.google.com/uc?id=1O2QIb8B-0fxsHPm-mSaauRZ1c5SNFPoU" controls type="videos/mp4" poster="v3.jpg"></video>
+                        <video class="content" src="https://docs.google.com/uc?id=11gQWYNeZzIsIvUF1I1Dvubm1Jgzx6mJm" controls type="video/mp4" poster="v3.jpg"></video>
                     </div>
                     
                 </div>
@@ -45,8 +44,7 @@
                 <div class="popup-content">
                     <button class="close-button material-icons">close</button>
                     <div>
-                        
-                        <video class="content" src="https://docs.google.com/uc?id=1ab97LBB872gJNJ_oZ-0jfEaoM8nnBH_u" controls type="videos/mp4" poster="v4.jpg"></video>
+                        <video class="content" src="https://docs.google.com/uc?id=11gQWYNeZzIsIvUF1I1Dvubm1Jgzx6mJm" controls type="video/mp4" poster="v4.jpg"></video>
                     </div>
                     
                 </div>
@@ -57,6 +55,58 @@
             </div>
             
         </div>
-        <script src="../assets/js/intro.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const popups = document.querySelectorAll(".popup");
+            const prevButtons = document.querySelectorAll(".prev-button");
+            const nextButtons = document.querySelectorAll(".next-button");
+            const videos = document.querySelectorAll('video');
+
+            let currentPopupIndex = 0;
+
+            function showPopup(index) {
+                popups.forEach(popup => popup.classList.remove("show"));
+                popups[index].classList.add("show");
+                currentPopupIndex = index;
+                playCurrentVideo();
+            }
+
+            function prevPopup() {
+                currentPopupIndex = (currentPopupIndex - 1 + popups.length) % popups.length;
+                showPopup(currentPopupIndex);
+            }
+
+            function nextPopup() {
+                currentPopupIndex = (currentPopupIndex + 1) % popups.length;
+                showPopup(currentPopupIndex);
+            }
+
+            function playCurrentVideo() {
+                videos[currentPopupIndex].play();
+            }
+
+            popups.forEach((popup, index) => {
+                popup.querySelector(".close-button").addEventListener("click", () => {
+                    popup.classList.remove("show");
+                    videos[currentPopupIndex].pause(); // Pausar o vídeo ao fechar o popup
+                    videos[currentPopupIndex].currentTime = 0; // Retorna para o início do vídeo
+                });
+
+                prevButtons[index].addEventListener("click", prevPopup);
+                nextButtons[index].addEventListener("click", nextPopup);
+            });
+
+            showPopup(currentPopupIndex);
+        });
+//
+
+    document.addEventListener("play", function (evt) {
+        if (this.$MediaPlaying && this.$MediaPlaying !== evt.target) {
+            this.$MediaPlaying.pause();
+        }
+        this.$MediaPlaying = evt.target;
+    }, true);
+
+        </script>
     </body>
 </html>
