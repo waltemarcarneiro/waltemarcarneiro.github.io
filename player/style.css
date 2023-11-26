@@ -26,10 +26,12 @@ body{
   justify-content: center;
 }
 .wrapper{
-  width: 350px;
+  min-width: 480px;
   padding: 40px 20px;
   overflow: hidden;
   position: fixed;
+  /
+  background: #25252f;
   box-shadow: 0px 6px 15px var(--lightbshadow);
   min-height: 100vh; /* Defina a altura mínima como 100% da altura da viewport */
   top: 0px;
@@ -72,28 +74,19 @@ body{
   color: var(--lightblack);
 }
 .img-area{
-  /width: 100%;
-  /height: 240px;
   width: 380px;
-  height: 380px;
+  /height: 380px;
   margin: 0 auto;
   overflow: hidden;
-  /margin-top: 25px;
-  
   margin: auto;
   top: 0;
-  
   left: 0;
   right: 0;
-  /border-radius: 10px;
   box-shadow: 0px 6px 12px var(--lightbshadow);
   z-index: 0;
   position: fixed;
-
   display: flex;
   justify-content: center;
-
-
   
 }
 .img-area img{
@@ -103,8 +96,7 @@ body{
 }
 .song-details{
   text-align: center;
-  margin: 360px 0;
-  
+  margin: 320px 0;
 }
 .song-details p{
   color: orange;
@@ -120,32 +112,36 @@ body{
   line-height: 35px;
 }
 .progress-area{
-  height: 6px;
-  width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  padding: 5px 0;
+  z-index: 1;
+  left: 20px;
+  right: 20px;
+  max-width: 340px;
+  margin: 50px auto;
+  height: 6px; /*altura da area progressiva em andamento*/
   border-radius: 50px;
   background: #3E3E4F;
   cursor: pointer;
-  display: flex;
-  position: fixed;
-  top: 540px;
-
-
+  top: 480px;
+  
 }
 .progress-area .progress-bar{
   height: inherit;
   width: 340px;
- 
   border-radius: inherit;
   background: linear-gradient(90deg, var(--orange) 0%, var(--orangedark) 100%);
-  top: 540px;
+  top: 440px;
+
 }
 .progress-bar::before{
   content: "";
-  /position: absolute;
-  height: 12px;
+  height: 6px;
   width: 12px;
   border-radius: 50%;
-  top: 50%;
   right: -5px;
   z-index: 10;
   opacity: 0;
@@ -164,7 +160,7 @@ body{
   align-items: center;
   width: 340px;
   position: fixed;
-  top: 550px;
+  top: 480px;
 }
 .progress-area .song-timer{
   
@@ -361,6 +357,6 @@ button{
   position: fixed;
   display: flex;
   justify-content: center;
-  color: #62626c;
+  color: #fff;
   font-size: 12px;
 }
