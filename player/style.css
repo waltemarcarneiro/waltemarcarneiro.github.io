@@ -17,6 +17,7 @@
   --darkwhite: #cecaca;
   --pinkshadow: #ffcbdd;
   --lightbshadow: rgba(0,0,0,0.15);
+  --copyright: #8B8BA3;
 }
 html{ background:#25252f; }
 body{
@@ -126,7 +127,7 @@ body{
   border-radius: 50px;
   background: #3E3E4F;
   cursor: pointer;
-  top: 480px;
+  top: 450px;
   
 }
 .progress-area .progress-bar{
@@ -156,11 +157,13 @@ body{
 }
 .song-timer{
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 340px;
+  max-width: 340px;
   position: fixed;
   top: 480px;
+  left:20px;
+  right: 20px;
+  justify-content: space-between;
 }
 .progress-area .song-timer{
   
@@ -313,9 +316,13 @@ button{
   font-weight: 500;
 }
 .volume{
+  display: flex;
   align-items: center;
   display: flex;
-  margin-top: 20px;
+  margin:10px auto;
+  max-width: 300px;
+  left: 20px;
+  right: 20px;
   
 }
 #volumeMuteButton{
@@ -357,6 +364,7 @@ button{
   position: fixed;
   display: flex;
   justify-content: center;
-  color: #fff;
+  color: var(--copyright);
   font-size: 12px;
+  font-weight: 200;
 }
