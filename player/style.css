@@ -26,11 +26,10 @@ body{
   justify-content: center;
 }
 .wrapper{
-  width: 380px;
+  width: 350px;
   padding: 40px 20px;
   overflow: hidden;
   position: fixed;
-  /background: #25252f;
   box-shadow: 0px 6px 15px var(--lightbshadow);
   min-height: 100vh; /* Defina a altura mínima como 100% da altura da viewport */
   top: 0px;
