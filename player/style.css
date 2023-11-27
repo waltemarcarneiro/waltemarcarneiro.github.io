@@ -181,8 +181,6 @@ body{
   justify-content: space-between;
   position: fixed;
   bottom: 0; /* Controles na base da página */
-  
-  padding: 10px 0;
   z-index: 1;
   left: 20px;
   right: 20px;
