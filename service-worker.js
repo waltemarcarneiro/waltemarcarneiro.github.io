@@ -5,9 +5,8 @@ const urlsToCache = [
   '/app.html',
   '/offline.html',
   '/bank/picpay.html',
-  '/bank/itau.html',
-  '/bank/bradesco.html',
   '/profile.html',
+  '/player/index.html',
 ];
 
 self.addEventListener("install", function (event) {
