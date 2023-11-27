@@ -32,7 +32,9 @@ body{
   overflow: hidden;
   position: fixed;
   /
-  background: #25252f;
+;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(bg-logo.png);
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(bg-logo.png) no-repea;
   box-shadow: 0px 6px 15px var(--lightbshadow);
   min-height: 100vh; /* Defina a altura mínima como 100% da altura da viewport */
   top: 0px;
@@ -75,8 +77,7 @@ body{
   color: var(--lightblack);
 }
 .img-area{
-  width: 380px;
-  /height: 380px;
+  max-width: 480px;
   margin: 0 auto;
   overflow: hidden;
   margin: auto;
@@ -97,27 +98,29 @@ body{
 }
 .song-details{
   text-align: center;
-  margin: 320px 0;
-}
-.song-details p{
-  color: orange;
+  top: 45%;
+  left: 20px;
+  right: 20px;
+  position: fixed;
 }
 .song-details .name{
   font-size: 21px;
   font-weight: 500;
   color: #fff;
+
 }
 .song-details .artist{
   font-size: 18px;
   opacity: 0.9;
-  line-height: 35px;
+  color: orange;
+  
 }
 .progress-area{
-  display: flex;
+  /display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  padding: 5px 0;
+  padding: 0;
   z-index: 1;
   left: 20px;
   right: 20px;
@@ -125,9 +128,9 @@ body{
   margin: 50px auto;
   height: 6px; /*altura da area progressiva em andamento*/
   border-radius: 50px;
-  background: #3E3E4F;
+  background: #23232C;
   cursor: pointer;
-  top: 450px;
+  top: 64%;
   
 }
 .progress-area .progress-bar{
@@ -160,7 +163,7 @@ body{
   align-items: center;
   max-width: 340px;
   position: fixed;
-  top: 480px;
+  top: 68%;
   left:20px;
   right: 20px;
   justify-content: space-between;
@@ -236,19 +239,19 @@ body{
 }
 
 .music-list{
-  position: absolute;
+  position: relative;
   background-color: rgba(0,0,0,0.8);
-  width: 100%;
-  left: 0;
+  max-width: 70%;
+  left: 14%;
   bottom: 0;
   opacity: 0;
   pointer-events: none;
   z-index: 5;
-  padding: 15px 20px;
-  /* border-radius: 15px; */
+  padding: 10px;
   box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
   transition: all 0.15s ease-out;
   height: -webkit-fill-available;
+  
 }
 .music-list.show{
   bottom: 0;
@@ -274,7 +277,6 @@ body{
 }
 .music-list ul{
   margin: 10px 0;
-  /max-height: 350px;
   overflow: auto;
 }
 .music-list ul::-webkit-scrollbar{
@@ -293,14 +295,14 @@ body{
   border-bottom: 0px;
 }
 .music-list ul li .row span{
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 500;
 }
 .music-list ul li .row p{
   opacity: 0.9;
 }
 ul li .audio-duration{
-  font-size: 16px;
+  font-size: 12px;
 }
 ul li.playing{
   pointer-events: none;
@@ -343,7 +345,7 @@ button{
 
         #volumeSlider {
             
-            background: #3E3E4F;
+            background: #23232C;
             width: 85%;
             height: 3px;
             appearance: none;
@@ -354,7 +356,7 @@ button{
             appearance: none;
             width: 12px; /* Largura do polegar personalizável */
             height: 12px; /* Altura do polegar personalizável */
-            background-color: #b3b3b5; /* Cor do polegar personalizável */
+            background-color: orange; /* Cor do polegar personalizável */
             border-radius: 50%; /* Para tornar o polegar circular */
         }
 .copyright{
