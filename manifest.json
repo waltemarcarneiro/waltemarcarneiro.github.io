@@ -136,9 +136,9 @@
   },
   "shortcuts": [
     {
-      "name": "Intros",
-      "description": "Introduções Vídeos",
-      "url": "/intro/intro.html",
+      "name": "Player",
+      "description": "Love Songs",
+      "url": "/player/index.html",
       "icons": [
         {
           "src": "shortcuts/intro.png",
