@@ -98,13 +98,13 @@ body{
 }
 .song-details{
   text-align: center;
-  top: 55%;
+  top: 50%;
   left: 20px;
   right: 20px;
   position: fixed;
 }
 .song-details .name{
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 500;
   color: #fff;
 
