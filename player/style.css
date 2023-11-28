@@ -19,7 +19,7 @@
   --lightbshadow: rgba(0,0,0,0.15);
   --copyright: #8B8BA3;
 }
-html{ background:#25252f; }
+html{ background: #25252f; }
 body{
   display: flex;
   align-items: center;
@@ -31,10 +31,7 @@ body{
   padding: 40px 20px;
   overflow: hidden;
   position: fixed;
-  /
-;
   background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(bg-logo.png);
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url(bg-logo.png) no-repea;
   box-shadow: 0px 6px 15px var(--lightbshadow);
   min-height: 100vh; /* Defina a altura mínima como 100% da altura da viewport */
   top: 0px;
@@ -98,7 +95,7 @@ body{
 }
 .song-details{
   text-align: center;
-  top: 50%;
+  top: 52%;
   left: 20px;
   right: 20px;
   position: fixed;
@@ -111,12 +108,10 @@ body{
 }
 .song-details .artist{
   font-size: 18px;
-  opacity: 0.9;
   color: orange;
-  
 }
 .progress-area{
-  /display: flex;
+  
   align-items: center;
   justify-content: space-between;
   position: fixed;
@@ -130,7 +125,7 @@ body{
   border-radius: 50px;
   background: #23232C;
   cursor: pointer;
-  top: 67%;
+  top: 68%;
   
 }
 .progress-area .progress-bar{
@@ -164,13 +159,13 @@ display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    bottom: 0;
+    
     z-index: 1;
     left: 20px;
     right: 20px;
     max-width: 360px;
     margin: 50px auto;
-    top: 55%;
+    top: 70%;
     
 }
 .progress-area .song-timer{
@@ -331,7 +326,7 @@ button{
     right: 20px;
     margin:10px auto;
     max-width: 300px;
-    top:65%;
+    top:67%;
 }
 #volumeMuteButton{
   color: var(--lightblack);
