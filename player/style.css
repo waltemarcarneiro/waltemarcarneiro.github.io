@@ -101,13 +101,13 @@ body{
   position: fixed;
 }
 .song-details .name{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #fff;
 
 }
 .song-details .artist{
-  font-size: 18px;
+  font-size: 16px;
   color: orange;
 }
 .progress-area{
@@ -165,7 +165,7 @@ display: flex;
     right: 20px;
     max-width: 360px;
     margin: 50px auto;
-    top: 70%;
+    top: 64%;
     
 }
 .progress-area .song-timer{
@@ -326,7 +326,7 @@ button{
     right: 20px;
     margin:10px auto;
     max-width: 300px;
-    top:67%;
+    top:65%;
 }
 #volumeMuteButton{
   color: var(--lightblack);
