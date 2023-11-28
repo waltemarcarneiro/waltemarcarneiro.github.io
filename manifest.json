@@ -136,7 +136,7 @@
   },
   "shortcuts": [
     {
-      "name": "Player",
+      "name": "Amazon Player",
       "description": "Love Songs",
       "url": "/player/index.html",
       "icons": [
@@ -148,7 +148,7 @@
       ]
     },
     {
-      "name": "Pix ARBI",
+      "name": "Fazer doação",
       "url": "/bank/arbi.html",
       "description": "Pix Arbi",
       "icons": [
@@ -160,7 +160,7 @@
       ]
     },
     {
-      "name": "Love Songs",
+      "name": "Video Clips",
       "url": "/links/playlist-tube.html",
       "description": "playlsit Love Songs",
       "icons": [
