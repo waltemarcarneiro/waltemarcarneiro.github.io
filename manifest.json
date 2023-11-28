@@ -148,9 +148,9 @@
       ]
     },
     {
-      "name": "Pix PicPay",
-      "url": "/bank/picpay.html",
-      "description": "Pix PicPay",
+      "name": "Pix ARBI",
+      "url": "/bank/arbi.html",
+      "description": "Pix Arbi",
       "icons": [
         {
           "src": "shortcuts/pix.png",
