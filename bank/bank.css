@@ -174,7 +174,8 @@ input {
 }
 
 .dica{
-    line-height: 1;    
+    line-height: 1;
+    
 }
         
      
@@ -205,6 +206,8 @@ input {
   width: 100%;
   border-collapse: collapse;
   font-size: 12px;
+  font-family: monospace;
+
 }
 
 .table-row {
@@ -221,7 +224,9 @@ input {
   border-bottom: 1px solid #eaeaea;
   padding: 5px;
   text-align: right;
-  font-weight: 500;
+  font-weight: bold;
+  
+  
 }
 .material-icons{
     cursor: pointer;
