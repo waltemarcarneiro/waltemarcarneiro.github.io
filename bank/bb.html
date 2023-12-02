@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,7 +8,7 @@
     <title>Pix Banco do Brasil | Waltemar Carneiro</title>
     <meta name="description" content="Você tem uma transferência Pix para Waltemar Carneiro" />
     <meta content="#ffff00" name="theme-color" />
-    
+
     <link rel="stylesheet" href="bank.css" />
     <link rel="stylesheet" href="popup.css" />
 
@@ -17,8 +16,8 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- favicon -->
-    <link rel="shortcut icon" href="https://waltemarcarneiro.github.io/icons/favicon-32x32.png"/>
-    <link rel="icon" type="image/x-icon" href="https://waltemarcarneiro.github.io/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="https://waltemarcarneiro.github.io/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/x-icon" href="https://waltemarcarneiro.github.io/icons/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="https://waltemarcarneiro.github.io/icons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://waltemarcarneiro.github.io/icons/favicon-32x32.png">
     <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#e77000">
@@ -31,29 +30,30 @@
     <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
     <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-bb.png" />
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
-        
-<style type="text/css">
-.copy-button{
-  color: #465eff;
-  background: none;
-  border: none;
-}
-.copy-success-message {
-  width: 80% !important;
-  display: none;
-  border-radius: 5px;
-  background-color: #465eff;
-  color: #fcfc30;
-  text-align: center;
-  padding: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
-</style>
+
+    <style type="text/css">
+        .copy-button {
+            color: #465eff;
+            background: none;
+            border: none;
+        }
+
+        .copy-success-message {
+            width: 80% !important;
+            display: none;
+            border-radius: 5px;
+            background-color: #465eff;
+            color: #fcfc30;
+            text-align: center;
+            padding: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+    </style>
 </head>
 
 <body>
@@ -71,12 +71,14 @@
 
 
 
-<!-- START CONTENT -->
+    <!-- START CONTENT -->
 
     <div class="content">
 
         <!-- Conteúdo da página -->
-        <h2>Pix Banco do Brasil</h2>
+        
+        <br>
+        <div align="center"><img src="image/logo-bb.png" width="170"></div>
 
         <script src="sweetalert2.all.js"></script>
 
@@ -89,24 +91,26 @@
 
 
         <div align="center">
-            <button style="background: #fcfc30; color:#465eff; font-weight:500" class="button-copy" onClick="copiarTexto()">Usar Copia e Cola</button>
+            <button style="background: #fcfc30; color:#465eff;" class="button-copy"
+                onClick="copiarTexto()">Usar Copia e Cola</button>
         </div>
-        
-        <div align="center" style="margin-top:0; padding-bottom: 0;"><img
-                src="image/qrcode-bb.png" width="100"><br>
-            <b style="font-size:14px;color:#555; font-weight: 400;">se preferir, leia o QR Code® Pix com seu app de pagamentos</b><br>
+
+        <div align="center" style="margin-top:0; padding-bottom: 0;"><img src="image/qrcode-bb.png" width="100"><br>
+            <b style="font-size:14px;color:#555; font-weight: 400;">se preferir, leia o QR Code® Pix com seu app de
+                pagamentos</b><br>
         </div><br>
 
-<div class="table">
+        <div class="table">
 
             <div class="table-row">
                 <div class="table-cell1">Chave Pix:</div>
                 <div class="table-cell2">
-                    <button id="chave" class="copy-button" onclick="copyToClipboard()"><span class="material-icons">content_copy</span></button>
+                    <button id="chave" class="copy-button" onclick="copyToClipboard()"><span
+                            class="material-icons" style="font-size: 34px;">content_copy</span></button>
                     <div id="copy-success-message" class="copy-success-message">
-  Chave <b>ALEATÓRIA</b> copiada com sucesso!
-</div>
-                    <b>👈 Copiar Chave Pix</b>
+                        Chave <b>ALEATÓRIA</b> copiada com sucesso!
+                    </div>
+                    <b style="font-family: 'Roboto', sans-serif; font-size;16px; text-transform:uppercase;">👈 Copiar Chave Pix</b>
                 </div>
             </div>
 
@@ -134,39 +138,39 @@
                 <div class="table-cell1">CPF:</div>
                 <div class="table-cell2">***.460.37*-**</div>
             </div>
-</div>
+        </div>
 
         <!-- SCRIPT DA COPIA QRCODE -->
-<script>
-    function copiarTexto() {
-    let textoCopiado = document.getElementById("codepix");
-    textoCopiado.select();
-    textoCopiado.setSelectionRange(0, 99999)
-    document.execCommand("copy");
-    swal('<b>Código Pix Copiado com Sucesso</b>', 'Use a opção <b>COPIA e COLA</b> no aplicativo do seu banco.</b>', 'success');
-    }
-</script>
+        <script>
+            function copiarTexto() {
+                let textoCopiado = document.getElementById("codepix");
+                textoCopiado.select();
+                textoCopiado.setSelectionRange(0, 99999)
+                document.execCommand("copy");
+                swal('<b>Código Pix Copiado com Sucesso</b>', 'Use a opção <b>COPIA e COLA</b> no aplicativo do seu banco.</b>', 'success');
+            }
+        </script>
 
-<!--script copia chave pix-->
-<script>
-function copyToClipboard() {
-    const textToCopy = 'aa8b3fd0-0c76-422f-9f3a-844bd7f6b627';
-    navigator.clipboard.writeText(textToCopy)
-        .then(() => {
-            const copySuccessMessage = document.getElementById('copy-success-message');
-            copySuccessMessage.style.display = 'block';
-            setTimeout(() => {
-                copySuccessMessage.style.display = 'none';
-            }, 4000); // Esconda a mensagem após 2 segundos (ou o tempo desejado).
-        })
-        .catch((error) => {
-            console.error('Erro ao copiar o texto:', error);
-        });
-}
-</script>
+        <!--script copia chave pix-->
+        <script>
+            function copyToClipboard() {
+                const textToCopy = 'aa8b3fd0-0c76-422f-9f3a-844bd7f6b627';
+                navigator.clipboard.writeText(textToCopy)
+                    .then(() => {
+                        const copySuccessMessage = document.getElementById('copy-success-message');
+                        copySuccessMessage.style.display = 'block';
+                        setTimeout(() => {
+                            copySuccessMessage.style.display = 'none';
+                        }, 4000); // Esconda a mensagem após 2 segundos (ou o tempo desejado).
+                    })
+                    .catch((error) => {
+                        console.error('Erro ao copiar o texto:', error);
+                    });
+            }
+        </script>
 
 
-</div><!-- end content -->
+    </div><!-- end content -->
 
     <script>
         // Adicione o evento de clique ao ícone de seta à esquerda
@@ -195,34 +199,36 @@ function copyToClipboard() {
 
     </script>
 
-    
+
     <script src="popup.js"></script>
 
-<div align="center">
+    <div align="center">
         <input id="codepix" name="texto" readonly="" type="text"
             value="00020126770014br.gov.bcb.pix0136aa8b3fd0-0c76-422f-9f3a-844bd7f6b6270215Solicitacao Pix5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62290525l0mRiVkLmDEtcAVLaD8SUuLO46304BD9F" />
-        </div>
-        
-        <!-- CONTEUDO DO POPUP -->
-<div id="popup-overlay">
+    </div>
+
+    <!-- CONTEUDO DO POPUP -->
+    <div id="popup-overlay">
         <div id="popup">
             <button id="close-button"><i class="material-icons">close</i></button>
-            
-            
-            <div   class="aviso-content">
-        <strong>Transfira</strong><br>
-        rapidamente<br><strong style="font-size: 40px;">via pix.</strong><br><br><strong style="font-size: 30px;">Dúvidas?</strong><br>Acesse nosso <strong style="font-size: 30px;">WhatsApp!</strong><br><br>
-        <div align="center">
-        <a  href="https://api.whatsapp.com/send?phone=558171027858&text=%F0%9F%98%80%20Ol%C3%A1%2C%20estou%20com%20d%C3%BAvidas!"
-        target="_blank"><img src="../image/button-whatsapp.png" width="20%" height="" /></a>
-        </div>
-        </div>
+
+
+            <div class="aviso-content">
+                <strong>Transfira</strong><br>
+                rapidamente<br><strong style="font-size: 40px;">via pix.</strong><br><br><strong
+                    style="font-size: 30px;">Dúvidas?</strong><br>Acesse nosso <strong
+                    style="font-size: 30px;">WhatsApp!</strong><br><br>
+                <div align="center">
+                    <a href="https://api.whatsapp.com/send?phone=558171027858&text=%F0%9F%98%80%20Ol%C3%A1%2C%20estou%20com%20d%C3%BAvidas!"
+                        target="_blank"><img src="../image/button-whatsapp.png" width="20%" height="" /></a>
+                </div>
+            </div>
 
         </div>
     </div><!-- END CONTEUDO DO POPUP -->
 
 
-<script src="../script-sw.js"></script>
+    <script src="../script-sw.js"></script>
 </body>
 
 </html>
