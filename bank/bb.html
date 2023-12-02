@@ -34,7 +34,7 @@
         
 <style type="text/css">
 .copy-button{
-  color: #0000ff;
+  color: #465eff;
   background: none;
   border: none;
 }
@@ -42,8 +42,8 @@
   width: 80% !important;
   display: none;
   border-radius: 5px;
-  background-color: #ffff00;
-  color: #0000ff;
+  background-color: #465eff;
+  color: #fcfc30;
   text-align: center;
   padding: 10px;
   font-family: 'Roboto', sans-serif;
@@ -58,7 +58,7 @@
 
 <body>
 
-    <div class="header" style="background: #ffff00; color: #0000ff">
+    <div class="header" style="background: #fcfc30; color: #465eff">
         <div>
             <i class="material-icons" id="backButton2">arrow_back</i>
         </div>
@@ -89,14 +89,13 @@
 
 
         <div align="center">
-            <button style="background: #ffff00; color:#0000ff" class="button-copy" onClick="copiarTexto()">Usar Copia e Cola</button>
+            <button style="background: #fcfc30; color:#465eff; font-weight:500" class="button-copy" onClick="copiarTexto()">Usar Copia e Cola</button>
         </div>
         
         <div align="center" style="margin-top:0; padding-bottom: 0;"><img
                 src="image/qrcode-bb.png" width="100"><br>
-            <b>se preferir, leia o QR Code® Pix com seu app de pagamentos</b><br>
-            sempre confira as informações antes de pagar
-        </div>
+            <b style="font-size:14px;color:#555; font-weight: 400;">se preferir, leia o QR Code® Pix com seu app de pagamentos</b><br>
+        </div><br>
 
 <div class="table">
 
@@ -168,8 +167,6 @@ function copyToClipboard() {
 
 
 </div><!-- end content -->
-
-    </div>
 
     <script>
         // Adicione o evento de clique ao ícone de seta à esquerda
