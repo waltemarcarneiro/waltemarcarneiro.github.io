@@ -18,37 +18,29 @@ body {
 }
 
 .login-container {
-    width: 80%;
-    max-width: 400px;
-    padding: 20px;
+    /* width: 85%; */
+    max-width: 90%;
+    padding: 10px;
     text-align: center;
     position: fixed; /* Adiciona esta linha para fixar o posicionamento */
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Centraliza completamente */
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo-container {
-    margin-bottom: 20px;
-}
-
-.logo-container img {
-    max-width: 100%;
-    height: auto;
-}
 
 h2 {
     margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 input[type="password"] {
-    width: 85%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -61,7 +53,8 @@ input:hover {
 /* cadeado */
 .input-container {
     position: relative;
-    margin-bottom: 15px;
+    max-width: 80%;
+    margin: 0 20px;
 }
 .input-container .icon {
     position: absolute;
@@ -76,11 +69,11 @@ input:hover {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #e77000;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: 3px;
     cursor: pointer;
     font-weight: 500;
     font-size: 16px;
@@ -121,16 +114,15 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 25px;
+    background-color: BLACK;
+    color: #fff;
+    padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    max-width: 300px;
     width: 80%;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    line-height: 1.5;
+    
     font-size: 22px;
 }
 
