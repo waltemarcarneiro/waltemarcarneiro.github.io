@@ -18,8 +18,8 @@ body {
 }
 
 .login-container {
-    /* width: 85%; */
-    max-width: 90%;
+    width: 300px;
+    /* max-width: 90%; */
     padding: 10px;
     text-align: center;
     position: fixed; /* Adiciona esta linha para fixar o posicionamento */
