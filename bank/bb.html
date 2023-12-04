@@ -32,6 +32,10 @@
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
 
     <style type="text/css">
+        @font-face {
+            font-family: BancoDoBrasilTitulos-Bold;
+            src: url(fonts/BancoDoBrasilTitulos-Bold.ttf);
+        }
         .copy-button {
             color: #465eff;
             background: none;
@@ -73,7 +77,25 @@
 .message-bb{
     margin-left: 10px;
 }
-
+#minhaDiv{
+    height: 80px;
+      background: #465eff;
+      padding: 16px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      left: 0;
+      transition: opacity 0.3s ease-out, transform 0.2s ease-out;
+      transform: translateY(var(--translate-value));
+      bottom: 0px;
+      width: 100%;
+      position: fixed;
+}
+body{margin: 0;
+      padding: 0;
+      height: 127vh;
+}
     </style>
 
 </head>
@@ -81,7 +103,7 @@
 <body>
 
 <!-- HEADER -->
-    <div class="header" style="background: #fcfc30; color: #465eff">
+    <div class="header" style="background: #fcfc30; color: #465eff; border-bottom: 5px solid #465eff;">
         <div>
             <i class="material-icons" id="backButton2">arrow_back</i>
         </div>
@@ -158,7 +180,14 @@
                 <div class="table-cell1">CPF:</div>
                 <div class="table-cell2">***.460.37*-**</div>
             </div>
+        </div><!--  END TABLE-->
+
+        <div align="center">
+            <br>
+            👇 Contiunue navegando
         </div>
+
+       
 
         <!-- SCRIPT DA COPIA QRCODE -->
         <script>
@@ -191,6 +220,21 @@
 
 
     </div><!-- end content -->
+
+
+<!-- BANNER -->
+<br>
+<div id="minhaDiv">
+    <div>
+        <div style="margin: 0px -8px; align-items: center !important; justify-content: center !important; display: flex; flex-wrap: wrap; margin-right: -8px; margin-left: -8px; box-sizing: border-box;">
+            <h3 style="color:#fcf800; margin: 0px 16px 0px 0px; font-size: 32px; font-weight: bold; font-family:BancoDoBrasilTitulos-Bold"></h3>
+            <a href="https://bit.ly/amazonplayer"><button style="color:#3354fd; background: #fdf429; padding: 0px 32px; height:48px; font-size: 16px; font-weight: bold; min-width: 160px; border-radius: 4px; text-transform: uppercase;
+line-height: 1.125; letter-spacing: .015em;"> baixe nosso App</button></a>
+        </div>
+    </div>
+</div>
+
+
 
     <script>
         // Adicione o evento de clique ao ícone de seta à esquerda
@@ -247,6 +291,20 @@
         </div>
     </div><!-- END CONTEUDO DO POPUP -->
 
+<!-- SCRIPT DA ROLAGEM -->
+
+<script>
+  window.addEventListener('scroll', function() {
+    var minhaDiv = document.getElementById('minhaDiv');
+    var scrollPosition = window.scrollY;
+
+    if (scrollPosition > 60) { // Ajuste este valor conforme necessário
+      minhaDiv.style.opacity = '1';
+    } else {
+      minhaDiv.style.opacity = '0';
+    }
+  });
+</script>
 
     <script src="../script-sw.js"></script>
 </body>
