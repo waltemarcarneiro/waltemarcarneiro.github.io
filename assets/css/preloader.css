@@ -4,9 +4,10 @@
 body {
     margin: 0;
     padding: 0;
-    background:#ECE5DD;
+    background:#F3EBF8;
     color: #545f7e;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 .content {
     position: absolute;
@@ -68,6 +69,7 @@ body {
 .ctn-preloader .animation-preloader .txt-loading .letters-loading {
   color: rgba(0, 0, 0, 0.2);
   position: relative;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
@@ -239,7 +241,7 @@ body {
     width: 8em;
   }
   .ctn-preloader .animation-preloader .txt-loading {
-    font: bold 3.5em "Montserrat", sans-serif;
+    font: bold 3.5em 'Montserrat', sans-serif;
   }
 }
 
@@ -249,6 +251,6 @@ body {
     width: 7em;
   }
   .ctn-preloader .animation-preloader .txt-loading {
-    font: bold 2em "Montserrat", sans-serif;
+    font: bold 2em 'Montserrat', sans-serif;
   }
 }
