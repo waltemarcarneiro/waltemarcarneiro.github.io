@@ -7,7 +7,7 @@
 
     <title>Pix Banco do Brasil | Waltemar Carneiro</title>
     <meta name="description" content="Você tem uma transferência Pix para Waltemar Carneiro" />
-    <meta content="#ffff00" name="theme-color" />
+    <meta content="#fcfc30" name="theme-color" />
 
     <link rel="stylesheet" href="bank.css" />
     <link rel="stylesheet" href="popup.css" />
@@ -53,11 +53,34 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 999;
+}
+.bb-qrcode-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 0px;
+    background-color: #fcfc30;
+    color: #333;
+    border-radius: 0px 10px 10px 0px;
+}
+.bb-qrcode-message img{
+    background:#fff;
+    padding: 6px;
+    
+
+ }
+.message-bb{
+    margin-left: 10px;
+}
+
     </style>
+
 </head>
 
 <body>
 
+<!-- HEADER -->
     <div class="header" style="background: #fcfc30; color: #465eff">
         <div>
             <i class="material-icons" id="backButton2">arrow_back</i>
@@ -71,14 +94,14 @@
 
 
 
-    <!-- START CONTENT -->
+    <!-- CONTENT -->
 
     <div class="content">
 
         <!-- Conteúdo da página -->
         
-        <br>
-        <div align="center"><img src="image/logo-bb.png" width="170"></div>
+        <br><br>
+        <div align="center"><img src="image/logo-bb.png" width="170"></div><br>
 
         <script src="sweetalert2.all.js"></script>
 
@@ -90,15 +113,12 @@
         </section>
 
 
-        <div align="center">
-            <button style="background: #fcfc30; color:#465eff;" class="button-copy"
-                onClick="copiarTexto()">Usar Copia e Cola</button>
-        </div>
 
-        <div align="center" style="margin-top:0; padding-bottom: 0;"><img src="image/qrcode-bb.png" width="100"><br>
-            <b style="font-size:14px;color:#555; font-weight: 400;">se preferir, leia o QR Code® Pix com seu app de
-                pagamentos</b><br>
-        </div><br>
+        <bb-qrcode-message><div class="bb-qrcode-message"><img alt="Imagem de QR Code" width="100" height="100" src="image/qrcode-bb.png"><div class="message-bb"> Aponte a câmera do seu celular para o código ao lado para copiar o codigo Pix. <div align="">
+        <button style="background: #465eff; color:#fcfc30; border-radius: 5px; font-size: 16px;" class="button-copy"
+        onClick="copiarTexto()">Usar Copia e Cola</button>
+        </div></div></div>
+        </bb-qrcode-message><br>
 
         <div class="table">
 
