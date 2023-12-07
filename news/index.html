@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A filial brasileira do AliExpress solidifica sua presença no mercado nacional</title>
+  <meta name="description" content="Web Developer | Android Webview" />
+
+  <link rel="manifest" href="../manifest.json" />
+  <link rel="stylesheet" href="../assets/css/posts.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- FAVICON-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/icon16.png" />
+  <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#e77000" />
+  <meta name="msapplication-TileColor" content="#e77000" />
+  <meta name="theme-color" content="#e77000" />
+  <link rel="shortcut icon" href="../icons/icon32.png" />
+
+  <!-- SEO | OG -->
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="keywords" content="Waltemar" />
+  <meta property="og:title" content="6 formas de gerar Leads com pop-ups sem atrapalhar a experiência dos usuários" />
+  <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-image-aliexpress.png" />
+  <meta content='website' property='og:type' />
+  <meta property="og:site_name" content="Saiba como pop-ups podem melhorar (e muito!) as taxas de conversão do seu site sem necessariamente atrapalhar a experiência dos usuários." />
+  <meta property="og:description" content="Web Developer | Android Webview" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!--<link rel="stylesheet" type="text/css" href="../../assets/css/contact-form.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+        .share-post {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            padding: 5px 10px;
+        }
+
+        .share-button {
+            background-color: #fff;
+            color: #fff;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50px;
+            
+            
+        }
+        .share-button i{
+            color: #e77000;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="header">
+
+    <!--BUTTON LEFT -->    
+    
+    <button id="backButton">
+        <i class="material-icons">arrow_back</i>
+    </button>
+    
+    <!-- LOGO -->
+    <div class="header-logo">
+        <button><a href="../app.html"><img src="../icons/logo-192.svg" alt="Logo" height="30px"></a></button>
+    </div>
+
+    <!-- BUTTON RIGHT -->
+    <button id="shareButton">
+        <i class="material-icons">share</i>
+    </button>
+
+    </div>
+
+<!-- START CONTENT -->
+    
+
+<div class="content">
+
+      <h1>Integração do AliExpress ao Google Pay Reforça Presença no Mercado Brasileiro</h1>
+
+      <blockquote>"A filial brasileira do AliExpress solidifica sua presença no mercado nacional ao integrar-se ao Google Pay. Essa parceria estratégica não apenas simplifica as transações online para os consumidores do renomado marketplace, mas também oferece benefícios exclusivos, como um desconto inicial de R$ 25 em compras acima de R$ 50."</blockquote><br>
+
+      <img src="../image/og-image-aliexpress.png" width="100%"><br>
+
+        <div class="post">
+
+                <p>A filial brasileira do AliExpress (disponível em plataformas Android e iOS) oficializou sua integração ao Google Pay (Android) nesta segunda-feira, 4. Esta iniciativa possibilitará aos consumidores do renomado marketplace da Alibaba realizar transações online utilizando os cartões registrados em sua carteira do Google, beneficiando-se ainda de um desconto inaugural de R$ 25 em compras acima de R$ 50 neste portal de comércio eletrônico.
+
+É importante ressaltar que os usuários também terão a opção de empregar o Google Pay para efetuar pagamentos presenciais por meio da tecnologia de aproximação, caso seus dispositivos móveis estejam equipados com a funcionalidade NFC.
+
+Além do AliExpress, o Google Pay estabeleceu parcerias com diversas outras lojas online de destaque, incluindo marcas como Adidas, Claro e iFood.
+
+O Google Pay é compatível com uma ampla variedade de cartões e bandeiras, abrangendo instituições financeiras como Nubank, Banco do Brasil e Itaú. Para consultar a lista completa de parceiros, recomendamos acessar as informações disponíveis aqui.</p> 
+        </div>
+
+                <div class="share-post">
+    <button class="share-button" id="twitter">
+        <i class="fab fa-twitter fa-2x"></i>
+    </button>
+    <button class="share-button" id="facebook">
+        <i class="fab fa-facebook fa-2x"></i>
+    </button>
+    <button class="share-button" id="instagram">
+        <i class="fab fa-instagram fa-2x"></i>
+    </button>
+    <button class="share-button" id="whatsapp" onclick="shareOnWhatsApp()">
+        <i class="fab fa-whatsapp fa-2x"></i>
+    </button>
+    <button class="share-button" id="pinterest">
+        <i class="fab fa-pinterest fa-2x"></i>
+    </button>
+    <button class="share-button" id="telegram">
+        <i class="fab fa-telegram fa-2x"></i>
+    </button>
+    <button class="share-button" id="email">
+        <i class="fas fa-envelope fa-2x"></i>
+    </button>
+</div>
+
+
+
+</div><!-- END CONTENT-->
+
+
+        
+<div class="extra-space"></div>
+
+
+<!--START SCRIPT SHARE ICONS-->
+
+<script>
+    // Função para compartilhar nas redes sociais
+    function shareOnSocialMedia(platform) {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        const description = encodeURIComponent("Descrição da página");
+        const quote = encodeURIComponent("Conteúdo do blockquote");
+
+        switch (platform) {
+            case 'twitter':
+                window.location.href = `https://twitter.com/intent/tweet?url=${url}&text=${title}&via=seu-usuario-do-twitter`;
+                break;
+            case 'facebook':
+                window.location.href = `https://www.facebook.com/sharer.php?u=${url}`;
+                break;
+            case 'instagram':
+                // Abra o aplicativo Instagram se estiver no celular
+                // Ou redirecione para a página do Instagram na web
+                window.location.href = 'https://www.instagram.com/';
+                break;
+            case 'whatsapp':
+                // Abra o aplicativo WhatsApp se estiver no celular
+                // Ou redirecione para a página do WhatsApp na web
+                window.location.href = 'https://web.whatsapp.com/';
+                break;
+            case 'pinterest':
+                window.location.href = `https://pinterest.com/pin/create/button/?url=${url}&description=${description}`;
+                break;
+            case 'telegram':
+                window.location.href = `https://telegram.me/share/url?url=${url}&text=${title}`;
+                break;
+            case 'email':
+                window.location.href = `mailto:?subject=${title}&body=${url}%0A%0A${quote}`;
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Adicione event listeners aos botões de compartilhamento
+    document.getElementById('twitter').addEventListener('click', () => shareOnSocialMedia('twitter'));
+    document.getElementById('facebook').addEventListener('click', () => shareOnSocialMedia('facebook'));
+    document.getElementById('instagram').addEventListener('click', () => shareOnSocialMedia('instagram'));
+    document.getElementById('whatsapp').addEventListener('click', () => shareOnSocialMedia('whatsapp'));
+    document.getElementById('pinterest').addEventListener('click', () => shareOnSocialMedia('pinterest'));
+    document.getElementById('telegram').addEventListener('click', () => shareOnSocialMedia('telegram'));
+    document.getElementById('email').addEventListener('click', () => shareOnSocialMedia('email'));
+
+
+</script>
+<!--END SCRIPT SHARE ICONS-->
+
+
+
+
+<script src="../assets/js/menu.js"></script>
+
+
+
+<script src="../script-sw.js" defer></script>
+
+</body>
+
+</html>
