@@ -42,21 +42,21 @@
             border: none;
         }
 
-        .copy-success-message {
-            width: 80% !important;
-            display: none;
-            border-radius: 5px;
-            background-color: #465eff;
-            color: #fcfc30;
-            text-align: center;
-            padding: 10px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 24px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 999;
+ .copy-success-message {
+   width: 100%;
+   display: none;
+   background-color: #465eff;
+   color: #fcfc30;
+   text-align: center;
+   padding: 35px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 26px;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 999;
+   line-height: 2;
 }
 .bb-qrcode-message{
     display: flex;
@@ -150,7 +150,7 @@ body{margin: 0;
                     <button id="chave" class="copy-button" onclick="copyToClipboard()"><span
                             class="material-icons" style="font-size: 34px;">content_copy</span></button>
                     <div id="copy-success-message" class="copy-success-message">
-                        Chave <b>ALEATÓRIA</b> copiada com sucesso!
+                        Chave <b>ALEATÓRIA</b><br>copiada com sucesso!
                     </div>
                     <b style="font-family: 'Roboto', sans-serif; font-size;16px; text-transform:uppercase;"></b>
                 </div>
