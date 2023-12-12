@@ -136,7 +136,7 @@
   },
   "shortcuts": [
     {
-      "name": "Amazon Player",
+      "name": "Player",
       "description": "Love Songs",
       "url": "/player/index.html",
       "icons": [
@@ -160,7 +160,7 @@
       ]
     },
     {
-      "name": "Video Clips",
+      "name": "Playlist",
       "url": "/links/playlist-tube.html",
       "description": "playlsit Love Songs",
       "icons": [
@@ -172,9 +172,9 @@
       ]
     },
     {
-      "name": "Player",
-      "url": "/player/index.html",
-      "description": "Player Music",
+      "name": "News",
+      "url": "/news/index.html",
+      "description": "Noticias",
       "icons": [
         {
           "src": "shortcuts/player.png",
