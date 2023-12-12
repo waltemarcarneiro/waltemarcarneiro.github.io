@@ -4,7 +4,7 @@ const urlsToCache = [
   '/login.html',
   '/app.html',
   '/offline.html',
-  '/bank/picpay.html',
+  '/bank/bb.html',
   '/profile.html',
   '/player/index.html',
 ];
