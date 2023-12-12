@@ -228,8 +228,8 @@ li {
     display: table;
     width: 100%;
     border-collapse: collapse;
-    font-size: 12px;
-    font-family: monospace;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 500;
 
 }
 
@@ -240,15 +240,16 @@ li {
 .table-cell1 {
     display: table-cell;
     border-bottom: 1px solid #eaeaea;
-    padding: 5px 0px;
+    padding: 2px 0px;
+    text-align: left;
 }
 
 .table-cell2 {
     display: table-cell;
     border-bottom: 1px solid #eaeaea;
-    padding: 5px 0px;
+    padding: 2px 0px;
     text-align: right;
-    font-weight: bold;
+    
 
 
 }
