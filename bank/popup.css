@@ -15,22 +15,18 @@
     background-color: #0f0f0f;
     width: 326px;
     height: 389px;
-
-    /*background-image*/
     background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(image/banner-itau.jpg);
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
     padding: 20px;
     margin: 50px;
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
-    display: none; /* O popup estará oculto inicialmente */
 }
 #close-button {
     cursor: pointer;
