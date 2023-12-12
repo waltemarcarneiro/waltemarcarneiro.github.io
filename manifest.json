@@ -148,9 +148,9 @@
       ]
     },
     {
-      "name": "Fazer doação",
-      "url": "/bank/dimo.html",
-      "description": "Pix Arbi",
+      "name": "Doação",
+      "url": "/bank/bb.html",
+      "description": "Pix BB",
       "icons": [
         {
           "src": "shortcuts/pix.png",
