@@ -92,15 +92,37 @@
         .logo-natal{
             position: fixed;
             top: 10px;
-            right: 10px;
+            left: 10px;
             z-index: 2;
+        }
+        .icons{
+            position: fixed;
+            bottom: 200px;
+            right: 10px;
+            z-index: 3;
         }
     </style>
 </head>
 
 <body>
     
-    <div class="logo-natal"><img src="image/logo-natal.png" alt="logo-natal" width="60"></div>
+    <div class="logo-natal">
+        <img src="image/logo-natal.png" alt="logo-natal" width="50">
+    </div>
+
+    <div class="icons">
+        <a href="https://bit.ly/wcarneiro" target="_blank"><img src="image/perfil.png" alt="icon-profile" width="40"></a><br><br>
+
+        <a href="https://bit.ly/wcnickelback" id="shareLink"><img src="image/share.png" alt="icon-share" width="40"></a><br><br>
+
+        <a href="https://api.whatsapp.com/send?text=Confira%20este%20vídeo%20sensacional%3A%20https://bit.ly/wcnickelback" target="_blank"><img src="image/whatsapp.png" alt="icon-whatsapp" width="40"></a><br><br>
+
+        <a href="https://" target="_blank"><img src="image/doacao.png" alt="icon-doacao" width="40"></a>
+
+    </div>
+
+
+
     <video id="meuVideo" autoplay controls loop>
         <source src="nickelback.mp4" type="video/mp4">
         
@@ -124,19 +146,42 @@
     </div>
 
 
-<<script>
-    function playVideo() {
-        var meuVideo = document.getElementById('meuVideo');
-        meuVideo.play(); // Inicia o vídeo
+    <script>
+        function playVideo() {
+            var meuVideo = document.getElementById('meuVideo');
+            meuVideo.play();
+            meuVideo.addEventListener('loadeddata', function() {
+                meuVideo.volume = 1.0;
+            });
+            document.querySelector('.video-overlay').style.display = 'none';
+        }
+    </script>
 
-        // Adiciona um evento de carga para garantir que o volume seja ajustado após o início do vídeo
-        meuVideo.addEventListener('loadeddata', function() {
-            meuVideo.volume = 1.0; // Define o volume para reprodução de áudio
+<script>
+    // Adicione um listener ao link de compartilhamento
+        document.getElementById('shareLink').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevenir comportamento padrão do link
+
+            // Adicione o código de compartilhamento aqui
+            const shareUrl = 'https://bit.ly/wcnickelback';
+            const shareTitle = 'Nickelback - Never Gonna Be Alone';
+            const shareContent = 'Assista a este vídeo incrível!';
+
+            if (navigator.share) {
+                navigator.share({
+                    title: shareTitle,
+                    text: shareContent,
+                    url: shareUrl
+                }).then(() => {
+                    console.log('Página compartilhada com sucesso!');
+                }).catch((error) => {
+                    console.error('Erro ao compartilhar a página:', error);
+                });
+            } else {
+                console.log('Compartilhamento não suportado pelo navegador.');
+            }
         });
-
-        document.querySelector('.video-overlay').style.display = 'none'; // Opcional: esconde a cobertura após o clique
-    }
-</script>
+</scr-ipt>
 
 </body>
 
