@@ -95,14 +95,14 @@
 <body>
     <!-- Video na página de splash -->
     <!--<video autoplay muted loop>-->
-    <video autoplay muted controls loop>
+    <video id="meuVideo" autoplay controls loop>
         <source src="nickelback.mp4" type="video/mp4">
         
         Desculpe, seu navegador não suporta vídeos.
     </video>
 
     <!-- Cobertura semi-transparente sobre o vídeo -->
-    <div class="video-overlay"></div>
+    <div class="video-overlay" onclick="playVideo()"></div>
 
     
 
@@ -115,6 +115,22 @@
     <div class="footer">
         <p>Never Gonna Be Alone</p>
     </div>
+
+
+<<script>
+    function playVideo() {
+        var meuVideo = document.getElementById('meuVideo');
+        meuVideo.play(); // Inicia o vídeo
+
+        // Adiciona um evento de carga para garantir que o volume seja ajustado após o início do vídeo
+        meuVideo.addEventListener('loadeddata', function() {
+            meuVideo.volume = 1.0; // Define o volume para reprodução de áudio
+        });
+
+        document.querySelector('.video-overlay').style.display = 'none'; // Opcional: esconde a cobertura após o clique
+    }
+</script>
+
 </body>
 
 </html>
