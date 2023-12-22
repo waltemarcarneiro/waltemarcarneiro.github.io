@@ -14,7 +14,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f2f2f2;
-    color: #4a4a4a;
+    color: #252e48;
 }
 
 .header {
@@ -24,7 +24,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #ec7000;
+    background-color: #e77000;
     padding: 7px;
 }
 .header-logo {
@@ -38,7 +38,7 @@ body {
 .logo-menu{
     margin: 0 auto;
     width: 280px;
-    background-color: #ec7000;
+    background-color: #e77000;
     padding-left: 14px;
     padding-top: 7px;
 }
@@ -102,22 +102,26 @@ body {
     background-position: left bottom;
  }
 .dropdown-list{
-    padding: 12px 16px;
+    padding: 10px 16px;
+    
 }
 .dropdown-content a {
-    color: #4a4a4a;
-    font-size: 18px;
-    font-weight: 600;
+    color: #252e48;
+    font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
     display: flex;
     padding: 12px 0;
     border-bottom: 1px solid #eaeaea;
     font-family: 'Nunito Sans', sans-serif;
+    align-items:center;
 }
-
+.dropdown-content a img {
+    margin-right: 10px;
+}
 .dropdown-content a i {
     margin-right: 20px;
-    font-size: 22px;
+    font-size: 16px;
 }
 .dropdown-content a:hover {
     margin-right: 20px;
@@ -153,11 +157,10 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     border-top: 1px solid #e0e0e0;
     padding-top: 2px;
     padding-bottom: 2px;
-
 }
 
 .footer-icons {
@@ -174,7 +177,7 @@ body {
 }
 
 .footer-icon-link {
-    color: #4a4a4a;
+    color: #252e48;
     text-decoration: none;
     font-size: 28px;
     display: flex;
@@ -185,6 +188,9 @@ body {
     border-radius: 10%;
     background-color: #fff;
     transition: background-color 0.3s ease;
+}
+.footer-icon-link img:hover, img:focus {
+    color: #fff;
 }
 
 .footer-icon-link i {
@@ -199,7 +205,7 @@ body {
     background-color: #FF7F00;
 }
 .icon-text {
-    color: #4a4a4a;
+    color: #252e48;
     font-size: 12px;
     white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
