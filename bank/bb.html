@@ -33,7 +33,7 @@
 
     <style type="text/css">
         @font-face {
-            font-family: BancoDoBrasilTitulos-Bold;
+            font-family: BancoDoBrasil Titulos;
             src: url(fonts/BancoDoBrasilTitulos-Bold.ttf);}
         .copy-button {
             color: #465eff;
@@ -42,21 +42,23 @@
         }
 
  .copy-success-message {
-   width: 100%;
+   width: 80%;
    display: none;
    background-color: #465eff;
    color: #fcfc30;
    text-align: center;
-   padding: 70px;
+   padding: 50px;
    font-family: 'Montserrat', sans-serif;
-   font-size: 26px;
+   font-size: 22px;
    line-height: 1.5;
    position: fixed;
+   border-radius: 5px;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
    z-index: 999;
 }
+
 .bb-qrcode-message{
     display: flex;
     justify-content: center;
@@ -64,7 +66,7 @@
     text-align: left;
     padding: 0px;
     background-color: #fcfc30;
-    color: #333;
+    color: #252e48;
     border-radius: 0px 10px 10px 0px;
 }
 .bb-qrcode-message img{
@@ -121,8 +123,7 @@ body{margin: 0;
 
         <!-- Conteúdo da página -->
         
-        <br><br>
-        <div align="center"><img src="image/logo-bb.png" width="170"></div><br>
+        <div align="left"><img src="image/logo-bb.png" height="30"></div>
 
         <script src="sweetalert2.all.js"></script>
 
@@ -148,9 +149,13 @@ body{margin: 0;
                 <div class="table-cell2">
                     <button id="chave" class="copy-button" onclick="copyToClipboard()"><span
                             class="material-icons" style="font-size: 34px;">content_copy</span></button>
+                    
+                    
                     <div id="copy-success-message" class="copy-success-message">
-                        Chave <b>ALEATÓRIA</b><br> copiada com sucesso!
+                        Chave <b>ALEATÓRIA</b> copiada com sucesso!
                     </div>
+                    
+
                     <b style="font-family: 'Roboto', sans-serif; font-size;16px; text-transform:uppercase;"></b>
                 </div>
             </div>
@@ -257,7 +262,7 @@ line-height: 1.125; letter-spacing: .015em; cursor: pointer;">amazon player app<
     </script>
 
 
-    <script src="popup.js"></script>
+    <!--<script src="popup.js"></script>-->
 
     <div align="center">
         <input id="codepix" name="texto" readonly="" type="text"

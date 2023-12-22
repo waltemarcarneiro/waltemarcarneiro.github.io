@@ -9,8 +9,8 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    color: #4a4a4a;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    color: #252e48;
     background: #f5f7f9;
 }
 
@@ -68,6 +68,7 @@ p {
     justify-content: space-between;
     padding: 0 16px;
     color: white;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
@@ -181,7 +182,7 @@ p {
 
 /* Estilos para o conteúdo da página */
 .content {
-    margin-top: 25px;
+    margin-top: 50px;
     background-color: #f5f7f9;
     border-radius: 10px;
     padding: 10px;
@@ -194,6 +195,7 @@ input {
 .dica {
     line-height: 1;
     margin-bottom: 20px;
+    margin-top: 10px
 
 }
 
@@ -227,9 +229,7 @@ li {
     display: table;
     width: 100%;
     border-collapse: collapse;
-    font-family: 'Source Sans 3', sans-serif;
-    font-weight: 500;
-
+    font-size: 14px;
 }
 
 .table-row {
