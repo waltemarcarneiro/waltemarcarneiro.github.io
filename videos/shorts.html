@@ -78,7 +78,7 @@
             text-align: left;
             font-size: 16px;
             width: 100%;
-            margin-left: 10px;
+            padding-left: 10px;
             margin-bottom: 10px;
         }
 
@@ -103,7 +103,32 @@
             right: 10px;
             z-index: 3;
         }
-    </style>
+
+<!-- MARQUEE CONFIG -->
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    }
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+
+    }
+
+@keyframes marquee {
+    from {
+    transform: translateX(100%);
+    }
+
+    to {
+    transform: translateX(-100%);
+    }
+}
+
+</style>
+
 </head>
 
 <body>
@@ -143,7 +168,9 @@
 
     <!-- Rodapé -->
     <div class="footer">
-        <p>🎄 Feliz Natal e Boas Festas!</p>
+        <div class="marquee-container">
+            <div class="marquee-content">🎄 Feliz Natal e Boas Festas!</div>
+        </div>
     </div>
 
 
