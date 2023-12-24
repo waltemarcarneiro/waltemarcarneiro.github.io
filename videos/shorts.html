@@ -23,7 +23,13 @@
         <meta property="og:site_name" content="Waltemar Carneiro"/>
         <meta property='og:type' content='website'/>
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap'); * {
+            @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+            * {
                 margin: 0;
                 padding: 0;
             }
@@ -105,7 +111,7 @@
                 z-index: 1;
             }
 
-            <!-- MARQUEE CONFIG --> .marquee-container {
+            .marquee-container {
                 overflow: hidden;
                 white-space: nowrap;
             }
@@ -145,6 +151,7 @@
                 width: 60px;
             }
         </style>
+        
     </head>
     <body>
         <script src="../bank/sweetalert2.all.js"></script>
@@ -172,10 +179,10 @@
             </a>
         </div>
         <video id="meuVideo" autoplay controls loop>
-            <source src="https://waltemarcarneiro.github.io/videos/short.mp4" type="video/mp4">Desculpe, seu navegador não suporta vídeos.
-    
-        
-        </video>
+            <source src="https://waltemarcarneiro.github.io/videos/short.mp4" type="video/mp4">
+            Desculpe, seu navegador não suporta vídeos.
+            </video>
+
         <!-- Cobertura semi-transparente sobre o vídeo -->
         <div class="video-overlay" onclick="playVideo()"></div>
         <!-- Div superior -->
