@@ -23,13 +23,15 @@
         <meta property="og:site_name" content="Waltemar Carneiro"/>
         <meta property='og:type' content='website'/>
         <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
             * {
                 margin: 0;
                 padding: 0;
-            }
-
-            h1 {
-                font-size: 26px
             }
 
             body, html {
@@ -128,6 +130,29 @@
                     transform: translateX(-100%);
                 }
             }
+            h1 {
+                font-size: 20px;
+                text-align: left;
+                vertical-align: top;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+            }
+            .logo-popup{
+                
+                display: flex;
+                align-items: center;
+        
+                
+            }
+            .logo-popup img{
+                
+                margin-right: 10px;
+                text-align: left;
+                height: 60px;
+                width: 60px;
+                
+            }
+            
         </style>
     </head>
     <body>
@@ -213,10 +238,12 @@
         <div class="popup" id="popup">
             <div class="popup-content">
                 <div>
-                    <h1>Olá, use as opções abaixo para fazer sua doação via Pix</h1>
-                    Aponte a câmera do seu celular para o QRCode, ou use os botões "<b>Copiar Chave</b>
-                    " ou "<b>Copia e Cola</b>
-                    ".<br>
+                    <div class="logo-popup">
+                        <img src="../icons/icon-rounded512.png">    
+                        <h1>Use as opções abaixo para fazer sua doação via Pix.</h1>
+                    </div>
+                    <p style="text-align: justify; margin-top: 10px; color: #545f7e;">Aponte a câmera do seu celular para o QRCode, ou use os botões "<b>Copiar Chave</b>
+                    " ou "<b>Copia e Cola.</b>"</p>
                     <div align="center" class="qrcode">
                         <img src="../bank/image/qrcode-bb.png" height="100" alt="qrcode">
                     </div>
