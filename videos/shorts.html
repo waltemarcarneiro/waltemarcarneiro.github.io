@@ -132,7 +132,7 @@
 </head>
 
 <body>
-    
+    <script src="../bank/sweetalert2.all.js"></script>
     <div class="logo-natal">
         <img src="../image/logo-natal.png" alt="logo-natal" width="50">
     </div>
@@ -140,18 +140,18 @@
     <div class="icons">
         <a href="https://bit.ly/wcarneiro" target="_blank"><img src="../image/perfil.png" alt="perfil" width="40"></a><br><br>
 
-        <a href="https://bit.ly/wcnickelback" id="shareLink"><img src="../image/share.png" alt="share" width="40"></a><br><br>
+        <a href="https://bit.ly/wc-short" id="shareLink"><img src="../image/share.png" alt="share" width="40"></a><br><br>
 
-        <a href="https://api.whatsapp.com/send?text=Confira%20este%20vídeo%20sensacional%3A%20https://bit.ly/wc-shorts" target="_blank"><img src="../image/whatsapp.png" alt="whatsapp" width="40"></a><br><br>
+        <a href="https://api.whatsapp.com/send?text=Confira%20este%20vídeo%20sensacional%3A%20https://bit.ly/wc-short" target="_blank"><img src="../image/whatsapp.png" alt="whatsapp" width="40"></a><br><br>
 
-        <a href="../bank/bb.html" target="_blank"><img src="../image/doacao.png" alt="doacao" width="40"></a>
+        <a href="#" id="pixLink"><img src="../image/doacao.png" alt="doacao" width="40"></a>
 
     </div>
 
 
 
     <video id="meuVideo" autoplay controls loop>
-        <source src="short.mp4" type="video/mp4">
+        <source src="https://waltemarcarneiro.github.io/videos/short.mp4" type="video/mp4">
         
         Desculpe, seu navegador não suporta vídeos.
     </video>
@@ -210,7 +210,173 @@
             }
         });
 </script>
+<!-- start POPUP DOAÇÃO -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <div>
+            <h1>Olá, use as opções abaixo para fazer sua doação via Pix</h1>
+            Aponte a câmera do seu celular para o QRCode, ou use os botões "<b>Copiar chave</b>" ou "<b>Copia e Cola</b>".<br>
+            <div align="center" class="qrcode"><img src="../bank/image/qrcode-bb.png" height="100" alt="qrcode"></div>
+            <div class="btn">
+                <button class="key1" onclick="copyText('pix')">Copiar Chave</button>
+                <button class="key2" onclick="copyText('code')">Copia e Cola</button>
+            </div>
+        </div>
+        <div>
+            <button class="close-button" onclick="closePopup()">Fechar</button>
+        </div>
+        
+        <span id="pix" class="chave">aa8b3fd0-0c76-422f-9f3a-844bd7f6b627</span>
+        <span id="code" class="chave">00020126770014br.gov.bcb.pix0136aa8b3fd0-0c76-422f-9f3a-844bd7f6b6270215Solicitacao Pix5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62290525l0mRiVkLmDEtcAVLaD8SUuLO46304BD9F</span>
+           
+    </div>
+</div>
 
+<!-- Incluindo o script do SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+    document.getElementById('pixLink').addEventListener('click', function () {
+        document.getElementById('popup').style.display = 'block';
+    });
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    function copyText(elementId) {
+        var textToCopy = document.getElementById(elementId).innerText;
+
+        // Cria um elemento de área de transferência temporário
+        var tempInput = document.createElement('textarea');
+        tempInput.value = textToCopy;
+        document.body.appendChild(tempInput);
+        
+        // Seleciona o texto da área de transferência temporária
+        tempInput.select();
+        tempInput.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+
+        // Copia o texto para a área de transferência
+        document.execCommand('copy');
+
+        // Remove o elemento de área de transferência temporário
+        document.body.removeChild(tempInput);
+
+        // Exibe um popup personalizado com o SweetAlert
+        Swal.fire({
+            title: elementId === 'pix' ? 'Chave copiada!' : 'Codigo Pix copiado com sucesso!',
+            text: elementId === 'pix' ? 'Use a opção CHAVE ALEATÓRIA no app do seu banco.' : 'Use a opção COPIA e COLA no app do seu banco.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            customClass: {
+                title: 'swal-title-custom',
+                content: 'swal-text-custom'
+            }
+        });
+    }
+</script>
+<!--config do popup doação-->
+<style type="text/css">
+.popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            /box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-top: 1px solid #ddd;
+            overflow: hidden;
+            font-size: 18px;
+            color: #252E48;
+        }
+
+        .popup-content {
+            padding: 20px;
+        }
+
+        .close-button {
+            font-weight: 500 ;
+            width: 100%;
+            height: 40px;
+            background: #eee;
+            color: #555;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            text-transform: uppercase;
+            border-radius: 5px;
+        }
+        .qrcode{
+            margin: 20px 0px;
+        }
+        .btn{
+            margin: 20px 0px;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .key1{
+            padding: 10px 20px;
+            background: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500; 
+        }
+        .key2{
+            padding: 10px 20px;
+            background: #e77000;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500; 
+        }
+        input{
+            display: none;
+        }
+        .chave{
+            display: none;
+        }
+
+        /* Adicione as classes CSS para personalizar o estilo do SweetAlert */
+        .swal-title-custom {
+            color: #252E48 !important;
+            font-size: 26px !important;
+        }
+
+        .swal-text-custom {
+            font-weight: 500 !important;
+            font-size: 16px;
+            color: #252E48 !important;
+            
+        }
+        /*anime icon*/
+    .swal2-header {
+        padding: 0 !important;
+    }
+
+    .swal2-success-line-tip{
+    background: orange !important;
+    }
+    .swal2-success-line-long{
+    background: orange !important;
+    }
+    .swal2-icon.swal2-success .swal2-success-ring {
+    position: absolute;
+    z-index: 2;
+    top: -0.25em;
+    left: -0.25em;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    border: 0.25em solid orange !important;
+    border-radius: 50%;
+    }
+</style>        
+<!--end cofig doação-->
 </body>
 
 </html>
