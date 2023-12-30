@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<title>❤️ Desejo a Todos um Feliz e Prospero Ano Novo ❤️</title>
+<meta content="Que Deus abençoe a todos, com muita Saúde, Paz e Amor em seus Corações!" name="description" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" />
+<!-- Manifest -->
+<link rel="manifest" href="../manifest.json">
+<!-- favicon -->
+<link href="../icons/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+<link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#ffffff">
+
+<meta name="msapplication-TileColor" content="#111111">
+<meta content="#ffffff" name="msapplication-navbutton-color" />
+<meta content="#ffffff" name="apple-mobile-web-app-mobile-bar-style" />
+<meta content="#ffffff" name="theme-color" />
+<link href="../icons/apple-touch-icon-180x180.png" sizes="180x180" rel="apple-touch-icon" />
+<!-- [ Meta Tag OG ] -->
+<meta property="og:locale" content="pt_BR"/>
+        <meta name="keywords" content="Waltemar"/>
+        <meta property="og:title" content="Desejo a Todos um Feliz e Prospero Ano Novo"/>
+        <meta property="og:description" content="Que Deus abençoe a todos, com muita Saúde, Paz e Amor em seus Corações!"/>
+        <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-image-donate.png"/>
+        <meta property="og:site_name" content="Waltemar Carneiro"/>
+        <meta property='og:type' content='website'/>
+
+<style type="text/css">
+.doacao {
+  width:100%;
+  border-radius: 10px;
+  margin-bottom:20px;}
+.legenda {
+    color: #fff;
+    background: linear-gradient(180deg,#8C83F7 0,#655BE2 100%);
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-align: left;
+}
+.legenda b {
+    color: #fbd344;
+}
+.button {
+    border-radius: 2em;
+    border: none;
+    color: #465EFF;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0.75em 1.5em;
+    
+    background: #FCFC30;
+    box-shadow: 0 0 0 0 #f27474;
+    animation: pulse-red 1.5s infinite;
+}
+.key{
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+}
+.content2{
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="content2">
+  
+  <img src="image/logo-bb.png" height="30" style="margin-bottom: 10px;">
+  <div>
+    <link href="bank.css" rel="stylesheet">
+    </link>
+    <div align="center">
+    <img class="doacao" src="image/banner.png" alt="banner-doação" /><br>
+      <div class="legenda">
+      <b>1.</b> Click no botão abaixo para copiar o código de doação Pix.<br />
+      <b>2.</b> Abra o app do seu banco e acesse a área Pix.<br />
+      <b>3.</b> Escolha a opção <b>Copia e Cola</b> .<br />
+      <b>4.</b> Cole o código copiado e efetue a transferência.</b>
+    </div>
+
+    </div>
+    
+    <script src="sweetalert2.all.js"></script>
+    
+    
+    <div style="margin-top: 20px; text-align: center;">
+      <button class="button" onClick="copiarTexto()">Copiar Código PIX</button>
+    </div>
+    <br />
+    <div style="text-align: center;"><img class="qr-code" border="0" src="image/qrcode-bb.png" width="130" /> <br />
+    <b class="key">Chave Pix:</b> <br />
+      <b class="key">edcebd46-2b0e-4822-9eda-538c32196c56</b><br />
+    </div>
+  </div>
+</div>
+</div>
+<div class="sucesso">
+  <script>
+            function copiarTexto() {
+                let textoCopiado = document.getElementById("texto");
+                textoCopiado.select();
+                textoCopiado.setSelectionRange(0, 99999)
+                document.execCommand("copy");
+                swal('<b class="sucesso">Código Pix Copiado com Sucesso</b>', '<b class="sucesso2">Use a opção <b>COPIA e COLA</b> no aplicativo do seu banco.</b>', 'success');
+            }
+        </script>
+  <input id="texto" name="texto" readonly type="text"
+            value="00020126580014BR.GOV.BCB.PIX0136edcebd46-2b0e-4822-9eda-538c32196c565204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63049FDD" />
+</div>
+</div>
+
+
+<!-- import the webpage's javascript file -->
+<script src="script.js" defer></script>
+</body>
+</html>
