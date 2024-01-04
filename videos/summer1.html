@@ -58,18 +58,6 @@
             }
 
 
-            /* Cobertura sobre o vídeo */
-            .video-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.4);
-
-                /* Cor semi-transparente (aqui é preto com 40% de opacidade) */
-            }
-
             /* Estilos para centralizar o conteúdo de texto */
             .centered-content {
                 position: absolute;
@@ -113,7 +101,7 @@
             .icons {
                 position: fixed;
                 bottom: 100px;
-                right: 10px;
+                right: 5px;
                 z-index: 1;
                 display: flex;
                 flex-direction: column;
@@ -191,7 +179,7 @@
                 <img src="../image/share.png" alt="share" width="50">
             </a>
             
-            <a href="https://api.whatsapp.com/send?text=T%C3%A1+na+hora+do+seu+momento+Love+Songs%21https://bit.ly/wclove" target="_blank">
+            <a href="https://api.whatsapp.com/send?text=T%C3%A1+na+hora+do+seu+momento+Mega+Hits+2024%21+https://bit.ly/wcsummer" target="_blank">
                 <img src="../image/whatsapp.png" alt="whatsapp" width="50">
             </a>
             
@@ -218,25 +206,7 @@
                 <div class="marquee-content">Summer Mega Hits 2024</div>
             </div>
         </div>
-        <!-- start script overlay sobre o video-->
-        <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelector('.video-overlay').addEventListener('click', function () {
-            playVideo();
-        });
-    });
-
-    function playVideo() {
-        var meuVideo = document.getElementById('meuVideo');
-        meuVideo.src = "https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLX_YaKXOr1s4G31MK1LOv-w3VjDwo6Bky&autoplay=1";
-        meuVideo.addEventListener('loadeddata', function () {
-            meuVideo.volume = 1.0;
-        });
-        document.querySelector('.video-overlay').style.display = 'none';
-    }
-</script>
-
-        <!-- end script overlay sobre o video-->
+        
 
         <script>
             // Adicione um listener ao link de compartilhamento
