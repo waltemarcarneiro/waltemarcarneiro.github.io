@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta name="theme-color" content="#111111"/>
-        <title>Momento Love Songs</title>
-        <meta name="description" content="Relaxe ao som do melhor do romantismo!">
+        <title>Summer Hits 2024</title>
+        <meta name="description" content="Best Of Vocal Deep House!">
         <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
         <!-- FAVICON-->
         <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png"/>
@@ -18,9 +18,9 @@
         <!-- SEO | OG -->
         <meta property="og:locale" content="pt_BR"/>
         <meta name="keywords" content="Waltemar"/>
-        <meta property="og:title" content="Momento Love Songs"/>
-        <meta property="og:description" content="Relaxe ao som do melhor do romantismo!"/>
-        <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-love.png"/>
+        <meta property="og:title" content="Summer Hits 2024"/>
+        <meta property="og:description" content="Best Of Vocal Deep House!"/>
+        <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-summer.png"/>
         <meta property="og:site_name" content="Waltemar Carneiro"/>
         <meta property='og:type' content='website'/>
         <style>
@@ -34,7 +34,11 @@
                 margin: 0;
                 padding: 0;
             }
-            i{color: #24C091;}
+
+            i {
+                color: #24C091;
+            }
+
             body, html {
                 font-family: 'Roboto', sans-serif;
                 margin: 0;
@@ -53,6 +57,7 @@
                 object-fit: cover;
             }
 
+
             /* Cobertura sobre o vídeo */
             .video-overlay {
                 position: absolute;
@@ -61,6 +66,7 @@
                 width: 100%;
                 height: 100%;
                 background-color: rgba(0, 0, 0, 0.4);
+
                 /* Cor semi-transparente (aqui é preto com 40% de opacidade) */
             }
 
@@ -99,8 +105,8 @@
 
             .logo-natal {
                 position: fixed;
-                top: 10px;
-                left: 10px;
+                top: 7px;
+                left: 7px;
                 z-index: 2;
             }
 
@@ -174,7 +180,7 @@
     <body>
         <script src="../bank/sweetalert2.all.js"></script>
         <div class="logo-natal">
-            <img src="../image/logo-header.png" alt="logo-natal" width="50">
+            <img src="../icons/icon-rounded512.png" alt="logo-natal" width="50">
         </div>
         <div class="icons">
             <a href="https://bit.ly/wcarneiro" target="_blank">
@@ -194,12 +200,7 @@
             </a>
         </div>
         
-        <!--<video id="meuVideo" autoplay controls loop>
-            <source src="https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLf7Ld_SZyNJK3B9N2nkMIj7JnJr9VwexW" type="video/mp4">
-            Desculpe, seu navegador não suporta vídeos.
-            </video>-->
-
-            <iframe class="content" width="100%" height="" src="https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLX_YaKXOr1s4G31MK1LOv-w3VjDwo6Bky" frameborder="0" allowfullscreen></iframe>
+        <iframe id="meuVideo" width="100%" height="" src="https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLX_YaKXOr1s4G31MK1LOv-w3VjDwo6Bky" frameborder="0" allowfullscreen></iframe>
 
         <!-- Cobertura semi-transparente sobre o vídeo -->
         <div class="video-overlay" onclick="playVideo()"></div>
@@ -217,16 +218,26 @@
                 <div class="marquee-content">Summer Mega Hits 2024</div>
             </div>
         </div>
+        <!-- start script overlay sobre o video-->
         <script>
-            function playVideo() {
-                var meuVideo = document.getElementById('meuVideo');
-                meuVideo.play();
-                meuVideo.addEventListener('loadeddata', function() {
-                    meuVideo.volume = 1.0;
-                });
-                document.querySelector('.video-overlay').style.display = 'none';
-            }
-        </script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector('.video-overlay').addEventListener('click', function () {
+            playVideo();
+        });
+    });
+
+    function playVideo() {
+        var meuVideo = document.getElementById('meuVideo');
+        meuVideo.src = "https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLX_YaKXOr1s4G31MK1LOv-w3VjDwo6Bky&autoplay=1";
+        meuVideo.addEventListener('loadeddata', function () {
+            meuVideo.volume = 1.0;
+        });
+        document.querySelector('.video-overlay').style.display = 'none';
+    }
+</script>
+
+        <!-- end script overlay sobre o video-->
+
         <script>
             // Adicione um listener ao link de compartilhamento
             document.getElementById('shareLink').addEventListener('click', function(event) {
@@ -234,10 +245,9 @@
                 // Prevenir comportamento padrão do link
 
                 // Adicione o código de compartilhamento aqui
-                const shareUrl = 'https://bit.ly/wclove';
-                const shareTitle = 'Momento Love Songs';
-                const shareContent = 'Relaxe ao som do melhor do romantismo!';
-
+                const shareUrl = 'https://waltemarcarneiro.github.io/videos/summer1.html';
+                const shareTitle = 'Summer Hits 2024';
+                const shareContent = 'Best Of Vocal Deep House'
                 if (navigator.share) {
                     navigator.share({
                         title: shareTitle,
