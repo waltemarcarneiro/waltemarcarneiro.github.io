@@ -110,7 +110,7 @@ body{margin: 0;
         </div>
         <div>Pagamentos</div>
         <div class="share-icon">
-            <i class="material-icons" id="shareButton">share</i>
+            <i class="material-icons" id="shareLink">share</i>
         </div>
     </div>
 
@@ -123,7 +123,7 @@ body{margin: 0;
 
         <!-- Conteúdo da página -->
         
-        <div align="left"><img src="image/logo-bb.png" height="30"></div>
+       <img src="image/logo-bb.png" height="30">
 
         <script src="sweetalert2.all.js"></script>
 
@@ -145,7 +145,7 @@ body{margin: 0;
         <div class="table">
 
             <div class="table-row">
-                <div class="table-cell1">Copie a Chave Pix:</div>
+                <div class="table-cell1" onclick="copyToClipboard()" style="color:#fff; cursor: pointer; text-transform: uppercase; font-weight:600; user-select: none; background:#465EFF; border-radius: 5px; display:flex; align-items: center; padding: 5px 10px;justify-content: space-around;">Copiar Chave Pix</div>
                 <div class="table-cell2">
                     <button id="chave" class="copy-button" onclick="copyToClipboard()"><span
                             class="material-icons" style="font-size: 34px;">content_copy</span></button>
@@ -242,21 +242,30 @@ line-height: 1.125; letter-spacing: .015em; cursor: pointer;">amazon player app<
         });
 
         // Adicione o evento de clique ao ícone de compartilhamento
-        document.getElementById('shareButton').addEventListener('click', () => {
-            // Compartilha a página atual
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    url: window.location.href
-                }).then(() => {
-                    console.log('Página compartilhada com sucesso!');
-                }).catch((error) => {
-                    console.error('Erro ao compartilhar a página:', error);
-                });
-            } else {
-                console.log('Compartilhamento não suportado pelo navegador.');
-                // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
-            }
+        document.getElementById('shareLink').addEventListener('click', function(event) {
+                event.preventDefault();
+                // Prevenir comportamento padrão do link
+
+                // Adicione o código de compartilhamento aqui
+                const shareUrl = 'https://bit.ly/wcbbrasil';
+                const shareTitle = 'Link para transferência Pix';
+                const shareContent = 'Realize sua transferência Pix de forma rápida e prática através deste link';
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: shareTitle,
+                        text: shareContent,
+                        url: shareUrl
+                    }).then(()=>{
+                        console.log('Página compartilhada com sucesso!');
+                    }
+                    ).catch((error)=>{
+                        console.error('Erro ao compartilhar a página:', error);
+                    }
+                    );
+                } else {
+                    console.log('Compartilhamento não suportado pelo navegador.');
+                }
         });
 
     </script>
