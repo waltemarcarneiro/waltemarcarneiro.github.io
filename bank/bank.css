@@ -48,7 +48,9 @@ h2{ font-size: 20px;
 a {
     color: #e77000;
     text-decoration: none;
-
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    user-select: none;
 }
 
 p {
@@ -79,7 +81,6 @@ p {
     cursor: pointer;
 }
 
-/* Adicione os estilos para o ícone de compartilhamento */
 .share-icon {
     margin-left: 10px;
     display: flex;
@@ -87,7 +88,7 @@ p {
     cursor: pointer;
 }
 
-/* Estilos para o aviso */
+/* aviso */
 .centered-box {
     position: fixed;
     top: 50%;
@@ -98,10 +99,8 @@ p {
     border-radius: 10px;
     padding: 16px;
     display: none;
-    /* Oculta o aviso por padrão */
 }
 
-/* Estilos para a div do conteúdo */
 .content-box {
     height: 450px;
     background-color: #0f0f0f;
@@ -113,14 +112,10 @@ p {
     background-size: cover;
     padding: 0;
     border-bottom-left-radius: 20px;
-    /* Raio de borda de 10px no canto inferior esquerdo */
     border-bottom-right-radius: 20px;
-    /* Raio de borda de 10px no canto inferior direito */
     box-shadow: 0px 8px 30px 0px rgba(2, 24, 95, 0.3);
 }
 
-
-/* Estilos para o botão de fechamento */
 .close-button {
     position: absolute;
     top: 8px;
@@ -157,15 +152,11 @@ p {
     display: inline-block;
     margin-top: 16px;
     font-size: 18px;
-    /* Aumenta o tamanho da fonte */
 }
 
-/* Estilos para a palavra "Aviso" */
 .aviso-title {
     color: #fff;
-    /* Cor branca */
     font-size: 28px;
-    /* Aumenta o tamanho da fonte */
     font-weight: bold;
 }
 
@@ -178,9 +169,6 @@ p {
     line-height: 1.1;
 }
 
-
-
-/* Estilos para o conteúdo da página */
 .content {
     margin-top: 50px;
     background-color: #f5f7f9;
@@ -196,12 +184,7 @@ input {
     line-height: 1;
     margin-bottom: 20px;
     margin-top: 10px
-
 }
-
-
-/* botao proprities */
-
 .button-copy {
     border-radius: 7px;
     border: none;
@@ -214,7 +197,6 @@ input {
     margin-bottom: 10px;
     margin-top: 10px;
 }
-
 .dados-bancarios,
 ul,
 li {
@@ -248,9 +230,6 @@ li {
     border-bottom: 1px solid #eaeaea;
     padding: 2px 0px;
     text-align: right;
-    
-
-
 }
 
 .material-icons {
