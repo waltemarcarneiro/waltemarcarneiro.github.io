@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 *{
@@ -61,17 +65,16 @@ p{
   justify-content: space-between;
 }
 .top-bar{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 0px;
-  /background: #25252f;
+  top: 0;
   padding: 10px 0;
   z-index: 1;
-  max-width: 360px;
-  left: 20px;
-  right: 20px;
+  width: 100%;
+  left: 0;
   margin: 0 auto;
 }
 .top-bar i{
@@ -124,32 +127,45 @@ p{
   font-size: 16px;
   color: orange;
 }
+
 .progress-area{
   
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  padding: 0;
-  z-index: 1;
-  left: 20px;
-  right: 20px;
-  max-width: 340px;
-  margin: 50px auto;
-  height: 6px; /*altura da area progressiva em andamento*/
-  border-radius: 50px;
-  background: #23232C;
-  cursor: pointer;
-  top: 68%;
+align-items: center;
   
+justify-content: space-between;
+  
+position: fixed;
+  
+padding: 0;
+  
+z-index: 1;
+  
+left: 20px;
+  
+right: 20px;
+  
+max-width: 440px;
+  
+margin: 50px auto;
+  
+height: 3px; /*altura da area progressiva em andamento*/
+  
+border-radius: 50px;
+  
+background: #23232C;
+  
+cursor: pointer;
+  
+top: 68%;
 }
+
 .progress-area .progress-bar{
   height: inherit;
-  width: 340px;
   border-radius: inherit;
   background: linear-gradient(90deg, var(--orange) 0%, var(--orangedark) 100%);
-  top: 440px;
 
 }
+
 .progress-bar::before{
   content: "";
   height: 6px;
@@ -162,27 +178,17 @@ p{
   transform: translateY(-50%);
   background: inherit;
   transition: opacity 0.2s ease;
+
+
 }
 .progress-area:hover .progress-bar::before{
   opacity: 1;
   pointer-events: auto;
-}
-.song-timer{
 
-display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    
-    z-index: 1;
-    left: 20px;
-    right: 20px;
-    max-width: 360px;
-    margin: 50px auto;
-    top: 64%;
-    
 }
+.song-timer{display: flex;align-items: center;justify-content: space-between;position: fixed;z-index: 1;left: 20px;right: 20px;max-width: 440px;margin: 50px auto;top: 65%;}
 .progress-area .song-timer{
+
   
 }
 .song-timer span{
@@ -228,7 +234,7 @@ display: flex;
   justify-content: center;
   border-radius: 50%;
   background: linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
-  box-shadow: 0px 0px 5px var(--orange);
+  box-shadow: 0px 0px 7px var(--orange);
 }
 .play-pause::before{
   position: absolute;
@@ -331,16 +337,25 @@ button{
 }
 .volume{
   
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 1;
-    left: 20px;
-    right: 20px;
-    margin:10px auto;
-    max-width: 300px;
-    top:65%;
+display: flex;
+  
+align-items: center;
+  
+position: fixed;
+  
+z-index: 1;
+  
+left: 20px;
+  
+right: 20px;
+  
+margin: 5px auto;
+  
+max-width: 440px;
+  
+top:65%;
+  
+justify-content: space-between;
 }
 #volumeMuteButton{
   color: var(--lightblack);
@@ -358,22 +373,23 @@ button{
             border-radius: 5px !important; /* Borda arredondada */
         }
 
-        #volumeSlider {
-            
-            background: #23232C;
-            width: 85%;
-            height: 3px;
-            appearance: none;
-            
-        }
+#volumeSlider {
 
-        #volumeSlider::-webkit-slider-thumb {
-            appearance: none;
-            width: 12px; /* Largura do polegar personalizável */
-            height: 12px; /* Altura do polegar personalizável */
-            background-color: orange; /* Cor do polegar personalizável */
-            border-radius: 50%; /* Para tornar o polegar circular */
-        }
+  background: #23232C;
+  width: 90%;
+  height: 3px;
+  appearance: none;
+  /*display: none;*/
+      
+}
+
+#volumeSlider::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px; /* Largura do polegar personalizável */
+  height: 12px; /* Altura do polegar personalizável */
+  background-color: orange; /* Cor do polegar personalizável */
+  border-radius: 50%; /* Para tornar o polegar circular */
+}
 .copyright{
   bottom: 0;
   left: 0;
@@ -388,3 +404,6 @@ button{
   letter-spacing: 1px;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
+
+
+
