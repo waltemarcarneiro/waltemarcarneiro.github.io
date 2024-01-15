@@ -217,6 +217,7 @@ document.getElementById('shareButton').addEventListener('click', () => {
 if (navigator.share) {
        navigator.share({
        title: document.title,
+       text: 'Confira essa playlist com as mais belas músicas românticas internacionais dos anos 80, 90, atuais e relaaaaxe!!!',
        url: 'https://bit.ly/wcplayer'
        }).then(() => {
        console.log('Página compartilhada com sucesso!');
