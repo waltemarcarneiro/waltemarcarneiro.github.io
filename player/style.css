@@ -158,7 +158,7 @@ p {
     border-radius: 50px;
     background: #23232C;
     cursor: pointer;
-    top: 68%;
+    top: 65%;
 }
 
 .progress-area .progress-bar {
@@ -196,14 +196,14 @@ p {
     right: 20px;
     max-width: 440px;
     margin: 50px auto;
-    top: 65%;
+    top: 66%;
 }
 
 .progress-area .song-timer {
 }
 
 .song-timer span {
-    font-size: 13px;
+    font-size: 10px;
     color: #b3b3b5;
 }
 
