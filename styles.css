@@ -205,7 +205,7 @@ body {
 }
 .icon-text {
     color: #252e48;
-    font-size: 12px;
+    font-size: 11px;
     white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
 h1{
