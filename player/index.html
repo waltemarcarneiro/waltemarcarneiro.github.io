@@ -36,7 +36,7 @@
   <div class="wrapper">
 
     <div class="top-bar">
-      <button id="voltar"><i class="material-icons">chevron_left</i></button>
+      <button id="backButton"><i class="material-icons">chevron_left</i></button>
       <span class="title-player">Love Songs</span>
       
       <audio id="main-audio" src=""></audio>
@@ -97,13 +97,7 @@
     </div>
 
   </div><!--end wrapper-->
-<!--START SCRIPT VOLTAR-->
-<script>
-document.getElementById('voltar').addEventListener('click', () => {
-  history.back();
- });
-</script>
-<!--END SCRIPT VOLTAR-->
+
   <script src="js/music-list.js"></script>
   <script src="js/script.js"></script>
   <script src="../script-sw.js" defer></script>
