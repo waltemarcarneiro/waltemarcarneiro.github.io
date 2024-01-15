@@ -231,36 +231,58 @@ if (navigator.share) {
        }
 });
 
-//controle do volume
-
-// ...
+//CONTROLE DO VOLUME
 
 const volumeSlider = document.getElementById('volumeSlider');
 const volumeMuteButton = document.getElementById('volumeMuteButton');
+let hideTimeout;
 
 volumeSlider.addEventListener('input', function () {
   const volumeValue = parseFloat(volumeSlider.value);
   mainAudio.volume = volumeValue;
   updateVolumeIcon(volumeValue);
+  clearTimeout(hideTimeout); // Cancela o temporizador durante a interação
+  startHideTimer(); // Reinicia o temporizador durante a interação
 });
 
 volumeMuteButton.addEventListener('click', function () {
-  if (mainAudio.volume === 0) {
-    mainAudio.volume = parseFloat(volumeSlider.value) || 0.5;
-  } else {
-    mainAudio.volume = 0;
-  }
-  updateVolumeIcon(mainAudio.volume);
+  toggleVolumeSlider();
+  clearTimeout(hideTimeout); // Cancela o temporizador durante a interação
+  startHideTimer(); // Reinicia o temporizador durante a interação
 });
 
-function updateVolumeIcon(volumeValue) {
-  if (volumeValue === 0) {
-    volumeMuteButton.innerHTML = '<i class="material-icons">volume_off</i>';
-  } else if (volumeValue < 0.5) {
-    volumeMuteButton.innerHTML = '<i class="material-icons">volume_down</i>';
+// Adiciona eventos de toque para dispositivos móveis
+volumeSlider.addEventListener('touchstart', function () {
+  clearTimeout(hideTimeout);
+  startHideTimer(); // Reinicia o temporizador durante a interação
+});
+
+volumeSlider.addEventListener('touchend', function () {
+  startHideTimer();
+});
+
+function toggleVolumeSlider() {
+  const isVolumeSliderVisible = volumeSlider.style.display !== 'none';
+
+  if (isVolumeSliderVisible) {
+    volumeSlider.style.display = 'none'; // Oculta a barra de volume
   } else {
-    volumeMuteButton.innerHTML = '<i class="material-icons">volume_up</i>';
+    volumeSlider.style.display = 'block'; // Mostra a barra de volume
   }
 }
 
-// ...
+function startHideTimer() {
+  clearTimeout(hideTimeout); // Limpa o temporizador atual
+
+  // Inicia um novo temporizador para ocultar a barra após 3 segundos
+  hideTimeout = setTimeout(hideVolumeSlider, 3000);
+}
+
+function hideVolumeSlider() {
+  volumeSlider.style.display = 'none'; // Oculta a barra de volume após 3 segundos
+}
+
+// Adiciona um evento para cancelar o temporizador se o usuário estiver manipulando a barra no celular
+volumeSlider.addEventListener('touchmove', function () {
+  clearTimeout(hideTimeout);
+});
