@@ -48,5 +48,11 @@ let allMusic = [
     img: "./covers/cover-8.jpg",
     src: "https://archive.org/download/mr-mister-broken-wings_202309/MrMister-Broken_Wings.mp3"
   },
+  {
+    name: "Do You Remenber?",
+    artist: "Phil Collins",
+    img: "./covers/cover-9.jpg",
+    src: "https://archive.org/download/do-you-remember/Do%20You%20Remember.mp3"
+  },
 
 ];
