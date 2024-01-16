@@ -217,7 +217,7 @@ document.getElementById('shareButton').addEventListener('click', () => {
 if (navigator.share) {
        navigator.share({
        title: document.title,
-       text: 'Confira essa playlist com as mais belas músicas românticas internacionais dos anos 80, 90, atuais e relaaaaxe!!!',
+       text: 'Playlist com as mais belas músicas românticas internacionais.',
        url: 'https://bit.ly/wcplayer'
        }).then(() => {
        console.log('Página compartilhada com sucesso!');
@@ -231,7 +231,7 @@ if (navigator.share) {
        }
 });
 
-//CONTROLE DO VOLUME
+//controle do volume
 
 const volumeSlider = document.getElementById('volumeSlider');
 const volumeMuteButton = document.getElementById('volumeMuteButton');
