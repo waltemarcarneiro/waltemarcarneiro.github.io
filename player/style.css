@@ -40,7 +40,7 @@ html {
   font-family: Arial, sans-serif;
   color: white;
   background: linear-gradient(45deg, #00EF89, #703DFC, #416DD8);
-  background-size: 200% 150%;
+  background-size: 500% 200%;
   animation: gradientAnimation 4s ease infinite;
 }
 @keyframes gradientAnimation {
