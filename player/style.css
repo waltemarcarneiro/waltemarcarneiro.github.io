@@ -19,8 +19,8 @@
 }
 
 :root {
-    --orange: #ffa500;
-    --orangedark: #e77000;
+    --orange: #00ef89;
+    --orangedark: #7e44fa;
     --lightblack: #ffffff;
     --white: #ffffff;
     --darkwhite: #cecaca;
@@ -30,13 +30,34 @@
 }
 
 html {
-    background: #25252f;
-}
+    /*background: #25252f;*/
 
+    height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(45deg, #00EF89, #703DFC, #416DD8);
+  background-size: 200% 200%;
+  animation: gradientAnimation 4s ease infinite;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 body {
     display: flex;
     align-items: center;
-    background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
+    /*background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);*/
     justify-content: center;
 }
 
@@ -141,8 +162,9 @@ p {
 .song-details .artist {
     font-size: 16px;
     color: orange;
-    font-weight: 300;
+    font-weight: 400;
     color: #aaa;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .progress-area {
@@ -158,7 +180,7 @@ p {
     height: 3px;
     /*altura da area progressiva em andamento*/
     border-radius: 50px;
-    background: #23232C;
+    background: #17213f;
     cursor: pointer;
     top: 65%;
 }
@@ -228,7 +250,7 @@ p {
 .controls i {
     font-size: 28px;
     user-select: none;
-    background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);
+    background: linear-gradient(#00fe81 0%, #7e44fa 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -254,8 +276,8 @@ p {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: linear-gradient(var(--white) 0%, var(--darkwhite) 100%);
-    box-shadow: 0px 0px 7px var(--orange);
+    background: linear-gradient(#4310af 0%, #0b0b0b 100%);
+    box-shadow: 0px 0px 20px #7e44fa;
 }
 
 .play-pause::before {
@@ -318,6 +340,10 @@ p {
     font-size: 22px;
     color: var(--lightblack);
     cursor: pointer;
+
+}
+.header #close{
+    padding: 5px; background:#000; border-radius:5px; border:1px solid #492791 !important;
 }
 
 .music-list ul {
@@ -387,7 +413,7 @@ button {
 }
 
 #volumeMuteButton {
-    color: var(--lightblack);
+    color: #703dfc;
     align-items: center;
     display: flex;
     margin-right: 10px;
@@ -407,7 +433,7 @@ button {
 }
 
 #volumeSlider {
-    background: #23232C;
+    background: #17213f;
     width: 90%;
     height: 3px;
     appearance: none;
@@ -420,7 +446,7 @@ button {
     /* Largura do polegar personalizável */
     height: 12px;
     /* Altura do polegar personalizável */
-    background-color: orange;
+    background-color: #00fe81;
     /* Cor do polegar personalizável */
     border-radius: 50%;
     /* Para tornar o polegar circular */
@@ -433,10 +459,11 @@ button {
     position: fixed;
     display: flex;
     justify-content: center;
-    color: var(--copyright);
-    font-size: 10px;
+    color: #ffffff;
+    font-size: 9px;
     font-weight: 400;
     opacity: 0.5;
     letter-spacing: 1px;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-family: 'montserrat', sans-serif;
+    /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";*/
 }

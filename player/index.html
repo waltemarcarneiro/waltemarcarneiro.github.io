@@ -9,15 +9,15 @@
   
   <link rel="manifest" href="../manifest.json"/>
   
-  <meta name="description" content="🎵 As mais belas e românticas canções internacionais, para amar demais e bem gostoso!" />
+  <meta name="description" content="🎵 As mais belas e românticas canções internacionais." />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!-- FAVICON-->
   <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon-180x180.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png" />
-  <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#e77000" />
-  <meta name="msapplication-TileColor" content="#e37700" />
+  <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#25252f" />
+  <meta name="msapplication-TileColor" content="#25252f" />
   <meta name="theme-color" content="#25252f" />
   <link rel="shortcut icon" href="../icons/favicon-32x32.png" />  
   <!-- SEO | OG -->
@@ -27,7 +27,7 @@
   <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-player.png" />
   <meta content='website' property='og:type' />
   <meta property="og:site_name" content="Waltemar Carneiro" />
-  <meta property="og:description" content="🎵 As mais belas e românticas canções internacionais, para amar demais e bem gostoso!" />
+  <meta property="og:description" content="🎵 As mais belas e românticas canções internacionais." />
   <meta name="mobile-web-app-capable" content="yes" />
 
 </head>
@@ -48,16 +48,22 @@
     </div>
         
     <div class="song-details">
+
       <p class="name"></p>
       <p class="artist"></p>
+
     <div class="volume">
       <button id="volumeMuteButton"><i class="material-icons">volume_up</i></button>
-      <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.5"></div>
+      <input id="volumeSlider" type="range" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
     </div>
 
     <div class="progress-area">
+
       <div class="progress-bar">
-        <audio id="main-audio" src=""></audio>
+
+      <audio id="main-audio" src=""></audio>
       </div>
       <div align="center">
       <div class="song-timer" align="center">
@@ -83,7 +89,7 @@
           <i class= "list material-icons">queue_music</i>
           <span>Playlist</span>
         </div>
-        <i id="close" class="material-icons" style="padding: 5px; background:#000; border-radius:5px; border:1px solid #fff">close</i>
+        <i id="close" class="material-icons">close</i>
       </div>
       <ul>
         <!-- here li list are coming from js -->
@@ -93,7 +99,7 @@
 
     <!--copyright-->
     <div class="copyright">
-      Waltemar Carneiro © 2001-2024
+      AMAZON PLAYER © 2024
     </div>
 
   </div><!--end wrapper-->
