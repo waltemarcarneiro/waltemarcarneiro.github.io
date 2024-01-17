@@ -32,7 +32,7 @@
 html {
     /*background: #25252f;*/
 
-    height: 100vh;
+  height: 100vh;
   margin: 0;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@ html {
   font-family: Arial, sans-serif;
   color: white;
   background: linear-gradient(45deg, #00EF89, #703DFC, #416DD8);
-  background-size: 200% 200%;
+  background-size: 200% 150%;
   animation: gradientAnimation 4s ease infinite;
 }
 @keyframes gradientAnimation {
@@ -57,13 +57,8 @@ html {
 body {
     display: flex;
     align-items: center;
-    /*background: linear-gradient(var(--orange) 0%, var(--orangedark) 100%);*/
     justify-content: center;
-}
 
-p {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-    font-size: 14px;
 }
 
 .wrapper {
@@ -71,15 +66,13 @@ p {
     padding: 40px 20px;
     overflow: hidden;
     position: fixed;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(bg-logo.png);
+    background-image: linear-gradient(1deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(bg-logo.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: 0px 6px 15px var(--lightbshadow);
     min-height: 100vh;
-    /* Defina a altura mínima como 100% da altura da viewport */
     top: 0px;
-}
 }
 
 .wrapper i {
@@ -466,4 +459,9 @@ button {
     letter-spacing: 1px;
     font-family: 'montserrat', sans-serif;
     /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";*/
+}
+
+p {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
 }
