@@ -41,7 +41,7 @@ html {
   color: white;
   background: linear-gradient(45deg, #00EF89, #703DFC, #416DD8);
   background-size: 500% 200%;
-  animation: gradientAnimation 4s ease infinite;
+  animation: gradientAnimation 5s ease infinite;
 }
 @keyframes gradientAnimation {
   0% {
@@ -66,7 +66,7 @@ body {
     padding: 40px 20px;
     overflow: hidden;
     position: fixed;
-    background-image: linear-gradient(1deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(bg-logo.png);
+    background-image: linear-gradient(1deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(bg-logo.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
