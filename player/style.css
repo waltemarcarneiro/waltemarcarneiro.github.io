@@ -296,12 +296,11 @@ body {
 }
 
 .music-list {
-
     position: fixed;
     background: rgba(0,0,0,0.8);
     max-width: 480px;
-    left: 20px;
-    right: 20px;
+    left: 0px;
+    right: 0px;
     opacity: 0;
     pointer-events: none;
     z-index: 5;
