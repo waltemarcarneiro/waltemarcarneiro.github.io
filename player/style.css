@@ -295,23 +295,27 @@ body {
 }
 
 .music-list {
+
     position: fixed;
     background: rgba(0,0,0,0.8);
-    width: 100%;
-    left: 0;
-    bottom: 0;
+    max-width: 480px;
+    left: 20px;
+    right: 20px;
     opacity: 0;
     pointer-events: none;
     z-index: 5;
     padding: 10px;
     transition: all 0.15s ease-out;
     height: -webkit-fill-available;
+    margin: 0 auto;
+   
 }
 
 .music-list.show {
     bottom: 0;
     opacity: 1;
     pointer-events: auto;
+
 }
 
 .header .row {
