@@ -92,7 +92,7 @@ body {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    padding: 10px 10px;
+    padding: 10px 5px;
     z-index: 1;
     max-width: 480px;
     left: 0px;
@@ -176,7 +176,7 @@ body {
     border-radius: 50px;
     background: #17213f;
     cursor: pointer;
-    top: 65%;
+    top: 66%;
 }
 
 .progress-area .progress-bar {
@@ -213,8 +213,8 @@ body {
     left: 20px;
     right: 20px;
     max-width: 440px;
-    margin: 50px auto;
-    top: 66%;
+    margin: 0px auto;
+    top: 75%;
 }
 
 .progress-area .song-timer {
@@ -406,7 +406,7 @@ button {
     right: 20px;
     margin: 5px auto;
     max-width: 440px;
-    top: 67%;
+    top: 68%;
     justify-content: space-between;
 }
 
@@ -415,6 +415,7 @@ button {
     align-items: center;
     display: flex;
     margin-right: 10px;
+
 }
 
 /*ESTILO DO CONTROLE DE VOLUME*/
