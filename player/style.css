@@ -92,7 +92,7 @@ body {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    padding: 10px 5px;
+    padding: 10px 10px;
     z-index: 1;
     max-width: 480px;
     left: 0px;
