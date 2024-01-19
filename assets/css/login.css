@@ -14,7 +14,7 @@ body {
     background-color: #FDFBF7;
     background-image: url(../../image/icons-gray-bg.svg);
     font-family: 'Roboto', sans-serif;
-    color: #4a4a4a;
+    color: #050505;
 }
 
 .login-container {
@@ -25,16 +25,16 @@ body {
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Centraliza completamente */
-    background-color: #fff;
+    background: #fff;
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
 h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
     font-weight: 500;
 }
 
@@ -68,14 +68,15 @@ input:hover {
 }
 
 button {
+    margin-top: 10px;
     padding: 5px 10px;
     background-color: #e77000;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 0.9em;
 }
 
 button:hover {
@@ -96,6 +97,11 @@ button:hover {
     text-decoration: underline;
 }
 
+.copyright{
+    font-size: 0.6em;
+    margin-top: 20px;
+}
+
 .popup {
     display: none;
     position: fixed;
@@ -106,6 +112,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     font-size: 20px;
+
 }
 
 .popup-content {
@@ -113,7 +120,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: BLACK;
+    background-color: black;
     color: #fff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -121,7 +128,9 @@ button:hover {
     width: 80%;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 1.1em;
+    line-height: 1.4;
+    border-radius: 5px;
 }
 
 .popup-close {
@@ -131,7 +140,7 @@ button:hover {
     font-size: 30px;
     cursor: pointer;
     padding: 7px;
-    background-color: #FFA500;
+    background-color: #e77000;
     border-radius: 100px;
     width: 20px;
     height: 20px;
@@ -142,6 +151,6 @@ button:hover {
     color: white;
 }
 .popup a{
-    color: #E37700;
+    color: orange;
     font-weight: 500;
 }
