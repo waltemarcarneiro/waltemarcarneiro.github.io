@@ -1,9 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Open Sans:wght@400;500;600;700&display=swap'); @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap'); * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -31,34 +26,36 @@
 
 html {
     /*background: #25252f;*/
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(45deg, #00EF89, #703DFC, #416DD8);
+    background-size: 500% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
 
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, sans-serif;
-  color: white;
-  background: linear-gradient(45deg, #00EF89, #703DFC, #416DD8);
-  background-size: 500% 200%;
-  animation: gradientAnimation 5s ease infinite;
-}
 @keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .wrapper {
@@ -86,7 +83,7 @@ body {
 }
 
 .top-bar {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -111,9 +108,11 @@ body {
 }
 
 .top-bar span {
-    font-size: 18px;
+    font-size: 16px;
     margin-left: -3px;
     color: var(--lightblack);
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.3;
 }
 
 .img-area {
@@ -155,9 +154,8 @@ body {
 
 .song-details .artist {
     font-size: 16px;
-    color: orange;
     font-weight: 400;
-    color: #aaa;
+    color: #2ab2af;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -176,7 +174,7 @@ body {
     border-radius: 50px;
     background: #17213f;
     cursor: pointer;
-    top: 66%;
+    top: 68%;
 }
 
 .progress-area .progress-bar {
@@ -308,14 +306,12 @@ body {
     transition: all 0.15s ease-out;
     height: -webkit-fill-available;
     margin: 0 auto;
-   
 }
 
 .music-list.show {
     bottom: 0;
     opacity: 1;
     pointer-events: auto;
-
 }
 
 .header .row {
@@ -337,10 +333,13 @@ body {
     font-size: 22px;
     color: var(--lightblack);
     cursor: pointer;
-
 }
-.header #close{
-    padding: 5px; background:#000; border-radius:5px; border:1px solid #492791 !important;
+
+.header #close {
+    padding: 5px;
+    background: #000;
+    border-radius: 5px;
+    border: 1px solid #492791 !important;
 }
 
 .music-list ul {
@@ -393,7 +392,8 @@ button {
 }
 
 .title-player {
-    font-weight: 500;
+    font-weight: 400;
+    
 }
 
 .volume {
@@ -405,16 +405,16 @@ button {
     right: 20px;
     margin: 5px auto;
     max-width: 440px;
-    top: 68%;
+    top: 69%;
     justify-content: space-between;
 }
 
 #volumeMuteButton {
-    color: #703dfc;
+    color: #FFF;
     align-items: center;
     display: flex;
     margin-right: 10px;
-
+    opacity: 0.4;
 }
 
 /*ESTILO DO CONTROLE DE VOLUME*/
@@ -460,7 +460,7 @@ button {
     color: #ffffff;
     font-size: 9px;
     font-weight: 400;
-    opacity: 0.5;
+    opacity: 0.3;
     letter-spacing: 1px;
     font-family: 'montserrat', sans-serif;
     /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";*/
