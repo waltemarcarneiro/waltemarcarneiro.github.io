@@ -168,13 +168,13 @@ body {
     left: 20px;
     right: 20px;
     max-width: 440px;
-    margin: 50px auto;
+    margin: 0px auto;
     height: 3px;
     /*altura da area progressiva em andamento*/
     border-radius: 50px;
     background: #17213f;
     cursor: pointer;
-    top: 68%;
+    top: 75%;
 }
 
 .progress-area .progress-bar {
@@ -212,7 +212,7 @@ body {
     right: 20px;
     max-width: 440px;
     margin: 0px auto;
-    top: 75%;
+    top: 76%;
 }
 
 .progress-area .song-timer {
@@ -403,9 +403,9 @@ button {
     z-index: 1;
     left: 20px;
     right: 20px;
-    margin: 5px auto;
+    margin: 0px auto;
     max-width: 440px;
-    top: 69%;
+    top: 70%;
     justify-content: space-between;
 }
 
