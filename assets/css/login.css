@@ -40,29 +40,32 @@ h2 {
 }
 
 input[type="password"] {
-    width: 80%;
-    padding: 10px;
+    width: 260px;
+    height: 30px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    display: block;
+    position: relative;
+    
 }
-
 input:hover {
     border: 1px solid #f29500;
     border-radius: 5px;
+
 }
 /* cadeado */
 .input-container {
-    position: relative;
-    max-width: 80%;
-    margin: 0 20px;
+    width: 100%;
+    margin: 0 auto;
 }
 .input-container .icon {
     position: absolute;
-    top: 40%;
-    left: 15px;
+    top: 38%;
+    left: 25px;
     transform: translateY(-50%);
     color: #999;
+    z-index: 2;
 }
 
 .input-container input[type="password"] {
