@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 /* CONFIG POPUP DOAÇÃO */
 .popup-container2 {
-    /position: fixed;
     top: 200px; /* Ajuste conforme a altura da div #san */
     left: 0;
     right: 0;
