@@ -75,10 +75,11 @@ input:hover {
 button {
     margin-top: 10px;
     padding: 5px 10px;
-    background-color: #e77000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    background-color: #fff;
+    color: #00BCD4;
+    letter-spacing: 1px;
+    border: 1px solid #00BCD4;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: 500;
     font-size: 0.9em;
