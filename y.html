@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Player</title>
-    <!--<link rel="stylesheet" href="styles.css">-->
-    <style>
+    <title>YouTube Music Player</title>
+    <style type="text/css">
         body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -24,47 +23,70 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#video-url {
-    width: 80%;
-    padding: 8px;
-    margin-bottom: 10px;
+#video-container {
+    margin: 20px 0;
 }
 
-button {
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+#playlist {
+    text-align: left;
 }
 
-button:hover {
-    background-color: #45a049;
+#video-list {
+    list-style: none;
+    padding: 0;
 }
 
-audio {
-    width: 100%;
-    margin-top: 20px;
+#video-list li {
+    margin: 5px 0;
 }
 
     </style>
 </head>
 <body>
-    <div id="video-player">
-        <h1>YouTube Video Player</h1>
-        <input type="text" id="video-url" placeholder="Insira o URL do vídeo do YouTube">
-        <button onclick="playVideo()">Play</button>
-        <iframe id="video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    <div id="music-player">
+        <h1>YouTube Music Player</h1>
+        <div id="video-container">
+            <iframe id="video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div id="playlist">
+            <h2>Playlist</h2>
+            <ul id="video-list">
+                <!-- Adicione mais vídeos aqui se necessário -->
+                <li><a href="https://www.youtube.com/watch?v=AEPnb9GdMts">Video 1</a></li>
+                <li><a href="https://www.youtube.com/watch?v=VIDEO_ID_2">Video 2</a></li>
+                <li><a href="https://www.youtube.com/watch?v=VIDEO_ID_3">Video 3</a></li>
+            </ul>
+        </div>
     </div>
 
     <script>
-        function playVideo() {
-    var videoUrl = document.getElementById('video-url').value;
+        // Lista de vídeos do YouTube
+var videoList = [
+    "https://www.youtube.com/watch?v=AEPnb9GdMts",
+    "https://www.youtube.com/watch?v=VIDEO_ID_2",
+    "https://www.youtube.com/watch?v=VIDEO_ID_3"
+];
 
-    // Atualizar o src do elemento iframe com o URL do vídeo do YouTube
+// Índice do vídeo atual na lista
+var currentVideoIndex = 0;
+
+// Função para inicializar o vídeo no player
+function initializeVideo() {
+    var videoUrl = videoList[currentVideoIndex];
     document.getElementById('video').src = videoUrl;
 }
 
+// Adiciona um evento para detectar o fim do vídeo
+document.getElementById('video').addEventListener('ended', playNextVideo);
+
+// Função para reproduzir o próximo vídeo na lista
+function playNextVideo() {
+    currentVideoIndex = (currentVideoIndex + 1) % videoList.length;
+    initializeVideo();
+}
+
+// Inicializa o primeiro vídeo
+initializeVideo();
     </script>
 </body>
 </html>
