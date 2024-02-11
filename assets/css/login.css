@@ -86,7 +86,8 @@ button {
 }
 
 button:hover {
-    background-color: #E77000;
+    background-color: #00BCD4;
+    color: #fff;
 }
 
 .additional-info {
