@@ -76,13 +76,13 @@ button {
     margin-top: 10px;
     padding: 10px 30px;
     background-color: #fff;
-    color: #00BCD4;
+    color: #e77000;
     letter-spacing: 1px;
-    border: 1px solid #00BCD4;
+    border: 1px solid #e77000;
     border-radius: 20px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 button:hover {
