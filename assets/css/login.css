@@ -40,7 +40,7 @@ h2 {
 }
 
 input[type="password"] {
-    width: 260px;
+    width: 200px;
     height: 40px;
     margin: 0 auto;
     border: 1px solid #ccc;
@@ -61,8 +61,8 @@ input:hover {
 }
 .input-container .icon {
     position: absolute;
-    top: 35.4%;
-    left: 43px;
+    top: 36.5%;
+    left: 50px;
     transform: translateY(-50%);
     color: #999;
     z-index: 2;
