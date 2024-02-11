@@ -60,7 +60,7 @@
     </div>
 
     <script>
-        // Lista de vídeos do YouTube
+ // Lista de vídeos do YouTube
 var videoList = [
     "https://www.youtube.com/watch?v=AEPnb9GdMts",
     "https://www.youtube.com/watch?v=VIDEO_ID_2",
@@ -73,7 +73,13 @@ var currentVideoIndex = 0;
 // Função para inicializar o vídeo no player
 function initializeVideo() {
     var videoUrl = videoList[currentVideoIndex];
-    document.getElementById('video').src = videoUrl;
+    var videoId = getVideoId(videoUrl);
+    
+    // Gerar o URL do vídeo embed do YouTube
+    var embedUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+
+    // Definir o src do elemento iframe com o URL do vídeo embed
+    document.getElementById('video').src = embedUrl;
 }
 
 // Adiciona um evento para detectar o fim do vídeo
@@ -85,8 +91,15 @@ function playNextVideo() {
     initializeVideo();
 }
 
+// Função para extrair o ID do vídeo do URL do YouTube
+function getVideoId(url) {
+    var searchParams = new URLSearchParams(new URL(url).search);
+    return searchParams.get('v');
+}
+
 // Inicializa o primeiro vídeo
 initializeVideo();
+
     </script>
 </body>
 </html>
