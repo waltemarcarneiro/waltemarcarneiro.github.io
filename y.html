@@ -64,8 +64,8 @@
  // Lista de vídeos do YouTube
 var videoList = [
     "https://www.youtube.com/watch?v=AEPnb9GdMts",
-    "https://www.youtube.com/watch?v=VIDEO_ID_2",
-    "https://www.youtube.com/watch?v=VIDEO_ID_3"
+    "https://www.youtube.com/watch?v=ZPTHbwcXsJA",
+    "https://www.youtube.com/watch?v=OPbl1p1Lim4"
 ];
 
 // Índice do vídeo atual na lista
@@ -75,7 +75,7 @@ var currentVideoIndex = 0;
 function initializeVideo() {
     var videoUrl = videoList[currentVideoIndex];
     var videoId = getVideoId(videoUrl);
-    
+
     // Gerar o URL do vídeo embed do YouTube
     var embedUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
 
