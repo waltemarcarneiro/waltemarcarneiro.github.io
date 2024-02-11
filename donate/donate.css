@@ -162,7 +162,7 @@ body{
             .key1 {
                 padding: 10px 20px;
                 background: linear-gradient(0deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 100%);
-                border: 1px solid #ccc;
+                border: 1px solid #ddd;
                 color: #444;
                 border-radius: 7px;
                 font-size: 16px;
@@ -174,7 +174,7 @@ body{
             .key2 {
                 padding: 10px 20px;
                 background: #00BCD4;
-                border: none;
+                border: 1px solid #ddd;
                 color: #FFF;
                 border-radius: 7px;
                 font-size: 16px;
