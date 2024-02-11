@@ -33,24 +33,24 @@ body {
 }
 
 h2 {
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 1.1em;
     font-weight: 500;
 }
 
 input[type="password"] {
     width: 260px;
-    height: 30px;
-    margin-bottom: 10px;
+    height: 40px;
+    margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     display: block;
     position: relative;
-    
+    font-size: 18px;
 }
 input:hover {
-    border: 1px solid #f29500;
+    border: 1px solid #e77000;
     border-radius: 5px;
 
 }
@@ -61,8 +61,8 @@ input:hover {
 }
 .input-container .icon {
     position: absolute;
-    top: 37%;
-    left: 25px;
+    top: 35.4%;
+    left: 43px;
     transform: translateY(-50%);
     color: #999;
     z-index: 2;
@@ -73,8 +73,8 @@ input:hover {
 }
 
 button {
-    margin-top: 10px;
-    padding: 10px 30px;
+    margin: 30px auto;
+    padding: 7px 30px;
     background-color: #fff;
     color: #e77000;
     letter-spacing: 1px;
@@ -108,6 +108,8 @@ button:hover {
 .copyright{
     font-size: 0.6em;
     margin-top: 20px;
+    font-weight: normal;
+    color:#999;
 }
 
 .popup {
