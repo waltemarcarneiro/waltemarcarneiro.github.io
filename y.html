@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="video-player">
+        <h1>YouTube Video Player</h1>
+        <input type="text" id="video-url" placeholder="Insira o URL do vídeo do YouTube">
+        <button onclick="playVideo()">Play</button>
+        <iframe id="video" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function playVideo() {
+    var videoUrl = document.getElementById('video-url').value;
+
+    // Atualizar o src do elemento iframe com o URL do vídeo do YouTube
+    document.getElementById('video').src = videoUrl;
+}
+
+    </script>
+</body>
+</html>
