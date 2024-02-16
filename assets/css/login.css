@@ -86,8 +86,8 @@ button {
 }
 
 button:hover {
-    background-color: orange;
-    color: #fff;
+    background-color: #fff;
+    color: orange;
     border: 1px solid #fff;
 }
 
