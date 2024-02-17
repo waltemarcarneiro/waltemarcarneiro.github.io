@@ -52,6 +52,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
+}
+.table{
+    font-family: ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace !important;
+}  
 </style>
 </head>
 
@@ -59,7 +63,7 @@
 
     <div class="header">
         <div>
-            <i class="material-icons" id="backButton2">arrow_back</i>
+            <i class="material-icons" id="backButton">arrow_back</i>
         </div>
         <div>Pagamentos</div>
         <div class="share-icon">
@@ -173,15 +177,12 @@ function copyToClipboard() {
 
     <script>
         // Adicione o evento de clique ao ícone de seta à esquerda
-        document.getElementById('backButton2').addEventListener('click', () => {
+        document.getElementById('backButton').addEventListener('click', () => {
             // Volta para a página anterior
             history.back();
         });
 
-        // Adicione o evento de clique ao ícone de compartilhamento
-        document.getElementById('shareButton').addEventListener('click', () => {
-        
-        // Compartilha a página link personalizado
+        // Compartilha a página atual
         
         document.getElementById('shareButton').addEventListener('click', () => {
         // URL personalizada que você deseja compartilhar
