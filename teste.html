@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Blog</title>
     <!-- Adicione o script de compartilhamento -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Adicione o evento de clique ao botão de compartilhamento
@@ -23,16 +24,20 @@
                     console.log('Compartilhamento não suportado pelo navegador.');
                 }
 
-                // Enviar URL para TinyURL (usando HTTPS)
-                fetch(`https://api.tinyurl.com/dev/api-create.php?url=${encodeURIComponent(window.location.href)}`)
-                    .then((response) => response.text())
-                    .then((shortUrl) => {
-                        console.log('Link encurtado pelo TinyURL:', shortUrl);
-                        // Aqui você pode usar a variável shortUrl conforme necessário, por exemplo, compartilhando-a de alguma forma.
-                    })
-                    .catch((error) => {
-                        console.error('Erro ao encurtar o link pelo TinyURL:', error);
-                    });
+                // Enviar URL para Bitly
+                axios.post('https://api-ssl.bitly.com/v4/shorten', {
+                    long_url: window.location.href
+                }, {
+                    headers: {
+                        Authorization: 'Bearer SEU_ACCESS_TOKEN'
+                    }
+                }).then((response) => {
+                    const shortUrl = response.data.id;
+                    console.log('Link encurtado pelo Bitly:', shortUrl);
+                    // Aqui você pode usar a variável shortUrl conforme necessário, por exemplo, compartilhando-a de alguma forma.
+                }).catch((error) => {
+                    console.error('Erro ao encurtar o link pelo Bitly:', error);
+                });
             });
         });
     </script>
@@ -42,7 +47,6 @@
     <!-- Adicione o botão de compartilhamento -->
     <button id="shareButton">Compartilhar</button>
 
-    <br> 5555555555555555555
-
+0000000
 </body>
 </html>
