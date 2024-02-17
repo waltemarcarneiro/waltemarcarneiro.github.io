@@ -216,9 +216,7 @@ li {
     border-collapse: collapse;
     font-size: 14px;
     font-weight: 400;
-    
     white-space: nowrap;
-    
 }
 
 .table-row {
@@ -230,7 +228,6 @@ li {
     border-bottom: 1px solid rgba(234, 234, 234, 0.1);
     padding: 3px 0px;
     text-align: left;
-    color: #e77000;
 }
 
 .table-cell2 {
