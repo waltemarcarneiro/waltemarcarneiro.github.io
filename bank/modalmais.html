@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Pix Modalmais | Waltemar Carneiro</title>
+    <title>Inter | Waltemar Carneiro</title>
     <meta name="description" content="Você tem uma transferência Pix para Waltemar Carneiro" />
     <meta content="#e77000" name="theme-color" />
     
@@ -29,7 +28,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="keywords" content="Waltemar, Carneiro" />
     <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
-    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-modalmais.png" />
+    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-inter.png" />
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
         
 <style type="text/css">
@@ -42,7 +41,7 @@
   width: 80% !important;
   display: none;
   border-radius: 5px;
-  background-color: #0099AA;
+  background-color: #4CAF50;
   color: white;
   text-align: center;
   padding: 10px;
@@ -60,7 +59,7 @@
 
     <div class="header">
         <div>
-            <i class="material-icons" id="backButton2">arrow_back</i>
+            <i class="material-icons" id="backButton">arrow_back</i>
         </div>
         <div>Pagamentos</div>
         <div class="share-icon">
@@ -74,12 +73,12 @@
 <!-- START CONTENT -->
 
     <div class="content">
-        <br>
+
         <!-- Conteúdo da página -->
-        <div align="center"><img src="image/logo-modalmais.png" width="200"></div>
+        <img src="image/inter-logo.png" height="30px">
 
         <script src="sweetalert2.all.js"></script>
-
+<!--
         <section class="dica">
             <b>1.</b> Click no botão abaixo para copiar o código de pagamento Pix.<br><br>
             <b>2.</b> Abra o app do seu banco e acesse a área Pix.<br><br>
@@ -87,33 +86,34 @@
             <b>4.</b> Cole o código copiado e efetue a transferência.
         </section>
 
-
-        <div align="center">
+-->
+        <div align="center" style="margin: 10px">
             <button class="button-copy" onClick="copiarTexto()">Usar Copia e Cola</button>
         </div>
         
-        <div align="center" style="margin-top:0; padding-bottom: 0;"><img
-                src="image/qrcode-modalmais.png" width="100"><br>
-            <b>se preferir, leia o QR Code® Pix com seu app de pagamentos</b><br>
-            sempre confira as informações antes de pagar
+        <div align="center"><img
+                src="image/qrcode-inter.png" width="100"><br><br>
         </div>
+        <div align="center" style="line-height: 1.3;"><b>se preferir, leia o QR Code® Pix com seu app de pagamentos</b><br>
+            sempre confira as informações antes de pagar
+        </div><br>
 
 <div class="table">
 
             <div class="table-row">
-                <div class="table-cell1">Chave Pix:</div>
+                <div class="table-cell1">Copie a Chave <img src="image/arrow-right.gif" height="20px"></div>
                 <div class="table-cell2">
                     <button id="chave" class="copy-button" onclick="copyToClipboard()"><span class="material-icons">content_copy</span></button>
                     <div id="copy-success-message" class="copy-success-message">
-  Chave ALEATÓRIA copiada com sucesso!
+  Chave aleatória copiada com sucesso!
 </div>
-                    <b>👈 Copie a Chave</b>
+                    <b></b>
                 </div>
             </div>
 
             <div class="table-row">
                 <div class="table-cell1">Instituição:</div>
-                <div class="table-cell2">746 | BCO MODAL S.A.</div>
+                <div class="table-cell2">Banco Inter</div>
             </div>
 
             <div class="table-row">
@@ -123,7 +123,7 @@
 
             <div class="table-row">
                 <div class="table-cell1">Conta:</div>
-                <div class="table-cell2">3821665-7</div>
+                <div class="table-cell2">8368188-4</div>
             </div>
 
             <div class="table-row">
@@ -151,7 +151,7 @@
 <!--script copia chave pix-->
 <script>
 function copyToClipboard() {
-    const textToCopy = 'b6f619e6-7395-4cce-a7a7-42b36f6387aa';
+    const textToCopy = 'ce63f787-4b04-40ee-97ca-b200c2c4c7c9';
     navigator.clipboard.writeText(textToCopy)
         .then(() => {
             const copySuccessMessage = document.getElementById('copy-success-message');
@@ -173,28 +173,36 @@ function copyToClipboard() {
 
     <script>
         // Adicione o evento de clique ao ícone de seta à esquerda
-        document.getElementById('backButton2').addEventListener('click', () => {
+        document.getElementById('backButton').addEventListener('click', () => {
             // Volta para a página anterior
             history.back();
         });
 
-        // Adicione o evento de clique ao ícone de compartilhamento
+        // Compartilha a página atual
+        
         document.getElementById('shareButton').addEventListener('click', () => {
-            // Compartilha a página atual
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    url: window.location.href
-                }).then(() => {
-                    console.log('Página compartilhada com sucesso!');
-                }).catch((error) => {
-                    console.error('Erro ao compartilhar a página:', error);
-                });
-            } else {
-                console.log('Compartilhamento não suportado pelo navegador.');
-                // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
-            }
-        });
+        // URL personalizada que você deseja compartilhar
+        var customUrl = 'https://bit.ly/3I57gGc';
+        
+        // Texto personalizado que você deseja adicionar
+        var customText = 'Faça sua transferência Pix neste link: ';
+
+        // Compartilha a página atual
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: customText,
+                url: customUrl
+            }).then(() => {
+                console.log('Página compartilhada com sucesso!');
+            }).catch((error) => {
+                console.error('Erro ao compartilhar a página:', error);
+            });
+        } else {
+            console.log('Compartilhamento não suportado pelo navegador.');
+            // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
+        }
+    });    
 
     </script>
 
@@ -203,7 +211,7 @@ function copyToClipboard() {
 
 <div align="center">
         <input id="codepix" name="texto" readonly="" type="text"
-            value="00020101021126580014br.gov.bcb.pix0136b6f619e6-7395-4cce-a7a7-42b36f6387aa5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6009SAO PAULO62070503***6304C3C2" />
+            value="00020101021126580014br.gov.bcb.pix0136ce63f787-4b04-40ee-97ca-b200c2c4c7c95204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63045789" />
         </div>
         
         <!-- CONTEUDO DO POPUP -->
