@@ -16,7 +16,7 @@
 .chamada {
     font-size: 50px;
     color: #007fff;
-    background: #fff;
+    background: ;
     padding: 5px;
     border-radius: 10px;
     border: 1px solid #ddd;
@@ -87,6 +87,8 @@ a {
     text-align: justify;
     font-size: 1.2em;
     line-height: 1.4;
+    color: #24292f;
+    text-shadow: 0px 1px 3px #fff;
 }
 
 .header-popup {
@@ -142,7 +144,8 @@ a {
 
 .popup-content2 {
     padding: 20px;
-    background-color: #f5f7f9;
+    background-color: #f6f8fa;
+    
 }
 
 /*
