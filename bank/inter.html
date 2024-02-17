@@ -28,7 +28,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="keywords" content="Waltemar, Carneiro" />
     <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
-    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-picpay.png" />
+    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-image-inter.png" />
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
         
 <style type="text/css">
@@ -180,21 +180,32 @@ function copyToClipboard() {
 
         // Adicione o evento de clique ao ícone de compartilhamento
         document.getElementById('shareButton').addEventListener('click', () => {
-            // Compartilha a página atual
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    url: window.location.href
-                }).then(() => {
-                    console.log('Página compartilhada com sucesso!');
-                }).catch((error) => {
-                    console.error('Erro ao compartilhar a página:', error);
-                });
-            } else {
-                console.log('Compartilhamento não suportado pelo navegador.');
-                // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
-            }
-        });
+        
+        // Compartilha a página link personalizado
+        
+        document.getElementById('shareButton').addEventListener('click', () => {
+        // URL personalizada que você deseja compartilhar
+        var customUrl = 'https://bit.ly/3I57gGc';
+        
+        // Texto personalizado que você deseja adicionar
+        var customText = 'Faça sua transferência Pix neste link: ';
+
+        // Compartilha a página atual
+        if (navigator.share) {
+            navigator.share({
+                title: document.title,
+                text: customText,
+                url: customUrl
+            }).then(() => {
+                console.log('Página compartilhada com sucesso!');
+            }).catch((error) => {
+                console.error('Erro ao compartilhar a página:', error);
+            });
+        } else {
+            console.log('Compartilhamento não suportado pelo navegador.');
+            // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
+        }
+    });    
 
     </script>
 
