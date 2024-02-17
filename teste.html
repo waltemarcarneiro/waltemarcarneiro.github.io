@@ -29,7 +29,7 @@
                     long_url: window.location.href
                 }, {
                     headers: {
-                        Authorization: 'Bearer SEU_ACCESS_TOKEN'
+                        Authorization: 'Bearer {token}'
                     }
                 }).then((response) => {
                     const shortUrl = response.data.id;
