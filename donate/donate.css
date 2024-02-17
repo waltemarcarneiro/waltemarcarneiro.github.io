@@ -74,6 +74,10 @@
     color: hotpink;
 }
 
+.fa-close {
+    font-size: 24px;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
