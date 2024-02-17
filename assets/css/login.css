@@ -138,6 +138,7 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
     font-size: 20px;
+    color: #0E2332;
 
 }
 
@@ -146,12 +147,12 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: black;
-    color: #fff;
+    background-color: white;
+    color: #0E2332;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 80%;
+    max-width: 480px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 1.1em;
