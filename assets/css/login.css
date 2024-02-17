@@ -13,20 +13,32 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FDFBF7;
     background-image: url(../../image/icons-gray-bg.svg);
+
+
     font-family: 'Roboto', sans-serif;
     color: #0E2332;
+}
+
+p,
+h1,
+h2,
+h3 {
+    color: #0E2332
 }
 
 .login-container {
     width: 300px;
     padding: 10px;
     text-align: center;
-    position: fixed; /* Adiciona esta linha para fixar o posicionamento */
-    top: 50%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Centraliza completamente */
+    position: fixed;
+    /* Adiciona esta linha para fixar o posicionamento */
+    top: 50%;
+    /* Centraliza verticalmente */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Centraliza completamente */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -49,16 +61,19 @@ input[type="password"] {
     position: relative;
     font-size: 18px;
 }
+
 input:hover {
     border: 1px solid #e77000;
     border-radius: 5px;
 
 }
+
 /* cadeado */
 .input-container {
     width: 100%;
     margin: 0 auto;
 }
+
 .input-container .icon {
     position: absolute;
     top: 36.5%;
@@ -69,7 +84,8 @@ input:hover {
 }
 
 .input-container input[type="password"] {
-    padding-left: 35px; /* Espaçamento para o ícone */
+    padding-left: 35px;
+    /* Espaçamento para o ícone */
 }
 
 button {
@@ -86,8 +102,8 @@ button {
 }
 
 button:hover {
-    background-color: #fff;
-    color: orange;
+    background-color: orange;
+    color: #fff;
     border: 1px solid #fff;
 }
 
@@ -105,11 +121,11 @@ button:hover {
     text-decoration: underline;
 }
 
-.copyright{
+.copyright {
     font-size: 0.6em;
     margin-top: 20px;
     font-weight: normal;
-    color:#999;
+    color: #0E2332;
 }
 
 .popup {
@@ -159,7 +175,24 @@ button:hover {
     display: flex;
     color: white;
 }
-.popup a{
+
+.popup a {
     color: orange;
     font-weight: 500;
+}
+
+.target {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+
+}
+
+.target img {
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+    margin: 0 auto;
+
 }
