@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seu Blog</title>
+    <title>TESTE DE URL SHARE</title>
     <!-- Adicione o script de compartilhamento -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Adicione o evento de clique ao botão de compartilhamento
@@ -24,15 +23,15 @@
                     console.log('Compartilhamento não suportado pelo navegador.');
                 }
 
-                // Enviar URL para Bitly (solicitação simples, sem tokens)
-                axios.get(`https://api-ssl.bitly.com/v4/shorten?longUrl=${encodeURIComponent(window.location.href)}`)
-                    .then((response) => {
-                        const shortUrl = response.data.id;
-                        console.log('Link encurtado pelo Bitly:', shortUrl);
+                // Enviar URL para TinyURL
+                fetch(`http://tinyurl.com/api-create.php?url=${encodeURIComponent(window.location.href)}`)
+                    .then((response) => response.text())
+                    .then((shortUrl) => {
+                        console.log('Link encurtado pelo TinyURL:', shortUrl);
                         // Aqui você pode usar a variável shortUrl conforme necessário, por exemplo, compartilhando-a de alguma forma.
                     })
                     .catch((error) => {
-                        console.error('Erro ao encurtar o link pelo Bitly:', error);
+                        console.error('Erro ao encurtar o link pelo TinyURL:', error);
                     });
             });
         });
@@ -43,7 +42,7 @@
     <!-- Adicione o botão de compartilhamento -->
     <button id="shareButton">Compartilhar</button>
 
-    <div align="center">manaus</div>
+  MANAUS--------AM
 
 </body>
 </html>
