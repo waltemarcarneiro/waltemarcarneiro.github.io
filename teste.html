@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Blog</title>
+    <!-- Adicione o script de compartilhamento -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Adicione o evento de clique ao ícone de compartilhamento
+            document.getElementById('shareButton').addEventListener('click', () => {
+                // Compartilha a página atual
+                if (navigator.share) {
+                    navigator.share({
+                        title: document.title,
+                        url: window.location.href
+                    }).then(() => {
+                        console.log('Página compartilhada com sucesso!');
+                    }).catch((error) => {
+                        console.error('Erro ao compartilhar a página:', error);
+                    });
+                } else {
+                    console.log('Compartilhamento não suportado pelo navegador.');
+                    // Aqui você pode adicionar um fallback ou mensagem para navegadores que não suportam o compartilhamento nativo.
+                }
+
+                // Enviar URL para Bitly
+                const clientId = 'de6db265941e3f69160a84cdc6562d1b3095b130';
+                const clientSecret = '0eae22319f05f20405c5d678c3a9038a96c38a5f';
+                const longUrl = window.location.href;
+
+                axios.post('https://api-ssl.bitly.com/oauth/access_token', {
+                    client_id: clientId,
+                    client_secret: clientSecret,
+                    grant_type: 'client_credentials'
+                }).then((response) => {
+                    const accessToken = response.data.access_token;
+                    return axios.post('https://api-ssl.bitly.com/v4/shorten', {
+                        long_url: longUrl
+                    }, {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`
+                        }
+                    });
+                }).then((response) => {
+                    const shortUrl = response.data.id;
+                    console.log('Link encurtado pelo Bitly:', shortUrl);
+                    // Aqui você pode usar a variável shortUrl conforme necessário, por exemplo, compartilhando-a de alguma forma.
+                }).catch((error) => {
+                    console.error('Erro ao encurtar o link pelo Bitly:', error);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Adicione o botão de compartilhamento -->
+    <button id="shareButton">Compartilhar</button>
+
+    <p>
+        Teste de Postagem...
+    </p>
+
+</body>
+</html>
