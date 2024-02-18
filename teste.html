@@ -29,7 +29,8 @@
                     long_url: window.location.href
                 }, {
                     headers: {
-                        Authorization: 'Bearer {token}'
+                        Authorization: 'Bearer {TOKEN}',
+                        'Content-Type': 'application/json'
                     }
                 }).then((response) => {
                     const shortUrl = response.data.id;
@@ -47,6 +48,7 @@
     <!-- Adicione o botão de compartilhamento -->
     <button id="shareButton">Compartilhar</button>
 
-0000000
+    <!-- O restante do seu conteúdo -->
+
 </body>
 </html>
