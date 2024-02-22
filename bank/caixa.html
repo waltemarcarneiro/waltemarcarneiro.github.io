@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="bank.css" />
     <link rel="stylesheet" href="popup.css" />
 
-    <link rel="manifest" href="manifest.json">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- favicon -->
     <link rel="shortcut icon" href="https://waltemarcarneiro.github.io/icons/favicon-32x32.png" />
@@ -27,11 +25,14 @@
     <meta property="og:site_name" content="Waltemar Carneiro" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="keywords" content="Waltemar, Carneiro" />
-    <meta property="og:title" content="💰 Você tem um Pix para fazer!" />
-    <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-caixa.png" />
+    <meta property="og:title" content="Você tem um Pix para fazer!" />
+    <meta property="og:image" content="https://waltemarcarneiro.github.io/green/bank/image/og-caixa.png" />
     <meta property="og:description" content="😉 Acesse o link para efetuar o pagamento" />
 
     <style type="text/css">
+        @font-face {
+            font-family: BancoDoBrasil Titulos;
+            src: url(fonts/BancoDoBrasilTitulos-Bold.ttf);}
         .copy-button {
             color: #0059AE;
             background: none;
@@ -140,11 +141,7 @@ body{
 
 
 
-        <bb-qrcode-message><div class="bb-qrcode-message"><img alt="Imagem de QR Code" width="100" height="100" src="image/qrcode-bb.png"><div class="message-bb"> Aponte a câmera do seu celular para o código ao lado para copiar o código Pix. <div align="">
-        <button class="button-copy"
-        onClick="copiarTexto()">Usar Copia e Cola</button>
-        </div></div></div>
-        </bb-qrcode-message><br>
+        
 
             <div class="table">
                 <div class=""><img src="image/msn.png" height="50"></div>
@@ -211,7 +208,7 @@ body{
         <!--script copia chave pix-->
         <script>
             function copyToClipboard() {
-                const textToCopy = '4fdf9c54-ad1c-4ad6-9149-81eed0bee319';
+                const textToCopy = '84d90cb2-7cf9-4674-bfdd-4b1bbb0fa1a4';
                 navigator.clipboard.writeText(textToCopy)
                     .then(() => {
                         const copySuccessMessage = document.getElementById('copy-success-message');
@@ -283,7 +280,7 @@ line-height: 1.125; letter-spacing: .015em; cursor: pointer;">amazon player app<
 
     <div align="center">
         <input id="codepix" name="texto" readonly="" type="text"
-            value="00020126580014br.gov.bcb.pix01364fdf9c54-ad1c-4ad6-9149-81eed0bee31952040000530398654040.005802BR5922WALTEMAR LIMA CARNEIRO6009SAO PAULO62070503***630475CD" />
+            value="00020126580014br.gov.bcb.pix013684d90cb2-7cf9-4674-bfdd-4b1bbb0fa1a452040000530398654040.005802BR5922WALTEMAR LIMA CARNEIRO6009SAO PAULO62070503***630480CE" />
     </div>
 
     <!-- CONTEUDO DO POPUP -->
@@ -299,7 +296,7 @@ line-height: 1.125; letter-spacing: .015em; cursor: pointer;">amazon player app<
                     style="font-size: 30px;">WhatsApp!</strong><br><br>
                 <div align="center">
                     <a href="https://api.whatsapp.com/send?phone=558171027858&text=%F0%9F%98%80%20Ol%C3%A1%2C%20estou%20com%20d%C3%BAvidas!"
-                        target="_blank"><img src="../svg/whatsapp-white.svg" width="20%" height="" /></a>
+                        target="_blank"><img src="../image/whatsapp-white.svg" width="20%" height="" /></a>
                 </div>
             </div>
 
@@ -321,7 +318,7 @@ line-height: 1.125; letter-spacing: .015em; cursor: pointer;">amazon player app<
   });
 </script>
 
-    <script src="../script-sw.js"></script>
+
     <script src="popup.js"></script>
     <script src="https://waltemarcarneiro.github.io/alert.js"></script>
 
