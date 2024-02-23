@@ -1,51 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <link rel="stylesheet" href="../assets/css/links.css">
-        <link rel="manifest" href="../manifest.json">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <title>Playlist Love Songs</title>
-        <meta name="description" content="A playlist mais romântica de todos os tempos.">
-        <!-- FAVICON / THEME-->
-        <meta content="#0f0f0f" name="theme-color">
-        <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon-180x180.png" />
-        <link href="../icons/favicon.ico" rel="icon" type="image/x-icon">
-        <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-        <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#0f0f0f">
-        <link rel="shortcut icon" href="../icons/favicon-32x32.png" />
-        <meta name="msapplication-TileColor" content="#0f0f0f">
-        <!-- SEO | OG -->
-        <meta property='og:type' content='website'>
-        <meta property="og:site_name" content="waltemar Carneiro">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="keywords" content="playlist, love songs, love music, the best of the best, youtube music">
-        <meta property="og:title" content="Playlist Love Songs">
-        <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-love-songs.png">
-        <meta property="og:description" content="A Playlist mais romântica de todos os tempos">
+        <meta name="theme-color" content="#111111"/>
+        <title>Playlist Youtube Music</title>
+        <meta name="description" content="O Rei do bolero!">
+        <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
+        <!-- FAVICON-->
+        <link rel="apple-touch-icon" sizes="180x180" href="icons/icon180.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="icons/icon32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="icons/icon16.png"/>
+        <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#111111"/>
+        <meta name="msapplication-TileColor" content="#111111"/>
         
-        <!-- POPUP TIME-->
-        <link rel="stylesheet" href="../assets/css/popup-time.css">
-        <script src="../assets/js/popup-time.js"></script>
-        <style type="text/css">
-            body {
-                background-color: #0f0f0f;
+        <link rel="shortcut icon" href="icons/icon32.png"/>
+        <!-- SEO | OG -->
+        <meta property="og:locale" content="pt_BR"/>
+        <meta name="keywords" content="Waltemar"/>
+        <meta property="og:title" content="Playlist Youtube Music"/>
+        <meta property="og:description" content="Lista completas das mais belas canções romanticas internacionais! "/>
+        <meta property="og:image" content="https://waltemarcarneiro.github.io/green/image/og-playlist.png"/>
+        <meta property="og:site_name" content="Waltemar Carneiro"/>
+        <meta property='og:type' content='website'/>
+        <style>
+          
+            * {
+                margin: 0;
+                padding: 0;
             }
 
-            header {
-                background-color: #111111;
+            i {
+                color: orange;
+            }
+
+            body, html {
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+                margin: 0;
+                padding: 0;
+                background: #000;
+                color: #fff;
+            }
+
+            /* Estilo para tornar o vídeo em tela cheia */
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+             /* Estilos para centralizar o conteúdo de texto */
+            .centered-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: white;
+                font-size: 24px;
+            }
+
+            /* Estilos para o rodapé */
+            .footer {
+                position: absolute;
+                bottom: 60px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: left;
+                font-size: 16px;
+                width: 100%;
+                
+            }
+
+            /* Estilos para a div superior */
+            .top-content {
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .logo {
+                position: fixed;
+                top: 7px;
+                left: 7px;
+                z-index: 2;
+            }
+
+            .icons {
+                position: fixed;
+                bottom: 100px;
+                right: 10px;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+
+
+
+
+            }
+             .icons img {
+                margin-bottom: 10px;
+                width: 40px;
+                height: 40px;
+                border-radius: 100px;
+                border:2px solid #fff;
+                padding: 2px;
+            
             }
 
             .marquee-container {
                 overflow: hidden;
                 white-space: nowrap;
+
             }
 
             .marquee-content {
                 display: inline-block;
                 animation: marquee 15s linear infinite;
+                font-size: 18px;
+                width: 90%;
             }
 
             @keyframes marquee {
@@ -57,97 +136,357 @@
                     transform: translateX(-100%);
                 }
             }
-        a{text-decoration: none;}
-        a .material-icons{
-            align-items: center;
-            display: flex;
-            padding: 10px;
-            border-radius: 10px;
-            justify-content: center;
-            color: white;
-            width: 40px;
-            height: 40px;
-            
-            font-size: 50px;
-            margin-top: 30px;
-            
-        }    
+
+            h1 {
+                font-size: 19px;
+                text-align: left;
+                vertical-align: top;
+                font-family: 'Google Sans',Roboto,Arial,sans-serif;
+                font-weight: 600;
+            }
+
+            .logo-popup {
+                display: flex;
+                align-items: center;
+            }
+
+            .logo-popup img {
+                margin-right: 10px;
+                text-align: left;
+                height: 60px;
+                width: 60px;
+            }
+            .banner-header{
+                              
+                width: 250px;
+                height: 120px;
+                
+                
+            }
+
         </style>
+        
     </head>
     <body>
-        <header>
-            <button class="icon-left" id="backButton">
-                <i class="material-icons material-icons-button ">arrow_back</i>
-            </button>
-            <div class="marquee-container">
-                <div class="marquee-content">🧡 Playlist Love Songs 🥰
+        <script src="bank/sweetalert2.all.js"></script>
+        <div class="logo">
+            <img src="image/logo-header.png" alt="logo" width="50">
         </div>
-            </div>
-            <button class="icon-right" id="share-Button">
-                <i class="material-icons material-icons-button">share</i>
-            </button>
-        </header>
-        <!-- CONTEUDO DO POPUP -->
+        <!-- ICONS -->
+        <div class="icons">
+            <a href="green.html?pagina=profile.html" target="_parent">
+                <img src="image/up-video/perfil.png" alt="perfil" width="50">
+            </a>
+            
+            <a href="https://bit.ly/wc-short" id="shareLink">
+                <img src="image/up-video/share.png" alt="share" width="50">
+            </a>
+            
+            <a href="https://bit.ly/LoveSongsApp" target="_blank">
+                <img src="image/up-video/app.png" alt="App" width="50">
+            </a>
+            
+            <a href="#" id="pixLink">
+                <img src="image/up-video/doacao.png" alt="doacao" width="50">
+            </a>
+        </div>
         
-            <div id="popup">
+        <iframe id="meuVideo" width="100%" height="" src="https://www.youtube.com/embed/ckUV8X6MkaI?list=PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5" frameborder="0" allowfullscreen></iframe>
 
-                <div id="popup-overlay">
-                
-                <div class="popup-content">
-<button id="close-button"><i class="material-icons">close</i></button>
-                    <strong>Se desejar</strong>
-                    <br>
-                    contribuir<br>
-                    <strong>faça um pix.</strong>
-                                       
-                    <div align="center">
-                        <a href="./../bank/picpay.html"><b style="color:#7FFF00;font-weight: 600; text-decoration: underline;">click aquí</b></a>
-                        <button class="material-icons">
+        <!-- Div superior -->
 
-                            <!--<a href="../../bank/picpay.html"><i class="material-icons">pix</i></a>-->
-
-                        <button>
-                            <br><br>
-                      <br>      
-                    </div>
-                </div>
-            </div>
+        <div class="top-content">
+            
         </div>
-        <!-- END CONTEUDO DO POPUP -->
-        <!-- URL DE PLAYLIST -->
-        <div class="container">
-            <iframe class="content
-" width="100%" height="" src="https://www.youtube.com/embed/ckUV8X6MkaI?list=PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5" frameborder="0" allowfullscreen></iframe>
+        <div id="divTime" class="div-time">
+
+            <img src="image/anime.png" class="animar-imagem" width="70">
+            
+        </div>
+        <!-- Rodapé -->
+        
+        <div class="footer">
+            <div class="marquee-container">
+                <div class="marquee-content">Internacional Playlist Love Songs</div>
+            </div>
         </div>
 
 
         <script>
-            // Adicione o evento de clique ao ícone de seta à esquerda
-            document.getElementById('backButton').addEventListener('click', ()=>{
-                // Volta para a página anterior
-                history.back();
-            }
-            );
-            const shareIcon = document.getElementById('share-Button');
+            // Adicione um listener ao link de compartilhamento
+            document.getElementById('shareLink').addEventListener('click', function(event) {
+                event.preventDefault();
+                // Prevenir comportamento padrão do link
 
-            shareIcon.addEventListener('click', async()=>{
+                // Adicione o código de compartilhamento aqui
+                const shareUrl = 'https://waltemarcarneiro.github.io/green/playlist.html';
+                const shareTitle = 'Playlist Youtube Music';
+                const shareContent = 'Lista completas das mais belas canções romanticas internacionais! '
                 if (navigator.share) {
-                    try {
-                        await navigator.share({
-                            title: 'Playlist Love Songs',
-                            text: 'A playlist mais romântica de todos os tempos.',
-                            url: 'https://bit.ly/wclovesongs'
-                        });
-                        console.log('Conteúdo compartilhado com sucesso!');
-                    } catch (error) {
-                        console.error('Erro ao compartilhar:', error);
+                    navigator.share({
+                        title: shareTitle,
+                        text: shareContent,
+                        url: shareUrl
+                    }).then(()=>{
+                        console.log('Página compartilhada com sucesso!');
                     }
+                    ).catch((error)=>{
+                        console.error('Erro ao compartilhar a página:', error);
+                    }
+                    );
                 } else {
-                    console.log('A API de compartilhamento não é suportada neste navegador.');
-                    // Aqui você pode exibir um modal ou mensagem alternativa de compartilhamento
+                    console.log('Compartilhamento não suportado pelo navegador.');
                 }
-            }
-            );
+            });
         </script>
+        <!-- start POPUP DOAÇÃO -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <div>
+                    <div class="logo-popup">
+                        <img src="icons/logo-rounded.png">
+                        <h1><i class="fa-regular fa-heart"></i> Apoie o desenvolvedor com uma contribuição.</h1>
+                    </div>
+                    <p style="text-align: justify; margin-top: 10px; color: #545f7e; border-bottom: 1px solid #cfe1fd; padding-bottom: 10px;">
+                        <strong style="font-size: 12px; font-weight:500;">5.0</strong> <img src="https://play-lh.googleusercontent.com/_KiRouu_G6J_2jwePzQ_i5_FMc_SVKT3mI7d7KKq9zca-Nr8bj2bPasawLvk6ajzASQS-90a8hYXeAh0lQ=w48-h16-rw" height="12"> Aponte a câmera do seu celular para o QRCode, ou use os botões "<b>Copiar Chave</b>" ou "<b>Copia e Cola.</b>"
+                        <br><br><strong style="color: #E77000; font-weight: 500; font-style: italic;">LEMBRE-SE: Sua doação é voluntária.</strong>
+                    </p>
+
+                    <div align="center" class="qrcode">
+                        <img src="bank/image/qrcode-bb.png" height="100" alt="qrcode">
+                    </div>
+                    <div class="btn">
+                        <button class="key1" onclick="copyText('pix')">COPIAR CHAVE</button>
+                        <button class="key2" onclick="copyText('code')">COPIA e COLA</button>
+                    </div>
+                </div>
+                <div>
+                    <button class="close-button" onclick="closePopup()">Fechar</button>
+                </div>
+                <span id="pix" class="chave">aa8b3fd0-0c76-422f-9f3a-844bd7f6b627</span>
+                <span id="code" class="chave">00020126770014br.gov.bcb.pix0136aa8b3fd0-0c76-422f-9f3a-844bd7f6b6270215Solicitacao Pix5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62290525l0mRiVkLmDEtcAVLaD8SUuLO46304BD9F</span>
+            </div>
+        </div>
+        <!-- Incluindo o script do SweetAlert -->
+        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <script>
+            document.getElementById('pixLink').addEventListener('click', function() {
+
+                document.getElementById('popup').style.display = 'block';
+            });
+
+            function closePopup() {
+                var popup = document.getElementById('popup');
+    popup.style.animation = 'slideDown 0.5s ease-out forwards';
+
+    setTimeout(function() {
+        popup.style.display = 'none';
+        popup.style.animation = '';
+    }, 500); // Aguarde o término da animação antes de ocultar o popup
+            }
+
+            function copyText(elementId) {
+                var textToCopy = document.getElementById(elementId).innerText;
+
+                // Cria um elemento de área de transferência temporário
+                var tempInput = document.createElement('textarea');
+                tempInput.value = textToCopy;
+                document.body.appendChild(tempInput);
+
+                // Seleciona o texto da área de transferência temporária
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+                /* Para dispositivos móveis */
+
+                // Copia o texto para a área de transferência
+                document.execCommand('copy');
+
+                // Remove o elemento de área de transferência temporário
+                document.body.removeChild(tempInput);
+
+                // Exibe um popup personalizado com o SweetAlert
+                Swal.fire({
+                    title: elementId === 'pix' ? 'Chave copiada!' : 'Codigo Pix copiado com sucesso!',
+                    text: elementId === 'pix' ? 'Use a opção CHAVE ALEATÓRIA no app do seu banco.' : 'Use a opção COPIA e COLA no app do seu banco.',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        title: 'swal-title-custom',
+                        content: 'swal-text-custom'
+                    }
+                });
+            }
+        </script>
+        <!--config do popup doação-->
+        <style type="text/css">
+
+            .popup {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                padding-bottom: 50px;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                border-top: 1px solid #cfe1fd;
+                overflow: hidden;
+                font-size: 18px;
+                color: #252E48;
+                z-index: 2;
+                
+                -webkit-border-top-left-radius: 15px;
+                -webkit-border-top-right-radius: 15px;
+                -moz-border-radius-topleft: 15px;
+                -moz-border-radius-topright: 15px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+
+                animation: slideUp 0.5s ease-out forwards;
+            }
+            @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+            }
+
+            @keyframes slideDown {
+            from {
+            transform: translateY(0);
+            }
+            to {
+            transform: translateY(100%);
+            }
+            }
+
+            .popup-content {
+                padding: 20px;
+                
+            }
+
+            .close-button {
+                font-weight: 500 ;
+                width: 100%;
+                height: 40px;
+                background: #f1f1f1;
+                color: #828282;
+                border: 1px dashed #ddd;
+                cursor: pointer;
+                font-size: 20px;
+                border-radius: 5px;
+                text-shadow: 0 1px 0 #ffffff;
+            }
+
+            .qrcode {
+                margin: 15px 0px;
+                                
+            }
+
+            .btn {
+                margin: 15px 0px;
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .key1 {
+                padding: 10px 20px;
+                background: #24c091;
+                border: 1px solid #cfe1fd;
+                color: #fff;
+                border-radius: 7px;
+                font-size: 16px;
+                font-weight: 600;
+                text-shadow: 0 1px 0 #1C936F;
+                box-shadow: 0 3px #1C936F;
+                border-bottom: 1px solid #FFF;
+                
+            }
+
+            .key2 {
+                padding: 10px 20px;
+                background: orange;
+                border: none;
+                color: #FFF;
+                border-radius: 7px;
+                font-size: 16px;
+                font-weight: 600;
+                text-shadow: 0 1px 0 #D28900;
+                box-shadow: 0 3px #D28900;
+                border-bottom: 1px solid #FFF;
+                
+                
+            }
+
+            input {
+                display: none;
+            }
+
+            .chave {
+                display: none;
+            }
+
+            /* Adicione as classes CSS para personalizar o estilo do SweetAlert */
+            .swal-title-custom {
+                color: #252E48 !important;
+                font-size: 26px !important;
+            }
+
+            .swal-text-custom {
+                font-weight: 500 !important;
+                font-size: 16px;
+                color: #252E48 !important;
+            }
+
+            /*anime icon*/
+            .swal2-header {
+                padding: 0 !important;
+            }
+
+            .swal2-success-line-tip {
+                background: #75bb00 !important;
+            }
+
+            .swal2-success-line-long {
+                background: #75bb00 !important;
+            }
+
+            .swal2-icon.swal2-success .swal2-success-ring {
+                position: absolute;
+                z-index: 2;
+                top: -0.25em;
+                left: -0.25em;
+                box-sizing: content-box;
+                width: 100%;
+                height: 100%;
+                border: 0.25em solid #75bb00 !important;
+                border-radius: 50%;
+            }
+            .div-time{
+                position: absolute;
+                top:65px;
+                right: 48px;
+            }
+            /* Estilo da imagem com animação */
+            .animar-imagem {
+            animation: moverCimaBaixo 1s ease-in-out infinite; /* Animar por 2 segundos, repetir infinitamente */
+            }
+
+    /* Definir a animação de movimento para cima e para baixo */
+    @keyframes moverCimaBaixo {
+      0%, 100% {
+        transform: translateY(0); /* Posição inicial e final */
+      }
+      50% {
+        transform: translateY(-20px); /* Posição no meio da animação */
+      }
+    }
+        </style>
+        <!--end cofig doação-->
+        <script src="js/div-on-off.js"></script>
     </body>
 </html>
