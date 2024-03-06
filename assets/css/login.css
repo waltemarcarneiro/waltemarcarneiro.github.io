@@ -59,7 +59,7 @@ input[type="password"] {
     border-radius: 5px;
     display: block;
     position: relative;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 input:hover {
