@@ -177,6 +177,9 @@ p {
     background-color: #f5f7f9;
     border-radius: 10px;
     padding: 10px;
+    max-width: 480px; /*for width*/
+    margin: auto;
+    margin-top: 60px;
 }
 
 input {
