@@ -5,19 +5,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultDiv = document.querySelector(".result");
     const appItems = document.querySelectorAll(".app-item");
 
-    searchButton.addEventListener("click", function () {
+    // Adiciona a funcionalidade de busca ao pressionar a tecla "Enter"
+    searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            performSearch();
+        }
+    });
+
+    // Adiciona a funcionalidade de busca ao clicar no botão de pesquisa
+    searchButton.addEventListener("click", performSearch);
+
+    function performSearch() {
         const searchTerm = searchInput.value.trim().toLowerCase();
 
         // Limpe os resultados anteriores
         searchResults.innerHTML = "";
 
         // Verifique cada elemento com a classe "app-item"
+        let foundResults = false;
+
         appItems.forEach(function (appItem) {
             const appNameElement = appItem.querySelector(".app-name");
             const appName = appNameElement.textContent.trim().toLowerCase();
 
             // Se o termo de pesquisa estiver contido no nome do aplicativo
             if (appName.includes(searchTerm)) {
+                foundResults = true;
+
                 // Clone o elemento completo com a classe "app-link"
                 const appLinkElement = appItem.querySelector(".app-link").cloneNode(true);
 
@@ -40,11 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Exiba a div de resultados apenas se houver resultados
-        if (searchResults.children.length > 0) {
+        if (foundResults) {
             resultDiv.style.display = "block";
         } else {
-            // Se não houver resultados, oculte a div de resultados
-            resultDiv.style.display = "none";
+            // Se não houver resultados, mostre um aviso
+            resultDiv.style.display = "block";
+            searchResults.innerHTML = "<p style='color: #777; font-size: 18px; font-family: \"Inter\", sans-serif; margin-bottom: 10px;'>Nenhum resultado encontrado.</p>";
         }
-    });
+    }
 });
