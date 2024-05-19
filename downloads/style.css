@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -82,9 +83,9 @@ header h2{
             flex: 1;
         }
         .app-name {
-            font-family: 'Inter',sans-serif;
+            font-family: 'Open Sans',sans-serif;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 600;
         }
         .app-description {
             font-size: 14px;
