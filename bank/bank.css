@@ -12,6 +12,7 @@ body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     color: #252e48;
     background: #f5f7f9;
+    user-select: none;
 }
 
 h1 {
