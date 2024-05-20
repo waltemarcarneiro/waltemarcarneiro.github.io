@@ -75,6 +75,7 @@ p {
     text-transform: uppercase;
     -webkit-tap-highlight-color: transparent;
     tap-highlight-color: transparent;
+    max-width:480px; margin:0 auto;
    
 }
 
