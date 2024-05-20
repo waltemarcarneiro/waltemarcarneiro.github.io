@@ -169,9 +169,9 @@ button:hover {
     position: absolute;
     top: 10px;
     right: 11px;
-    font-size: 30px;
+    font-size: 28px;
     cursor: pointer;
-    padding: 7px;
+    padding: 5px 7px 11px 8px;
     background-color: #ff4906;
     border-radius: 100px;
     width: 20px;
