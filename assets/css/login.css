@@ -105,7 +105,7 @@ button {
 }
 
 button:hover {
-    background-color: orange;
+    background-color: #ff4906;
     color: #fff;
     border: 1px solid #fff;
 }
