@@ -77,9 +77,8 @@ input:hover {
 
 .input-container .icon {
     position: absolute;
-    top: 39%;
+    top: 41%;
     left: 50px;
-    transform: translateY(-50%);
     color: #999;
     z-index: 2;
 }
