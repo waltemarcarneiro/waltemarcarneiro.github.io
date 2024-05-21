@@ -10,7 +10,7 @@ body {
     padding: 0;
     font-size: 16px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-    color: #252e48;
+    color: #0E2332;
     background: #f5f7f9;
     user-select: none;
 }
@@ -75,8 +75,7 @@ p {
     text-transform: uppercase;
     -webkit-tap-highlight-color: transparent;
     tap-highlight-color: transparent;
-    max-width:480px; margin:0 auto;
-   
+    user-select: none;
 }
 
 .icon {
@@ -179,6 +178,7 @@ p {
     background-color: #f5f7f9;
     border-radius: 10px;
     padding: 10px;
+
     max-width: 480px; /*for width*/
     margin: auto;
     margin-top: 60px;
@@ -198,7 +198,7 @@ input {
     border: 2px solid #e77000;
     color: #e77000;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     padding: 0.3em 0.6em;
     background-color: #fff;
@@ -221,7 +221,6 @@ li {
     border-collapse: collapse;
     font-size: 14px;
     font-weight: 400;
- 
 }
 
 .table-row {
@@ -233,7 +232,7 @@ li {
     border-bottom: 1px solid rgba(234, 234, 234, 0.1);
     padding: 3px 0px;
     text-align: left;
-    white-space: nowrap;
+        white-space: nowrap;
 
 }
 
