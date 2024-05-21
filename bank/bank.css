@@ -65,7 +65,7 @@ p {
     left: 0;
     right: 0;
     height: 50px;
-    background-color: #e77000;
+    background-color: #ff4906;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,7 +75,8 @@ p {
     text-transform: uppercase;
     -webkit-tap-highlight-color: transparent;
     tap-highlight-color: transparent;
-    user-select: none;
+    max-width:480px;
+    margin: 0 auto;
 }
 
 .icon {
