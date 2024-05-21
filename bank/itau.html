@@ -69,7 +69,9 @@
 
             <div class="table-row">
                 <div class="table-cell1">Chave Pix:</div>
-                <div class="table-cell2">064f9f69-cf66-440d-a2b9-95c3f2742c16</div>
+                <div class="table-cell2">
+                    <button id="copy-success-message" class="copy-button" onclick="copyToClipboard()"><span class="material-icons">content_copy</span></button>
+                </div>
             </div>
 
             <div class="table-row">
@@ -148,7 +150,23 @@
         <input id="codepix" name="texto" readonly="" type="text"
             value="00020126580014BR.GOV.BCB.PIX0136064f9f69-cf66-440d-a2b9-95c3f2742c165204000053039865802BR5922WALTEMAR LIMA CARNEIRO6009SAO PAULO622605222hCnIuIwMXKmzZggFDNlp06304A6B1" />
         </div>
-
+<!--script copia chave pix-->
+<script>
+function copyToClipboard() {
+    const textToCopy = 'c4f68e6f-885c-4edd-9419-fd568dce7760';
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            const copySuccessMessage = document.getElementById('copy-success-message');
+            copySuccessMessage.style.display = 'block';
+            setTimeout(() => {
+                copySuccessMessage.style.display = 'none';
+            }, 3000); // Esconda a mensagem após 2 segundos (ou o tempo desejado).
+        })
+        .catch((error) => {
+            console.error('Erro ao copiar o texto:', error);
+        });
+}
+</script>
 <div id="popup-overlay">
         <div id="popup">
             <button id="close-button"><i class="material-icons">close</i></button>
