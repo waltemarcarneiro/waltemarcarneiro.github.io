@@ -30,20 +30,16 @@ h3 {
     padding: 10px;
     text-align: center;
     position: fixed;
-    /* Adiciona esta linha para fixar o posicionamento */
     top: 50%;
-    /* Centraliza verticalmente */
     left: 50%;
-    /* Centraliza horizontalmente */
     transform: translate(-50%, -50%);
-    /* Centraliza completamente */
     background: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1)
 }
 
 .logo-container {
-    border-radius: 20%;
+    border-radius: 100%;
     width: 60px;
 }
 
