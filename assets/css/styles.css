@@ -13,6 +13,9 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f2f2f2;
     color: #0E2332;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    user-select: none;
 }
 
 .header {
