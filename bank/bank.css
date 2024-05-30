@@ -9,9 +9,11 @@ body {
     color: #0E2332;
     background: #f5f7f9;
     user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
 }
 .copy-success-message {
-  width: 80%;
+  max-width: 480px;
   display: none;
   border-radius: 5px;
   background-color: #ff4906;
@@ -75,12 +77,12 @@ p {
     left: 0;
     right: 0;
     height: 50px;
-    background-color: #ff4906;
+    /* background-color: #fff; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
-    color: white;
+    /* color: #444444; */
     font-weight: bold;
     text-transform: uppercase;
     -webkit-tap-highlight-color: transparent;
