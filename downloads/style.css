@@ -16,6 +16,9 @@ body {
     background-color: #f4f4f4;
     color: #0e2332;
     font-size: 1rem;
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+    user-select: none;
 }
 header button {
     background-color: transparent;
