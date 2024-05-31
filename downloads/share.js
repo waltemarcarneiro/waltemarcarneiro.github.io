@@ -11,7 +11,7 @@
         await navigator.share({
           title: 'Downloads Premium',
           text: 'Baixe os melhores apps na versão premium',
-          url: 'https://waltemarcarneiro.github.io/downloads/downloads.html'
+          url: 'https://waltemar.com.br/downloads/apps.html'
         });
         console.log('Conteúdo compartilhado com sucesso!');
       } catch (error) {
