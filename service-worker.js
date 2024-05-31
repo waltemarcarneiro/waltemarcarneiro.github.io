@@ -5,8 +5,11 @@ const urlsToCache = [
   '/app.html',
   '/offline.html',
   '/bank/bb.html',
+  '/bank/sofisa.html',
   '/profile.html',
-  '/player/index.html',
+  '/downloads/apps.html',
+  '/videos/index.html',
+  '/videos/video.mp4',
 ];
 
 self.addEventListener("install", function (event) {
