@@ -141,7 +141,7 @@
       "url": "/downloads/apps.html",
       "icons": [
         {
-          "src": "shortcuts/intro.png",
+          "src": "shortcuts/download.png",
           "sizes": "96x96",
           "type": "image/png"
         }
