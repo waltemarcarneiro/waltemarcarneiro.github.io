@@ -12,50 +12,63 @@ const urlsToCache = [
   '/videos/video.mp4',
 ];
 
-self.addEventListener("install", function (event) {
-  console.log("Install Event processing");
+self.addEventListener('install', function(event) {
+  console.log('Install Event processing');
 
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      console.log("Cached offline page during install");
+    caches.open(CACHE_NAME).then(function(cache) {
+      console.log('Cached offline page during install');
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-self.addEventListener("fetch", function (event) {
-  if (event.request.method !== "GET") return;
+self.addEventListener('fetch', function(event) {
+  if (event.request.method !== 'GET') return;
 
   event.respondWith(
-    fetch(event.request)
-      .then(function (response) {
-        console.log("add page to offline cache: " + response.url);
+    caches.match(event.request).then(function(response) {
+      if (response) {
+        console.log('Serving from cache: ', event.request.url);
+        return response;
+      }
 
-        // If request was successful, add or update it in the cache
-        return caches.open(CACHE_NAME).then(function (cache) {
-          cache.put(event.request, response.clone());
-          return response;
+      console.log('Fetching from network: ', event.request.url);
+      return fetch(event.request)
+        .then(function(networkResponse) {
+          if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+            return networkResponse;
+          }
+
+          const clonedResponse = networkResponse.clone();
+          caches.open(CACHE_NAME).then(function(cache) {
+            cache.put(event.request, clonedResponse);
+          });
+
+          return networkResponse;
+        })
+        .catch(function() {
+          console.log('Fetch failed; returning offline page instead.');
+          return caches.match('/offline.html');
         });
-      })
-      .catch(function (error) {
-        console.log("Network request Failed. Serving content from cache: " + error);
-        return fromCache(event.request);
-      })
+    })
   );
 });
 
-function fromCache(request) {
-  return caches.open(CACHE_NAME).then(function (cache) {
-    return cache.match(request).then(function (matching) {
-      if (!matching || matching.status === 404) {
-        if (request.destination !== "document" || request.mode !== "navigate") {
-          return caches.match('/offline.html');
-        }
+self.addEventListener('activate', function(event) {
+  console.log('Activating new service worker...');
 
-        return caches.match('/offline.html');
-      }
+  const cacheWhitelist = [CACHE_NAME];
 
-      return matching;
-    });
-  });
-}
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
