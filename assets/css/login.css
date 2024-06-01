@@ -103,7 +103,7 @@ text-decoration: none;
 text-decoration: underline;
 }
 .copyright {
-font-size: 12px;
+font-size: 14px;
 margin-top: 20px;
 font-weight: normal;
 color: #0E2332;
@@ -112,6 +112,9 @@ left: 0;
 bottom: 0;
 text-align: center;
 width: 100%;
+}
+.copyright a{
+  color: #0E2332;
 }
 .popup {
 display: none;
