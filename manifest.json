@@ -136,9 +136,9 @@
   },
   "shortcuts": [
     {
-      "name": "Player",
-      "description": "Love Songs",
-      "url": "/player/index.html",
+      "name": "Downloads",
+      "description": "Apps Premium",
+      "url": "/downloads/apps.html",
       "icons": [
         {
           "src": "shortcuts/intro.png",
@@ -149,8 +149,8 @@
     },
     {
       "name": "Doação",
-      "url": "/bank/bb.html",
-      "description": "Pix BB",
+      "url": "/bank/sofisa.html",
+      "description": "Pix Sofisa",
       "icons": [
         {
           "src": "shortcuts/pix.png",
