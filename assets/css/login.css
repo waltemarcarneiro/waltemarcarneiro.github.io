@@ -115,6 +115,7 @@ width: 100%;
 }
 .copyright a{
   color: #0E2332;
+  cursor: pointer;
 }
 .popup {
 display: none;
