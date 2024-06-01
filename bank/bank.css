@@ -262,3 +262,6 @@ input {
 .material-icons:focus {
     background-color: none;
 }
+.qrcode{
+    width: 120px;   
+}
