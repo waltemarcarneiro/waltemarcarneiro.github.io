@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,6 +9,7 @@
     <title>Momento Love Songs</title>
     <meta name="description" content="Roberto Carlos - Sua Estupidez!">
     <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="../icons/icon32.png" />
@@ -51,9 +53,9 @@
             -webkit-tap-highlight-color: transparent;
             tap-highlight-color: transparent;
             user-select: none;
+            
         }
-
-        /* Estilo para tornar o vídeo em tela cheia */
+                /* Estilo para tornar o vídeo em tela cheia */
         iframe {
             position: absolute;
             top: 0;
@@ -115,22 +117,13 @@
         .icons {
             position: fixed;
             bottom: 60px;
-            right: 5px;
+            left: 20px;
             z-index: 1;
             display: flex;
             flex-direction: column;
+            text-align: center;
+            align-items: center;
 
-
-        }
-
-        .icons img {
-            
-            margin-bottom: 10px;
-            width: 30px;
-            height: 30px;
-            border-radius: 100px;
-            border: 1px solid #ffffff85;
-            padding: 2px;
 
         }
 
@@ -184,32 +177,61 @@
 
 
         }
+        ion-icon{
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .pulsing-icon {
+      animation: pulse 2s infinite;
+      font-size: 40px;
+      color: #ff59f3;
+        }
+        @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    
     </style>
 
 </head>
 
 <body>
     <script src="../bank/sweetalert2.all.js"></script>
+
     <div class="logo-natal">
         <a href="javascript: history.go(-1)"><img src="../image/logo-header.png" alt="Logo" width="50"></a>
     </div>
     <div class="icons">
-        <a href="#" target="_blank">
-            <img src="../image/btn-profile.png" alt="perfil" width="48">
+
+
+        <a href="#" id="pixLink">
+            <ion-icon name="heart-outline" class="pulsing-icon"></ion-icon>
+        </a>
+
+        <a href="https://bit.ly/lovesongsapp" target="_blank">
+           <ion-icon name="musical-notes-outline"></ion-icon>
         </a>
 
         <a href="https://waltemar.com.br/videos/" id="shareLink">
-            <img src="../image/btn-share.png" alt="share" width="50">
+            <ion-icon name="share-social-outline"></ion-icon>
         </a>
 
-        <a href="https://api.whatsapp.com/send?text=T%C3%A1+na+hora+do+seu+momento+love+songs%21+https://waltemar.com.br/videos/index.html"
+        <a href="https://bit.ly/whatsapp-san"
             target="_blank">
-            <img src="../image/btn-whatsapp.png" alt="whatsapp" width="50">
+            <ion-icon name="logo-whatsapp"></ion-icon>
         </a>
 
-        <a href="#" id="pixLink">
-            <img src="../image/btn-doacao.png" alt="doacao" width="50">
-        </a>
     </div>
 
     <video id="meuVideo" autoplay controls loop>
@@ -494,6 +516,8 @@
             border-radius: 50%;
         }
     </style>
+
+
     <!--end cofig doação-->
 </body>
 
