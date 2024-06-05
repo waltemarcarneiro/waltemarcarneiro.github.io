@@ -24,7 +24,7 @@ h3 {
 color: #0E2332;
 }
 .login-container {
-max-width: 500px;
+width: 300px;
 padding: 10px;
 text-align: center;
 position: fixed;
@@ -67,7 +67,7 @@ margin: 0 auto;
 .input-container .icon {
 position: fixed;
 top: 42%;
-left: 20px;
+left: 50px;
 /*transform: translateY(-50%);*/
 color: #999;
 z-index: 2;
