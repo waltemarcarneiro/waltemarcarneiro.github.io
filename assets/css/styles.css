@@ -12,10 +12,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #f2f2f2;
-    color: #0E2332;
-    -webkit-tap-highlight-color: transparent;
-    tap-highlight-color: transparent;
-    user-select: none;
+    color: #1D1D1F;
 }
 
 .header {
@@ -99,7 +96,7 @@ body {
     top: -18px;
     left: -10px;
     background-image: url('../../image/dropdown-bg.png');
-    /*background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../image/dropdown-bg.png);*/
+    /background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../image/dropdown-bg.png);
     background-position: left bottom;
  }
 .dropdown-list{
@@ -206,7 +203,7 @@ body {
     background-color: #FF7F00;
 }
 .icon-text {
-    color: #0E2332;
+    color: #252e48;
     font-size: 12px;
     white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
@@ -214,7 +211,7 @@ h1{
     font-size: 1.5rem;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-    color: #0E2332;
+    color: #4a4a4a;
 }
 .post{
     text-align: justify;

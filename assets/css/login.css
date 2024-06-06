@@ -1,91 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+*{
+margin: 0;
+padding: 0;
+}
 body {
-user-select: none;
 -webkit-tap-highlight-color: transparent;
 tap-highlight-color: transparent;
-font-family: 'Inter', sans-serif;
-color: #0e2332;
+user-select: none;
 margin: 0;
 padding: 0;
 display: flex;
 justify-content: center;
 align-items: center;
-background:#F5F0EB;
-/*background-image: url(../../image/icons-gray-bg.svg);*/
-}
-p,
-h1,
-h2,
-h3 {
-color: #0E2332;
+background: #f2f2f2;
+background-image: url(../../image/icons-gray-bg.svg);
+font-family: 'Roboto', sans-serif;
+color: #1D1D1F;
 }
 .login-container {
 width: 300px;
 padding: 10px;
 text-align: center;
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+position: fixed; /* Adiciona esta linha para fixar o posicionamento */
+top: 50%; /* Centraliza verticalmente */
+left: 50%; /* Centraliza horizontalmente */
+transform: translate(-50%, -50%); /* Centraliza completamente */
 background: #fff;
 border-radius: 10px;
-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1)
-}
-.logo-container {
-border-radius: 100%;
-width: 60px;
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 h2 {
 margin-top: 20px;
 margin-bottom: 20px;
-font-size: 1.1em;
+font-size: 1.3em;
 font-weight: 500;
 }
 input[type="password"] {
-width: 200px;
+width: 260px;
 height: 40px;
 margin: 0 auto;
-border: 1px solid #ddd;
+border: 1px solid #ccc;
 border-radius: 5px;
 display: block;
 position: relative;
-font-size: 16px;
+font-size: 18px;
 }
 input:hover {
-border: 1px solid #FC6800;
+border: 1px solid #e77000;
 border-radius: 5px;
 }
-/* cadeado */
+/* CADEADO */
 .input-container {
 width: 100%;
 margin: 0 auto;
+display: flex;
+align-items: center;
 }
 .input-container .icon {
-position: fixed;
-top: 42%;
-left: 50px;
-/*transform: translateY(-50%);*/
+position: absolute;
+left: 25px;
 color: #999;
 z-index: 2;
 }
 .input-container input[type="password"] {
-padding-left: 35px;
-/* Espaçamento para o ícone */
+padding-left: 35px; /* Espaçamento para o ícone */
 }
 button {
 margin: 30px auto;
 padding: 7px 30px;
-background-color: #f2f2f2;
-color: #0e2332;
+background-color: #fff;
+color: #0E2334;
 letter-spacing: 1px;
-border: 1px solid #ddd;
+border: 1px solid #0E2334;
 border-radius: 20px;
 cursor: pointer;
-font-weight: 500;
+font-weight: 600;
 font-size: 0.9em;
 }
 button:hover {
@@ -93,19 +86,12 @@ background-color: orange;
 color: #fff;
 border: 1px solid #fff;
 }
-.additional-info {
-color: #0e2332;
-    font-size: 0.8rem;
-}
 .additional-info a {
-color: #FC6800;
+color: #fc6800;
 text-decoration: none;
 }
-.additional-info a:hover {
-text-decoration: underline;
-}
-.copyright {
-font-size: 0.7rem;
+.copyright{
+font-size: 0.8rem;
 margin-top: 20px;
 font-weight: normal;
 color: #0E2332;
@@ -114,10 +100,6 @@ left: 0;
 bottom: 0;
 text-align: center;
 width: 100%;
-}
-.copyright a{
-color: #0E2332;
-cursor: pointer;
 }
 .popup {
 display: none;
@@ -129,57 +111,41 @@ height: 100%;
 background-color: rgba(0, 0, 0, 0.5);
 z-index: 1;
 font-size: 20px;
-color: #0E2332;
-
-overflow: hidden;
-overflow: -webkit-paged-x;
-scrollbar-width: none;
--ms-overflow-style: none;
 }
 .popup-content {
 position: absolute;
 top: 50%;
 left: 50%;
-width: 260px;
 transform: translate(-50%, -50%);
-background-color: white;
-color: #0E2332;
+background-color: black;
+color: #fff;
 padding: 20px;
 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 text-align: center;
-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+width: 80%;
+font-family: 'Roboto', sans-serif;
 font-weight: 400;
 font-size: 1.1em;
 line-height: 1.4;
 border-radius: 5px;
 }
 .popup-close {
-margin-top: 10px;
-font-size: 0.9em;
+position: absolute;
+top: 10px;
+right: 11px;
+font-size: 30px;
 cursor: pointer;
-padding: 10px;
-background-color: #FC6800;
-border-radius: 5px;
+padding: 7px;
+background-color: #e77000;
+border-radius: 100px;
+width: 20px;
 height: 20px;
 align-items: center;
 justify-content: center;
 display: flex;
 color: white;
 }
-.popup a {
-color: #FC6800;
+.popup a{
+color: orange;
 font-weight: 500;
-}
-.target {
-display: flex;
-position: fixed;
-align-items: center;
-justify-content: space-between;
-font-size: 24px;
-color: #0E2332;
-bottom: 40px;
-width: 300px;
-}
-.target a{
-    color: #0E2332;
 }
