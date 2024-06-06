@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 form {
     display: grid;
     gap: 30px;
 }
 body{
-    background: #ece5dd;
+    background: #EFE7DE;
+    font-family: 'Roboto', sans-serif;
 }
 .input-container {
     position: relative;
@@ -19,7 +21,7 @@ body{
     font-weight: 500;
     pointer-events: none;
     transition: top 0.3s, font-size 0.3s, color 0.3s;
-    font-family: 'Roboto', sans-serif;
+    
 }
 
 .input-container input,
