@@ -1,62 +1,47 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var pixLink = document.getElementById('pixLink');
-    var popup = document.getElementById('popup');
+            document.getElementById('pixLink').addEventListener('click', function() {
 
-    if (pixLink && popup) {
-        pixLink.addEventListener('click', function() {
-            popup.style.display = 'block';
-        });
-    }
-
-    function closePopup() {
-        if (popup) {
-            popup.style.animation = 'slideDown 0.5s ease-out forwards';
-
-            setTimeout(function() {
-                popup.style.display = 'none';
-                popup.style.animation = '';
-            }, 500);
-        }
-    }
-
-    function copyText(elementId) {
-        var textToCopy = document.getElementById(elementId).innerText;
-
-        if (navigator.clipboard) {
-            navigator.clipboard.writeText(textToCopy).then(function() {
-                showCopySuccessPopup(elementId);
-            }, function() {
-                fallbackCopyText(elementId, textToCopy);
+                document.getElementById('popup').style.display = 'block';
             });
-        } else {
-            fallbackCopyText(elementId, textToCopy);
-        }
-    }
 
-    function fallbackCopyText(elementId, textToCopy) {
-        var tempInput = document.createElement('textarea');
-        tempInput.value = textToCopy;
-        document.body.appendChild(tempInput);
+            function closePopup() {
+                var popup = document.getElementById('popup');
+                popup.style.animation = 'slideDown 0.5s ease-out forwards';
 
-        tempInput.select();
-        tempInput.setSelectionRange(0, 99999); // Para dispositivos móveis
-
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-
-        showCopySuccessPopup(elementId);
-    }
-
-    function showCopySuccessPopup(elementId) {
-        Swal.fire({
-            title: elementId === 'pix' ? 'Chave copiada!' : 'Código Pix copiado com sucesso!',
-            text: elementId === 'pix' ? 'Use a opção CHAVE ALEATÓRIA no app do seu banco.' : 'Use a opção COPIA e COLA no app do seu banco.',
-            icon: 'success',
-            confirmButtonText: 'OK',
-            customClass: {
-                title: 'swal-title-custom',
-                content: 'swal-text-custom'
+                setTimeout(function() {
+                    popup.style.display = 'none';
+                    popup.style.animation = '';
+                }, 500);
+                // Aguarde o término da animação antes de ocultar o popup
             }
-        });
-    }
-});
+
+            function copyText(elementId) {
+                var textToCopy = document.getElementById(elementId).innerText;
+
+                // Cria um elemento de área de transferência temporário
+                var tempInput = document.createElement('textarea');
+                tempInput.value = textToCopy;
+                document.body.appendChild(tempInput);
+
+                // Seleciona o texto da área de transferência temporária
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+                /* Para dispositivos móveis */
+
+                // Copia o texto para a área de transferência
+                document.execCommand('copy');
+
+                // Remove o elemento de área de transferência temporário
+                document.body.removeChild(tempInput);
+
+                // Exibe um popup personalizado com o SweetAlert
+                Swal.fire({
+                    title: elementId === 'pix' ? 'Chave copiada!' : 'Codigo Pix copiado com sucesso!',
+                    text: elementId === 'pix' ? 'Use a opção CHAVE ALEATÓRIA no app do seu banco.' : 'Use a opção COPIA e COLA no app do seu banco.',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    customClass: {
+                        title: 'swal-title-custom',
+                        content: 'swal-text-custom'
+                    }
+                });
+            }
