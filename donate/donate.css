@@ -1,256 +1,199 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-}
 /* CONFIG POPUP DOAÇÃO */
 .popup-container2 {
-    top: 200px;
-    /* Ajuste conforme a altura da div #san */
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-    z-index: 8;
+top: 200px; /* Ajuste conforme a altura da div #san */
+left: 0;
+right: 0;
+bottom: 0;
+overflow: auto;
+z-index: 8;
 }
-
-.chamada {
-    font-size: 50px;
-    color: #007fff;
-    background: ;
-    padding: 5px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    cursor: pointer;
-
+.chamada{
+font-size: 50px;
+color: #007fff;
+background: #fff;
+padding: 5px;
+border-radius: 10px;
+border: 1px solid #ddd;
+cursor: pointer;
 }
-
-#san {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    max-width: 100%;
-    height: 30px;
-    padding: 5px 20px;
-    background: #fff;
-    font-weight: bold;
-    z-index: 3;
-    left: 0;
-    right: 0;
-    top: 0px;
-    margin: 0 auto;
-    overflow: hidden !important;
+#san{
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: sticky;
+max-width: 100%;
+height: 30px;
+padding: 5px 20px;
+background: #fff;
+font-weight: bold;
+z-index: 3;
+left: 0;
+right: 0;
+top: 0px;
+margin: 0 auto;
+overflow: hidden !important;
+cursor: pointer;
 }
-
 .popup2 {
-    display: none;
-    position: absolute;
-    color: #0E2332;
-    overflow: auto;
-    /*rolar*/
-    max-height: 480px;
-    /*set altura*/
-    z-index: 2;
-
-    bottom: 0;
-    left: 0;
-    max-width: 480px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    background-color: #F5F0EB;
-    border-top: 1px solid #eee;
-    z-index: 2;
-    -webkit-border-top-left-radius: 15px;
-    -webkit-border-top-right-radius: 15px;
-    -moz-border-radius-topleft: 15px;
-    -moz-border-radius-topright: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    animation: slideUp 0.5s ease-out forwards;
+display: none;
+position: absolute;
+overflow: auto; /*rolar*/
+max-height: 480px; /*set altura*/
+z-index: 2;
+bottom: 0;
+left: 0;
+max-width: 480px;
+margin: 0 auto;
+left: 0;
+right: 0;
+background-color: #fff;
+border-top: 1px solid #ddd;
+z-index: 2;
+-webkit-border-top-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topleft: 15px;
+-moz-border-radius-topright: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+animation: slideUp 0.5s ease-out forwards;
 }
-
-.fa-heart {
+.fa-heart{
     color: hotpink;
 }
-
-.fa-close {
+.fa-close{
     font-size: 24px;
 }
-
-a {
-    text-decoration: none;
-    cursor: pointer;
+a{
+text-decoration: none;
+cursor: pointer;
 }
-
-
-.header-popup {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin-bottom: 10px;
+.header-popup{
+display: flex;
+align-items: center;
+justify-content: left;
+margin-bottom: 10px;
 }
-
-.header-popup h1 {font-size: 1rem;margin-left: 10px;}
-
-.header-popup-dica {
-    font-size: 1rem;
+.header-popup h1{
+font-size: 1.1rem;
+margin-left: 10px;
 }
-
-
-.fechar-popup i {
-    font-size: 30px;
-    color: #999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+.header-popup-dica{
+margin-bottom: 10px;
+font-size: 1.1rem;
 }
-
+.lembrete{
+text-align: center;
+color: #999;
+}
 @keyframes slideUp {
-    from {
-        transform: translateY(100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
+from {
+transform: translateY(100%);
 }
-
+to {
+transform: translateY(0);
+}
+}
 @keyframes slideDown {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(100%);
-    }
+from {
+transform: translateY(0);
 }
-
+to {
+transform: translateY(100%);
+}
+}
 .popup-content2 {
-    padding: 20px;
-    background-color: #fff;
+padding: 20px;
 }
-
 .qrcode {
-    margin: 20px 0px;
+margin: 0px 0px;
 }
-
-
 /* BOTOES DA CHAVE */
 .btn {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    height: 60px;
+margin: 15px 0px;
+align-items: center;
+display: flex;
+justify-content: space-around;
 }
-
+.btn strong{
+font-size: 0.8rem;
+margin-top: 5px;
+}
 .key1 {
-    padding: 10px 20px;
-    background: #fc6800;
-    border: 1px solid #ddd;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+text-align: center;
+cursor: pointer;
+padding: 10px;
+background: #f4f4f4;
+border-radius: 10px;
+height: 80px;
+width: 85px;
+display: flex;
+flex-direction: column; 
+justify-content: center; 
+align-items: center;
 }
-
 .key2 {
-    padding: 10px 20px;
-    background: #fff;
-    border: 1px solid #fc6800;
-    color: #fc6800;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
+text-align: center;
+cursor: pointer;
+padding: 10px;
+background: #f4f4f4;
+border-radius: 10px;
+height: 80px;
+width: 85px;
+display: flex;
+flex-direction: column; 
+justify-content: center; 
+align-items: center;
 }
-
 input {
-    display: none;
+display: none;
 }
-
 .chave {
-    display: none;
+display: none;
 }
-
 /* Adicione as classes CSS para personalizar o estilo do SweetAlert */
-.swal2-content {
-    padding: 0 !important;
+.swal2-content{
+padding: 0 !important;
 }
-
-.swal-title-custom {font-size: 1.5rem !important;font-weight: bold !important;color: #0E2332;}
-
+.swal-title-custom {
+color: #0e2334 !important;
+font-size: 1.5rem !important;
+font-weight: bold !important;
+}
 .swal-text-custom {
-    font-weight: 500 !important;
-    font-size: 1.2em !important;
-    color: #0E2332;
+font-weight: 600 !important;
+font-size: 1.1rem !important;
+color: #0e2334 !important;
 }
-
 /*anime icon*/
 .swal2-header {
-    padding: 0 !important;
+padding: 0 !important;
 }
-
 .swal2-success-line-tip {
-    background: orange !important;
+background: orange !important;
 }
-
 .swal2-success-line-long {
-    background: orange !important;
+background: orange !important;
 }
-
 .swal2-icon.swal2-success .swal2-success-ring {
-    position: absolute;
-    z-index: 2;
-    top: -0.25em;
-    left: -0.25em;
-    box-sizing: content-box;
-    width: 100%;
-    height: 100%;
-    border: 0.25em solid orange !important;
-    border-radius: 50%;
+position: absolute;
+z-index: 2;
+top: -0.25em;
+left: -0.25em;
+box-sizing: content-box;
+width: 100%;
+height: 100%;
+border: 0.25em solid orange !important;
+border-radius: 50%;
 }
-
 /* BOTAO DO CONFIRM SWAL */
-.swal2-styled.swal2-confirm {
-    border: 0;
-    border-radius: 0.25em;
-    background: initial;
-    background-color: #252E48 !important;
-    color: #fff;
-    font-size: 1em;
-}
-/* ICONES DO DONATE */
-.actions {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.action {
-    text-align: center;
-    cursor: pointer;
-    padding: 10px;
-    background: #fff;
-    border-radius: 10px;
-    height: 80px;
-    width: 85px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
-}
-.action p {
-    font-size: 0.7rem;
-    font-weight: 600;
-}
-.action .icon {
-    font-size: 30px;
-    margin-bottom: 5px;
-    color: #fc6800;
+.swal2-styled.swal2-confirm{
+border: 0;
+border-radius: 0.25em;
+background: initial;
+background-color: #0e2334 !important;
+color: #fff;
+font-size: 1.2rem;
 }
