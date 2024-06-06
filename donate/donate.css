@@ -225,8 +225,32 @@ input {
     color: #fff;
     font-size: 1em;
 }
-.action{display: flex;
+/* ICONES DO DONATE */
+.actions {
+    display: flex;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 20px;
+}
+.action {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    height: 80px;
+    width: 85px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+.action p {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+.action .icon {
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: #fc6800;
 }
