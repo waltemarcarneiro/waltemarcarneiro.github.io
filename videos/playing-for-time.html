@@ -8,7 +8,9 @@
     <meta name="theme-color" content="#0f0f0f" />
     <title>Momento Love Songs</title>
     <meta name="description" content="George Michael - Playing for time">
-    <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
+    <!--biblioteca para download-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- FAVICON-->
     <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
@@ -27,13 +29,10 @@
     <meta property="og:site_name" content="Waltemar Carneiro" />
     <meta property='og:type' content='website' />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -107,7 +106,7 @@
             font-size: 18px;
         }
 
-        .logo-natal {
+        .logo {
             position: fixed;
             top: 7px;
             left: 7px;
@@ -115,16 +114,14 @@
         }
 
         .icons {
-         position: fixed;
-         bottom: 32%;
-         right: 10px;
-         z-index: 1;
-         display: flex;
-         flex-direction: column;
-         text-align: center;
-         align-items: center;
-
-
+            position: fixed;
+    bottom: 32%;
+    right: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
         }
 
         .marquee-container {
@@ -168,6 +165,7 @@
             text-align: left;
             height: 60px;
             width: 60px;
+            border-radius: 10px;
         }
 
         .banner-header {
@@ -201,7 +199,22 @@
         opacity: 1;
       }
     }
+  .copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 0.7rem;
+    text-align: center;
+    bottom: 0;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
     
+  }  
     </style>
 
 </head>
@@ -209,7 +222,7 @@
 <body>
     <script src="../bank/sweetalert2.all.js"></script>
 
-    <div class="logo-natal">
+    <div class="logo">
         <a href="javascript: history.go(-1)"><img src="../image/logo-header.png" alt="Logo" width="50"></a>
     </div>
     <div class="icons">
@@ -227,15 +240,14 @@
             <ion-icon name="share-social-outline"></ion-icon>
         </a>
 
-        <a href="#"
-            target="_blank">
-            <ion-icon name="download-outline"></ion-icon>
+        <a href="#" id="downloadLink">
+            <ion-icon name="download-outline" id="downloadBtn"></ion-icon>
         </a>
 
     </div>
 
     <video id="meuVideo" autoplay controls loop>
-        <source src="https://archive.org/download/480p_20240605/480p.mp4">
+        <source src="https://archive.org/download/480p_20240605/480p.mp4" type="video/mp4">
         Desculpe, seu navegador não suporta vídeos.
     </video>
     <!--<iframe id="meuVideo" width="100%" height="" src="https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLX_YaKXOr1s4G31MK1LOv-w3VjDwo6Bky" frameborder="0" allowfullscreen></iframe>-->
@@ -290,14 +302,18 @@
         <div class="popup-content">
             <div>
                 <div class="logo-popup">
-                    <img src="../icons/icon-rounded512.png">
-                    <h1><i class="fa-regular fa-heart"></i> waltemar.com.br</h1>
+
+                    <img src="icon192.png">
+                    <div>
+                        <h1><i class="fa-regular fa-heart"></i> LoveSongs App</h1>
+                        <p>A trilha sonora do amor!</p>
+                    </div>
                 </div>
                 <p
                     style="text-align: justify; margin-top: 10px; color: #444444; padding-bottom: 5px;">
                     <strong style="font-size: 12px; font-weight:500;">5.0</strong> <img
                         src="https://play-lh.googleusercontent.com/_KiRouu_G6J_2jwePzQ_i5_FMc_SVKT3mI7d7KKq9zca-Nr8bj2bPasawLvk6ajzASQS-90a8hYXeAh0lQ=w48-h16-rw"
-                        height="12"> Aponte a câmera do seu celular para o <b>QRCode</b>, ou use os botões abaixo."
+                        height="12"> Aponte a câmera do seu celular para o <b>QRCode</b>, ou use os botões abaixo.
                     
                 </p>
 
@@ -426,7 +442,7 @@
             background: #fc6800;
             color: #ffffff;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 1rem;
             border: none;
             border-radius: 7px;
             margin-top: 10px;
@@ -459,9 +475,9 @@
 
         .key2 {
             padding: 10px 20px;
-            background: #f77f66;
+            background: #00FFBF;
             border: none;
-            color: #ffffff;
+            color: #000;
             border-radius: 20px;
             font-size: 1rem;
             font-weight: 500;
@@ -514,9 +530,30 @@
             border-radius: 50%;
         }
     </style>
+ <!--end cofig doação-->
+<!-- SCRIPT DO DOWNLOAD-->
+<script>
+        document.getElementById('downloadLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Impede que o link padrão seja seguido
 
+            fetch('https://archive.org/download/480p_20240605/480p.mp4')
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'PlayingForTime.mp4';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(error => console.error('Erro ao baixar o vídeo:', error));
+        });
+    </script>
 
-    <!--end cofig doação-->
+<div class="copyright">waltemar.com.br</div>
+   
 </body>
 
 </html>
