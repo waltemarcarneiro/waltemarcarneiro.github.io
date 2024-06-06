@@ -4,50 +4,68 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Login | Waltemar Carneiro</title>
-      <meta name="description" content="Página de login" />
+      <meta name="description" content="Página de login"/>
       <link rel="stylesheet" href="assets/css/login.css">
       <!--PWA-->
-      <link rel="manifest" href="manifest.json" />
-      <!--THEME COLOR-->
-      <meta name="theme-color" content="#FC6800" />
-      <meta name="msapplication-TileColor" content="#FC6800" />
-      <!--ICONS-->
-      <link rel="mask-icon" href="https://waltemarcarneiro.github.io/icons/safari-pinned-tab.svg" color="#FC6800" />
-      <link rel="icon" type="image/x-icon" href="https://waltemarcarneiro.github.io/icons/favicon.ico" />
-      <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon76.png" sizes="76x76">
-      <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon120.png" sizes="120x120">
-      <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon152.png" sizes="152x152">
-      <link rel="apple-touch-icon" href="https://waltemarcarneiro.github.io/icons/icon180.png" sizes="180x180">
-      <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon16.png"
-         sizes="16x16" />
-      <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon32.png"
-         sizes="32x32" />
-      <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon96.png"
-         sizes="96x96" />
-      <link rel="shortcut icon" type="image/png" href="https://waltemarcarneiro.github.io/icons/icon192.png"
-         sizes="192x192" />
-      <!--SCRIPTS-->
       <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <link rel="manifest" href="manifest.json"/>
+      <!--THEME COLOR-->
+      <meta name="theme-color" content="#E77000"/>
+      <meta name="msapplication-TileColor" content="#E77000"/>
+      <!--ICONS-->
+      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#E77000"/>
+      <link rel="icon" type="image/x-icon" href="https://waltemar.com.br/icons/favicon.ico"/>
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
+      <link rel="shortcut icon" type="image/png" href="https://waltemar.com.br/icons/icon16.png" sizes="16x16"/>
+      <link rel="shortcut icon" type="image/png" href="https://waltemar.com.br/icons/icon32.png" sizes="32x32"/>
+      <link rel="shortcut icon" type="image/png" href="https://waltemar.com.br/icons/icon96.png" sizes="96x96"/>
+      <link rel="shortcut icon" type="image/png" href="https://waltemar.com.br/icons/icon192.png" sizes="192x192"/>
+      <!--SCRIPTS-->
       <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
       <!-- SEO | OG -->
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="keywords" content="Waltemar" />
-      <meta property="og:title" content="Login | Waltemar Carneiro" />
-      <meta property="og:url" content="https://waltemarcarneiro.github.io" />
-      <meta property="og:image" content="https://waltemarcarneiro.github.io/icons/lock.svg" />
-      <meta content='website' property='og:type' />
-      <meta property="og:site_name" content="Waltemar Carneiro" />
-      <meta property="og:description" content="Web Developer | Android Webview" />
-      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes"/>
+      <meta name="keywords" content="Waltemar"/>
+      <meta property="og:title" content="Login | Waltemar Carneiro"/>
+      <meta property="og:url" content="https://waltemar.com.br"/>
+      <meta property="og:image" content="https://waltemar.com.br/image/og-image.png"/>
+      <meta content='website' property='og:type'/>
+      <meta property="og:site_name" content="Waltemar Carneiro"/>
+      <meta property="og:description" content="Web Developer | Android Webview"/>
+      <meta name="mobile-web-app-capable" content="yes"/>
+      <style type="text/css">
+         .logo-amazon-player{
+         right:20px;
+         bottom: 20px;
+         }
+         .target{
+         align-items: center;
+         justify-content: space-around;
+         display: flex;
+         bottom: 40px;
+         position: fixed;
+         text-align: center;
+         width: 80%;
+         }
+         .target strong{
+         font-size: 0.9rem;
+         font-weight: normal;
+         margin-top: 0;
+         }
+         .logo{
+         border-radius: 50px;
+         }
+      </style>
    </head>
    <body>
       <div class="login-container">
-         <div>
-            <img src="icons/icon512.png" alt="logo" class="logo-container">
+         <div class="logo-container">
+            <img class="logo" src="icons/icon-rounded512.png" width="60" alt="logo">
          </div>
          <h2>Login</h2>
          <div class="input-container">
-            <!--<label for="passwordInput" class="icon"><i class="fa fa-lock"></i></label>-->
             <label for="passwordInput" class="icon">
             <img src="image/lock.svg" width="12" alt="lock-icon">
             </label>
@@ -55,8 +73,10 @@
          </div>
          <button id="loginButton">Entrar</button>
          <div class="additional-info">
-            Esqueceu a senha? <a href="#" id="recoverPasswordLink">Recuperar senha</a>
-            <br><br>
+            <p>
+               Esqueceu a senha? <a href="#" id="recoverPasswordLink">Recuperar senha</a>
+            </p>
+            <br>
             <div style="align-items: center; justify-content: space-around; display: flex;">
                <a href="https://play.google.com/store/apps/details?id=com.rhmsoft.code">
                <img src="image/play-store.svg" alt="logo-playstore" width="100">
@@ -68,52 +88,37 @@
             </div>
          </div>
       </div>
-      <div class="copyright">
-         Waltemar Carneiro © 2001 - 2024
-      </div>
       <!--popup-->
       <div id="errorPopup" class="popup">
          <div class="popup-content">
-            Senha incorreta!
+            <p>Senha incorreta!</p>
          </div>
       </div>
       <div id="recoverPopup" class="popup">
          <div class="popup-content">
-            Para recuperar sua senha, use <a href="contato.html">este link</a>
-            e Preencha corretamente os dados solicitados.
-            <span class="popup-close" onclick="closeRecoverPopup()">Fechar</span>
+            <span class="popup-close" onclick="closeRecoverPopup()">&times;</span>
+            <br>
+            Para recuperar sua senha ou solicitar outra, use <a href="contato.html">este link</a>
+            , Preencha corretamente os dados solicitados.
          </div>
       </div>
-         
-         <div class="target">
-         
-             <div>
-               <a href="https://waltemar.com.br/links/playlist-tube.html" target="_blank" alt="Playlist">
-                  <ion-icon name="logo-youtube"></ion-icon>
-               </a>
-                 
-             </div>
-         
-             <div><a href="#" id="pixLink" alt="Pix">
-                 <!--<ion-icon name="wallet-outline" size="large"></ion-icon>-->
-                 <img src="image/pix.svg">
-              </a>
-             </div>
-         
-         
-             <div><a href="https://bit.ly/lovesongsapp" target="_blank" alt="LoveSongsApp">
-                <ion-icon name="play-circle-outline" size="large"></ion-icon>
-             </a>                
-             </div>
+      <div class="target">
+         <div><a href="https://waltemar.com.br/links/playlist-tube.html" target="_blank" alt="Playlist"><img src="image/playlist-logo.png" width="40" height=""></a><br>
+            <strong>Playlist</strong>
          </div>
-         
+         <div><a href="#" id="pixLink" alt="Pix"><img src="image/pix.svg" width="40" height=""></a><br>
+            <strong>Pix</strong>
+         </div>
+         <div class="taget-name"><a href="https://bit.ly/LoveSongsApp" target="_blank" alt="Amazon Player"><img src="image/logo-amazon-player.png" width="40" height=""></a><br>
+            <strong>Player</strong>
+         </div>
+      </div>
       <!--//////////////////////////////////////-->
       <div class="popup-container2">
          <link rel="stylesheet" type="text/css" href="donate/donate.css">
          <div class="popup2" id="popup">
-
             <div id="san" onclick="closePopup()">
-               <div>Transferência Pix</div>
+               <div>Pagamentos</div>
                <div><i class="fa-solid fa-close"></i></div>
             </div>
             <div class="popup-content2">
@@ -123,7 +128,7 @@
                      <div><img src="icons/icon-rounded512.png" height="50" width="50"></div>
                      <div>
                         <h1><i class="fa-regular fa-heart"></i>
-                           Waltemar Carneiro
+                           waltemar.com.br
                         </h1>
                      </div>
                   </div>
@@ -131,63 +136,50 @@
                   <div class="header-popup-dica">
                      <p>
                         <strong style="font-size: 12px; font-weight:500;">5.0</strong>
-                        <img src="https://play-lh.googleusercontent.com/_KiRouu_G6J_2jwePzQ_i5_FMc_SVKT3mI7d7KKq9zca-Nr8bj2bPasawLvk6ajzASQS-90a8hYXeAh0lQ=w48-h16-rw"
-                           height="12">
+                        <img src="https://play-lh.googleusercontent.com/_KiRouu_G6J_2jwePzQ_i5_FMc_SVKT3mI7d7KKq9zca-Nr8bj2bPasawLvk6ajzASQS-90a8hYXeAh0lQ=w48-h16-rw" height="12">
                         Aponte a câmera do seu celular para o QRCode, ou use os botões <b>Copiar Chave</b>
-                         ou <b>Copia e Cola.</b>
-                        
+                        ou <b>Copia e Cola.</b>
                      </p>
                   </div>
+                  <!--QR-CODE-->
                   <div align="center" class="qrcode">
-                     <img src="bank/image/qrcode-sofisa.png" height="100"
-                        alt="qrcode">
+                     <img src="https://waltemar.com.br/bank/image/qrcode-bradesco.png" height="100" alt="qrcode">
                   </div>
-
-                  <div>
-                     
-                  <div class="actions">
-                     <link rel="stylesheet" href="temp.css">
-                     <div class="action" onclick="copyText('pix')">
-                        <ion-icon name="key-outline" size="large"></ion-icon><br>
-                        <p>Copiar Chave</p>
+                  <!--BOTÕES DE COPIAR CHAVE E COPIA E COLA-->
+                  <div class="btn">
+                     <div class="key1">
+                        <ion-icon name="key-outline" size="large" onclick="copyText('pix')"></ion-icon>
+                        <strong>Copiar Chave</strong>
                      </div>
-
-                     <div class="action" onclick="copyText('code')">
-                        <ion-icon name="qr-code-outline" size="large"></ion-icon><br>
-                        <p>Copia e Cola</p>
+                     <div class="key2">
+                        <ion-icon name="qr-code-outline" size="large" onclick="copyText('code')"></ion-icon>
+                        <strong>Copia e Cola</strong>
                      </div>
-
                   </div>
-                  </div>
-
-                  <!--<div class="btn">
-                     <button class="key1" onclick="copyText('pix')">Copiar Chave</button>
-                     <button class="key2" onclick="copyText('code')">Copia e Cola</button>
-                  </div>-->
-
                </div>
-               
-               <span id="pix" class="chave">6f079b8a-1237-4e11-bdc7-6f3b4d64c155</span>
-               <span id="code"
-                  class="chave">00020101021126580014br.gov.bcb.pix01366f079b8a-1237-4e11-bdc7-6f3b4d64c1555204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS6108690186846227052349E364C467374834AC1EE3C6304F3E7</span>
+               <span id="pix" class="chave">aa8b3fd0-0c76-422f-9f3a-844bd7f6b627</span>
+               <span id="code" class="chave">00020126770014br.gov.bcb.pix0136aa8b3fd0-0c76-422f-9f3a-844bd7f6b6270215Solicitacao Pix5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62290525l0mRiVkLmDEtcAVLaD8SUuLO46304BD9F</span>
             </div>
          </div>
          <!--end popup-->
       </div>
       <!-- END POPUP-CONTAINER -->
+      <div class="copyright">
+         Waltemar Carneiro © 2001 - 2024
+      </div>
       <!-- //////////////////////////////////// -->
       <script>
-         document.getElementById("loginButton").addEventListener("click", function () {
+         document.getElementById("loginButton").addEventListener("click", function() {
              performLogin();
          });
          
-         document.getElementById("passwordInput").addEventListener("keyup", function (event) {
+         document.getElementById("passwordInput").addEventListener("keyup", function(event) {
              if (event.keyCode === 13) {
                  performLogin();
              }
          });
          
-         document.getElementById("recoverPasswordLink").addEventListener("click", function (event) {
+         document.getElementById("recoverPasswordLink").addEventListener("click", function(event) {
              event.preventDefault();
              openRecoverPopup();
          });
@@ -226,28 +218,28 @@
          }
          
          // Fechar o popup de recuperação de senha quando clicar fora dele
-         window.onclick = function (event) {
+         window.onclick = function(event) {
              if (event.target == document.getElementById("recoverPopup")) {
                  closeRecoverPopup();
              }
          }
-             ;
+         ;
          
          // Fechar o popup de recuperação de senha quando pressionar a tecla Enter
-         document.onkeyup = function (event) {
+         document.onkeyup = function(event) {
              if (event.key === "Enter") {
                  closeRecoverPopup();
              }
          }
-             ;
+         ;
          
          // Fechar o popup de recuperação de senha quando pressionar a tecla Esc
-         document.onkeydown = function (event) {
+         document.onkeydown = function(event) {
              if (event.key === "Escape") {
                  closeRecoverPopup();
              }
          }
-             ;
+         ;
          
          function clearPasswordInput() {
              document.getElementById("passwordInput").value = "";
