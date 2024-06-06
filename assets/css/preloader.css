@@ -1,10 +1,9 @@
-/*config page*/
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    background:#F3EBF8;
+    background:#EFE7DE;
     color: #545f7e;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
