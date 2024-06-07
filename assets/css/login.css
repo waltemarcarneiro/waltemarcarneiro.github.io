@@ -47,7 +47,7 @@ position: fixed; /* Adiciona esta linha para fixar o posicionamento */
 top: 50%; /* Centraliza verticalmente */
 left: 50%; /* Centraliza horizontalmente */
 transform: translate(-50%, -50%); /* Centraliza completamente */
-background: #eaeaea;
+background: #f2f2f2;
 border-radius: 10px;
 border: 1px solid #fff;
 }
