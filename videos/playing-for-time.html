@@ -8,8 +8,7 @@
     <meta name="theme-color" content="#0f0f0f" />
     <title>Momento Love Songs</title>
     <meta name="description" content="George Michael - Playing for time">
-    <!--biblioteca para download-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    
 
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- FAVICON-->
@@ -240,14 +239,14 @@
             <ion-icon name="share-social-outline"></ion-icon>
         </a>
 
-        <a href="#" id="downloadLink">
-            <ion-icon name="download-outline" id="downloadBtn"></ion-icon>
+        <a href="https://archive.org/download/playing.for.time/playing.for.time_archive.torrent">
+            <ion-icon name="download-outline"></ion-icon>
         </a>
 
     </div>
 
     <video id="meuVideo" autoplay controls loop>
-        <source src="https://archive.org/download/480p_20240605/480p.mp4" type="video/mp4">
+        <source src="https://archive.org/download/playing.for.time/playing.for.time.mp4" type="video/mp4">
         Desculpe, seu navegador não suporta vídeos.
     </video>
     <!--<iframe id="meuVideo" width="100%" height="" src="https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLX_YaKXOr1s4G31MK1LOv-w3VjDwo6Bky" frameborder="0" allowfullscreen></iframe>-->
@@ -531,26 +530,6 @@
         }
     </style>
  <!--end cofig doação-->
-<!-- SCRIPT DO DOWNLOAD-->
-<script>
-        document.getElementById('downloadLink').addEventListener('click', function(event) {
-            event.preventDefault(); // Impede que o link padrão seja seguido
-
-            fetch('https://archive.org/download/480p_20240605/480p.mp4')
-                .then(response => response.blob())
-                .then(blob => {
-                    const url = window.URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = 'PlayingForTime.mp4';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    window.URL.revokeObjectURL(url);
-                })
-                .catch(error => console.error('Erro ao baixar o vídeo:', error));
-        });
-    </script>
 
 <div class="copyright">waltemar.com.br</div>
    
