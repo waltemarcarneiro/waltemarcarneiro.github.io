@@ -4,6 +4,20 @@
 margin: 0;
 padding: 0;
 }
+body{
+-webkit-tap-highlight-color: transparent;
+tap-highlight-color: transparent;
+user-select: none;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #f2f2f2;
+font-family: 'Roboto', sans-serif;
+color: #1D1D1F;
+font-size: 1rem;
+}
 .logo-amazon-player{
 right:20px;
 bottom: 20px;
@@ -25,21 +39,6 @@ margin-top: 0;
 .logo{
 border-radius: 50px;
 }
-body {
--webkit-tap-highlight-color: transparent;
-tap-highlight-color: transparent;
-user-select: none;
-margin: 0;
-padding: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-background: #EFE7DE;
-background-image: url(../../image/icons-gray-bg.svg);
-font-family: 'Roboto', sans-serif;
-color: #1D1D1F;
-font-size: 1rem;
-}
 .login-container {
 width: 300px;
 padding: 10px;
@@ -48,9 +47,9 @@ position: fixed; /* Adiciona esta linha para fixar o posicionamento */
 top: 50%; /* Centraliza verticalmente */
 left: 50%; /* Centraliza horizontalmente */
 transform: translate(-50%, -50%); /* Centraliza completamente */
-background: #fff;
+background: #eaeaea;
 border-radius: 10px;
-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+border: 1px solid #fff;
 }
 h2 {
 margin-top: 20px;
@@ -62,16 +61,17 @@ input[type="password"] {
 width: 260px;
 height: 40px;
 margin: 0 auto;
-border: 1px solid #ccc;
+border: none;
 border-radius: 5px;
 display: block;
 position: relative;
 font-size: 1rem;
 }
 input:hover {
-border: 1px solid #e77000;
+border: none;
 border-radius: 5px;
 }
+
 /* CADEADO */
 .input-container {
 width: 100%;
@@ -92,18 +92,18 @@ button {
 margin: 30px auto;
 padding: 7px 30px;
 background-color: #fff;
-color: #1D1D1F;
-border: 1px solid #1D1D1F;
+color: #e77000;
+border: 1px solid #ddd;
 border-radius: 20px;
 cursor: pointer;
-font-weight: 500;
+font-weight: 400;
 font-size: 1rem;
 font-family: 'Roboto', sans-serif;
 }
 button:hover {
 background-color: #fff;
 color: #1D1D1F;
-border: 1px solid #1D1D1F;
+border: 1px solid #ddd;
 }
 .additional-info a {
 color: #e77000;
@@ -113,6 +113,13 @@ text-align: left;
 font-size: 0.9rem;
 margin-left: 5px;
 padding-top: 5px;
+}
+.pix-logo{
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 50px;
+    padding: 7px;
 }
 .copyright{
 font-size: 0.8rem;
@@ -171,4 +178,203 @@ color: white;
 .popup a{
 color: orange;
 font-weight: 500;
+}
+
+/*CONFIG DONATE*/
+
+.popup-container2 {
+top: 200px; /* Ajuste conforme a altura da div #san */
+left: 0;
+right: 0;
+bottom: 0;
+overflow: auto;
+z-index: 8;
+}
+.chamada{
+font-size: 50px;
+color: #007fff;
+background: #fff;
+padding: 5px;
+border-radius: 10px;
+border: 1px solid #ddd;
+cursor: pointer;
+}
+#san{
+display: flex;
+align-items: center;
+justify-content: space-between;
+position: sticky;
+max-width: 100%;
+height: 30px;
+padding: 5px 20px;
+background: #fff;
+font-weight: bold;
+z-index: 3;
+left: 0;
+right: 0;
+top: 0px;
+margin: 0 auto;
+overflow: hidden !important;
+cursor: pointer;
+}
+.popup2 {
+display: none;
+position: absolute;
+overflow: auto; /*rolar*/
+max-height: 480px; /*set altura*/
+z-index: 2;
+bottom: 0;
+left: 0;
+max-width: 480px;
+margin: 0 auto;
+left: 0;
+right: 0;
+background-color: #fff;
+border-top: 1px solid #ddd;
+z-index: 2;
+-webkit-border-top-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topleft: 15px;
+-moz-border-radius-topright: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+animation: slideUp 0.5s ease-out forwards;
+}
+.fa-heart{
+    color: hotpink;
+}
+.fa-close{
+    font-size: 24px;
+}
+a{
+text-decoration: none;
+cursor: pointer;
+}
+.header-popup{
+display: flex;
+align-items: center;
+justify-content: left;
+margin-bottom: 10px;
+}
+.header-popup h1{
+font-size: 1.1rem;
+margin-left: 10px;
+}
+.header-popup-dica{
+margin-bottom: 10px;
+}
+.lembrete{
+text-align: center;
+color: #999;
+}
+@keyframes slideUp {
+from {
+transform: translateY(100%);
+}
+to {
+transform: translateY(0);
+}
+}
+@keyframes slideDown {
+from {
+transform: translateY(0);
+}
+to {
+transform: translateY(100%);
+}
+}
+.popup-content2 {
+padding: 10px;
+}
+.qrcode {
+margin: 0px 0px;
+}
+/* BOTOES DA CHAVE */
+.btn {
+margin: 15px 0px;
+align-items: center;
+display: flex;
+justify-content: space-around;
+}
+.btn strong{
+font-size: 0.8rem;
+font-weight: 500;
+margin-top: 5px;
+}
+.key1 {
+text-align: center;
+cursor: pointer;
+padding: 10px;
+background: #f4f4f4;
+border-radius: 10px;
+height: 80px;
+width: 85px;
+display: flex;
+flex-direction: column; 
+justify-content: center; 
+align-items: center;
+}
+.key1 .key2, ion-icon{color: #e77000}
+.key2 {
+text-align: center;
+cursor: pointer;
+padding: 10px;
+background: #f4f4f4;
+border-radius: 10px;
+height: 80px;
+width: 85px;
+display: flex;
+flex-direction: column; 
+justify-content: center; 
+align-items: center;
+}
+input {
+display: none;
+}
+.chave {
+display: none;
+}
+/* Adicione as classes CSS para personalizar o estilo do SweetAlert */
+.swal2-content{
+padding: 0 !important;
+}
+.swal-title-custom {
+color: #0e2334 !important;
+font-size: 1.5rem !important;
+font-weight: bold !important;
+}
+.swal-text-custom {
+font-weight: 600 !important;
+font-size: 1.1rem !important;
+color: #0e2334 !important;
+}
+/*anime icon*/
+.swal2-header {
+padding: 0 !important;
+}
+.swal2-success-line-tip {
+background: orange !important;
+}
+.swal2-success-line-long {
+background: orange !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring {
+position: absolute;
+z-index: 2;
+top: -0.25em;
+left: -0.25em;
+box-sizing: content-box;
+width: 100%;
+height: 100%;
+border: 0.25em solid orange !important;
+border-radius: 50%;
+}
+/* BOTAO DO CONFIRM SWAL */
+.swal2-styled.swal2-confirm{
+border: 0;
+border-radius: 0.25em;
+background: initial;
+background-color: #0e2334 !important;
+color: #fff;
+font-size: 1.2rem;
 }
