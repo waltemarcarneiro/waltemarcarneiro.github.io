@@ -6,6 +6,7 @@
       <title>Login | Waltemar Carneiro</title>
       <meta name="description" content="Página de login"/>
       <link rel="stylesheet" href="assets/css/login.css">
+
       <!--PWA-->
       <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       <link rel="manifest" href="manifest.json"/>
@@ -84,7 +85,7 @@
          <div><a href="https://waltemar.com.br/links/playlist-tube.html" target="_blank" alt="Playlist"><img src="image/playlist-logo.png" width="40" height=""></a><br>
             <strong>Playlist</strong>
          </div>
-         <div><a href="#" id="pixLink" alt="Pix"><img src="image/pix.svg" width="40" height=""></a><br>
+         <div><a href="#" id="pixLink" alt="Pix"><img src="image/pix.svg" class="pix-logo"></a><br>
             <strong>Pix</strong>
          </div>
          <div class="taget-name"><a href="https://bit.ly/lovesongsapp" target="_blank" alt="LoveSongsApp"><img src="image/logo-amazon-player.png" width="40" height=""></a><br>
@@ -93,7 +94,7 @@
       </div>
       <!--//////////////////////////////////////-->
       <div class="popup-container2">
-         <link rel="stylesheet" type="text/css" href="donate/donate.css">
+         <!--<link rel="stylesheet" type="text/css" href="donate/donate.css">-->
          <div class="popup2" id="popup">
             <div id="san" onclick="closePopup()">
                <div>Pagamentos</div>
@@ -115,8 +116,7 @@
                      <p>
                         <strong style="font-size: 12px; font-weight:500;">5.0</strong>
                         <img src="https://play-lh.googleusercontent.com/_KiRouu_G6J_2jwePzQ_i5_FMc_SVKT3mI7d7KKq9zca-Nr8bj2bPasawLvk6ajzASQS-90a8hYXeAh0lQ=w48-h16-rw" height="12">
-                        Aponte a câmera do seu celular para o QRCode, ou use os botões <b>Copiar Chave</b>
-                        ou <b>Copia e Cola.</b>
+                        Aponte a câmera do seu celular para o QRCode, ou use os botões abaixo.
                      </p>
                   </div>
                   <!--QR-CODE-->
@@ -225,6 +225,6 @@
       </script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
       <script src="script-sw.js" defer></script>
-      <script src="donate/donate.js"></script>
+      <script src="assets/js/donate.js"></script>
    </body>
 </html>
