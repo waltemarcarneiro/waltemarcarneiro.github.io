@@ -49,7 +49,7 @@ left: 50%; /* Centraliza horizontalmente */
 transform: translate(-50%, -50%); /* Centraliza completamente */
 background: #fff;
 border-radius: 10px;
-border: 1px solid #ddd;
+
 }
 h2 {
 margin-top: 20px;
