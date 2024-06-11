@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="playlist.css">
+        <link rel="manifest" href="../manifest.json">
+        <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <title>Playlist Love Songs</title>
+        <meta name="description" content="A playlist mais romântica de todos os tempos.">
+        <!-- FAVICON / THEME-->
+        <meta content="#0f0f0f" name="theme-color">
+        <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon-180x180.png" />
+        <link href="../icons/favicon.ico" rel="icon" type="image/x-icon">
+        <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+        <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#0f0f0f">
+        <link rel="shortcut icon" href="../icons/favicon-32x32.png" />
+        <meta name="msapplication-TileColor" content="#0f0f0f">
+        <!-- SEO | OG -->
+        <meta property='og:type' content='website'>
+        <meta property="og:site_name" content="waltemar Carneiro">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="keywords" content="playlist, love songs, love music, the best of the best, youtube music">
+        <meta property="og:title" content="Playlist Love Songs">
+        <meta property="og:image" content="https://waltemarcarneiro.github.io/image/og-love-songs.png">
+        <meta property="og:description" content="A Playlist mais romântica de todos os tempos">
+        
+            
+        <style type="text/css">
+            body {
+                background-color: #0f0f0f;
+            }
+
+            .marquee-container {
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .marquee-content {
+                display: inline-block;
+                animation: marquee 15s linear infinite;
+            }
+
+            @keyframes marquee {
+                from {
+                    transform: translateX(100%);
+                }
+
+                to {
+                    transform: translateX(-100%);
+                }
+            }
+       
+        </style>
+    </head>
+    <body>
+        <header>
+            <ion-icon name="arrow-back-outline" id="backButton" class="icon-left"></ion-icon>
+            
+            <div class="marquee-container">
+                <div class="marquee-content">LoveSongs Playlist Youtube</div>
+            </div>
+
+            <ion-icon name="share-social-outline" id="share-Button" class="icon-right"></ion-icon>
+            
+        </header>
+        
+        <div class="container">
+            <iframe class="content
+" width="100%" height="" src="https://www.youtube.com/embed/ckUV8X6MkaI?list=PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+
+        <script>
+            // Adicione o evento de clique ao ícone de seta à esquerda
+            document.getElementById('backButton').addEventListener('click', ()=>{
+                // Volta para a página anterior
+                history.back();
+            }
+            );
+            const shareIcon = document.getElementById('share-Button');
+
+            shareIcon.addEventListener('click', async()=>{
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Playlist Love Songs',
+                            text: 'A playlist mais romântica de todos os tempos.',
+                            url: 'https://bit.ly/wclovesongs'
+                        });
+                        console.log('Conteúdo compartilhado com sucesso!');
+                    } catch (error) {
+                        console.error('Erro ao compartilhar:', error);
+                    }
+                } else {
+                    console.log('A API de compartilhamento não é suportada neste navegador.');
+                    // Aqui você pode exibir um modal ou mensagem alternativa de compartilhamento
+                }
+            }
+            );
+        </script>
+    </body>
+</html>
