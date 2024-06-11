@@ -16,7 +16,7 @@ header {
     left: 0;
     right: 0;
     height: 45px;
-    background-color: purple;
+    background-color: #0f0f0f;
     display: flex;
     align-items: center;
     justify-content: space-between;
