@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
       <meta name="theme-color" content="#0f0f0f" />
       <meta name="msapplication-TileColor" content="#e77000" />
-      <title>Momento LoveSongs - A trilha sonora do amor</title>
+      <title>Playlist LoveSongs</title>
       <meta name="description" content="George Michael - Playing for time">
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
       <!-- FAVICON-->
@@ -23,9 +23,9 @@
       <!-- SEO | OG -->
       <meta property="og:locale" content="pt_BR" />
       <meta name="keywords" content="Waltemar" />
-      <meta property="og:title" content="Momento LoveSongs - A trilha sonora do amor!" />
-      <meta property="og:description" content="George Michael - Playing for time" />
-      <meta property="og:image" content="https://waltemar.com.br/videos/og-video.jpg" />
+      <meta property="og:title" content="Playlist LoveSongs - A trilha sonora do amor!" />
+      <meta property="og:description" content="Descubra o amor com a Playlist mais romântica de todos os tempos." />
+      <meta property="og:image" content="https://waltemar.com.br/videos/og-playlist.jpg" />
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta property='og:type' content='website' />
       <style>
@@ -185,7 +185,7 @@
          width: 100%;
          height: 20px;
          letter-spacing: 1px;
-         color: #00FFBF;
+         color: #FFF;
          font-size: 0.7rem;
          text-align: center;
          bottom: 0;
@@ -327,6 +327,25 @@
          color: #fff !important;
          font-size: 1.0625em !important;
          }
+         /*posicao da animacao*/
+         .div-time{
+         position: absolute;
+         top:65px;
+         right: 48px;
+         }
+         /* Estilo da imagem com animação */
+         .animar-imagem {
+         animation: moverCimaBaixo 1s ease-in-out infinite; /* Animar por 2 segundos, repetir infinitamente */
+         }
+         /* Definir a animação de movimento para cima e para baixo */
+         @keyframes moverCimaBaixo {
+         0%, 100% {
+         transform: translateY(0); /* Posição inicial e final */
+         }
+         50% {
+         transform: translateY(-20px); /* Posição no meio da animação */
+         }
+         }
       </style>
    </head>
    <body>
@@ -347,22 +366,25 @@
             <ion-icon name="download-outline"></ion-icon>
          </a>
       </div>
-      <video id="meuVideo" autoplay controls loop>
+      <!--<video id="meuVideo" autoplay controls loop>
          <source src="https://archive.org/download/playing.for.time_202406/playing.for.time-.mp4" type="video/mp4">
          Desculpe, seu navegador não suporta vídeos.
-      </video>
-      <!--<iframe id="meuVideo" width="100%" height="" src="https://www.youtube.com/embed/Cz18kmKM8Lo?list=PLX_YaKXOr1s4G31MK1LOv-w3VjDwo6Bky" frameborder="0" allowfullscreen></iframe>-->
+      </video>-->
+      <iframe id="meuVideo" width="100%" height="" src="https://www.youtube.com/embed/ckUV8X6MkaI?list=PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5" frameborder="0" allowfullscreen></iframe>
       <!-- Cobertura semi-transparente sobre o vídeo -->
       <div class="video-overlay" onclick="playVideo()">
       <!-- Div superior -->
       <div class="top-content">
-         Momento Love Song's
+         
+      </div>
+      <div id="divTime" class="div-time">
+         <img src="anime.png" class="animar-imagem" width="70">
       </div>
       <!-- Rodapé -->
       <div class="footer">
          <div class="marquee-container">
             <div class="marquee-content">
-               George Michael - Playing For Time
+              
             </div>
          </div>
       </div>
@@ -373,9 +395,9 @@
              // Prevenir comportamento padrão do link
          
              // Adicione o código de compartilhamento aqui
-             const shareUrl = 'https://waltemar.com.br/videos/index.html';
-             const shareTitle = 'Momento LoveSongs - A trilha sonora do amor!';
-             const shareContent = 'Descubra o amor neste momento com esta melodia atemporal, extraída do nosso aplicativo de música romântica, onde as décadas de 80 e 90 se encontram. Deixe-se envolver por uma trilha sonora nostálgica que celebra o romance em cada nota.💖🎶.'
+             const shareUrl = 'https://waltemar.com.br/videos/playlist.html';
+             const shareTitle = 'Playlist Love Songs!';
+             const shareContent = 'Descubra o amor com a Playlist mais romântica de todos os tempos.'
              if (navigator.share) {
                  navigator.share({
                      title: shareTitle,
@@ -476,7 +498,20 @@
              });
          }
       </script>
-     
+     <!--SETA INDICADORA E TIMER-->
+     <script>
+         // Obtém a referência da div
+         var divTime = document.getElementById('divTime');
+         
+         // Faz a div aparecer
+         divTime.style.display = 'block';
+         
+         // Define um atraso para fazer a div sumir após 10 segundos
+         setTimeout(function() {
+         divTime.style.display = 'none';
+         }, 4000); // 10000 milissegundos = 10 segundos
+         
+      </script>
       <!--BANNER KWAI CONFIG-->
       <div>
           <link rel="stylesheet" type="text/css" href="banner.css">
