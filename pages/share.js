@@ -11,7 +11,7 @@
         await navigator.share({
           title: 'Downloads Premium',
           text: 'Baixe os melhores apps na versão premium',
-          url: 'https://waltemar.com.br/downloads/apps.html'
+          url: 'https://waltemar.com.br/pages/apk.html'
         });
         console.log('Conteúdo compartilhado com sucesso!');
       } catch (error) {
