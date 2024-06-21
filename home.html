@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="home.css">
+    <link rel="manifest" href="manifest.json"/>
+    <meta name="theme-color" content="#120912">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <title>Waltemar Carneiro | Home</title>
+
+    <!-- FAVICON-->
+      <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="https://waltemar.com.br/icons/icon180.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
+      <!--AppleTouchIcon-->
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
+      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#e77000" />
+</head>
+<body>
+  <div class="container" id="logo">
+    <div class="header">
+        <img src="image/logo.svg" alt="Logo" class="logo" onclick="abrirLogin()">
+        <div>
+            <ion-icon name="logo-whatsapp" onclick="abrirWhatsApp()"></ion-icon>
+            <ion-icon name="heart-outline" onclick="abrirPix()"></ion-icon>   
+        </div>
+    </div>
+    <div class="date" id="dataContainer"></div>
+    <div class="content">
+        <div class="center-text">
+            <h1>Que bom você por aqui!</h1>
+        </div>
+        <div id="user" class="user-info" onclick="abrirLogin()">
+            <img src="image/profile.jpg" alt="User Image" class="user-image">
+            <div>
+                <h3>Waltemar Carneiro</h3>
+                <p>Developer</p>
+            </div>
+            <ion-icon class="digital-image" name="finger-print-outline" aly="digital"></ion-icon>
+        </div>
+        <div class="icon-acesso">
+            <div class="icon-acesso" onclick="abrirLogin()">
+                <ion-icon name="repeat-outline"></ion-icon>
+                <span>Trocar conta</span>
+            </div>
+            <div class="icon-acesso" onclick="abrirPix()">
+                <img src="image/pix.svg" height="24">
+                <span>Fazer Pix</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <a href="#options" id="chevronIconLink"><ion-icon name="chevron-down-outline" size="large" id="chevronIcon"></ion-icon></a>
+    </div>
+  </div><!--END CONTAINER-->
+<div class="about">
+    <h2 id="options" class="animated-link">Opções rápidas</h2>
+    <div class="blocos">
+        <div class="bloco">
+            <a href="https://lovesongsapp.github.io/"><ion-icon name="musical-notes-outline"></ion-icon></a>
+            <p>LoveSongs App</p>
+        </div>
+        <div class="bloco">
+            <a href="videos/index.html"><ion-icon name="videocam-outline"></ion-icon></a>
+            <p>Momento LoveSongs</p>
+        </div>
+        <div class="bloco">
+            <a href="videos/playlist.html"><ion-icon name="logo-youtube"></ion-icon></a>
+            <p>Playlist LoveSongs</p>
+        </div>
+        <div class="bloco">
+            <a href="pages/apk.html"><ion-icon name="download-outline"></ion-icon></a>
+            <p>Aplicativos</p>
+        </div>
+    </div>
+    <div class="blocos">
+        <div class="bloco">
+            <a href="videos/filmes.html"><ion-icon name="film-outline"></ion-icon></a>
+            <p>Filmes</p>
+        </div>
+        <div class="bloco">
+            <a href=" videos/bolero.html"><ion-icon name="logo-youtube"></ion-icon></a>
+            <p>Boleros</p>
+        </div>
+        <div class="bloco">
+            <a href="https://appcanapum.blogspot.com"><ion-icon name="cloud-download-outline"></ion-icon></a>
+            <p>AppCanapum</p>
+        </div>
+        <div class="bloco">
+            <a href="tel:+5581971027858"><ion-icon name="call-outline"></ion-icon></a>
+            <p>Contato</p>
+        </div>
+    </div>
+    <div id="divBack">
+        <a href="#logo" id="backIconLink"><ion-icon size="large" id="backIcon" name="arrow-back-circle-outline"></ion-icon></a>
+    </div>
+</div><!--end about-->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Função para ocultar o ícone "chevron-down-outline" ao ser clicado
+        const chevronIconLink = document.getElementById('chevronIconLink');
+        if (chevronIconLink) {
+            chevronIconLink.addEventListener('click', function() {
+                const chevronIcon = document.getElementById('chevronIcon');
+                if (chevronIcon) {
+                    chevronIcon.style.visibility = 'hidden';
+                }
+            });
+        }
+
+        // Função para mostrar o ícone "chevron-down-outline" ao clicar no ícone de retorno
+        const backIconLink = document.getElementById('backIconLink');
+        if (backIconLink) {
+            backIconLink.addEventListener('click', function() {
+                const chevronIcon = document.getElementById('chevronIcon');
+                if (chevronIcon) {
+                    chevronIcon.style.visibility = 'visible';
+                }
+            });
+        }
+    });
+
+    // Função para obter a data e hora formatadas
+    function getDataHoraAtual() {
+        const dataHora = new Date();
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            timeZone: 'America/Recife'
+        };
+        const dataHoraFormatada = dataHora.toLocaleDateString('pt-BR', options);
+        const dataHoraSemSegundos = dataHoraFormatada.replace(/:\d{2}\sAMT/, ''); // Remove os segundos e "AMT"
+        return `Recife, ${dataHoraSemSegundos}`;
+    }
+
+    // Função para atualizar a div 'data' a cada minuto
+    function atualizarData() {
+        const dataContainer = document.getElementById('dataContainer');
+        if (dataContainer) {
+            dataContainer.textContent = getDataHoraAtual();
+        }
+    }
+
+    // Chama a função inicialmente e a cada minuto
+    atualizarData();
+    setInterval(atualizarData, 60000);
+
+    function abrirPix() {
+        window.location.href = "bank/sofisa.html";
+    }
+
+    function abrirLogin() {
+        window.location.href = "login/index.html";
+    }
+
+    function abrirWhatsApp() {
+        window.location.href = "https://api.whatsapp.com/send?phone=5581971027858&text=%F0%9F%98%80%20Ol%C3%A1%2C%20estou%20com%20d%C3%BAvidas!";
+    }
+
+    function abrirLogin() {
+        window.location.href = "login/login.html";
+    }
+
+    // Verifica a posição atual da página ao rolar
+    window.addEventListener('scroll', function() {
+        var footer = document.getElementById('footer');
+        if (window.scrollY > 0) {
+            footer.style.display = 'none'; // Oculta o footer quando a página é rolada para cima
+        } else {
+            footer.style.display = 'block'; // Mostra o footer quando a página é rolada para baixo (no topo)
+        }
+    });
+</script>
+<!--<script src="pro.js"></script>-->
+</body>
+</html>
