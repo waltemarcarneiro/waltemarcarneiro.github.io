@@ -8,8 +8,8 @@
   "lang": "pt-BR",
   "dir": "ltr",
   "background_color": "#ECE5DD",
-  "theme_color": "#e77000",
-  "start_url": "/home.html",
+  "theme_color": "#F76700",
+  "start_url": "/index.html",
   "orientation": "portrait",
   "scope": "/",
   "scope_extensions": [
