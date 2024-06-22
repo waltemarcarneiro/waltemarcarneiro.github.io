@@ -1,4 +1,5 @@
 {
+  "id": "/home.html",
   "name": "Waltemar Carneiro",
   "short_name": "Waltemar Carneiro",
   "description": "Aplicativos Web",
@@ -124,8 +125,8 @@
       "purpose": "maskable"
     }
   ],
-      "edge_side_panel": {
-          "preferred_width": 480
+  "edge_side_panel": {
+    "preferred_width": 480
   },
   "shortcuts": [
     {
@@ -222,5 +223,12 @@
     "browser",
     "window-controls-overlay"
   ],
-  "id": "/home.html"
+  "launch_handler": {
+    "client_mode": "navigate-existing-client",
+    "navigate_existing_client": {
+      "target_url_patterns": [
+        "https://waltemar.com.br/*"
+      ]
+    }
+  }
 }
