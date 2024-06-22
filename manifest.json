@@ -12,6 +12,12 @@
   "start_url": "/home.html",
   "orientation": "portrait",
   "scope": "/",
+  "scope_extensions": [
+    {
+      "origin": "https://waltemar.com.br",
+      "path": "/"
+    }
+  ],
   "prefer_related_applications": false,
   "protocol_handlers": [],
   "related_applications": [],
