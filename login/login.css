@@ -167,7 +167,26 @@ body {
     position: fixed;
     bottom: 10px;
 }
+/*footer icons fixed*/
+.fixed-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    bottom: 10px;
+    position: fixed;    
+}
+.fixed-icons ion-icon{
+    font-size: 24px;
+}
+.fixed-icons a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.7rem;
 
+}
+
+/*
 .store-icons {
     width: 100%;
     display: flex;
@@ -186,6 +205,7 @@ body {
     font-size: 1.5rem;
     padding-right: 5px;
 }
+*/
 .store-icons2 {
     width: 100%;
     display: flex;
