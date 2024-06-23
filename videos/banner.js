@@ -10,7 +10,7 @@
     function showBanner() {
         const banner = document.getElementById('banner');
         banner.classList.add('show');
-        setTimeout(hideBanner, 5000); // Esconde o banner após 15 segundos
+        setTimeout(hideBanner, 10000); // Esconde o banner após 15 segundos
     }
 
     function hideBanner() {
