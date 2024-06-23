@@ -225,6 +225,7 @@
     }
   ],
   "display_override": [
+    "fullscreen",
     "standalone",
     "browser",
     "window-controls-overlay"
