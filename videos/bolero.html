@@ -85,32 +85,20 @@
          width: 100%;
          }
          /* Estilos para a div superior */
-         .top-content {
-         position: absolute;
-         top: 20px;
-         /*left: 50%;*/
-         transform: translateX(-50%);
-         text-align: left;
-         font-size: 16px;
-         /*width: 90%;*/
-         margin-left: 150px;
-         color: #fff;         
-         }
          .logo {
          position: fixed;
          top: 7px;
          left: 7px;
          z-index: 2;
          }
-         .icons {
-         position: fixed;
-         bottom: 32%;
-         right: 10px;
-         z-index: 1;
-         display: flex;
-         flex-direction: column;
-         text-align: center;
-         align-items: center;
+         .top-content {
+         position: absolute;
+         top: 20px;
+         margin-left: 150px;
+         transform: translateX(-50%);
+         text-align: left;
+         font-weight: 600;
+         color: #fff;         
          }
          .marquee-container {
          overflow: hidden;
@@ -120,7 +108,7 @@
          .marquee-content {
          display: inline-block;
          animation: marquee 30s linear infinite;
-         font-size: 16px;
+         font-size: 1.8rem;
          width: 100%;
          }
          @keyframes marquee {
@@ -153,16 +141,6 @@
          width: 250px;
          height: 120px;
          }
-         ion-icon{
-         font-size: 24px;
-         color: #fff;
-         margin-bottom: 20px;
-         }
-         .pulsing-icon {
-         animation: pulse 2s infinite;
-         font-size: 40px;
-         color: #ff59f3;
-         }
          @keyframes pulse {
          0% {
          transform: scale(1);
@@ -185,7 +163,7 @@
          width: 100%;
          height: 20px;
          letter-spacing: 1px;
-         color: #FFF;
+         color: #ffffff;
          font-size: 0.7rem;
          text-align: center;
          bottom: 0;
@@ -327,24 +305,31 @@
          color: #fff !important;
          font-size: 1.0625em !important;
          }
-         /*posicao da animacao*/
-         .div-time{
-         position: absolute;
-         top:65px;
-         right: 48px;
+         ion-icon{
+         font-size: 28px;
+         color: #fff;
+         
          }
-         /* Estilo da imagem com animação */
-         .animar-imagem {
-         animation: moverCimaBaixo 1s ease-in-out infinite; /* Animar por 2 segundos, repetir infinitamente */
+         .icons-name p, a{
+            color: #fff;
+            font-size: 10px;
+            margin-bottom: 15px;
+            text-decoration: none;
          }
-         /* Definir a animação de movimento para cima e para baixo */
-         @keyframes moverCimaBaixo {
-         0%, 100% {
-         transform: translateY(0); /* Posição inicial e final */
+         
+         .icons {
+         position: fixed;
+         bottom: 28%;
+         right: 10px;
+         z-index: 1;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         align-items: center;
          }
-         50% {
-         transform: translateY(-20px); /* Posição no meio da animação */
-         }
+         .pulsing-icon {
+         animation: pulse 2s infinite;
+         color: #00ffbf;
          }
       </style>
    </head>
@@ -358,12 +343,15 @@
          </a>
          <a href="https://bit.ly/lovesongsapp" target="_blank">
             <ion-icon name="musical-notes-outline"></ion-icon>
+            <p class="icons-name">Player</p>
          </a>
          <a href="https://waltemar.com.br/videos/" id="shareLink">
             <ion-icon name="share-social-outline"></ion-icon>
+            <p>Compartilhe</p>
          </a>
-         <a href="https://archive.org/download/playing.for.time_202406/playing.for.time_202406_archive.torrent">
-            <ion-icon name="download-outline"></ion-icon>
+         <a href="https://k.kwai.com/p/Mgm06CGc">
+            <img src="../image/kwai.svg" width="22">
+            <p class="icons-name">LoveSongs</p>
          </a>
       </div>
       <!--<video id="meuVideo" autoplay controls loop>
@@ -530,5 +518,6 @@
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
       <script src="../sweetalert2.all.js"></script>
       <script src="banner.js"></script>
+      <script src="../pro.js"></script>
    </body>
 </html>
