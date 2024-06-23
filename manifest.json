@@ -12,7 +12,7 @@
   "start_url": "/index.html",
   "orientation": "portrait",
   "scope": "/",
-  "default_locale": "pt-BR",
+  "default_locale": "BR",
   "scope_extensions": [
     {
       "origin": "https://waltemar.com.br",
