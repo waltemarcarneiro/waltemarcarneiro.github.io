@@ -41,23 +41,24 @@ border-radius: 7px;
 }*/
 .banner .logo-lovesongsapp {
 float: left;
-width: 40px;
-height: 40px;
+width: 60px;
+height: 60px;
 background: url('https://lovesongsapp.github.io/icons/icon192.png') no-repeat center center;
 background-size: cover;
-margin-right: 7px;
-border-radius: 7px;
+margin-right: 8px;
+border-radius: 8px;
 }
 .banner .content {
 overflow: hidden;
 }
 .banner .content .banner-title {
-font-weight: 600;
+font-weight: 700;
+font-size: 1.4rem;
 }
 .banner .content .banner-subtitle {
 font-weight: 400;
 margin: 0;
-font-size: 0.8rem;
+
 }
 .banner .message {
 clear: both;
@@ -69,7 +70,8 @@ line-height: 1.5;
     color: #00ffbf;
     text-decoration: none;
     font-weight: 500;
-    text-decoration: underline;
+    text-decoration: none;
+    font-size: 1.3rem;
 }
 .banner .close-btn {
 width: 100%;
@@ -85,17 +87,17 @@ display: block;
 margin-top: 20px;
 font-family: 'Plus Jakarta Sans', sans-serif; 
 }
+/*BOTAO FECHAR*/
 .banner .close-btn-ls {
 width: 100%;
-background: rgba(0, 0, 0, 0.1);
+background: rgba(0, 0, 0, 0.2);
 color: #fff;
-border: none;
+border: 1px solid #555;
 border-radius: 10px;
 padding: 10px;
-font-size: 0.9rem;
 cursor: pointer;
 text-align: center;
 display: block;
 margin-top: 20px;
-font-weight: 400;
+letter-spacing: 1px;
 }

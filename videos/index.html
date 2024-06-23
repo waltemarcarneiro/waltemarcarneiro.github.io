@@ -86,32 +86,21 @@
          width: 100%;
          }
          /* Estilos para a div superior */
-         .top-content {
-         position: absolute;
-         top: 20px;
-         /*left: 50%;*/
-         transform: translateX(-50%);
-         text-align: left;
-         font-size: 16px;
-         /*width: 90%;*/
-         margin-left: 150px;
-         color: #fff;         
-         }
          .logo {
          position: fixed;
          top: 7px;
          left: 7px;
          z-index: 2;
          }
-         .icons {
-         position: fixed;
-         bottom: 32%;
-         right: 10px;
-         z-index: 1;
-         display: flex;
-         flex-direction: column;
-         text-align: center;
-         align-items: center;
+         .top-content {
+         position: absolute;
+         top: 20px;
+         margin-left: 150px;
+         transform: translateX(-50%);
+         text-align: left;
+         font-size: 16px;
+         font-weight: 600;
+         color: #fff;         
          }
          .marquee-container {
          overflow: hidden;
@@ -153,16 +142,6 @@
          .banner-header {
          width: 250px;
          height: 120px;
-         }
-         ion-icon{
-         font-size: 24px;
-         color: #fff;
-         margin-bottom: 20px;
-         }
-         .pulsing-icon {
-         animation: pulse 2s infinite;
-         font-size: 40px;
-         color: #ff59f3;
          }
          @keyframes pulse {
          0% {
@@ -328,6 +307,32 @@
          color: #fff !important;
          font-size: 1.0625em !important;
          }
+         ion-icon{
+         font-size: 28px;
+         color: #fff;
+         
+         }
+         .name-itens, a{
+            color: #fff;
+            font-size: 10px;
+            margin-bottom: 7px;
+            text-decoration: none;
+         }
+         .icons {
+         position: fixed;
+         bottom: 28%;
+         right: 10px;
+         z-index: 1;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         align-items: center;
+         }
+         .pulsing-icon {
+         animation: pulse 2s infinite;
+         color: #00ffbf;
+         }
+         
       </style>
    </head>
    <body>
@@ -335,17 +340,26 @@
          <a href="javascript: history.go(-1)"><img src="../image/logo.png" alt="Logo" width="50"></a>
       </div>
       <div class="icons">
+         <a href="../home.html#options">
+            <ion-icon name="apps-outline"></ion-icon>
+            <p class="name-itens">Opções</p>
+         </a>
          <a href="#" id="pixLink">
             <ion-icon name="heart-outline" class="pulsing-icon"></ion-icon>
+            <p class="name-itens">Doação</p>
          </a>
          <a href="https://bit.ly/lovesongsapp" target="_blank">
             <ion-icon name="musical-notes-outline"></ion-icon>
+            <p class="name-itens">Player</p>
          </a>
          <a href="https://waltemar.com.br/videos/" id="shareLink">
             <ion-icon name="arrow-redo-outline"></ion-icon>
+            <p class="name-itens">Compartilhe</p>
          </a>
          <a href="https://k.kwai.com/p/Mgm06CGc">
-            <ion-icon name="download-outline"></ion-icon>
+            <img src="../image/kwai.svg" width="22">
+            <p class="name-itens">Kwai</p>
+            
          </a>
       </div>
       <video id="meuVideo" controls loop preload="none" poster="../login/img/image5.jpg">
@@ -487,7 +501,7 @@
                <p class="banner-title">LoveSongs App</p>
                <p class="banner-subtitle">A trilha sonora do amor</p>
             </div>
-            <p class="message">Veja mais em Kwai vídeos <a href="https://k.kwai.com/p/OkmYTRCS" target="_blank" alt="LoveSongs App">LoveSongsApp Channel</a></p>
+            <p class="message">Veja mais em <a href="https://k.kwai.com/p/OkmYTRCS" target="_blank" alt="LoveSongs App">Kwai Vídeos</a></p>
             <button class="close-btn-ls" onclick="closeBanner()">Fechar</button>
          </div>
       </div>
