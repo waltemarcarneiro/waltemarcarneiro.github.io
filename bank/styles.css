@@ -9,6 +9,7 @@ body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
     background-color: #f0f4f9;
     margin: 0;
     display: flex;
@@ -36,7 +37,7 @@ body {
     z-index: 1000;
     box-shadow: 0px 1px 5px 2px rgba(238, 238, 238, 1);
     background: #fff;
-    font-weight: 500;
+    
 }
 .header .icon {
     font-size: 24px;
@@ -62,7 +63,6 @@ body {
 }
 .dica {
     font-size: 0.8rem;
-    font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 0px 1px 1px #fff;
@@ -89,7 +89,6 @@ body {
 }
 .action p {
     font-size: 0.7rem;
-    font-weight: 600;
 }
 .action .icon {
     font-size: 30px;
@@ -130,7 +129,6 @@ body {
     margin-right: 10px;
 }
 .notification-text {
-    font-weight: 600;
     margin: 0;
     font-size: 1.1rem;
 }
@@ -142,7 +140,6 @@ body {
     margin-top: 10px;
     text-align: center;
     font-size: 1.1rem;
-    font-weight: 500;
 }
 .close-button {
     margin-top: 10px;
@@ -172,8 +169,8 @@ body {
     border-radius: 10px;
 }
 .conta strong {
-    font-weight: 400;
     font-size: 0.85rem;
+    font-weight: 500;
 }
 .copyright {
     background: #f0f4f9;
