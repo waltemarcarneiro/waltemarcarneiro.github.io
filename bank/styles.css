@@ -89,6 +89,7 @@ body {
 }
 .action p {
     font-size: 0.7rem;
+    font-weight: 500;
 }
 .action .icon {
     font-size: 30px;
