@@ -19,7 +19,6 @@
       <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
       <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
       <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#f76700" />
-      
       <!-- SEO | OG -->
       <meta property="og:locale" content="pt_BR" />
       <meta name="keywords" content="Waltemar" />
@@ -30,7 +29,6 @@
       <meta property='og:type' content='website' />
       <style>
          @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
          * {
          margin: 0;
          padding: 0;
@@ -191,7 +189,7 @@
          animation: slideUp 0.5s ease-out forwards;
          }
          .popup h1{
-            color: #fff;
+         color: #fff;
          }
          @keyframes slideUp {
          from {
@@ -235,7 +233,6 @@
          font-weight: 500;
          cursor: pointer;
          font-family: 'Plus Jakarta Sans', sans-serif;
-         
          }
          .key2 {
          padding: 10px 20px;
@@ -308,15 +305,32 @@
          ion-icon{
          font-size: 28px;
          color: #fff;
-         
          }
+         /*ANIME ARROW UP*/
+         .div-time{
+         position: absolute;
+         top:65px;
+         right: 48px;
+         }
+         /* Estilo da imagem com animação */
+         .animar-imagem {
+         animation: moverCimaBaixo 1s ease-in-out infinite; /* Animar por 2 segundos, repetir infinitamente */
+         }
+         @keyframes moverCimaBaixo {
+         0%, 100% {
+         transform: translateY(0); /* Posição inicial e final */
+         }
+         50% {
+         transform: translateY(-20px); /* Posição no meio da animação */
+         }
+         }
+         /*END ANIME ARROW UP*/
          .icons-name p, a{
-            color: #fff;
-            font-size: 10px;
-            margin-bottom: 15px;
-            text-decoration: none;
+         color: #fff;
+         font-size: 10px;
+         margin-bottom: 15px;
+         text-decoration: none;
          }
-         
          .icons {
          position: fixed;
          bottom: 28%;
@@ -350,7 +364,7 @@
             <p class="icons-name">Compartilhe</p>
          </a>
          <a href="#">
-            <a href="https://k.kwai.com/p/Mgm06CGc">
+         <a href="https://k.kwai.com/p/Mgm06CGc">
             <img src="../image/kwai.svg" width="22">
             <p class="icons-name">Kwai</p>
          </a>
@@ -358,13 +372,12 @@
       <!--<video id="meuVideo" autoplay controls loop>
          <source src="https://archive.org/download/playing.for.time_202406/playing.for.time-.mp4" type="video/mp4">
          Desculpe, seu navegador não suporta vídeos.
-      </video>-->
+         </video>-->
       <iframe id="meuVideo" width="100%" height="" src="https://www.youtube.com/embed/JKoJNdjOHe8?list=PLX_YaKXOr1s4Rv6GXKo6QzNF4WLWGNEkh" frameborder="0" allowfullscreen></iframe>
       <!-- Cobertura semi-transparente sobre o vídeo -->
       <div class="video-overlay" onclick="playVideo()">
       <!-- Div superior -->
       <div class="top-content">
-         
       </div>
       <div id="divTime" class="div-time">
          <img src="anime.png" class="animar-imagem" width="70">
@@ -373,7 +386,6 @@
       <div class="footer">
          <div class="marquee-container">
             <div class="marquee-content">
-              
             </div>
          </div>
       </div>
@@ -438,7 +450,6 @@
          </div>
       </div>
       <!-- Incluindo o script do SweetAlert -->
-      
       <script>
          document.getElementById('pixLink').addEventListener('click', function () {
          
@@ -487,8 +498,8 @@
              });
          }
       </script>
-     <!--SETA INDICADORA E TIMER-->
-     <script>
+      <!--SETA INDICADORA E TIMER-->
+      <script>
          // Obtém a referência da div
          var divTime = document.getElementById('divTime');
          
@@ -503,7 +514,7 @@
       </script>
       <!--BANNER KWAI CONFIG-->
       <div>
-          <link rel="stylesheet" type="text/css" href="banner.css">
+         <link rel="stylesheet" type="text/css" href="banner.css">
          <div class="banner" id="banner">
             <div class="logo-lovesongsapp"></div>
             <div class="content">
@@ -514,7 +525,6 @@
             <button class="close-btn-banner" onclick="closeBanner()">Fechar</button>
          </div>
       </div>
-      
       <div class="copyright">waltemar.com.br</div>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
       <script src="../sweetalert2.all.js"></script>
