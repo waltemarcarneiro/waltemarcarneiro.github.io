@@ -12,6 +12,7 @@
   "start_url": "/index.html",
   "orientation": "portrait",
   "scope": "/",
+  "default_locale": "BR",
   "scope_extensions": [
     {
       "origin": "https://waltemar.com.br",
@@ -237,5 +238,30 @@
       ]
     }
   },
-  "handle_links": "all"
+  "handle_links": "all",
+  "file_handlers": [
+    {
+      "action": "/open-file",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "image/png": [".png"],
+        "image/jpeg": [".jpg", ".jpeg"]
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "name": "Meu Widget",
+      "short_name": "Widget",
+      "description": "Este é um widget de exemplo",
+      "url": "/widget",
+      "icons": [
+        {
+          "src": "icons/widget-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
 }
