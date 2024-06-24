@@ -78,3 +78,63 @@ self.addEventListener('activate', function(event) {
     })
   );
 });
+
+// Sincronização em segundo plano
+self.addEventListener('sync', function(event) {
+  if (event.tag === 'sync-user-data') {
+    event.waitUntil(syncUserData());
+  }
+});
+
+function syncUserData() {
+  // Implementar a lógica para sincronizar os dados do usuário
+  return fetch('/sync-data')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Dados do usuário sincronizados:', data);
+    })
+    .catch(error => {
+      console.error('Erro ao sincronizar os dados do usuário:', error);
+    });
+}
+
+// Sincronização periódica
+self.addEventListener('periodicsync', function(event) {
+  if (event.tag === 'periodic-sync') {
+    event.waitUntil(checkForUpdates());
+  }
+});
+
+function checkForUpdates() {
+  // Implementar a lógica para verificar atualizações
+  return fetch('/check-updates')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Atualizações verificadas:', data);
+    })
+    .catch(error => {
+      console.error('Erro ao verificar atualizações:', error);
+    });
+}
+
+// Notificações push
+self.addEventListener('push', function(event) {
+  const data = event.data ? event.data.json() : {};
+  const options = {
+    body: data.body || 'Você tem uma nova notificação!',
+    icon: data.icon || '/bank/logos/icon192.png',
+    badge: data.badge || '/bank/logos/icon192.png'
+  };
+
+  event.waitUntil(
+    self.registration.showNotification(data.title || 'Nova notificação', options)
+  );
+});
+
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+
+  event.waitUntil(
+    clients.openWindow('/')
+  );
+});
