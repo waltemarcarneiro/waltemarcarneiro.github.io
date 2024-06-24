@@ -1,13 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f76700">
     <!--fonts google | ion-icons-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <title>Downloads Premium</title>
@@ -15,26 +11,22 @@
 
     <link rel="stylesheet" href="apk.css" />
     <link rel="manifest" href="../manifest.json">
-    
 
 <!-- FAVICON-->
-      <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="https://waltemar.com.br/icons/icon180.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
-      <!--AppleTouchIcon-->
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
-      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#e77000" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon-180x180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png" />
+  <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#e77000" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#e77000" />
+  <link rel="shortcut icon" href="../icons/favicon-32x32.png" />
 
   <!-- SEO | OG -->
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="keywords" content="Waltemar" />
   <meta property="og:title" content="Download Premium" />
-  <meta property="og:image" content="https://waltemar.com.br/image/og-apk.jpg" />
+  <meta property="og:image" content="https://waltemar.com.br/downloads/og-downloads.png" />
   <meta content='website' property='og:type' />
   <meta property="og:site_name" content="Waltemar Carneiro" />
   <meta property="og:description" content="Baixe os melhores apps na versão premium" />
@@ -45,10 +37,8 @@
 
 
 <header>
-  <button class="icon-left" id="backButton"><ion-icon name="arrow-back-outline"></ion-icon></button>
-  <div><h2>Apps Premium</h2></div>
-  <button class="icon-right" id=""><ion-icon name="heart-outline"></ion-icon></button>      
-  <button class="icon-right" id="share-Button"><ion-icon name="share-social-outline"></ion-icon></button>      
+    <ion-icon name="arrow-back-outline" id="backButton" class="icon-left"></ion-icon>
+    <ion-icon name="share-social-outline" id="share-Button" class="icon-right"></ion-icon>  
 </header>
 
         
@@ -61,8 +51,7 @@
             <div class="search-bar">
                 
                 <input type="text" id="searchInput" placeholder="Pesquisar...">
-                <ion-icon name="search-outline" id="searchButton" size="small"></ion-icon>
-                <!--<button id="searchButton"><i class="material-icons">search</i></button>-->
+                <button id="searchButton"><i class="material-icons">search</i></button>
             </div>
         </div>
 
