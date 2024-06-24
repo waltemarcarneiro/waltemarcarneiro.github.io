@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #726232;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../image/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    overflow-x: hidden;
+    background: linear-gradient(134deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../image/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.0);
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.logo-title {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.logo-title h1 {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+
+.form-elements {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    
+
+}
+.input-container ion-icon {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.input-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    background: none;
+    color: #fff;
+    
+
+}
+.input-container input::placeholder{
+    color: #fff;
+}
+.forgot{
+    width: 100%;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.forgot-password {
+    color: #e77000;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+.login-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.icons-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.icons-footer ion-icon {
+    font-size: 1.5rem;
+    background: #f0f4f9;
+    border-radius: 100%;
+    padding: 10px;
+    color: #fff;
+    border: 1px solid #ddd;
+}
+.whatsapp{
+    left: 20px;
+    position: fixed;
+    bottom: 10px;
+    padding-top: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+   
+    border-radius: 100%;
+    
+}
+.whatsapp a{
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.pix-logo img{
+    
+    border-radius: 100%;
+    padding: 5px;
+    height: 35px;
+    right: 20px;
+    position: fixed;
+    bottom: 10px;
+}
+/*footer icons fixed*/
+.fixed-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    bottom: 10px;
+    position: fixed;    
+}
+.fixed-icons ion-icon{
+    font-size: 24px;
+}
+.fixed-icons a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.7rem;
+
+}
+
+/*
+.store-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.store-icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+.store-icons ion-icon {
+    font-size: 1.5rem;
+    padding-right: 5px;
+}
+*/
+.store-icons2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.store-icons2 a {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+.store-icons2 ion-icon {
+    font-size: 1.5rem;
+    padding-right: 5px;
+    color: #fff;
+}
+
+.copyright {
+    position: relative;
+    font-size: 0.7rem;
+    width: 80%;
+    margin-top: 5px;
+    text-shadow: 0 1px 1px #0f0f0f;
+}
+
+.copyright a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media (min-width: 600px) and (orientation: landscape) {
+    .login-container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        text-align: left;
+        width: 80%;
+
+    }
+}
+
+/*popup*/
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: flex-end; /* Ajustado para alinhar no rodapé */
+    animation: slideUp 0.5s ease-out; /* Animação de deslizamento */
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.popup-content {
+    font-size: 1.1rem;
+    color: #1d1d1f;
+    background-color: #fff;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border-top-left-radius: 20px; /* Border-radius apenas no topo */
+    border-top-right-radius: 20px; /* Border-radius apenas no topo */
+    border-bottom-left-radius: 0; /* Sem border-radius na parte inferior */
+    border-bottom-right-radius: 0; /* Sem border-radius na parte inferior */
+    line-height: 1.5;
+}
+
+.close-button {
+    background-color: #e77000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/*end popup*/
+/*
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+*/
+/* Estilos para o carrossel de introdução */
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Inicialmente oculto */
+    overflow: hidden;
+    z-index: 1000;
+
+}
+
+.carrossel.active {
+    display: flex; /* Apenas mostrar quando ativo */
+}
+
+.carrossel-slide {
+    flex: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.carrossel-slide.active {
+    display: flex;
+}
+
+.carrossel-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    /*NEW CONFIG*/
+    line-height: 1.5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.carrossel-content h2{
+    font-size: 1.1rem;
+}
+.carrossel-content p{
+    font-size: 0.8rem;
+}
+.prev-slide, .next-slide, .finish-intro {
+    position: absolute;
+    bottom: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.prev-slide {
+    left: 20px;
+}
+
+.next-slide, .finish-intro {
+    right: 20px;
+}
+.carrossel-slide video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.carrossel-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
