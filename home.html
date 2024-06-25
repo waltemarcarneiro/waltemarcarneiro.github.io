@@ -32,15 +32,18 @@
       
 </head>
 <body>
+
   <div class="container" id="logo">
+
     <div class="header">
         <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo" onclick="abrirLogin()">
-        <div>
+        <div class="icon-top-right">
+            <div id="installBanner"><button class="install" id="installButton">Instalar</button></div>
             <ion-icon name="logo-whatsapp" onclick="abrirWhatsApp()"></ion-icon>
             <ion-icon name="cloud-download-outline" onclick="abrirApp()"></ion-icon>
-            
         </div>
-    </div>
+    </div><!--END HEADER-->
+
     <div class="date" id="dataContainer"></div>
     <div class="content">
         <div class="center-text">
@@ -197,6 +200,6 @@
     });
 </script>
 <script src="script-sw.js"></script>
-
+<script src="AppInstall.js"></script>
 </body>
 </html>

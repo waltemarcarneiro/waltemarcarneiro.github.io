@@ -26,6 +26,19 @@ body, html {
     padding-left: 20px;
     cursor: pointer;
 }
+.icon-top-right{
+    display: flex;
+    align-items: center;
+}
+.icon-top-right button{
+    background: #2b3fff;
+    color: #fff;
+    font-weight: 500;
+    padding: 7px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
 .date{
     font-weight: 300;
     font-size: 14px;
