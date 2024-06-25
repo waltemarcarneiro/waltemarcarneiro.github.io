@@ -206,6 +206,7 @@ p{
 a{
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .icon-acesso{
@@ -213,7 +214,9 @@ a{
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-    
+}
+.icon-acesso span{
+    cursor: pointer;
 }
 .icon-acesso ion-icon, img{
     font-size: 32px;
