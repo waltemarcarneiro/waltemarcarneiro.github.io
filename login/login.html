@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
@@ -81,14 +81,20 @@
                 <h1>Fazer Login</h1>
             </div>
             <div class="form-elements">
+                <div style="display: flex; width: 100%;">
+                <label for="usernameInput">Usuário:</label>
+                </div>
                 <div class="input-container">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input id="usernameInput" type="text" placeholder="Usuário" required>
+                    <input id="usernameInput" alt="username" type="text" placeholder="Nome de usuário" required>
                 </div>
                 <br>
+                <div style="display: flex; width: 100%;">
+                <label for="usernameInput">Senha:</label>
+                </div>
                 <div class="input-container">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input id="passwordInput" type="password" placeholder="Senha" required>
+                    <input id="passwordInput" alt="password" type="password" placeholder="Dígite sua senha" required>
                 </div>
                 <div class="store-icons2">
                     <a href="#" id="recoverPasswordLink">
@@ -119,7 +125,7 @@
             </a>
 
             <a href="../bank/sofisa.html">
-            <img src="../image/pix.svg" style="width: 24px;">
+            <img src="../image/pix.svg" alt="Logo Pix" style="width: 24px;">
             <p>Pagamentos</p>
             </a>
 
@@ -154,6 +160,6 @@
         <script src="../script-sw.js"></script>
         <script src="login.js"></script>
         <script src="carrossel.js"></script>
-        
+        <!--<script src="../pro.js"></script>-->
     </body>
 </html>
