@@ -242,7 +242,7 @@ cursor: pointer;
 margin-top: 10px;
 font-size: 1.1rem;
 }
-/* Estilos para o carrossel de introdução */
+/* START CARROSEL */
 .carrossel {
 position: fixed;
 top: 0;
@@ -313,3 +313,4 @@ width: 100%;
 height: auto;
 border-radius: 10px;
 }
+/*END CARROSSEL*/
