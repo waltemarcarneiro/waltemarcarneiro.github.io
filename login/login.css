@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -77,7 +75,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #999;
     padding-bottom: 10px;
     padding-top: 10px;
     width: 100%;
@@ -100,6 +98,7 @@ body {
 }
 .input-container input::placeholder{
     color: #fff;
+    opacity: 0.7;
 }
 .forgot{
     width: 100%;
@@ -188,26 +187,6 @@ body {
 
 }
 
-/*
-.store-icons {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    
-}
-.store-icons a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-    border-radius: 20px;
-    font-size: 0.8rem;
-}
-.store-icons ion-icon {
-    font-size: 1.5rem;
-    padding-right: 5px;
-}
-*/
 .store-icons2 {
     width: 100%;
     display: flex;
@@ -225,19 +204,6 @@ body {
 .store-icons2 ion-icon {
     font-size: 1.5rem;
     padding-right: 5px;
-    color: #fff;
-}
-
-.copyright {
-    position: relative;
-    font-size: 0.7rem;
-    width: 80%;
-    margin-top: 5px;
-    text-shadow: 0 1px 1px #0f0f0f;
-}
-
-.copyright a {
-    text-decoration: none;
     color: #fff;
 }
 
@@ -278,6 +244,7 @@ body {
 
 .popup-content {
     font-size: 1.1rem;
+
     color: #1d1d1f;
     background-color: #fff;
     padding: 20px;
@@ -293,7 +260,7 @@ body {
 }
 
 .close-button {
-    background-color: #e77000;
+    background-color: #F76700;
     color: #fff;
     border: none;
     padding: 10px;
@@ -307,22 +274,6 @@ body {
     font-size: 1.1rem;
 }
 
-/*end popup*/
-/*
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-*/
 /* Estilos para o carrossel de introdução */
 .carrossel {
     position: fixed;
