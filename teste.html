@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>App Install Teste</title>
   <link rel="manifest" href="manifest.json"/>
-  <link rel="stylesheet" href="AppInstall.css">
+  
   <meta name="description" content="Web Developer">
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
       <link rel="stylesheet" href="preloader.css">
@@ -29,15 +29,37 @@
       <meta content='website' property='og:type' />
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta name="mobile-web-app-capable" content="yes" />
+ <style>
+ #installBanner {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+#installButton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#installButton:hover {
+  background-color: #45a049;
+}
+</style>
 </head>
 <body>
-  <!-- Seu conteúdo HTML -->
-
+ 
   <div id="installBanner" style="display: none;">
     <button id="installButton">Instalar App</button>
   </div>
-
-  <!-- Inclua o script AppInstall.js -->
+  
   <script src="AppInstall.js"></script>
+  
 </body>
 </html>
