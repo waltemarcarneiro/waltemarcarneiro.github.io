@@ -4,6 +4,7 @@ const urlsToCache = [
   '/home.html',
   '/home.css',
   '/offline.html',
+  '/offline.svg',
   '/bank/sofisa.html',
   '/bank/script.js',
   '/bank/styles.css',
