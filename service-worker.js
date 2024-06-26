@@ -25,7 +25,7 @@ self.addEventListener('install', function(event) {
     caches.open(CACHE_NAME).then(function(cache) {
       console.log('Cached offline page during install');
       return cache.addAll(urlsToCache);
-    })
+    }).then(() => self.skipWaiting())
   );
 });
 
@@ -75,7 +75,7 @@ self.addEventListener('activate', function(event) {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 });
 
