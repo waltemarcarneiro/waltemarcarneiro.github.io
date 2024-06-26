@@ -245,6 +245,10 @@
 
     function fecharPWA() {
       window.close();
+        // Se a janela não foi fechada, redireciona para uma página com instruções para fechar a aba
+      if (!window.closed) {
+        window.location.href = "404.html";
+      }
     }    
     // Verifica a posição atual da página ao rolar
     window.addEventListener('scroll', function() {
