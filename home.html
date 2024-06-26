@@ -94,7 +94,7 @@
             <div id="installBanner" style="display: none;"><button class="install" id="installButton">Instalar</button></div>
             <ion-icon name="logo-whatsapp" onclick="abrirWhatsApp()"></ion-icon>
             <ion-icon name="cloud-download-outline" onclick="abrirApp()"></ion-icon>
-            <ion-icon name="exit-outline" onclick="abrirApp()"></ion-icon>
+            <ion-icon name="exit-outline" onclick="fecharPWA()"></ion-icon>
         </div>
     </div><!--END HEADER-->
 
@@ -243,6 +243,9 @@
         window.location.href = "pages/app.html";
     }
 
+    function fecharPWA() {
+      window.close();
+        
     // Verifica a posição atual da página ao rolar
     window.addEventListener('scroll', function() {
         var footer = document.getElementById('footer');
