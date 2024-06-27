@@ -230,7 +230,7 @@
     "window-controls-overlay"
   ],
   "launch_handler": {
-    "client_mode": "focus-existing-client",
+    "client_mode": "navigate-existing",
     "navigate_existing_client": {
       "target_url_patterns": [
         "https://waltemar.com.br/*"
