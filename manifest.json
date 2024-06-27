@@ -214,30 +214,20 @@
     "entertainment",
     "productivity"
   ],
-  "share_target": [
-    {
-      "action": "/shared-content-receiver/",
-      "method": "GET",
-      "params": {
-        "title": "Pix Sofisa",
-        "text": "Tranferencia via Pix Sofisa",
-        "url": "/bank/sofisa.html"
-      }
+  "share_target": {
+    "action": "/shared-content-receiver/",
+    "method": "GET",
+    "params": {
+      "title": "Pix Sofisa",
+      "text": "Tranferencia via Pix Sofisa",
+      "url": "/bank/sofisa.html"
     }
-  ],
+  },
   "display_override": [
     "standalone",
     "browser",
     "window-controls-overlay"
   ],
-  "launch_handler": {
-    "client_mode": "navigate-existing-client",
-    "navigate_existing_client": {
-      "target_url_patterns": [
-        "https://waltemar.com.br/*"
-      ]
-    }
-  },
   "handle_links": "all",
   "file_handlers": [
     {
