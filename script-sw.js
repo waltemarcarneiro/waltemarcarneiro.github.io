@@ -1,23 +1,32 @@
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("Active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("/service-worker.js", {
-        scope: "/"
-      })
-      .then(function (reg) {
-        console.log("Service worker has been registered for scope: " + reg.scope);
-      })
-      .catch(function (error) {
-        console.error("Service worker registration failed: " + error);
-      });
-  }
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
 
-  // Check for updates to the Service Worker
-  navigator.serviceWorker.addEventListener("controllerchange", function () {
-    // Reload the page to activate the new Service Worker
+      registration.addEventListener('updatefound', () => {
+        const newWorker = registration.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            if (confirm('Nova versão disponível. Atualizar agora?')) {
+              newWorker.postMessage({ action: 'skipWaiting' });
+            }
+          }
+        });
+      });
+
+      if ('PeriodicSyncManager' in registration) {
+        registration.periodicSync.register('periodic-sync', {
+          minInterval: 24 * 60 * 60 * 1000, // 1 dia
+        }).catch(error => {
+          console.error('Periodic Sync could not be registered!', error);
+        });
+      }
+    }).catch(error => {
+      console.log('ServiceWorker registration failed: ', error);
+    });
+  });
+
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
     window.location.reload();
   });
 }
