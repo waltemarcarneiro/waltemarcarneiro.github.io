@@ -1,34 +1,47 @@
-// AppInstall.js
-
 let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (event) => {
-  // Impede o prompt de instalação padrão do navegador
-  event.preventDefault();
-  // Guarda o evento para que possa ser acionado mais tarde
-  deferredPrompt = event;
-  // Exibe seu botão de instalação personalizado
-  showInstallPromotion();
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const installBanner = document.getElementById('InstallBanner');
+    installBanner.style.display = 'block'; // Mostrar nova div de instalação
 });
 
-function showInstallPromotion() {
-  const installBanner = document.getElementById('installBanner');
-  installBanner.style.display = 'block';
-
-  const installButton = document.getElementById('installButton');
-  installButton.addEventListener('click', async () => {
-    // Esconde o banner de instalação
-    installBanner.style.display = 'none';
-    // Mostra o prompt de instalação
-    deferredPrompt.prompt();
-    // Espera o usuário responder ao prompt
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
+document.getElementById('installButton').addEventListener('click', () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+        });
     }
-    // Reseta a variável deferredPrompt
-    deferredPrompt = null;
-  });
+});
+
+function closeApp() {
+    const installBanner = document.getElementById('InstallBanner');
+    installBanner.style.display = 'none';
 }
+
+
+///////////////////////////////////////////////////////////////////
+
+function showApp() {
+    const app = document.getElementById('InstallBanner');
+    app.classList.add('show');
+    setTimeout(hideApp, 30000); // Esconde o banner após 30 segundos
+}
+
+function hideApp() {
+    const app = document.getElementById('InstallBanner');
+    app.classList.remove('show');
+}
+
+function closeApp() {
+    hideApp();
+}
+
+setTimeout(showApp, 5000); // Mostra o banner após 1 segundo

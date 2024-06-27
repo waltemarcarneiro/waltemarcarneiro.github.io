@@ -91,6 +91,7 @@
                <ion-icon name="enter-outline"></ion-icon>
                <strong class="forgot">Entrar</strong>
             </button>
+            <div id="installBanner" style="display: none;"><button class="install" id="installButton">Instalar</button></div>
          </div>
       </div>
       <!-- END CONTAINER-->
@@ -126,11 +127,7 @@
          </div>
       </div>
       <!--END POPUP-->
-      <script src="../AppInstall.js"></script>
-      <script src="../script-sw.js"></script>
-      <script src="login.js"></script>
-      <!--<script src="../pro.js"></script>-->
-      <!-- Code injected by live-server -->
+
       <script>
          // <![CDATA[  <-- For SVG support
          if ('WebSocket' in window) {
@@ -168,5 +165,12 @@
          }
          // ]]>
       </script>
+
+
+
+      <script src="../script-sw.js"></script>
+      <script src="../AppInstall.js"></script>
+      <script src="login.js"></script>
+
    </body>
 </html>
