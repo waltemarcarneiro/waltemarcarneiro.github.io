@@ -138,12 +138,6 @@ self.addEventListener('notificationclick', event => {
 // Atualizações do Service Worker
 let newWorker;
 
-function showUpdateMessage() {
-  if (confirm('Nova versão disponível. Atualizar agora?')) {
-    newWorker.postMessage({ action: 'skipWaiting' });
-  }
-}
-
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -170,17 +164,8 @@ self.addEventListener('activate', event => {
   );
 });
 
-navigator.serviceWorker.addEventListener('controllerchange', () => {
-  window.location.reload();
-});
-
-navigator.serviceWorker.register('/service-worker.js').then(reg => {
-  reg.addEventListener('updatefound', () => {
-    newWorker = reg.installing;
-    newWorker.addEventListener('statechange', () => {
-      if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-        showUpdateMessage();
-      }
-    });
-  });
+self.addEventListener('message', event => {
+  if (event.data && event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
 });
