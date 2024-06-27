@@ -216,12 +216,12 @@
   ],
   "share_target": {
     "action": "/shared-content-receiver/",
-    "method": "GET",
-    "enctype": "application/x-www-form-urlencoded",
+    "method": "POST",
+    "enctype": "multipart/form-data",
     "params": {
-      "title": "Pix Sofisa",
-      "text": "Tranferencia via Pix Sofisa",
-      "url": "/bank/sofisa.html"
+      "title": "title",
+      "text": "text",
+      "url": "url"
     }
   },
   "display_override": [
@@ -229,6 +229,14 @@
     "browser",
     "window-controls-overlay"
   ],
+  "launch_handler": {
+    "client_mode": "focus-existing-client",
+    "navigate_existing_client": {
+      "target_url_patterns": [
+        "https://waltemar.com.br/*"
+      ]
+    }
+  },
   "handle_links": "all",
   "file_handlers": [
     {
