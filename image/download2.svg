@@ -1,0 +1,9 @@
+<svg width="24px" height="24px" style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" version="1.1" viewBox="0 0 4.32 4.3" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style type="text/css"><![CDATA[
+    .fil0 {fill:#FFFFFF;fill-rule:nonzero}
+   ]]></style>
+ </defs>
+ <path class="fil0" d="m1.77 2.24-0.67-0.63-0.21 0.24 1.25 1.28 1.27-1.25-0.21-0.24-0.66 0.62c-0.05 0.05-0.13 0.05-0.18 0-0.03-0.03-0.04-0.06-0.04-0.1l-0.01-2.16h-0.31v2.15c0 0.08-0.06 0.13-0.13 0.13-0.04 0-0.08-0.01-0.1-0.04z"/>
+ <path class="fil0" d="m0 3.87c0 0.1 0.04 0.22 0.11 0.31 0.05 0.07 0.12 0.12 0.19 0.12h3.71c0.27 0 0.31-0.43 0.31-0.8 0-0.12-0.01-0.22-0.01-0.31v-0.05h-0.31v0.73c0 0.07-0.06 0.13-0.13 0.13h-3.43c-0.07 0-0.13-0.06-0.13-0.13v-0.73h-0.31v0.73z"/>
+</svg>
