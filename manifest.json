@@ -217,6 +217,7 @@
   "share_target": {
     "action": "/shared-content-receiver/",
     "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
     "params": {
       "title": "Pix Sofisa",
       "text": "Tranferencia via Pix Sofisa",
