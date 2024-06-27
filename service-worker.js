@@ -140,3 +140,53 @@ self.addEventListener('notificationclick', function(event) {
     clients.openWindow('/')
   );
 });
+
+// Atualizações do Service Worker
+let newWorker;
+
+function showUpdateMessage() {
+  if (confirm('Nova versão disponível. Atualizar agora?')) {
+    newWorker.postMessage({ action: 'skipWaiting' });
+  }
+}
+
+navigator.serviceWorker.addEventListener('controllerchange', () => {
+  window.location.reload();
+});
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
+    }).then(() => {
+      self.skipWaiting();
+    })
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cache => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
+    }).then(() => {
+      return self.clients.claim();
+    })
+  );
+});
+
+navigator.serviceWorker.register('/service-worker.js').then(reg => {
+  reg.addEventListener('updatefound', () => {
+    newWorker = reg.installing;
+    newWorker.addEventListener('statechange', () => {
+      if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+        showUpdateMessage();
+      }
+    });
+  });
+});
