@@ -365,15 +365,15 @@ font-weight: 700;
 color: #222;
 }
 .app-subtitle {
-font-weight: 600;
+font-weight: 400;
 font-size: 0.85rem;
 margin: 0;
 color: #555;
 }
 .add-info {
 font-size: 0.65rem;
-font-weight: 700;
-color: #222;
+font-weight: 600;
+color: #555;
 }
 .message {
 clear: both;
