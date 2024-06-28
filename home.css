@@ -240,8 +240,9 @@ align-items: center;
 background: rgba(0, 0, 0, 0.5);
 }
 .bloco p{
+font-family: 'Roboto', sans-serif;
 font-size: 0.72rem;
-font-weight: 500;
+font-weight: 400;
 text-align: center;
 color: #EEE;
 }
