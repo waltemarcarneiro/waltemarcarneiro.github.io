@@ -8,13 +8,13 @@
 body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     background-color: #f0f4f9;
     margin: 0;
     display: flex;
     justify-content: center;
-    color: #333333;
+    color: #222;
 }
 .content {
     max-width: 480px;
