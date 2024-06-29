@@ -17,6 +17,7 @@ color: #fff;
 font-size: 16px;
 user-select: none;
 -webkit-tap-highlight-color: transparent;
+margin: 0;
 }
 .header {
 padding: 10px 0px;
@@ -63,7 +64,7 @@ cursor: pointer;
 .user-info h3{
 font-size: 1.2rem;
 font-weight: 500;
-font-family: 'Quicksand';
+font-family: 'Quicksand', sans-serif;    
 }
 .user-image {
 width: 70px;
@@ -238,7 +239,7 @@ margin-bottom: 20px;
 .bloco{
 text-align: center;
 padding: 5px;
-border-radius: 10px;
+border-radius: 15px;
 height: 70px;
 width: 70px;
 display: flex;
@@ -256,8 +257,12 @@ color: #EEE;
 }
 .bloco ion-icon{
 font-size: 32px;
-/*color: #00ffbf;*/
 color: #fff;
+}
+.bloco img{
+    width: 60px;
+    border-radius: 10px;
+    margin: 5px 0px 0px 0px;
 }
 /* START CARROSEL */
 .carrossel {
@@ -331,7 +336,7 @@ height: auto;
 border-radius: 10px;
 }
 /*END CARROSSEL*/
-/*app banner*/
+/* /////////////////////// BANNER APP INSTALL ///////////////////////*/
 .app {
 background: #fff;
 background-size: cover;    
@@ -361,7 +366,8 @@ border-radius: 10px;
 overflow: hidden;
 }
 .app-title {
-font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+font-weight: 600;
 color: #222;
 }
 .app-subtitle {
@@ -372,12 +378,12 @@ color: #555;
 }
 .add-info {
 font-size: 0.65rem;
-font-weight: 400;
+font-weight: 500;
 color: #555;
 }
 .message {
 clear: both;
-font-weight: 600;
+font-weight: 400;
 margin-top: 20px;
 margin-bottom: 30px;
 line-height: 1.2;
