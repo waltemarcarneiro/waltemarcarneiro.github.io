@@ -87,8 +87,8 @@
          <div class="header">
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo" onclick="abrirLogin()">
             <div class="icon-top-right">
-               <img src="image/download2.svg" height="24" style="margin-right: 0;" onclick="abrirApp()">
-               <ion-icon name="logo-whatsapp" onclick="abrirWhatsApp()"></ion-icon>
+               <img src="image/download2.svg" height="24" style="margin-right: 0;" onclick="abrirSuporte()">
+               <ion-icon name="person-outline" onclick="abrirProfile()"></ion-icon>
                <ion-icon name="exit-outline" onclick="fecharPWA()"></ion-icon>
             </div>
          </div>
@@ -335,9 +335,12 @@
          function abrirLogin() {
              window.location.href = "login/login.html";
          }
+         function abrirProfile() {
+             window.location.href = "pages/profile.html";
+         }
          
-         function abrirApp() {
-             window.location.href = "pages/app.html";
+         function abrirSuporte() {
+             window.location.href = "pages/suporte.html";
          }
          
          function fecharPWA() {
