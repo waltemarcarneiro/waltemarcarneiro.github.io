@@ -60,11 +60,12 @@ justify-content: space-between;
 .user-info{
 text-align: left;
 cursor: pointer;
+font-family: 'Montserrat', sans-serif;
 }
 .user-info h3{
 font-size: 1.2rem;
 font-weight: 500;
-font-family: 'Quicksand', sans-serif;    
+font-family: 'Montserrat', sans-serif;    
 }
 .user-image {
 width: 70px;
@@ -374,20 +375,20 @@ color: #222;
 font-weight: 400;
 font-size: 0.85rem;
 margin: 0;
-color: #555;
+color: #575759;
 }
 .add-info {
 font-size: 0.65rem;
 font-weight: 500;
-color: #555;
+color: #575759;
 }
 .message {
 clear: both;
-font-weight: 400;
+font-weight: 500;
 margin-top: 20px;
 margin-bottom: 30px;
 line-height: 1.2;
-color: #222;
+color: #575759;
 font-size: 1.1rem;
 }
 .app .install-btn-app {
