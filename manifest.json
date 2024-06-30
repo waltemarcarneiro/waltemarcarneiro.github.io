@@ -137,7 +137,7 @@
   },
   "shortcuts": [
     {
-      "name": "Pix",
+      "name": "Fazer um Pix",
       "description": "Pagamentos",
       "url": "/bank/inter.html",
       "icons": [
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "name": "Momento LoveSongs",
+      "name": "LoveSongs Momento",
       "url": "/videos/index.html",
       "description": "Momento Love Songs",
       "icons": [
