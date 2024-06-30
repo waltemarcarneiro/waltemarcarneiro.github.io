@@ -13,6 +13,7 @@ const urlsToCache = [
   '/bank/logos/icon192.png',
   '/bank/logos/sofisa.svg',
   '/videos/index.html',
+  '/videos/index.jpg',
   '/videos/playlist.html',
   '/videos/banner.css',
   '/videos/banner.js',
