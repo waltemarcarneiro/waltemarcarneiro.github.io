@@ -142,7 +142,7 @@
       "url": "/bank/inter.html",
       "icons": [
         {
-          "src": "shortcuts/pix.png",
+          "src": "shortcuts/pix.svg",
           "sizes": "96x96",
           "type": "image/png"
         }
@@ -154,19 +154,31 @@
       "description": "Playlist",
       "icons": [
         {
-          "src": "shortcuts/playlist.png",
+          "src": "shortcuts/playlist.svg",
           "sizes": "96x96",
           "type": "image/png"
         }
       ]
     },
     {
-      "name": "Love Moment",
+      "name": "Momento LoveSongs",
       "url": "/videos/index.html",
       "description": "Momento Love Songs",
       "icons": [
         {
-          "src": "shortcuts/intro.png",
+          "src": "shortcuts/filme.svg",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Menu",
+      "url": "/home.html#options",
+      "description": "Menu de Opções",
+      "icons": [
+        {
+          "src": "shortcuts/menu.svg",
           "sizes": "96x96",
           "type": "image/png"
         }
