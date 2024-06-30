@@ -139,7 +139,7 @@
     {
       "name": "Pix",
       "description": "Pagamentos",
-      "url": "/bank/sofisa.html",
+      "url": "/bank/inter.html",
       "icons": [
         {
           "src": "shortcuts/pix.png",
