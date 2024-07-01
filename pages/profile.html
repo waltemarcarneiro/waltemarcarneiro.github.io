@@ -106,6 +106,13 @@
          right: 20px;
          color: #fff;
          }
+         .voltar{
+         display: flex;
+         position: fixed;
+         bottom: 20px;
+         left: 20px;
+         color: #fff;
+         }
       </style>
    </head>
    <body>
@@ -175,6 +182,12 @@
             <ion-icon name="volume-mute-outline" style="font-size: 34px;"></ion-icon>
          </span>
       </div>
+
+      <div class="voltar" onclick="abrirHome()">
+         <span style="cursor: pointer;">
+            <ion-icon name="chevron-back-outline" style="font-size: 34px;"></ion-icon>
+         </span>
+      </div>
       <!-- Adicionando Ionicons -->
       <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       <script>
@@ -207,6 +220,11 @@
                  }
              });
          });
+      </script>
+      <script>
+         function abrirHome() {
+             window.location.href = "../home.html#logo";
+         }
       </script>
       <script src="../pro.js"></script>
    </body>
