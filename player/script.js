@@ -1,21 +1,18 @@
+// script.js
+
 let player;
 let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
-let progressBar = document.getElementById('progress');
-let currentTimeDisplay = document.getElementById('current-time');
-let durationDisplay = document.getElementById('duration');
 
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('music-player', {
-        height: '315',
+    player = new YT.Player('player', {
+        height: '360',
         width: '100%',
         videoId: 'ckUV8X6MkaI',
         playerVars: {
             'listType': 'playlist',
-            'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5',
-            'autoplay': 0,
-            'controls': 0,
+            'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5'
         },
         events: {
             'onReady': onPlayerReady,
@@ -25,117 +22,86 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-    document.getElementById('play-pause').addEventListener('click', function() {
-        if (isPlaying) {
-            player.pauseVideo();
-            this.innerHTML = '<i class="fas fa-play"></i>';
-        } else {
-            player.playVideo();
-            this.innerHTML = '<i class="fas fa-pause"></i>';
-        }
-        isPlaying = !isPlaying;
-    });
-
-    document.getElementById('prev').addEventListener('click', function() {
-        player.previousVideo();
-    });
-
-    document.getElementById('next').addEventListener('click', function() {
-        player.nextVideo();
-    });
-
-    document.getElementById('repeat-shuffle').addEventListener('click', function() {
-        if (isRepeat) {
-            isRepeat = false;
-            isShuffle = true;
-            player.setShuffle(true);
-            this.innerHTML = '<i class="fas fa-random"></i>';
-        } else if (isShuffle) {
-            isRepeat = false;
-            isShuffle = false;
-            player.setShuffle(false);
-            this.innerHTML = '<i class="fas fa-redo"></i>';
-        } else {
-            isRepeat = true;
-            isShuffle = false;
-            player.setShuffle(false);
-            this.innerHTML = '<i class="fas fa-redo-alt"></i>';
-        }
-    });
-
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
-        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-    });
-
-    document.getElementById('playlist-toggle').addEventListener('click', function() {
-        document.getElementById('playlist-overlay').style.display = 'flex';
-        loadPlaylist();
-    });
-
-    document.getElementById('close-playlist').addEventListener('click', function() {
-        document.getElementById('playlist-overlay').style.display = 'none';
-    });
-
-    setInterval(() => {
-        if (player && player.getCurrentTime) {
-            const currentTime = player.getCurrentTime();
-            const duration = player.getDuration();
-            if (duration > 0) {
-                progressBar.value = (currentTime / duration) * 100;
-                currentTimeDisplay.textContent = formatTime(currentTime);
-                durationDisplay.textContent = formatTime(duration);
-            }
-        }
-    }, 1000);
-
-    progressBar.addEventListener('input', function() {
-        const duration = player.getDuration();
-        player.seekTo((progressBar.value / 100) * duration, true);
-    });
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-        document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
-    }
+    document.getElementById('play-pause').addEventListener('click', togglePlayPause);
+    document.getElementById('next').addEventListener('click', () => player.nextVideo());
+    document.getElementById('prev').addEventListener('click', () => player.previousVideo());
+    document.getElementById('repeat-shuffle').addEventListener('click', toggleRepeatShuffle);
+    document.getElementById('playlist-toggle').addEventListener('click', togglePlaylist);
+    document.getElementById('close-playlist').addEventListener('click', closePlaylist);
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
     updateTitleAndArtist();
 }
 
 function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.ENDED) {
-        document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i>';
+    if (event.data === YT.PlayerState.PLAYING) {
+        isPlaying = true;
+        document.querySelector('#play-pause ion-icon').setAttribute('name', 'pause-outline');
+    } else {
         isPlaying = false;
+        document.querySelector('#play-pause ion-icon').setAttribute('name', 'play-outline');
     }
     updateTitleAndArtist();
 }
 
+function togglePlayPause() {
+    if (isPlaying) {
+        player.pauseVideo();
+    } else {
+        player.playVideo();
+    }
+}
+
+function toggleRepeatShuffle() {
+    if (!isShuffle && !isRepeat) {
+        isShuffle = true;
+        player.setShuffle(true);
+        document.querySelector('#repeat-shuffle ion-icon').setAttribute('name', 'shuffle-outline');
+    } else if (isShuffle) {
+        isShuffle = false;
+        isRepeat = true;
+        player.setShuffle(false);
+        player.setLoop(true);
+        document.querySelector('#repeat-shuffle ion-icon').setAttribute('name', 'repeat-outline');
+    } else if (isRepeat) {
+        isRepeat = false;
+        player.setLoop(false);
+        document.querySelector('#repeat-shuffle ion-icon').setAttribute('name', 'shuffle-outline');
+    }
+}
+
+function togglePlaylist() {
+    document.getElementById('playlist-overlay').style.display = 'flex';
+}
+
+function closePlaylist() {
+    document.getElementById('playlist-overlay').style.display = 'none';
+}
+
 function updateTitleAndArtist() {
     const videoData = player.getVideoData();
-    document.getElementById('title').textContent = videoData.title;
-    document.getElementById('artist').textContent = videoData.author;
+    document.getElementById('title').innerText = videoData.title;
+    document.getElementById('artist').innerText = videoData.author;
 }
 
-function formatTime(seconds) {
-    const min = Math.floor(seconds / 60);
-    const sec = Math.floor(seconds % 60);
-    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    updateIconColors();
 }
 
-function loadPlaylist() {
-    const playlist = player.getPlaylist();
-    const playlistContainer = document.getElementById('playlist-items');
-    playlistContainer.innerHTML = '';
-
-    playlist.forEach((videoId, index) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `Vídeo ${index + 1}`;
-        listItem.addEventListener('click', () => {
-            player.playVideoAt(index);
-            document.getElementById('playlist-overlay').style.display = 'none';
-        });
-        playlistContainer.appendChild(listItem);
+function updateIconColors() {
+    const icons = document.querySelectorAll('ion-icon');
+    icons.forEach(icon => {
+        icon.style.color = document.body.classList.contains('dark-mode') ? '#fff' : '#f76700';
     });
+    document.querySelector('.player-header h1').style.color = document.body.classList.contains('dark-mode') ? '#fff' : '#222';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+    updateIconColors();
+});
