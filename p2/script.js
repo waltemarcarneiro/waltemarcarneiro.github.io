@@ -44,16 +44,20 @@ function onPlayerReady(event) {
         player.nextVideo();
     });
 
-    document.getElementById('shuffle').addEventListener('click', function() {
-        isShuffle = !isShuffle;
-        player.setShuffle(isShuffle);
-        this.classList.toggle('active', isShuffle);
-    });
-
-    document.getElementById('repeat').addEventListener('click', function() {
-        isRepeat = !isRepeat;
-        player.setLoop(isRepeat);
-        this.classList.toggle('active', isRepeat);
+    document.getElementById('repeat-shuffle').addEventListener('click', function() {
+        if (isRepeat) {
+            isRepeat = false;
+            isShuffle = true;
+            player.setShuffle(true);
+            this.innerHTML = '<i class="fas fa-random"></i>';
+        } else if (isShuffle) {
+            isShuffle = false;
+            this.innerHTML = '<i class="fas fa-redo"></i>';
+        } else {
+            isRepeat = true;
+            player.setLoop(true);
+            this.innerHTML = '<i class="fas fa-redo"></i>';
+        }
     });
 
     document.getElementById('theme-toggle').addEventListener('click', function() {
@@ -64,6 +68,7 @@ function onPlayerReady(event) {
 
     document.getElementById('playlist-toggle').addEventListener('click', function() {
         document.getElementById('playlist-overlay').style.display = 'flex';
+        loadPlaylist();
     });
 
     document.getElementById('close-playlist').addEventListener('click', function() {
@@ -96,8 +101,6 @@ function onPlayerReady(event) {
     }
 
     updateTitleAndArtist();
-    initializeEqualizer();
-    loadPlaylist();
 }
 
 function onPlayerStateChange(event) {
@@ -121,6 +124,7 @@ function formatTime(seconds) {
 }
 
 function initializeEqualizer() {
+    // Equalizer implementation
     let context = new (window.AudioContext || window.webkitAudioContext)();
     let analyser = context.createAnalyser();
     analyser.fftSize = 256;
@@ -169,6 +173,7 @@ function loadPlaylist() {
     playlistContainer.innerHTML = '';
 
     playlist.forEach((videoId, index) => {
+        player.cuePlaylist({listType: 'playlist', list: 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5'});
         const listItem = document.createElement('li');
         listItem.textContent = `Video ${index + 1}`;
         listItem.addEventListener('click', () => {
