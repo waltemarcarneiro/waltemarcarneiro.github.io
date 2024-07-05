@@ -2,8 +2,6 @@ let player;
 let isPlaying = false;
 let progressBar = document.getElementById('progress');
 let volumeControl = document.getElementById('volume');
-let commentList = document.getElementById('comment-list');
-let equalizer;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('music-player', {
@@ -45,8 +43,8 @@ function onPlayerReady(event) {
 
     document.getElementById('stop').addEventListener('click', function() {
         player.stopVideo();
-        document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i>';
         isPlaying = false;
+        document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i>';
     });
 
     document.getElementById('mute').addEventListener('click', function() {
@@ -71,16 +69,6 @@ function onPlayerReady(event) {
             list: playlistId,
             listType: 'playlist'
         });
-    });
-
-    document.getElementById('post-comment').addEventListener('click', function() {
-        let comment = document.getElementById('comment').value;
-        if (comment) {
-            let commentElement = document.createElement('div');
-            commentElement.textContent = comment;
-            commentList.appendChild(commentElement);
-            document.getElementById('comment').value = '';
-        }
     });
 
     // Update progress bar
@@ -139,7 +127,7 @@ function initializeEqualizer() {
     let bufferLength = analyser.frequencyBinCount;
     let dataArray = new Uint8Array(bufferLength);
 
-    equalizer = document.getElementById('equalizer');
+    let equalizer = document.getElementById('equalizer');
     let canvas = document.createElement('canvas');
     canvas.width = equalizer.clientWidth;
     canvas.height = equalizer.clientHeight;
