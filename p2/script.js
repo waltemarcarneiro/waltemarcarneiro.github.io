@@ -1,7 +1,10 @@
 let player;
 let isPlaying = false;
+let isShuffle = false;
+let isRepeat = false;
 let progressBar = document.getElementById('progress');
-let volumeControl = document.getElementById('volume');
+let currentTimeDisplay = document.getElementById('current-time');
+let durationDisplay = document.getElementById('duration');
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('music-player', {
@@ -41,20 +44,16 @@ function onPlayerReady(event) {
         player.nextVideo();
     });
 
-    document.getElementById('stop').addEventListener('click', function() {
-        player.stopVideo();
-        isPlaying = false;
-        document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i>';
+    document.getElementById('shuffle').addEventListener('click', function() {
+        isShuffle = !isShuffle;
+        player.setShuffle(isShuffle);
+        this.classList.toggle('active', isShuffle);
     });
 
-    document.getElementById('mute').addEventListener('click', function() {
-        if (player.isMuted()) {
-            player.unMute();
-            this.innerHTML = '<i class="fas fa-volume-mute"></i>';
-        } else {
-            player.mute();
-            this.innerHTML = '<i class="fas fa-volume-up"></i>';
-        }
+    document.getElementById('repeat').addEventListener('click', function() {
+        isRepeat = !isRepeat;
+        player.setLoop(isRepeat);
+        this.classList.toggle('active', isRepeat);
     });
 
     document.getElementById('theme-toggle').addEventListener('click', function() {
@@ -63,21 +62,23 @@ function onPlayerReady(event) {
         localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
-    document.getElementById('add-playlist').addEventListener('click', function() {
-        let playlistId = document.getElementById('playlist-input').value;
-        player.loadPlaylist({
-            list: playlistId,
-            listType: 'playlist'
-        });
+    document.getElementById('playlist-toggle').addEventListener('click', function() {
+        document.getElementById('playlist-overlay').style.display = 'flex';
     });
 
-    // Update progress bar
+    document.getElementById('close-playlist').addEventListener('click', function() {
+        document.getElementById('playlist-overlay').style.display = 'none';
+    });
+
+    // Update progress bar and time
     setInterval(() => {
         if (player && player.getCurrentTime) {
             const currentTime = player.getCurrentTime();
             const duration = player.getDuration();
             if (duration > 0) {
                 progressBar.value = (currentTime / duration) * 100;
+                currentTimeDisplay.textContent = formatTime(currentTime);
+                durationDisplay.textContent = formatTime(duration);
             }
         }
     }, 1000);
@@ -87,10 +88,6 @@ function onPlayerReady(event) {
         player.seekTo((progressBar.value / 100) * duration, true);
     });
 
-    volumeControl.addEventListener('input', function() {
-        player.setVolume(volumeControl.value);
-    });
-
     // Load saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -98,7 +95,9 @@ function onPlayerReady(event) {
         document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
     }
 
+    updateTitleAndArtist();
     initializeEqualizer();
+    loadPlaylist();
 }
 
 function onPlayerStateChange(event) {
@@ -113,6 +112,12 @@ function updateTitleAndArtist() {
     const videoData = player.getVideoData();
     document.getElementById('title').textContent = videoData.title;
     document.getElementById('artist').textContent = videoData.author;
+}
+
+function formatTime(seconds) {
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
 
 function initializeEqualizer() {
@@ -156,4 +161,20 @@ function initializeEqualizer() {
     }
 
     draw();
+}
+
+function loadPlaylist() {
+    const playlist = player.getPlaylist();
+    const playlistContainer = document.getElementById('playlist-items');
+    playlistContainer.innerHTML = '';
+
+    playlist.forEach((videoId, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Video ${index + 1}`;
+        listItem.addEventListener('click', () => {
+            player.playVideoAt(index);
+            document.getElementById('playlist-overlay').style.display = 'none';
+        });
+        playlistContainer.appendChild(listItem);
+    });
 }

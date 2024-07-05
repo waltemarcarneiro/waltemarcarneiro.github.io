@@ -21,29 +21,27 @@
                     <p id="artist">Artist</p>
                 </div>
                 <div class="controls">
+                    <button id="shuffle"><i class="fas fa-random"></i></button>
                     <button id="prev"><i class="fas fa-backward"></i></button>
                     <button id="play-pause"><i class="fas fa-play"></i></button>
                     <button id="next"><i class="fas fa-forward"></i></button>
-                    <button id="stop"><i class="fas fa-stop"></i></button>
-                    <button id="mute"><i class="fas fa-volume-mute"></i></button>
+                    <button id="repeat"><i class="fas fa-redo"></i></button>
+                    <button id="playlist-toggle"><i class="fas fa-list"></i></button>
                 </div>
-                <div class="progress-bar">
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
                     <input type="range" id="progress" value="0">
-                </div>
-                <div class="volume-control">
-                    <label for="volume">Volume: </label>
-                    <input type="range" id="volume" min="0" max="100" value="100">
+                    <span id="duration">0:00</span>
                 </div>
                 <div id="equalizer"></div>
-                <div class="playlist">
-                    <label for="playlist-input">Add Playlist:</label>
-                    <input type="text" id="playlist-input" placeholder="Enter YouTube Playlist ID">
-                    <button id="add-playlist">Add</button>
-                </div>
-                <div class="comments-link">
-                    <a href="comments.html">Comments & Ratings</a>
-                </div>
             </div>
+        </div>
+    </div>
+    <div id="playlist-overlay">
+        <div id="playlist">
+            <h2>Playlist</h2>
+            <ul id="playlist-items"></ul>
+            <button id="close-playlist">Close</button>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
