@@ -31,6 +31,7 @@ function onPlayerReady(event) {
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
     updateTitleAndArtist();
+    updatePlaylist();
 }
 
 function onPlayerStateChange(event) {
@@ -72,6 +73,7 @@ function toggleRepeatShuffle() {
 
 function togglePlaylist() {
     document.getElementById('playlist-overlay').style.display = 'flex';
+    updatePlaylist();
 }
 
 function closePlaylist() {
@@ -82,6 +84,21 @@ function updateTitleAndArtist() {
     const videoData = player.getVideoData();
     document.getElementById('title').innerText = videoData.title;
     document.getElementById('artist').innerText = videoData.author;
+}
+
+function updatePlaylist() {
+    const playlist = player.getPlaylist();
+    const playlistContainer = document.getElementById('playlist-items');
+    playlistContainer.innerHTML = '';
+
+    playlist.forEach((videoId, index) => {
+        player.getVideoData(videoId, (data) => {
+            const listItem = document.createElement('li');
+            listItem.innerText = data.title;
+            listItem.addEventListener('click', () => player.playVideoAt(index));
+            playlistContainer.appendChild(listItem);
+        });
+    });
 }
 
 function toggleTheme() {

@@ -102,8 +102,14 @@ ion-icon {
     color: var(--text-color);
 }
 
-.player-controls .info p {
+.player-controls .info #title {
     margin: 5px 0;
+    font-size: 16px;
+}
+
+.player-controls .info #artist {
+    margin: 5px 0;
+    font-size: 14px;
 }
 
 .player-controls input[type="range"] {
@@ -179,8 +185,16 @@ ion-icon {
 .player-controls .controls button {
     background: none;
     border: none;
-    margin: 0 10px;
+    margin: 0 15px;
     cursor: pointer;
+    font-size: 28px;
+}
+
+.player-controls .controls #play-pause {
+    font-size: 32px;
+    background: var(--icon-color);
+    border-radius: 50%;
+    padding: 10px;
 }
 
 #playlist-overlay {
@@ -247,16 +261,4 @@ body.dark-mode #playlist-items li:hover {
     border: none;
     cursor: pointer;
     color: var(--text-color);
-}
-
-@media (max-width: 768px) {
-    .player-header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header-right {
-        order: 3;
-        margin-top: 10px;
-    }
 }
