@@ -51,18 +51,21 @@ function onPlayerReady(event) {
             player.setShuffle(true);
             this.innerHTML = '<i class="fas fa-random"></i>';
         } else if (isShuffle) {
+            isRepeat = false;
             isShuffle = false;
+            player.setShuffle(false);
             this.innerHTML = '<i class="fas fa-redo"></i>';
         } else {
             isRepeat = true;
-            player.setLoop(true);
-            this.innerHTML = '<i class="fas fa-redo"></i>';
+            isShuffle = false;
+            player.setShuffle(false);
+            this.innerHTML = '<i class="fas fa-redo-alt"></i>';
         }
     });
 
     document.getElementById('theme-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
-        this.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
         localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
@@ -75,7 +78,6 @@ function onPlayerReady(event) {
         document.getElementById('playlist-overlay').style.display = 'none';
     });
 
-    // Update progress bar and time
     setInterval(() => {
         if (player && player.getCurrentTime) {
             const currentTime = player.getCurrentTime();
@@ -93,11 +95,10 @@ function onPlayerReady(event) {
         player.seekTo((progressBar.value / 100) * duration, true);
     });
 
-    // Load saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-        document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+        document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
     }
 
     updateTitleAndArtist();
@@ -123,16 +124,28 @@ function formatTime(seconds) {
     return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
 
+function loadPlaylist() {
+    const playlist = player.getPlaylist();
+    const playlistContainer = document.getElementById('playlist-items');
+    playlistContainer.innerHTML = '';
+
+    playlist.forEach((videoId, index) => {
+        player.cuePlaylist({ listType: 'playlist', list: 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5' });
+        const listItem = document.createElement('li');
+        listItem.textContent = `Vídeo ${index + 1}`;
+        listItem.addEventListener('click', () => {
+            player.playVideoAt(index);
+            document.getElementById('playlist-overlay').style.display = 'none';
+        });
+        playlistContainer.appendChild(listItem);
+    });
+}
+
+// Modern Equalizer
 function initializeEqualizer() {
-    // Equalizer implementation
-    let context = new (window.AudioContext || window.webkitAudioContext)();
-    let analyser = context.createAnalyser();
+    let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let analyser = audioCtx.createAnalyser();
     analyser.fftSize = 256;
-
-    let source = context.createMediaElementSource(player.getIframe());
-    source.connect(analyser);
-    analyser.connect(context.destination);
-
     let bufferLength = analyser.frequencyBinCount;
     let dataArray = new Uint8Array(bufferLength);
 
@@ -141,14 +154,17 @@ function initializeEqualizer() {
     canvas.width = equalizer.clientWidth;
     canvas.height = equalizer.clientHeight;
     equalizer.appendChild(canvas);
-    let canvasContext = canvas.getContext('2d');
+    let canvasCtx = canvas.getContext('2d');
+
+    let source = audioCtx.createMediaElementSource(player.getIframe());
+    source.connect(analyser);
+    analyser.connect(audioCtx.destination);
 
     function draw() {
         requestAnimationFrame(draw);
         analyser.getByteFrequencyData(dataArray);
-
-        canvasContext.fillStyle = '#f0f0f0';
-        canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+        canvasCtx.fillStyle = '#f0f0f0';
+        canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
         let barWidth = (canvas.width / bufferLength) * 2.5;
         let barHeight;
@@ -156,30 +172,11 @@ function initializeEqualizer() {
 
         for (let i = 0; i < bufferLength; i++) {
             barHeight = dataArray[i];
-
-            canvasContext.fillStyle = '#007bff';
-            canvasContext.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
-
+            canvasCtx.fillStyle = `rgb(${barHeight+100},50,50)`;
+            canvasCtx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
             x += barWidth + 1;
         }
     }
 
     draw();
-}
-
-function loadPlaylist() {
-    const playlist = player.getPlaylist();
-    const playlistContainer = document.getElementById('playlist-items');
-    playlistContainer.innerHTML = '';
-
-    playlist.forEach((videoId, index) => {
-        player.cuePlaylist({listType: 'playlist', list: 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5'});
-        const listItem = document.createElement('li');
-        listItem.textContent = `Video ${index + 1}`;
-        listItem.addEventListener('click', () => {
-            player.playVideoAt(index);
-            document.getElementById('playlist-overlay').style.display = 'none';
-        });
-        playlistContainer.appendChild(listItem);
-    });
 }
