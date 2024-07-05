@@ -1,5 +1,6 @@
 let player;
 let isPlaying = false;
+let progressBar = document.getElementById('progress');
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('music-player', {
@@ -58,7 +59,31 @@ function onPlayerReady(event) {
     document.getElementById('theme-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
         this.textContent = document.body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
+
+    // Update progress bar
+    setInterval(() => {
+        if (player && player.getCurrentTime) {
+            const currentTime = player.getCurrentTime();
+            const duration = player.getDuration();
+            if (duration > 0) {
+                progressBar.value = (currentTime / duration) * 100;
+            }
+        }
+    }, 1000);
+
+    progressBar.addEventListener('input', function() {
+        const duration = player.getDuration();
+        player.seekTo((progressBar.value / 100) * duration, true);
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+        document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
 }
 
 function onPlayerStateChange(event) {
@@ -66,4 +91,11 @@ function onPlayerStateChange(event) {
         document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i>';
         isPlaying = false;
     }
+    updateTitleAndArtist();
+}
+
+function updateTitleAndArtist() {
+    const videoData = player.getVideoData();
+    document.getElementById('title').textContent = videoData.title;
+    document.getElementById('artist').textContent = videoData.author;
 }

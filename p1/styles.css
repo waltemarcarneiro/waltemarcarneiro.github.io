@@ -57,6 +57,14 @@ body {
     height: 315px;
 }
 
+.info {
+    margin: 10px 0;
+}
+
+.info p {
+    margin: 5px 0;
+}
+
 .controls {
     display: flex;
     justify-content: space-around;
@@ -74,6 +82,14 @@ body {
 
 .controls button:hover {
     color: #0056b3;
+}
+
+.progress-bar {
+    margin-top: 20px;
+}
+
+#progress {
+    width: 100%;
 }
 
 .dark-mode {
@@ -101,4 +117,8 @@ body {
 
 .dark-mode .controls button:hover {
     color: #007bff;
+}
+
+.dark-mode .info p {
+    color: #ffffff;
 }
