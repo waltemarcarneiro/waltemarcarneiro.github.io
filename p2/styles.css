@@ -43,13 +43,17 @@ body {
     border: none;
     font-size: 14px;
     cursor: pointer;
-    color: #007bff;
+    color: #f76700;
     transition: color 0.3s;
 }
 
 .player-controls {
     padding: 20px;
     text-align: center;
+    height: calc(100% - 65px); /* Adjust height to fit within player */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #music-player {
@@ -76,12 +80,12 @@ body {
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #007bff;
+    color: #f76700;
     transition: color 0.3s;
 }
 
 .controls button:hover {
-    color: #0056b3;
+    color: #d35500;
 }
 
 .progress-container {
@@ -94,13 +98,6 @@ body {
 #progress {
     flex: 1;
     margin: 0 10px;
-}
-
-#equalizer {
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
-    background: #eee;
 }
 
 #playlist-overlay {
@@ -150,7 +147,7 @@ body {
     margin-top: 10px;
     background: none;
     border: none;
-    color: #007bff;
+    color: #f76700;
     cursor: pointer;
 }
 
@@ -174,15 +171,15 @@ body {
 }
 
 .dark-mode .player-header button {
-    color: #0a84ff;
+    color: #f76700;
 }
 
 .dark-mode .controls button {
-    color: #0a84ff;
+    color: #f76700;
 }
 
 .dark-mode .controls button:hover {
-    color: #007bff;
+    color: #d35500;
 }
 
 .dark-mode .info p {
