@@ -6,31 +6,38 @@
     <title>Player de Música Avançado</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+          <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </head>
 <body>
     <div class="player-container">
         <div class="player">
             <div class="player-header">
-                <h1>Player de Música</h1>
-                <button id="theme-toggle">Modo Escuro</button>
+                <div class="header-left">
+                    <ion-icon name="menu-outline" style="font-size: 24px; color: #fff;"></ion-icon>
+                </div>
+                <div class="header-center">
+                    <h1 style="font-size: 18px;">Player de Música</h1>
+                </div>
+                <div class="header-right">
+                    <ion-icon name="search-outline" style="font-size: 24px; color: #fff;"></ion-icon>
+                    <ion-icon name="share-social-outline" style="font-size: 24px; color: #fff;"></ion-icon>
+                    <ion-icon name="color-palette-outline" style="font-size: 24px; color: #fff;"></ion-icon>
+                </div>
             </div>
+            <div id="player"></div> <!-- Elemento onde o player de vídeo será inserido -->
             <div class="player-controls">
-                <div id="music-player"></div>
                 <div class="info">
                     <p id="title">Título</p>
                     <p id="artist">Artista</p>
                 </div>
+                <input type="range" id="progress" value="0">
                 <div class="controls">
-                    <button id="repeat-shuffle"><i class="fas fa-redo"></i></button>
-                    <button id="prev"><i class="fas fa-backward"></i></button>
-                    <button id="play-pause"><i class="fas fa-play"></i></button>
-                    <button id="next"><i class="fas fa-forward"></i></button>
-                    <button id="playlist-toggle"><i class="fas fa-list"></i></button>
-                </div>
-                <div class="progress-container">
-                    <span id="current-time">0:00</span>
-                    <input type="range" id="progress" value="0">
-                    <span id="duration">0:00</span>
+                    <button id="repeat-shuffle"><ion-icon name="shuffle-outline" style="font-size: 24px; color: #fff;"></ion-icon></button>
+                    <button id="prev"><ion-icon name="play-skip-back-outline" style="font-size: 24px; color: #fff;"></ion-icon></button>
+                    <button id="play-pause"><ion-icon name="play-outline" style="font-size: 24px; color: #fff;"></ion-icon></button>
+                    <button id="next"><ion-icon name="play-skip-forward-outline" style="font-size: 24px; color: #fff;"></ion-icon></button>
+                    <button id="playlist-toggle"><ion-icon name="list-outline" style="font-size: 24px; color: #fff;"></ion-icon></button>
                 </div>
             </div>
         </div>
@@ -42,7 +49,6 @@
             <button id="close-playlist">Fechar</button>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
