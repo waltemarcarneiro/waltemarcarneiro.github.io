@@ -78,7 +78,7 @@ body {
 .controls button {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
     color: #f76700;
     transition: color 0.3s;
@@ -92,7 +92,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin: 20px 0px 50px 0px;
 }
 
 #progress {
