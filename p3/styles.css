@@ -62,12 +62,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 #music-player {
     width: 300px;
     height: 300px;
     border-radius: 10px;
+    margin: auto;
 }
 .info {
     margin: 10px 0;
