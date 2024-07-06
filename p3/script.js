@@ -63,11 +63,31 @@ function onPlayerReady(event) {
         }
     });
 
+//THEME (ALTERA O CORPO DO TEMA)
     document.getElementById('theme-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
         this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
         localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
+
+    // THE (ALTERA O THEME-COLOR DO HEAD)
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        this.textContent = 'Modo Escuro';
+        metaThemeColor.setAttribute('content', '#ffffff');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        this.textContent = 'Modo Claro';
+        metaThemeColor.setAttribute('content', '#0F0F0F');
+    }
+});
+
+
+
 
     document.getElementById('playlist-toggle').addEventListener('click', function() {
         document.getElementById('playlist-overlay').style.display = 'flex';
@@ -121,7 +141,7 @@ function updateTitleAndArtist() {
 function formatTime(seconds) {
     const min = Math.floor(seconds / 60);
     const sec = Math.floor(seconds % 60);
-    return ${min}:${sec < 10 ? '0' : ''}${sec};
+    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
 
 function loadPlaylist() {
@@ -131,7 +151,7 @@ function loadPlaylist() {
 
     playlist.forEach((videoId, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = Vídeo ${index + 1};
+        listItem.textContent = `Vídeo ${index + 1}`;
         listItem.addEventListener('click', () => {
             player.playVideoAt(index);
             document.getElementById('playlist-overlay').style.display = 'none';
