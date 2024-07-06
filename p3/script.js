@@ -121,7 +121,7 @@ function updateTitleAndArtist() {
 function formatTime(seconds) {
     const min = Math.floor(seconds / 60);
     const sec = Math.floor(seconds % 60);
-    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    return ${min}:${sec < 10 ? '0' : ''}${sec};
 }
 
 function loadPlaylist() {
@@ -131,7 +131,7 @@ function loadPlaylist() {
 
     playlist.forEach((videoId, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `Vídeo ${index + 1}`;
+        listItem.textContent = Vídeo ${index + 1};
         listItem.addEventListener('click', () => {
             player.playVideoAt(index);
             document.getElementById('playlist-overlay').style.display = 'none';
