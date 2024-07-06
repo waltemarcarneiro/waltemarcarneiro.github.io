@@ -1,322 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Música Moderno</title>
     <meta name="theme-color" content="#ffffff">
-    <title>Music Player</title>
-      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .player-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            padding: 20px;
-        }
-
-        .player {
-            background: #f0f4f9;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-            overflow: hidden;
-            transition: background 0.3s, box-shadow 0.3s;
-            border-radius: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .player-header {
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-            background: #f0f4f9;
-            border-bottom: 1px solid #ddd;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-        }
-
-        .player-header h1 {
-            font-size: 18px;
-        }
-
-        .player-header button {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #f76700;
-            transition: color 0.3s;
-        }
-
-        .player-controls {
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
-        }
-
-        #music-player {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .info {
-            margin: 20px 0;
-        }
-
-        .info .title {
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .info .artist {
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        input[type="range"] {
-            -webkit-appearance: none;
-            width: 100%;
-            background: #ddd;
-            height: 3px;
-            border-radius: 5px;
-            outline: none;
-            opacity: 0.7;
-            transition: opacity .15s ease-in-out;
-        }
-
-        input[type="range"]:hover {
-            opacity: 1;
-        }
-
-        /* Webkit Browsers (Chrome, Safari, Edge) */
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            background: #f76700;
-            cursor: pointer;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            margin-top: -9px;
-        }
-
-        /* Mozilla Browsers (Firefox) */
-        input[type="range"]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            background: #f76700;
-            cursor: pointer;
-            border-radius: 50%;
-            border: 2px solid #fff;
-        }
-
-        /* IE Browsers */
-        input[type="range"]::-ms-thumb {
-            width: 20px;
-            height: 20px;
-            background: #f76700;
-            cursor: pointer;
-            border-radius: 50%;
-            border: 2px solid #fff;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
-
-        .control-button {
-            background: none;
-            border: none;
-            font-size: 32px;
-            cursor: pointer;
-            color: #f76700;
-            transition: color 0.3s;
-        }
-
-        .control-button:hover {
-            color: #d35500;
-        }
-
-        .progress-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 50px;
-        }
-
-        #progress {
-            flex: 1;
-            margin: 0 10px;
-        }
-
-        #playlist-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #playlist {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
-            text-align: left;
-        }
-
-        #playlist h2 {
-            margin-top: 0;
-        }
-
-        #playlist ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        #playlist ul li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        #playlist ul li:hover {
-            background: #f0f0f0;
-            cursor: pointer;
-        }
-
-        #close-playlist {
-            margin-top: 10px;
-            background: none;
-            border: none;
-            color: #f76700;
-            cursor: pointer;
-        }
-
-        #close-playlist:hover {
-            text-decoration: underline;
-        }
-
-        .dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-        }
-
-        .dark-mode .player {
-            background: #0f0f0f;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .dark-mode .player-header {
-            background: #0f0f0f;
-            border-bottom: 1px solid #333;
-        }
-
-        .dark-mode .player-header button {
-            color: #f76700;
-        }
-
-        .dark-mode .control-button {
-            color: #f76700;
-        }
-
-        .dark-mode .control-button:hover {
-            color: #d35500;
-        }
-
-        .dark-mode .info p {
-            color: #ffffff;
-        }
-
-        .dark-mode #playlist-overlay {
-            background: rgba(18, 18, 18, 0.8);
-        }
-
-        .dark-mode #playlist {
-            background: #1e1e1e;
-            color: #ffffff;
-        }
-
-        /* Adicionando o preenchimento dinâmico */
-        input[type="range"]::-webkit-slider-runnable-track {
-            background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
-            height: 3px; /* Define a altura do preenchimento dinâmico */
-            border-radius: 5px;
-        }
-
-        input[type="range"]::-moz-range-track {
-            background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
-            height: 3px; /* Define a altura do preenchimento dinâmico */
-            border-radius: 5px;
-        }
-
-        input[type="range"]::-ms-track {
-            background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
-            height: 3px; /* Define a altura do preenchimento dinâmico */
-            border-radius: 5px;
-        }
-
-        input[type="range"]::-ms-fill-lower {
-            background: #f76700;
-            height: 3px; /* Define a altura do preenchimento dinâmico */
-            border-radius: 5px;
-        }
-
-        input[type="range"]::-ms-fill-upper {
-            background: #ddd;
-            height: 3px; /* Define a altura do preenchimento dinâmico */
-            border-radius: 5px;
-        }
-    </style>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     <div class="player-container">
         <div class="player">
-            <div class="player-header">
-                <button id="menu-toggle"><ion-icon name="menu"></ion-icon></button>
-                <h1>Music Player</h1>
-                <button id="theme-toggle"><ion-icon name="sunny-outline"></ion-icon></button>
-            </div>
+            <div id="music-player"></div>
             <div class="player-controls">
-                <div id="music-player"></div>
+                <div class="player-header">
+                    <h1>Player de Música</h1>
+                    <button id="theme-toggle">
+                        <ion-icon name="moon-outline"></ion-icon>
+                    </button>
+                </div>
                 <div class="info">
-                    <p id="title" class="title">Título da Música</p>
-                    <p id="artist" class="artist">Nome do Artista</p>
+                    <p id="title" class="title">Título</p>
+                    <p id="artist" class="artist">Artista</p>
                 </div>
                 <div class="progress-container">
                     <span id="current-time">0:00</span>
@@ -324,15 +31,25 @@
                     <span id="duration">0:00</span>
                 </div>
                 <div class="controls">
-                    <button id="prev" class="control-button"><ion-icon name="play-back-outline"></ion-icon></button>
-                    <button id="play-pause" class="control-button"><ion-icon name="play-outline"></ion-icon></button>
-                    <button id="next" class="control-button"><ion-icon name="play-forward-outline"></ion-icon></button>
-                    <button id="repeat-shuffle" class="control-button"><ion-icon name="repeat-outline"></ion-icon></button>
+                    <div class="control-button">
+                        <ion-icon name="shuffle-outline"></ion-icon>
+                    </div>
+                    <div class="control-button">
+                        <ion-icon name="play-back-outline"></ion-icon>
+                    </div>
+                    <div class="control-button">
+                        <ion-icon name="play-outline"></ion-icon>
+                    </div>
+                    <div class="control-button">
+                        <ion-icon name="play-forward-outline"></ion-icon>
+                    </div>
+                    <div class="control-button">
+                        <ion-icon name="list-outline"></ion-icon>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div id="playlist-overlay">
         <div id="playlist">
             <h2>Playlist</h2>
@@ -341,164 +58,18 @@
         </div>
     </div>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        let player;
-        let isPlaying = false;
-        let isShuffle = false;
-        let isRepeat = false;
-        let progressBar = document.getElementById('progress');
-        let currentTimeDisplay = document.getElementById('current-time');
-        let durationDisplay = document.getElementById('duration');
+        const rangeInput = document.querySelector('input[type="range"]');
 
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('music-player', {
-                height: '315',
-                width: '100%',
-                videoId: 'ckUV8X6MkaI',
-                playerVars: {
-                    'listType': 'playlist',
-                    'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5',
-                    'autoplay': 0,
-                    'controls': 0,
-                },
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
+        rangeInput.addEventListener('input', function() {
+            this.style.setProperty('--slider-value', `${this.value}%`);
+        });
 
-        function onPlayerReady(event) {
-            document.getElementById('play-pause').addEventListener('click', function() {
-                if (isPlaying) {
-                    player.pauseVideo();
-                    this.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
-                } else {
-                    player.playVideo();
-                    this.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
-                }
-                isPlaying = !isPlaying;
-            });
-
-            document.getElementById('prev').addEventListener('click', function() {
-                player.previousVideo();
-            });
-
-            document.getElementById('next').addEventListener('click', function() {
-                player.nextVideo();
-            });
-
-            document.getElementById('repeat-shuffle').addEventListener('click', function() {
-                if (isRepeat) {
-                    isRepeat = false;
-                    isShuffle = true;
-                    player.setShuffle(true);
-                    this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
-                } else if (isShuffle) {
-                    isRepeat = false;
-                    isShuffle = false;
-                    player.setShuffle(false);
-                    this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon>';
-                } else {
-                    isRepeat = true;
-                    isShuffle = false;
-                    player.setShuffle(false);
-                    this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon>';
-                }
-            });
-
-            document.getElementById('theme-toggle').addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                this.innerHTML = document.body.classList.contains('dark-mode') ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
-                localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-
-                const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-                const currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-
-                if (currentTheme === 'dark') {
-                    metaThemeColor.setAttribute('content', '#0F0F0F');
-                } else {
-                    metaThemeColor.setAttribute('content', '#ffffff');
-                }
-            });
-
-            document.getElementById('playlist-toggle').addEventListener('click', function() {
-                document.getElementById('playlist-overlay').style.display = 'flex';
-                loadPlaylist();
-            });
-
-            document.getElementById('close-playlist').addEventListener('click', function() {
-                document.getElementById('playlist-overlay').style.display = 'none';
-            });
-
-            setInterval(() => {
-                if (player && player.getCurrentTime) {
-                    const currentTime = player.getCurrentTime();
-                    const duration = player.getDuration();
-                    if (duration > 0) {
-                        progressBar.value = (currentTime / duration) * 100;
-                        currentTimeDisplay.textContent = formatTime(currentTime);
-                        durationDisplay.textContent = formatTime(duration);
-
-                        // Atualiza o valor dinâmico do preenchimento da barra de progresso
-                        progressBar.style.setProperty('--slider-value', `${(currentTime / duration) * 100}%`);
-                    }
-                }
-            }, 1000);
-
-            progressBar.addEventListener('input', function() {
-                const duration = player.getDuration();
-                player.seekTo((progressBar.value / 100) * duration, true);
-            });
-
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-                document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
-
-                const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-                metaThemeColor.setAttribute('content', savedTheme === 'dark' ? '#0F0F0F' : '#ffffff');
-            }
-
-            updateTitleAndArtist();
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.ENDED) {
-                document.getElementById('play-pause').innerHTML = '<ion-icon name="play-outline"></ion-icon>';
-                isPlaying = false;
-            }
-            updateTitleAndArtist();
-        }
-
-        function updateTitleAndArtist() {
-            const videoData = player.getVideoData();
-            document.getElementById('title').textContent = videoData.title;
-            document.getElementById('artist').textContent = videoData.author;
-        }
-
-        function formatTime(seconds) {
-            const min = Math.floor(seconds / 60);
-            const sec = Math.floor(seconds % 60);
-            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
-        }
-
-        function loadPlaylist() {
-            const playlist = player.getPlaylist();
-            const playlistContainer = document.getElementById('playlist-items');
-            playlistContainer.innerHTML = '';
-
-            playlist.forEach((videoId, index) => {
-                const listItem = document.createElement('li');
-                listItem.textContent = `Vídeo ${index + 1}`;
-                listItem.addEventListener('click', () => {
-                    player.playVideoAt(index);
-                    document.getElementById('playlist-overlay').style.display = 'none';
-                });
-                playlistContainer.appendChild(listItem);
-            });
-        }
+        // Inicialize o valor da variável
+        rangeInput.style.setProperty('--slider-value', `${rangeInput.value}%`);
     </script>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.player-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.player {
+    background: #f0f4f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    transition: background 0.3s, box-shadow 0.3s;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: #f0f4f9;
+    border-bottom: 1px solid #ddd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.player-header h1 {
+    font-size: 18px;
+}
+
+.player-header button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f76700;
+    transition: color 0.3s;
+}
+
+.player-controls {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+#music-player {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.info {
+    margin: 20px 0;
+}
+
+.info .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info .artist {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: #ddd;
+    height: 3px;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .15s ease-in-out;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+/* Webkit Browsers (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #f76700;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-top: -9px;
+}
+
+/* Mozilla Browsers (Firefox) */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #f76700;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* IE Browsers */
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #f76700;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.control-button {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #f76700;
+    transition: color 0.3s;
+}
+
+.control-button:hover {
+    color: #d35500;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+#progress {
+    flex: 1;
+    margin: 0 10px;
+}
+
+#playlist-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#playlist {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+}
+
+#playlist h2 {
+    margin-top: 0;
+}
+
+#playlist ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#playlist ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#playlist ul li:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+#close-playlist {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: #f76700;
+    cursor: pointer;
+}
+
+#close-playlist:hover {
+    text-decoration: underline;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .player {
+    background: #0f0f0f;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.dark-mode .player-header {
+    background: #0f0f0f;
+    border-bottom: 1px solid #333;
+}
+
+.dark-mode .player-header button {
+    color: #f76700;
+}
+
+.dark-mode .control-button {
+    color: #f76700;
+}
+
+.dark-mode .control-button:hover {
+    color: #d35500;
+}
+
+.dark-mode .info p {
+    color: #ffffff;
+}
+
+.dark-mode #playlist-overlay {
+    background: rgba(18, 18, 18, 0.8);
+}
+
+.dark-mode #playlist {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+/* Adicionando o preenchimento dinâmico */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
+    height: 3px; /* Define a altura do preenchimento dinâmico */
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
+    height: 3px; /* Define a altura do preenchimento dinâmico */
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-track {
+    background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
+    height: 3px; /* Define a altura do preenchimento dinâmico */
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #f76700;
+    height: 3px; /* Define a altura do preenchimento dinâmico */
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #ddd;
+    height: 3px; /* Define a altura do preenchimento dinâmico */
+    border-radius: 5px;
+}
