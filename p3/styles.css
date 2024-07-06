@@ -69,7 +69,11 @@ body {
     height: 300px;
     border-radius: 10px;
 }
-
+#music-player iframe{
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
 .info {
     margin: 10px 0;
 }
