@@ -70,6 +70,7 @@ body {
     height: 300px;
     border-radius: 10px;
     margin: 0 auto;
+    position: absolute;
 }
 .info {
     margin: 10px 0;
