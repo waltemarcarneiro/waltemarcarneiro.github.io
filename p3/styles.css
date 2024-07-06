@@ -89,7 +89,7 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
     background: #ddd;
-    height: 2px;
+    height: 3px;
     border-radius: 5px;
     outline: none;
     opacity: 0.7;
@@ -116,7 +116,7 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
-    background: #3498db;
+    background: #f76700;
     cursor: pointer;
     border-radius: 50%;
     border: 2px solid #fff;
@@ -126,7 +126,7 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-ms-thumb {
     width: 20px;
     height: 20px;
-    background: #3498db;
+    background: #f76700;
     cursor: pointer;
     border-radius: 50%;
     border: 2px solid #fff;
@@ -256,4 +256,24 @@ input[type="range"]::-ms-thumb {
 .dark-mode #playlist {
     background: #1e1e1e;
     color: #ffffff;
+}
+/* Adicionando o preenchimento dinâmico */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
+}
+
+input[type="range"]::-moz-range-track {
+    background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
+}
+
+input[type="range"]::-ms-track {
+    background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: #f76700;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: #ddd;
 }
