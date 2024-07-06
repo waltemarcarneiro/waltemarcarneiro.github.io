@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -25,10 +29,11 @@ body {
 }
 
 .player-header {
+    height: 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
     background: #f7f7f7;
     border-bottom: 1px solid #ddd;
 }
@@ -50,7 +55,7 @@ body {
 .player-controls {
     padding: 20px;
     text-align: center;
-    height: calc(100% - 65px); /* Adjust height to fit within player */
+    height: calc(100% - 110px); /* Adjust height to fit within player */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,13 +77,13 @@ body {
 .controls {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    
 }
 
 .controls button {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 32px;
     cursor: pointer;
     color: #f76700;
     transition: color 0.3s;
@@ -92,7 +97,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 #progress {

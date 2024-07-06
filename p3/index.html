@@ -15,10 +15,16 @@
                 <button id="theme-toggle">Modo Escuro</button>
             </div>
             <div class="player-controls">
+                
                 <div id="music-player"></div>
                 <div class="info">
                     <p id="title">Título</p>
                     <p id="artist">Artista</p>
+                </div>
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress" value="0">
+                    <span id="duration">0:00</span>
                 </div>
                 <div class="controls">
                     <button id="repeat-shuffle"><i class="fas fa-redo"></i></button>
@@ -27,11 +33,7 @@
                     <button id="next"><i class="fas fa-forward"></i></button>
                     <button id="playlist-toggle"><i class="fas fa-list"></i></button>
                 </div>
-                <div class="progress-container">
-                    <span id="current-time">0:00</span>
-                    <input type="range" id="progress" value="0">
-                    <span id="duration">0:00</span>
-                </div>
+                
             </div>
         </div>
     </div>
