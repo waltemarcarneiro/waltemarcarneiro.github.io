@@ -28,10 +28,10 @@ function onPlayerReady(event) {
     document.getElementById('play-pause').addEventListener('click', function() {
         if (isPlaying) {
             player.pauseVideo();
-            this.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
+            this.innerHTML = '<i class="fas fa-play"></i>';
         } else {
             player.playVideo();
-            this.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
+            this.innerHTML = '<i class="fas fa-pause"></i>';
         }
         isPlaying = !isPlaying;
     });
@@ -49,29 +49,45 @@ function onPlayerReady(event) {
             isRepeat = false;
             isShuffle = true;
             player.setShuffle(true);
-            this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
+            this.innerHTML = '<i class="fas fa-random"></i>';
         } else if (isShuffle) {
             isRepeat = false;
             isShuffle = false;
             player.setShuffle(false);
-            this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon>';
+            this.innerHTML = '<i class="fas fa-redo"></i>';
         } else {
             isRepeat = true;
             isShuffle = false;
             player.setShuffle(false);
-            this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon>';
+            this.innerHTML = '<i class="fas fa-redo-alt"></i>';
         }
     });
 
+//THEME (ALTERA O CORPO DO TEMA)
     document.getElementById('theme-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
-        const isDarkMode = document.body.classList.contains('dark-mode');
-        this.innerHTML = isDarkMode ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-        
-        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        metaThemeColor.setAttribute('content', isDarkMode ? '#0F0F0F' : '#ffffff');
+        this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
+        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
+
+    // THE (ALTERA O THEME-COLOR DO HEAD)
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        this.textContent = 'Modo Escuro';
+        metaThemeColor.setAttribute('content', '#ffffff');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        this.textContent = 'Modo Claro';
+        metaThemeColor.setAttribute('content', '#0F0F0F');
+    }
+});
+
+
+
 
     document.getElementById('playlist-toggle').addEventListener('click', function() {
         document.getElementById('playlist-overlay').style.display = 'flex';
@@ -102,7 +118,7 @@ function onPlayerReady(event) {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-        document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
+        document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
     }
 
     updateTitleAndArtist();
@@ -110,7 +126,7 @@ function onPlayerReady(event) {
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
-        document.getElementById('play-pause').innerHTML = '<ion-icon name="play-outline"></ion-icon>';
+        document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i>';
         isPlaying = false;
     }
     updateTitleAndArtist();
@@ -125,7 +141,7 @@ function updateTitleAndArtist() {
 function formatTime(seconds) {
     const min = Math.floor(seconds / 60);
     const sec = Math.floor(seconds % 60);
-    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    return ${min}:${sec < 10 ? '0' : ''}${sec};
 }
 
 function loadPlaylist() {
@@ -135,7 +151,7 @@ function loadPlaylist() {
 
     playlist.forEach((videoId, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `Vídeo ${index + 1}`;
+        listItem.textContent = Vídeo ${index + 1};
         listItem.addEventListener('click', () => {
             player.playVideoAt(index);
             document.getElementById('playlist-overlay').style.display = 'none';
