@@ -159,3 +159,126 @@ function loadPlaylist() {
         playlistContainer.appendChild(listItem);
     });
 }
+///////////////////////////
+
+let player;
+let audioCtx;
+let source;
+let audio;
+
+// Inicializar o player do YouTube
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('music-player', {
+        height: '0', // Ocultar o iframe visualmente
+        width: '0', // Ocultar o iframe visualmente
+        videoId: 'ckUV8X6MkaI', // ID do vídeo inicial
+        playerVars: {
+            'listType': 'playlist',
+            'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5', // Lista de reprodução
+            'autoplay': 0,
+            'controls': 0,
+        },
+        events: {
+            'onReady': onPlayerReady, // Chama a função onPlayerReady quando o player está pronto
+            'onStateChange': onPlayerStateChange // Chama a função onPlayerStateChange quando o estado do player muda
+        }
+    });
+}
+
+// Quando o player estiver pronto
+function onPlayerReady(event) {
+    // Criar um novo contexto de áudio
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    // Criar um elemento de áudio
+    audio = new Audio();
+    audio.crossOrigin = "anonymous"; // Permitir a extração de áudio
+    audio.src = event.target.getIframe().src;
+
+    // Criar uma fonte de áudio do elemento de áudio
+    source = audioCtx.createMediaElementSource(audio);
+
+    // Conectar a fonte ao destino (alto-falantes)
+    source.connect(audioCtx.destination);
+
+    // Adicionar eventos aos botões de controle
+    document.getElementById('play-pause').addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            this.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            audio.pause();
+            this.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+
+    document.getElementById('prev').addEventListener('click', function() {
+        player.previousVideo();
+        updateAudioSrc();
+    });
+
+    document.getElementById('next').addEventListener('click', function() {
+        player.nextVideo();
+        updateAudioSrc();
+    });
+
+    document.getElementById('repeat-shuffle').addEventListener('click', function() {
+        // Implementar lógica de repetição e shuffle
+    });
+
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
+        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+
+        // Alterar a meta tag theme-color
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (document.body.classList.contains('dark-mode')) {
+            metaThemeColor.setAttribute('content', '#1e1e1e');
+        } else {
+            metaThemeColor.setAttribute('content', '#ffffff');
+        }
+    });
+
+    // Verificar o tema salvo e aplicar
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+        document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+
+        // Alterar a meta tag theme-color
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (savedTheme === 'dark') {
+            metaThemeColor.setAttribute('content', '#1e1e1e');
+        } else {
+            metaThemeColor.setAttribute('content', '#ffffff');
+        }
+    }
+
+    updateTitleAndArtist();
+}
+
+// Atualizar o título e o artista
+function updateTitleAndArtist() {
+    const videoData = player.getVideoData();
+    document.getElementById('title').textContent = videoData.title;
+    document.getElementById('artist').textContent = videoData.author;
+}
+
+// Atualizar a fonte de áudio quando o vídeo mudar
+function updateAudioSrc() {
+    audio.src = player.getIframe().src;
+}
+
+// Inicializar a API do YouTube
+if (typeof YT === 'undefined' || typeof YT.Player === 'undefined') {
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+// Manipular a mudança de estado do player
+function onPlayerStateChange(event) {
+    // Lógica adicional pode ser adicionada aqui se necessário
+}
