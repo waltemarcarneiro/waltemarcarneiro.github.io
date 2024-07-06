@@ -15,7 +15,6 @@
                 <button id="theme-toggle">Modo Escuro</button>
             </div>
             <div class="player-controls">
-
                 <div id="music-player"></div>
                 <div class="info">
                     <p id="title" class="title">Título</p>
@@ -33,7 +32,6 @@
                     <button id="next"><i class="fas fa-forward"></i></button>
                     <button id="playlist-toggle"><i class="fas fa-list"></i></button>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -47,18 +45,15 @@
 
     <script>
         const rangeInput = document.querySelector('input[type="range"]');
-
         rangeInput.addEventListener('input', function() {
             this.style.setProperty('--slider-value', `${this.value}%`);
         });
-
-        // Inicialize o valor da variável
         rangeInput.style.setProperty('--slider-value', `${rangeInput.value}%`);
     </script>
 
     <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
-    <script src="audioCapture.js"></script> <!-- Adicione esta linha -->
+    <script src="audioCapture.js"></script>
 </body>
 </html>

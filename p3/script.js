@@ -25,13 +25,17 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+    initAudio();
+
     document.getElementById('play-pause').addEventListener('click', function() {
         if (isPlaying) {
             player.pauseVideo();
             this.innerHTML = '<i class="fas fa-play"></i>';
+            audioContext.suspend();
         } else {
             player.playVideo();
             this.innerHTML = '<i class="fas fa-pause"></i>';
+            audioContext.resume();
         }
         isPlaying = !isPlaying;
     });
@@ -125,17 +129,17 @@ function formatTime(seconds) {
 }
 
 function loadPlaylist() {
-    const playlist = player.getPlaylist();
-    const playlistContainer = document.getElementById('playlist-items');
-    playlistContainer.innerHTML = '';
+    const playlist = document.getElementById('playlist-items');
+    const playlistData = player.getPlaylist();
+    playlist.innerHTML = '';
 
-    playlist.forEach((videoId, index) => {
+    playlistData.forEach((videoId, index) => {
         const listItem = document.createElement('li');
         listItem.textContent = `Vídeo ${index + 1}`;
         listItem.addEventListener('click', () => {
             player.playVideoAt(index);
             document.getElementById('playlist-overlay').style.display = 'none';
         });
-        playlistContainer.appendChild(listItem);
+        playlist.appendChild(listItem);
     });
 }

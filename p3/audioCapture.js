@@ -20,22 +20,8 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// Initialize audio capture when the player is ready
-function onPlayerReady(event) {
-    captureAudio();
-
-    document.getElementById('play-pause').addEventListener('click', function() {
-        if (isPlaying) {
-            player.pauseVideo();
-            this.innerHTML = '<i class="fas fa-play"></i>';
-            audioContext.suspend();
-        } else {
-            player.playVideo();
-            this.innerHTML = '<i class="fas fa-pause"></i>';
-            audioContext.resume();
-        }
-        isPlaying = !isPlaying;
-    });
-
-    // Resto do seu código onPlayerReady...
+function initAudio() {
+    if (!audioContext) {
+        captureAudio();
+    }
 }
