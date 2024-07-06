@@ -37,20 +37,6 @@
             </div>
         </div>
     </div>
-<!--Armazenar o estado do player no localStorage quando a página for descarregada:-->
-<script>
-    window.addEventListener('beforeunload', () => {
-        if (player) {
-            localStorage.setItem('playerState', JSON.stringify({
-                currentTime: player.getCurrentTime(),
-                videoId: player.getVideoData().video_id,
-                isPlaying: isPlaying
-            }));
-        }
-    });
-</script>
-
-
     <div id="playlist-overlay">
         <div id="playlist">
             <h2>Playlist</h2>
@@ -59,22 +45,20 @@
         </div>
     </div>
 
+    <script>
+        const rangeInput = document.querySelector('input[type="range"]');
 
-<script>
-    const rangeInput = document.querySelector('input[type="range"]');
+        rangeInput.addEventListener('input', function() {
+            this.style.setProperty('--slider-value', `${this.value}%`);
+        });
 
-    rangeInput.addEventListener('input', function() {
-        this.style.setProperty('--slider-value', `${this.value}%`);
-    });
+        // Inicialize o valor da variável
+        rangeInput.style.setProperty('--slider-value', `${rangeInput.value}%`);
+    </script>
 
-    // Inicialize o valor da variável
-    rangeInput.style.setProperty('--slider-value', `${rangeInput.value}%`);
-</script>
-    
-    <script src="backgroundAudio.js"></script> <!-- Adicione esta linha -->
-    <script src="recuperaPlayer.js"></script>
     <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
+    <script src="audioCapture.js"></script> <!-- Adicione esta linha -->
 </body>
 </html>
