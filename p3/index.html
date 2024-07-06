@@ -37,6 +37,20 @@
             </div>
         </div>
     </div>
+<!--Armazenar o estado do player no localStorage quando a página for descarregada:-->
+<script>
+    window.addEventListener('beforeunload', () => {
+        if (player) {
+            localStorage.setItem('playerState', JSON.stringify({
+                currentTime: player.getCurrentTime(),
+                videoId: player.getVideoData().video_id,
+                isPlaying: isPlaying
+            }));
+        }
+    });
+</script>
+
+
     <div id="playlist-overlay">
         <div id="playlist">
             <h2>Playlist</h2>
@@ -57,7 +71,7 @@
     rangeInput.style.setProperty('--slider-value', `${rangeInput.value}%`);
 </script>
 
-    
+    <script src="recuperaPlayer.js"></script>
     <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
