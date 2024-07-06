@@ -228,12 +228,12 @@ input[type="range"]::-ms-thumb {
 }
 
 .dark-mode .player {
-    background: #1e1e1e;
+    background: #0f0f0f;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .dark-mode .player-header {
-    background: #1e1e1e;
+    background: #0f0f0f;
     border-bottom: 1px solid #333;
 }
 
