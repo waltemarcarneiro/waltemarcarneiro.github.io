@@ -89,7 +89,7 @@ input[type="range" i] {
     appearance: auto;
     cursor: default;
     color: light-dark(rgb(16, 16, 16), rgb(255, 255, 255));
-    height: 3px;
+    height: 2px;
     border: initial;
     
 }
