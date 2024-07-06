@@ -85,7 +85,14 @@ body {
 .info p {
     margin: 5px 0;
 }
-
+input[type="range" i] {
+    appearance: auto;
+    cursor: default;
+    color: light-dark(rgb(16, 16, 16), rgb(255, 255, 255));
+    height: 3px;
+    border: initial;
+    
+}
 .controls {
     display: flex;
     justify-content: space-around;
