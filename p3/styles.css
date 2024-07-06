@@ -69,7 +69,14 @@ body {
 .info {
     margin: 10px 0;
 }
-
+.info .title{
+    font-size: 20px;
+    font-weight: 500;
+}
+.info .artist{
+    font-size: 18px;
+    font-weight: 500;
+}
 .info p {
     margin: 5px 0;
 }
