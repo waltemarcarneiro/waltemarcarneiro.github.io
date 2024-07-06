@@ -17,8 +17,8 @@ body {
 .player-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /align-items: center;
+    height: 93vh;
 }
 
 .player {
@@ -28,7 +28,7 @@ body {
     max-width: 400px;
     overflow: hidden;
     transition: background 0.3s, box-shadow 0.3s;
-    height: 100vh;
+    height: 99%;
 }
 
 .player-header {
@@ -94,7 +94,7 @@ input[type="range"] {
     outline: none;
     opacity: 0.7;
     transition: opacity .15s ease-in-out;
-    
+
 }
 
 input[type="range"]:hover {
