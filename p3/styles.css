@@ -65,14 +65,9 @@ body {
 }
 
 #music-player {
-    width: 100%;
+    width: 300px;
     height: 300px;
     border-radius: 10px;
-}
-iframe{
-    object-fit: cover;
-    height: 300px;
-    width: 100%;
 }
 .info {
     margin: 10px 0;
