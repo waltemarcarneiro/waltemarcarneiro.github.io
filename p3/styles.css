@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -73,31 +73,69 @@ body {
 .info {
     margin: 10px 0;
 }
-.info .title{
+.info .title {
     font-size: 20px;
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
 }
-.info .artist{
+.info .artist {
     font-size: 16px;
     font-weight: 400;
 }
 .info p {
     margin: 5px 0;
 }
-input[type="range" i] {
-    appearance: auto;
-    cursor: default;
-    color: light-dark(rgb(16, 16, 16), rgb(255, 255, 255));
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: #ddd;
     height: 2px;
-    border: initial;
-    
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .15s ease-in-out;
 }
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+/* Webkit Browsers (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #f76700;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* Mozilla Browsers (Firefox) */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #3498db;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* IE Browsers */
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #3498db;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
 .controls {
     display: flex;
     justify-content: space-around;
     margin-top: 30px;
-    
 }
 
 .controls button {
