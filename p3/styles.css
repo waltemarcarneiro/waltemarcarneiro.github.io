@@ -69,7 +69,7 @@ body {
     height: 300px;
     border-radius: 10px;
 }
-#music-player iframe{
+iframe{
     object-fit: cover;
     height: 300px;
     width: 100%;
