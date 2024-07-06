@@ -44,6 +44,19 @@
             <button id="close-playlist">Fechar</button>
         </div>
     </div>
+
+<script>
+    const rangeInput = document.querySelector('input[type="range"]');
+
+    rangeInput.addEventListener('input', function() {
+        this.style.setProperty('--slider-value', `${this.value}%`);
+    });
+
+    // Inicialize o valor da variável
+    rangeInput.style.setProperty('--slider-value', `${rangeInput.value}%`);
+</script>
+
+    
     <script src="https://kit.fontawesome.com/a7bac8094a.js" crossorigin="anonymous"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
