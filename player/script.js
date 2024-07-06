@@ -12,7 +12,8 @@ function onYouTubeIframeAPIReady() {
         videoId: 'ckUV8X6MkaI',
         playerVars: {
             'listType': 'playlist',
-            'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5'
+            'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5',
+            'controls': 0 // Remover controles nativos
         },
         events: {
             'onReady': onPlayerReady,
@@ -93,12 +94,12 @@ function updatePlaylist() {
     playlistContainer.innerHTML = '';
 
     playlist.forEach((videoId, index) => {
-        player.getVideoData(videoId, (data) => {
-            const listItem = document.createElement('li');
-            listItem.innerText = data.title;
-            listItem.addEventListener('click', () => player.playVideoAt(index));
-            playlistContainer.appendChild(listItem);
-        });
+        player.cueVideoById(videoId);
+        const data = player.getVideoData();
+        const listItem = document.createElement('li');
+        listItem.innerText = data.title;
+        listItem.addEventListener('click', () => player.playVideoAt(index));
+        playlistContainer.appendChild(listItem);
     });
 }
 

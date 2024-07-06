@@ -191,10 +191,7 @@ ion-icon {
 }
 
 .player-controls .controls #play-pause {
-    font-size: 32px;
-    background: var(--icon-color);
-    border-radius: 50%;
-    padding: 10px;
+    font-size: 36px;
 }
 
 #playlist-overlay {
