@@ -28,10 +28,10 @@ function onPlayerReady(event) {
     document.getElementById('play-pause').addEventListener('click', function() {
         if (isPlaying) {
             player.pauseVideo();
-            this.innerHTML = '<i class="fas fa-play"></i>';
+            this.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
         } else {
             player.playVideo();
-            this.innerHTML = '<i class="fas fa-pause"></i>';
+            this.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
         }
         isPlaying = !isPlaying;
     });
@@ -49,45 +49,29 @@ function onPlayerReady(event) {
             isRepeat = false;
             isShuffle = true;
             player.setShuffle(true);
-            this.innerHTML = '<i class="fas fa-random"></i>';
+            this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
         } else if (isShuffle) {
             isRepeat = false;
             isShuffle = false;
             player.setShuffle(false);
-            this.innerHTML = '<i class="fas fa-redo"></i>';
+            this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon>';
         } else {
             isRepeat = true;
             isShuffle = false;
             player.setShuffle(false);
-            this.innerHTML = '<i class="fas fa-redo-alt"></i>';
+            this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon>';
         }
     });
 
-//THEME (ALTERA O CORPO DO TEMA)
     document.getElementById('theme-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
-        this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Escuro';
-        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        this.innerHTML = isDarkMode ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        metaThemeColor.setAttribute('content', isDarkMode ? '#0F0F0F' : '#ffffff');
     });
-
-    // THE (ALTERA O THEME-COLOR DO HEAD)
-document.getElementById('theme-toggle').addEventListener('click', function() {
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        this.textContent = 'Modo Escuro';
-        metaThemeColor.setAttribute('content', '#ffffff');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        this.textContent = 'Modo Claro';
-        metaThemeColor.setAttribute('content', '#0F0F0F');
-    }
-});
-
-
-
 
     document.getElementById('playlist-toggle').addEventListener('click', function() {
         document.getElementById('playlist-overlay').style.display = 'flex';
@@ -118,7 +102,7 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-        document.getElementById('theme-toggle').textContent = savedTheme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+        document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
     }
 
     updateTitleAndArtist();
@@ -126,7 +110,7 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
-        document.getElementById('play-pause').innerHTML = '<i class="fas fa-play"></i>';
+        document.getElementById('play-pause').innerHTML = '<ion-icon name="play-outline"></ion-icon>';
         isPlaying = false;
     }
     updateTitleAndArtist();

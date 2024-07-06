@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player de Música Moderno</title>
+    <title>Player de Música Avançado</title>
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
     <div class="player-container">
         <div class="player">
-            <div id="music-player"></div>
+            <div class="player-header">
+                <h1>Player de Música</h1>
+                <button id="theme-toggle">
+                    <ion-icon name="moon-outline"></ion-icon>
+                </button>
+            </div>
             <div class="player-controls">
-                <div class="player-header">
-                    <h1>Player de Música</h1>
-                    <button id="theme-toggle">
-                        <ion-icon name="moon-outline"></ion-icon>
-                    </button>
-                </div>
+                <div id="music-player"></div>
                 <div class="info">
                     <p id="title" class="title">Título</p>
                     <p id="artist" class="artist">Artista</p>
@@ -31,21 +30,21 @@
                     <span id="duration">0:00</span>
                 </div>
                 <div class="controls">
-                    <div class="control-button">
-                        <ion-icon name="shuffle-outline"></ion-icon>
-                    </div>
-                    <div class="control-button">
-                        <ion-icon name="play-back-outline"></ion-icon>
-                    </div>
-                    <div class="control-button">
+                    <button id="repeat-shuffle">
+                        <ion-icon name="repeat-outline"></ion-icon>
+                    </button>
+                    <button id="prev">
+                        <ion-icon name="play-skip-back-outline"></ion-icon>
+                    </button>
+                    <button id="play-pause">
                         <ion-icon name="play-outline"></ion-icon>
-                    </div>
-                    <div class="control-button">
-                        <ion-icon name="play-forward-outline"></ion-icon>
-                    </div>
-                    <div class="control-button">
+                    </button>
+                    <button id="next">
+                        <ion-icon name="play-skip-forward-outline"></ion-icon>
+                    </button>
+                    <button id="playlist-toggle">
                         <ion-icon name="list-outline"></ion-icon>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -57,17 +56,6 @@
             <button id="close-playlist">Fechar</button>
         </div>
     </div>
-
-    <script>
-        const rangeInput = document.querySelector('input[type="range"]');
-
-        rangeInput.addEventListener('input', function() {
-            this.style.setProperty('--slider-value', `${this.value}%`);
-        });
-
-        // Inicialize o valor da variável
-        rangeInput.style.setProperty('--slider-value', `${rangeInput.value}%`);
-    </script>
 
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
