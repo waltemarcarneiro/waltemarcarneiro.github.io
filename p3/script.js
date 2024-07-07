@@ -87,28 +87,36 @@ function onPlayerReady(event) {
         player.seekTo((progressBar.value / 100) * duration, true);
     });
 
-//THEME DARK / LIGHT
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-        document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
-    }
+//TEMA CLARO E ESCURO
+const savedTheme = localStorage.getItem('theme');
+const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
-//THEME-COLOR *HEAD*
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+    document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
+    metaThemeColor.setAttribute('content', savedTheme === 'dark' ? '#0F0F0F' : '#ffffff');
+}
+
+//THEME-COLOR CONFIG
 document.getElementById('theme-toggle').addEventListener('click', function() {
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     const currentTheme = document.documentElement.getAttribute('data-theme');
-    
+
     if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
+        document.body.classList.remove('dark-mode');
         this.innerHTML = '<ion-icon name="moon-outline"></ion-icon>';
         metaThemeColor.setAttribute('content', '#ffffff');
+        localStorage.setItem('theme', 'light');
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
+        document.body.classList.add('dark-mode');
         this.innerHTML = '<ion-icon name="sunny-outline"></ion-icon>';
         metaThemeColor.setAttribute('content', '#0F0F0F');
+        localStorage.setItem('theme', 'dark');
     }
 });
+
 ////////////
     updateTitleAndArtist();
 }
