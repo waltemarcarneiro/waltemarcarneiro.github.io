@@ -236,6 +236,7 @@ input[type="range"]::-ms-thumb {
     border: none;
     color: #f76700;
     cursor: pointer;
+    font-size: 32px;
 }
 
 #close-playlist:hover {
