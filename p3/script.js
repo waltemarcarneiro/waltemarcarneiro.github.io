@@ -91,6 +91,7 @@ function onPlayerReady(event) {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+        document.body.classList.toggle('light-mode', savedTheme === 'light');
         document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
     }
 
