@@ -25,51 +25,43 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-    document.getElementById('play-pause').addEventListener('click', function() {
+    document.querySelector('.control-button:nth-child(3)').addEventListener('click', function() {
         if (isPlaying) {
             player.pauseVideo();
-            this.innerHTML = '<ion-icon name="play"></ion-icon>';
+            this.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
         } else {
             player.playVideo();
-            this.innerHTML = '<ion-icon name="pause"></ion-icon>';
+            this.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
         }
         isPlaying = !isPlaying;
     });
 
-    document.getElementById('prev').addEventListener('click', function() {
+    document.querySelector('.control-button:nth-child(2)').addEventListener('click', function() {
         player.previousVideo();
     });
 
-    document.getElementById('next').addEventListener('click', function() {
+    document.querySelector('.control-button:nth-child(4)').addEventListener('click', function() {
         player.nextVideo();
     });
 
-    document.getElementById('repeat-shuffle').addEventListener('click', function() {
-        if (isRepeat) {
-            isRepeat = false;
-            isShuffle = true;
-            player.setShuffle(true);
-            this.innerHTML = '<ion-icon name="shuffle"></ion-icon>';
-        } else if (isShuffle) {
-            isRepeat = false;
+    document.querySelector('.control-button:nth-child(1)').addEventListener('click', function() {
+        if (isShuffle) {
             isShuffle = false;
-            player.setShuffle(false);
-            this.innerHTML = '<ion-icon name="repeat"></ion-icon>';
+            this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
         } else {
-            isRepeat = true;
-            isShuffle = false;
-            player.setShuffle(false);
-            this.innerHTML = '<ion-icon name="repeat"></ion-icon>';
+            isShuffle = true;
+            this.innerHTML = '<ion-icon name="shuffle"></ion-icon>';
         }
+        player.setShuffle(isShuffle);
     });
 
     document.getElementById('theme-toggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
-        this.innerHTML = document.body.classList.contains('dark-mode') ? '<ion-icon name="sunny"></ion-icon>' : '<ion-icon name="moon"></ion-icon>';
+        this.innerHTML = document.body.classList.contains('dark-mode') ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
         localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
-    document.getElementById('playlist-toggle').addEventListener('click', function() {
+    document.querySelector('.control-button:nth-child(5)').addEventListener('click', function() {
         document.getElementById('playlist-overlay').style.display = 'flex';
         loadPlaylist();
     });
@@ -98,7 +90,7 @@ function onPlayerReady(event) {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-        document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny"></ion-icon>' : '<ion-icon name="moon"></ion-icon>';
+        document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
     }
 
     updateTitleAndArtist();
@@ -106,7 +98,7 @@ function onPlayerReady(event) {
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
-        document.getElementById('play-pause').innerHTML = '<ion-icon name="play"></ion-icon>';
+        document.querySelector('.control-button:nth-child(3)').innerHTML = '<ion-icon name="play-outline"></ion-icon>';
         isPlaying = false;
     }
     updateTitleAndArtist();
