@@ -99,7 +99,7 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     const currentTheme = document.documentElement.getAttribute('data-theme');
     
-    if (currentTheme === 'dark') {
+    if (currentTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
         this.innerHTML = '<ion-icon name="moon-outline"></ion-icon>';
         metaThemeColor.setAttribute('content', '#ffffff');
