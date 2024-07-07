@@ -231,7 +231,7 @@ input[type="range"]::-ms-thumb {
 
 #close-playlist {
     margin-top: 0px;
-    right: 20px;
+    right: 40px;
     position: absolute;
     background: none;
     border: none;
