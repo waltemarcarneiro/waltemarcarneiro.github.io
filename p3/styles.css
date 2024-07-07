@@ -230,7 +230,8 @@ input[type="range"]::-ms-thumb {
 }
 
 #close-playlist {
-    margin-top: 10px;
+    margin-top: 0px;
+    position: absolute;
     background: none;
     border: none;
     color: #f76700;
