@@ -86,13 +86,30 @@ function onPlayerReady(event) {
         const duration = player.getDuration();
         player.seekTo((progressBar.value / 100) * duration, true);
     });
-
+    
+//THEME DARK / LIGHT
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         document.body.classList.toggle('dark-mode', savedTheme === 'dark');
         document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
     }
 
+//THEME-COLOR *HEAD*
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        this.textContent = 'Modo Escuro';
+        metaThemeColor.setAttribute('content', '#ffffff');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        this.textContent = 'Modo Claro';
+        metaThemeColor.setAttribute('content', '#0F0F0F');
+    }
+});
+////////////
     updateTitleAndArtist();
 }
 
