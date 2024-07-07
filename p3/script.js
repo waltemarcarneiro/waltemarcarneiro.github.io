@@ -28,10 +28,10 @@ function onPlayerReady(event) {
     document.querySelector('.control-button:nth-child(3)').addEventListener('click', function() {
         if (isPlaying) {
             player.pauseVideo();
-            this.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
+            this.innerHTML = '<ion-icon name="play-outline" class="play-outline"></ion-icon>';
         } else {
             player.playVideo();
-            this.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
+            this.innerHTML = '<ion-icon name="pause-outline" class="pause-outline"></ion-icon>';
         }
         isPlaying = !isPlaying;
     });
