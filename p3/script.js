@@ -86,7 +86,7 @@ function onPlayerReady(event) {
         const duration = player.getDuration();
         player.seekTo((progressBar.value / 100) * duration, true);
     });
-    
+
 //THEME DARK / LIGHT
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -101,11 +101,11 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     
     if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
-        this.textContent = 'Modo Escuro';
+        this.innerHTML = '<ion-icon name="moon-outline"></ion-icon>';
         metaThemeColor.setAttribute('content', '#ffffff');
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
-        this.textContent = 'Modo Claro';
+        this.innerHTML = '<ion-icon name="sunny-outline"></ion-icon>';
         metaThemeColor.setAttribute('content', '#0F0F0F');
     }
 });
