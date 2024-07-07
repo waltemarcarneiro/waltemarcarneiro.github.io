@@ -331,4 +331,22 @@ input[type="range"]::-ms-fill-upper {
     .controls {
         margin-top: 20px;
     }
+
+    #close-playlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #f76700;
+    cursor: pointer;
+    }
+
+    #close-playlist:hover {
+    color: #d35500;
+    }
+
 }
+
+    
