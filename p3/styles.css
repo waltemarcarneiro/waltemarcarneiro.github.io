@@ -44,8 +44,6 @@ body {
     padding: 0px;
     background: #f0f4f9;
     border-bottom: 1px solid #ddd;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
 }
 
 .player-header h1 {
@@ -81,8 +79,8 @@ body {
 }
 
 .info {
-    margin: 15px 0;
-    height: 90px
+    margin: 20px 0;
+    height: 90px;
 }
 
 .info .title {
@@ -146,8 +144,9 @@ input[type="range"]::-ms-thumb {
 .controls {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 10px;
     align-items: center;
+    height: 60px;
 }
 
 .control-button {
@@ -180,7 +179,7 @@ input[type="range"]::-ms-thumb {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 #progress {
@@ -342,14 +341,14 @@ input[type="range"]::-ms-fill-upper {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        
         background: #f0f4f9;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
 
     .progress-container {
-        margin-top: 20px;
+        margin-top: 0px;
     }
 
     .controls {
