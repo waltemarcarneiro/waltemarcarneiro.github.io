@@ -20,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 20px;
+    padding: 0px;
 }
 
 .player {
@@ -33,10 +33,11 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    margin: 10px;
 }
 
 .player-header {
-    height: 60px;
+    height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,7 +64,7 @@ body {
 }
 
 .player-controls {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -144,7 +145,7 @@ input[type="range"]::-ms-thumb {
 .controls {
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
+    margin-top: 20px;
     align-items: center;
 }
 
@@ -178,7 +179,7 @@ input[type="range"]::-ms-thumb {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #progress {
