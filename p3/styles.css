@@ -305,10 +305,12 @@ input[type="range"]::-ms-thumb {
 .dark-mode #playlist {
     background: #1e1e1e;
     color: #ffffff;
-    /*RIGHT POSITION*/
+    /*POSITION*/
     display: flex;
     left: 50%;
     position: absolute;
+    max-width: 50%;
+    top: 0;
 }
 .dark-mode #playlist ul li {
     padding: 10px;
