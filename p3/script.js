@@ -1,7 +1,6 @@
 let player;
 let isPlaying = false;
-let isShuffle = false;
-let isRepeat = false;
+let mode = 'repeat'; // 'repeat', 'repeat_one', 'shuffle'
 let progressBar = document.getElementById('progress');
 let currentTimeDisplay = document.getElementById('current-time');
 let durationDisplay = document.getElementById('duration');
@@ -45,16 +44,19 @@ function onPlayerReady(event) {
     });
 
     document.querySelector('.control-button:nth-child(1)').addEventListener('click', function() {
-        if (isShuffle) {
-            isShuffle = false;
-            isRepeat = true;
-            this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon><span class="repeat-number">1</span>';
-        } else if (isRepeat) {
-            isRepeat = false;
-            this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
-        } else {
-            isShuffle = true;
-            this.innerHTML = '<ion-icon name="shuffle"></ion-icon>';
+        switch (mode) {
+            case 'repeat':
+                mode = 'repeat_one';
+                this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon><span class="repeat-number">1</span>';
+                break;
+            case 'repeat_one':
+                mode = 'shuffle';
+                this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
+                break;
+            case 'shuffle':
+                mode = 'repeat';
+                this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon>';
+                break;
         }
     });
 
@@ -93,7 +95,6 @@ function onPlayerReady(event) {
     updateTitleAndArtist();
 }
 
-//TEMA CLARO E ESCURO
 const savedTheme = localStorage.getItem('theme');
 const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -103,7 +104,7 @@ if (savedTheme) {
     document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
     metaThemeColor.setAttribute('content', savedTheme === 'dark' ? '#0F0F0F' : '#ffffff');
 }
-//THEME-COLOR CONFIG
+
 document.getElementById('theme-toggle').addEventListener('click', function() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
 
@@ -130,13 +131,22 @@ function onPlayerStateChange(event) {
         const playlist = player.getPlaylist();
         const currentIndex = player.getPlaylistIndex();
 
-        if (isRepeat) {
-            player.seekTo(0);
-            player.playVideo();
-        } else if (currentIndex === playlist.length - 1) {
-            player.playVideoAt(0);
-        } else {
-            player.nextVideo();
+        switch (mode) {
+            case 'repeat_one':
+                player.seekTo(0);
+                player.playVideo();
+                break;
+            case 'shuffle':
+                player.setShuffle(true);
+                player.nextVideo();
+                break;
+            case 'repeat':
+                if (currentIndex === playlist.length - 1) {
+                    player.playVideoAt(0);
+                } else {
+                    player.nextVideo();
+                }
+                break;
         }
     }
     updateTitleAndArtist();
