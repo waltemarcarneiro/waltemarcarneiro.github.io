@@ -349,18 +349,11 @@ input[type="range"]::-ms-fill-upper {
         height: 100%;
     }
 
-    #music-player{
-        width: 100%;
-        height: 90%;
-        display: flex;
-        align-items: center;
-        
-    }
-    .music-player-wide{
-        display: flex;
-        align-items: center;
+    #music-player {
         width: 50%;
+        height: 100%;
     }
+
     .player-controls {
         width: 50%;
         height: 100%;
