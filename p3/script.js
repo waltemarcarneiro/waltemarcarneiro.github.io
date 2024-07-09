@@ -125,9 +125,17 @@ function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
         document.querySelector('.control-button:nth-child(3)').innerHTML = '<ion-icon name="play-outline"></ion-icon>';
         isPlaying = false;
+        
+        const playlist = player.getPlaylist();
+        const currentIndex = player.getPlaylistIndex();
+
         if (isRepeat) {
             player.seekTo(0);
             player.playVideo();
+        } else if (currentIndex === playlist.length - 1) {
+            player.playVideoAt(0);
+        } else {
+            player.nextVideo();
         }
     }
     updateTitleAndArtist();
