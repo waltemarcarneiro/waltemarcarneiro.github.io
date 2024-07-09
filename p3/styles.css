@@ -251,9 +251,41 @@ input[type="range"]::-ms-thumb {
     margin-right: 10px;
 }
 
+#playlist ul li span {
+    flex: 1;
+}
+
 #playlist ul li:hover {
     background: #f0f0f0;
     cursor: pointer;
+}
+
+#close-playlist {
+    margin-top: 0px;
+    right: 40px;
+    position: absolute;
+    background: none;
+    border: none;
+    color: #f76700;
+    cursor: pointer;
+    font-size: 32px;
+}
+
+#close-playlist:hover {
+    text-decoration: underline;
+}
+
+.dark-mode #playlist-overlay {
+    background: rgba(18, 18, 18, 0.8);
+}
+
+.dark-mode #playlist {
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode #playlist ul li {
+    border-bottom: 1px solid #6666663d;
 }
 
 #close-playlist {
