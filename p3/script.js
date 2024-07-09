@@ -45,14 +45,19 @@ function onPlayerReady(event) {
     });
 
     document.querySelector('.control-button:nth-child(1)').addEventListener('click', function() {
+        isShuffle = !isShuffle;
+        this.innerHTML = isShuffle ? '<ion-icon name="shuffle"></ion-icon>' : '<ion-icon name="shuffle-outline"></ion-icon>';
+        // Função fictícia para indicar o modo shuffle no player. Ajuste conforme necessário.
         if (isShuffle) {
-            isShuffle = false;
-            this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
+            player.setShuffle(true);
         } else {
-            isShuffle = true;
-            this.innerHTML = '<ion-icon name="shuffle"></ion-icon>';
+            player.setShuffle(false);
         }
-        player.setShuffle(isShuffle);
+    });
+
+    document.querySelector('.control-button:nth-child(6)').addEventListener('click', function() {
+        isRepeat = !isRepeat;
+        this.innerHTML = isRepeat ? '<ion-icon name="repeat"></ion-icon>' : '<ion-icon name="repeat-outline"></ion-icon>';
     });
 
     document.getElementById('theme-toggle').addEventListener('click', function() {
@@ -87,7 +92,16 @@ function onPlayerReady(event) {
         player.seekTo((progressBar.value / 100) * duration, true);
     });
 
-//TEMA CLARO E ESCURO
+    player.addEventListener('onStateChange', function(event) {
+        if (event.data === YT.PlayerState.ENDED && isRepeat) {
+            player.seekTo(0);
+            player.playVideo();
+        }
+    });
+
+    updateTitleAndArtist();
+}
+
 const savedTheme = localStorage.getItem('theme');
 const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -98,7 +112,6 @@ if (savedTheme) {
     metaThemeColor.setAttribute('content', savedTheme === 'dark' ? '#0F0F0F' : '#ffffff');
 }
 
-//THEME-COLOR CONFIG
 document.getElementById('theme-toggle').addEventListener('click', function() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
 
@@ -116,10 +129,6 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
         localStorage.setItem('theme', 'dark');
     }
 });
-
-////////////
-    updateTitleAndArtist();
-}
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.ENDED) {
