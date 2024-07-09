@@ -30,7 +30,7 @@ body {
     max-width: 400px;
     overflow: hidden;
     transition: background 0.3s, box-shadow 0.3s;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -73,7 +73,7 @@ body {
 #music-player {
     width: 100%;
     height: 300px;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
     pointer-events: none;
 }
@@ -371,5 +371,3 @@ input[type="range"]::-ms-fill-upper {
     }
 
 }
-
-    
