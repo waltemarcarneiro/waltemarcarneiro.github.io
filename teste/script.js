@@ -10,10 +10,10 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('music-player', {
         height: '315',
         width: '100%',
-        videoId: 'FoGhN9r1L9o',
+        videoId: 'Cz18kmKM8Lo',
         playerVars: {
             'listType': 'playlist',
-            'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5',
+            'list': 'PLf7Ld_SZyNJK3B9N2nkMIj7JnJr9VwexW',
             'autoplay': 0,
             'controls': 0,
         },
