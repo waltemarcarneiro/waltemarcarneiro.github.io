@@ -93,6 +93,7 @@ function onPlayerReady(event) {
     updateTitleAndArtist();
 }
 
+//TEMA CLARO E ESCURO
 const savedTheme = localStorage.getItem('theme');
 const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -102,7 +103,7 @@ if (savedTheme) {
     document.getElementById('theme-toggle').innerHTML = savedTheme === 'dark' ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
     metaThemeColor.setAttribute('content', savedTheme === 'dark' ? '#0F0F0F' : '#ffffff');
 }
-
+//THEME-COLOR CONFIG
 document.getElementById('theme-toggle').addEventListener('click', function() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
 
