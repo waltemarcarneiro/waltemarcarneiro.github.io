@@ -407,5 +407,6 @@ input[type="range"]::-ms-fill-upper {
     position: absolute;
     max-width: 50%;
     top: 0;
+    bottom: 0;
     }
 }
