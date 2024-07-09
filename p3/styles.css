@@ -270,52 +270,46 @@ input[type="range"]::-ms-thumb {
     cursor: pointer;
     font-size: 32px;
 }
-
 #close-playlist:hover {
     text-decoration: underline;
 }
-
-.dark-mode #playlist-overlay {
-    background: rgba(18, 18, 18, 0.8);
-}
-
-.dark-mode #playlist {
-    background: #1e1e1e;
+/*MODO DARK*/
+.dark-mode {
+    background-color: #121212;
     color: #ffffff;
 }
-
-.dark-mode #playlist ul li {
-    border-bottom: 1px solid #6666663d;
+.dark-mode .player {
+    background: #0f0f0f;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-
-#close-playlist {
-    margin-top: 0px;
-    right: 40px;
-    position: absolute;
-    background: none;
-    border: none;
+.dark-mode .player-header {
+    background: #0f0f0f;
+    border-bottom: 1px solid #333;
+}
+.dark-mode .player-header button {
     color: #f76700;
-    cursor: pointer;
-    font-size: 32px;
 }
 
-#close-playlist:hover {
-    text-decoration: underline;
+.dark-mode .control-button {
+    color: #f76700;
 }
-
+.dark-mode .control-button:hover {
+    color: #d35500;
+}
+.dark-mode .info p {
+    color: #ffffff;
+}
 .dark-mode #playlist-overlay {
     background: rgba(18, 18, 18, 0.8);
 }
-
 .dark-mode #playlist {
     background: #1e1e1e;
     color: #ffffff;
 }
-
 .dark-mode #playlist ul li {
+    padding: 10px;
     border-bottom: 1px solid #6666663d;
 }
-
 /* Adicionando o preenchimento dinâmico */
 input[type="range"]::-webkit-slider-runnable-track {
     background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
