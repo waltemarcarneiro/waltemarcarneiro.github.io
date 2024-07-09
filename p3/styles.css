@@ -401,12 +401,5 @@ input[type="range"]::-ms-fill-upper {
     #close-playlist:hover {
     color: #d35500;
     }
-    .dark-mode #playlist {
-    display: flex;
-    left: 50%;
-    position: absolute;
-    max-width: 50%;
-    top: 0;
-    bottom: 0;
-    }
+
 }
