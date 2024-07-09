@@ -79,8 +79,15 @@ body {
 }
 
 .info {
+    /*margin: 20px 0;*/
+    /*height: 90px;*/
+
     margin: 20px 0;
     height: 90px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .info .title {
