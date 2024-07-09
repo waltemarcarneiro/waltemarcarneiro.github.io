@@ -251,6 +251,16 @@ input[type="range"]::-ms-thumb {
 #close-playlist:hover {
     text-decoration: underline;
 }
+.repeat-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    padding: 2px;
+}
 
 .dark-mode {
     background-color: #121212;
