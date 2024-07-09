@@ -193,7 +193,18 @@ input[type="range"]::-ms-thumb {
     flex: 1;
     margin: 0 10px;
 }
+.repeat-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    border-radius: 50%;
+    padding: 2px;
+}
 
+/* PLAYLIST CONFIG */
 #playlist-overlay {
     position: fixed;
     top: 0;
@@ -228,8 +239,16 @@ input[type="range"]::-ms-thumb {
 }
 
 #playlist ul li {
+    display: flex;
+    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
+}
+
+#playlist ul li img {
+    width: 60px;
+    height: 45px;
+    margin-right: 10px;
 }
 
 #playlist ul li:hover {
@@ -251,47 +270,6 @@ input[type="range"]::-ms-thumb {
 #close-playlist:hover {
     text-decoration: underline;
 }
-.repeat-number {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 10px;
-    color: #fff;
-    background: #000;
-    border-radius: 50%;
-    padding: 2px;
-}
-
-.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-.dark-mode .player {
-    background: #0f0f0f;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.dark-mode .player-header {
-    background: #0f0f0f;
-    border-bottom: 1px solid #333;
-}
-
-.dark-mode .player-header button {
-    color: #f76700;
-}
-
-.dark-mode .control-button {
-    color: #f76700;
-}
-
-.dark-mode .control-button:hover {
-    color: #d35500;
-}
-
-.dark-mode .info p {
-    color: #ffffff;
-}
 
 .dark-mode #playlist-overlay {
     background: rgba(18, 18, 18, 0.8);
@@ -303,7 +281,6 @@ input[type="range"]::-ms-thumb {
 }
 
 .dark-mode #playlist ul li {
-    padding: 10px;
     border-bottom: 1px solid #6666663d;
 }
 
