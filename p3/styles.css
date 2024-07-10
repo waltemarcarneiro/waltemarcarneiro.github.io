@@ -148,10 +148,16 @@ input[type="range"]::-ms-thumb {
 
 .controls {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 10px;
-    align-items: center;
     height: 60px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 20px;
+    right: 0;
+    left: 0;
 }
 
 .control-button {
