@@ -206,6 +206,9 @@ text-align: left;
 }
 #playlist h2 {
 margin-top: 0;
+font-weight: 400;
+font-size: 18px;
+height: 40px;
 }
 #playlist ul {
 list-style-type: none;
