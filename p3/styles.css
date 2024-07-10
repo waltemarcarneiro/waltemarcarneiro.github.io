@@ -367,7 +367,7 @@ input[type="range"]::-ms-fill-upper {
     }
     .player-controls {
         width: 50%;
-        height: 50%;
+        height: 45%;
         padding: 20px;
     }
 
