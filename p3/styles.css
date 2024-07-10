@@ -280,6 +280,10 @@ color: #ffffff;
 padding: 10px;
 border-bottom: 1px solid #6666663d;
 }
+.dark-mode #playlist ul li:hover{
+  color: #f76700;
+  background: #0f0f0f;
+}
 /* Adicionando o preenchimento dinâmico */
 input[type="range"]::-webkit-slider-runnable-track {
 background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
