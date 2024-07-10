@@ -364,6 +364,7 @@ display: flex;
 left: 50%;
 position: absolute;
 top: 0;
+border-radius: none;
 }
 #playlist h2{
    display: none;
@@ -371,10 +372,10 @@ top: 0;
 #close-playlist {
 position: absolute;
 top: 10px;
-right: 10px;
+right: 50px;
 background: none;
 border: none;
-font-size: 24px;
+font-size: 32px;
 color: #f76700;
 cursor: pointer;
 }
