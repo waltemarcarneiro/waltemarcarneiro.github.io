@@ -198,7 +198,7 @@ align-items: center;
 }
 #playlist {
 background: #fff;
-padding: 20px;
+padding: 10px;
 border-radius: 10px;
 width: 90%;
 max-width: 400px;
@@ -278,6 +278,10 @@ background: rgba(18, 18, 18, 0.8);
 .dark-mode #playlist {
 background: #00000070;
 color: #ffffff;
+display: flex;
+left: 50%;
+position: absolute;
+top: 0;  
 }
 .dark-mode #playlist ul li {
 padding: 10px;
