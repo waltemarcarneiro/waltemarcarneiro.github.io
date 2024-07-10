@@ -365,6 +365,9 @@ left: 50%;
 position: absolute;
 top: 0;
 }
+#playlist h2{
+   display: none;
+}
 #close-playlist {
 position: absolute;
 top: 10px;
