@@ -123,8 +123,8 @@ input[type="range"]:hover {
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background: #f76700;
     cursor: pointer;
     border-radius: 50%;
@@ -134,8 +134,8 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Mozilla Browsers (Firefox) */
 input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background: #f76700;
     cursor: pointer;
     border-radius: 50%;
@@ -144,8 +144,8 @@ input[type="range"]::-moz-range-thumb {
 
 /* IE Browsers */
 input[type="range"]::-ms-thumb {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     background: #f76700;
     cursor: pointer;
     border-radius: 50%;
@@ -157,7 +157,8 @@ input[type="range"]::-ms-thumb {
     justify-content: space-around;
     margin-top: 10px;
     align-items: center;
-    height: 60px;
+    /*height: 60px;*/
+    bottom: 10px;
 }
 
 .control-button {
