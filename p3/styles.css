@@ -191,6 +191,10 @@ input[type="range"]::-ms-thumb {
     align-items: center;
     justify-content: space-between;
     margin-top: 0px;
+    bottom: 70px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
 }
 
 #progress {
