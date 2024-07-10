@@ -26,17 +26,15 @@ body {
 }
 
 .player {
+
     background: #f0f4f9;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 90vw; /* Usa unidades de viewport */
-    max-height: 90vh; /* Usa unidades de viewport */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Usa unidades de viewport */
+    height: 100vh; /* Usa unidades de viewport */
     overflow: hidden;
     transition: background 0.3s, box-shadow 0.3s;
-    
     display: flex;
     flex-direction: column;
-    margin: 5vh auto; /* Margem relativa à altura da viewport */
 }
 
 .player-header {
