@@ -31,7 +31,7 @@ body {
     max-width: 400px;
     overflow: hidden;
     transition: background 0.3s, box-shadow 0.3s;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     display: flex;
     flex-direction: column;
     /*margin: 10px;*/
