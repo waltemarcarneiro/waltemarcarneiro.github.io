@@ -148,7 +148,7 @@ input[type="range"]::-ms-thumb {
 
 .controls {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 10px;
     height: 60px;
     position: absolute;
