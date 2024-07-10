@@ -277,11 +277,7 @@ background: rgba(18, 18, 18, 0.8);
 }
 .dark-mode #playlist {
 background: #00000070;
-color: #ffffff;
-display: flex;
-left: 50%;
-position: absolute;
-top: 0;  
+color: #ffffff;  
 }
 .dark-mode #playlist ul li {
 padding: 10px;
@@ -361,6 +357,14 @@ align-items: center;
 justify-content: space-around;
 position:fixed;
 bottom: 0;
+}
+#dark-mode .playlist{
+padding: 10px;
+border-bottom: 1px solid #6666663d;  
+display: flex;
+left: 50%;
+position: absolute;
+top: 0;
 }
 #close-playlist {
 position: absolute;
