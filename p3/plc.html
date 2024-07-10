@@ -102,7 +102,7 @@
             }
         }
 
-        function fetchPlaylistData() {
+        async function fetchPlaylistData() {
             const playlist = player.getPlaylist();
             playlistData = playlist.map(videoId => ({
                 videoId,
@@ -110,23 +110,19 @@
                 author: ''
             }));
 
-            // Fetch data for each video in the playlist
-            fetchVideoData(0);
-        }
-
-        function fetchVideoData(index) {
-            if (index >= playlistData.length) {
-                renderPlaylist();
-                return;
+            for (let i = 0; i < playlistData.length; i++) {
+                const videoId = playlistData[i].videoId;
+                try {
+                    const response = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`);
+                    const data = await response.json();
+                    playlistData[i].title = data.title;
+                    playlistData[i].author = data.author_name;
+                } catch (error) {
+                    console.error('Error fetching video details:', error);
+                }
             }
 
-            player.playVideoAt(index);
-            setTimeout(() => {
-                const videoData = player.getVideoData();
-                playlistData[index].title = videoData.title;
-                playlistData[index].author = videoData.author;
-                fetchVideoData(index + 1);
-            }, 1000); // Delay to allow video data to load
+            renderPlaylist();
         }
 
         function renderPlaylist() {
@@ -151,10 +147,6 @@
 
                 playlistContainer.appendChild(listItem);
             });
-
-            // Restore the currently playing video
-            const currentIndex = player.getPlaylistIndex();
-            player.playVideoAt(currentIndex);
         }
 
         function updateCurrentVideoData() {
