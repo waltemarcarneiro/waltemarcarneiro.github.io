@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -13,29 +13,27 @@ body {
     transition: background-color 0.3s, color 0.3s;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 .player-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    padding: 0px;
+    height: 100%;
 }
 
 .player {
     background: #f0f4f9;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 400px;
     overflow: hidden;
-    transition: background 0.3s, box-shadow 0.3s;
-    
     display: flex;
     flex-direction: column;
     top: 0;
     bottom: 0;
-    height: 100vh;
+    height: 100%;
 }
 
 .player-header {
