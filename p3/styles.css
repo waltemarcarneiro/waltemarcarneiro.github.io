@@ -358,7 +358,7 @@ justify-content: space-around;
 position:fixed;
 bottom: 0;
 }
-#dark-mode .playlist{
+.playlist{
 padding: 10px;
 border-bottom: 1px solid #6666663d;  
 display: flex;
