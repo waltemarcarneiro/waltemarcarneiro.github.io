@@ -33,7 +33,8 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    /*margin: 10px;*/
+    height: 100%;
 }
 
 .player-header {
