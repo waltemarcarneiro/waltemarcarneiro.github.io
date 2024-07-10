@@ -180,37 +180,76 @@ function formatTime(seconds) {
 }
 
 async function loadPlaylist() {
-    const playlist = player.getPlaylist();
+    const cacheKey = `youtube_playlist_${player.getPlaylistId()}`;
+    const cacheExpiryKey = `${cacheKey}_expiry`;
+    const cacheDuration = 24 * 60 * 60 * 1000; // 24 horas em milissegundos
+
+    // Verificar se os dados estão no cache
+    const cachedData = getCachedData(cacheKey, cacheExpiryKey);
+
+    if (cachedData) {
+        renderPlaylist(cachedData);
+    } else {
+        const playlist = player.getPlaylist();
+        const playlistData = [];
+
+        for (let index = 0; index < playlist.length; index++) {
+            const videoId = playlist[index];
+            try {
+                const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyDSD1qRSM61xXXDk6CBHfbhnLfoXbQPsYY&part=snippet`);
+                const data = await response.json();
+                const video = data.items[0];
+                const thumbnailUrl = video.snippet.thumbnails.default.url;
+                const title = video.snippet.title;
+
+                playlistData.push({ videoId, thumbnailUrl, title });
+            } catch (error) {
+                console.error('Error fetching video details:', error);
+            }
+        }
+
+        // Armazenar os dados no cache
+        setCacheData(cacheKey, cacheExpiryKey, playlistData, cacheDuration);
+        renderPlaylist(playlistData);
+    }
+}
+
+function getCachedData(cacheKey, cacheExpiryKey) {
+    const cachedData = localStorage.getItem(cacheKey);
+    const cacheExpiry = localStorage.getItem(cacheExpiryKey);
+
+    if (cachedData && cacheExpiry && Date.now() < cacheExpiry) {
+        return JSON.parse(cachedData);
+    } else {
+        return null;
+    }
+}
+
+function setCacheData(cacheKey, cacheExpiryKey, data, duration) {
+    localStorage.setItem(cacheKey, JSON.stringify(data));
+    localStorage.setItem(cacheExpiryKey, Date.now() + duration);
+}
+
+function renderPlaylist(playlistData) {
     const playlistContainer = document.getElementById('playlist-items');
     playlistContainer.innerHTML = '';
 
-    for (let index = 0; index < playlist.length; index++) {
-        const videoId = playlist[index];
-        try {
-            const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyDSD1qRSM61xXXDk6CBHfbhnLfoXbQPsYY&part=snippet`);
-            const data = await response.json();
-            const video = data.items[0];
-            const thumbnailUrl = video.snippet.thumbnails.default.url;
-            const title = video.snippet.title;
+    playlistData.forEach((item, index) => {
+        const listItem = document.createElement('li');
 
-            const listItem = document.createElement('li');
+        const thumbnail = document.createElement('img');
+        thumbnail.src = item.thumbnailUrl;
+        listItem.appendChild(thumbnail);
 
-            const thumbnail = document.createElement('img');
-            thumbnail.src = thumbnailUrl;
-            listItem.appendChild(thumbnail);
+        const titleText = document.createElement('span');
+        titleText.textContent = item.title;
+        listItem.appendChild(titleText);
 
-            const titleText = document.createElement('span');
-            titleText.textContent = title;
-            listItem.appendChild(titleText);
+        listItem.addEventListener('click', () => {
+            player.playVideoAt(index);
+            document.getElementById('playlist-overlay').style.display = 'none';
+        });
 
-            listItem.addEventListener('click', () => {
-                player.playVideoAt(index);
-                document.getElementById('playlist-overlay').style.display = 'none';
-            });
-
-            playlistContainer.appendChild(listItem);
-        } catch (error) {
-            console.error('Error fetching video details:', error);
-        }
-    }
+        playlistContainer.appendChild(listItem);
+    });
 }
