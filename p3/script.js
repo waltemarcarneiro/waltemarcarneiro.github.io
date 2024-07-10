@@ -2,20 +2,9 @@ let player;
 let isPlaying = false;
 let isShuffle = false;
 let mode = 'repeat'; // 'repeat', 'repeat_one', 'shuffle'
-let progressBar, currentTimeDisplay, durationDisplay;
-
-document.addEventListener('DOMContentLoaded', function() {
-    progressBar = document.getElementById('progress');
-    currentTimeDisplay = document.getElementById('current-time');
-    durationDisplay = document.getElementById('duration');
-    
-    // Verifique se todos os elementos DOM necessários estão presentes
-    if (progressBar && currentTimeDisplay && durationDisplay) {
-        onYouTubeIframeAPIReady();
-    } else {
-        console.error('Um ou mais elementos DOM não foram encontrados.');
-    }
-});
+let progressBar = document.getElementById('progress');
+let currentTimeDisplay = document.getElementById('current-time');
+let durationDisplay = document.getElementById('duration');
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('music-player', {
@@ -105,7 +94,7 @@ function onPlayerReady(event) {
         player.seekTo((progressBar.value / 100) * duration, true);
     });
 
-    // TEMA CLARO E ESCURO
+// TEMA CLARO E ESCURO
     const savedTheme = localStorage.getItem('theme');
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -116,7 +105,7 @@ function onPlayerReady(event) {
         metaThemeColor.setAttribute('content', savedTheme === 'dark' ? '#0F0F0F' : '#ffffff');
     }
 
-    // THEME-COLOR CONFIG
+// THEME-COLOR CONFIG
     document.getElementById('theme-toggle').addEventListener('click', function() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
 
@@ -135,6 +124,7 @@ function onPlayerReady(event) {
         }
     });
 
+//UPDATE TITLE AND ARTIST
     updateTitleAndArtist();
 }
 
@@ -178,6 +168,8 @@ function formatTime(seconds) {
     const sec = Math.floor(seconds % 60);
     return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
+
+/////////////////////
 
 function loadPlaylist() {
     const playlist = player.getPlaylist();
