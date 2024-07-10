@@ -79,13 +79,11 @@ body {
 }
 
 .info {
-   
-   
-    height: 90px;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 50px;
 }
 
 .info .title {
@@ -381,7 +379,10 @@ input[type="range"]::-ms-fill-upper {
     }
 
     .progress-container {
-        margin-top: 0px;
+        left: 50%;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
     }
 
     .controls {
