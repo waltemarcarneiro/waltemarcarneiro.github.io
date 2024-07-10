@@ -2,9 +2,20 @@ let player;
 let isPlaying = false;
 let isShuffle = false;
 let mode = 'repeat'; // 'repeat', 'repeat_one', 'shuffle'
-let progressBar = document.getElementById('progress');
-let currentTimeDisplay = document.getElementById('current-time');
-let durationDisplay = document.getElementById('duration');
+let progressBar, currentTimeDisplay, durationDisplay;
+
+document.addEventListener('DOMContentLoaded', function() {
+    progressBar = document.getElementById('progress');
+    currentTimeDisplay = document.getElementById('current-time');
+    durationDisplay = document.getElementById('duration');
+    
+    // Verifique se todos os elementos DOM necessários estão presentes
+    if (progressBar && currentTimeDisplay && durationDisplay) {
+        onYouTubeIframeAPIReady();
+    } else {
+        console.error('Um ou mais elementos DOM não foram encontrados.');
+    }
+});
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('music-player', {
@@ -66,12 +77,6 @@ function onPlayerReady(event) {
                 player.setShuffle(isShuffle);
                 break;
         }
-    });
-
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        this.innerHTML = document.body.classList.contains('dark-mode') ? '<ion-icon name="sunny-outline"></ion-icon>' : '<ion-icon name="moon-outline"></ion-icon>';
-        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
 
     document.querySelector('.control-button:nth-child(5)').addEventListener('click', function() {
@@ -171,40 +176,41 @@ function updateTitleAndArtist() {
 function formatTime(seconds) {
     const min = Math.floor(seconds / 60);
     const sec = Math.floor(seconds % 60);
-    return ${min}:${sec < 10 ? '0' : ''}${sec};
+    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
 }
-///////////////////////////
-function loadPlaylist() {
+
+async function loadPlaylist() {
     const playlist = player.getPlaylist();
     const playlistContainer = document.getElementById('playlist-items');
     playlistContainer.innerHTML = '';
 
-    playlist.forEach((videoId, index) => {
-        // Fetch video details using YouTube Data API
-        fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyDSD1qRSM61xXXDk6CBHfbhnLfoXbQPsYY&part=snippet`)
-            .then(response => response.json())
-            .then(data => {
-                const video = data.items[0];
-                const thumbnailUrl = video.snippet.thumbnails.default.url;
-                const title = video.snippet.title;
+    for (let index = 0; index < playlist.length; index++) {
+        const videoId = playlist[index];
+        try {
+            const response = await fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyDSD1qRSM61xXXDk6CBHfbhnLfoXbQPsYY&part=snippet`);
+            const data = await response.json();
+            const video = data.items[0];
+            const thumbnailUrl = video.snippet.thumbnails.default.url;
+            const title = video.snippet.title;
 
-                const listItem = document.createElement('li');
+            const listItem = document.createElement('li');
 
-                const thumbnail = document.createElement('img');
-                thumbnail.src = thumbnailUrl;
-                listItem.appendChild(thumbnail);
+            const thumbnail = document.createElement('img');
+            thumbnail.src = thumbnailUrl;
+            listItem.appendChild(thumbnail);
 
-                const titleText = document.createElement('span');
-                titleText.textContent = title;
-                listItem.appendChild(titleText);
+            const titleText = document.createElement('span');
+            titleText.textContent = title;
+            listItem.appendChild(titleText);
 
-                listItem.addEventListener('click', () => {
-                    player.playVideoAt(index);
-                    document.getElementById('playlist-overlay').style.display = 'none';
-                });
+            listItem.addEventListener('click', () => {
+                player.playVideoAt(index);
+                document.getElementById('playlist-overlay').style.display = 'none';
+            });
 
-                playlistContainer.appendChild(listItem);
-            })
-            .catch(error => console.error('Error fetching video details:', error));
-    });
+            playlistContainer.appendChild(listItem);
+        } catch (error) {
+            console.error('Error fetching video details:', error);
+        }
+    }
 }
