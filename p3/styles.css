@@ -42,8 +42,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0px;
-    background: #f0f4f9;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ffffff3d;
 }
 
 .player-header h1 {
@@ -248,7 +247,7 @@ input[type="range"]::-ms-thumb {
     display: flex;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ffffff3d;
 }
 
 #playlist ul li img {
