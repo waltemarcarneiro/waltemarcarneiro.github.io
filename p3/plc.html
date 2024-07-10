@@ -65,6 +65,7 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         let player;
+        let playlistData = [];
 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('music-player', {
@@ -90,36 +91,58 @@
             document.getElementById('close-playlist').addEventListener('click', function() {
                 document.getElementById('playlist-overlay').style.display = 'none';
             });
+
+            // Preencher dados da playlist no início
+            fetchPlaylistData();
         }
 
         function onPlayerStateChange(event) {
             if (event.data === YT.PlayerState.PLAYING) {
-                renderPlaylist();
+                updateCurrentVideoData();
             }
+        }
+
+        function fetchPlaylistData() {
+            const playlist = player.getPlaylist();
+            playlistData = playlist.map(videoId => ({
+                videoId,
+                title: '',
+                author: ''
+            }));
+
+            // Fetch data for each video in the playlist
+            fetchVideoData(0);
+        }
+
+        function fetchVideoData(index) {
+            if (index >= playlistData.length) {
+                renderPlaylist();
+                return;
+            }
+
+            player.playVideoAt(index);
+            setTimeout(() => {
+                const videoData = player.getVideoData();
+                playlistData[index].title = videoData.title;
+                playlistData[index].author = videoData.author;
+                fetchVideoData(index + 1);
+            }, 1000); // Delay to allow video data to load
         }
 
         function renderPlaylist() {
             const playlistContainer = document.getElementById('playlist-items');
             playlistContainer.innerHTML = '';
 
-            const playlist = player.getPlaylist();
-            playlist.forEach((videoId, index) => {
+            playlistData.forEach((video, index) => {
                 const listItem = document.createElement('li');
 
                 const thumbnail = document.createElement('img');
-                thumbnail.src = `https://img.youtube.com/vi/${videoId}/default.jpg`;
+                thumbnail.src = `https://img.youtube.com/vi/${video.videoId}/default.jpg`;
                 listItem.appendChild(thumbnail);
 
                 const titleText = document.createElement('span');
-                titleText.textContent = `Loading...`;  // Placeholder text while fetching title and author
+                titleText.textContent = `${video.title} - ${video.author}`;
                 listItem.appendChild(titleText);
-
-                // Fetching video data from the player for each video in the playlist
-                player.playVideoAt(index);
-                setTimeout(() => {
-                    const videoData = player.getVideoData();
-                    titleText.textContent = `${videoData.title} - ${videoData.author}`;
-                }, 1000); // Small delay to allow the player to load video data
 
                 listItem.addEventListener('click', () => {
                     player.playVideoAt(index);
@@ -129,9 +152,16 @@
                 playlistContainer.appendChild(listItem);
             });
 
-            // Restore the currently playing video after loading playlist details
+            // Restore the currently playing video
             const currentIndex = player.getPlaylistIndex();
             player.playVideoAt(currentIndex);
+        }
+
+        function updateCurrentVideoData() {
+            const currentIndex = player.getPlaylistIndex();
+            const videoData = player.getVideoData();
+            playlistData[currentIndex].title = videoData.title;
+            playlistData[currentIndex].author = videoData.author;
         }
     </script>
 </body>
