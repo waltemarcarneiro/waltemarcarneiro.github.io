@@ -30,7 +30,7 @@ body {
     max-width: 400px;
     overflow: hidden;
     transition: background 0.3s, box-shadow 0.3s;
-    border-radius: 10px;
+    
     display: flex;
     flex-direction: column;
     
@@ -80,10 +80,8 @@ body {
 }
 
 .info {
-    /*margin: 20px 0;*/
-    /*height: 90px;*/
-
-    margin: 20px 0;
+   
+   
     height: 90px;
     align-items: center;
     display: flex;
@@ -92,7 +90,7 @@ body {
 }
 
 .info .title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
