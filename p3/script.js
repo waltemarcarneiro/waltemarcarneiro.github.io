@@ -21,7 +21,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('music-player', {
         height: '315',
         width: '100%',
-        videoId: 'FoGhN9r1L9o',
+        videoId: 'xiN4EOqpvwc',
         playerVars: {
             'listType': 'playlist',
             'list': 'PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5',
