@@ -36,8 +36,6 @@ body {
     flex-direction: column;
     /*margin: 10px;*/
     height: 100%;
-    top: 0;
-    bottom: 0;
 }
 
 .player-header {
@@ -83,10 +81,6 @@ body {
 }
 
 .info {
-    /*margin: 20px 0;*/
-    /*height: 90px;*/
-
-    margin: 20px 0;
     height: 90px;
     align-items: center;
     display: flex;
@@ -155,10 +149,7 @@ input[type="range"]::-ms-thumb {
 .controls {
     display: flex;
     justify-content: space-around;
-    margin-top: 10px;
     align-items: center;
-    /*height: 60px;*/
-    bottom: 10px;
 }
 
 .control-button {
