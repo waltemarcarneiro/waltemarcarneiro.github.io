@@ -359,7 +359,12 @@ input[type="range"]::-ms-fill-upper {
         width: 50%;
         height: 100%;
     }
-
+    .info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
     .player-controls {
         width: 50%;
         height: 50%;
