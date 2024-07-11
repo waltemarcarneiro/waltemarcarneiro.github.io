@@ -383,3 +383,31 @@ cursor: pointer;
 color: #d35500;
 }
 }
+
+/*playlist new design*/
+#playlist-items li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#playlist-items img {
+    width: 120px;
+    height: 90px;
+    margin-right: 15px;
+}
+
+#playlist-items .text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#playlist-items .title {
+    font-weight: bold;
+}
+
+#playlist-items .author {
+    color: #555;
+    font-size: 0.9em;
+}
+
