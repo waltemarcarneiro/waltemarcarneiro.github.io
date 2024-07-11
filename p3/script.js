@@ -210,9 +210,20 @@ function renderPlaylist() {
         thumbnail.src = `https://img.youtube.com/vi/${video.videoId}/default.jpg`;
         listItem.appendChild(thumbnail);
 
+        const textContainer = document.createElement('div');
+        textContainer.className = 'text-container';
+
         const titleText = document.createElement('span');
-        titleText.textContent = `${video.title} - ${video.author}`;
-        listItem.appendChild(titleText);
+        titleText.className = 'title';
+        titleText.textContent = video.title;
+        textContainer.appendChild(titleText);
+
+        const authorText = document.createElement('span');
+        authorText.className = 'author';
+        authorText.textContent = video.author;
+        textContainer.appendChild(authorText);
+
+        listItem.appendChild(textContainer);
 
         listItem.addEventListener('click', () => {
             player.playVideoAt(index);
