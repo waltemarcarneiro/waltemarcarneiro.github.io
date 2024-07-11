@@ -1,4 +1,5 @@
 let player;
+let maxQuality = 'large'; // Defina a qualidade máxima desejada aqui
 let isPlaying = false;
 let isShuffle = false;
 let mode = 'repeat'; // 'repeat', 'repeat_one', 'shuffle'
@@ -37,6 +38,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
+    setVideoQuality('medium'); // Define a qualidade para 360p
     document.querySelector('.control-button:nth-child(3)').addEventListener('click', function() {
         if (isPlaying) {
             player.pauseVideo();
