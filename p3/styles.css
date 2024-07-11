@@ -127,6 +127,7 @@ border: 2px solid #fff;
 .controls {
 display: flex;
 justify-content: space-around;
+align-items: center;
 margin-top: 10px;
 height: 60px;
 position: fixed;
