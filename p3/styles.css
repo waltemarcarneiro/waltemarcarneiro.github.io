@@ -287,6 +287,15 @@ border-bottom: 1px solid #6666663d;
   color: #f76700;
   background: #0f0f0f;
 }
+.dark-mode #playlist-items .title {
+    font-weight: 500;
+    color: #f1f1f1;
+}
+
+.dark-mode #playlist-items .author {
+    color: #AAAAAA;
+    font-size: 0.9em;
+}
 /* Adicionando o preenchimento dinâmico */
 input[type="range"]::-webkit-slider-runnable-track {
 background: linear-gradient(to right, #f76700, #f76700) 0% / var(--slider-value) 100% no-repeat, #ddd;
@@ -395,20 +404,18 @@ color: #d35500;
     width: 120px;
     height: 90px;
     margin-right: 15px;
+    border-radiud: 10px;
 }
 
 #playlist-items .text-container {
     display: flex;
     flex-direction: column;
 }
-
 #playlist-items .title {
     font-weight: 500;
-    color: #f1f1f1;
 }
 
 #playlist-items .author {
-    color: #AAAAAA;
     font-size: 0.9em;
 }
 
