@@ -7,6 +7,10 @@ let mode = 'repeat'; // 'repeat', 'repeat_one', 'shuffle'
 let progressBar, currentTimeDisplay, durationDisplay;
 let playlistData = [];
 
+function setVideoQuality(quality) {
+    player.setPlaybackQuality(quality);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     progressBar = document.getElementById('progress');
     currentTimeDisplay = document.getElementById('current-time');
