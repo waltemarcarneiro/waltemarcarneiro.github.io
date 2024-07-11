@@ -33,7 +33,6 @@ function onYouTubeIframeAPIReady() {
         events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange,
-            'onPlaybackQualityChange': onPlaybackQualityChange
         }
     });
 }
