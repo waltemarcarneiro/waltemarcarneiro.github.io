@@ -289,8 +289,8 @@ color: #00FFBF;
 .dark-mode .control-button:hover {
 color: #00FFBF;
 }
-.dark-mode .info p {
-color: #ffffff;
+.dark-mode .info {
+color: #AAAAAA;
 }
 .dark-mode #playlist-overlay {
 background: rgba(18, 18, 18, 0.8);
