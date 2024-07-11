@@ -275,10 +275,9 @@ color: #00FFBF;
 .dark-mode .play-outline {
 border: 2px solid #00FFBF;
 }
-.dark-mode .play-outline:focus {
-background: #F966D6;
+.dark-mode .play-outline:hover {
 color: #F966D6;
-border: 2px solid #00ffbf;
+border: 2px solid #F966D6;
 }
 .dark-mode .control-button {
 color: #00FFBF;
