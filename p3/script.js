@@ -1,4 +1,6 @@
 let player;
+let maxQuality = 'large'; // Definir resolução máxima
+let minQuality = 'medium'; // Definir resolução mínima
 let isPlaying = false;
 let isShuffle = false;
 let mode = 'repeat'; // 'repeat', 'repeat_one', 'shuffle'
@@ -31,12 +33,13 @@ function onYouTubeIframeAPIReady() {
         },
         events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange,
+            'onStateChange': onPlayerStateChange
         }
     });
 }
 
 function onPlayerReady(event) {
+    setVideoQuality(minQuality); // Define a qualidade inicial para 'medium'
     document.querySelector('.control-button:nth-child(3)').addEventListener('click', function() {
         if (isPlaying) {
             player.pauseVideo();
