@@ -1,0 +1,153 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.dark-mode {
+    background-color: #0F0F0F;
+    color: #FFF;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.video-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.info-container, .progress-container, .controls {
+    padding: 10px;
+    background: #FFF;
+}
+
+.info-container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #f76700;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dark-mode .controls button {
+    color: #f76700;
+}
+
+.playlist-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist {
+    background: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 80%;
+    overflow-y: auto;
+    width: 80%;
+    max-width: 400px;
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.playlist img {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.playlist button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.dark-mode .playlist {
+    background: #333;
+    color: #FFF;
+}
+.dark-mode .info-container {
+    text-align: center;
+    background: #333;
+}
+
+.dark-mode .progress-container {
+    display: flex;
+    align-items: center;
+    background: #333;
+}
+
+.dark-mode .progress-bar {
+    flex: 1;
+    margin: 0 10px;
+    background: #333;
+}
+
+.dark-mode .controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #333;
+}

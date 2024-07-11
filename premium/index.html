@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Música</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+    <div class="header">
+        <button id="theme-toggle"><ion-icon name="moon-outline"></ion-icon></button>
+        <button id="show-playlist"><ion-icon name="musical-notes-outline"></ion-icon></button>
+    </div>
+    <div class="video-container" id="video-container">
+        <div id="music-player"></div>
+    </div>
+    <div class="info-container">
+        <div id="title" class="title">Título da Música</div>
+        <div id="artist" class="artist">Nome do Artista</div>
+    </div>
+    <div class="progress-container">
+        <span id="current-time" class="time">0:00</span>
+        <input type="range" id="progress" class="progress-bar" value="0">
+        <span id="duration" class="time">0:00</span>
+    </div>
+    <div class="controls">
+        <button id="prev"><ion-icon name="play-back-outline"></ion-icon></button>
+        <button id="shuffle"><ion-icon name="shuffle-outline"></ion-icon></button>
+        <button id="play-pause"><ion-icon name="play-outline"></ion-icon></button>
+        <button id="next"><ion-icon name="play-forward-outline"></ion-icon></button>
+        <button id="repeat"><ion-icon name="repeat-outline"></ion-icon></button>
+    </div>
+    <div class="playlist-overlay" id="playlist-overlay">
+        <div class="playlist">
+            <button id="close-playlist"><ion-icon name="close-outline"></ion-icon></button>
+            <ul id="playlist-items"></ul>
+        </div>
+    </div>
+    <script src="playlist.js"></script>
+    <script src="player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
