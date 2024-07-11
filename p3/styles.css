@@ -279,6 +279,10 @@ border: 2px solid #00FFBF;
 color: #F966D6;
 border: 2px solid #F966D6;
 }
+.dark-mode .play-outline:focus {
+color: #00ffbf;
+border: 2px dashed #F966D6;
+}
 .dark-mode .control-button {
 color: #00FFBF;
 }
