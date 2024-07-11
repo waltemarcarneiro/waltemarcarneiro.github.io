@@ -279,9 +279,9 @@ border: 2px solid #00FFBF;
 color: #F966D6;
 border: 2px solid #F966D6;
 }
-.dark-mode .play-outline:focus {
-color: #00ffbf !important;
-border: 2px dashed #F966D6 !important;
+.dark-mode .pause-outline {
+color: #311E56;
+background: #00ffbf;
 }
 .dark-mode .control-button {
 color: #00FFBF;
