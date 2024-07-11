@@ -42,7 +42,7 @@ border-bottom: 1px solid #ffffff3d;
 .player-header h1 {
 font-size: 18px;
 font-weight: 400;
-color: #00FFBF;
+color: #311E56;
 }
 .player-header button {
 background: none;
@@ -249,6 +249,14 @@ font-size: 32px;
 text-decoration: underline;
 }
 /*MODO DARK*/
+.dark-mode #close-playlist {
+color: #00ffbf;
+}
+.dark-mode .player-header h1 {
+font-size: 18px;
+font-weight: 400;
+color: #00FFBF;
+}
 .dark-mode {
 background-color: #121212;
 color: #ffffff;
@@ -267,7 +275,7 @@ color: #00FFBF;
 color: #00FFBF;
 }
 .dark-mode .control-button:hover {
-color: #d35500;
+color: #00FFBF;
 }
 .dark-mode .info p {
 color: #ffffff;
