@@ -403,11 +403,12 @@ color: #d35500;
 }
 
 #playlist-items .title {
-    font-weight: bold;
+    font-weight: 500;
+    color: #f1f1f1;
 }
 
 #playlist-items .author {
-    color: #555;
+    color: #AAAAAA;
     font-size: 0.9em;
 }
 
