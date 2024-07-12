@@ -150,6 +150,7 @@ function onPlayerStateChange(event) {
 
         switch (mode) {
             case 'repeat_one':
+                player.seekTo(0);
                 player.playVideo();
                 break;
             case 'shuffle':
