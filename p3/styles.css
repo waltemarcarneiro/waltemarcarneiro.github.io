@@ -169,7 +169,7 @@ align-items: center;
 justify-content: space-between;
 margin-top: 0px;
 bottom: 100px;
-position: absolute;
+position: fixed;
 left: 10px;
 right: 10px;
 }
