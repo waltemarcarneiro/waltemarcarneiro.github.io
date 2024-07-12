@@ -63,17 +63,15 @@ function onPlayerReady(event) {
         player.nextVideo();
     });
 
-    document.querySelector('.control-button:nth-child(1)').addEventListener('click', function() {
+    document.getElementById('repeat-button').addEventListener('click', function() {
         switch (mode) {
             case 'repeat':
                 mode = 'repeat_one';
                 this.innerHTML = '<ion-icon name="repeat-outline"></ion-icon><span class="repeat-number">1</span>';
-                player.setLoop(true);
                 break;
             case 'repeat_one':
                 mode = 'shuffle';
                 this.innerHTML = '<ion-icon name="shuffle-outline"></ion-icon>';
-                player.setLoop(false);
                 isShuffle = true;
                 player.setShuffle(isShuffle);
                 break;
