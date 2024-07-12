@@ -145,20 +145,17 @@ function onPlayerStateChange(event) {
         document.querySelector('.control-button:nth-child(3)').innerHTML = '<ion-icon name="play-outline"></ion-icon>';
         isPlaying = false;
 
-        const playlist = player.getPlaylist();
-        const currentIndex = player.getPlaylistIndex();
-
         switch (mode) {
             case 'repeat_one':
                 player.seekTo(0);
                 player.playVideo();
                 break;
             case 'shuffle':
-                player.setShuffle(true);
                 player.nextVideo();
                 break;
             case 'repeat':
-                if (currentIndex === playlist.length - 1) {
+                const currentIndex = player.getPlaylistIndex();
+                if (currentIndex === player.getPlaylist().length - 1) {
                     player.playVideoAt(0);
                 } else {
                     player.nextVideo();
