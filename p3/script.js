@@ -63,7 +63,7 @@ function onPlayerReady(event) {
         player.nextVideo();
     });
 
-    document.getElementById('repeat-button').addEventListener('click', function() {
+    document.querySelector('.control-button:nth-child(1)').addEventListener('click', function() {
         switch (mode) {
             case 'repeat':
                 mode = 'repeat_one';
@@ -150,7 +150,6 @@ function onPlayerStateChange(event) {
 
         switch (mode) {
             case 'repeat_one':
-                player.seekTo(0);
                 player.playVideo();
                 break;
             case 'shuffle':
