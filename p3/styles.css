@@ -178,14 +178,18 @@ flex: 1;
 margin: 0 10px;
 }
 .repeat-number {
-position: absolute;
-top: 0;
-right: 0;
-font-size: 10px;
-color: #fff;
-background: #000;
-border-radius: 50%;
-padding: 2px;
+    font-size: 10px;
+    color: #000;
+    background: #00ffbf;
+    border-radius: 50%;
+    padding: 2px;
+    display: flex;
+    position: fixed;
+    bottom: 75px;
+    left: 28px;
+    width: 10px;
+    justify-content: center;
+    align-items: center;
 }
 /* PLAYLIST CONFIG */
 #playlist-overlay {
