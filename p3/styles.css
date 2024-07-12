@@ -378,6 +378,8 @@ left: 50%;
 display: flex;
 align-items: center;
 margin-left: 10px;
+position: fixed;
+bottom: 70px;
 }
 .controls {
 left: 50%;
@@ -385,7 +387,7 @@ display: flex;
 align-items: center;
 justify-content: space-around;
 position:fixed;
-bottom: 0;
+bottom: 20px;
 }
 #playlist {
 padding: 10px;
