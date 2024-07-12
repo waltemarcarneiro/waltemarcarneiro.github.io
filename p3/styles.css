@@ -364,7 +364,6 @@ align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
-
 position: relative;
 top: 25%;  
 }
@@ -422,6 +421,20 @@ cursor: pointer;
 #close-playlist:hover {
 color: #d35500;
 }
+.repeat-number {
+    font-size: 10px;
+    color: #000;
+    background: #00ffbf;
+    border-radius: 50%;
+    padding: 2px;
+    display: flex;
+    position: fixed;
+    bottom: 55px;
+    left: 54.4%;
+    width: 10px;
+    justify-content: center;
+    align-items: center;
+}   
 }
 
 /*playlist new design*/
