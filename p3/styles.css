@@ -68,11 +68,12 @@ pointer-events: none;
 }
 .info {
 align-items: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
-position: relative;
-top: 75%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 65%;
+    width: 100%;
+    left: 0;
 }
 .info .title {
 font-size: 18px;
