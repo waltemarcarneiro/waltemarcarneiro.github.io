@@ -61,6 +61,7 @@ justify-content: space-between;
 text-align: left;
 cursor: pointer;
 font-family: 'Montserrat', sans-serif;
+font-size: 0.7rem;
 }
 .user-info h3{
 font-size: 1.1rem;
