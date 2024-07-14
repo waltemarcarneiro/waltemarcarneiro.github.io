@@ -220,6 +220,18 @@
       "src": "screenshots/7.jpg",
       "sizes": "1080x1920",
       "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/screenshot-mobile.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/screenshot-desktop-wide.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide"
     }
   ],
   "categories": [
