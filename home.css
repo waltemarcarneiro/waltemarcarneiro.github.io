@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
 margin: 0;
@@ -373,15 +373,18 @@ font-weight: 700;
 color: #222;
 }
 .app-subtitle {
-font-weight: 400;
+font-weight: 500;
 font-size: 0.85rem;
 margin: 0;
-color: #575759;
+color: #222;
 }
 .add-info {
 font-size: 0.65rem;
 font-weight: 500;
-color: #575759;
+color: #222;
+display: flex;
+align-items: center;
+padding: 30px 0px;
 }
 .message {
 clear: both;
@@ -396,7 +399,7 @@ font-size: 1.1rem;
 font-size: 1rem;
 font-weight: 500;
 width: 100%;
-background: #0b57d0;
+background: #f76700;
 color: #fff;
 border-radius: 5px;
 border: none;
