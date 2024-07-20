@@ -393,12 +393,13 @@ align-items: center;
 padding: 30px 0px;
 }
 .app .install-btn-app {
-font-size: 1rem;
-font-weight: 500;
+font-size: 1.1rem;
+font-weight: 600;
+font-family: 'Montserrat', sans-serif;
 width: 100%;
 background: #f76700;
 color: #fff;
-border-radius: 5px;
+border-radius: 7px;
 border: none;
 padding: 10px;
 cursor: pointer;
