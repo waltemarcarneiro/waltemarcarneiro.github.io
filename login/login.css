@@ -20,11 +20,9 @@ text-align: center;
 flex-direction: column;
 font-size: 16px;
 font-weight: 500;
-overflow-y: auto;
 }
 @media screen and (orientation: portrait) {
 body {
-overflow-y: inherit;
 background: linear-gradient(134deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('../image/bg.jpg') no-repeat center center fixed;
 background-size: cover;
 }
@@ -39,6 +37,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 box-sizing: border-box;
+overflow-y: hidden;
 }
 .logo-title {
 flex-direction: column;
