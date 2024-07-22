@@ -187,6 +187,12 @@
   ],
   "screenshots": [
     {
+      "src": "screenshots/screenshot-desktop-wide.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide"
+    },
+    {
       "src": "screenshots/1.jpg",
       "sizes": "1080x1920",
       "type": "image/jpg"
