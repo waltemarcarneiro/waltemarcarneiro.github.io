@@ -388,7 +388,7 @@ video::-webkit-media-controls {
          </a>
       </div>
       <video id="meuVideo" autoplay controls loop preload="none" poster="cover-latam.jpg">
-         <source src="lisboa-480p.mp4" type="video/mp4">
+         <source src="lisboa.mp4" type="video/mp4">
          Desculpe, seu navegador não suporta vídeos.
          </video>
 
@@ -416,9 +416,10 @@ video::-webkit-media-controls {
              // Prevenir comportamento padrão do link
          
              // Adicione o código de compartilhamento aqui
-             const shareUrl = 'https://waltemar.com.br/videos/filmes.html';
-             const shareTitle = 'Playlist Filmes Completos!';
-             const shareContent = 'Assista online filmes completos e dublados.'
+             //const shareUrl = window.location.href;
+             const shareUrl = 'https://waltemar.com.br/videos/lisboa.html';
+             const shareTitle = 'Latam Airlines | MAO | LIS';
+             const shareContent = 'Ao som de Genesis - In Too Deep'
              if (navigator.share) {
                  navigator.share({
                      title: shareTitle,
@@ -606,6 +607,5 @@ video::-webkit-media-controls {
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
       <script src="../sweetalert2.all.js"></script>
       <script src="banner.js"></script>
-      <script src="../pro.js"</script>   
    </body>
 </html>
