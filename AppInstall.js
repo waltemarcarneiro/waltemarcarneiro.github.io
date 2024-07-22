@@ -17,6 +17,9 @@ document.getElementById('installButton').addEventListener('click', () => {
                 console.log('User dismissed the install prompt');
             }
             deferredPrompt = null;
+
+            // Fechar o banner de instalação após o clique
+            closeApp();
         });
     }
 });
@@ -25,9 +28,6 @@ function closeApp() {
     const installBanner = document.getElementById('InstallBanner');
     installBanner.style.display = 'none';
 }
-
-
-///////////////////////////////////////////////////////////////////
 
 function showApp() {
     const app = document.getElementById('InstallBanner');
@@ -40,8 +40,4 @@ function hideApp() {
     app.classList.remove('show');
 }
 
-function closeApp() {
-    hideApp();
-}
-
-setTimeout(showApp, 5000); // Mostra o banner após 1 segundo
+setTimeout(showApp, 5000); // Mostra o banner após 5 segundos
