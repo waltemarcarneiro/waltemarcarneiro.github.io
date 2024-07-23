@@ -377,7 +377,7 @@ video::-webkit-media-controls {
             <ion-icon name="musical-notes-outline"></ion-icon>
             <p class="icons-name">Player</p>
          </a>
-         <a href="https://waltemar.com.br/videos/filmes.html" id="shareLink">
+         <a href="#" id="shareLink">
             <ion-icon name="arrow-redo-outline"></ion-icon>
             <p class="icons-name">Compartilhe</p>
          </a>
@@ -413,11 +413,8 @@ video::-webkit-media-controls {
          // Adicione um listener ao link de compartilhamento
          document.getElementById('shareLink').addEventListener('click', function (event) {
              event.preventDefault();
-             // Prevenir comportamento padrão do link
-         
-             // Adicione o código de compartilhamento aqui
              //const shareUrl = window.location.href;
-             const shareUrl = 'https://waltemar.com.br/videos/lisboa.html';
+             const shareUrl = 'https://bit.ly/4cO0OkX';
              const shareTitle = 'Latam Airlines | MAO | LIS';
              const shareContent = 'All things work together for those who truly love God.😎'
              if (navigator.share) {
