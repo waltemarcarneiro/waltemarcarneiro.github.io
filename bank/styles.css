@@ -74,10 +74,10 @@ body {
     align-items: center;
     margin-bottom: 20px;
 }
-.action {
+/*.action {
     text-align: center;
     cursor: pointer;
-    padding: 10px;
+    padding: 30px 20px;
     background: #fff;
     border-radius: 10px;
     height: 80px;
@@ -86,16 +86,29 @@ body {
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
-    border-bottom: 2px solid #dddddd;
+    box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.53);
+}*/
+.action {
+    text-align: center;
+    cursor: pointer;
+    padding: 30px 15px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.2);
 }
 .action p {
-    font-size: 0.7rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #e77000;
 }
 .action .icon {
     font-size: 30px;
     margin-bottom: 5px;
-    color: #F76700;
+    color: #e77000;
 }
 .notification {
     display: none;
