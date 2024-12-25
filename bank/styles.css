@@ -8,15 +8,17 @@
 body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    /*font-family: 'Inter', sans-serif;*/
+    /* font-family: 'Inter', sans-serif; */
     Font-family: 'Wix Madefor Text', serif;
-    font-weight: 400;
+    font-weight: 500;
     background-color: #F5F6FA;
     margin: 0;
     display: flex;
     justify-content: center;
     color: #151515;
     font-size: 16px;
+    align-items: center;
+    height: 100vh;
 }
 .content {
     max-width: 480px;
@@ -179,8 +181,8 @@ body {
     text-transform: uppercase;
 }
 .conta strong {
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 500;
 }
 .copyright {
    
