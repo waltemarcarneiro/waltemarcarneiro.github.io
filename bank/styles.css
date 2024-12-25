@@ -29,6 +29,8 @@ body {
     overflow: hidden;
 }
 .header {
+    height: 30px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +40,6 @@ body {
     right: 0px;
     margin: auto;
     max-width: 480px;
-    padding: 15px 20px;
     z-index: 1000;
     box-shadow: 0px 1px 5px 2px rgba(238, 238, 238, 1);
     background: #fff;
@@ -185,7 +186,6 @@ body {
     font-weight: 500;
 }
 .copyright {
-   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -195,9 +195,10 @@ body {
     right: 0;
     left: 0;
     margin: auto;
-    font-size: 0.7rem;
-    padding-bottom: 2px;
+    font-size: 0.875rem;
     text-shadow: 0px 1px 1px #fff;
+    height: 20px;
+    color: #999;
 }
 .overlay {
     position: fixed;
