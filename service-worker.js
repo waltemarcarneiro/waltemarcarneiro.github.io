@@ -23,12 +23,15 @@ const urlsToCache = [
 
 // Instalação do service worker e cache dos recursos
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log('Cached offline page during install');
-      return cache.addAll(urlsToCache);
-    }).then(() => self.skipWaiting())
-  );
+    event.waitUntil(
+        caches.open(CACHE_NAME).then(cache => {
+            return Promise.all(urlsToCache.map(url =>
+                cache.add(url).catch(err => {
+                    console.error(`Erro ao adicionar ${url} ao cache:`, err);
+                })
+            ));
+        }).then(() => self.skipWaiting())
+    );
 });
 
 // Fetch event para servir recursos do cache
