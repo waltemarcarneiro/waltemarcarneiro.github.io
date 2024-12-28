@@ -42,15 +42,21 @@
 
             body {
                 font-family: 'Roboto', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                overflow: hidden;
             }
 
             .container {
-                height: 99.99vh;
+                /* height: 99.99vh; */
                 overflow: hidden;
                 align-items: center;
-                display: flex;
+                /display: flex;
                 justify-content: center;
                 position: relative;
+                
             }
 
             .video-background {
@@ -78,6 +84,7 @@
                 color: white;
                 text-align: center;
                 max-width: 300px;
+                
             }
 
             .fluent {
@@ -136,11 +143,12 @@
         </style>
     </head>
     <body>
-        <div class="container">
-            <video class="video-background" autoplay muted loop>
+        <video class="video-background" autoplay muted loop>
                 <source src="https://waltemar.com.br/videos/profile.mp4" type="video/mp4">Your browser does not support the video tag.
       
             </video>
+        <div class="container">
+            
             <div class="overlay"></div>
             <div class="welcome-text">
                 <img src="https://waltemar.com.br/image/profile.png" width="100" alt="foto" style="border-radius: 100%; border: 3px solid #fff; padding: 2px;">
