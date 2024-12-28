@@ -44,14 +44,16 @@
       }
 
       body {
-         font-family: 'Inter';
+         font-family: 'Rooboto', sans-serif;
+         
       }
 
       .container {
-         position: relative;
-         width: 100%;
          height: 100vh;
          overflow: hidden;
+         align-items:center;
+         display: flex;
+         justify-content: center;
       }
 
       .video-background {
@@ -69,21 +71,17 @@
          top: 0;
          left: 0;
          width: 100%;
-         height: 100%;
          background-color: rgba(0, 0, 0, 0.3);
-      }
+    }
 
       .welcome-text {
-         padding: 20px 10px;
-         background: rgba(0, 0, 0, 0.3);
+         padding: 20px;
+         background: rgba(0, 0, 0, 0.2);
          border-radius: 10px;
          color: white;
          text-align: center;
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         width: 90%;
+         max-width: 300px;
+         
       }
 
       .fluent {
@@ -163,7 +161,7 @@
          </div>
 
          <div class="social-items">
-            <a href=""><img src="https://waltemar.com.br/image/xx-twitter.svg"></a>
+            <a href=""><img src="https://waltemar.com.br/image/xx-twitter.svg" height="20"></a>
             
          </div>
 
@@ -179,14 +177,14 @@
                href="https://www.linkedin.com/in/waltemarcarneiro/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BwsRkGchiQROchQ1rH%2BfX%2Bg%3D%3D">
                <ion-icon name="logo-linkedin"></ion-icon>
             </a>
-            
+          
          </div>
 
          <div class="social-items">
             <a href="#">
                <ion-icon name="logo-facebook"></ion-icon>
             </a>
-            
+           
          </div>
 
       </div>
