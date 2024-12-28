@@ -495,10 +495,8 @@ a {
     cursor: pointer;
 }
 
-/*AVISO BANNER*/
-/*aviso*/
 .aviso {
-    bottom: 10%;
+    bottom: 100px;
     background: #fff;
     padding: 10px;
     display: flex;
