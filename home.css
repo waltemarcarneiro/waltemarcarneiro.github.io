@@ -519,13 +519,16 @@ a {
 .btn-aviso {
     background: #007bff;
     color: white;
-    padding: 3px 10px;
-    border-radius: 5px;
-    align-items: center;
+    padding: 5px 10px;
+    border-radius: 15px;
     border: none;
     white-space: nowrap;
     float: right;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-family: 'Wix Madefor Text', sans-serif;
 }
 
 .aviso span {
