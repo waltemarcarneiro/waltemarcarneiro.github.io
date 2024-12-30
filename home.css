@@ -59,7 +59,8 @@ body, html {
 
 .date {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 0.875rem;
+    opacity: 0.5;
 }
 
 #user {
@@ -134,21 +135,21 @@ body, html {
 .content {
     text-align: left;
     user-select: none;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
-.center-text {
-    text-align: center;
+.bem-vindo {
     user-select: none;
+    margin-bottom: 20px;
 }
 
-.center-text h1 {
+.bem-vindo h1 {
+    font-family: 'Segoe UI Variable Display-Thin', sans-serif;
     font-size: 2.8rem;
     font-weight: 300;
-    text-shadow: 1px 1px #3d1319;
     color: white;
     text-align: left;
-    margin-bottom: 30px;
+   
 }
 
 h2 {
@@ -216,7 +217,6 @@ h2 {
     background: white;
     margin-right: 40px;
     -webkit-tap-highlight-color: transparent;
-    tap-highlight-color: transparent;
     user-select: none;
 }
 
@@ -496,9 +496,9 @@ a {
 }
 
 .aviso {
-    bottom: 100px;
+    bottom: 9%;
     background: #fff;
-    padding: 10px;
+    padding: 3px 5px;
     display: flex;
     border-radius: 5px;
     align-items: center;
@@ -511,22 +511,23 @@ a {
 }
 
 .logo-aviso {
-    background: #ccc;
-    margin-right: 10px;
-    border-radius: 10px;
+    background: #fff;
+    margin-right: 5px;
+    border-radius: 5px;
 }
 
 .btn-aviso {
     background: #007bff;
     color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
+    padding: 1px 10px 2px 8px;
+    border-radius: 5px;
     border: none;
     white-space: nowrap;
     float: right;
     cursor: pointer;
     display: flex;
     align-items: center;
+    font-size: 0.875rem;
     font-weight: 500;
     font-family: 'Wix Madefor Text', sans-serif;
 }
@@ -537,6 +538,6 @@ a {
 
 .aviso p {
     color: #333;
-    line-height: 1.2;
-    font-size: 1rem;
+    line-height: 1.1;
+    font-size: 0.875rem;
 }
