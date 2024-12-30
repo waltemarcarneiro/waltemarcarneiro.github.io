@@ -5,11 +5,11 @@
    <meta charset="UTF-8">
    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
    <title>Login | Waltemar Carneiro</title>
-   <link rel="stylesheet" href="login.css">
+   <link rel="stylesheet" href="./login.css">
    <link rel="manifest" href="../manifest.json" />
    <meta name="theme-color" content="#120912">
    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-   <script src="login.js"></script>
+   <script src="./login.js"></script>
    <!-- FAVICON-->
    <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
    <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
@@ -22,38 +22,6 @@
    <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon512.png" sizes="512x512">
    <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#120912" />
 </head>
-<style>
-   .header {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 90%;
-      top: 10px;
-      position: fixed;
-   }
-
-   .header ion-icon {
-      color: #fff;
-      font-size: 24px;
-      padding-left: 20px;
-      cursor: pointer;
-   }
-
-   .icon-top-right {
-      display: flex;
-      align-items: center;
-   }
-
-   .icon-top-right button {
-      background: #2b3fff;
-      color: #fff;
-      font-weight: 500;
-      padding: 7px 20px;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-   }
-</style>
 
 <body>
    <div class="header">
@@ -68,7 +36,7 @@
          <h1>Conecte-se</h1>
       </div>
       <div class="form-elements">
-         <div style="display: flex; width: 100%;">
+         <div class="label-container"">
             <label for="usernameInput">Usuário:</label>
          </div>
          <div class="input-container">
@@ -76,7 +44,7 @@
             <input id="usernameInput" alt="username" type="text" placeholder="Nome de usuário" required>
          </div>
          <br>
-         <div style="display: flex; width: 100%;">
+         <div class="label-container">
             <label for="usernameInput">Senha:</label>
          </div>
          <div class="input-container">
@@ -178,8 +146,8 @@
 
    <script src="../script-sw.js"></script>
    <script src="../AppInstall.js"></script>
-   <script src="login.js"></script>
-   <script src="../pro.js"></script>
+   <script src="./login.js"></script>
+   <script src="../pro4.js"></script>
 
 </body>
 
