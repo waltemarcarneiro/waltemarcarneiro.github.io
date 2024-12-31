@@ -36,7 +36,7 @@ body {
 
 @media screen and (orientation: portrait) {
     body {
-        background: linear-gradient(134deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://waltemar.com.br/image/bg.jpg') no-repeat center center fixed;
+        background: linear-gradient(134deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://waltemar.com.br/login/login-bg.jpg') no-repeat center center fixed;
         background-size: cover;
     }
 }
