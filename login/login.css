@@ -270,7 +270,7 @@ input[type="password"]:-webkit-autofill {
     text-decoration: none;
     color: #fff;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.875rem;
 }
 
 .store-icons2 ion-icon {
