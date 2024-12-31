@@ -64,6 +64,27 @@ body {
     border-radius: 20px;
 }
 
+
+@media (min-width: 480px) and (orientation: landscape) {
+    .login-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        width: 90%;
+        
+    }
+}
+
+@media (orientation: landscape) {
+    .fixed-icons {
+        
+        max-width: 45%;
+        left: 0;
+        
+    }
+}
+
 .logo-title {
     flex-direction: column;
     align-items: center;
@@ -89,6 +110,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 /* Estilo padrão do input */
 input[type="text"],
@@ -172,8 +194,7 @@ input[type="password"]:-webkit-autofill {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .icons-footer {
@@ -258,15 +279,6 @@ input[type="password"]:-webkit-autofill {
     color: #fff;
 }
 
-@media (min-width: 600px) and (orientation: landscape) {
-    .login-container {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        text-align: left;
-        width: 80%;
-    }
-}
 
 /*popup*/
 .popup {
