@@ -67,3 +67,52 @@ function toggleOverlay(show) {
         overlay.classList.remove('show');
     }
 }
+
+//UPDATE PAGE
+
+let startY = 0;
+
+// Detecta o início do gesto
+document.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+}, { passive: true });
+
+// Detecta o movimento
+document.addEventListener('touchmove', (e) => {
+    const currentY = e.touches[0].clientY;
+
+    // Verifica se o gesto foi de cima para baixo e no topo da página
+    if (currentY - startY > 50 && window.scrollY === 0) {
+        // Seta um indicador no localStorage
+        localStorage.setItem('pageRefreshed', 'true');
+        // Atualiza a página
+        location.reload();
+    }
+}, { passive: true });
+
+// Verifica se a página foi recarregada
+window.addEventListener('load', () => {
+    if (localStorage.getItem('pageRefreshed') === 'true') {
+        // Mostra a mensagem
+        const message = document.createElement('div');
+        message.textContent = 'Seção atualizada!';
+        message.style.position = 'fixed';
+        message.style.top = '50%';
+        message.style.left = '50%';
+        message.style.transform = 'translateX(-50%)';
+        message.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        message.style.color = '#fff';
+        message.style.padding = '10px 20px';
+        message.style.borderRadius = '5px';
+        message.style.zIndex = '9999';
+        message.style.fontFamily = 'Arial, sans-serif';
+        document.body.appendChild(message);
+
+        // Remove a mensagem após 3 segundos
+        setTimeout(() => {
+            document.body.removeChild(message);
+            // Limpa o indicador do localStorage
+            localStorage.removeItem('pageRefreshed');
+        }, 3000);
+    }
+});
