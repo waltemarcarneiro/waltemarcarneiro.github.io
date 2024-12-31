@@ -8,16 +8,27 @@
     user-select: none;
 }
 
+html, body {
+    /* Garante que o conteúdo ocupe toda a altura da viewport sem gerar scroll extra */
+    height: 100%;
+    overflow: hidden; /* Impede o scroll involuntário */
+}
+
 body {
     font-family: "Wix Madefor Text", serif;
     background: #726232;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://waltemar.com.br/image/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+
+    /* Centraliza o conteúdo no centro da viewport */
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* Define a altura mínima para garantir que o conteúdo permaneça centralizado */
     min-height: 100vh;
+
     text-align: center;
     flex-direction: column;
     font-size: 16px;
@@ -32,16 +43,26 @@ body {
 }
 
 .login-container {
-    background-color: rgba(0, 0, 0, 0.0);
+    /* Permite que a altura do conteúdo dentro da div não ultrapasse a viewport */
+    max-height: 100%; 
+
+    /* Garante que a div ocupe o espaço disponível sem gerar scroll extra */
     width: 100%;
     padding: 20px;
-    border-radius: 20px;
+
+    /* Adiciona transparência ao fundo sem comprometer o layout */
+    background-color: rgba(0, 0, 0, 0.0);
+
+    /* Alinha os itens centralizados */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
-    height: 100%;
+
+    /* Remove dependência de altura total e evita movimento */
+    flex: 1;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .logo-title {
