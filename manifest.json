@@ -137,7 +137,7 @@
   },
   "shortcuts": [
     {
-      "name": "Fazer um Pix",
+      "name": "Contribuir",
       "description": "Pagamentos",
       "url": "/bank/inter.html",
       "icons": [
@@ -149,8 +149,8 @@
       ]
     },
     {
-      "name": "Playlist",
-      "url": "/videos/playlist.html",
+      "name": "Rádio",
+      "url": "/pages/radio.html",
       "description": "Playlist",
       "icons": [
         {
