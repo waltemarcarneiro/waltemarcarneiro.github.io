@@ -4,32 +4,44 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+html, body {
+    /* Garante que o conteúdo ocupe toda a altura da viewport sem gerar scroll extra */
+    height: 100%;
+    overflow: hidden; /* Impede o scroll involuntário */
 }
 body {
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    /* font-family: 'Inter', sans-serif; */
+    
     Font-family: 'Wix Madefor Text', serif;
+    color: #151515;
+    font-size: 16px;
     font-weight: 500;
+
     background-color: #F5F6FA;
     margin: 0;
     display: flex;
     justify-content: center;
-    color: #151515;
-    font-size: 16px;
     align-items: center;
-    height: 99.9vh;
+    /* Define a altura mínima para garantir que o conteúdo permaneça centralizado */
+    min-height: 100vh;
 }
 .content {
     max-width: 480px;
     width: 100%;
     padding: 0px 20px;
-    position: relative;
     z-index: 1;
+    overflow: hidden;
+    /* Permite que a altura do conteúdo dentro da div não ultrapasse a viewport */
+    max-height: 100%;
+    /* Remove dependência de altura total e evita movimento */
+    flex: 1;
     overflow: hidden;
 }
 .header {
-    height: 30px;
+    height: 50px;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -40,12 +52,9 @@ body {
     right: 0px;
     margin: auto;
     max-width: 480px;
-    z-index: 1000;
-    border-bottom: 1px solid #ddd;
     background: #f76700;
     font-weight: 600;
     color: #fff;
-    
 }
 /*posicioando icons e titulo a esquerda*/
 header .icon:first-child {
