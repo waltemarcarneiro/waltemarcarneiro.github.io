@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,10 +9,12 @@
     user-select: none;
 }
 
-html, body {
+html,
+body {
     /* Garante que o conteúdo ocupe toda a altura da viewport sem gerar scroll extra */
     height: 100%;
-    overflow: hidden; /* Impede o scroll involuntário */
+    overflow: hidden;
+    /* Impede o scroll involuntário */
 }
 
 body {
@@ -41,7 +44,7 @@ body {
 
 .login-container {
     /* Permite que a altura do conteúdo dentro da div não ultrapasse a viewport */
-    max-height: 100%; 
+    max-height: 100%;
 
     /* Garante que a div ocupe o espaço disponível sem gerar scroll extra */
     width: 100%;
@@ -70,23 +73,23 @@ body {
         justify-content: space-between;
         text-align: left;
         width: 90%;
-        
+
     }
 }
 
 @media (orientation: landscape) {
     .fixed-icons {
-        
+
         max-width: 45%;
         left: 0;
-        
+
     }
 }
 
 .logo-title {
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 100%;
     justify-content: center;
 }
@@ -100,11 +103,12 @@ body {
     width: 80px;
     height: 80px;
     margin-bottom: 10px;
-    border-radius: 50px;
-    border: 2px solid #222;
+    border-radius: 50em;
     padding: 5px;
-    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 35%, rgba(231, 57, 9, 0.366) 100%);
-
+    /*background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 35%, rgba(231, 57, 9, 0.366) 100%);*/
+    background: linear-gradient(#0f0f0f, #0f0f0f) padding-box, linear-gradient(to right, darkblue, darkorchid) border-box;
+    border-radius: 50em;
+    border: 3px solid transparent;
 }
 
 .form-elements {
@@ -112,28 +116,38 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
+
 /* Estilo padrão do input */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    background-color: transparent; /* Fundo transparente */
-    color: #fff; /* Texto branco */
+    background-color: transparent;
+    /* Fundo transparente */
+    color: #fff;
+    /* Texto branco */
     border-radius: 5px;
     width: 100%;
     outline: none;
-    caret-color: #fff; /* Cor do cursor */
+    caret-color: #fff;
+    /* Cor do cursor */
 }
+
 /* Estilo para inputs com preenchimento automático */
 input[type="text"]:-webkit-autofill,
 input[type="email"]:-webkit-autofill,
 input[type="password"]:-webkit-autofill {
-    background-color: transparent !important; /* Remove o fundo branco */
-    color: #fff !important; /* Força o texto branco */
-    -webkit-box-shadow: 0 0 0 1000px transparent inset !important; /* Garante a transparência */
-    transition: background-color 5000s ease-in-out 0s; /* Remove a animação de preenchimento automático */
-    -webkit-text-fill-color: #fff !important; /* Força o preenchimento do texto para branco */
+    background-color: transparent !important;
+    /* Remove o fundo branco */
+    color: #fff !important;
+    /* Força o texto branco */
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    /* Garante a transparência */
+    transition: background-color 5000s ease-in-out 0s;
+    /* Remove a animação de preenchimento automático */
+    -webkit-text-fill-color: #fff !important;
+    /* Força o preenchimento do texto para branco */
 }
 
 .input-container {
@@ -168,10 +182,12 @@ input[type="password"]:-webkit-autofill {
     opacity: 0.5;
     font-size: 1rem;
 }
+
 .label-container {
     display: flex;
     width: 100%;
 }
+
 .forgot {
     width: 100%;
     font-weight: 500;
@@ -274,7 +290,7 @@ input[type="password"]:-webkit-autofill {
     color: #fff;
     border-radius: 20px;
     font-size: 1rem;
-    
+
 }
 
 .store-icons2 ion-icon {
