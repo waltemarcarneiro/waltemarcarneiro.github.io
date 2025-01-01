@@ -276,6 +276,10 @@ input[type="password"]:-webkit-autofill {
     opacity: 0.8;
 }
 
+.fixed-icons a p {
+    opacity: 0.5;
+}
+
 .store-icons2 {
     width: 100%;
     display: flex;
