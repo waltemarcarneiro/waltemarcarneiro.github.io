@@ -19,7 +19,7 @@
 body, html {
     font-family: "Wix Madefor Text", sans-serif;
     background: #726232;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://waltemar.com.br/image/bg.jpg') no-repeat center center fixed;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
@@ -155,7 +155,7 @@ body, html {
     width: 101%;
     height: 100%;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), 
-                url('https://i.pinimg.com/originals/04/27/dd/0427ddbb1adb88f97ff79bb2a1a104c9.jpg') no-repeat center center fixed;
+                url('./image/bg.jpg') no-repeat center center fixed;
     background-size: cover;
     filter: blur(8px);
     z-index: -1;
@@ -337,7 +337,7 @@ a {
     align-items: center;
     background: rgba(0, 0, 0, 0.3);
     /*background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(22,5,83,1) 35%, rgba(116,76,191,1) 100%);*/
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(22,5,83,1) 35%, rgba(116,76,191,0.27503501400560226) 100%);
+    /*background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(22,5,83,1) 35%, rgba(116,76,191,0.27503501400560226) 100%);*/
 }
 
 .bloco p {
