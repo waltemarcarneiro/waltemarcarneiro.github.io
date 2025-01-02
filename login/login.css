@@ -77,7 +77,7 @@ body {
 @media (orientation: landscape) {
     .fixed-icons {
 
-        max-width: 45%;
+        max-width: 50%;
         left: 0;
 
     }
