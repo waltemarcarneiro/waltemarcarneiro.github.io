@@ -44,15 +44,12 @@ body {
 
 .login-container {
     /* Permite que a altura do conteúdo dentro da div não ultrapasse a viewport */
-    max-height: 100%;
-
+    min-height: 100%;
     /* Garante que a div ocupe o espaço disponível sem gerar scroll extra */
     width: 100%;
     padding: 20px;
-
     /* Adiciona transparência ao fundo sem comprometer o layout */
     background-color: rgba(0, 0, 0, 0.0);
-
     /* Alinha os itens centralizados */
     display: flex;
     flex-direction: column;
