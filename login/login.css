@@ -4,20 +4,24 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    user-select: none;
+    box-sizing: border-box;
+    
 }
 
-html,
-body {
-    /* Garante que o conteúdo ocupe toda a altura da viewport sem gerar scroll extra */
+html, body {
+    
     height: 100%;
     overflow: hidden;
-    /* Impede o scroll involuntário */
+    outline: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+
 }
 
 body {
+    
     font-family: "Wix Madefor Text", serif;
     background: #726232;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://waltemar.com.br/login/login-bg.jpg') no-repeat center center fixed;
@@ -26,12 +30,9 @@ body {
     font-size: 16px;
     font-weight: 500;
     text-align: center;
-    /* Centraliza o conteúdo no centro da viewport */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Define a altura mínima para garantir que o conteúdo permaneça centralizado */
-    min-height: 100vh;
     flex-direction: column;
 }
 
@@ -43,26 +44,18 @@ body {
 }
 
 .login-container {
-    /* Permite que a altura do conteúdo dentro da div não ultrapasse a viewport */
-    min-height: 100%;
-
-    /* Garante que a div ocupe o espaço disponível sem gerar scroll extra */
+    
+    height: 100%;
     width: 100%;
     padding: 20px;
-
-    /* Adiciona transparência ao fundo sem comprometer o layout */
-    background-color: rgba(0, 0, 0, 0.0);
-
-    /* Alinha os itens centralizados */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    /* Remove dependência de altura total e evita movimento */
     flex: 1;
     overflow: hidden;
     border-radius: 20px;
+    
 }
 
 
