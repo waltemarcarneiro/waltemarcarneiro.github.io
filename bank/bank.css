@@ -184,12 +184,13 @@ header .icon:first-child {
     background-color: #f06800;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
     text-align: center;
     font-size: 1.1rem;
+    font-weight: 600;
 }
 .logo-site {
     width: 100%;
