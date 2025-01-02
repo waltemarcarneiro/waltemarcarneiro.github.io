@@ -71,7 +71,7 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        /*text-align: left;*/
+        text-align: left;
         width: 90%;
 
     }
