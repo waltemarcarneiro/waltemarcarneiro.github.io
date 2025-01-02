@@ -45,11 +45,14 @@ body {
 .login-container {
     /* Permite que a altura do conteúdo dentro da div não ultrapasse a viewport */
     min-height: 100%;
+
     /* Garante que a div ocupe o espaço disponível sem gerar scroll extra */
     width: 100%;
     padding: 20px;
+
     /* Adiciona transparência ao fundo sem comprometer o layout */
     background-color: rgba(0, 0, 0, 0.0);
+
     /* Alinha os itens centralizados */
     display: flex;
     flex-direction: column;
@@ -76,10 +79,13 @@ body {
 
 @media (orientation: landscape) {
     .fixed-icons {
-
         max-width: 50%;
         left: 0;
-
+    }
+    .store-icons2 a {
+        
+        font-size: 0.875rem !important;
+    
     }
 }
 
@@ -450,5 +456,19 @@ input[type="password"]:-webkit-autofill {
     height: auto;
     border-radius: 10px;
 }
-
 /*END CARROSSEL*/
+
+/*NEW CONFIG*/
+.skid-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    flex-wrap: wrap;
+    right: 10px;
+    top: 10px
+}
+.skid-row ion-icon{
+    font-size: 32px;
+    --ionicon-stroke-width: 8px;
+}
