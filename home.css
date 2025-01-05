@@ -136,7 +136,7 @@ body, html {
 /*START ABOUT*/
 .about {
     top: 100%;
-    height: 100%;
+    height: calc(100vh - 20px);
     position: absolute;
     left: 0;
     right: 0;
@@ -217,7 +217,7 @@ h2 {
 
 #divBack {
     text-align: left;
-    left: 10px;
+    left: 20px;
     right: 0;
     position: absolute;
     bottom: 20px;
