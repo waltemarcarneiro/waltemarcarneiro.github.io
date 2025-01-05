@@ -5,32 +5,31 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body {
+html, body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     font-family: "Wix Madefor Text", serif;
-    background-color: #f2f2f2;
+    background-color: #fff;
     margin: 0;
     display: flex;
     color: #000624;
     font-size: 16px;
-    height: 100vh;););););););););););););
     align-items: center;
     justify-content: center;
-    /* overflow: auto; */
+    height: 100vh;
 }
 .content {
     max-width: 480px;
-    width: 80%;
+    width: 90%;
     padding: 20px;
     text-align: center;
-    DISPLAY: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     flex: 1;
-    height: calc(100vh - 70px);
 }
 .header {
     display: flex;
@@ -83,7 +82,7 @@ p{
 }
 
 .copyright {
-    background: #f2f2f2;
+    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
