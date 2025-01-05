@@ -10,8 +10,9 @@
 html, body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    font-family: "Wix Madefor Text", serif;
-    background-color: #fff;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    /*font-family: "Wix Madefor Text", serif;*/
+    background-color: #f2f2f2;
     margin: 0;
     display: flex;
     color: #000624;
@@ -82,7 +83,7 @@ p{
 }
 
 .copyright {
-    background: #fff;
+    
     display: flex;
     justify-content: center;
     align-items: center;
