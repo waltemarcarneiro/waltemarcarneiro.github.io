@@ -6,11 +6,12 @@
     padding: 0;
     -webkit-tap-highlight-color: transparent;
     box-sizing: border-box;
-    
+
 }
 
-html, body {
-    
+html,
+body {
+
     height: 100%;
     overflow: hidden;
     outline: none;
@@ -21,7 +22,7 @@ html, body {
 }
 
 body {
-    
+
     font-family: "Wix Madefor Text", serif;
     background: #726232;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://waltemar.com.br/login/login-bg.jpg') no-repeat center center fixed;
@@ -44,7 +45,7 @@ body {
 }
 
 .login-container {
-    
+
     height: 100%;
     width: 100%;
     padding: 20px;
@@ -55,7 +56,7 @@ body {
     flex: 1;
     overflow: hidden;
     border-radius: 20px;
-    
+
 }
 
 
@@ -75,10 +76,11 @@ body {
         max-width: 50%;
         left: 0;
     }
+
     .store-icons2 a {
-        
+
         font-size: 0.875rem !important;
-    
+
     }
 }
 
@@ -120,14 +122,12 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     background-color: transparent;
-    /* Fundo transparente */
     color: #fff;
-    /* Texto branco */
     border-radius: 5px;
     width: 100%;
     outline: none;
     caret-color: #fff;
-    /* Cor do cursor */
+
 }
 
 /* Estilo para inputs com preenchimento automático */
@@ -135,7 +135,6 @@ input[type="text"]:-webkit-autofill,
 input[type="email"]:-webkit-autofill,
 input[type="password"]:-webkit-autofill {
     background-color: transparent !important;
-    /* Remove o fundo branco */
     color: #fff !important;
     /* Força o texto branco */
     -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
@@ -200,15 +199,35 @@ input[type="password"]:-webkit-autofill {
 }
 
 .login-button {
+    position: relative;
     background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
-    color: #fff;
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 1;
+    overflow: hidden;
     margin-top: 10px;
+}
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    background: linear-gradient(45deg, darkblue, darkorchid);
+    z-index: -1;
+    padding: 2px; /* Tamanho da borda */
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; 
+            mask-composite: exclude; 
 }
 
 .icons-footer {
@@ -273,7 +292,7 @@ input[type="password"]:-webkit-autofill {
 }
 
 .fixed-icons a p {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .store-icons2 {
@@ -449,10 +468,11 @@ input[type="password"]:-webkit-autofill {
     height: auto;
     border-radius: 10px;
 }
+
 /*END CARROSSEL*/
 
 /*NEW CONFIG*/
-.skid-row{
+.skid-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -461,7 +481,8 @@ input[type="password"]:-webkit-autofill {
     right: 10px;
     top: 10px
 }
-.skid-row ion-icon{
+
+.skid-row ion-icon {
     font-size: 32px;
     --ionicon-stroke-width: 8px;
 }
