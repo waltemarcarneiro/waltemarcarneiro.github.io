@@ -221,9 +221,14 @@ h2 {
     right: 0;
     position: absolute;
     bottom: 20px;
-    animation: bounce 2s infinite;
-
-    
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+    padding: 10px 10px 6px 6px;
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .footer {
