@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +10,7 @@ body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     font-family: "Wix Madefor Text", serif;
-    background-color: #f0f4f9;
+    background-color: #f2f2f2;
     margin: 0;
     display: flex;
     color: #000624;
@@ -16,7 +18,7 @@ body {
     height: 100vh;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
 }
 .content {
     max-width: 480px;
@@ -39,13 +41,14 @@ body {
     padding: 0px 20px;
     height: 50px;
     z-index: 1000;
-    border-bottom: 1px solid #ddd;
     font-weight: 500;
+    background: #F76700;
+    color: #fff;
 }
 .header .icon {
     font-size: 24px;
     cursor: pointer;
-    color: #F76700;
+    color: #fff;
 }
 h2{
     margin-bottom: 50px;
@@ -54,16 +57,29 @@ h2{
 }
 p{
     line-height: 1.5;
-    margin-top: 30px;
+    margin-top: 20px;
     font-weight: 600;
     font-size: 1.3rem;
 }
 .down{
     font-size: 5rem;
 }
+.play-protect{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #555;
+    gap: 5px;
+    font-size: 0.875rem;
+}
+.play-protect ion-icon{
+    font-size: 24px;
+}
 
 .copyright {
-    background: #f0f4f9;
+    background: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
