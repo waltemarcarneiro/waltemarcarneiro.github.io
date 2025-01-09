@@ -136,7 +136,7 @@ margin-bottom: 5px;
 display: -webkit-box;
 overflow: hidden;
 text-overflow: ellipsis;
-font-size: 0.95rem;
+font-size: 0.875rem;
 }
 .song-artist {
 font-size: 0.875em;
