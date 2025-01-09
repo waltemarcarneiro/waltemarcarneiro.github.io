@@ -11,8 +11,8 @@ html, body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-    background-color: #f7f7f7;
-    margin: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(251,235,211,1) 100%);
     display: flex;
     color: #000624;
     font-size: 16px;
@@ -64,9 +64,8 @@ p{
     font-weight: 600;
     font-size: 1.3rem;
 }
-.acesso-premium{
-    align-items: center;
-    display: flex;
+.premium{
+    color: #BA9373;
 }
 
 
