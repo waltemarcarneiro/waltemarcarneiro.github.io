@@ -119,12 +119,12 @@ header .icon:first-child {
 .action p {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #e77000;
+    color: #000612;
 }
 .action .icon {
-    font-size: 30px;
+    font-size: 48px;
     margin-bottom: 5px;
-    color: #e77000;
+    color: #f76700;
 }
 .notification {
     display: none;
@@ -176,7 +176,7 @@ header .icon:first-child {
 }
 .close-button {
     margin-top: 10px;
-    background-color: #f76700;
+    background-color: #F76700;
     color: white;
     border: none;
     padding: 10px;
