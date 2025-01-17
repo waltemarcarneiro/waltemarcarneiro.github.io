@@ -155,8 +155,8 @@ body, html {
     left: 0;
     width: 101%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), 
-                url('https://www.nationaldebtrelief.com/wp-content/uploads/2018/09/Grab-These-Apps-And-Let-Your-Phone-Pay-You-e1674588465685.jpg') no-repeat center center fixed;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('./image/bghome.jpg') no-repeat center center fixed;
     background-size: cover;
     filter: blur(0px);
     z-index: -1;
