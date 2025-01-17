@@ -20,7 +20,7 @@
 body, html {
     font-family: "Wix Madefor Text", sans-serif;
     background: #726232;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bg.jpg') no-repeat center center fixed;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://photo6.wambacdn.net/87/11/13/1812311178/2184784597_huge.jpg?hash=ZTU0itGFzw669zm_bUwgyA&expires=64060578000&updated=1699035686') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
