@@ -18,7 +18,7 @@ font-family: 'Roboto', sans-serif;
 background: linear-gradient(135deg, var(--background-dark), var(--background-light));
 color: var(--text-color);
 min-height: 100vh;
-background-image: url(https://c4.wallpaperflare.com/wallpaper/357/960/990/mountain-side-small-wallpaper-preview.jpg);
+background-image: url('tubebg.jpeg');
 background-size: cover;
 background-repeat: no-repeat;
 background-attachment: fixed;
