@@ -20,7 +20,7 @@
 body, html {
     font-family: "Wix Madefor Text", sans-serif;
     background: #726232;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://www.nationaldebtrelief.com/wp-content/uploads/2018/09/Grab-These-Apps-And-Let-Your-Phone-Pay-You-e1674588465685.jpg') no-repeat center center fixed;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bghome.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
