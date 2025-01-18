@@ -20,7 +20,7 @@
 body, html {
     font-family: "Wix Madefor Text", sans-serif;
     background: #726232;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bghome.jpg') no-repeat center center fixed;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bghome2.jpg') no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
     color: #fff;
@@ -571,7 +571,6 @@ a {
     margin: auto;
     text-align: left;
     
-    
 }
 
 .logo-promo {
@@ -584,7 +583,7 @@ a {
     background: #F76700;
     color: white;
     padding: 1px 10px 2px 8px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     white-space: nowrap;
     float: right;
