@@ -230,7 +230,7 @@ header .icon:first-child {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.8);
     /* Imagem padrão (para dispositivos móveis, por exemplo) */
-    background-image: url('image/wallpaper.jpg');
+    background-image: url('image/bg-bank.jpg');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
