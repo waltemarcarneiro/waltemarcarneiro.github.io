@@ -30,12 +30,13 @@
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta name="mobile-web-app-capable" content="yes" />
 
+      
       <!-- O aplicativo Firebase (o SDK principal do Firebase) é sempre necessário e deve ser listado primeiro -->
-      <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+      <!--<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>-->
       <!-- Adicione os produtos Firebase que você deseja usar -->
-      <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js"></script>
-
+      <!--<script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>-->
+      <!--<script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js"></script>-->
+      
    </head>
    <body>
       <!-- Carrossel de introdução -->
@@ -394,8 +395,9 @@
          <p class="message">Adicionar o aplicativo a sua tela inicial?</p>
          <button class="install-btn-app" id="installButton">Adicionar</button>
       </div>
-<!--FIREBASE CONFIG-->
-<script>
+      
+<!--///// FIREBASE CONFIG /////-->
+<!--<script>
       // Configuração Firebase
       const firebaseConfig = {
           apiKey: "AIzaSyCHOFjKBxvKhzLkk18vOhzmoKZyCPmevyM",
@@ -410,8 +412,9 @@
       const analytics = getAnalytics(app);
 </script>
 
-<!-- Script para verificar o status de autenticação -->
-   <script>
+<!-- ///// Script para verificar o status de autenticação ///// -->
+      
+   <!--<script>
       document.addEventListener("DOMContentLoaded", function () {
          // Use localStorage para checar a sessão do usuário
          const usuarioLogado = localStorage.getItem("usuarioLogado");
@@ -433,7 +436,7 @@
             }
          });
       });
-   </script>
+   </script>-->
 
       <script src="./carrossel/carrossel.js"></script>
       <script src="./script-sw.js"></script>
