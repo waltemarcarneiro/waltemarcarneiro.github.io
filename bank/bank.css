@@ -144,7 +144,7 @@ header .icon:first-child {
     transform: translateY(100%); 
     max-width: 480px;
     margin: auto;
-    -webkit-box-shadow: 0px -2px 10px 0px rgba(241,241,241,1);
+    /*-webkit-box-shadow: 0px -2px 10px 0px rgba(241,241,241,1);*/
 }
 .notification.show {
     display: flex;
