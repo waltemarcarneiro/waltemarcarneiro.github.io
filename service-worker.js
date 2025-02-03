@@ -8,7 +8,6 @@ const urlsToCache = [
   '/bank/sofisa.html',
   '/bank/script.js',
   '/bank/styles.css',
-  '/bank/image/wallpaper.jpg',
   '/bank/qrcodes/qrcode-sofisa.png',
   '/bank/logos/icon192.png',
   '/bank/logos/sofisa.svg',
