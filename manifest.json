@@ -137,9 +137,9 @@
   },
   "shortcuts": [
     {
-      "name": "Contribuir",
+      "name": "Pagamentos",
       "description": "Pagamentos",
-      "url": "/bank/inter.html",
+      "url": "/bank/bb.html",
       "icons": [
         {
           "src": "shortcuts/pix.svg",
