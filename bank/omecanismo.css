@@ -63,7 +63,6 @@ min-height: 100vh;
     background: #fe2858;
     font-weight: 600;
     color: #fff;
-    border-bottom: 3px solid #2af0ea;
 }
 /*posicioando icons e titulo a esquerda*/
 header .icon:first-child {
