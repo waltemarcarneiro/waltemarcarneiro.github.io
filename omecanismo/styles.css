@@ -219,6 +219,8 @@ footer {
         }
         .modal strong {
             color: #dc3545;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
         }
         .modal p {
             font-family: 'Montserrat', sans-serif;
