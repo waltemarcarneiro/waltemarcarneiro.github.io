@@ -55,6 +55,21 @@ header {
 
 
 /* Botão Contribuir via Pix */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 0, 80, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(255, 0, 80, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 0, 80, 0.5);
+    }
+}
+
 .btn-pix {
     background-color: #ff0050; /* Cor rosa escuro do TikTok */
     color: white;
@@ -64,12 +79,14 @@ header {
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s;
+    animation: pulse 1.5s infinite;
 }
 
 .btn-pix:hover {
     background-color: #cc0040;
 }
+
 
 /* Container da div de contribuição (inicialmente oculta) */
 .pix-container {
