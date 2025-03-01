@@ -223,11 +223,11 @@ footer {
             font-family: 'Montserrat', sans-serif;
         }
         .modal p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 26px;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 24px;
             margin-bottom: 15px;
             color: #333;
-            font-weight: 600;
+            font-weight: 500;
         }
         .fechar {
             width: 100%;
