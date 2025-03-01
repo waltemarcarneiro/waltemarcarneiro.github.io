@@ -161,6 +161,7 @@ header {
 /* Nome do produto (quebra em até 2 linhas) */
 .produto h2 {
     font-size: 14px;
+    font-weight: 500;
     margin: 5px 0;
     height: 36px; /* Mantém espaço para duas linhas */
     overflow: hidden;
