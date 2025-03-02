@@ -77,14 +77,14 @@ header {
 }
 
 .btn-pix {
-    background-color: #ff0050; /* Cor rosa escuro do TikTok */
+    background-color: #ff0050;
     color: white;
-    padding: 10px 15px;
+    padding: 6px 8px;
     border: none;
     border-radius: 20px;
     font-size: 14px;
     letter-spacing: 0.5px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s;
     animation: pulse 1.5s infinite;
