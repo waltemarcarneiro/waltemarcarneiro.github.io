@@ -56,7 +56,10 @@ header {
     display: flex;
     flex-direction: column;
 }
-
+.slogan {
+    font-size: 14px;
+    color: #bbbbbb;
+}
 /* Botão Contribuir via Pix */
 @keyframes pulse {
     0% {
