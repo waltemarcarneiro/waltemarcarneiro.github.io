@@ -42,13 +42,13 @@ header {
 }
 /* Logo */
 .logo {
-    height: 50px;
+    height: 40px;
     margin-right: 10px;
 }
 
 /* Nome da loja */
 .nome-loja {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
 }
