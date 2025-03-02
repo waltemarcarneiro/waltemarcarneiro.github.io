@@ -264,3 +264,10 @@ footer {
                 opacity: 1;
             }
         }
+/* Impede que as imagens sejam salvas */
+img {
+    pointer-events: none; /* Impede interações */
+    user-drag: none; /* Bloqueia o arrastar da imagem */
+    -webkit-user-drag: none; /* Bloqueia no WebKit (Chrome, Safari) */
+    -webkit-touch-callout: none; /* Impede o menu ao segurar */
+}
