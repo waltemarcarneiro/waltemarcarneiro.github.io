@@ -146,23 +146,34 @@
          function fecharMensagem() {
              document.getElementById("overlay").style.display = "none";
          }
-      </script>
+</script>
+      
       <!-- Script para inicializar o Swiper -->
-      <script>
+<script>
          var swiper = new Swiper('.swiper-container', {
-             loop: true,
-             autoplay: {
-                 delay: 3000,
-                 disableOnInteraction: false,
-             },
-             pagination: {
-                 el: '.swiper-pagination',
-                 clickable: true,
-             },
-         });
-      </script>
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: true, // Pausa quando o usuário interagir
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+// Retomar autoplay após 5 segundos sem interação
+swiper.on('touchEnd', function () {
+    setTimeout(() => {
+        swiper.autoplay.start();
+    }, 5000);
+});
+</script>
+
+      
       <footer>
          <p>&copy; 2025 O Mecanismo - Todos os direitos reservados.</p>
       </footer>
+      
    </body>
 </html>
