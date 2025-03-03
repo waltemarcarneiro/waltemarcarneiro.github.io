@@ -8,16 +8,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    user-select: none;
 }
 
 /* Corpo da página com fundo escuro */
 body {
     background-color: #121212; /* Preto suave */
     color: #ffffff; /* Texto branco */
+    user-select: none;
+
 }
 main{
-    margin-top: 70px;
+    margin-top: 60px;
     margin-bottom: 50px;
 }
 /* Cabeçalho */
@@ -31,6 +32,7 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 2;
 }
 /* Container do nome e logo */
 .header-left {
@@ -78,7 +80,7 @@ header {
 }
 
 .btn-pix {
-    background-color: #ff0050;
+    background-color: #ff0050; /* Cor rosa escuro do TikTok */
     color: white;
     padding: 6px 8px;
     border: none;
@@ -264,10 +266,21 @@ footer {
                 opacity: 1;
             }
         }
-/* Impede que as imagens sejam salvas */
-img {
-    pointer-events: none; /* Impede interações */
-    user-drag: none; /* Bloqueia o arrastar da imagem */
-    -webkit-user-drag: none; /* Bloqueia no WebKit (Chrome, Safari) */
-    -webkit-touch-callout: none; /* Impede o menu ao segurar */
-}
+
+/*estilo do swiper*/
+.swiper-container {
+        width: 95%;
+        max-width: 700px;
+        height: auto;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: auto;        
+    }
+    .swiper-slide img {
+        width: 100%;
+        text-align: center;
+        border-radius: 10px;
+        text-align: center;
+        display: flex;
+    }
+

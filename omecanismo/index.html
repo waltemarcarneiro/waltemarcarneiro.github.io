@@ -20,6 +20,10 @@
       <meta property="og:image" content="https://waltemar.com.br/icons/om/icon512.png">
       <meta property="og:url" content="https://waltemar.com.br">
       <meta property="og:type" content="website">
+
+      <!-- Swiper.js -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
    </head>
    <body>
       <header>
@@ -32,7 +36,33 @@
          </div>
          <button class="btn-pix" onclick="copiarTexto()">Doação</button>
       </header>
+
+
+
       <main>
+
+
+<!-- Estrutura do carrossel -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="produto1.html"><img src="https://img.samsungapps.com/display/2025/0224/0141/uploadFile_20250224014134487_900.jpg" alt="Promoção 1"></a>
+        </div>
+        <div class="swiper-slide">
+            <a href="produto2.html"><img src="https://img.samsungapps.com/display/2025/0225/0652/uploadFile_20250225065231700_900.jpg" alt="Promoção 2"></a>
+        </div>
+        <div class="swiper-slide">
+            <a href="produto3.html"><img src="https://img.samsungapps.com/display/2025/0227/0539/uploadFile_20250227053936442_900.jpg" alt="Promoção 3"></a>
+        </div>
+        <div class="swiper-slide">
+            <a href="produto4.html"><img src="https://waltemar.com.br//omecanismo/img/slide4.png" alt="Promoção 3"></a>
+        </div>
+        <!-- Adicione até 8 imagens -->
+    </div>
+    <!-- Paginação (pontos) -->
+    <div class="swiper-pagination"></div>
+</div>
+
          <div class="galeria">
             <!-- Exemplo de produto -->
             <a href="https://s.shopee.com.br/Vs9edp2zT" class="produto" target="_blank">
@@ -65,7 +95,7 @@
             </a>
             <a href="https://s.shopee.com.br/8zqi5j38BV" class="produto" target="_blank">
                <img src="https://m.media-amazon.com/images/I/91Fv+EX07cL._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Produto 6">
-               <h2>Manual de Debate Politico</h2>
+               <h2>Manua de Debate Politico</h2>
                <p class="preco"><strong>R$ 20,00</strong></p>
             </a>
          </div>
@@ -95,32 +125,14 @@
                <p class="preco"><strong>R$ 37,00</strong></p>
             </a>
             <a href="https://s.shopee.com.br/8UuRYoQoIH" class="produto" target="_blank">
-               <img src="https://m.media-amazon.com/images/I/61U8z8IPgvS._AC_SL1500_.jpg" alt="Produto 8">
+               <img src="https://m.media-amazon.com/images/I/61U8z8IPgvS._AC_SL1500_.jpg" alt="Produto 11">
                <h2>Visões e Ilusões Políticas</h2>
                <p class="preco"><strong>R$ 65,66</strong></p>
             </a>
             <a href="https://s.shopee.com.br/1g47PXqzzx" class="produto" target="_blank">
-               <img src="https://m.media-amazon.com/images/I/61QDJdGB6cS._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Produto 9">
+               <img src="https://m.media-amazon.com/images/I/61QDJdGB6cS._AC_UF1000,1000_QL80_FMwebp_.jpg" alt="Produto 12">
                <h2>Politica é para Todos</h2>
                <p class="preco"><strong>R$ 60,22</strong></p>
-            </a>
-         </div>
-         <div class="galeria">
-            <!-- Exemplo de produto -->
-            <a href="https://s.shopee.com.br/7AP6R1wHBo" class="produto" target="_blank">
-               <img src="https://m.media-amazon.com/images/I/71BZMhhozxL._SL1500_.jpg" alt="Produto 13">
-               <h2>Como as Democracias Morrem</h2>
-               <p class="preco"><strong>R$ 60,28</strong></p>
-            </a>
-            <a href="https://s.shopee.com.br/20h0N5Robl" class="produto" target="_blank">
-               <img src="https://m.media-amazon.com/images/I/71iIHTGwUSL._SL1500_.jpg" alt="Produto 14">
-               <h2>Do Contrato Social</h2>
-               <p class="preco"><strong>R$ 19,95</strong></p>
-            </a>
-            <a href="https://s.shopee.com.br/9AAAuZWSG6" class="produto" target="_blank">
-               <img src="https://m.media-amazon.com/images/I/51XksvzFrpL._SY445_SX342_.jpg" alt="Produto 15">
-               <h2>Como Desarmar a Cultura Woke</h2>
-               <p class="preco"><strong>R$ 33,44</strong></p>
             </a>
          </div>
       </main>
@@ -147,17 +159,24 @@
              document.getElementById("overlay").style.display = "none";
          }
       </script>
-      
-      <!--LOCK RIGHT MOUSE-->
-      <script>
-         document.addEventListener("contextmenu", function (e) {
-          e.preventDefault();
-         });
-      </script>
-      
+
+<!-- Script para inicializar o Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+
       <footer>
          <p>&copy; 2025 O Mecanismo - Todos os direitos reservados.</p>
       </footer>
-      
    </body>
 </html>
