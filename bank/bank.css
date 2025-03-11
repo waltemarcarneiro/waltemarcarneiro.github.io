@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,15 +9,16 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     touch-action: pan-x pan-y;
     height: 100%;
     overflow: hidden;
-    
+
 }
 
 body {
-    
+
     Font-family: 'Wix Madefor Text', sans-serif;
     color: #000612;
     font-size: 16px;
@@ -38,8 +40,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    
+
 }
+
 .header {
     height: 50px;
     padding: 10px 20px;
@@ -56,6 +59,7 @@ body {
     font-weight: 600;
     color: #fff;
 }
+
 /*posicioando icons e titulo a esquerda*/
 header .icon:first-child {
     margin-right: 10px;
@@ -65,11 +69,13 @@ header .icon:first-child {
     flex: 1;
     text-align: left;
 }
+
 .header .icon {
     font-size: 24px;
     cursor: pointer;
-    color: #fff;    
+    color: #fff;
 }
+
 .logo {
     display: flex;
     height: 20px;
@@ -87,15 +93,18 @@ header .icon:first-child {
     align-items: center;
     justify-content: center;
 }
+
 .qrcode {
     height: 120px;
 }
+
 .dica {
     font-size: 1rem;
     text-align: center;
     margin-bottom: 20px;
     font-weight: 600;
 }
+
 .actions {
     display: flex;
     justify-content: space-around;
@@ -103,6 +112,7 @@ header .icon:first-child {
     margin-bottom: 30px;
     width: 100%;
 }
+
 .action {
     text-align: center;
     cursor: pointer;
@@ -110,23 +120,29 @@ header .icon:first-child {
     background: #fff;
     border-radius: 5px;
     display: flex;
-    flex-direction: column; 
-    justify-content: center; 
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.20);
-    
+    box-shadow: 0px 0px 25px -5px rgba(0, 0, 0, 0.20);
+
 }
+
 .action p {
     font-size: 0.9rem;
     font-weight: 600;
     color: #000612;
 }
+
 .action .icon {
     font-size: 48px;
     margin-bottom: 5px;
     color: #f76700;
 }
+
 .notification {
+    display: none;
+    position: fixed;
+    bottom: 0;
     left: 0;
     right: 0;
     background-color: white;
@@ -138,42 +154,52 @@ header .icon:first-child {
     align-items: center;
     z-index: 2000;
     transition: transform 0.3s ease-in-out;
-    transform: translateY(100%); 
+    transform: translateY(100%);
     max-width: 480px;
     margin: auto;
     -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Para compatibilidade com navegadores antigos */
     -moz-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Para Firefox antigo */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Padrão */
 }
+
 .notification.show {
     display: flex;
     transform: translateY(0);
 }
+
 .notification-content {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
+
 .notification-logo {
     height: 50px;
     width: 50px;
     margin-right: 10px;
 }
+
 .notification-text {
     margin: 0;
     font-size: 1.1rem;
     font-weight: 700;
     color: #f76700;
 }
+
 .notification-subtext {
     margin: 0;
     font-size: 0.9rem;
 }
+
 #notification-message {
     margin-top: 10px;
     text-align: center;
     font-size: 1.1rem;
 }
+
 .close-button {
     margin-top: 10px;
     background-color: #F76700;
@@ -187,12 +213,15 @@ header .icon:first-child {
     font-size: 1.1rem;
     font-weight: 600;
 }
+
 .logo-site {
     width: 100%;
 }
+
 .logo-site img {
     border-radius: 10px;
 }
+
 .conta {
     display: flex;
     align-items: center;
@@ -203,11 +232,13 @@ header .icon:first-child {
     border-radius: 5px;
     width: 100%;
 }
+
 .conta strong {
     font-size: 0.8rem;
     font-weight: 500;
-    
+
 }
+
 .copyright {
     display: flex;
     justify-content: center;
@@ -222,6 +253,7 @@ header .icon:first-child {
     height: 20px;
     color: #999;
 }
+
 .overlay {
     position: fixed;
     top: 0;
@@ -241,9 +273,11 @@ header .icon:first-child {
 /* Alteração da imagem no desktop */
 @media only screen and (min-width: 1024px) {
     .overlay {
-        background-image: url('image/desktop-wallpaper.jpg'); /* Imagem para desktop */
+        background-image: url('image/desktop-wallpaper.jpg');
+        /* Imagem para desktop */
     }
 }
+
 .overlay.show {
     display: block;
 }
@@ -255,18 +289,20 @@ header .icon:first-child {
     align-items: center;
     text-align: left;
     margin-top: 20px;
-    padding-top: 20px ;
+    padding-top: 20px;
     border-top: 1px dashed #999999;
-    }
+}
 
 .styled-list {
     list-style-type: none;
     padding: 0;
     counter-reset: list-counter;
 }
+
 .styled-list b {
     padding-left: 5px;
 }
+
 .styled-list li {
     position: relative;
     margin-bottom: 15px;
@@ -287,14 +323,14 @@ header .icon:first-child {
     justify-content: center;
     font-weight: bold;
     height: 25px;
-    width: 25px; 
+    width: 25px;
 }
 
 ol.styled-list {
     counter-reset: li;
 }
 
-.line{
+.line {
     background-color: #999999;
     width: 50px;
     height: 5px;
