@@ -189,7 +189,8 @@ body, html {
     font-weight: 300;
     color: white;
     text-align: left;
-   
+    position: absolute;
+    top: 135px;
 }
 
 h2 {
