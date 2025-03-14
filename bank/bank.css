@@ -69,7 +69,10 @@ header .icon:first-child {
     flex: 1;
     text-align: left;
 }
-
+.copyright a{
+    color: #999;
+    text-decoration: none;
+}
 .header .icon {
     font-size: 24px;
     cursor: pointer;
