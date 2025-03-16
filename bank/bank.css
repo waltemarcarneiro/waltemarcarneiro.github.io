@@ -276,7 +276,7 @@ header .icon:first-child {
 /* Alteração da imagem no desktop */
 @media only screen and (min-width: 1024px) {
     .overlay {
-        background-image: url('image/desktop-wallpaper.jpg');
+        background-image: url('./image/desktop-wallpaper.jpg');
         /* Imagem para desktop */
     }
 }
