@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h1>Music App</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home"><span class="material-icons">home</span>Início</a></li>
+                <li><a href="#library"><span class="material-icons">library_music</span>Biblioteca</a></li>
+                <li><a href="#youtube"><span class="material-icons">play_circle</span>YouTube</a></li>
+                <li><a href="#playlists"><span class="material-icons">playlist_play</span>Playlists</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-and-add">
+                    <div class="search-bar">
+                        <span class="material-icons">search</span>
+                        <input type="text" placeholder="Buscar músicas, playlists...">
+                    </div>
+                    <div class="add-playlist">
+                        <button id="addPlaylistBtn" class="add-playlist-btn">
+                            <span class="material-icons">playlist_add</span>
+                            <span class="btn-text">Adicionar Playlist</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area" id="content">
+                <!-- Container para a playlist do YouTube -->
+                <div id="youtube-container" class="youtube-section">
+                    <h2>Playlist Atual</h2>
+                    <div class="youtube-player">
+                        <div id="player"></div>
+                    </div>
+                </div>
+
+                <!-- Adicione esta nova seção para exibir as playlists -->
+                <div id="playlists-container" class="playlists-section" style="display: none;">
+                    <h2>Minhas Playlists</h2>
+                    <div class="playlists-grid" id="playlistsGrid">
+                        <!-- As playlists serão adicionadas aqui dinamicamente -->
+                    </div>
+                </div>
+
+                <!-- Modal para adicionar nova playlist -->
+                <div id="playlistModal" class="modal">
+                    <div class="modal-content">
+                        <h3>Adicionar Nova Playlist</h3>
+                        <input type="text" id="playlistId" placeholder="Digite o ID da playlist do YouTube">
+                        <input type="text" id="playlistName" placeholder="Nome da playlist">
+                        <button id="savePlaylist">Salvar</button>
+                        <button id="closeModal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Player -->
+        <footer class="player fixed-player">
+            <div class="now-playing">
+                <img src="https://waltemar.com.br/youtube/placeholder.jpg" alt="Capa do álbum" class="album-cover" id="currentThumbnail">
+                <div class="track-info">
+                    <h3 class="track-title" id="currentTitle">Nome da música</h3>
+                    <p class="artist" id="currentArtist">Artista</p>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <button class="control-btn" id="shuffleBtn">
+                    <span class="material-icons md-32">shuffle</span>
+                </button>
+                <button class="control-btn" id="prevBtn">
+                    <span class="material-icons md-32">skip_previous</span>
+                </button>
+                <button class="control-btn play-btn" id="playPauseBtn">
+                    <span class="material-icons md-48">play_circle_filled</span>
+                </button>
+                <button class="control-btn" id="nextBtn">
+                    <span class="material-icons md-32">skip_next</span>
+                </button>
+                <button class="control-btn" id="repeatBtn">
+                    <span class="material-icons md-32">repeat</span>
+                </button>
+            </div>
+
+            <div class="player-timeline">
+                <span class="current-time" id="currentTime">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <span class="total-time" id="totalTime">0:00</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Adicione a API do YouTube antes dos outros scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="js/app.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/youtube.js"></script>
+    <script src="js/share.js"></script>
+    <script src="js/playlists.js"></script>
+
+    <!-- Adicione isso antes do fechamento do body -->
+    <div class="playlist-container">
+      <!-- Items da playlist serão inseridos aqui via JavaScript -->
+    </div>
+
+    <!-- Adicione os botões de controle onde apropriado -->
+    <button onclick="playlistManager.togglePlaylist()">Toggle Playlist</button>
+    <button onclick="playlistManager.previousSong()">Previous</button>
+    <button onclick="playlistManager.nextSong()">Next</button>
+</body>
+</html> 

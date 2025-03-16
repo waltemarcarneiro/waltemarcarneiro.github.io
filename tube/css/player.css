@@ -1,0 +1,148 @@
+.player {
+    background: rgba(28, 28, 28, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.play-btn {
+    width: 56px;
+    height: 56px;
+}
+
+.play-btn .material-icons {
+    font-size: 48px;
+    color: #1DB954;
+}
+
+/* Tamanhos personalizados para os ícones */
+.material-icons.md-32 { font-size: 32px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    background: #1DB954;
+    height: 100%;
+    border-radius: 2px;
+    position: relative;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.progress-bar:hover .progress::after {
+    opacity: 1;
+}
+
+.now-playing {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.album-cover {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-title {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.artist {
+    font-size: 0.8rem;
+    margin: 4px 0 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.player-timeline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+.playlist-container {
+    position: fixed;
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    max-height: 50vh;
+    background: rgba(24, 24, 24, 0.95);
+    overflow-y: auto;
+    display: none;
+}
+
+.playlist-container.active {
+    display: block;
+}
+
+.playlist-item {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item.playing {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-item-title {
+    color: #fff;
+    margin-left: 12px;
+} 

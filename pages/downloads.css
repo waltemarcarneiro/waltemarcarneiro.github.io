@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'); * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #726232;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('../image/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+header button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    z-index: 2;
+}
+
+header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* ICONES DO TOPO */
+.icon-left, .icon-right {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.icon-left {
+    margin-right: auto;
+}
+
+.icon-right {
+    margin-left: auto;
+}
+
+.app-list {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 45px;
+}
+
+.app-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px dashed #777;
+}
+
+.app-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.app-details {
+    flex: 1;
+}
+
+.app-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.app-description {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+.app-size {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.app-link {
+    text-decoration: none;
+    color: #1d1d1f;
+    display: block;
+}
+
+.app-link a {
+    target: _blank;
+}
+
+.app-link:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+button a {
+    background: #f76700;
+    color: white;
+    width: 90px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.busca {
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    padding: 5px 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar input {
+    padding: 5px 20px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.search-bar input:hover {
+    font-weight: bold;
+    color: #fff;
+}
+
+.result {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.result h3 {
+    margin-bottom: 10px;
+}
+
+/* Adicione estas regras CSS para posicionar a imagem ao lado do nome nos resultados da busca */
+.search-result {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.search-result .app-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.search-result .app-details {
+    flex: 1;
+}

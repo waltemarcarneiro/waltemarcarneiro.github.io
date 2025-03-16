@@ -1,0 +1,296 @@
+{
+  "id": "/index.html",
+  "name": "Waltemar",
+  "short_name": "Waltemar",
+  "description": "Web Developments",
+  "display": "fullscreen",
+  "iarc_rating_id": "ESRB_E",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "background_color": "#f0f4f9",
+  "theme_color": "#f0f4f9",
+  "start_url": "/index.html",
+  "orientation": "portrait",
+  "scope": "/",
+  "default_locale": "BR",
+  "scope_extensions": [
+    {
+      "origin": "https://waltemar.com.br",
+      "path": "/"
+    }
+  ],
+  "prefer_related_applications": false,
+  "protocol_handlers": [],
+  "related_applications": [],
+  "icons": [
+    {
+      "src": "icons/icon48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "shortcuts": [
+    {
+      "name": "Pagamentos",
+      "description": "Pagamentos",
+      "url": "/bank/bb.html",
+      "icons": [
+        {
+          "src": "shortcuts/pix.svg",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Rádio",
+      "url": "/pages/radio.html",
+      "description": "Playlist",
+      "icons": [
+        {
+          "src": "shortcuts/playlist.svg",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "LoveSongs Momento",
+      "url": "/videos/index.html",
+      "description": "Momento Love Songs",
+      "icons": [
+        {
+          "src": "shortcuts/filme.svg",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Menu",
+      "url": "/home.html#options",
+      "description": "Menu de Opções",
+      "icons": [
+        {
+          "src": "shortcuts/menu.svg",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot-desktop-wide.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshots/1.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/2.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/3.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/4.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/5.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/6.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/7.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/screenshot-mobile.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/screenshot-desktop-wide.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": [
+    "entertainment",
+    "productivity"
+  ],
+  "share_target": {
+    "action": "/shared-content-receiver/",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "display_override": [
+    "standalone",
+    "browser",
+    "window-controls-overlay"
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing",
+    "navigate_existing_client": {
+      "target_url_patterns": [
+        "https://waltemar.com.br/*"
+      ]
+    }
+  },
+  "handle_links": "all",
+  "file_handlers": [
+    {
+      "action": "/open-file",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "image/png": [".png"],
+        "image/jpeg": [".jpg", ".jpeg"]
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "name": "Meu Widget",
+      "short_name": "Widget",
+      "description": "Este é um widget de exemplo",
+      "url": "/widget",
+      "icons": [
+        {
+          "src": "icons/widget-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Música</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#060A13"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <button id="menu-btn" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="header-center">
+            <h1>MusicPlayer</h1>
+        </div>
+        
+        <div class="header-right">
+            <button id="search-btn" class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="side-menu" class="side-menu">
+        <div class="menu-header">
+            <h2>Playlists Sugeridas</h2>
+            <button id="close-menu" class="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul id="suggested-playlists">
+            
+            <li data-playlist-id="PLX_YaKXOr1s4wmthNadS_n488f2IkQruv">LoveSongs Nacional</li>
+            <li data-playlist-id="PLX_YaKXOr1s6u6O3srDxVJn720Zi2RRC5">LoveSongs Internacional</li>
+            <li data-playlist-id="PL5xz61TzGouthhkIQJkDqSucTl3frfMfk">Mega Dance</li>
+            <li data-playlist-id="PLxf2H68jbjofRv4EnThF-4OcBpBuVNyFl">Chrystian e Ralf - As Melhores</li>
+            <li data-playlist-id="PLs0IJf4sr2Xnx6umFHsYCHambo-wKSPnM">Chrystian e Ralf - Acústico</li>
+            <li data-playlist-id="PLf7Ld_SZyNJK3B9N2nkMIj7JnJr9VwexW">Walfredo Jair - Vol.2</li>
+            <li data-playlist-id="PLvgcQr40gK93sAFdogZ7y_sTCd2UXy3P4">Raça Negra - Mais Tocadas</li>
+            <li data-playlist-id="PLZvMtEQHcwglElKv4dDF1SZe_6f0cyyom">Só Pra Contrariar</li>
+        </ul>
+    </div>
+
+    <div id="search-overlay" class="search-overlay">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar música...">
+            <button id="close-search" class="close-search">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="playlist-input">
+            <input type="text" id="playlist-url" placeholder="Cole o URL da playlist do YouTube">
+            <button onclick="addPlaylist()">Adicionar Playlist</button>
+        </div>
+
+        <div class="main-content">
+            <div class="playlists">
+                <h2>Minhas Playlists</h2>
+                <div id="playlist-list"></div>
+            </div>
+
+            <div id="songs-container" class="songs-container"></div>
+        </div>
+    </div>
+
+    <div class="player-controls">
+        <div class="progress-bar">
+            <span class="progress-time current-time">0:00</span>
+            <div class="progress-line">
+                <div class="progress"></div>
+            </div>
+            <span class="progress-time total-time">0:00</span>
+        </div>
+
+        <div class="current-song-info">
+            <img id="current-thumbnail" src="https://waltemar.com.br/youtube/placeholder.jpg" alt="Thumbnail">
+            <div class="song-details">
+                <div id="current-song">Nenhuma música selecionada</div>
+                <div id="current-artist">-</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="shuffle-btn" class="control-btn"><i class="fas fa-random"></i></button>
+            <button id="prev-btn"><i class="fas fa-backward"></i></button>
+            <button id="play-btn"><i class="fas fa-play"></i></button>
+            <button id="next-btn"><i class="fas fa-forward"></i></button>
+            <button id="repeat-btn" class="control-btn"><i class="fas fa-redo"></i></button>
+        </div>
+    </div>
+
+    <div id="youtube-player"></div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
