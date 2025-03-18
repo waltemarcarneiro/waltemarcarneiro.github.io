@@ -246,6 +246,9 @@ header .icon:first-child {
     color: #555;
 
 }
+.conta ion-icon{
+    color: #555;
+}
 
 .copyright {
     display: flex;
