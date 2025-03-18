@@ -242,7 +242,8 @@ header .icon:first-child {
 
 .conta strong {
     font-size: 0.875rem;
-    font-weight: 300;
+    font-weight: 400;
+    color: #555;
 
 }
 
