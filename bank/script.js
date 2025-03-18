@@ -39,7 +39,7 @@ function sharePage() {
     if (navigator.share) {
         navigator.share({
             title: document.title,
-            text: 'Link de pagamentos e Transferências via Pix!',
+            text: '🔗 Link de pagamentos e Transferências via Pix!',
             url: window.location.href
         }).then(() => {
             console.log('Página compartilhada com sucesso!');
