@@ -1,5 +1,5 @@
 {
-  "id": "/index.html",
+  "id": "waltemar-pwa",
   "name": "Waltemar",
   "short_name": "Waltemar",
   "description": "Web Developments",
@@ -12,7 +12,7 @@
   "start_url": "/index.html",
   "orientation": "portrait",
   "scope": "/",
-  "default_locale": "BR",
+  "default_locale": "pt-BR",
   "scope_extensions": [
     {
       "origin": "https://waltemar.com.br",
