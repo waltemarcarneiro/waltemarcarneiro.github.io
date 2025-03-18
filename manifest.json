@@ -137,9 +137,9 @@
   },
   "shortcuts": [
     {
-      "name": "Pagamentos",
-      "description": "Pagamentos",
-      "url": "/bank/bb.html",
+      "name": "Contribuir",
+      "description": "Contribuir",
+      "url": "/bank/santander.html",
       "icons": [
         {
           "src": "shortcuts/pix.svg",
