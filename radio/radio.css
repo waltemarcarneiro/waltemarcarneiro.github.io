@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
@@ -27,16 +28,13 @@ body {
 header {
     background: #28a745;
     padding: 5px 10px;
+    height: 45px;
     text-align: center;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-right: 0;
-left: 0;
-position: fixed;
-
 }
 
 .header-text {
@@ -55,12 +53,12 @@ h1 {
 }
 
 .header-text p {
-    margin: 5px 0 0;
+    margin: 2px 0 0;
     font-size: 14px;
 }
 
 .player-container {
-    margin-top: 20px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,12 +71,11 @@ h1 {
     width: 100%;
     max-width: 250px;
     border-radius: 10px;
-    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 20px;
-    margin-top: 10px;
+    /margin-top: 10px;
 }
 
 #artist-name {
@@ -94,7 +91,9 @@ h2 {
     justify-content: center;
     width: 100%;
     }
-
+#album-art{
+    margin-bottom: 20px;
+}
 }
 
 .play-button {
