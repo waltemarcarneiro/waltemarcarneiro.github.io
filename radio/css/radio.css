@@ -42,19 +42,19 @@ header {
     flex-grow: 1;
 }
 
+.header-text p {
+    font-size: 14px;
+}
+
 .menu-icon {
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
+    display: flex;
 }
 
 h1 {
     font-size: 18px;
     margin: 0;
-}
-
-.header-text p {
-    margin: 2px 0 0;
-    font-size: 14px;
 }
 
 .player-container {
