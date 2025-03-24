@@ -150,8 +150,8 @@
     },
     {
       "name": "Rádio",
-      "url": "/pages/radio.html",
-      "description": "Playlist",
+      "url": "/radio/index.html",
+      "description": "Radio",
       "icons": [
         {
           "src": "shortcuts/playlist.svg",
