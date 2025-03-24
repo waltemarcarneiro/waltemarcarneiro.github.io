@@ -1,0 +1,124 @@
+/* radio.css */
+*{
+    margin: 0;
+    padding: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+body {
+    font-family: 'Wix Madefor Text', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #0f6659;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+header {
+    background: #28a745;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.header-text {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.header-text p {
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+.player-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#album-art {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.play-button {
+    background: #ff5f5f;
+    border: none;
+    padding: 4vw;
+    border-radius: 50%;
+    margin: 15px;
+    cursor: pointer;
+    font-size: 4vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12vw;
+    height: 12vw;
+    min-width: 60px;
+    min-height: 60px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 10vw;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.actions button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 4vw;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.actions button ion-icon {
+    
+    color: white;
+    font-size: 6vw;
+}
+.copyright{
+    display: flex;
+    position: fixed;
+    font-size: 0.875rem;
+    bottom: 0;
+    opacity: 0.5;
+}
