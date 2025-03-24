@@ -1,0 +1,220 @@
+/* ---------------------------------------------------
+   CSS Base
+--------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+body {
+    font-family: 'Wix Madefor Text', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #0f6659;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+header {
+    background: #28a745;
+    padding: 5px 10px;
+    height: 45px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.header-text {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.header-text p {
+    margin: 2px 0 0;
+    font-size: 14px;
+}
+
+.player-container {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#album-art {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    /margin-top: 10px;
+}
+
+#artist-name {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+@media screen and (orientation: portrait) {
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    }
+#album-art{
+    margin-bottom: 20px;
+}
+}
+
+.play-button {
+    background: #ff5f5f;
+    border: none;
+    padding: 4vw;
+    border-radius: 50%;
+    margin: 15px;
+    cursor: pointer;
+    font-size: 4vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12vw;
+    height: 12vw;
+    min-width: 60px;
+    min-height: 60px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 10vw;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.actions button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 4vw;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.actions button ion-icon {
+    color: white;
+    font-size: 6vw;
+}
+
+.copyright {
+    display: flex;
+    position: fixed;
+    font-size: 0.875rem;
+    bottom: 0;
+    opacity: 0.5;
+}
+
+@media screen and (orientation: landscape) {
+    .player-container {
+        display: flex;
+        flex-direction: row; /* Organiza imagem à esquerda e conteúdo à direita */
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    /* Capa do Álbum */
+    #album-art {
+        max-width: 26vw; 
+        margin-right: 3vw;
+    }
+
+    /* Container que agrupa info + controles */
+    .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+
+    }
+
+    /* Título e Artista */
+    .info-container {
+        margin-bottom: 2vw; /* Espaço entre info e os controles */
+    }
+
+    .info-container h2 {
+        font-size: 2.5vw;
+        margin: 0;
+    }
+
+    .info-container p {
+        font-size: 2vw;
+        margin: 0.5vw 0 0 0;
+    }
+
+    /* Botão de Play + Ações */
+    .controls-container {
+        display: flex;
+        flex-direction: row; /* Botão Play e .actions na mesma linha */
+        align-items: center;
+        gap: 3vw; /* Espaço horizontal entre play e .actions */
+        margin-top: 20px;
+    }
+
+    .play-button {
+        width: 8vw;
+        height: 8vw;
+        font-size: 3vw;
+        padding: 2vw;
+        margin: 0; /* Tira margens extras */
+    }
+
+    .actions {
+        display: flex;
+        gap: 5vw;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .actions button {
+        font-size: 2vw;
+    }
+
+    .actions button ion-icon {
+        font-size: 4vw;
+    }
+}
