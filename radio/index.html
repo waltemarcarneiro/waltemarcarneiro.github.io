@@ -7,27 +7,7 @@
     <link rel="stylesheet" href="radio.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <meta name="theme-color" content="#28a745">
-    <!--icons and og-image-->
-    <link href="https://lovesongsapp.github.io/icons/favicon32.png" rel="shortcut icon" />
-    <link href="https://lovesongsapp.github.io/icons/favicon.ico" rel="shortcut icon" />
-    <link href="https://lovesongsapp.github.io/icons/favicon32.png" rel="icon" sizes="32x32" type="image/png" />
-    <link href="https://lovesongsapp.github.io/icons/favicon16.png" rel="icon" sizes="16x16" type="image/png" />
-    <!--AppleTouchIcon-->
-    <link href="https://lovesongsapp.github.io/icons/icon76.png" rel="apple-touch-icon" sizes="76x76" />
-    <link href="https://lovesongsapp.github.io/icons/icon120.png" rel="apple-touch-icon" sizes="120x120" />
-    <link href="https://lovesongsapp.github.io/icons/icon152.png" rel="apple-touch-icon" sizes="152x152" />
-    <link href="https://lovesongsapp.github.io/icons/icon180.png" rel="apple-touch-icon" sizes="180x180" />
-    <link href="https://lovesongsapp.github.io/icons/icon512.png" rel="apple-touch-icon" sizes="512x512" />
-    <link color="#fc6700" href="https://lovesongsapp.github.io/icons/safari-pinned-tab.svg" rel="mask-icon" />
-    <!-- SEO | OG -->
-    <meta content="yes" name="apple-mobile-web-app-capable" />
-    <meta content="love songs, músicas internacionais anos 80 e 90" name="keywords" />
-    <meta content="LoveSongs App" property="og:title" />
-    <meta content="A trilha sonora do amor" property="og:description" />
-    <meta content="https://lovesongsapp.github.io/og-image.jpg" property="og:image" />
-    <meta content="website" property="og:type" />
-    <meta content="LoveSongs App" property="og:site_name" />
-    <meta content="yes" name="mobile-web-app-capable" />
+    
 </head>
 <body>
     <header>
@@ -44,43 +24,50 @@
 </header>
 
     
-    <div class="player-container">
-        <img id="album-art" src="album.webp" alt="Capa do Álbum">
-
-        <!--<h2 id="song-title">Música</h2>-->
-        <!--<p id="artist-name">Artista</p>-->
-        
-        <button id="playPauseBtn" class="play-button">
-            <ion-icon name="play"></ion-icon>
-        </button>
-        
-        <div class="actions">
-            <button id="shareBtn">
-                <ion-icon name="share-social-outline"></ion-icon>
-                <p>Compartilhe</p>
-            </button>
-            <button id="donateBtn">
-                <ion-icon name="heart-outline"></ion-icon>
-                <p>Contribua</p>
-            </button>
-        </div>
-
-        <div class="copyright">
-            Radio Love Songs
-            
-        </div>
-
-    </div>
+<div class="player-container">
+    <!-- Imagem do Álbum -->
+    <img id="album-art" src="album.webp" alt="Capa do Álbum">
     
-<script>
-        // Prevenir o menu de contexto ao segurar o dedo na tela
-        document.addEventListener('contextmenu', function(event) {
-            event.preventDefault(); // Impede o menu de contexto
-        });
-    </script>
+    <!-- Container que agrupa infos + controles -->
+    <div class="content-container">
+        <!-- Título e Artista -->
+        <div class="info-container">
+            <h2 id="song-title">Praying For Time</h2>
+            <p id="artist-name">George Michael</p>
+        </div>
+
+        <!-- Botão de Play + Ações -->
+        <div class="controls-container">
+            <div align="center">
+                <button id="playPauseBtn" class="play-button">
+                    <ion-icon name="play"></ion-icon>
+                </button>
+            </div>
+            <div class="actions">
+                <button id="shareBtn">
+                    <ion-icon name="share-social-outline"></ion-icon>
+                    <p>Compartilhe</p>
+                </button>
+                <button id="donateBtn">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <p>Contribua</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        Radio Love Songs
+    </div>
+</div>
+
+
+    
+
 
     <audio id="audio" src="https://25233.live.streamtheworld.com/TLPSTR04.mp3"></audio>
     <script src="radio.js"></script>
+    <!--<script src="menu-context"></script>-->
     
 </body>
 </html>
