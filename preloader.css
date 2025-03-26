@@ -42,7 +42,7 @@ body, html {
   width: 100%;
   z-index: 9000;
 
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('image/bg.webp') no-repeat center center fixed;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('image/bg2.webp') no-repeat center center fixed;
   background-size: cover;
 
 }
