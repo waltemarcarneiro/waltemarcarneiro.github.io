@@ -368,16 +368,6 @@
              window.location.href = "pages/suporte.html";
          }
          
-         // Aguarda o carregamento do DOM antes de adicionar o evento
-document.addEventListener("DOMContentLoaded", function() {
-    const btnClose = document.getElementById('btnCloseWindow');
-
-    if (btnClose) {
-        btnClose.addEventListener('click', function() {
-            window.close();
-        });
-    }
-});
          // Verifica a posição atual da página ao rolar
          window.addEventListener('scroll', function() {
              var footer = document.getElementById('footer');
@@ -387,6 +377,12 @@ document.addEventListener("DOMContentLoaded", function() {
                  footer.style.display = 'block'; // Mostra o footer quando a página é rolada para baixo (no topo)
              }
          });
+      </script>
+      <!--sair do app-->
+      <script>
+        document.getElementById('btnCloseWindow').addEventListener('click', function() {
+            window.close();
+        });
       </script>
 
       <!-- Nova div para o aviso de instalação -->
