@@ -85,12 +85,18 @@
          </div>
       </div>
       <!-- preloader end -->
-      <!-- Start Redirect Time -->
-      <script type="text/javascript">
+      
+      <!-- Start Redirect Time (via window.location.href) -->
+      <!--<script type="text/javascript">
          setTimeout(function () {
            window.location.href = "./home.html"
          }, 4000);
-      </script>
+      </script>-->
+         <script>
+               setTimeout(function () {
+    window.open("./home.html", "_self"); // Abre no mesmo contexto da aba
+}, 4000);
+         </script>
       
       <script src="script-sw.js"></script>
       <script src="pro.js"></script>
