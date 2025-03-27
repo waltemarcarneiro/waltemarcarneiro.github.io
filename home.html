@@ -378,11 +378,17 @@
              }
          });
       </script>
+      
       <!--sair do app-->
       <script>
         document.getElementById('btnCloseWindow').addEventListener('click', function() {
-            window.close();
-        });
+    if (window.opener) {
+        window.close();
+    } else {
+        alert("Não é possível fechar esta aba automaticamente.");
+    }
+});
+
       </script>
 
       <!-- Nova div para o aviso de instalação -->
