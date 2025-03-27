@@ -88,18 +88,18 @@ header .icon:first-child {
 /*DEFINED*/
 .qrcode-container {
     text-align: center;
-    margin: 20px auto;
+    margin: 15px auto;
     border-radius: 10px;
     background: #fff;
-    width: 130px;
-    height: 130px;
+    width: 105px;
+    height: 105px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .qrcode {
-    height: 120px;
+    height: 100px;
 }
 
 .dica {
