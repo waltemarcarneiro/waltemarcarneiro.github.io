@@ -381,12 +381,9 @@
       
       <!--sair do app-->
       <script>
-        document.getElementById('btnCloseWindow').addEventListener('click', function() {
-    if (window.opener) {
-        window.close();
-    } else {
-        alert("Não é possível fechar esta aba automaticamente.");
-    }
+        document.getElementById("btnCloseWindow").addEventListener("click", function() {
+    window.open('', '_self'); // Engana o navegador abrindo a própria aba
+    window.close(); // Agora o fechamento pode funcionar
 });
 
       </script>
