@@ -231,6 +231,9 @@ h2 {
     justify-content: center;
     display: flex;
 }
+#divBack ion-icon{
+    color: #fff;
+}
 
 .footer {
     text-align: center;
