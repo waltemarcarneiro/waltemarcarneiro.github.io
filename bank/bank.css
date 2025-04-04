@@ -15,21 +15,19 @@ body {
     touch-action: pan-x pan-y;
     height: 100%;
     overflow: hidden;
-
+    font-size: 18px;
 }
 
 body {
 
     Font-family: 'Wix Madefor Text', sans-serif;
     color: #000612;
-    font-size: 18px;
     font-weight: 500;
     background-color: #f9f4f0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-size: 18px;
 }
 
 .content {
@@ -261,7 +259,7 @@ header .icon:first-child {
     right: 0;
     left: 0;
     margin: auto;
-    font-size: 0.875rem;
+    font-size: 0.778rem;
     height: 20px;
     color: #999;
 }
