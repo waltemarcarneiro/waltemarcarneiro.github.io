@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credencial</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .senha {
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin: 20px 0;
+      cursor: pointer;
+      background: #eee;
+      padding: 10px 20px;
+      border-radius: 10px;
+      user-select: none;
+    }
+
+    .btn {
+      margin-top: 10px;
+      background: #f76700;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Senha da sua conta</h2>
+  <div class="senha" id="senha" onclick="mostrarSenha()">•••••••••••</div>
+  <button class="btn" onclick="copiarSenha()">Copiar senha</button>
+</div>
+
+<script>
+  const senhaReal = "@SonofGod1#";
+  let revelada = false;
+
+  function mostrarSenha() {
+    const divSenha = document.getElementById("senha");
+    if (!revelada) {
+      divSenha.textContent = senhaReal;
+      revelada = true;
+    } else {
+      divSenha.textContent = "•••••••••••";
+      revelada = false;
+    }
+  }
+
+  function copiarSenha() {
+    navigator.clipboard.writeText(senhaReal).then(() => {
+      alert("Senha copiada!");
+    });
+  }
+</script>
+
+</body>
+</html>
