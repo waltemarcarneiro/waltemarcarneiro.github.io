@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Radio LoveSongs</title>
+    <link rel="stylesheet" href="css/radio.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <meta name="theme-color" content="#01D473">
+
+    <!-- SEO -->
+    <link rel="canonical" href="https://waltemar.com.br/radio/" />
+    <meta name="description" content="A trilha sonora do amor com músicas internacionais dos anos 80 e 90. Curta, compartilhe e viva esse clima romântico.">
+
+    <!-- OG -->
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="love songs, músicas internacionais anos 80 e 90" name="keywords" />
+    <meta content="Rádio LoveSongs" property="og:title" />
+    <meta content="A trilha sonora do amor! com músicas internacionais dos anos 80 e 90. Curta, Compartilhe e Viva esse Clima Romântico" property="og:description" />
+    <meta content="https://waltemar.com.br/radio/" property="og:url" />
+    <meta content="https://lovesongsapp.github.io/og-image.jpg" property="og:image" />
+    <meta content="Imagem de capa da Radio LoveSongs com clima romântico e visual moderno" property="og:image:alt" />
+    <meta content="website" property="og:type" />
+    <meta content="Radio LoveSongs" property="og:site_name" />
+    <meta content="yes" name="mobile-web-app-capable" />
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Radio LoveSongs" />
+    <meta name="twitter:description" content="A trilha sonora do amor" />
+    <meta name="twitter:image" content="https://lovesongsapp.github.io/og-image.jpg" />
+        
+    <link href="https://lovesongsapp.github.io/icons/favicon32.png" rel="shortcut icon" />
+    <link href="https://lovesongsapp.github.io/icons/favicon.ico" rel="shortcut icon" />
+    <link href="https://lovesongsapp.github.io/icons/favicon32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="https://lovesongsapp.github.io/icons/favicon16.png" rel="icon" sizes="16x16" type="image/png" />
+    <!--AppleTouchIcon-->
+    <link href="https://lovesongsapp.github.io/icons/icon76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="https://lovesongsapp.github.io/icons/icon120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="https://lovesongsapp.github.io/icons/icon152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="https://lovesongsapp.github.io/icons/icon180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="https://lovesongsapp.github.io/icons/icon512.png" rel="apple-touch-icon" sizes="512x512" />
+    <link color="#fc6700" href="https://lovesongsapp.github.io/icons/safari-pinned-tab.svg" rel="mask-icon" />    
+
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+            <ion-icon name="chevron-back-outline" onclick="backOptions()"></ion-icon>
+        </div>
+        <div class="header-text">
+            <h1>LOVE SONGS</h1>
+            <p>A Trilha Sonora do Amor</p>
+        </div>
+        <div class="menu-icon">
+            <ion-icon name="alert-circle-outline" onclick="viewAbout()"></ion-icon>
+        </div>
+    </header>
+
+    <main class="player-container">
+        <img id="album-art" src="img/album.webp" alt="Capa do Álbum">
+        
+        <div class="content-container">
+            <p id="artist-name">As Mais Belas Canções de Amor de Todos os Tempos.</p>
+            
+            <div class="controls-container">
+                <button id="playPauseBtn" class="play-button">
+                    <ion-icon name="play"></ion-icon>
+                </button>
+                
+                <div class="actions">
+                    <button onclick="sharePage()">
+                        <ion-icon name="arrow-redo-outline"></ion-icon>
+                        <p>Compartilhe</p>
+                    </button>
+                    <button id="donateBtn">
+                        <ion-icon name="cafe-outline"></ion-icon>
+                        <p>Contribuir</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção About -->
+    <div id="aboutSection" class="about-section">
+        <div class="about-content">
+            <div class="about-header">
+                <ion-icon name="close-outline" onclick="closeAbout()"></ion-icon>
+            </div>
+            <div class="about-body">
+                <img src="img/album.webp" alt="Logo Radio Love Songs" class="about-logo">
+                <h2>Rádio Love Songs</h2>
+                <p class="about-description">A Trilha Sonora do Amor</p>
+                <div class="about-info">
+                    <p>por Waltemar Carneiro</p>
+                    <p>Versão 4.0.7</p>
+                    <p>© 2025 Todos os direitos reservados</p>
+                </div>
+                <div class="about-social">
+                    <a href="https://wa.me/+5581971027858" target="_blank">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </a>
+                    <a href="#" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="#" target="_blank">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Doação -->
+    <div id="donateModal" class="donate-section">
+        <div class="donate-content">
+            <div class="donate-header">
+                <ion-icon name="close-outline" onclick="closeDonate()"></ion-icon>
+            </div>
+            <div class="donate-body">
+                <ion-icon name="checkmark-circle" class="success-icon"></ion-icon>
+                <h2>Código PIX Copiado!</h2>
+                <p class="donate-description">Use a opção "Copia e Cola" no app do seu banco</p>
+                <div class="donate-steps">
+                    <p>Abra o app do seu banco</p>
+                    <p>Escolha pagar com PIX</p>
+                    <p>Selecione "Copia e Cola"</p>
+                    <p>Cole o código e confirme</p>
+                </div>
+                <button onclick="copyPIX()" class="copy-again">
+                    <ion-icon name="copy-outline"></ion-icon>
+                    Copiar Novamente
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio" src="https://25233.live.streamtheworld.com/TLPSTR04.mp3"></audio>
+    <script src="./js/radio.js"></script>
+    <!--<script src="menu-context"></script>-->
+    
+</body>
+</html>

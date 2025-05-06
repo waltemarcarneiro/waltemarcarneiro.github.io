@@ -1,0 +1,357 @@
+/* Reset e Configurações Básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/roboto-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Layout Principal */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(180deg, #01D473 0%, #007764 100%);
+    color: white;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Header */
+header {
+    background: #01D473;
+    height: 50px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-text {
+    text-align: center;
+    flex: 1;
+}
+
+.header-text h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.header-text p {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Player Container */
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    height: calc(100vh - 50px);
+}
+
+#album-art {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.content-container {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+
+#artist-name {
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+/* Controles */
+.controls-container {
+    margin-top: 20px;
+}
+
+.play-button {
+    background: #ff5f5f;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: transform 0.2s;
+}
+
+.play-button:active {
+    transform: scale(0.95);
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.actions button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.actions button ion-icon {
+    font-size: 24px;
+}
+
+.actions button p {
+    font-size: 12px;
+}
+
+/* Landscape Mode */
+@media (orientation: landscape) {
+    .player-container {
+        flex-direction: row;
+        gap: 40px;
+        padding: 20px 40px;
+    }
+
+    #album-art {
+        max-width: 220px;
+    }
+
+    .content-container {
+        max-width: 300px;
+    }
+}
+
+/* Estilos para a seção About */
+
+.about-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(166deg,#01D473 0%, rgb(23, 1, 41) 100%);
+    /*background: rgba(20, 2, 41, 0.9);*/
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none;
+}
+
+.about-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+    /*background: linear-gradient(145deg, #01D473, #018d4d);*/
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.about-header {
+    text-align: right;
+}
+
+.about-header ion-icon {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.about-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin: 20px auto;
+    display: block;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-body h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.about-description {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.about-info {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.about-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.about-social {
+    margin-top: 20px;
+}
+
+.about-social ion-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.about-social a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilos para o Modal de Doação */
+.donate-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #01D473, #018d4d);
+    z-index: 1000;
+    display: none;
+}
+
+.donate-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.donate-header {
+    text-align: right;
+    padding: 20px;
+}
+
+.donate-header ion-icon {
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+}
+
+.donate-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+}
+
+.success-icon {
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.donate-body h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.donate-description {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.donate-steps {
+    background: rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 300px;
+    padding: 25px 20px;
+    border-radius: 15px;
+    margin: 20px 0;
+    counter-reset: step-counter;
+}
+
+.donate-steps p {
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+}
+
+.donate-steps p::before {
+    content: counter(step-counter);
+    counter-increment: step-counter;
+    min-width: 24px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #028f4e;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.copy-again {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.copy-again ion-icon {
+    font-size: 20px;
+}
+
+.copy-again:active {
+    background: rgba(255,255,255,0.3);
+}

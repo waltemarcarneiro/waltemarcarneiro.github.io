@@ -1,0 +1,658 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/roboto-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/roboto-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Segoe UI';
+    src: url('./fonts/SegoeUI-Variable-Static-Regular.woff2') format('woff2');
+    font-weight: 300;
+    font-style: light;
+    font-display: swap;
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      box-sizing: border-box;
+  }
+  
+  body, html {
+      user-select: none;
+      font-family: "Roboto", sans-serif;
+      background: #726232;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bghome.webp') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      height: 100%;
+      /*touch-action: manipulation;*/
+      /*overscroll-behavior: none;*/
+  
+  /* Força o comportamento correto em navegadores que ignoram 'fixed' */
+  @supports (-webkit-touch-callout: none) {
+      html {
+          background-attachment: scroll;
+      }
+      body {   
+          background-attachment: fixed;
+           }
+  }
+  
+  }
+  
+  .header {
+      padding: 10px 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  #options{
+      top: 0;
+  }
+  
+  .header ion-icon {
+      color: #fff;
+      font-size: 24px;
+      padding-left: 20px;
+      cursor: pointer;
+  }
+  
+  .icon-top-right {
+      display: flex;
+      align-items: center;
+  }
+  
+  .icon-top-right button {
+      background: #2b3fff;
+      color: #fff;
+      font-weight: 500;
+      padding: 7px 20px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+  }
+  
+  .date {
+      font-weight: 300;
+      font-size: 0.875rem;
+      opacity: 0.7;
+  }
+  
+  #user {
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      color: white;
+      justify-content: space-between;
+  }
+  
+  .user-info {
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.8rem;
+  }
+  
+  .user-info h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+  }
+  
+  .user-image {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      border-radius: 10px;
+  }
+  
+  .digital-image {
+      width: 40px;
+      height: 40px;
+      margin-left: auto;
+  }
+  
+  .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 15px;
+      z-index: 4;
+  }
+  
+  .digital{
+      
+      position: relative;
+      left: 20px;
+      top: 42%;
+      bottom: 42%;
+      position: absolute;
+      height: 100px;
+      margin: auto;
+      right: 20px;
+      max-width: 480px;
+  }
+  /*START ABOUT*/
+  .about {
+      top: 100%;
+      height: 100vh;
+      position: absolute;
+      left: 0;
+      right: 0;
+      transition: top 0.5s ease-in-out;
+      line-height: 1.4;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 10px;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+  }
+  .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 101%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                  url('./image/bghome.webp') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(0px);
+      z-index: -1;
+  }
+  .about p {
+      text-align: justify;
+  }
+  
+  .logo {
+      width: 40px;
+      height: 40px;
+  }
+  
+  .content {
+      text-align: left;
+      user-select: none;
+      margin-top: 10%;
+      
+  }
+  
+  .bem-vindo {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+      
+      position: absolute;
+  }
+  .bem-vindo h1{
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 2.7rem;
+      font-weight: 300;
+      color: white;
+  }
+  
+  h2 {
+      font-size: 2rem;
+      font-weight: 500;
+  }
+  
+  .animated-link {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      display: inline-block;
+      position: relative;
+  }
+  
+  .animated-link::after {
+      content: "";
+      position: fixed;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      animation: 2s infinite underline-animation;
+      transform-origin: center;
+  }
+  
+  #divBack {
+      
+      display: flex;
+      position: absolute;
+      bottom: 10px;
+      left: 20x;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 5px 2px 5px;
+  }
+  
+  .footer {
+      text-align: center;
+      left: 0;
+      right: 0;
+      position: fixed;
+      bottom: 0px;
+      animation: bounce 2s infinite;
+      /* Adiciona animação de subir e descer */
+  }
+  
+  @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+      }
+  
+      40% {
+          transform: translateY(-10px);
+      }
+  
+      60% {
+          transform: translateY(-5px);
+      }
+  }
+  
+  .contato {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      background: white;
+      margin-right: 40px;
+      -webkit-tap-highlight-color: transparent;
+      
+  }
+  
+  .video {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      background: white;
+      margin-right: 40px;
+  }
+  
+  .video iframe {
+      border-radius: 5px;
+  }
+  
+  /* Adiciona a classe 'show-about' quando a página é rolada para cima */
+  body.show-about .about {
+      top: 0;
+  }
+  
+  /*END ABOUT*/
+  .icon-about {
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      display: flex;
+      color: #67BB00;
+      font-size: 26px;
+  }
+  
+  p {
+      line-height: 1.5;
+  }
+  
+  a {
+      color: #151515;
+      text-decoration: none;
+      cursor: pointer;
+  }
+  
+  .icon-acesso {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 5px;
+  }
+  
+  .icon-acesso span {
+      cursor: pointer;
+  }
+  
+  .icon-acesso ion-icon, img {
+      font-size: 32px;
+      margin-right: 5px;
+      cursor: pointer;
+  }
+  
+  .blocos {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 10px;
+  }
+  
+  .bloco {
+      text-align: center;
+      padding: 5px;
+      border-radius: 10px;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.3);
+      /*background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(22,5,83,1) 35%, rgba(116,76,191,1) 100%);*/
+      /*background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(22,5,83,1) 35%, rgba(116,76,191,0.27503501400560226) 100%);*/
+  }
+  
+  .bloco p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      text-align: center;
+      color: #ddd;
+      line-height: 1.1;
+      opacity: 0.8;
+  }
+  
+  .bloco ion-icon {
+      font-size: 24px;
+      color: #fff;
+  }
+  .bloco ion-icon:hover {
+      font-size: 24px;
+      color: #00ffbf;
+  }
+  
+  .bloco img {
+      width: 60px;
+      border-radius: 10px;
+      margin: 5px 0px 0px 0px;
+  }
+  
+  /* START CARROSEL */
+  .carrossel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      /* Inicialmente oculto */
+      overflow: hidden;
+      z-index: 1000;
+  }
+  
+  .carrossel.active {
+      display: flex;
+      /* Apenas mostrar quando ativo */
+  }
+  
+  .carrossel-slide {
+      flex: 1;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+  }
+  
+  .carrossel-slide.active {
+      display: flex;
+  }
+  
+  .carrossel-content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      /*NEW CONFIG*/
+      line-height: 1.5;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  
+  .carrossel-content h2 {
+      font-size: 1.1rem;
+  }
+  
+  .carrossel-content p {
+      font-size: 0.8rem;
+  }
+  
+  .prev-slide, .next-slide, .finish-intro {
+      position: absolute;
+      bottom: 20px;
+      font-size: 2rem;
+      cursor: pointer;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 100%;
+      padding: 10px;
+  }
+  
+  .prev-slide {
+      left: 20px;
+  }
+  
+  .next-slide, .finish-intro {
+      right: 20px;
+  }
+  
+  .carrossel-slide video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+  }
+  
+  .carrossel-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+  }
+  
+  /*END CARROSSEL*/
+  
+  
+  /* /////////////////////// BANNER APP INSTALL ///////////////////////*/
+  .app {
+      background: #fff;
+      background-size: cover;
+      max-width: 480px;
+      padding: 10px;
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      border-radius: 20px 20px 0 0;
+      transition: bottom 3s ease-in-out;
+      z-index: 2000;
+  }
+  
+  .app.show {
+      bottom: 0;
+  }
+  
+  .logo-app {
+      float: left;
+      margin-right: 10px;
+      width: 55px;
+      height: 55px;
+      background: url('./icons/icon192.png') no-repeat center center;
+      background-size: cover;
+      border-radius: 15px;
+  }
+  
+  .app .content {
+      overflow: hidden;
+  }
+  
+  .app-title {
+      font-weight: bold;
+      color: #000624;
+      font-family: 'Roboto', sans-serif;
+  }
+  
+  .app-subtitle {
+      font-weight: 500;
+      font-size: 0.875rem;
+      margin: 0;
+      color: #555;
+      font-family: 'Roboto', sans-serif;
+  }
+  
+  .add-info {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #777;
+      font-family: 'Roboto', sans-serif;
+  }
+  
+  .message {
+      clear: both;
+      font-weight: bold;
+      color: #000624;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      padding: 15px 0px;
+  }
+  
+  .app .install-btn-app {
+      font-size: 1.1rem;
+      font-weight: 600;
+      width: 100%;
+      background: #f76700;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      text-align: center;
+      display: block;
+  }
+  
+  .header-app {
+      top: 7px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      left: 0px;
+      right: 10px;
+  }
+  
+  .header-app p {
+      line-height: 1.3 !important;
+  }
+  
+  .header-app ion-icon {
+      font-size: 32px;
+      color: #999;
+      cursor: pointer;
+  }
+  
+  .promo {
+      bottom: 5%;
+      background: #fff;
+      padding: 10px;
+      display: flex;
+      border-radius: 5px;
+      align-items: center;
+      color: #151515;
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      max-width: 480px;
+      margin: auto;
+      text-align: left;
+      font-family: 'Roboto', sans-serif;
+      
+  }
+  
+  .logo-promo {
+      background: #fff;
+      margin-right: 5px;
+      border-radius: 5px;
+  }
+  
+  .btn-promo {
+      margin-top: 5px;
+      background: #F76700;
+      color: white;
+      padding: 2px 10px;
+      border-radius: 5px;
+      border: none;
+      white-space: nowrap;
+      float: right;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+  }
+  
+  .promo span {
+      font-weight: bold;
+  }
+  
+  .promo p {
+      color: #151515;
+      line-height: 1.3;
+      font-size: 0.875rem;
+      font-weight: 500;
+  }
+  
+  
+  a ion-icon{
+      color: #fff;
+  }
+  
+  /*config bloco novo*/
+  .container-bloco {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      
+      justify-items: center;
+      align-items: center;
+    }
+  .block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+    }
+  .icon-wrapper {
+      border: 2px solid white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon-wrapper ion-icon{
+      font-size: 64px;
+    }  
+  .block-label {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+    }

@@ -1,0 +1,273 @@
+/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+}
+/* Corpo da página com fundo escuro */
+body {
+background-color: #121212; /* Preto suave */
+color: #ffffff; /* Texto branco */
+user-select: none;
+}
+main{
+margin-top: 60px;
+margin-bottom: 50px;
+}
+/* Cabeçalho */
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #1f1f1f;
+padding: 5px 15px;
+color: white;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 2;
+}
+/* Container do nome e logo */
+.header-left {
+display: flex;
+align-items: center;
+}
+.logo-nome{
+display: flex;
+align-items: center;
+}
+/* Logo */
+.logo {
+height: 40px;
+margin-right: 10px;
+}
+/* Nome da loja */
+.nome-loja {
+font-size: 18px;
+font-weight: bold;
+font-family: 'Montserrat', sans-serif;
+}
+.nome-container {
+display: flex;
+flex-direction: column;
+}
+.slogan {
+font-size: 14px;
+color: #bbbbbb;
+}
+/* Botão Contribuir via Pix */
+@keyframes pulse {
+0% {
+transform: scale(1);
+box-shadow: 0 0 5px rgba(255, 0, 80, 0.5);
+}
+50% {
+transform: scale(1.1);
+box-shadow: 0 0 15px rgba(255, 0, 80, 0.8);
+}
+100% {
+transform: scale(1);
+box-shadow: 0 0 5px rgba(255, 0, 80, 0.5);
+}
+}
+.btn-pix {
+background-color: #ff0050; /* Cor rosa escuro do TikTok */
+color: white;
+padding: 6px 8px;
+border: none;
+border-radius: 20px;
+font-size: 14px;
+letter-spacing: 0.5px;
+font-weight: 500;
+cursor: pointer;
+transition: background-color 0.3s;
+animation: pulse 1.5s infinite;
+}
+.btn-pix:hover {
+background-color: #cc0040;
+}
+/* Container da div de contribuição (inicialmente oculta) */
+.pix-container {
+position: fixed;
+bottom: -100%; /* Inicialmente fora da tela */
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+color: white;
+transition: bottom 0.3s ease-in-out; /* Transição suave para o efeito */
+padding: 20px;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+/* Quando o checkbox estiver marcado, a div vai aparecer */
+.pix-toggle:checked ~ .pix-container {
+bottom: 0; /* Move a div para visível */
+}
+/* Estilo do botão de fechar */
+.btn-fechar {
+position: absolute;
+top: 20px;
+right: 20px;
+background-color: #e6007e; /* Cor do botão, como o TikTok */
+color: white;
+padding: 10px;
+border-radius: 50%;
+cursor: pointer;
+}
+/* Estilo do checkbox escondido */
+.pix-toggle {
+display: none;
+}
+/* Galeria de produtos */
+.galeria {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+padding: 15px;
+}
+/* Card do produto */
+.produto {
+text-decoration: none;
+color: white;
+background: #222; /* Fundo escuro */
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+padding: 10px;
+text-align: center;
+width: calc(33.33% - 10px); /* Sempre três por linha */
+max-width: 150px; /* Mantém tamanho fixo */
+border: 1px solid #474747;
+}
+/* Imagem do produto */
+.produto img {
+width: 100%;
+max-width: 150px;
+height: auto;
+border-radius: 5px;
+}
+/* Nome do produto (quebra em até 2 linhas) */
+.produto h2 {
+font-size: 14px;
+font-weight: 500;
+margin: 5px 0;
+height: 36px; /* Mantém espaço para duas linhas */
+overflow: hidden;
+display: -webkit-box;
+-webkit-line-clamp: 2; /* Limita a 2 linhas */
+-webkit-box-orient: vertical;
+text-overflow: ellipsis;
+}
+/* Preço */
+.preco {
+font-size: 16px;
+font-weight: bold;
+color: #2af0ea; /* Destaque no preço */
+}
+/* Rodapé */
+footer {
+background-color: #1f1f1f;
+color: #aaaaaa;
+text-align: center;
+padding: 10px;
+position: fixed;
+bottom: 0;
+width: 100%;
+font-size: 0.875rem;
+}
+/*FECHAR | MODAL | OVERLAYY*/
+.overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url(bg.png);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+/background: rgba(0, 0, 0, 0.6);
+backdrop-filter: blur(5px);
+justify-content: center;
+align-items: center;
+z-index: 2
+}
+.modal {
+background: white;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+text-align: center;
+max-width: 350px;
+animation: surgir 0.4s ease-out;
+}
+.modal strong {
+color: #dc3545;
+font-weight: bold;
+font-family: 'Montserrat', sans-serif;
+}
+.modal p {
+font-family: 'Google Sans', sans-serif;
+font-size: 24px;
+margin-bottom: 15px;
+color: #333;
+font-weight: 600;
+}
+.fechar {
+width: 100%;
+background: #dc3545;
+color: white;
+border: none;
+padding: 10px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 18px;
+font-weight: 600;
+transition: background 0.3s;
+}
+.fechar:hover {
+background: #b52b3a;
+}
+@keyframes surgir {
+from {
+transform: translateY(30px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+/*estilo do swiper*/
+.swiper-container {
+width: 95%;
+max-width: 700px;
+height: auto;
+border-radius: 10px;
+overflow: hidden;
+margin: auto;
+position: relative;        
+}
+.swiper-slide img {
+width: 100%;
+text-align: center;
+border-radius: 10px;
+text-align: center;
+display: flex;
+}
+/* Impede que as imagens sejam salvas */
+img {
+pointer-events: none; /* Impede interações */
+user-drag: none; /* Bloqueia o arrastar da imagem */
+-webkit-user-drag: none; /* Bloqueia no WebKit (Chrome, Safari) */
+-webkit-touch-callout: none; /* Impede o menu ao segurar */
+}

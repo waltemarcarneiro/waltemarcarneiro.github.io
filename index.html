@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <script src="/notification-permission.js"></script>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+      <meta name="theme-color" content="#120912">
+      <meta name="msapplication-TileColor" content="#f76700" />
+      <link rel="manifest" href="manifest.json"/>
+      <title>Waltemar Carneiro</title>
+      <meta name="description" content="Web Developer">
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      
+      <link rel="stylesheet" href="preloader.css">
+      <link rel="stylesheet" href="./styles/notification-modal.css">
+      <!-- FAVICON-->
+      <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
+      <!--AppleTouchIcon-->
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon512.png" sizes="512x512">
+      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#fc6700" />
+      <!-- SEO | OG -->
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="keywords" content="Waltemar" />
+      <meta property="og:title" content="Waltemar Carneiro" />
+      <meta property="og:description" content="Web Developer" />
+      <meta property="og:image" content="https://waltemar.com.br/image/og-image.webp" />
+      <meta content='website' property='og:type' />
+      <meta property="og:site_name" content="Waltemar Carneiro" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <script src="/update-manager.js"></script>
+      <script src="/script-sw.js" defer></script>
+   </head>
+   <body>
+      <!-- preloader  -->
+      <div id="preloader">
+         <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+               <div class="spinner"></div>
+               <div class="txt-loading">
+                  <span data-text-preloader="W" class="letters-loading">
+                  W
+                  </span>
+                  <span data-text-preloader="A" class="letters-loading">
+                  A
+                  </span>
+                  <span data-text-preloader="L" class="letters-loading">
+                  L
+                  </span>
+                  <span data-text-preloader="T" class="letters-loading">
+                  T
+                  </span>
+                  <span data-text-preloader="E" class="letters-loading">
+                  E
+                  </span>
+                  <span data-text-preloader="M" class="letters-loading">
+                  M
+                  </span>
+                  <span data-text-preloader="A" class="letters-loading">
+                  A
+                  </span>
+                  <span data-text-preloader="R" class="letters-loading">
+                  R
+                  </span>
+               </div>
+               <div class="copyright">Web Development - 2025</div>
+            </div>
+            <div class="loader">
+               <div class="row">
+                  <div class="col-3 loader-section section-left">
+                     <div class="bg"></div>
+                  </div>
+                  <div class="col-3 loader-section section-left">
+                     <div class="bg"></div>
+                  </div>
+                  <div class="col-3 loader-section section-right">
+                     <div class="bg"></div>
+                  </div>
+                  <div class="col-3 loader-section section-right">
+                     <div class="bg"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- preloader end -->
+      
+      <div id="notificationModal" class="modal-overlay" style="display: none;">
+         <div class="notification-modal">
+            <div class="modal-header">
+               <img src="icons/icon192.png" alt="Ícone do App">
+               <h2 class="modal-title">Permitir Notificações</h2>
+            </div>
+            <div class="modal-content">
+               <p style="font-weight: 500;">Mantenha-se atualizado! Permita as notificações para:</p>
+               <p>✓ Receber avisos sobre novas atualizações</p>
+               <p>✓ Ser notificado sobre melhorias importantes</p>
+               <p>✓ Nunca perder novidades do app</p>
+            </div>
+            <div class="modal-buttons">
+               <button id="allowNotifications" class="modal-btn allow-btn">Permitir Notificações</button>
+               <button id="denyNotifications" class="modal-btn deny-btn">Agora Não</button>
+            </div>
+         </div>
+      </div>
+
+      <script>
+        async function showNotificationModal() {
+            const modal = document.getElementById('notificationModal');
+            modal.style.display = 'block';
+
+            return new Promise((resolve) => {
+                document.getElementById('allowNotifications').onclick = async () => {
+                    modal.style.display = 'none';
+                    const permission = await Notification.requestPermission();
+                    resolve(permission);
+                };
+
+                document.getElementById('denyNotifications').onclick = () => {
+                    modal.style.display = 'none';
+                    resolve('denied');
+                };
+            });
+        }
+
+        async function initializeApp() {
+            // Verifica se já tem permissão
+            if (Notification.permission === 'granted') {
+                // Já tem permissão, apenas registra o Service Worker
+                if ('serviceWorker' in navigator) {
+                    try {
+                        const registration = await navigator.serviceWorker.register('./service-worker.js');
+                        console.log('Service Worker registrado com sucesso:', registration);
+                    } catch (error) {
+                        console.error('Erro ao registrar Service Worker:', error);
+                    }
+                }
+            } else if (Notification.permission === 'default') {
+                // Só mostra o modal se a permissão ainda não foi decidida
+                const permission = await showNotificationModal();
+                if (permission === 'granted') {
+                    if ('serviceWorker' in navigator) {
+                        try {
+                            const registration = await navigator.serviceWorker.register('./service-worker.js');
+                            console.log('Service Worker registrado com sucesso:', registration);
+                        } catch (error) {
+                            console.error('Erro ao registrar Service Worker:', error);
+                        }
+                    }
+                }
+            }
+
+            // Redirecionar para home.html após 5 segundos
+            setTimeout(() => {
+                window.location.href = 'home.html';
+            }, 5000);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeApp);
+      </script>
+      
+   </body>
+</html>

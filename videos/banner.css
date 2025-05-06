@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+padding: 0;
+color: #1d1d1f;
+font-family: 'Wix Madefor Text', sans-serif;
+font-size: 16px;    
+}           
+.banner {
+/*background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('banner.jpg') no-repeat center top;*/
+background: linear-gradient(90deg, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url('banner.png') no-repeat right bottom;
+background-size: cover;    
+max-width: 480px;
+padding: 10px;
+position: fixed;
+bottom: -100%;
+left: 0;
+right: 0;
+color: #7731FF;
+border-radius: 15px 15px 0 0;
+border-top: 1px solid pruple;
+transition: bottom 3s ease-in-out;
+z-index: 2;
+
+}
+.banner.show {
+bottom: 0;
+}
+/*
+.banner .logotipo {
+float: left;
+width: 40px;
+height: 40px;
+background: url('https://waltemar.com.br/icons/icon72.png') no-repeat center center;
+background-size: cover;
+margin-right: 7px;
+border-radius: 7px;
+}*/
+.banner .logo-lovesongsapp {
+float: left;
+width: 60px;
+height: 60px;
+background: url('https://lovesongsapp.github.io/icons/icon192.png') no-repeat center center;
+background-size: cover;
+margin-right: 8px;
+border-radius: 8px;
+}
+.banner .content {
+overflow: hidden;
+}
+.banner .content .banner-title {
+font-weight: 700;
+font-size: 1.2rem;
+}
+.banner .content .banner-subtitle {
+font-weight: 400;
+margin: 0;
+color: ;
+
+}
+.banner .message {
+clear: both;
+font-weight: 500;
+margin: 35px 0px 25px;
+line-height: 1.3;
+font-size: 1rem;
+}
+.banner a{
+    color: #7731FF;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 1rem;
+    
+}
+.banner .close-btn {
+width: 100%;
+background: #fc6800;
+color: #fff;
+border: none;
+border-radius: 0 0 20px 20px;
+padding: 10px;
+font-size: 16px;
+cursor: pointer;
+text-align: center;
+display: block;
+margin-top: 20px;
+font-family: 'Wix Madefor Text', sans-serif; 
+}
+/*BOTAO FECHAR*/
+.banner .close-btn-banner {
+font-size: 1rem;
+font-weight: 500;
+width: 100%;
+background: #F236BE;
+color: #fff;
+border-radius: 7px;
+border: none;
+padding: 10px;
+cursor: pointer;
+text-align: center;
+display: block;
+}

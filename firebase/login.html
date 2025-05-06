@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waltemar Login</title>
+  <link rel="stylesheet" href="./login.css">
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"></script>
+
+  <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
+      <!--AppleTouchIcon-->
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon512.png" sizes="512x512">
+      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#fc6700" />
+      <!-- SEO | OG -->
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="keywords" content="waltemar, carneiro, web developer, web designer" />
+      <meta property="og:title" content="Waltemar App" />
+      <meta property="og:description" content="Web Developer" />
+      <meta property="og:image" content="https://waltemar.com.br/image/og-image.jpg" />
+      <meta content='website' property='og:type' />
+      <meta property="og:site_name" content="Waltemar Carneiro" />
+      <meta name="mobile-web-app-capable" content="yes" />
+  
+</head>
+<body>
+  <div class="container">
+    <img src="https://waltemar.com.br/icons/icon192.png" alt="Waltemar App" class="logo">
+    <h1>Login</h1>
+    <div id="success-message" class="message hidden"></div>
+
+    <div id="error-message" class="error-message"></div>
+
+    <form id="register-form" style="display: none;">
+      <input type="text" id="register-username" placeholder="Username" required>
+      <input type="email" id="register-email" placeholder="Email" required>
+      <div class="password-container">
+        <input type="password" id="register-password" placeholder="Password" required>
+        <ion-icon id="register-eye-icon" name="eye-outline"></ion-icon>
+      </div>
+      <button type="submit">Register</button>
+      <div class="form-switch">
+        Já tem uma conta? <a id="show-login">Entrar</a>
+      </div>
+    </form>
+
+    <form id="login-form">
+  <input type="email" id="login-email" placeholder="Email" required>
+  <div class="password-container">
+    <input type="password" id="login-password" placeholder="Password" required>
+    <ion-icon id="eye-icon" name="eye-outline"></ion-icon>
+  </div>
+  <button type="submit">Login</button>
+  <button type="button" id="google-login" class="google-button">
+    <img src="./g-logo.svg" alt="Google Icon" width="20" height="20"> Login com Google
+  </button>
+  <a type="button" id="reset-password">Esqueceu a senha?</a>
+  <div class="form-switch">
+    Não tem uma conta? <a id="show-register">Registrar</a>
+  </div>
+</form>
+
+  </div>
+
+  <script type="module" src="./firebase.js"></script>
+  <sript src="../pro.js"</script>
+  
+</body>
+</html>

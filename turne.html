@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+   <head>
+      <meta charset="UTF-8">
+      <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+      <meta name="theme-color" content="#EEE6DF" />
+      <meta name="msapplication-TileColor" content="#EEE6DF" />
+      <title>LATAM - Airlines</title>
+      <meta name="description" content="Internacional Travel">
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <!-- FAVICON-->
+      <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="https://waltemar.com.br/icons/icon180.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
+      <!--AppleTouchIcon-->
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
+      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#f76700" />
+      <!-- SEO | OG -->
+      <meta property="og:locale" content="pt_BR" />
+      <meta name="keywords" content="Waltemar" />
+      <meta property="og:title" content="LATAM - Airlines" />
+      <meta property="og:description" content="Internacional Travel" />
+      <meta property="og:image" content="https://waltemar.com.br/videos/og-turne.png" />
+      <meta property="og:site_name" content="Waltemar Carneiro" />
+      <meta property='og:type' content='website' />
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+         * {
+         margin: 0;
+         padding: 0;
+         }
+         body,
+         html {
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         margin: 0;
+         padding: 0;
+         background: #000;
+         color: #fff;
+         -webkit-tap-highlight-color: transparent;
+         tap-highlight-color: transparent;
+         user-select: none;
+         font-size: 16px;
+         
+         }
+         /* Estilo para tornar o vídeo em tela cheia */
+         iframe {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         }
+         video {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: fill;
+         }
+         /* Estilos para centralizar o conteúdo de texto */
+         .centered-content {
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+         color: white;
+         font-size: 24px;
+         }
+         /* Estilos para o rodapé */
+         .footer {
+         position: absolute;
+         bottom: 60px;
+         left: 50%;
+         transform: translateX(-50%);
+         text-align: left;
+         font-size: 16px;
+         width: 100%;
+         }
+         /* Estilos para a div superior */
+         .logo {
+         position: fixed;
+         top: 7px;
+         left: 7px;
+         z-index: 2;
+         }
+         .top-content {
+         position: absolute;
+         top: 20px;
+         margin-left: 150px;
+         transform: translateX(-50%);
+         text-align: left;
+         font-weight: 600;
+         color: #fff;         
+         }
+         .marquee-container {
+         overflow: hidden;
+         white-space: nowrap;
+         color: #fff;
+         }
+         .marquee-content {
+         display: inline-block;
+         animation: marquee 30s linear infinite;
+         font-size: 1.8rem;
+         width: 100%;
+         }
+         @keyframes marquee {
+         from {
+         transform: translateX(100%);
+         }
+         to {
+         transform: translateX(-100%);
+         }
+         }
+         h1 {
+         font-size: 19px;
+         text-align: left;
+         vertical-align: top;
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         font-weight: 600;
+         }
+         .logo-popup {
+         display: flex;
+         align-items: center;
+         }
+         .logo-popup img {
+         margin-right: 10px;
+         text-align: left;
+         height: 60px;
+         width: 60px;
+         border-radius: 10px;
+         }
+         .banner-header {
+         width: 250px;
+         height: 120px;
+         }
+         @keyframes pulse {
+         0% {
+         transform: scale(1);
+         opacity: 1;
+         }
+         50% {
+         transform: scale(1.1);
+         opacity: 0.7;
+         }
+         100% {
+         transform: scale(1);
+         opacity: 1;
+         }
+         }
+         .copyright{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: fixed;
+         width: 100%;
+         height: 20px;
+         letter-spacing: 1px;
+         color: #ffffff;
+         font-size: 0.7rem;
+         text-align: center;
+         bottom: 0;
+         font-weight: 400;
+         text-shadow: 0px 1px 0px #2B2A7A;
+         
+         }
+         /*POPUP DOAÇÃO*/
+         .popup {
+         display: none;
+         position: fixed;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         background-color: rgba(0, 0, 0, 0.9);
+         border-top: 1px solid #00FFBF;
+         overflow: hidden;
+         color: #fff;
+         z-index: 2;
+         -webkit-border-top-left-radius: 15px;
+         -webkit-border-top-right-radius: 15px;
+         -moz-border-radius-topleft: 15px;
+         -moz-border-radius-topright: 15px;
+         border-top-left-radius: 15px;
+         border-top-right-radius: 15px;
+         animation: slideUp 0.5s ease-out forwards;
+         }
+         .popup h1{
+         color: #fff;
+         }
+         @keyframes slideUp {
+         from {
+         transform: translateY(100%);
+         }
+         to {
+         transform: translateY(0);
+         }
+         }
+         @keyframes slideDown {
+         from {
+         transform: translateY(0);
+         }
+         to {
+         transform: translateY(100%);
+         }
+         }
+         .popup-content {
+         font-family: 'Plus Jakarta Sans', sans-serif;   
+         padding: 20px;
+         background: #726232;
+         background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url('bg.jpg') no-repeat center center fixed;
+         background-size: cover;
+         }
+         .qrcode {
+         margin: 15px 0px;
+         }
+         .btn {
+         margin: 15px 0px;
+         align-items: center;
+         display: flex;
+         justify-content: space-between;
+         }
+         .key1 {
+         padding: 10px 20px;
+         background: rgba(0, 0, 0, 0.2);
+         border: 2px solid #00FFBF;
+         color: #00FFBF;
+         border-radius: 20px;
+         font-size: 1rem;
+         font-weight: 500;
+         cursor: pointer;
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         }
+         .key2 {
+         padding: 10px 20px;
+         background: rgba(0, 0, 0, 0.4);
+         border: 2px solid #f765d5;
+         color: #f765d5;
+         border-radius: 20px;
+         font-size: 1rem;
+         font-weight: 500;
+         cursor: pointer;
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         }
+         .close-button {
+         font-weight: 500;
+         width: 100%;
+         height: 40px;
+         background: rgba(0, 0, 0, 0.4);
+         color: #fff;
+         cursor: pointer;
+         font-size: 1rem;
+         border: none;
+         border-radius: 7px;
+         margin-top: 10px;
+         font-family: 'Plus Jakarta Sans', sans-serif;
+         }
+         input {
+         display: none;
+         }
+         .chave {
+         display: none;
+         }
+         /* Adicione as classes CSS para personalizar o estilo do SweetAlert */
+         .swal-title-custom {
+         color: #252E48 !important;
+         font-size: 26px !important;
+         }
+         .swal-text-custom {
+         font-weight: 500 !important;
+         font-size: 16px;
+         color: #252E48 !important;
+         }
+         /*anime icon*/
+         .swal2-header {
+         padding: 0 !important;
+         }
+         .swal2-success-line-tip {
+         background: orange !important;
+         }
+         .swal2-success-line-long {
+         background: orange !important;
+         }
+         .swal2-icon.swal2-success .swal2-success-ring {
+         position: absolute;
+         z-index: 2;
+         top: -0.25em;
+         left: -0.25em;
+         box-sizing: content-box;
+         width: 100%;
+         height: 100%;
+         border: 0.25em solid orange !important;
+         border-radius: 50%;
+         }
+         .swal2-popup .swal2-styled.swal2-confirm {
+         border: 0;
+         border-radius: 2em !important;
+         background-color: #f29200 !important;
+         color: #fff !important;
+         font-size: 1.0625em !important;
+         }
+         ion-icon{
+         font-size: 28px;
+         color: #fff;
+         }
+         /*ANIME ARROW UP*/
+         .div-time{
+         position: absolute;
+         top:65px;
+         right: 48px;
+         }
+         /* Estilo da imagem com animação */
+         .animar-imagem {
+         animation: moverCimaBaixo 1s ease-in-out infinite; /* Animar por 2 segundos, repetir infinitamente */
+         }
+         @keyframes moverCimaBaixo {
+         0%, 100% {
+         transform: translateY(0); /* Posição inicial e final */
+         }
+         50% {
+         transform: translateY(-20px); /* Posição no meio da animação */
+         }
+         }
+         /*END ANIME ARROW UP*/
+         .icons-name p, a{
+         color: #fff;
+         font-size: 10px;
+         margin-bottom: 15px;
+         text-decoration: none;
+         }
+         .icons {
+         position: fixed;
+         bottom: 28%;
+         right: 10px;
+         z-index: 1;
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         align-items: center;
+         }
+         .pulsing-icon {
+         animation: pulse 2s infinite;
+         color: hotpink;
+         }
+         .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: default;
+}
+/* Ensure video controls are always visible */
+video::-webkit-media-controls {
+    display: flex !important;
+}
+      </style>
+   </head>
+   <body>
+      <div class="logo">
+         <!--<a href="javascript: history.go(-1)"><img src="../image/logo.png" alt="Logo" width="50"></a>-->
+      </div>
+      <div class="icons">
+         <a href="../home.html#options">
+            <ion-icon name="apps-outline"></ion-icon>
+            <p class="icons-name">Opções</p>
+         </a>
+         <a href="#" id="pixLink">
+            <ion-icon name="heart-outline" class="pulsing-icon"></ion-icon>
+         </a>
+         <a href="https://bit.ly/lovesongsapp" target="_blank">
+            <ion-icon name="musical-notes-outline"></ion-icon>
+            <p class="icons-name">Player</p>
+         </a>
+         <a href="https://waltemar.com.br/videos/filmes.html" id="shareLink">
+            <ion-icon name="arrow-redo-outline"></ion-icon>
+            <p class="icons-name">Compartilhe</p>
+         </a>
+         <a href="#">
+         <a href="https://k.kwai.com/p/Mgm06CGc">
+            <img src="../image/kwai.svg" width="22">
+            <p class="icons-name">Kwai</p>
+         </a>
+      </div>
+      <video id="meuVideo" autoplay controls loop preload="none" poster="cover-latam.jpg">
+         <source src="florenca-480p.mp4" type="video/mp4">
+         Desculpe, seu navegador não suporta vídeos.
+         </video>
+
+         <!--<div class="overlay"></div>-->
+      <!--<iframe id="meuVideo" width="100%" height="" src="lisboa.mp4" frameborder="0" allowfullscreen></iframe>-->
+      <!-- Cobertura semi-transparente sobre o vídeo -->
+      <div class="video-overlay" onclick="playVideo()">
+      <!-- Div superior -->
+      <div class="top-content">
+      </div>
+      <div id="divTime" class="div-time">
+         <!--<img src="anime.png" class="animar-imagem" width="70">-->
+      </div>
+      <!-- Rodapé -->
+      <div class="footer">
+         <div class="marquee-container">
+            <div class="marquee-content">
+            </div>
+         </div>
+      </div>
+      <script>
+         // Adicione um listener ao link de compartilhamento
+         document.getElementById('shareLink').addEventListener('click', function (event) {
+             event.preventDefault();
+             // Prevenir comportamento padrão do link
+         
+             // Adicione o código de compartilhamento aqui
+             //const shareUrl = window.location.href;
+             const shareUrl = 'https://waltemar.com.br/videos/florenca.html';
+             const shareTitle = 'Latam Airlines | LIS | FLO';
+             const shareContent = 'Ao som de Genesis - In Too Deep e vaí...'
+             if (navigator.share) {
+                 navigator.share({
+                     title: shareTitle,
+                     text: shareContent,
+                     url: shareUrl
+                 }).then(() => {
+                     console.log('Página compartilhada com sucesso!');
+                 }
+                 ).catch((error) => {
+                     console.error('Erro ao compartilhar a página:', error);
+                 }
+                 );
+             } else {
+                 console.log('Compartilhamento não suportado pelo navegador.');
+             }
+         });
+      </script>
+      <!-- start POPUP DOAÇÃO -->
+      <div class="popup" id="popup">
+         <div class="popup-content">
+            <div>
+               <div class="logo-popup">
+                  <img src="https://waltemar.com.br/icons/icon192.png">
+                  <div>
+                     <h1>waltemar.com.br</h1>
+                     <p>Contribuições via Pix.</p>
+                  </div>
+               </div>
+               <p
+                  style="text-align: justify; margin-top: 10px;padding-bottom: 5px;">
+                  <strong style="font-size: 12px; font-weight:500;">5.0</strong> <img
+                     src="https://play-lh.googleusercontent.com/_KiRouu_G6J_2jwePzQ_i5_FMc_SVKT3mI7d7KKq9zca-Nr8bj2bPasawLvk6ajzASQS-90a8hYXeAh0lQ=w48-h16-rw"
+                     height="12"> Aponte a câmera do seu celular para o <b>QRCode</b>, ou use os botões abaixo.
+               </p>
+               <div align="center" class="qrcode">
+                  <img src="../bank/qrcodes/qrcode-sofisa.png" height="110" alt="qrcode">
+               </div>
+               <div class="btn">
+                  <button class="key1" onclick="copyText('pix')">Copiar Chave</button>
+                  <button class="key2" onclick="copyText('code')">Copia e Cola</button>
+               </div>
+            </div>
+            <div>
+               <button class="close-button" onclick="closePopup()">Fechar</button>
+            </div>
+            <span id="pix" class="chave">6f079b8a-1237-4e11-bdc7-6f3b4d64c155</span>
+            <span id="code"
+               class="chave">00020101021126580014br.gov.bcb.pix01366f079b8a-1237-4e11-bdc7-6f3b4d64c1555204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS6108690186846227052349E364C467374834AC1EE3C6304F3E7</span>
+         </div>
+      </div>
+      <!-- Incluindo o script do SweetAlert -->
+      <script>
+         document.getElementById('pixLink').addEventListener('click', function () {
+         
+             document.getElementById('popup').style.display = 'block';
+         });
+         
+         function closePopup() {
+             var popup = document.getElementById('popup');
+             popup.style.animation = 'slideDown 0.5s ease-out forwards';
+         
+             setTimeout(function () {
+                 popup.style.display = 'none';
+                 popup.style.animation = '';
+             }, 500); // Aguarde o término da animação antes de ocultar o popup
+         }
+         
+         function copyText(elementId) {
+             var textToCopy = document.getElementById(elementId).innerText;
+         
+             // Cria um elemento de área de transferência temporário
+             var tempInput = document.createElement('textarea');
+             tempInput.value = textToCopy;
+             document.body.appendChild(tempInput);
+         
+             // Seleciona o texto da área de transferência temporária
+             tempInput.select();
+             tempInput.setSelectionRange(0, 99999);
+             /* Para dispositivos móveis */
+         
+             // Copia o texto para a área de transferência
+             document.execCommand('copy');
+         
+             // Remove o elemento de área de transferência temporário
+             document.body.removeChild(tempInput);
+         
+             // Exibe um popup personalizado com o SweetAlert
+             Swal.fire({
+                 title: elementId === 'pix' ? 'Chave copiada!' : 'Codigo Pix copiado com sucesso!',
+                 text: elementId === 'pix' ? 'Use a opção CHAVE ALEATÓRIA no app do seu banco.' : 'Use a opção COPIA e COLA no app do seu banco.',
+                 icon: 'success',
+                 confirmButtonText: 'OK',
+                 customClass: {
+                     title: 'swal-title-custom',
+                     content: 'swal-text-custom'
+                 }
+             });
+         }
+      </script>
+      <!--SETA INDICADORA E TIMER-->
+      <script>
+         // Obtém a referência da div
+         var divTime = document.getElementById('divTime');
+         
+         // Faz a div aparecer
+         divTime.style.display = 'block';
+         
+         // Define um atraso para fazer a div sumir após 10 segundos
+         setTimeout(function() {
+         divTime.style.display = 'none';
+         }, 4000); // 10000 milissegundos = 10 segundos
+         
+      </script>
+      <!--BANNER KWAI CONFIG-->
+      <!--<div>
+         <link rel="stylesheet" type="text/css" href="banner.css">
+         <div class="banner" id="banner">
+            <div class="logo-lovesongsapp"></div>
+            <div class="content">
+               <p class="banner-title">LoveSongs App</p>
+               <p class="banner-subtitle">A trilha sonora do amor</p>
+            </div>
+            <p class="message">Deixe sua curtida no App mais românticos de todos os tempos! <a href="https://kwai-video.com/p/AXCnI4kz" target="_blank" alt="LoveSongs App">visitar app no Kwai videos.</a></p>
+            <button class="close-btn-banner" onclick="closeBanner()">Fechar</button>
+         </div>
+      </div>-->
+<!--menu de contexto video block-->
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const meuVideo = document.getElementById('meuVideo');
+    const overlay = document.querySelector('.overlay');
+
+    // Ensure the video controls are always visible
+    meuVideo.addEventListener('loadedmetadata', function () {
+        meuVideo.controls = true;
+    });
+
+    // Function to start playing the video
+    function startVideo() {
+        meuVideo.muted = false; // Unmute the video
+        meuVideo.play().catch(error => {
+            console.log('Autoplay was prevented:', error);
+        });
+        document.body.removeEventListener('click', startVideo); // Remove the event listener after starting the video
+    }
+
+    // Set up the event listener to start the video on user interaction
+    document.body.addEventListener('click', startVideo);
+    document.body.addEventListener('touchstart', startVideo);
+
+    // Disable right-click context menu on the video element
+    meuVideo.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+    });
+
+    // Prevent long-press on mobile devices, but allow single tap
+    let touchstartTimeout;
+
+    meuVideo.addEventListener('touchstart', function (event) {
+        touchstartTimeout = setTimeout(() => {
+            event.preventDefault();
+        }, 500); // Adjust the time (ms) to define a long press
+    }, { passive: false });
+
+    meuVideo.addEventListener('touchend', function () {
+        clearTimeout(touchstartTimeout); // Clear the timeout on touchend to allow single taps
+    });
+
+    // Prevent long-press on the overlay
+    overlay.addEventListener('touchstart', function (event) {
+        touchstartTimeout = setTimeout(() => {
+            event.preventDefault();
+        }, 500); // Adjust the time (ms) to define a long press
+    }, { passive: false });
+
+    overlay.addEventListener('touchend', function () {
+        clearTimeout(touchstartTimeout); // Clear the timeout on touchend to allow single taps
+    });
+});
+
+</script>   
+
+      <div class="copyright">waltemar.com.br</div>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+      <script src="../sweetalert2.all.js"></script>
+      <script src="banner.js"></script>
+   </body>
+</html>

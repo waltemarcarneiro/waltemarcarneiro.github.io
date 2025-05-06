@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
+    <title>O Mecanismo | Doação</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>      <link rel="stylesheet" href="./omecanismo.css">
+      <!-- FAVICON-->
+      <meta name="theme-color" content="#fe2858">
+      <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="https://waltemar.com.br/icons/icon180.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
+      <!--AppleTouchIcon-->
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
+      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
+      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#e77000" />
+      <!-- SEO | OG -->
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="keywords" content="Waltemar" />
+      <meta property="og:title" content="Você tem um Pix para fazer" />
+      <meta property="og:description" content="Acesse o link para efetuar o pagamento" />
+      <meta property="og:image" content="https://waltemar.com.br/bank/image/og-omecanismo.webp" />
+      <meta content='website' property='og:type' />
+      <meta property="og:site_name" content="Waltemar Carneiro" />
+      <meta name="mobile-web-app-capable" content="yes" />
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            
+            <div>O Mecanismo | Doação</div>
+            
+        </div>
+        <div class="logo">
+            <img src="logos/santander-omecanismo.svg">
+        </div>
+        <div class="qrcode-container">
+            <img src="qrcodes/qrcode-santander.png" alt="QRCode" class="qrcode">
+        </div>
+        <div class="dica">
+            Se preferir, leia o QR Code® Pix com seu app de pagamentos
+        </div>
+        <div class="actions">
+            <div class="action" onclick="copyText('qr')">
+                <ion-icon name="qr-code-outline" class="icon"></ion-icon>
+                <p>Copia e Cola</p>
+                <span class="copy-text" style="display:none;">00020126580014br.gov.bcb.pix013616f06530-c133-47f2-b4d4-452e580401fb5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62580520SAN2023012101152512450300017br.gov.bcb.brcode01051.0.063049962</span>
+                
+                                    <div id="qr-message" class="success-message" style="display:none;">
+
+                    <p><b>QRCode®</b> copiado com <b style="color:#2af0ea">sucesso</b>, use a opção <b style="color:#2af0ea">Copia e Cola</b> no aplicativo do seu banco!</p>
+
+                    <div class="lista">
+                            <ol class="styled-list">
+                                <li>No app de seu banco ou carteira digital, vá em Pix.</li>
+                                <li>Escolha a opção <b style="color: #2af0ea;">Copia e Cola</b>.</li>
+                                <li>Cole o código copiado e pronto.</li>
+                            </ol>
+                    </div>
+                </div>
+
+            </div>
+            <div class="action" onclick="copyText('key')">
+                <ion-icon name="key-outline" class="icon"></ion-icon>
+                <p>Copiar Chave</p>
+                <span class="copy-text" style="display:none;">16f06530-c133-47f2-b4d4-452e580401fb</span>
+                    
+                    <div id="key-message" class="success-message" style="display:none;">
+
+                    <p><b>Chave Aleatória</b> copiada com <b style="color: #2af0ea;">sucesso</b>.</p>
+
+                    <div class="lista">
+                        <ol class="styled-list">
+                            <li>No app de seu banco ou carteira digital, vá em Pix.</li>
+                            <li>Escolha a opção <b style="color:#2af0ea">Chave Aleatória</b>.</li>
+                            <li>Cole a chave copiada e pronto.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="conta">
+            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+            <strong>BCO Santander S.A.</strong>
+        </div>
+        <div class="conta">
+            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+            <strong>1340</strong>
+        </div>
+        <div class="conta">
+            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+            <strong>01085980-5</strong>
+        </div>
+        <div class="conta">
+            <ion-icon name="person-outline" class="icon" size="small"></ion-icon>
+            <strong>Waltemar Carneiro</strong>
+        </div>
+        <div class="copyright">tiktok.com/@omecanismo © 2025</div>
+    </div>
+    
+    <div id="overlay" class="overlay">
+        
+    
+</div>
+
+    </div>
+
+
+    <div id="notification" class="notification" onclick="closeNotification(event)">
+        <div class="line"></div>
+        <div class="logo-site">
+            <div class="notification-content" onclick="event.stopPropagation();">
+                <img src="image/omecanismo192.png" alt="Logo" class="notification-logo">
+                <div>
+                    <p class="notification-text">O MECANISMO</p>
+                    <p class="notification-subtext">Nas entrelinhas da política</p>
+                </div>
+            </div>
+        </div>
+        <p id="notification-message" class="msn"></p>
+        <button onclick="closeNotification()" class="close-button">Entendi</button>
+        
+    </div>
+
+
+
+
+    <script src="./script.js"></script>
+    <script src="../pro.js"></script>
+</body>
+</html>
