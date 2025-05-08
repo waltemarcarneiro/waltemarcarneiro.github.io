@@ -33,7 +33,7 @@
       user-select: none;
       font-family: "Roboto", sans-serif;
       background: #726232;
-      background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bghome.webp') no-repeat center center fixed;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./image/bghome.jpg') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
       color: #fff;
@@ -169,7 +169,7 @@
       width: 101%;
       height: 100%;
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                  url('./image/bghome.webp') no-repeat center center fixed;
+                  url('./image/bghome.jpg') no-repeat center center fixed;
       background-size: cover;
       filter: blur(0px);
       z-index: -1;
