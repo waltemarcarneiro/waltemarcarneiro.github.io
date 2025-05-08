@@ -1,25 +1,30 @@
-// Monitora estado de autenticação
+// Verificação imediata ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    // Verifica estado inicial de autenticação
+    const user = auth.currentUser;
+    if (!user) {
+        // Se não estiver logado, mostra o modal
+        document.getElementById('loginModal').style.display = 'block';
+    }
+});
+
+// Monitora mudanças no estado de autenticação
 auth.onAuthStateChanged((user) => {
-  const userName = document.querySelector('.user-name');
-  const userInfo = document.querySelector('.user-info');
-  
-  if (user) {
-    // Usuário está logado
-    userName.textContent = user.displayName || 'Usuário';
-    userInfo.textContent = 'Logado';
+    const userName = document.querySelector('.user-name');
+    const userInfo = document.querySelector('.user-info');
+    const loginModal = document.getElementById('loginModal');
     
-    // Atualiza elementos da interface para usuário logado
-    document.querySelectorAll('.auth-required').forEach(el => {
-      el.style.display = 'block';
-    });
-  } else {
-    // Usuário não está logado
-    userName.textContent = 'Usuário';
-    userInfo.textContent = 'Área de Membros';
-    
-    // Mostra modal de login ao invés de redirecionar
-    showLoginModal();
-  }
+    if (user) {
+        // Usuário está logado
+        userName.textContent = user.displayName || 'Usuário';
+        userInfo.textContent = 'Logado';
+        loginModal.style.display = 'none';
+    } else {
+        // Usuário não está logado
+        userName.textContent = 'Usuário';
+        userInfo.textContent = 'Área de Membros';
+        loginModal.style.display = 'block';
+    }
 });
 
 // Função para mostrar modal
