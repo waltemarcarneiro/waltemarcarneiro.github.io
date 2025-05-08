@@ -3,10 +3,13 @@ import { signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstati
 
 // Verificação imediata ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
-    // Verifica estado inicial de autenticação
-    const user = auth.currentUser;
-    if (!user) {
-        // Se não estiver logado, mostra o modal
+    // Verifica se está na home
+    const isHomePage = window.location.pathname.includes('home.html') || 
+                      window.location.pathname === '/' || 
+                      window.location.pathname.endsWith('/');
+    
+    // Se não estiver na home, verifica autenticação
+    if (!isHomePage && !auth.currentUser) {
         document.getElementById('loginModal').style.display = 'block';
     }
 });
@@ -74,14 +77,21 @@ window.fazerLogout = async function() {
 
 // Função para verificar se o link requer autenticação
 function requiresAuth(url) {
-    // Lista de URLs que não requerem autenticação
+    // Lista de caminhos que não requerem autenticação
     const freeAccessPaths = [
         '/home.html',
         '/bank/',
-        '#'
+        '/',
+        '#logo',
+        '#options',
+        '#about'
     ];
 
-    // Verifica se a URL está na lista de acesso livre
+    // Permite navegação livre na home e seus anchors
+    if (window.location.pathname.includes('home.html')) {
+        return false;
+    }
+
     return !freeAccessPaths.some(path => url.includes(path));
 }
 
@@ -90,13 +100,15 @@ document.addEventListener('click', (e) => {
     const link = e.target.closest('a');
     if (!link) return;
 
+    // Ignora links da home
+    if (window.location.pathname.includes('home.html')) {
+        return;
+    }
+
     const url = link.href;
-    if (requiresAuth(url)) {
-        // Se o usuário não estiver logado e tentar acessar uma página protegida
-        if (!auth.currentUser) {
-            e.preventDefault();
-            document.getElementById('loginModal').style.display = 'block';
-        }
+    if (requiresAuth(url) && !auth.currentUser) {
+        e.preventDefault();
+        document.getElementById('loginModal').style.display = 'block';
     }
 });
 
