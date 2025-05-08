@@ -7,7 +7,7 @@
       <link rel="manifest" href="./manifest.json"/>
       <meta name="theme-color" content="#120912">
       <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       <title>Waltemar Carneiro | Home</title>
       <meta name="description" content="Web Desenvolvimentos" />
       <!-- FAVICON-->
@@ -30,6 +30,12 @@
       <meta content='website' property='og:type' />
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta name="mobile-web-app-capable" content="yes" />
+      <!-- Firebase SDK -->
+      <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+      <!-- Nossos scripts -->
+      <script src="./js/firebase-config.js"></script>
+      <script src="./js/auth.js"></script>
    </head>
    <body>
       <!-- Carrossel de introdução -->
@@ -101,7 +107,7 @@
             </div>
 
             <div class="digital">
-                  <div id="user" class="user-info" onclick="abrirLogin()">
+                  <div id="user" class="user-info">
                      <!--<img src="./image/benedetta-caretta.jpg" alt="User Image" class="user-image">-->
                      <ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>
                      <div>
