@@ -14,18 +14,32 @@ document.addEventListener('DOMContentLoaded', function() {
 // Monitora mudanças no estado de autenticação
 auth.onAuthStateChanged((user) => {
     const userName = document.querySelector('.user-name');
-    const userInfo = document.querySelector('.user-info');
+    const userStatus = document.querySelector('.user-status');
+    const userIcon = document.querySelector('#user ion-icon[name="person-circle-outline"]');
     const loginModal = document.getElementById('loginModal');
     
     if (user) {
         // Usuário está logado
         userName.textContent = user.displayName || 'Usuário';
-        userInfo.textContent = 'Logado';
+        userStatus.textContent = 'Você está logado';
+        
+        // Se o usuário tem foto de perfil, substitui o ícone pela foto
+        if (user.photoURL) {
+            userIcon.outerHTML = `<img src="${user.photoURL}" alt="Foto do perfil" style="width: 56px; height: 56px; border-radius: 50%; margin-right: 5px;">`;
+        }
+        
         loginModal.style.display = 'none';
     } else {
         // Usuário não está logado
         userName.textContent = 'Usuário';
-        userInfo.textContent = 'Área de Membros';
+        userStatus.textContent = 'Status';
+        
+        // Restaura o ícone padrão
+        if (!userIcon) {
+            const userDiv = document.querySelector('#user div').previousElementSibling;
+            userDiv.outerHTML = '<ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>';
+        }
+        
         loginModal.style.display = 'block';
     }
 });
