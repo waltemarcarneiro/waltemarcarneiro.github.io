@@ -3,14 +3,14 @@ import { signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstati
 
 // Verificação imediata ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
-    // Verifica se está na home
     const isHomePage = window.location.pathname.includes('home.html') || 
                       window.location.pathname === '/' || 
                       window.location.pathname.endsWith('/');
-    
-    // Se não estiver na home, verifica autenticação
-    if (!isHomePage && !auth.currentUser) {
-        document.getElementById('loginModal').style.display = 'block';
+                      
+    // Não mostrar modal na home
+    if (isHomePage) {
+        document.getElementById('loginModal').style.display = 'none';
+        return;
     }
 });
 
@@ -21,6 +21,11 @@ auth.onAuthStateChanged((user) => {
     const userIcon = document.querySelector('#user ion-icon[name="person-circle-outline"]');
     const loginModal = document.getElementById('loginModal');
     
+    // Verifica se está na home
+    const isHomePage = window.location.pathname.includes('home.html') || 
+                      window.location.pathname === '/' || 
+                      window.location.pathname.endsWith('/');
+
     if (user) {
         // Usuário está logado
         userName.textContent = user.displayName || 'Usuário';
@@ -43,7 +48,10 @@ auth.onAuthStateChanged((user) => {
             userDiv.outerHTML = '<ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>';
         }
         
-        loginModal.style.display = 'block';
+        // Não mostra modal na home
+        if (isHomePage) {
+            loginModal.style.display = 'none';
+        }
     }
 });
 
@@ -77,22 +85,17 @@ window.fazerLogout = async function() {
 
 // Função para verificar se o link requer autenticação
 function requiresAuth(url) {
-    // Lista de caminhos que não requerem autenticação
+    // URLs que não requerem autenticação
     const freeAccessPaths = [
         '/home.html',
         '/bank/',
+        'santander.html',
         '/',
-        '#logo',
-        '#options',
-        '#about'
+        '#'
     ];
 
-    // Permite navegação livre na home e seus anchors
-    if (window.location.pathname.includes('home.html')) {
-        return false;
-    }
-
-    return !freeAccessPaths.some(path => url.includes(path));
+    // Verifica se a URL está na lista de exceções
+    return !freeAccessPaths.some(path => url.toLowerCase().includes(path.toLowerCase()));
 }
 
 // Adicionar listener para clicks em links
@@ -100,40 +103,19 @@ document.addEventListener('click', (e) => {
     const link = e.target.closest('a');
     if (!link) return;
 
-    // Ignora links da home
-    if (window.location.pathname.includes('home.html')) {
+    const url = link.href;
+    const isHomePage = window.location.pathname.includes('home.html') || 
+                      window.location.pathname === '/' || 
+                      window.location.pathname.endsWith('/');
+
+    // Se estiver na home, permite navegação livre
+    if (isHomePage && !requiresAuth(url)) {
         return;
     }
 
-    const url = link.href;
+    // Se o link requer autenticação e usuário não está logado
     if (requiresAuth(url) && !auth.currentUser) {
         e.preventDefault();
         document.getElementById('loginModal').style.display = 'block';
-    }
-});
-
-// Monitora mudanças no estado de autenticação
-auth.onAuthStateChanged((user) => {
-    const userName = document.querySelector('.user-name');
-    const userStatus = document.querySelector('.user-status');
-    const userIcon = document.querySelector('#user ion-icon[name="person-circle-outline"]');
-    
-    if (user) {
-        // Usuário está logado
-        userName.textContent = user.displayName || 'Usuário';
-        userStatus.textContent = 'Você está logado';
-        
-        if (user.photoURL) {
-            userIcon.outerHTML = `<img src="${user.photoURL}" alt="Foto do perfil" style="width: 56px; height: 56px; border-radius: 50%; margin-right: 5px;">`;
-        }
-    } else {
-        // Usuário não está logado
-        userName.textContent = 'Usuário';
-        userStatus.textContent = 'Status';
-        
-        if (!userIcon) {
-            const userDiv = document.querySelector('#user div').previousElementSibling;
-            userDiv.outerHTML = '<ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>';
-        }
     }
 });
