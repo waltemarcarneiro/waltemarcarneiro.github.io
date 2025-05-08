@@ -17,7 +17,25 @@ auth.onAuthStateChanged((user) => {
     userName.textContent = 'Usuário';
     userInfo.textContent = 'Área de Membros';
     
-    // Redireciona para login
-    window.location.href = './login/login.html';
+    // Mostra modal de login ao invés de redirecionar
+    showLoginModal();
   }
 });
+
+// Função para mostrar modal
+function showLoginModal() {
+    const modal = document.getElementById('loginModal');
+    modal.style.display = 'block';
+}
+
+// Login com Google
+function loginWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            document.getElementById('loginModal').style.display = 'none';
+        })
+        .catch((error) => {
+            console.error('Erro no login:', error);
+        });
+}

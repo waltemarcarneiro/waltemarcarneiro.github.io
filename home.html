@@ -36,6 +36,7 @@
       <!-- Nossos scripts -->
       <script src="./js/firebase-config.js"></script>
       <script src="./js/auth.js"></script>
+      <link rel="stylesheet" href="./css/modal.css">
    </head>
    <body>
       <!-- Carrossel de introdução -->
@@ -261,6 +262,17 @@
       </div>
 
       <!--end about-->
+      <!-- Modal de Login -->
+      <div id="loginModal" class="modal-login">
+         <div class="modal-content">
+            <h2>Login</h2>
+            <p>Faça login para acessar o conteúdo</p>
+            <button onclick="loginWithGoogle()" class="google-btn">
+               <img src="image/google-icon.svg" alt="Google" width="24">
+               Entrar com Google
+            </button>
+         </div>
+      </div>
       <script>
          document.addEventListener('DOMContentLoaded', function() {
              // Função para ocultar o ícone "chevron-down-outline" ao ser clicado
