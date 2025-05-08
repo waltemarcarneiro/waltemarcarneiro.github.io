@@ -94,11 +94,15 @@
       <div class="container" id="logo">
          <div class="header">
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo" onclick="abrirLogin()">
+
             <div class="icon-top-right">
                <img src="image/download2.svg" height="24" style="margin-right: 0;" onclick="abrirSuporte()">
+
                <ion-icon name="person-outline" onclick="abrirProfile()"></ion-icon>
+               
                <ion-icon name="exit-outline" onclick="fazerLogout()"></ion-icon>
             </div>
+
          </div>
          <!--END HEADER-->
          <div class="date" id="dataContainer"></div>
@@ -107,8 +111,7 @@
                <h1>Que bom você por aquí</h1>
             </div>
             <div class="digital">
-               <div id="user" class="user-info">
-                  <!--<img src="./image/benedetta-caretta.jpg" alt="User Image" class="user-image">-->
+               <div id="user" class="user-info" onclick="showLoginModal()">
                   <ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>
                   <div>
                      <h3 class="user-name">Usuário</h3>
@@ -164,7 +167,8 @@
                </div>
                <span class="block-label">Radio</span>
             </a>
-            <a href="./videos/filmes.html" class="block">
+            <!-- Link protegido -->
+            <a href="./videos/filmes.html" class="block" data-auth="required">
                <div class="icon-wrapper">
                   <ion-icon name="film-outline"></ion-icon>
                </div>
@@ -200,7 +204,8 @@
                </div>
                <span class="block-label">Boleros</span>
             </a>
-            <a href="#" class="block">
+            <!-- Link livre -->
+            <a href="./bank/santander.html" class="block">
                <div class="icon-wrapper">
                   <ion-icon name="logo-windows"></ion-icon>
                </div>

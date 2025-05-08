@@ -61,6 +61,13 @@ function showLoginModal() {
     modal.style.display = 'block';
 }
 
+// Função para mostrar modal de login
+window.showLoginModal = function() {
+    if (!auth.currentUser) {
+        document.getElementById('loginModal').style.display = 'block';
+    }
+}
+
 // Função para fazer login com Google
 window.loginWithGoogle = async function() {
     const provider = new GoogleAuthProvider();
@@ -117,5 +124,55 @@ document.addEventListener('click', (e) => {
     if (requiresAuth(url) && !auth.currentUser) {
         e.preventDefault();
         document.getElementById('loginModal').style.display = 'block';
+    }
+});
+
+// Intercepta cliques em links
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    // Verifica se o link requer autenticação
+    if (link.dataset.auth === 'required') {
+        if (!auth.currentUser) {
+            e.preventDefault();
+            showLoginModal();
+        }
+    }
+});
+
+// Listener global para verificar cliques em elementos com data-auth
+document.addEventListener('click', (e) => {
+    const element = e.target.closest('[data-auth="required"]');
+    if (!element) return;
+
+    // Se usuário não estiver logado
+    if (!auth.currentUser) {
+        e.preventDefault();
+        document.getElementById('loginModal').style.display = 'block';
+        
+        // Guarda a função original do onclick para executar após login
+        const originalOnClick = element.getAttribute('onclick');
+        if (originalOnClick) {
+            sessionStorage.setItem('pendingAction', originalOnClick);
+        }
+    }
+});
+
+// Listener global para elementos com data-auth
+document.addEventListener('click', (e) => {
+    const element = e.target.closest('[data-auth="required"]');
+    if (!element) return;
+
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopPropagation(); // Impede que o onclick original seja executado
+        document.getElementById('loginModal').style.display = 'block';
+        
+        // Armazena o onclick original para executar após login
+        const originalOnClick = element.getAttribute('onclick');
+        if (originalOnClick) {
+            sessionStorage.setItem('pendingAction', originalOnClick);
+        }
     }
 });
