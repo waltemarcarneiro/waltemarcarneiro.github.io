@@ -31,11 +31,11 @@
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta name="mobile-web-app-capable" content="yes" />
       <!-- Firebase SDK -->
-      <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js"></script>
+      <script type="module" src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+      <script type="module" src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
       <!-- Nossos scripts -->
-      <script src="./js/firebase-config.js"></script>
-      <script src="./js/auth.js"></script>
+      <script type="module" src="./js/firebase-config.js"></script>
+      <script type="module" src="./js/auth.js"></script>
       <link rel="stylesheet" href="./css/modal.css">
    </head>
    <body>
@@ -47,9 +47,9 @@
                <div class="container">
                   <h2 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 300;">Assista Online</h2>
                   <iframe width="100%" height="200" src="https://www.youtube.com/embed/JKoJNdjOHe8?si=cI0w_9IeeepX8EbT" title="YouTube video player" frameborder="0" style="border-radius: 5px;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <h2 style="margin-bottom: 20px; font-size:1rem; font-weight: 300">Filmes completos e dublados.</h2>
+                  <ion-icon name="arrow-forward-outline" class="next-slide"></ion-icon>
                </div>
-               <h2 style="margin-bottom: 20px; font-size:1rem; font-weight: 300">Filmes completos e dublados.</h2>
-               <ion-icon name="arrow-forward-outline" class="next-slide"></ion-icon>
             </div>
          </div>
          <!-- KWAI CHANNEL LOVESONGSAPP-->
@@ -84,7 +84,6 @@
                <br>
                <br>
                <br>
-               <br>
                <ion-icon name="arrow-back-outline" class="prev-slide"></ion-icon>
                <ion-icon name="checkmark-outline" class="finish-intro"></ion-icon>
             </div>
@@ -106,161 +105,131 @@
             <div class="bem-vindo">
                <h1>Que bom você por aquí</h1>
             </div>
-
             <div class="digital">
-                  <div id="user" class="user-info">
-                     <!--<img src="./image/benedetta-caretta.jpg" alt="User Image" class="user-image">-->
-                     <ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>
-                     <div>
-
-                        <h3 class="user-name">Usuário</h3>
-                        <p class="user-info">Área de Membros</p>
-                     </div>
-                     <ion-icon class="digital-image" name="finger-print-outline" aly="digital"></ion-icon>
+               <div id="user" class="user-info">
+                  <!--<img src="./image/benedetta-caretta.jpg" alt="User Image" class="user-image">-->
+                  <ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>
+                  <div>
+                     <h3 class="user-name">Usuário</h3>
+                     <p class="user-info">Área de Membros</p>
                   </div>
-
-                  <div class="icon-acesso">
-                     <div class="icon-acesso" onclick="abrirLogin()">
-                        <ion-icon name="repeat-outline"></ion-icon>
-                        <span>Trocar conta</span>
-                     </div>
-                     <div class="icon-acesso" onclick="abrirPix()">
-                        <img src="image/pix.svg" height="24">
-                        <span>Transferência Pix</span>
-                     </div>
+                  <ion-icon class="digital-image" name="finger-print-outline" aly="digital"></ion-icon>
+               </div>
+               <div class="icon-acesso">
+                  <div class="icon-acesso" onclick="abrirLogin()">
+                     <ion-icon name="repeat-outline"></ion-icon>
+                     <span>Trocar conta</span>
                   </div>
+                  <div class="icon-acesso" onclick="abrirPix()">
+                     <img src="image/pix.svg" height="24">
+                     <span>Transferência Pix</span>
+                  </div>
+               </div>
             </div>
-
-<!--BANNER PROMO TYPE BB-->
-           
-               <a href="https://amzn.to/42UCCtn" target="_blank">
-                  
-                  <div class="promo">
-                     
-                     <img src="https://m.media-amazon.com/images/I/61oUUcXs1iL._AC_UF894,1000_QL80_FMwebp_.jpg" width="70" class="logo-promo">
-                  
-                     <div class="promo-texto">
-                     <span>Monitor Gamer Samsung</span>
-
-                     <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto.</p>
-                     <span style="color:red;">-9%</span> De R$ 1.059,00, por R$<span style="color:#000; font-size: 16px;"> 959,00</span> corra e aproveite.
-                     
-                     <button class="btn-promo">Saiba mais</button>
-                     </div>
-                  
-                  </div>
-               </a>
-            
-                
-
-         </div><!--END CONTENT-->
-
+         </div>
+         <!--BANNER PROMO TYPE BB-->
+         <a href="https://amzn.to/42UCCtn" target="_blank">
+            <div class="promo">
+               <img src="https://m.media-amazon.com/images/I/61oUUcXs1iL._AC_UF894,1000_QL80_FMwebp_.jpg" width="70" class="logo-promo">
+               <div class="promo-texto">
+                  <span>Monitor Gamer Samsung</span>
+                  <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto.</p>
+                  <span style="color:red;">-9%</span> De R$ 1.059,00, por R$<span style="color:#000; font-size: 16px;"> 959,00</span> corra e aproveite.
+                  <button class="btn-promo">Saiba mais</button>
+               </div>
+            </div>
+         </a>
+         <!--END CONTENT-->
          <div class="footer" id="footer">
             <a href="#options" id="chevronIconLink">
                <ion-icon name="chevron-down-outline" size="large" id="chevronIcon"></ion-icon>
             </a>
          </div>
-      </div><!--END CONTAINER-->
-
+      </div>
+      <!--END CONTAINER-->
       <div class="about" id="about">
          <div class="background"></div>
          <div id="options"></div>
-
-      <div class="container-bloco">  
-
-         <a href="https://lovesongsapp.github.io/" target="_blank" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="heart-outline"></ion-icon>
-            </div>
-            <span class="block-label">LoveSongs</span>
-          </a>
-      
-          <a href="./radio/index.html" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="radio-outline"></ion-icon>
-            </div>
-            <span class="block-label">Radio</span>
-          </a>
-      
-          <a href="./videos/filmes.html" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="film-outline"></ion-icon>
-            </div>
-            <span class="block-label">Filmes</span>
-          </a>
-      
-          <a href="./youtube/index.html" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="logo-youtube"></ion-icon>
-            </div>
-            <span class="block-label">TubeMusic</span>
-          </a>
-      
-          <a href="./videos/playlist.html" class="block">
-            <div class="icon-wrapper">
-              <ion-icon name="camera-outline"></ion-icon>
-            </div>
-            <span class="block-label">Playlist</span>
-          </a>
-      
-          <a href="./pages/downloads.html" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="apps-outline"></ion-icon>
-            </div>
-            <span class="block-label">Apps</span>
-          </a>
-      
-          <a href="https://webboard.app/" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="color-palette-outline"></ion-icon>
-            </div>
-            <span class="block-label">WebBoard</span>
-          </a>
-      
-          <a href="./videos/bolero.html" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="musical-notes-outline"></ion-icon>
-            </div>
-            <span class="block-label">Boleros</span>
-          </a>
-      
-          <a href="#" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="logo-windows"></ion-icon>
-            </div>
-            <span class="block-label">Windows</span>
-          </a>
-      
-          <a href="#" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="logo-apple"></ion-icon>
-            </div>
-            <span class="block-label">MacOs</span>
-          </a>
-      
-          <a href="#" class="block">
-            <div class="icon-wrapper">
-               <ion-icon name="logo-tux"></ion-icon>
-            </div>
-            <span class="block-label">Linux</span>
-          </a>
-      
-          <a href="#" class="block">
-            <div class="icon-wrapper">
-              <ion-icon name="settings-sharp"></ion-icon>
-            </div>
-            <span class="block-label">Sistema</span>
-          </a>
-      </div>   
-         
+         <div class="container-bloco">  
+            <a href="https://lovesongsapp.github.io/" target="_blank" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="heart-outline"></ion-icon>
+               </div>
+               <span class="block-label">LoveSongs</span>
+            </a>
+            <a href="./radio/index.html" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="radio-outline"></ion-icon>
+               </div>
+               <span class="block-label">Radio</span>
+            </a>
+            <a href="./videos/filmes.html" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="film-outline"></ion-icon>
+               </div>
+               <span class="block-label">Filmes</span>
+            </a>
+            <a href="./youtube/index.html" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="logo-youtube"></ion-icon>
+               </div>
+               <span class="block-label">TubeMusic</span>
+            </a>
+            <a href="./videos/playlist.html" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="camera-outline"></ion-icon>
+               </div>
+               <span class="block-label">Playlist</span>
+            </a>
+            <a href="./pages/downloads.html" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="apps-outline"></ion-icon>
+               </div>
+               <span class="block-label">Apps</span>
+            </a>
+            <a href="https://webboard.app/" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="color-palette-outline"></ion-icon>
+               </div>
+               <span class="block-label">WebBoard</span>
+            </a>
+            <a href="./videos/bolero.html" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="musical-notes-outline"></ion-icon>
+               </div>
+               <span class="block-label">Boleros</span>
+            </a>
+            <a href="#" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="logo-windows"></ion-icon>
+               </div>
+               <span class="block-label">Windows</span>
+            </a>
+            <a href="#" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="logo-apple"></ion-icon>
+               </div>
+               <span class="block-label">MacOs</span>
+            </a>
+            <a href="#" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="logo-tux"></ion-icon>
+               </div>
+               <span class="block-label">Linux</span>
+            </a>
+            <a href="#" class="block">
+               <div class="icon-wrapper">
+                  <ion-icon name="settings-sharp"></ion-icon>
+               </div>
+               <span class="block-label">Sistema</span>
+            </a>
+         </div>
          <div id="divBack">
             <a href="#logo" id="backIconLink">
                <ion-icon size="large" id="backIcon" name="chevron-back-outline"></ion-icon>
             </a>
          </div>
-
       </div>
-
       <!--end about-->
       <!-- Modal de Login -->
       <div id="loginModal" class="modal-login">
@@ -285,7 +254,6 @@
                      }
                  });
              }
-         
              // Função para mostrar o ícone "chevron-down-outline" ao clicar no ícone de retorno
              const backIconLink = document.getElementById('backIconLink');
              if (backIconLink) {
@@ -297,7 +265,6 @@
                  });
              }
          });
-         
          // Função para obter a data e hora formatadas
          function getDataHoraAtual() {
              const dataHora = new Date();
@@ -314,7 +281,6 @@
              const dataHoraSemSegundos = dataHoraFormatada.replace(/:\d{2}\sAMT/, ''); // Remove os segundos e "AMT"
              return `Recife, ${dataHoraSemSegundos}`;
          }
-         
          // Função para atualizar a div 'data' a cada minuto
          function atualizarData() {
              const dataContainer = document.getElementById('dataContainer');
@@ -322,12 +288,9 @@
                  dataContainer.textContent = getDataHoraAtual();
              }
          }
-         
          // Chama a função inicialmente e a cada minuto
          atualizarData();
          setInterval(atualizarData, 60000);
-         
-          
          // Verifica a posição atual da página ao rolar
          window.addEventListener('scroll', function() {
              var footer = document.getElementById('footer');
@@ -338,7 +301,6 @@
              }
          });
       </script>
-
       <!-- Nova div para o aviso de instalação -->
       <div class="app" id="InstallBanner" style="display:none;">
          <div class="logo-app"></div>
@@ -355,7 +317,6 @@
          <p class="message">Deseja adicionar o App a sua tela inicial?</p>
          <button class="install-btn-app" id="installButton">Adicionar</button>
       </div>
-      
       <script src="links.js"></script>
       <script src="./carrossel/carrossel.js"></script>
       <script src="./AppInstall.js"></script>

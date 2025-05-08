@@ -1,3 +1,6 @@
+import { auth } from './firebase-config.js';
+import { signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js';
+
 // Verificação imediata ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
     // Verifica estado inicial de autenticação
@@ -33,30 +36,23 @@ function showLoginModal() {
     modal.style.display = 'block';
 }
 
-// Login com Google
-function loginWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider)
-        .then((result) => {
-            document.getElementById('loginModal').style.display = 'none';
-        })
-        .catch((error) => {
-            console.error('Erro no login:', error);
-        });
-}
+// Função para fazer login com Google
+window.loginWithGoogle = async function() {
+    const provider = new GoogleAuthProvider();
+    try {
+        await signInWithPopup(auth, provider);
+        document.getElementById('loginModal').style.display = 'none';
+    } catch (error) {
+        console.error('Erro no login:', error);
+    }
+};
 
 // Função para fazer logout
-function fazerLogout() {
-    auth.signOut().then(() => {
-        // Limpa informações do usuário
-        const userName = document.querySelector('.user-name');
-        const userInfo = document.querySelector('.user-info');
-        userName.textContent = 'Usuário';
-        userInfo.textContent = 'Área de Membros';
-        
-        // Mostra modal de login
+window.fazerLogout = async function() {
+    try {
+        await signOut(auth);
         document.getElementById('loginModal').style.display = 'block';
-    }).catch((error) => {
+    } catch (error) {
         console.error('Erro ao fazer logout:', error);
-    });
-}
+    }
+};
