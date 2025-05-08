@@ -14,11 +14,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #222222;
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
     width: 90%;
     max-width: 400px;
+    color: #222
 }
 
 .google-btn {
