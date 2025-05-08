@@ -65,8 +65,63 @@ window.loginWithGoogle = async function() {
 window.fazerLogout = async function() {
     try {
         await signOut(auth);
-        document.getElementById('loginModal').style.display = 'block';
+        // Não mostra o modal após logout
+        document.getElementById('loginModal').style.display = 'none';
     } catch (error) {
         console.error('Erro ao fazer logout:', error);
     }
 };
+
+// Função para verificar se o link requer autenticação
+function requiresAuth(url) {
+    // Lista de URLs que não requerem autenticação
+    const freeAccessPaths = [
+        '/home.html',
+        '/bank/',
+        '#'
+    ];
+
+    // Verifica se a URL está na lista de acesso livre
+    return !freeAccessPaths.some(path => url.includes(path));
+}
+
+// Adicionar listener para clicks em links
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const url = link.href;
+    if (requiresAuth(url)) {
+        // Se o usuário não estiver logado e tentar acessar uma página protegida
+        if (!auth.currentUser) {
+            e.preventDefault();
+            document.getElementById('loginModal').style.display = 'block';
+        }
+    }
+});
+
+// Monitora mudanças no estado de autenticação
+auth.onAuthStateChanged((user) => {
+    const userName = document.querySelector('.user-name');
+    const userStatus = document.querySelector('.user-status');
+    const userIcon = document.querySelector('#user ion-icon[name="person-circle-outline"]');
+    
+    if (user) {
+        // Usuário está logado
+        userName.textContent = user.displayName || 'Usuário';
+        userStatus.textContent = 'Você está logado';
+        
+        if (user.photoURL) {
+            userIcon.outerHTML = `<img src="${user.photoURL}" alt="Foto do perfil" style="width: 56px; height: 56px; border-radius: 50%; margin-right: 5px;">`;
+        }
+    } else {
+        // Usuário não está logado
+        userName.textContent = 'Usuário';
+        userStatus.textContent = 'Status';
+        
+        if (!userIcon) {
+            const userDiv = document.querySelector('#user div').previousElementSibling;
+            userDiv.outerHTML = '<ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>';
+        }
+    }
+});
