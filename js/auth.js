@@ -1,5 +1,5 @@
 import { auth } from './firebase-config.js';
-import { signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/9.x.x/firebase-auth.js';
+import { signInWithPopup, GoogleAuthProvider, signOut } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 
 // Verificação imediata ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
