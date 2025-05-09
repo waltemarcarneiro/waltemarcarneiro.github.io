@@ -166,13 +166,31 @@ document.addEventListener('click', (e) => {
 
     if (!auth.currentUser) {
         e.preventDefault();
-        e.stopPropagation(); // Impede que o onclick original seja executado
-        document.getElementById('loginModal').style.display = 'block';
-        
-        // Armazena o onclick original para executar após login
-        const originalOnClick = element.getAttribute('onclick');
-        if (originalOnClick) {
-            sessionStorage.setItem('pendingAction', originalOnClick);
+        e.stopPropagation(); // Impede a execução do onclick
+        const originalFunction = element.getAttribute('onclick');
+        if (originalFunction) {
+            sessionStorage.setItem('pendingAction', originalFunction);
         }
+        document.getElementById('loginModal').style.display = 'block';
+        return false; // Impede a execução do evento padrão
+    }
+});
+
+// Intercepta todos os cliques no documento
+document.addEventListener('click', (e) => {
+    const element = e.target.closest('[onclick]');
+    if (!element) return;
+
+    // Se elemento tiver data-auth-free, permite a execução
+    if (element.hasAttribute('data-auth-free')) {
+        return;
+    }
+
+    // Para todos os outros onclick, verifica autenticação
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
     }
 });
