@@ -15,7 +15,7 @@ auth.onAuthStateChanged((user) => {
         }
     } else {
         userName.textContent = 'Usuário';
-        userStatus.textContent = 'Status';
+        userStatus.textContent = 'Faça login aquí';
     }
 });
 
