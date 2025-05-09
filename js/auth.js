@@ -52,7 +52,7 @@ window.fazerLogout = async function() {
         const userName = document.querySelector('.user-name');
         const userStatus = document.querySelector('.user-status');
         userName.textContent = 'Usuário';
-        userStatus.textContent = 'Status';
+        userStatus.textContent = 'Faça login aquí';
     } catch (error) {
         console.error('Erro ao fazer logout:', error);
     }
