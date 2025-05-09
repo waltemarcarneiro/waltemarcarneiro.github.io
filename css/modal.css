@@ -5,9 +5,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(18, 9, 18, 0.5), rgba(18, 9, 18, 0.8)), url('../image/bgabout.jpg');
+    background: linear-gradient(rgba(18, 9, 18, 0.1), rgba(18, 9, 18, 0.5)), url('../image/bgabout.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center right;
     backdrop-filter: blur(0px);
     z-index: 9999;
     animation: modalFadeIn 0.3s ease-out;
@@ -87,4 +87,7 @@
 @keyframes modalFadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+.logo-modal {
+    margin-bottom: 30px;
 }
