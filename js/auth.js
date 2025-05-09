@@ -63,21 +63,31 @@ function showLoginModal() {
 
 // Função para mostrar modal de login
 window.showLoginModal = function() {
-    if (!auth.currentUser) {
-        document.getElementById('loginModal').style.display = 'block';
+    const loginModal = document.getElementById('loginModal');
+    if (loginModal) {
+        loginModal.style.display = 'block';
     }
 }
 
-// Função para fazer login com Google
+// Verificação de autenticação
+auth.onAuthStateChanged((user) => {
+    const loginModal = document.getElementById('loginModal');
+    if (!user && loginModal) {
+        loginModal.style.display = 'block';
+    }
+});
+
+// Função de login com Google
 window.loginWithGoogle = async function() {
-    const provider = new GoogleAuthProvider();
     try {
-        await signInWithPopup(auth, provider);
+        const provider = new GoogleAuthProvider();
+        const result = await signInWithPopup(auth, provider);
+        console.log('Login successful:', result.user);
         document.getElementById('loginModal').style.display = 'none';
     } catch (error) {
         console.error('Erro no login:', error);
     }
-};
+}
 
 // Função para fazer logout
 window.fazerLogout = async function() {
@@ -226,12 +236,22 @@ document.addEventListener('click', function(e) {
         return;
     }
 
-    // Para TODOS os outros onclick, verifica autenticação
+    // Se não estiver logado
     if (!auth.currentUser) {
         e.preventDefault();
         e.stopImmediatePropagation();
         e.stopPropagation();
-        document.getElementById('loginModal').style.display = 'block';
+        
+        const loginModal = document.getElementById('loginModal');
+        if (loginModal) {
+            loginModal.style.display = 'block';
+        }
+        
+        const originalOnClick = clickedElement.getAttribute('onclick');
+        if (originalOnClick) {
+            sessionStorage.setItem('pendingAction', originalOnClick);
+        }
+        
         return false;
     }
-}, true); // true para capturar o evento na fase de capturing
+}, true);
