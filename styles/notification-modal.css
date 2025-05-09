@@ -64,9 +64,10 @@
 }
 
 .modal-content p {
-    color: #333;
+    color: #555;
     line-height: 1.5;
     margin: 10px 0;
+    font-size: 1.2rem;
 }
 
 .modal-buttons {
