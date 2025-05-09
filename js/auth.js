@@ -1,4 +1,4 @@
-import { signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from './firebase-config.js';
 
 // Monitora mudanças no estado de autenticação
@@ -19,17 +19,28 @@ auth.onAuthStateChanged((user) => {
     }
 });
 
-// Login com Google
+// Função de login com Google
 window.loginWithGoogle = async function() {
     try {
+        console.log('Iniciando login com Google...');
         const provider = new GoogleAuthProvider();
+        provider.addScope('profile');
+        provider.addScope('email');
+        
         const result = await signInWithPopup(auth, provider);
+        console.log('Login bem sucedido:', result.user);
+        
         if (result.user) {
             document.getElementById('loginModal').style.display = 'none';
         }
     } catch (error) {
-        console.error('Erro no login:', error);
+        console.error('Erro no login:', error.code, error.message);
     }
+}
+
+// Função para fechar modal de login
+window.closeLoginModal = function() {
+    document.getElementById('loginModal').style.display = 'none';
 }
 
 // Logout
