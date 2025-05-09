@@ -55,6 +55,22 @@ auth.onAuthStateChanged((user) => {
     }
 });
 
+// Monitora mudanças no estado de autenticação
+auth.onAuthStateChanged((user) => {
+    const userName = document.querySelector('.user-name');
+    const userStatus = document.querySelector('.user-status');
+    
+    if (user) {
+        // Atualiza interface para usuário logado
+        userName.textContent = user.displayName || 'Usuário';
+        userStatus.textContent = 'Você está logado';
+    } else {
+        // Atualiza interface para usuário não logado
+        userName.textContent = 'Usuário';
+        userStatus.textContent = 'Status';
+    }
+});
+
 // Função para mostrar modal
 function showLoginModal() {
     const modal = document.getElementById('loginModal');
