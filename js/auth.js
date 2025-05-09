@@ -194,3 +194,44 @@ document.addEventListener('click', (e) => {
         return false;
     }
 });
+
+// Intercepta todos os cliques no documento
+document.addEventListener('click', function(e) {
+    // Encontra elemento mais próximo com onclick
+    const clickedElement = e.target.closest('[onclick]');
+    if (!clickedElement) return;
+
+    // Permite execução se tiver data-auth-free
+    if (clickedElement.hasAttribute('data-auth-free')) {
+        return;
+    }
+
+    // Bloqueia execução se não estiver logado
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
+    }
+}, true);
+
+// Intercepta TODOS os clicks no documento
+document.addEventListener('click', function(e) {
+    const clickedElement = e.target.closest('[onclick]');
+    if (!clickedElement) return;
+
+    // Se elemento tiver data-auth-free, permite execução
+    if (clickedElement.hasAttribute('data-auth-free')) {
+        return;
+    }
+
+    // Para TODOS os outros onclick, verifica autenticação
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
+    }
+}, true); // true para capturar o evento na fase de capturing
