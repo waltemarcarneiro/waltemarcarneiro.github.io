@@ -24,7 +24,7 @@
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    max-width: 80%;
+    max-width: 70%;
     width: 400px;
     z-index: 1000;
 }
@@ -35,7 +35,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0,0,0,0.5);
     z-index: 999;
 }
 
@@ -48,7 +48,7 @@
     width: 60px;
     height: 60px;
     margin-bottom: 15px;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .modal-title {
@@ -78,7 +78,7 @@
 .modal-btn {
     padding: 12px 25px;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s, opacity 0.2s;
