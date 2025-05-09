@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from './firebase-config.js';
 
 // Monitora mudanças no estado de autenticação
@@ -43,11 +43,16 @@ window.closeLoginModal = function() {
     document.getElementById('loginModal').style.display = 'none';
 }
 
-// Logout
+// Função para fazer logout
 window.fazerLogout = async function() {
     try {
+        console.log('Iniciando logout...');
         await signOut(auth);
-        document.getElementById('loginModal').style.display = 'none';
+        console.log('Logout realizado com sucesso');
+        const userName = document.querySelector('.user-name');
+        const userStatus = document.querySelector('.user-status');
+        userName.textContent = 'Usuário';
+        userStatus.textContent = 'Status';
     } catch (error) {
         console.error('Erro ao fazer logout:', error);
     }
