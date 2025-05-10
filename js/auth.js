@@ -88,3 +88,19 @@ document.addEventListener('click', function(e) {
         return false;
     }
 }, true);
+
+// Verifica parâmetros da URL ao carregar
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('auth') === 'required') {
+        const fromPage = params.get('from');
+        const loginModal = document.getElementById('loginModal');
+        const message = `Você precisa fazer login para acessar ${fromPage}`;
+        
+        if (loginModal) {
+            const modalMessage = loginModal.querySelector('p');
+            if (modalMessage) modalMessage.textContent = message;
+            loginModal.style.display = 'block';
+        }
+    }
+});
