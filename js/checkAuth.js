@@ -4,7 +4,7 @@ import { auth } from './firebase-config.js';
 const protectedPages = [
     '/radio/',
     '/videos/filmes.html',
-    '/pages/profile.html'
+    '/pages/profile'
 ];
 
 const currentPath = window.location.pathname;
