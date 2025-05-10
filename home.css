@@ -40,7 +40,7 @@
       font-size: 16px;
       font-weight: 500;
       height: 100%;
-      /*touch-action: manipulation;*/
+      touch-action: manipulation;
       /*overscroll-behavior: none;*/
   
   /* Força o comportamento correto em navegadores que ignoram 'fixed' */
