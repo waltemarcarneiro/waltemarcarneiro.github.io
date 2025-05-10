@@ -1,3 +1,5 @@
+document.addEventListener('contextmenu', e => e.preventDefault());
+
 function abrirPix() {
     window.location.href = "bank/santander.html";
 }
@@ -20,4 +22,4 @@ function abrirSuporte() {
 
 function fecharPWA() {
  window.close();
-}  
+}
