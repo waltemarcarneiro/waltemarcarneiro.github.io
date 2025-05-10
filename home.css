@@ -40,6 +40,7 @@
       font-size: 16px;
       font-weight: 500;
       height: 100%;
+      user-select: none;
       touch-action: manipulation;
       /*overscroll-behavior: none;*/
   
