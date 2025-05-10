@@ -1,0 +1,102 @@
+@font-face {
+   font-family: 'Roboto';
+   src: url('../fonts/roboto-regular.woff2') format('woff2');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'Roboto';
+   src: url('../fonts/roboto-bold.woff2') format('woff2');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+      * {
+         margin: 0;
+         padding: 0;
+         user-select: none;
+         -webkit-tap-highlight-color: transparent;
+         box-sizing: border-box;
+      }
+
+      body {
+         font-family: 'Roboto', sans-serif;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         min-height: 100vh;
+      }
+
+      .container {
+         color: #fff;
+         align-items: center;
+         width: 90%;
+         max-width: 480px;
+         text-align: center;
+         padding: 20px;
+         border-radius: 20px;
+         background: rgba(0, 0, 0, 0.1);
+      }
+
+      .video-background {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100vh;
+         object-fit: cover;
+         z-index: -1;
+      }
+
+      .fluent {
+         font-family: 'Wix Madefor Text', sans-serif;
+         font-size: 22px;
+         font-weight: 500;
+      }
+
+      .social {
+         margin-top: 20px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
+         gap: 20px;
+         left: 0;
+         right: 0;
+      }
+
+      .social a {
+         color: #fff;
+      }
+
+      .social ion-icon {
+         font-size: 32px;
+      }
+
+      #volume-controls {
+         display: flex;
+         position: fixed;
+         bottom: 20px;
+         right: 20px;
+         color: #fff;
+         background: rgba(0, 0, 0, 0.2);
+         border-radius: 50%;
+         align-items: center;
+         justify-content: center;
+         padding: 5px 5px 2px 5px;
+      }
+
+      .voltar {
+         display: flex;
+         position: fixed;
+         bottom: 20px;
+         left: 20px;
+         color: #fff;
+         background: rgba(0, 0, 0, 0.2);
+         border-radius: 50%;
+         align-items: center;
+         justify-content: center;
+         padding: 5px 5px 2px 5px;
+      }
