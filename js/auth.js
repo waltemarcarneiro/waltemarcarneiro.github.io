@@ -75,3 +75,16 @@ document.addEventListener('click', function(e) {
         return false;
     }
 }, true);
+
+// Intercepta clicks em links protegidos
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[data-auth-lock]');
+    if (!link) return;
+
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
+    }
+}, true);
