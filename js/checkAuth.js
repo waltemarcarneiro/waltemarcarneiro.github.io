@@ -3,7 +3,8 @@ import { auth } from './firebase-config.js';
 // Lista de páginas protegidas
 const protectedPages = [
     '/radio/',
-    '/videos/filmes.html'
+    '/videos/filmes.html',
+    '/pages/profile.html'
 ];
 
 const currentPath = window.location.pathname;
