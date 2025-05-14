@@ -1,0 +1,57 @@
+<div class="modal-santander">
+    <div class="modal-content">
+        <ion-icon name="close-outline" class="close-btn" onclick="this.closest('.modal-santander').remove()"></ion-icon>
+
+        <div class="modal-header">
+            <img src="../../image/pix.svg" alt="PIX" class="pix-logo">
+            <h2>Transferência PIX</h2>
+            <p>Escolha uma das opções abaixo</p>
+        </div>
+
+        <div class="button-container">
+            <div class="button-wrapper">
+                <button onclick="copiarCodigo('00020126580014br.gov.bcb.pix013616f06530-c133-47f2-b4d4-452e580401fb5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62580520SAN2023012101152512450300017br.gov.bcb.brcode01051.0.063049962')" class="pix-button">
+                    <ion-icon name="qr-code-outline"></ion-icon>
+                    Copiar QR Code PIX
+                </button>
+            </div>
+
+            <div class="button-wrapper">
+                <button onclick="copiarChave('16f06530-c133-47f2-b4d4-452e580401fb')" class="pix-button">
+                    <ion-icon name="key-outline"></ion-icon>
+                    Copiar Chave PIX
+                </button>
+            </div>
+        </div>
+
+        <div id="mensagem" class="mensagem"></div>
+    </div>
+</div>
+
+<script>
+    function copiarCodigo(codigo) {
+        navigator.clipboard.writeText(codigo).then(() => {
+            mostrarMensagem("Código PIX copiado, use a opção Copia e Cola no Aplicativo do seu banco.");
+        });
+    }
+
+    function copiarChave(chave) {
+        navigator.clipboard.writeText(chave).then(() => {
+            mostrarMensagem("Chave PIX copiada, use Chave Aleatória no aplicativo do seu banco");
+        });
+    }
+
+    function mostrarMensagem(texto) {
+        const mensagem = document.getElementById('mensagem');
+        mensagem.textContent = texto;
+        mensagem.style.display = 'block';
+    }
+
+    // Fechar mensagem ao tocar na tela
+    document.addEventListener('click', function () {
+        const mensagem = document.getElementById('mensagem');
+        if (mensagem.style.display === 'block') {
+            mensagem.style.display = 'none';
+        }
+    });
+</script>
