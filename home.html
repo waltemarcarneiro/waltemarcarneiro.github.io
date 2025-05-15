@@ -111,24 +111,26 @@
                <h1>Que bom você por aquí</h1>
             </div>
             <div class="digital">
-               <div id="user" class="user-info" onclick="showLoginModal()">
-                  <ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>
-                  <div>
-                     <h3 class="user-name">Usuário</h3>
-                     <p class="user-status">Faça login aquí</p>
+                  <div id="user" class="user-info" onclick="abrirLogin()">
+                     <!--<img src="./image/benedetta-caretta.jpg" alt="User Image" class="user-image">-->
+                     <ion-icon style="font-size: 56px; margin-right: 5px;" name="person-circle-outline"></ion-icon>
+                     <div>
+                        <h3 class="user">Usuário</h3>
+                        <p class="user-info">Área de Membros</p>
+                     </div>
+                     <ion-icon class="digital-image" name="finger-print-outline" aly="digital"></ion-icon>
                   </div>
-                  <ion-icon class="digital-image" name="finger-print-outline" aly="digital"></ion-icon>
-               </div>
-               <div class="icon-acesso">
-                  <div class="icon-acesso" onclick="abrirLogin()">
-                     <ion-icon name="repeat-outline"></ion-icon>
-                     <span>Trocar conta</span>
+
+                  <div class="icon-acesso">
+                     <div class="icon-acesso" onclick="abrirLogin()">
+                        <ion-icon name="repeat-outline"></ion-icon>
+                        <span>Trocar conta</span>
+                     </div>
+                     <div class="icon-acesso" onclick="abrirPix()">
+                        <img src="image/pix.svg" height="24">
+                        <span>Transferência Pix</span>
+                     </div>
                   </div>
-                  <div class="icon-acesso" data-auth-free onclick="abrirPix()">
-                     <img src="image/pix.svg" height="24">
-                     <span>Transferência Pix</span>
-                  </div>
-               </div>
             </div>
          </div>
          <!--BANNER PROMO TYPE BB-->
