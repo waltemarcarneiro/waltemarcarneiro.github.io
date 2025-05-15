@@ -38,6 +38,7 @@
       <script type="module" src="./js/firebase-config.js"></script>
       <script type="module" src="./js/auth.js"></script>
       <link rel="stylesheet" href="./css/modal.css">
+      
    </head>
    <body>
       <!-- Carrossel de introdução -->
@@ -122,11 +123,11 @@
                   </div>
 
                   <div class="icon-acesso">
-                     <div class="icon-acesso" onclick="abrirLogin()">
+                     <div class="icon-acesso" onclick="openSenha()" data-auth-free>
                         <ion-icon name="repeat-outline"></ion-icon>
-                        <span>Trocar conta</span>
+                        <span>Recuperar senha</span>
                      </div>
-                     <div class="icon-acesso" data-auth-free onclick="abrirPix()">
+                     <div class="icon-acesso" data-auth-free onclick="openSantander()">
                         <img src="image/pix.svg" height="24">
                         <span> Fazer Pix</span>
                      </div>
@@ -329,6 +330,6 @@
       <script src="links.js"></script>
       <script src="./carrossel/carrossel.js"></script>
       <script src="./AppInstall.js"></script>
-      <!--<script src="./pro.js"></script>-->
+      <script type="module" src="./components/modals/modal.js"></script>
    </body>
 </html>

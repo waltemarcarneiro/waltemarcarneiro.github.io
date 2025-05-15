@@ -1,3 +1,9 @@
+.logo-modal {
+    
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
 .modal-login {
     display: none;
     position: fixed;
@@ -88,9 +94,182 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
-.logo-modal {
-    
-    position: absolute;
-    top: 20px;
-    left: 20px;
+
+
+/*modal santander*/
+
+@keyframes modalSantanderIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
+
+.modal-santander {
+    animation: modalSantanderIn 0.3s ease-out;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+}
+
+.modal-santander .modal-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-santander .modal-content {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-santander .close-btn {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+}
+
+.modal-santander .modal-header {
+    text-align: center;
+    margin: 32px 0;
+    padding-top: 16px;
+}
+
+.modal-santander .pix-logo {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.modal-santander h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+}
+
+.modal-santander p {
+    color: #666;
+    margin: 8px 0 0;
+    font-size: 20px;
+}
+
+.modal-santander .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+.modal-santander .button-wrapper {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.modal-santander .pix-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f76700;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.modal-santander .pix-button:hover {
+    background: #e65e00;
+}
+
+.modal-santander .pix-button ion-icon {
+    font-size: 24px;
+}
+
+.modal-santander .mensagem {
+    position: fixed;
+    margin-top: 50px;
+    top: 0;
+    border-radius: 5px;
+    
+    width: 80%;
+    background: #0071E3;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 22px;
+    display: none;
+    z-index: 10001;
+}
+.modal-santander .destaque {
+    color: #FFD700;
+    font-weight: bold;
+}
+.modal-santander .pix-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.modal-santander .pix-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.modal-santander .pix-option:hover {
+    background: #f5f5f5;
+}
+
+.modal-santander .pix-option ion-icon {
+    font-size: 44px;
+    color: #f76700;
+    padding: 16px;
+    background: #fff5ec;
+    border-radius: 50%;
+}
+
+.modal-santander .pix-option span {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/*@media (min-width: 100%) {
+    .modal-santander .modal-content {
+        max-width: 480px;
+        height: auto;
+        border-radius: 16px;
+    }
+}*/
