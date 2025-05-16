@@ -8,14 +8,14 @@ auth.onAuthStateChanged((user) => {
     const userIcon = document.querySelector('#user ion-icon[name="person-circle-outline"]');
     
     if (user) {
-        userName.textContent = user.displayName || 'Usuário';
-        userStatus.textContent = 'Você está logado';
+        userName.innerHTML = user.displayName || 'Usuário';
+        userStatus.innerHTML = 'Você está logado';
         if (user.photoURL) {
             userIcon.outerHTML = `<img src="${user.photoURL}" alt="Foto do perfil" style="width: 56px; height: 56px; border-radius: 50%; margin-right: 10px;">`;
         }
     } else {
-        userName.textContent = 'Usuário';
-        userStatus.textContent = 'Faça login aquí';
+        userName.innerHTML = 'Usuário';
+        userStatus.innerHTML = 'Faça login aquí';
     }
 });
 
