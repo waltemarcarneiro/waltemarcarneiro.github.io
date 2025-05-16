@@ -1,7 +1,8 @@
 <div class="modal-santander modal-fullscreen">
     <div class="modal-container">
         <div class="modal-content">
-            <ion-icon name="close-outline" class="close-btn" onclick="this.closest('.modal-fullscreen').remove()" data-auth-free></ion-icon>
+            <ion-icon name="close-outline" class="close-btn" onclick="this.closest('.modal-fullscreen').remove()"
+                data-auth-free></ion-icon>
 
             <div id="mensagem" class="mensagem"></div>
 
@@ -12,18 +13,40 @@
             </div>
 
             <div class="pix-options">
-                <div class="pix-option" data-auth-free onclick="copiarCodigo('00020126580014br.gov.bcb.pix013616f06530-c133-47f2-b4d4-452e580401fb5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62580520SAN2023012101152512450300017br.gov.bcb.brcode01051.0.063049962')" 
-                     data-message="Código PIX copiado! Use a opção <span class='destaque'>Copia e Cola</span> no aplicativo do seu banco.">
+                <div class="pix-option" data-auth-free
+                    onclick="copiarCodigo('00020126580014br.gov.bcb.pix013616f06530-c133-47f2-b4d4-452e580401fb5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62580520SAN2023012101152512450300017br.gov.bcb.brcode01051.0.063049962')"
+                    data-message="Código PIX copiado! Use a opção <span class='destaque'>Copia e Cola</span> no aplicativo do seu banco.">
                     <ion-icon name="qr-code-outline"></ion-icon>
                     <span>QR Code PIX</span>
                 </div>
 
                 <div class="pix-option" data-auth-free onclick="copiarChave('16f06530-c133-47f2-b4d4-452e580401fb')"
-                     data-message="Chave PIX copiada! Use a opção <span class='destaque'>Chave Aleatória</span> no aplicativo. do seu banco">
+                    data-message="Chave PIX copiada! Use a opção <span class='destaque'>Chave Aleatória</span> no aplicativo. do seu banco">
                     <ion-icon name="key-outline"></ion-icon>
                     <span>Chave PIX</span>
                 </div>
+
             </div>
+
+            <!--conta-->
+            <div class="modal-conta">
+                <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+                <strong>Banco Santander S.A.</strong>
+            </div>
+            <div class="modal-conta">
+                <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+                <strong>1340</strong>
+            </div>
+            <div class="modal-conta">
+                <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+                <strong>01085980-5</strong>
+            </div>
+            <div class="modal-conta">
+                <ion-icon name="person-outline" class="icon" size="small"></ion-icon>
+                <strong>Waltemar Carneiro</strong>
+            </div>
+
+
         </div>
     </div>
 </div>

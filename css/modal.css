@@ -157,10 +157,21 @@
 
 .modal-santander .modal-header {
     text-align: center;
-    margin: 32px 0;
-    padding-top: 16px;
+    
 }
-
+.modal-santander .modal-conta {
+    
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    color: #666;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    font-size: 14px;
+}
 .modal-santander .pix-logo {
     width: 80%;
     margin-bottom: 20px;
@@ -240,6 +251,7 @@
     gap: 40px;
     width: 100%;
     max-width: 320px;
+    margin: 30px 0px;
 }
 
 .modal-santander .pix-option {
