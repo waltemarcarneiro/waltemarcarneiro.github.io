@@ -118,6 +118,10 @@
     }
 
     .user-name h3 {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    .user-status p {
         font-size: 1.1rem;
         font-weight: 500;
     }
