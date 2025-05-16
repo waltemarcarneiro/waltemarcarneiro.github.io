@@ -11,7 +11,7 @@ auth.onAuthStateChanged((user) => {
         userName.textContent = user.displayName || 'Usuário';
         userStatus.textContent = 'Você está logado';
         if (user.photoURL) {
-            userIcon.outerHTML = `<img src="${user.photoURL}" alt="Foto do perfil" style="width: 56px; height: 56px; border-radius: 50%; margin-right: 5px;">`;
+            userIcon.outerHTML = `<img src="${user.photoURL}" alt="Foto do perfil" style="width: 56px; height: 56px; border-radius: 50%; margin-right: 10px;">`;
         }
     } else {
         userName.textContent = 'Usuário';
