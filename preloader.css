@@ -62,14 +62,25 @@ body, html {
 }
 
 .ctn-preloader .animation-preloader .spinner {
-  -webkit-animation: spinner 1s infinite linear;
-  animation: spinner 1s infinite linear;
-  border-radius: 50%;
-  border: 3px solid rgba(0, 0, 0, 0.2);
-  border-top-color: #FFFFFF; /*COR DO CIRCULO*/
-  height: 150px;
-  margin: 0 auto 3.5em auto;
-  width: 150px;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto 3.5em auto;
+    background: url('./image/logo.png') no-repeat center center;
+    background-size: 90%;
+}
+
+.ctn-preloader .animation-preloader .spinner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-top-color: #FFFFFF;
+    animation: spinner 1s infinite linear;
 }
 
 .ctn-preloader .animation-preloader .txt-loading {
@@ -254,6 +265,7 @@ body, html {
   .ctn-preloader .animation-preloader .spinner {
     height: 8em;
     width: 8em;
+    background-size: 90%;  /* mantém o mesmo tamanho proporcional do desktop */
   }
   .ctn-preloader .animation-preloader .txt-loading {
     font: bold 3.5em 'Montserrat', sans-serif;
@@ -264,6 +276,7 @@ body, html {
   .ctn-preloader .animation-preloader .spinner {
     height: 7em;
     width: 7em;
+    background-size: 90%;  /* mantém o mesmo tamanho proporcional do desktop */
   }
   .ctn-preloader .animation-preloader .txt-loading {
     font: bold 2em 'Montserrat', sans-serif;
