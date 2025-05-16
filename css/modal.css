@@ -33,7 +33,7 @@
     justify-content: center;
     text-align: center;
     color: #fff;
-    backdrop-filter: blur(0px);
+    backdrop-filter: blur(10px);
 }
 
 .modal-content h2 {
@@ -51,7 +51,7 @@
     max-width: 300px;
     margin: 0 auto;
     padding: 15px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.2);
     color: white;
     border-radius: 50px;
@@ -78,7 +78,7 @@
     top: 20px;
     right: 20px;
     color: #fff;
-    font-size: 24px;
+    font-size: 36px;
     cursor: pointer;
     background: none;
     border: none;
@@ -143,7 +143,7 @@
     position: absolute;
     right: 16px;
     top: 16px;
-    font-size: 28px;
+    font-size: 36px;
     color: #666;
     cursor: pointer;
 }
