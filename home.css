@@ -185,7 +185,7 @@
         background: linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
             url('./image/bgabout.jpg') no-repeat center center fixed;
         background-size: cover;
-        filter: blur(0px);
+        filter: blur(10px);
         z-index: -1;
     }
 
@@ -669,7 +669,7 @@
     }
 
     .icon-wrapper {
-        border: 2px solid white;
+        border: 1px solid white;
         border-radius: 20px;
         padding: 20px;
         width: 100px;
