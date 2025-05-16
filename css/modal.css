@@ -163,11 +163,11 @@
     font-size: 24px;
     color: #333;
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .modal-santander p {
-    color: #666;
+    color: #444;
     margin: 8px 0 0;
     font-size: 20px;
 }
@@ -232,7 +232,6 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-top: 40px;
     width: 100%;
     max-width: 320px;
 }
@@ -261,7 +260,7 @@
 }
 
 .modal-santander .pix-option span {
-    color: #333;
+    color: #444;
     font-size: 16px;
     font-weight: 600;
 }
