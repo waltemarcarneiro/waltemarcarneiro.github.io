@@ -1,9 +1,10 @@
 .logo-modal {
-    
+
     position: absolute;
     top: 20px;
     left: 20px;
 }
+
 .modal-login {
     display: none;
     position: fixed;
@@ -51,8 +52,8 @@
     max-width: 300px;
     margin: 0 auto;
     padding: 15px;
-    background: rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     border-radius: 50px;
     font-size: 1.1em;
@@ -63,7 +64,7 @@
 }
 
 .google-btn:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     transform: scale(1.02);
 }
 
@@ -91,8 +92,13 @@
 
 /* Animação de entrada */
 @keyframes modalFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -103,6 +109,7 @@
         opacity: 0;
         transform: translateX(-100%);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -211,11 +218,7 @@
 
 .modal-santander .mensagem {
     position: fixed;
-    margin-top: 50px;
-    top: 0;
-    border-radius: 5px;
-    
-    width: 80%;
+    width: 100%;
     background: #0071E3;
     color: white;
     padding: 16px;
@@ -224,10 +227,12 @@
     display: none;
     z-index: 10001;
 }
+
 .modal-santander .destaque {
     color: #FFD700;
     font-weight: bold;
 }
+
 .modal-santander .pix-options {
     display: flex;
     justify-content: center;
