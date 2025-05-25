@@ -1,4 +1,9 @@
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, signOut, 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+    sendPasswordResetEmail
+} from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from './firebase-config.js';
 
 // Monitora mudanças no estado de autenticação
@@ -104,3 +109,63 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Funções para alternar tabs
+document.querySelectorAll('.tab-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        
+        button.classList.add('active');
+        document.getElementById(`${button.dataset.tab}-tab`).classList.add('active');
+    });
+});
+
+// Login com email/senha
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        if (!userCredential.user.emailVerified) {
+            await auth.signOut();
+            showAuthMessage('Verifique seu email para continuar', 'error');
+            showResendButton(email);
+            return;
+        }
+        showAuthMessage('Login realizado com sucesso!', 'success');
+        setTimeout(() => {
+            document.getElementById('loginModal').style.display = 'none';
+        }, 1500);
+    } catch (error) {
+        showAuthMessage(getErrorMessage(error.code), 'error');
+    }
+});
+
+// Função para exibir mensagens
+function showAuthMessage(message, type) {
+    const messageElement = document.getElementById('auth-message');
+    messageElement.textContent = message;
+    messageElement.className = `auth-message ${type}`;
+}
+
+// Função para mostrar botão de reenvio
+function showResendButton(email) {
+    const button = document.createElement('button');
+    button.textContent = 'Reenviar email de verificação';
+    button.onclick = () => resendVerificationEmail(email);
+    document.getElementById('auth-message').appendChild(button);
+}
+
+// Função para reenviar email de verificação
+async function resendVerificationEmail(email) {
+    try {
+        const user = auth.currentUser;
+        await sendEmailVerification(user);
+        showAuthMessage('Email de verificação reenviado!', 'success');
+    } catch (error) {
+        showAuthMessage('Erro ao reenviar email', 'error');
+    }
+}

@@ -250,10 +250,35 @@
             <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()" data-auth-free></ion-icon>
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
-            <button data-auth-free onclick="loginWithGoogle()" class="google-btn">
-               <img src="image/google-icon.svg" alt="Google" width="24">
-               Entrar com Google
-            </button>
+            <!-- Tabs de navegação -->
+            <div class="login-tabs">
+               <button class="tab-btn active" data-tab="google">Google</button>
+               <button class="tab-btn" data-tab="email">Email</button>
+            </div>
+
+            <!-- Tab Google -->
+            <div class="tab-content active" id="google-tab">
+               <button data-auth-free onclick="loginWithGoogle()" class="google-btn">
+                  <img src="image/google-icon.svg" alt="Google" width="24">
+                  Entrar com Google
+               </button>
+            </div>
+
+            <!-- Tab Email -->
+            <div class="tab-content" id="email-tab">
+               <form id="loginForm" class="login-form">
+                  <input type="email" id="email" placeholder="Email" required>
+                  <input type="password" id="password" placeholder="Senha" required>
+                  <button type="submit" class="login-btn">Entrar</button>
+               </form>
+               <div class="form-links">
+                  <a href="#" onclick="showResetPassword()">Esqueceu a senha?</a>
+                  <a href="#" onclick="showRegister()">Criar conta</a>
+               </div>
+            </div>
+
+            <!-- Mensagem de erro/sucesso -->
+            <div id="auth-message" class="auth-message"></div>
          </div>
       </div>
       <script>
