@@ -484,6 +484,69 @@
     color: #00ff00;
 }
 
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.auth-form input {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+.submit-btn {
+    background: #f76700;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.auth-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.auth-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.divider {
+    text-align: center;
+    color: #fff;
+    margin: 15px 0;
+    opacity: 0.5;
+}
+
+.resend-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 /*@media (min-width: 100%) {
     .modal-santander .modal-content {
         max-width: 480px;
