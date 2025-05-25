@@ -88,44 +88,70 @@ window.closeLoginModal = function() {
     document.getElementById('loginModal').style.display = 'none';
 }
 
-// Register Event Listener
-document.addEventListener('DOMContentLoaded', () => {
-    // Form de registro
+// Funções de navegação do modal
+window.showView = function(view) {
+    const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
-    if (registerForm) {
-        registerForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('registerEmail').value;
-            const password = document.getElementById('registerPassword').value;
-            
-            try {
-                showMessage('Criando sua conta...', 'info');
-                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                await sendEmailVerification(userCredential.user);
-                
-                showMessage('Conta criada! Verifique seu email para ativar.', 'success');
-                setTimeout(() => {
-                    document.getElementById('loginForm').style.display = 'block';
-                    document.getElementById('registerForm').style.display = 'none';
-                }, 3000);
-            } catch (error) {
-                console.error('Erro no registro:', error);
-                showMessage(getErrorMessage(error.code), 'error');
-            }
-        });
+    const resetForm = document.getElementById('resetForm');
+    
+    // Esconde todos os forms
+    [loginForm, registerForm, resetForm].forEach(form => {
+        if (form) form.style.display = 'none';
+    });
+    
+    // Mostra o form selecionado
+    switch(view) {
+        case 'login':
+            loginForm.style.display = 'block';
+            break;
+        case 'register':
+            registerForm.style.display = 'block';
+            break;
+        case 'resetPassword':
+            resetForm.style.display = 'block';
+            break;
     }
+}
 
-    // Form de login
+// Reset Password
+window.showResetPassword = async function() {
+    const email = document.getElementById('email').value;
+    try {
+        showMessage('Enviando email de recuperação...', 'info');
+        await sendPasswordResetEmail(auth, email);
+        showMessage('Email de recuperação enviado! Verifique sua caixa de entrada.', 'success');
+    } catch (error) {
+        console.error('Erro ao resetar senha:', error);
+        showMessage(getErrorMessage(error.code), 'error');
+    }
+}
+
+// Função para fazer logout
+window.fazerLogout = async function() {
+    try {
+        await signOut(auth);
+        showMessage('Logout realizado com sucesso!', 'success');
+        window.location.reload();
+    } catch (error) {
+        console.error('Erro ao fazer logout:', error);
+    }
+}
+
+// Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Formulário de login
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            console.log('Login form submitted'); // Debug
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
             try {
                 showMessage('Fazendo login...', 'info');
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                console.log('Login successful:', userCredential); // Debug
                 
                 if (!userCredential.user.emailVerified) {
                     await signOut(auth);
@@ -140,6 +166,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 1500);
             } catch (error) {
                 console.error('Erro no login:', error);
+                showMessage(getErrorMessage(error.code), 'error');
+            }
+        });
+    }
+
+    // Formulário de registro
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm) {
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            console.log('Register form submitted'); // Debug
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            
+            try {
+                showMessage('Criando sua conta...', 'info');
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                console.log('Registration successful:', userCredential); // Debug
+                
+                await sendEmailVerification(userCredential.user);
+                showMessage('Conta criada! Verifique seu email para ativar.', 'success');
+                
+                setTimeout(() => {
+                    showView('login');
+                }, 3000);
+            } catch (error) {
+                console.error('Erro no registro:', error);
                 showMessage(getErrorMessage(error.code), 'error');
             }
         });

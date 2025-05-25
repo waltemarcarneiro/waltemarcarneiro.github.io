@@ -471,21 +471,26 @@
     border-radius: 5px;
     text-align: center;
     display: none;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .auth-message.error {
     background: rgba(255, 0, 0, 0.1);
     color: #ff4444;
+    display: block;
 }
 
 .auth-message.success {
     background: rgba(0, 255, 0, 0.1);
-    color: #00ff00;
+    color: #4CAF50;
+    display: block;
 }
 
 .auth-message.info {
     background: rgba(0, 0, 255, 0.1);
     color: #ffffff;
+    display: block;
 }
 
 .auth-form {
