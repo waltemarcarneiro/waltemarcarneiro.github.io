@@ -42,17 +42,32 @@ window.copiarChave = function(chave) {
     });
 }
 
+// Adicionar event listeners para as tabs
 document.addEventListener('DOMContentLoaded', function() {
     // Event listeners para as tabs
     document.querySelectorAll('.tab-btn').forEach(button => {
         button.addEventListener('click', () => {
             const tabId = button.dataset.tab;
-            switchTab(tabId);
+            
+            // Remove classe active de todas as tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Ativa a tab clicada
+            button.classList.add('active');
+            document.getElementById(`${tabId}-tab`).style.display = 'block';
+            
+            // Limpa mensagens de erro ao trocar de tab
+            document.getElementById('auth-message').style.display = 'none';
         });
     });
 
-    // Limpar mensagens ao fechar modal
-    document.querySelector('.close-modal').addEventListener('click', () => {
+    // Limpa mensagens ao fechar modal
+    document.querySelector('.close-modal')?.addEventListener('click', () => {
         document.getElementById('auth-message').style.display = 'none';
     });
 });
