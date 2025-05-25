@@ -12,18 +12,18 @@ import { auth } from './firebase-config.js';
 
 // Monitora o estado de autenticação
 onAuthStateChanged(auth, (user) => {
+    console.log("Estado de autenticação mudou:", user); // Debug
     const userName = document.querySelector('.user-name');
     const userStatus = document.querySelector('.user-status');
     
     if (user) {
-        userName.textContent = user.displayName || 'Usuário';
+        userName.textContent = user.displayName || user.email || 'Usuário';
         userStatus.textContent = 'Você está logado';
         localStorage.setItem('usuarioLogado', 'true');
     } else {
         userName.textContent = 'Usuário';
         userStatus.textContent = 'Faça login aquí';
         localStorage.removeItem('usuarioLogado');
-        checkProtectedAccess();
     }
 });
 
@@ -54,10 +54,12 @@ function showMessage(message, type = 'info') {
 
 // Login com Google
 window.loginWithGoogle = async function() {
+    console.log("Iniciando login com Google..."); // Debug
     try {
-        showMessage('Conectando com Google...');
         const provider = new GoogleAuthProvider();
+        showMessage('Conectando com Google...', 'info');
         const result = await signInWithPopup(auth, provider);
+        console.log("Login Google bem sucedido:", result.user); // Debug
         
         showMessage('Login realizado com sucesso!', 'success');
         setTimeout(() => {
