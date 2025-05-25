@@ -31,28 +31,14 @@
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta name="mobile-web-app-capable" content="yes" />
       <!-- Firebase SDK -->
-      <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js';
-        import { getAuth } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
-        
-        const firebaseConfig = {
-            apiKey: "AIzaSyCHOFjKBxvKhzLkk18vOhzmoKZyCPmevyM",
-            authDomain: "waltemar-app.firebaseapp.com",
-            projectId: "waltemar-app",
-            storageBucket: "waltemar-app.firebasestorage.app",
-            messagingSenderId: "385613786432",
-            appId: "1:385613786432:web:2a98629d67efe7f4f89ea5",
-            measurementId: "G-WPEEZ3H5X8"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        window.auth = getAuth(app);
-    </script>
+      <script type="module" src="https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"></script>
+      <script type="module" src="https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js"></script>
+      <script type="module" src="https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js"></script>
       <!-- Nossos scripts -->
       <script type="module" src="./js/firebase-config.js"></script>
       <script type="module" src="./js/auth.js"></script>
-      <script type="module" src="./js/checkAuth.js"></script>
+      <script type="module" src="./js/emailAuth.js"></script>
+      <script type="module" src="./js/modal.js"></script>
       <link rel="stylesheet" href="./css/modal.css">
       
    </head>
@@ -266,47 +252,37 @@
             <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()" data-auth-free></ion-icon>
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
-            <!-- Login Form -->
-            <form id="loginForm" class="auth-form">
-                <h2>Login</h2>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Senha" required>
-                <button type="submit" class="submit-btn">Entrar</button>
-                <div class="auth-links">
-                    <a href="#" onclick="showView('register')">Criar conta</a>
-                    <a href="#" onclick="showView('resetPassword')">Esqueceu a senha?</a>
-                </div>
-                <div class="divider">ou</div>
-                <button type="button" onclick="loginWithGoogle()" class="google-btn">
+            <div class="login-tabs">
+                <button class="tab-btn active" data-tab="google">Google</button>
+                <button class="tab-btn" data-tab="email">Email</button>
+            </div>
+
+            <div id="google-tab" class="tab-content active">
+                <button data-auth-free onclick="loginWithGoogle()" class="google-btn">
                     <img src="image/google-icon.svg" alt="Google" width="24">
                     Entrar com Google
                 </button>
-            </form>
+            </div>
 
-            <!-- Register Form -->
-            <form id="registerForm" class="auth-form" style="display: none;">
-                <h2>Criar Conta</h2>
-                <input type="email" id="registerEmail" placeholder="Email" required>
-                <input type="password" id="registerPassword" placeholder="Senha" required>
-                <button type="submit" class="submit-btn">Registrar</button>
-                <a href="#" onclick="showView('login')">Voltar para login</a>
-            </form>
+            <div id="email-tab" class="tab-content">
+                <form id="loginForm" onsubmit="return false;">
+                    <input type="email" id="emailInput" placeholder="Email" required>
+                    <input type="password" id="passwordInput" placeholder="Senha" required>
+                    <button type="submit" onclick="loginWithEmail()" class="login-btn">Entrar</button>
+                    <div class="form-links">
+                        <a href="#" onclick="showCreateAccount()">Criar conta</a>
+                        <a href="#" onclick="showResetPassword()">Esqueceu a senha?</a>
+                    </div>
+                </form>
+            </div>
 
-            <!-- Reset Password Form -->
-            <form id="resetForm" class="auth-form" style="display: none;">
-                <h2>Redefinir Senha</h2>
-                <input type="email" id="resetEmail" placeholder="Email" required>
-                <button type="submit" class="submit-btn">Enviar</button>
-                <a href="#" onclick="showView('login')">Voltar para login</a>
-            </form>
-
-            <!-- Mensagem de erro/sucesso -->
             <div id="auth-message" class="auth-message"></div>
          </div>
       </div>
+
+      <!-- Scripts principais -->
       <script>
          document.addEventListener('DOMContentLoaded', function() {
-             // Função para ocultar o ícone "chevron-down-outline" ao ser clicado
              const chevronIconLink = document.getElementById('chevronIconLink');
              if (chevronIconLink) {
                  chevronIconLink.addEventListener('click', function() {
@@ -316,7 +292,7 @@
                      }
                  });
              }
-             // Função para mostrar o ícone "chevron-down-outline" ao clicar no ícone de retorno
+
              const backIconLink = document.getElementById('backIconLink');
              if (backIconLink) {
                  backIconLink.addEventListener('click', function() {
@@ -327,7 +303,7 @@
                  });
              }
          });
-         // Função para obter a data e hora formatadas
+
          function getDataHoraAtual() {
              const dataHora = new Date();
              const options = {
@@ -340,30 +316,31 @@
                  timeZone: 'America/Recife'
              };
              const dataHoraFormatada = dataHora.toLocaleDateString('pt-BR', options);
-             const dataHoraSemSegundos = dataHoraFormatada.replace(/:\d{2}\sAMT/, ''); // Remove os segundos e "AMT"
+             const dataHoraSemSegundos = dataHoraFormatada.replace(/:\d{2}\sAMT/, '');
              return `Recife, ${dataHoraSemSegundos}`;
          }
-         // Função para atualizar a div 'data' a cada minuto
+
          function atualizarData() {
              const dataContainer = document.getElementById('dataContainer');
              if (dataContainer) {
                  dataContainer.textContent = getDataHoraAtual();
              }
          }
-         // Chama a função inicialmente e a cada minuto
+
          atualizarData();
          setInterval(atualizarData, 60000);
-         // Verifica a posição atual da página ao rolar
+
          window.addEventListener('scroll', function() {
              var footer = document.getElementById('footer');
              if (window.scrollY > 0) {
-                 footer.style.display = 'none'; // Oculta o footer quando a página é rolada para cima
+                 footer.style.display = 'none';
              } else {
-                 footer.style.display = 'block'; // Mostra o footer quando a página é rolada para baixo (no topo)
+                 footer.style.display = 'block';
              }
          });
       </script>
-      <!-- Nova div para o aviso de instalação -->
+
+      <!-- Banner de instalação -->
       <div class="app" id="InstallBanner" style="display:none;">
          <div class="logo-app"></div>
          <div class="header-app">
@@ -379,11 +356,11 @@
          <p class="message">Deseja adicionar o App a sua tela inicial?</p>
          <button class="install-btn-app" id="installButton">Adicionar</button>
       </div>
+
+      <!-- Scripts -->
       <script src="./js/AppInstall.js"></script>
       <script src="./js/links.js"></script>
       <script type="module" src="./js/modal.js"></script>
       <script src="./carrossel/carrossel.js"></script>
-      
-      
    </body>
 </html>

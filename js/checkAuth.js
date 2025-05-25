@@ -7,7 +7,6 @@ const protectedPages = [
     '/pages/profile'
 ];
 
-// Verifica se a página atual precisa de autenticação
 const currentPath = window.location.pathname;
 const needsAuth = protectedPages.some(path => currentPath.includes(path));
 
