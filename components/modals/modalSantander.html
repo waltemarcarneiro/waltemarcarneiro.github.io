@@ -4,7 +4,45 @@
             <ion-icon name="close-outline" class="close-btn" onclick="this.closest('.modal-fullscreen').remove()"
                 data-auth-free></ion-icon>
 
-            <div id="mensagem" class="mensagem"></div>
+            <div id="mensagem" class="mensagem">
+                <div class="mensagem-header">
+                    <img src="./icons/icon192.png" alt="Logo Waltemar" class="mensagem-logo">
+                    <div class="mensagem-title">
+                        <h2>waltemar.com.br</h2>
+                        <p>Web Development</p>
+                    </div>
+                </div>
+
+                <!-- Mensagem para QR Code -->
+                <p class="mensagem-alert" id="mensagemQRCode" style="display:none">
+                    <span class="texto-principal">QR Code PIX copiado!</span> <br>
+                    <span class="destaque">Use a opção Copia e Cola no app do seu banco</span>
+                </p>
+
+                <!-- Mensagem para Chave PIX -->
+                <p class="mensagem-alert" id="mensagemChave" style="display:none">
+                    <span class="texto-principal">Chave PIX copiada!</span> <br>
+                    <span class="destaque">Use a opção Chave Aleatória no app do seu banco</span>
+                </p>
+
+                <!-- Resto do conteúdo permanece igual -->
+                <div class="mensagem-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>No aplicativo do seu banco ou carteira digital, vá em Pix.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Escolha a opção Copia e cola.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <p>Cole o código copiado e pronto.</p>
+                    </div>
+                </div>
+
+                <button class="btn-entendi">Entendi</button>
+            </div>
 
             <div class="modal-header">
                 <img src="./bank/image/bannerpix.png" alt="PIX" class="pix-logo">
@@ -14,18 +52,16 @@
 
             <div class="pix-options">
                 <div class="pix-option" data-auth-free
-                    onclick="copiarCodigo('00020126580014br.gov.bcb.pix013616f06530-c133-47f2-b4d4-452e580401fb5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62580520SAN2023012101152512450300017br.gov.bcb.brcode01051.0.063049962')"
-                    data-message="Código PIX copiado! Use a opção <span class='destaque'>Copia e Cola</span> no aplicativo do seu banco.">
+                    onclick="copiarCodigo('00020126580014br.gov.bcb.pix013616f06530-c133-47f2-b4d4-452e580401fb5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62580520SAN2023012101152512450300017br.gov.bcb.brcode01051.0.063049962')">
                     <ion-icon name="qr-code-outline"></ion-icon>
                     <span>QR Code PIX</span>
                 </div>
 
-                <div class="pix-option" data-auth-free onclick="copiarChave('16f06530-c133-47f2-b4d4-452e580401fb')"
-                    data-message="Chave PIX copiada! Use a opção <span class='destaque'>Chave Aleatória</span> no aplicativo. do seu banco">
+                <div class="pix-option" data-auth-free
+                    onclick="copiarChave('16f06530-c133-47f2-b4d4-452e580401fb')">
                     <ion-icon name="key-outline"></ion-icon>
                     <span>Chave PIX</span>
                 </div>
-
             </div>
 
             <!--conta-->

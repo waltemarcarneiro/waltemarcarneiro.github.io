@@ -1,39 +1,43 @@
 // ...existing code...
 
-function openSantander() {
+window.openSantander = function() {
     fetch('./components/modals/modalSantander.html')
         .then(response => response.text())
         .then(html => {
             document.body.insertAdjacentHTML('beforeend', html);
+            // Adiciona o evento após o modal ser carregado
+            const btnEntendi = document.querySelector('.btn-entendi');
+            if (btnEntendi) {
+                btnEntendi.onclick = function() {
+                    const mensagem = document.getElementById('mensagem');
+                    mensagem.style.bottom = '-100%';
+                };
+            }
         });
 }
 
-// Tornando as funções disponíveis globalmente
-window.openSantander = openSantander;
-
-// Funções do modalSantander
 window.copiarCodigo = function(codigo) {
-    const elemento = event.currentTarget;
-    const mensagem = elemento.dataset.message;
     navigator.clipboard.writeText(codigo).then(() => {
-        mostrarMensagem(mensagem);
+        const mensagem = document.getElementById('mensagem');
+        // Mostra mensagem QR Code e esconde a outra
+        document.getElementById('mensagemQRCode').style.display = 'block';
+        document.getElementById('mensagemChave').style.display = 'none';
+        mensagem.style.display = 'block';
+        setTimeout(() => {
+            mensagem.style.bottom = '0';
+        }, 10);
     });
 }
 
 window.copiarChave = function(chave) {
-    const elemento = event.currentTarget;
-    const mensagem = elemento.dataset.message;
     navigator.clipboard.writeText(chave).then(() => {
-        mostrarMensagem(mensagem);
+        const mensagem = document.getElementById('mensagem');
+        // Mostra mensagem Chave e esconde a outra
+        document.getElementById('mensagemChave').style.display = 'block';
+        document.getElementById('mensagemQRCode').style.display = 'none';
+        mensagem.style.display = 'block';
+        setTimeout(() => {
+            mensagem.style.bottom = '0';
+        }, 10);
     });
-}
-
-window.mostrarMensagem = function(texto) {
-    const mensagem = document.getElementById('mensagem');
-    mensagem.innerHTML = texto;
-    mensagem.style.display = 'block';
-    
-    document.addEventListener('click', function() {
-        mensagem.style.display = 'none';
-    }, { once: true });
 }
