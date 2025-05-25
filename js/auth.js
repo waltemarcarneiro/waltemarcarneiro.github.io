@@ -5,9 +5,39 @@ import {
     createUserWithEmailAndPassword,
     sendEmailVerification,
     sendPasswordResetEmail,
-    signOut 
+    signOut,
+    onAuthStateChanged 
 } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from './firebase-config.js';
+
+// Monitora o estado de autenticação
+onAuthStateChanged(auth, (user) => {
+    const userName = document.querySelector('.user-name');
+    const userStatus = document.querySelector('.user-status');
+    
+    if (user) {
+        userName.textContent = user.displayName || 'Usuário';
+        userStatus.textContent = 'Você está logado';
+        localStorage.setItem('usuarioLogado', 'true');
+    } else {
+        userName.textContent = 'Usuário';
+        userStatus.textContent = 'Faça login aquí';
+        localStorage.removeItem('usuarioLogado');
+        checkProtectedAccess();
+    }
+});
+
+// Verifica acesso a áreas protegidas
+function checkProtectedAccess() {
+    const protectedPages = ['/radio/', '/videos/filmes.html'];
+    const currentPath = window.location.pathname;
+    
+    if (protectedPages.some(path => currentPath.includes(path))) {
+        if (!auth.currentUser) {
+            window.location.href = '/home.html?auth=required';
+        }
+    }
+}
 
 // Estado do modal
 let currentView = 'login';
@@ -25,18 +55,18 @@ function showMessage(message, type = 'info') {
 // Login com Google
 window.loginWithGoogle = async function() {
     try {
-        showMessage('Conectando com Google...', 'info');
+        showMessage('Conectando com Google...');
         const provider = new GoogleAuthProvider();
         const result = await signInWithPopup(auth, provider);
         
         showMessage('Login realizado com sucesso!', 'success');
         setTimeout(() => {
             document.getElementById('loginModal').style.display = 'none';
-            window.location.reload(); // Recarrega a página após login
+            window.location.reload();
         }, 1500);
     } catch (error) {
         console.error('Erro no login com Google:', error);
-        showMessage('Erro ao fazer login com Google. Tente novamente.', 'error');
+        showMessage(getErrorMessage(error.code), 'error');
     }
 }
 
@@ -45,6 +75,17 @@ window.showRegister = function() {
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('registerForm').style.display = 'block';
     showMessage('Preencha os dados para criar sua conta', 'info');
+}
+
+// Função para mostrar o modal de login
+window.showModalLogin = function() {
+    document.getElementById('loginModal').style.display = 'block';
+    showMessage('Faça login para continuar', 'info');
+}
+
+// Função para fechar o modal
+window.closeLoginModal = function() {
+    document.getElementById('loginModal').style.display = 'none';
 }
 
 // Register Event Listener
@@ -102,6 +143,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 showMessage(getErrorMessage(error.code), 'error');
             }
         });
+    }
+});
+
+// Intercepta clicks para verificar autenticação
+document.addEventListener('click', function(e) {
+    const clickedElement = e.target.closest('[onclick]');
+    if (!clickedElement) return;
+
+    if (clickedElement.hasAttribute('data-auth-free')) {
+        return;
+    }
+
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
+    }
+}, true);
+
+// Intercepta clicks em links protegidos
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[data-auth-lock]');
+    if (!link) return;
+
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
+    }
+}, true);
+
+// Verifica parâmetros da URL ao carregar
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('auth') === 'required') {
+        const fromPage = params.get('from');
+        const loginModal = document.getElementById('loginModal');
+        const message = `Você precisa fazer login para acessar ${fromPage}`;
+        
+        if (loginModal) {
+            const modalMessage = loginModal.querySelector('p');
+            if (modalMessage) modalMessage.textContent = message;
+            loginModal.style.display = 'block';
+        }
     }
 });
 
