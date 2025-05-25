@@ -652,13 +652,26 @@
 }
 
 .resend-button {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid #f76700;
+    color: #f76700;
+    margin-top: 10px;
+}
+
+.verification-message {
+    text-align: center;
+    color: #fff;
+    margin: 20px 0;
 }
 
 /*@media (min-width: 100%) {

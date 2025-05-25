@@ -252,24 +252,50 @@
             <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()" data-auth-free></ion-icon>
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
-            <button onclick="loginWithGoogle()" class="google-btn" data-auth-free>
-                <img src="image/google-icon.svg" alt="Google" width="24">
-                Entrar com Google
-            </button>
-
-            <div class="login-separator">
-                <span>ou</span>
+            <div class="login-tabs">
+               <button class="tab-btn active" data-tab="login">Login</button>
+               <button class="tab-btn" data-tab="register">Criar Conta</button>
             </div>
 
-            <form id="loginForm" onsubmit="return false;">
-                <input type="email" id="emailInput" class="form-input" 
-                       placeholder="Seu email" required>
-                <input type="password" id="passwordInput" class="form-input" 
-                       placeholder="Sua senha" required>
-                <button type="submit" onclick="loginWithEmail()" class="login-btn">
-                    Entrar com Email
-                </button>
-            </form>
+            <!-- Tab de Login -->
+            <div id="login-tab" class="tab-content active">
+               <button onclick="loginWithGoogle()" class="google-btn" data-auth-free>
+                  <img src="image/google-icon.svg" alt="Google" width="24">
+                  Entrar com Google
+               </button>
+
+               <div class="login-separator">
+                  <span>ou</span>
+               </div>
+
+               <form id="loginForm" onsubmit="return false;">
+                  <input type="email" id="emailInput" class="form-input" 
+                        placeholder="Seu email" required>
+                  <input type="password" id="passwordInput" class="form-input" 
+                        placeholder="Sua senha" required>
+                  <button type="submit" onclick="loginWithEmail()" class="login-btn">
+                     Entrar com Email
+                  </button>
+                  <div class="form-links">
+                     <a href="#" onclick="showResetPassword()">Esqueceu a senha?</a>
+                  </div>
+               </form>
+            </div>
+
+            <!-- Tab de Registro -->
+            <div id="register-tab" class="tab-content">
+               <form id="registerForm" onsubmit="return false;">
+                  <input type="text" id="nameInput" class="form-input" 
+                        placeholder="Seu nome" required>
+                  <input type="email" id="registerEmail" class="form-input" 
+                        placeholder="Seu email" required>
+                  <input type="password" id="registerPassword" class="form-input" 
+                        placeholder="Sua senha" required>
+                  <button type="submit" onclick="createAccount()" class="register-btn">
+                     Criar Conta
+                  </button>
+               </form>
+            </div>
 
             <div id="auth-message" class="auth-message"></div>
          </div>
