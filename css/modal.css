@@ -1,44 +1,10 @@
 .logo-modal {
-
     position: absolute;
     top: 20px;
     left: 20px;
-}
-
-.modal-login {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    z-index: 1000;
-}
-
-.modal-content {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-modal {
     width: 80px;
-    margin-bottom: 30px;
-}
-
-.close-modal {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
+    display: block;
+    margin: 0 auto 20px;
 }
 
 .modal-login {
@@ -54,20 +20,15 @@
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    width: 90%;
+    background: #290f02;
+    width: 100%;
     max-width: 400px;
-    margin: 50px auto;
     padding: 25px;
-    border-radius: 15px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.logo-modal {
-    width: 80px;
-    display: block;
-    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .close-modal {
@@ -133,8 +94,8 @@
     max-width: 300px;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -159,12 +120,12 @@
 .login-separator::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .login-separator span {
     padding: 0 10px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 #loginForm {
@@ -178,13 +139,15 @@
 .form-input {
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     color: #fff;
     font-size: 16px;
 }
-
+.form-links a{
+    color: #fff;
+}
 .form-input:focus {
     outline: none;
     border-color: #f76700;
@@ -212,13 +175,29 @@
     display: none;
 }
 
-.auth-message.error { background: rgba(255,0,0,0.1); color: #ff4444; }
-.auth-message.success { background: rgba(0,255,0,0.1); color: #4CAF50; }
-.auth-message.info { background: rgba(0,0,255,0.1); color: #fff; }
+.auth-message.error {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff4444;
+}
+
+.auth-message.success {
+    background: rgba(0, 255, 0, 0.1);
+    color: #4CAF50;
+}
+
+.auth-message.info {
+    background: rgba(0, 0, 255, 0.1);
+    color: #fff;
+}
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideIn {
@@ -226,6 +205,7 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -288,10 +268,11 @@
 
 .modal-santander .modal-header {
     text-align: center;
-    
+
 }
+
 .modal-santander .modal-conta {
-    
+
     border-bottom: 1px solid #ddd;
     padding: 5px;
     color: #666;
@@ -303,6 +284,7 @@
     width: 95%;
     font-size: 16px;
 }
+
 .modal-santander .pix-logo {
     width: 80%;
     margin-bottom: 20px;
@@ -366,7 +348,7 @@
     padding: 16px;
     line-height: 1.5;
     text-align: center;
-    
+
     display: none;
     z-index: 10001;
 }
@@ -423,9 +405,10 @@
     background: white;
     padding: 20px;
     border-radius: 20px 20px 0 0;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     transition: bottom 0.5s ease-in-out;
-    z-index: 10001; /* Aumentei o z-index */
+    z-index: 10001;
+    /* Aumentei o z-index */
 }
 
 .mensagem.show {
@@ -453,7 +436,7 @@
 }
 
 .mensagem-title p {
-    
+
     color: #123354;
     font-size: 0.9rem;
 }
@@ -472,8 +455,9 @@
     font-size: 1.5rem;
     font-weight: 700;
 }
+
 .mensagem-alert .destaque {
-    color:#123354;
+    color: #123354;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -487,12 +471,14 @@
     align-items: center;
     margin-bottom: 15px;
     text-align: left;
-    
+
 }
-.step p{
+
+.step p {
     color: #123354;
     font-weight: 600;
 }
+
 .step-number {
     background: #F76700;
     color: white;
@@ -560,7 +546,8 @@
     display: block;
 }
 
-#loginForm, #registerForm {
+#loginForm,
+#registerForm {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -568,14 +555,15 @@
 
 .form-input {
     padding: 12px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
     font-size: 16px;
 }
 
-.login-btn, .register-btn {
+.login-btn,
+.register-btn {
     background: #f76700;
     color: #fff;
     border: none;
@@ -594,9 +582,20 @@
     display: none;
 }
 
-.auth-message.error { background: rgba(255,0,0,0.1); color: #ff4444; }
-.auth-message.success { background: rgba(0,255,0,0.1); color: #4CAF50; }
-.auth-message.info { background: rgba(0,0,255,0.1); color: #fff; }
+.auth-message.error {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff4444;
+}
+
+.auth-message.success {
+    background: rgba(0, 255, 0, 0.1);
+    color: #4CAF50;
+}
+
+.auth-message.info {
+    background: rgba(0, 0, 255, 0.1);
+    color: #fff;
+}
 
 .auth-form {
     display: flex;
@@ -615,9 +614,9 @@
 
 .auth-form input {
     padding: 12px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
