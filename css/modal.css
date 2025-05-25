@@ -465,26 +465,30 @@
     opacity: 0.8;
 }
 
+.resend-verification-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 .auth-message {
     margin: 15px 0;
     padding: 12px;
     border-radius: 5px;
     text-align: center;
-    display: none;
-    font-size: 14px;
-    font-weight: 500;
 }
 
 .auth-message.error {
-    background: rgba(255, 0, 0, 0.1);
+    background: rgba(255,0,0,0.1);
     color: #ff4444;
-    display: block;
 }
 
 .auth-message.success {
-    background: rgba(0, 255, 0, 0.1);
+    background: rgba(0,255,0,0.1);
     color: #4CAF50;
-    display: block;
 }
 
 .auth-message.info {

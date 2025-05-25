@@ -15,4 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// Ativa a persistência local
+auth.setPersistence('local');
+
 export { auth };

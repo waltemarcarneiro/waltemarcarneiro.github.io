@@ -5,8 +5,7 @@ import {
     createUserWithEmailAndPassword,
     sendEmailVerification,
     sendPasswordResetEmail,
-    signOut,
-    onAuthStateChanged 
+    signOut 
 } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from './firebase-config.js';
 
@@ -72,11 +71,59 @@ window.loginWithGoogle = async function() {
     }
 }
 
+// Login com Email (requer verificação)
+window.loginWithEmail = async function(email, password) {
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        
+        if (!userCredential.user.emailVerified) {
+            await signOut(auth);
+            showMessage('Email não verificado. Verifique sua caixa de entrada ou solicite novo email.', 'error');
+            showResendVerificationButton(email);
+            return;
+        }
+
+        showMessage('Login realizado com sucesso!', 'success');
+        setTimeout(() => closeLoginModal(), 1500);
+    } catch (error) {
+        console.error('Erro login email:', error);
+        showMessage(getErrorMessage(error.code), 'error');
+    }
+}
+
 // Criar nova conta
-window.showRegister = function() {
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('registerForm').style.display = 'block';
-    showMessage('Preencha os dados para criar sua conta', 'info');
+window.createAccount = async function(email, password) {
+    try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await sendEmailVerification(userCredential.user);
+        
+        showMessage('Conta criada! Verifique seu email para ativar.', 'success');
+        await signOut(auth); // Desloga até verificar email
+    } catch (error) {
+        console.error('Erro criar conta:', error);
+        showMessage(getErrorMessage(error.code), 'error');
+    }
+}
+
+// Reenviar verificação
+window.resendVerification = async function(email) {
+    try {
+        const user = auth.currentUser;
+        await sendEmailVerification(user);
+        showMessage('Email de verificação reenviado!', 'success');
+    } catch (error) {
+        showMessage('Erro ao reenviar. Tente novamente.', 'error');
+    }
+}
+
+// Resetar senha
+window.resetPassword = async function(email) {
+    try {
+        await sendPasswordResetEmail(auth, email);
+        showMessage('Email de recuperação enviado!', 'success');
+    } catch (error) {
+        showMessage(getErrorMessage(error.code), 'error');
+    }
 }
 
 // Função para mostrar o modal de login
@@ -112,30 +159,6 @@ window.showView = function(view) {
         case 'resetPassword':
             resetForm.style.display = 'block';
             break;
-    }
-}
-
-// Reset Password
-window.showResetPassword = async function() {
-    const email = document.getElementById('email').value;
-    try {
-        showMessage('Enviando email de recuperação...', 'info');
-        await sendPasswordResetEmail(auth, email);
-        showMessage('Email de recuperação enviado! Verifique sua caixa de entrada.', 'success');
-    } catch (error) {
-        console.error('Erro ao resetar senha:', error);
-        showMessage(getErrorMessage(error.code), 'error');
-    }
-}
-
-// Função para fazer logout
-window.fazerLogout = async function() {
-    try {
-        await signOut(auth);
-        showMessage('Logout realizado com sucesso!', 'success');
-        window.location.reload();
-    } catch (error) {
-        console.error('Erro ao fazer logout:', error);
     }
 }
 
