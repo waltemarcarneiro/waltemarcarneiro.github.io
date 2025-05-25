@@ -14,21 +14,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     z-index: 1000;
     animation: fadeIn 0.3s ease;
 }
 
 .modal-content {
-    background: #290f02;
+    background: #181818;
     width: 100%;
-    max-width: 400px;
+    max-width: 480px;
     padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin: 0 auto;
 }
 
 .close-modal {

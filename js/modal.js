@@ -44,12 +44,11 @@ window.copiarChave = function(chave) {
 
 // Adicionar event listeners para as tabs
 document.addEventListener('DOMContentLoaded', function() {
-    // Event listeners para as tabs
+    // Eventos das tabs
     document.querySelectorAll('.tab-btn').forEach(button => {
         button.addEventListener('click', () => {
             const tabId = button.dataset.tab;
             
-            // Remove classe active de todas as tabs
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
@@ -57,17 +56,49 @@ document.addEventListener('DOMContentLoaded', function() {
                 content.style.display = 'none';
             });
             
-            // Ativa a tab clicada
             button.classList.add('active');
             document.getElementById(`${tabId}-tab`).style.display = 'block';
-            
-            // Limpa mensagens de erro ao trocar de tab
             document.getElementById('auth-message').style.display = 'none';
         });
     });
 
-    // Limpa mensagens ao fechar modal
+    // Fechar modal
     document.querySelector('.close-modal')?.addEventListener('click', () => {
-        document.getElementById('auth-message').style.display = 'none';
+        document.getElementById('loginModal').style.display = 'none';
     });
+
+    // Verificar parâmetros da URL
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('auth') === 'required') {
+        const fromPage = params.get('from');
+        document.getElementById('loginModal').style.display = 'block';
+    }
 });
+
+// Função para mostrar formulário de reset de senha
+window.showResetPassword = function() {
+    const loginForm = document.getElementById('loginForm');
+    loginForm.innerHTML = `
+        <input type="email" id="resetEmail" class="form-input" 
+               placeholder="Digite seu email" required>
+        <button onclick="resetPassword()" class="login-btn">Enviar link</button>
+        <button onclick="restoreLoginForm()" class="login-btn secondary">Voltar</button>
+    `;
+}
+
+// Restaurar formulário de login
+window.restoreLoginForm = function() {
+    const loginForm = document.getElementById('loginForm');
+    loginForm.innerHTML = `
+        <input type="email" id="emailInput" class="form-input" 
+               placeholder="Seu email" required>
+        <input type="password" id="passwordInput" class="form-input" 
+               placeholder="Sua senha" required>
+        <button onclick="loginWithEmail()" class="login-btn">
+            Entrar com Email
+        </button>
+        <div class="form-links">
+            <a href="#" onclick="showResetPassword()">Esqueceu a senha?</a>
+        </div>
+    `;
+}
