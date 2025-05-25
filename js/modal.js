@@ -41,3 +41,18 @@ window.copiarChave = function(chave) {
         }, 10);
     });
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Event listeners para as tabs
+    document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.dataset.tab;
+            switchTab(tabId);
+        });
+    });
+
+    // Limpar mensagens ao fechar modal
+    document.querySelector('.close-modal').addEventListener('click', () => {
+        document.getElementById('auth-message').style.display = 'none';
+    });
+});

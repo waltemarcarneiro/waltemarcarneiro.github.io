@@ -252,29 +252,24 @@
             <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()" data-auth-free></ion-icon>
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
-            <div class="login-tabs">
-                <button class="tab-btn active" data-tab="google">Google</button>
-                <button class="tab-btn" data-tab="email">Email</button>
+            <button onclick="loginWithGoogle()" class="google-btn" data-auth-free>
+                <img src="image/google-icon.svg" alt="Google" width="24">
+                Entrar com Google
+            </button>
+
+            <div class="login-separator">
+                <span>ou</span>
             </div>
 
-            <div id="google-tab" class="tab-content active">
-                <button data-auth-free onclick="loginWithGoogle()" class="google-btn">
-                    <img src="image/google-icon.svg" alt="Google" width="24">
-                    Entrar com Google
+            <form id="loginForm" onsubmit="return false;">
+                <input type="email" id="emailInput" class="form-input" 
+                       placeholder="Seu email" required>
+                <input type="password" id="passwordInput" class="form-input" 
+                       placeholder="Sua senha" required>
+                <button type="submit" onclick="loginWithEmail()" class="login-btn">
+                    Entrar com Email
                 </button>
-            </div>
-
-            <div id="email-tab" class="tab-content">
-                <form id="loginForm" onsubmit="return false;">
-                    <input type="email" id="emailInput" placeholder="Email" required>
-                    <input type="password" id="passwordInput" placeholder="Senha" required>
-                    <button type="submit" onclick="loginWithEmail()" class="login-btn">Entrar</button>
-                    <div class="form-links">
-                        <a href="#" onclick="showCreateAccount()">Criar conta</a>
-                        <a href="#" onclick="showResetPassword()">Esqueceu a senha?</a>
-                    </div>
-                </form>
-            </div>
+            </form>
 
             <div id="auth-message" class="auth-message"></div>
          </div>
