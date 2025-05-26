@@ -34,8 +34,9 @@
       <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
       <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
       <script type="module" src="./firebase-config.js"></script>
+      <script type="module" src="./js/auth.js"></script>
       
-      <!-- Novo sistema de autenticação -->
+      <!-- Sistema de autenticação -->
       <script type="module">
           import { initAuth } from './js/auth/index.js';
           document.addEventListener('DOMContentLoaded', initAuth);
@@ -250,18 +251,17 @@
       <!-- Modal de Login -->
       <div id="loginModal" class="modal-login">
          <div class="modal-content">
-            <ion-icon name="close-outline" class="close-modal" id="closeLoginBtn"></ion-icon>
+            <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()"></ion-icon>
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
             <div class="login-tabs">
-               <button type="button" class="tab-btn active" data-tab="login">Login</button>
-               <button type="button" class="tab-btn" data-tab="register">Criar Conta</button>
+               <button type="button" class="tab-btn active" onclick="switchTab('login')">Login</button>
+               <button type="button" class="tab-btn" onclick="switchTab('register')">Criar Conta</button>
             </div>
 
             <!-- Tab de Login -->
             <div id="login-tab" class="tab-content active">
-               <!-- Botão do Google -->
-               <button type="button" onclick="loginWithGoogle()" class="google-btn" data-auth-free>
+               <button type="button" onclick="loginWithGoogle()" class="google-btn">
                   <img src="image/google-icon.svg" alt="Google" width="24">
                   Entrar com Google
                </button>
@@ -270,8 +270,7 @@
                   <span>ou</span>
                </div>
 
-               <!-- Formulário de login com email -->
-               <form id="loginForm">
+               <form id="loginForm" onsubmit="event.preventDefault(); loginWithEmail(this.email.value, this.password.value)">
                   <input type="email" name="email" class="form-input" placeholder="Seu email" required>
                   <input type="password" name="password" class="form-input" placeholder="Sua senha" required>
                   <button type="submit" class="login-btn">Entrar com Email</button>
