@@ -9,14 +9,21 @@ import {
 } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
 import { auth } from '../firebase-config.js';
 
-// Monitor de autenticação
-auth.onAuthStateChanged((user) => {
+// Inicializa o modal de login
+auth.onAuthStateChanged(async (user) => {
     const userName = document.querySelector('.user-name');
     const userStatus = document.querySelector('.user-status');
-    
+
     if (user) {
+        if (!user.emailVerified) {
+            showAuthMessage('Verifique seu email antes de continuar.', 'error');
+            await signOut(auth);
+            return;
+        }
+
         userName.textContent = user.displayName || 'Usuário';
         userStatus.textContent = 'Você está logado';
+
         if (user.photoURL) {
             const userIcon = document.querySelector('#user ion-icon[name="person-circle-outline"]');
             if (userIcon) {
@@ -28,6 +35,7 @@ auth.onAuthStateChanged((user) => {
         userStatus.textContent = 'Faça login aquí';
     }
 });
+
 
 // Funções de autenticação
 window.loginWithGoogle = async () => {
@@ -56,13 +64,24 @@ window.loginWithEmail = async (email, password) => {
 window.createAccount = async (email, password, name) => {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        await updateProfile(userCredential.user, { displayName: name });
+        const user = userCredential.user;
+
+        await updateProfile(user, { displayName: name });
+
+        // Envia email de verificação
+        await user.sendEmailVerification();
+
+        showAuthMessage('Conta criada! Verifique seu email antes de usar.', 'success');
+
+        // Desloga o usuário até ele verificar o e-mail
+        await signOut(auth);
+
         hideLoginModal();
-        showAuthMessage('Conta criada com sucesso!', 'success');
     } catch (error) {
         showAuthError(error);
     }
 }
+
 
 window.resetPassword = async (email) => {
     if (!email) {
@@ -174,3 +193,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// Função para reenviar o e-mail de verificação
+import { sendEmailVerification } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
+
+window.enviarEmailVerificacao = async () => {
+    const user = auth.currentUser;
+
+    if (user && !user.emailVerified) {
+        try {
+            await sendEmailVerification(user);
+            showAuthMessage('Email de verificação enviado!', 'success');
+        } catch (error) {
+            showAuthError(error);
+        }
+    } else {
+        showAuthMessage('Usuário já verificado ou não logado.', 'error');
+    }
+}
