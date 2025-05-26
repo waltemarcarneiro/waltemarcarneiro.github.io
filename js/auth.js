@@ -128,13 +128,16 @@ function showAuthError(error) {
     showAuthMessage(messages[error.code] || error.message, 'error');
 }
 
-// Proteção de rotas (substituiu o guards.js)
+// Proteção de rotas
 document.addEventListener('click', (e) => {
     const element = e.target.closest('[data-auth-lock]');
-    if (!element || element.hasAttribute('data-auth-free')) return;
     
+    if (!element || element.hasAttribute('data-auth-free')) return;
+
     if (!auth.currentUser) {
         e.preventDefault();
+        e.stopImmediatePropagation(); // 🚨 Impede que o onclick do HTML seja chamado
+        e.stopPropagation();          // (redundância segura)
         document.getElementById('loginModal').style.display = 'flex';
     }
 }, true);
