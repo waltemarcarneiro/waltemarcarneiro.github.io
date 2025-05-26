@@ -69,16 +69,35 @@ export const loginWithEmail = async (email, password) => {
 // Função para criar conta
 export const createAccount = async (email, password, name) => {
     try {
+        console.log('Iniciando criação de conta...');
         const result = await createUserWithEmailAndPassword(auth, email, password);
+        
         if (result.user) {
+            console.log('Conta criada, atualizando perfil...');
             await result.user.updateProfile({
                 displayName: name
             });
+            console.log('Conta criada com sucesso!');
             document.getElementById('loginModal').style.display = 'none';
+            alert('Conta criada com sucesso!');
         }
     } catch (error) {
         console.error('Erro ao criar conta:', error);
-        alert('Erro ao criar conta: ' + error.message);
+        let message = 'Erro ao criar conta: ';
+        switch (error.code) {
+            case 'auth/email-already-in-use':
+                message += 'Este email já está em uso';
+                break;
+            case 'auth/invalid-email':
+                message += 'Email inválido';
+                break;
+            case 'auth/weak-password':
+                message += 'A senha deve ter pelo menos 6 caracteres';
+                break;
+            default:
+                message += error.message;
+        }
+        alert(message);
     }
 }
 

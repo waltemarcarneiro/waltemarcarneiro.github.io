@@ -284,8 +284,8 @@
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
             <div class="login-tabs">
-               <button class="tab-btn active" data-tab="login" onclick="switchTab('login')">Login</button>
-               <button class="tab-btn" data-tab="register" onclick="switchTab('register')">Criar Conta</button>
+               <button type="button" class="tab-btn active" data-tab="login">Login</button>
+               <button type="button" class="tab-btn" data-tab="register">Criar Conta</button>
             </div>
 
             <!-- Tab de Login -->
@@ -315,7 +315,7 @@
 
             <!-- Tab de Registro -->
             <div id="register-tab" class="tab-content">
-               <form id="registerForm" onsubmit="event.preventDefault(); createAccount(document.getElementById('registerEmail').value, document.getElementById('registerPassword').value, document.getElementById('nameInput').value);">
+               <form id="registerForm">
                   <input type="text" id="nameInput" class="form-input" 
                         placeholder="Seu nome" required>
                   <input type="email" id="registerEmail" class="form-input" 
@@ -414,5 +414,50 @@
       <script src="./js/links.js"></script>
       <script type="module" src="./js/modal.js"></script>
       <script src="./carrossel/carrossel.js"></script>
+      <script type="module">
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            await window.createAccount(email, password, name);
+        });
+      </script>
+      <script type="module">
+        // Função para alternar tabs
+        function switchTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if(tab.getAttribute('data-tab') === tabName) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+        }
+
+        // Adicionar listeners para as tabs
+        document.querySelectorAll('.tab-btn').forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                switchTab(e.target.getAttribute('data-tab'));
+            });
+        });
+
+        // Listener para o formulário de registro
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            await window.createAccount(email, password, name);
+        });
+      </script>
    </body>
 </html>
