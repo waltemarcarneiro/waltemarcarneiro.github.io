@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail, updateProfile } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from '../firebase-config.js';
 
 // Monitora mudanças no estado de autenticação
@@ -74,7 +74,7 @@ export const createAccount = async (email, password, name) => {
         
         if (result.user) {
             console.log('Conta criada, atualizando perfil...');
-            await result.user.updateProfile({
+            await updateProfile(result.user, {
                 displayName: name
             });
             console.log('Conta criada com sucesso!');
