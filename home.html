@@ -118,7 +118,7 @@
             </div>
 
             <div class="digital">
-                  <div id="user" class="user-info" data-auth-lock>
+                  <div id="user" class="user-info" data-auth-lock style="cursor: pointer;">
                      <ion-icon style="font-size: 56px; margin-right: 10px;" name="person-circle-outline"></ion-icon>
                      <div>
                         <h3 class="user-name">Usuário</h3>
@@ -250,7 +250,7 @@
       <!-- Modal de Login -->
       <div id="loginModal" class="modal-login">
          <div class="modal-content">
-            <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()"></ion-icon>
+            <ion-icon name="close-outline" class="close-modal" id="closeLoginBtn"></ion-icon>
             
             <div class="login-tabs">
                <button type="button" class="tab-btn active" data-tab="login" onclick="switchTab('login')">Login</button>

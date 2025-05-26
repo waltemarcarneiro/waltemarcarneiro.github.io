@@ -104,27 +104,16 @@ window.fazerLogout = async () => {
     }
 }
 
-// Funções do modal
+// Funções de UI
 window.closeLoginModal = function() {
     document.getElementById('loginModal').style.display = 'none';
 }
 
-window.switchTab = function(tabName) {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-    
-    tabs.forEach(tab => tab.classList.remove('active'));
-    contents.forEach(content => content.classList.remove('active'));
-    
-    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-    document.getElementById(`${tabName}-tab`).classList.add('active');
+function hideLoginModal() {
+    closeLoginModal();
 }
 
 // Funções auxiliares
-function hideLoginModal() {
-    document.getElementById('loginModal').style.display = 'none';
-}
-
 function showAuthMessage(message, type) {
     const msgElement = document.getElementById('auth-message');
     msgElement.textContent = message;
@@ -165,16 +154,18 @@ document.addEventListener('click', function(e) {
     }
 }, true);
 
-// Intercepta clicks em links protegidos
-document.addEventListener('click', function(e) {
-    const link = e.target.closest('a[data-auth-lock]');
-    if (!link) return;
-
+// Proteção de rotas e elementos com data-auth-lock
+document.addEventListener('click', (e) => {
+    const element = e.target.closest('[data-auth-lock]');
+    
+    // Se não encontrou elemento com data-auth-lock ou tem data-auth-free, ignora
+    if (!element || element.hasAttribute('data-auth-free')) return;
+    
+    // Se não estiver logado, mostra o modal
     if (!auth.currentUser) {
         e.preventDefault();
         e.stopPropagation();
-        document.getElementById('loginModal').style.display = 'block';
-        return false;
+        document.getElementById('loginModal').style.display = 'flex';
     }
 }, true);
 
