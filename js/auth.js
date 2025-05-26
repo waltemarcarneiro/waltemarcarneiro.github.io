@@ -27,18 +27,35 @@ auth.onAuthStateChanged((user) => {
     }
 });
 
-// Função para login com Google (simplificada)
+// Função para login com Google (corrigida)
 window.loginWithGoogle = async function() {
     try {
         const provider = new GoogleAuthProvider();
+        // Configurar escopos necessários
+        provider.addScope('https://www.googleapis.com/auth/userinfo.profile');
+        provider.addScope('https://www.googleapis.com/auth/userinfo.email');
+        
+        // Configurar parâmetros personalizados
+        provider.setCustomParameters({
+            prompt: 'select_account'
+        });
+        
+        // Tentar login
         const result = await signInWithPopup(auth, provider);
+        
         if (result.user) {
+            // Garantir que temos as credenciais
+            const credential = GoogleAuthProvider.credentialFromResult(result);
             localStorage.setItem('usuarioLogado', 'true');
             document.getElementById('loginModal').style.display = 'none';
         }
     } catch (error) {
-        console.error('Erro no login com Google:', error);
-        alert('Erro no login com Google: ' + error.message);
+        console.error('Erro detalhado:', error);
+        if (error.code === 'auth/cancelled-popup-request') {
+            alert('Login cancelado pelo usuário');
+        } else {
+            alert('Erro ao fazer login com Google: ' + error.message);
+        }
     }
 }
 
