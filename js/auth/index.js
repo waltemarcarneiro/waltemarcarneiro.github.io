@@ -1,6 +1,6 @@
 import { auth } from '../../firebase-config.js';
 import { initGoogleAuth } from './google.js';
-import { initEmailAuth } from './email.js';
+import { initEmailAuth, initPasswordReset } from './email.js';
 import { setupAuthGuards } from './guards.js';
 
 export function initAuth() {
@@ -15,9 +15,10 @@ export function initAuth() {
         }
     });
 
-    // Inicializa componentes
+    // Inicializa todos os módulos de autenticação
     initGoogleAuth();
     initEmailAuth();
+    initPasswordReset(); // Garantindo que a recuperação de senha seja inicializada
     setupAuthGuards();
 }
 

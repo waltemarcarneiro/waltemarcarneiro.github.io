@@ -30,14 +30,28 @@ export function initEmailAuth() {
 // Função para recuperação de senha
 export function initPasswordReset() {
     window.resetPassword = async (email) => {
+        if (!email) {
+            showMessage('Por favor, informe seu email', 'error');
+            return;
+        }
+
         try {
             await sendPasswordResetEmail(auth, email);
-            showMessage('Email de recuperação enviado com sucesso!', 'success');
+            showMessage('Email de recuperação enviado! Verifique sua caixa de entrada.', 'success');
         } catch (error) {
             console.error('Erro ao enviar email:', error);
-            showMessage('Erro ao enviar email. Verifique o endereço.', 'error');
+            showMessage(getErrorMessage(error.code), 'error');
         }
-    }
+    };
+}
+
+function getErrorMessage(code) {
+    const messages = {
+        'auth/user-not-found': 'Email não encontrado.',
+        'auth/invalid-email': 'Email inválido.',
+        'default': 'Erro ao enviar email de recuperação.'
+    };
+    return messages[code] || messages.default;
 }
 
 function handleAuthError(error) {
