@@ -284,8 +284,8 @@
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
             <div class="login-tabs">
-               <button class="tab-btn active" data-tab="login">Login</button>
-               <button class="tab-btn" data-tab="register">Criar Conta</button>
+               <button class="tab-btn active" data-tab="login" onclick="switchTab('login')">Login</button>
+               <button class="tab-btn" data-tab="register" onclick="switchTab('register')">Criar Conta</button>
             </div>
 
             <!-- Tab de Login -->
@@ -299,30 +299,30 @@
                   <span>ou</span>
                </div>
 
-               <form id="loginForm" onsubmit="return false;">
+               <form id="loginForm" onsubmit="event.preventDefault(); loginWithEmail(document.getElementById('emailInput').value, document.getElementById('passwordInput').value);">
                   <input type="email" id="emailInput" class="form-input" 
                         placeholder="Seu email" required>
                   <input type="password" id="passwordInput" class="form-input" 
                         placeholder="Sua senha" required>
-                  <button type="submit" onclick="loginWithEmail()" class="login-btn">
+                  <button type="submit" class="login-btn">
                      Entrar com Email
                   </button>
                   <div class="form-links">
-                     <a href="#" onclick="showResetPassword()">Esqueceu a senha?</a>
+                     <a href="#" onclick="event.preventDefault(); resetPassword(document.getElementById('emailInput').value)">Esqueceu a senha?</a>
                   </div>
                </form>
             </div>
 
             <!-- Tab de Registro -->
             <div id="register-tab" class="tab-content">
-               <form id="registerForm" onsubmit="return false;">
+               <form id="registerForm" onsubmit="event.preventDefault(); createAccount(document.getElementById('registerEmail').value, document.getElementById('registerPassword').value, document.getElementById('nameInput').value);">
                   <input type="text" id="nameInput" class="form-input" 
                         placeholder="Seu nome" required>
                   <input type="email" id="registerEmail" class="form-input" 
                         placeholder="Seu email" required>
                   <input type="password" id="registerPassword" class="form-input" 
                         placeholder="Sua senha" required>
-                  <button type="submit" onclick="createAccount()" class="register-btn">
+                  <button type="submit" class="register-btn">
                      Criar Conta
                   </button>
                </form>

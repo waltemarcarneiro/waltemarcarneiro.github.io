@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from '../firebase-config.js';
 
 // Monitora mudanças no estado de autenticação
@@ -53,6 +53,58 @@ export const fazerLogout = async () => {
     }
 }
 
+// Função para login com email/senha
+export const loginWithEmail = async (email, password) => {
+    try {
+        const result = await signInWithEmailAndPassword(auth, email, password);
+        if (result.user) {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+    } catch (error) {
+        console.error('Erro no login:', error);
+        alert('Erro ao fazer login: ' + error.message);
+    }
+}
+
+// Função para criar conta
+export const createAccount = async (email, password, name) => {
+    try {
+        const result = await createUserWithEmailAndPassword(auth, email, password);
+        if (result.user) {
+            await result.user.updateProfile({
+                displayName: name
+            });
+            document.getElementById('loginModal').style.display = 'none';
+        }
+    } catch (error) {
+        console.error('Erro ao criar conta:', error);
+        alert('Erro ao criar conta: ' + error.message);
+    }
+}
+
+// Função para recuperar senha
+export const resetPassword = async (email) => {
+    try {
+        await sendPasswordResetEmail(auth, email);
+        alert('Email de recuperação enviado com sucesso!');
+    } catch (error) {
+        console.error('Erro ao enviar email de recuperação:', error);
+        alert('Erro ao enviar email: ' + error.message);
+    }
+}
+
+// Função para alternar abas do modal
+export const switchTab = (tabName) => {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+    
+    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+    document.getElementById(`${tabName}-tab`).classList.add('active');
+}
+
 // Intercepta clicks para verificar autenticação
 document.addEventListener('click', function(e) {
     const clickedElement = e.target.closest('[onclick], [data-auth-lock]');
@@ -74,3 +126,7 @@ document.addEventListener('click', function(e) {
 window.loginWithGoogle = loginWithGoogle;
 window.closeLoginModal = closeLoginModal;
 window.fazerLogout = fazerLogout;
+window.loginWithEmail = loginWithEmail;
+window.createAccount = createAccount;
+window.resetPassword = resetPassword;
+window.switchTab = switchTab;
