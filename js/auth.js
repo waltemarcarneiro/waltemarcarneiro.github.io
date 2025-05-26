@@ -1,4 +1,12 @@
-import { GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
+import { 
+    GoogleAuthProvider, 
+    signInWithPopup, 
+    signOut, 
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    sendPasswordResetEmail,
+    updateProfile 
+} from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
 import { auth } from '../firebase-config.js';
 
 // Monitora mudanças no estado de autenticação
@@ -19,8 +27,8 @@ auth.onAuthStateChanged((user) => {
     }
 });
 
-// Exporta funções de autenticação
-export const loginWithGoogle = async () => {
+// Função para login com Google
+window.loginWithGoogle = async function() {
     try {
         console.log('Iniciando login com Google...');
         const provider = new GoogleAuthProvider();
@@ -34,7 +42,8 @@ export const loginWithGoogle = async () => {
             document.getElementById('loginModal').style.display = 'none';
         }
     } catch (error) {
-        console.error('Erro no login:', error.code, error.message);
+        console.error('Erro no login com Google:', error);
+        alert('Erro no login com Google: ' + error.message);
     }
 }
 
@@ -54,7 +63,7 @@ export const fazerLogout = async () => {
 }
 
 // Função para login com email/senha
-export const loginWithEmail = async (email, password) => {
+window.loginWithEmail = async function(email, password) {
     try {
         const result = await signInWithEmailAndPassword(auth, email, password);
         if (result.user) {
@@ -62,42 +71,27 @@ export const loginWithEmail = async (email, password) => {
         }
     } catch (error) {
         console.error('Erro no login:', error);
-        alert('Erro ao fazer login: ' + error.message);
+        alert('Erro no login: ' + error.message);
     }
 }
 
 // Função para criar conta
-export const createAccount = async (email, password, name) => {
+window.createAccount = async function(email, password, name) {
     try {
         console.log('Iniciando criação de conta...');
-        const result = await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
         
-        if (result.user) {
-            console.log('Conta criada, atualizando perfil...');
-            await result.user.updateProfile({
-                displayName: name
-            });
-            console.log('Conta criada com sucesso!');
-            document.getElementById('loginModal').style.display = 'none';
-            alert('Conta criada com sucesso!');
-        }
+        await updateProfile(user, {
+            displayName: name
+        });
+        
+        console.log('Conta criada com sucesso!');
+        document.getElementById('loginModal').style.display = 'none';
+        alert('Conta criada com sucesso!');
     } catch (error) {
         console.error('Erro ao criar conta:', error);
-        let message = 'Erro ao criar conta: ';
-        switch (error.code) {
-            case 'auth/email-already-in-use':
-                message += 'Este email já está em uso';
-                break;
-            case 'auth/invalid-email':
-                message += 'Email inválido';
-                break;
-            case 'auth/weak-password':
-                message += 'A senha deve ter pelo menos 6 caracteres';
-                break;
-            default:
-                message += error.message;
-        }
-        alert(message);
+        alert('Erro ao criar conta: ' + error.message);
     }
 }
 
@@ -113,15 +107,20 @@ export const resetPassword = async (email) => {
 }
 
 // Função para alternar abas do modal
-export const switchTab = (tabName) => {
+window.switchTab = function(tabName) {
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
     
     tabs.forEach(tab => tab.classList.remove('active'));
     contents.forEach(content => content.classList.remove('active'));
     
-    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-    document.getElementById(`${tabName}-tab`).classList.add('active');
+    const selectedTab = document.querySelector(`[data-tab="${tabName}"]`);
+    const selectedContent = document.getElementById(`${tabName}-tab`);
+    
+    if (selectedTab && selectedContent) {
+        selectedTab.classList.add('active');
+        selectedContent.classList.add('active');
+    }
 }
 
 // Intercepta clicks para verificar autenticação
@@ -140,12 +139,3 @@ document.addEventListener('click', function(e) {
         return false;
     }
 }, true);
-
-// Atribui funções ao objeto window para acesso global
-window.loginWithGoogle = loginWithGoogle;
-window.closeLoginModal = closeLoginModal;
-window.fazerLogout = fazerLogout;
-window.loginWithEmail = loginWithEmail;
-window.createAccount = createAccount;
-window.resetPassword = resetPassword;
-window.switchTab = switchTab;
