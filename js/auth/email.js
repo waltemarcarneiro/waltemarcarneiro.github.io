@@ -1,7 +1,8 @@
 import { 
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword,
-    updateProfile 
+    updateProfile,
+    sendPasswordResetEmail 
 } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
 import { auth } from '../../firebase-config.js';
 
@@ -26,6 +27,19 @@ export function initEmailAuth() {
     };
 }
 
+// Função para recuperação de senha
+export function initPasswordReset() {
+    window.resetPassword = async (email) => {
+        try {
+            await sendPasswordResetEmail(auth, email);
+            showMessage('Email de recuperação enviado com sucesso!', 'success');
+        } catch (error) {
+            console.error('Erro ao enviar email:', error);
+            showMessage('Erro ao enviar email. Verifique o endereço.', 'error');
+        }
+    }
+}
+
 function handleAuthError(error) {
     const messages = {
         'auth/email-already-in-use': 'Email já está em uso',
@@ -41,4 +55,16 @@ function handleAuthError(error) {
 function closeLoginModal() {
     const modal = document.getElementById('loginModal');
     if (modal) modal.style.display = 'none';
+}
+
+function showMessage(message, type) {
+    const authMessage = document.getElementById('auth-message');
+    if (authMessage) {
+        authMessage.textContent = message;
+        authMessage.className = `auth-message ${type}`;
+        authMessage.style.display = 'block';
+        setTimeout(() => {
+            authMessage.style.display = 'none';
+        }, 3000);
+    }
 }

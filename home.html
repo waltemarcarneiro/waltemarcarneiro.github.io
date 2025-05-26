@@ -271,10 +271,15 @@
                </div>
 
                <!-- Formulário de login com email -->
-               <form id="loginForm" onsubmit="event.preventDefault(); loginWithEmail(this.email.value, this.password.value)">
+               <form id="loginForm">
                   <input type="email" name="email" class="form-input" placeholder="Seu email" required>
                   <input type="password" name="password" class="form-input" placeholder="Sua senha" required>
                   <button type="submit" class="login-btn">Entrar com Email</button>
+                  <div class="form-links">
+                     <a href="#" onclick="event.preventDefault(); resetPassword(document.querySelector('#loginForm input[name=email]').value)">
+                        Esqueceu sua senha?
+                     </a>
+                  </div>
                </form>
             </div>
 
