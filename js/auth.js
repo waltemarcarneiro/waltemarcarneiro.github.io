@@ -128,16 +128,49 @@ function showAuthError(error) {
     showAuthMessage(messages[error.code] || error.message, 'error');
 }
 
-// Proteção de rotas
-document.addEventListener('click', (e) => {
-    const element = e.target.closest('[data-auth-lock]');
-    
-    if (!element || element.hasAttribute('data-auth-free')) return;
+// Intercepta clicks para verificar autenticação
+document.addEventListener('click', function(e) {
+    const clickedElement = e.target.closest('[onclick]');
+    if (!clickedElement) return;
+
+    if (clickedElement.hasAttribute('data-auth-free')) {
+        return;
+    }
 
     if (!auth.currentUser) {
         e.preventDefault();
-        e.stopImmediatePropagation(); // 🚨 Impede que o onclick do HTML seja chamado
-        e.stopPropagation();          // (redundância segura)
-        document.getElementById('loginModal').style.display = 'flex';
+        e.stopImmediatePropagation();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
     }
 }, true);
+
+// Intercepta clicks em links protegidos
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[data-auth-lock]');
+    if (!link) return;
+
+    if (!auth.currentUser) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.getElementById('loginModal').style.display = 'block';
+        return false;
+    }
+}, true);
+
+// Verifica parâmetros da URL ao carregar
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('auth') === 'required') {
+        const fromPage = params.get('from');
+        const loginModal = document.getElementById('loginModal');
+        const message = `Você precisa fazer login para acessar ${fromPage}`;
+        
+        if (loginModal) {
+            const modalMessage = loginModal.querySelector('p');
+            if (modalMessage) modalMessage.textContent = message;
+            loginModal.style.display = 'block';
+        }
+    }
+});
