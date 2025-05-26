@@ -34,8 +34,7 @@
       <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
       <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
       <script type="module" src="./firebase-config.js"></script>
-      <script type="module" src="./js/auth.js"></script>
-      
+            
       <!-- Sistema de autenticação -->
       <script type="module">
           import { initAuth } from './js/auth/index.js';
@@ -372,8 +371,9 @@
       <script src="./js/links.js"></script>
       <script src="./js/modal.js"></script>
       <script src="./carrossel/carrossel.js"></script>
+      <script type="module" src="./js/auth.js"></script>
+      
       <script>
-        // Adicionar no final antes de </body>
         document.addEventListener('DOMContentLoaded', function() {
             // Fechar modal
             document.getElementById('closeLoginBtn').addEventListener('click', () => {
