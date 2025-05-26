@@ -1,5 +1,5 @@
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js';
-import { auth } from './firebase-config.js';
+import { auth } from '../firebase-config.js';
 
 // Monitora mudanças no estado de autenticação
 auth.onAuthStateChanged((user) => {
