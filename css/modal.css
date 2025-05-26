@@ -86,6 +86,7 @@
     display: none;
     width: 100%;
     max-width: 300px;
+    padding: 20px 0;
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;

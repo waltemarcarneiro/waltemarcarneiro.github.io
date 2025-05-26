@@ -250,12 +250,12 @@
       <!-- Modal de Login -->
       <div id="loginModal" class="modal-login">
          <div class="modal-content">
-            <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()" data-auth-free></ion-icon>
+            <ion-icon name="close-outline" class="close-modal" id="closeLoginBtn"></ion-icon>
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
             <div class="login-tabs">
-               <button type="button" class="tab-btn active" onclick="switchTab('login')">Login</button>
-               <button type="button" class="tab-btn" onclick="switchTab('register')">Criar Conta</button>
+               <button type="button" class="tab-btn active" data-tab="login">Login</button>
+               <button type="button" class="tab-btn" data-tab="register">Criar Conta</button>
             </div>
 
             <!-- Tab de Login -->
@@ -374,5 +374,30 @@
       <script src="./js/links.js"></script>
       <script src="./js/modal.js"></script>
       <script src="./carrossel/carrossel.js"></script>
+      <script>
+        // Adicionar no final antes de </body>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fechar modal
+            document.getElementById('closeLoginBtn').addEventListener('click', () => {
+                document.getElementById('loginModal').style.display = 'none';
+            });
+
+            // Alternar tabs
+            document.querySelectorAll('.login-tabs .tab-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    // Remove active de todas as tabs
+                    document.querySelectorAll('.tab-btn').forEach(btn => 
+                        btn.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(content => 
+                        content.classList.remove('active'));
+                    
+                    // Adiciona active na tab clicada
+                    e.target.classList.add('active');
+                    const tabName = e.target.getAttribute('data-tab');
+                    document.getElementById(`${tabName}-tab`).classList.add('active');
+                });
+            });
+        });
+      </script>
    </body>
 </html>
