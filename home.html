@@ -252,11 +252,10 @@
       <div id="loginModal" class="modal-login">
          <div class="modal-content">
             <ion-icon name="close-outline" class="close-modal" onclick="closeLoginModal()"></ion-icon>
-            <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
             <div class="login-tabs">
-               <button type="button" class="tab-btn active" onclick="switchTab('login')">Login</button>
-               <button type="button" class="tab-btn" onclick="switchTab('register')">Criar Conta</button>
+               <button type="button" class="tab-btn active" data-tab="login" onclick="switchTab('login')">Login</button>
+               <button type="button" class="tab-btn" data-tab="register" onclick="switchTab('register')">Criar Conta</button>
             </div>
 
             <!-- Tab de Login -->
@@ -274,11 +273,6 @@
                   <input type="email" name="email" class="form-input" placeholder="Seu email" required>
                   <input type="password" name="password" class="form-input" placeholder="Sua senha" required>
                   <button type="submit" class="login-btn">Entrar com Email</button>
-                  <div class="form-links">
-                     <a href="#" onclick="event.preventDefault(); resetPassword(document.querySelector('#loginForm input[name=email]').value)">
-                        Esqueceu sua senha?
-                     </a>
-                  </div>
                </form>
             </div>
 

@@ -85,6 +85,22 @@ window.fazerLogout = async () => {
     }
 }
 
+// Funções do modal
+window.closeLoginModal = function() {
+    document.getElementById('loginModal').style.display = 'none';
+}
+
+window.switchTab = function(tabName) {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+    
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+    
+    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+    document.getElementById(`${tabName}-tab`).classList.add('active');
+}
+
 // Funções auxiliares
 function hideLoginModal() {
     document.getElementById('loginModal').style.display = 'none';
