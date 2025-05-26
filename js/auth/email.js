@@ -1,34 +1,54 @@
 import { 
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword,
-    updateProfile,
-    sendPasswordResetEmail 
+    sendEmailVerification,
+    sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
 import { auth } from '../../firebase-config.js';
 
 export function initEmailAuth() {
+    // Login com email/senha
     window.loginWithEmail = async (email, password) => {
         try {
-            await signInWithEmailAndPassword(auth, email, password);
-            closeLoginModal();
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            if (!user.emailVerified) {
+                showMessage('Por favor, verifique seu email antes de fazer login. Verifique sua caixa de entrada.', 'error');
+                return;
+            }
+
+            showMessage('Login realizado com sucesso!', 'success');
+            setTimeout(() => {
+                document.getElementById('loginModal').style.display = 'none';
+            }, 2000);
+
         } catch (error) {
             handleAuthError(error);
         }
     };
 
+    // Criar nova conta
     window.createAccount = async (email, password, name) => {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            await updateProfile(userCredential.user, { displayName: name });
-            closeLoginModal();
+            const user = userCredential.user;
+
+            await user.updateProfile({ displayName: name });
+            await sendEmailVerification(user);
+
+            showMessage(
+                'Conta criada! Por favor, verifique seu email para ativar sua conta. ' +
+                'Verifique também sua caixa de spam.',
+                'success'
+            );
+
         } catch (error) {
             handleAuthError(error);
         }
     };
-}
 
-// Função para recuperação de senha
-export function initPasswordReset() {
+    // Recuperação de senha
     window.resetPassword = async (email) => {
         if (!email) {
             showMessage('Por favor, informe seu email', 'error');
@@ -37,38 +57,30 @@ export function initPasswordReset() {
 
         try {
             await sendPasswordResetEmail(auth, email);
-            showMessage('Email de recuperação enviado! Verifique sua caixa de entrada.', 'success');
+            showMessage(
+                'Email de recuperação enviado! Verifique sua caixa de entrada e spam.',
+                'success'
+            );
         } catch (error) {
-            console.error('Erro ao enviar email:', error);
-            showMessage(getErrorMessage(error.code), 'error');
+            handleAuthError(error);
         }
     };
 }
 
-function getErrorMessage(code) {
-    const messages = {
-        'auth/user-not-found': 'Email não encontrado.',
-        'auth/invalid-email': 'Email inválido.',
-        'default': 'Erro ao enviar email de recuperação.'
-    };
-    return messages[code] || messages.default;
-}
-
 function handleAuthError(error) {
-    const messages = {
-        'auth/email-already-in-use': 'Email já está em uso',
-        'auth/invalid-email': 'Email inválido',
-        'auth/weak-password': 'Senha muito fraca',
-        'auth/user-not-found': 'Usuário não encontrado',
-        'auth/wrong-password': 'Senha incorreta',
-        'default': 'Erro na autenticação'
+    const errorMessages = {
+        'auth/user-not-found': 'Usuário não encontrado.',
+        'auth/wrong-password': 'Senha incorreta.',
+        'auth/invalid-email': 'Email inválido.',
+        'auth/email-already-in-use': 'Este email já está em uso.',
+        'auth/weak-password': 'A senha deve ter pelo menos 6 caracteres.',
+        'auth/operation-not-allowed': 'Operação não permitida.',
+        'auth/network-request-failed': 'Erro de conexão. Verifique sua internet.',
+        'default': 'Ocorreu um erro. Tente novamente.'
     };
-    alert(messages[error.code] || messages.default);
-}
 
-function closeLoginModal() {
-    const modal = document.getElementById('loginModal');
-    if (modal) modal.style.display = 'none';
+    const message = errorMessages[error.code] || errorMessages.default;
+    showMessage(message, 'error');
 }
 
 function showMessage(message, type) {
@@ -77,8 +89,10 @@ function showMessage(message, type) {
         authMessage.textContent = message;
         authMessage.className = `auth-message ${type}`;
         authMessage.style.display = 'block';
+        
+        // Esconde a mensagem após 5 segundos
         setTimeout(() => {
             authMessage.style.display = 'none';
-        }, 3000);
+        }, 5000);
     }
 }
