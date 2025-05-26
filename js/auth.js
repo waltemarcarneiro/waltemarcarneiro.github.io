@@ -27,18 +27,13 @@ auth.onAuthStateChanged((user) => {
     }
 });
 
-// Função para login com Google
+// Função para login com Google (simplificada)
 window.loginWithGoogle = async function() {
     try {
-        console.log('Iniciando login com Google...');
         const provider = new GoogleAuthProvider();
-        provider.addScope('profile');
-        provider.addScope('email');
-        
         const result = await signInWithPopup(auth, provider);
-        console.log('Login bem sucedido:', result.user);
-        
         if (result.user) {
+            localStorage.setItem('usuarioLogado', 'true');
             document.getElementById('loginModal').style.display = 'none';
         }
     } catch (error) {

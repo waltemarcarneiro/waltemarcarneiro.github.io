@@ -290,6 +290,17 @@
 
             <!-- Tab de Login -->
             <div id="login-tab" class="tab-content active">
+               <!-- Botão do Google -->
+               <button type="button" onclick="loginWithGoogle()" class="google-btn" data-auth-free>
+                  <img src="image/google-icon.svg" alt="Google" width="24">
+                  Entrar com Google
+               </button>
+
+               <div class="login-separator">
+                  <span>ou</span>
+               </div>
+
+               <!-- Formulário de login com email -->
                <form id="loginForm" onsubmit="event.preventDefault(); loginWithEmail(this.email.value, this.password.value)">
                   <input type="email" name="email" class="form-input" placeholder="Seu email" required>
                   <input type="password" name="password" class="form-input" placeholder="Sua senha" required>

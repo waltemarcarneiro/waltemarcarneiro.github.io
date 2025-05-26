@@ -123,7 +123,12 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    transition: background 0.3s ease;
+}
+
+.google-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .login-separator {
