@@ -34,8 +34,44 @@
       <script type="module" src="https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"></script>
       <script type="module" src="https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js"></script>
       <script type="module" src="./firebase-config.js"></script>
+      <script type="module" src="./js/auth.js"></script>
+      <script type="module">
+        import { initAuthCheck } from './js/checkAuth.js';
+        import { loginUser, loginWithGoogle, registerUser, resetPassword } from './js/auth.js';
+        import { setupAuthGuard } from './js/authGuard.js';
+        
+        // Inicializa verificação de autenticação
+        document.addEventListener('DOMContentLoaded', () => {
+          initAuthCheck();
+          setupAuthGuard();
+          
+          // Event listeners para autenticação
+          document.getElementById('loginForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            const password = document.getElementById('passwordInput').value;
+            loginUser(email, password);
+          });
+
+          document.getElementById('registerForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            registerUser(email, password, name);
+          });
+
+          // Google login
+          document.getElementById('google-login')?.addEventListener('click', loginWithGoogle);
+
+          // Reset password
+          document.getElementById('reset-password')?.addEventListener('click', () => {
+            const email = document.getElementById('login-email').value;
+            if (email) resetPassword(email);
+          });
+        });
+      </script>
       <link rel="stylesheet" href="./css/modal.css">
-      
    </head>
    <body>
       <!-- Carrossel de introdução -->
