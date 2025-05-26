@@ -47,27 +47,27 @@ window.loginWithGoogle = async function() {
     }
 }
 
-// Função para fechar modal de login
-export const closeLoginModal = () => {
+// Funções de autenticação
+window.closeLoginModal = function() {
     document.getElementById('loginModal').style.display = 'none';
 }
 
-// Função para fazer logout
-export const fazerLogout = async () => {
+window.fazerLogout = async function() {
     try {
         await signOut(auth);
+        localStorage.removeItem('usuarioLogado');
         console.log('Logout realizado com sucesso');
     } catch (error) {
         console.error('Erro ao fazer logout:', error);
     }
 }
 
-// Função para login com email/senha
 window.loginWithEmail = async function(email, password) {
     try {
         const result = await signInWithEmailAndPassword(auth, email, password);
         if (result.user) {
-            document.getElementById('loginModal').style.display = 'none';
+            localStorage.setItem('usuarioLogado', 'true');
+            window.closeLoginModal();
         }
     } catch (error) {
         console.error('Erro no login:', error);
@@ -75,10 +75,8 @@ window.loginWithEmail = async function(email, password) {
     }
 }
 
-// Função para criar conta
 window.createAccount = async function(email, password, name) {
     try {
-        console.log('Iniciando criação de conta...');
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         
@@ -86,8 +84,8 @@ window.createAccount = async function(email, password, name) {
             displayName: name
         });
         
-        console.log('Conta criada com sucesso!');
-        document.getElementById('loginModal').style.display = 'none';
+        localStorage.setItem('usuarioLogado', 'true');
+        window.closeLoginModal();
         alert('Conta criada com sucesso!');
     } catch (error) {
         console.error('Erro ao criar conta:', error);
@@ -95,31 +93,28 @@ window.createAccount = async function(email, password, name) {
     }
 }
 
-// Função para recuperar senha
-export const resetPassword = async (email) => {
+window.resetPassword = async function(email) {
     try {
         await sendPasswordResetEmail(auth, email);
         alert('Email de recuperação enviado com sucesso!');
     } catch (error) {
-        console.error('Erro ao enviar email de recuperação:', error);
+        console.error('Erro ao enviar email:', error);
         alert('Erro ao enviar email: ' + error.message);
     }
 }
 
-// Função para alternar abas do modal
 window.switchTab = function(tabName) {
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-    
-    tabs.forEach(tab => tab.classList.remove('active'));
-    contents.forEach(content => content.classList.remove('active'));
-    
-    const selectedTab = document.querySelector(`[data-tab="${tabName}"]`);
-    const selectedContent = document.getElementById(`${tabName}-tab`);
-    
-    if (selectedTab && selectedContent) {
-        selectedTab.classList.add('active');
-        selectedContent.classList.add('active');
+    try {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+        
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+        
+        document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+        document.getElementById(`${tabName}-tab`).classList.add('active');
+    } catch (error) {
+        console.error('Erro ao trocar tab:', error);
     }
 }
 

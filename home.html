@@ -284,47 +284,26 @@
             <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo-modal">
             
             <div class="login-tabs">
-               <button type="button" class="tab-btn active" data-tab="login">Login</button>
-               <button type="button" class="tab-btn" data-tab="register">Criar Conta</button>
+               <button type="button" class="tab-btn active" onclick="switchTab('login')">Login</button>
+               <button type="button" class="tab-btn" onclick="switchTab('register')">Criar Conta</button>
             </div>
 
             <!-- Tab de Login -->
             <div id="login-tab" class="tab-content active">
-               <button onclick="loginWithGoogle()" class="google-btn" data-auth-free>
-                  <img src="image/google-icon.svg" alt="Google" width="24">
-                  Entrar com Google
-               </button>
-
-               <div class="login-separator">
-                  <span>ou</span>
-               </div>
-
-               <form id="loginForm" onsubmit="event.preventDefault(); loginWithEmail(document.getElementById('emailInput').value, document.getElementById('passwordInput').value);">
-                  <input type="email" id="emailInput" class="form-input" 
-                        placeholder="Seu email" required>
-                  <input type="password" id="passwordInput" class="form-input" 
-                        placeholder="Sua senha" required>
-                  <button type="submit" class="login-btn">
-                     Entrar com Email
-                  </button>
-                  <div class="form-links">
-                     <a href="#" onclick="event.preventDefault(); resetPassword(document.getElementById('emailInput').value)">Esqueceu a senha?</a>
-                  </div>
+               <form id="loginForm" onsubmit="event.preventDefault(); loginWithEmail(this.email.value, this.password.value)">
+                  <input type="email" name="email" class="form-input" placeholder="Seu email" required>
+                  <input type="password" name="password" class="form-input" placeholder="Sua senha" required>
+                  <button type="submit" class="login-btn">Entrar com Email</button>
                </form>
             </div>
 
             <!-- Tab de Registro -->
             <div id="register-tab" class="tab-content">
-               <form id="registerForm">
-                  <input type="text" id="nameInput" class="form-input" 
-                        placeholder="Seu nome" required>
-                  <input type="email" id="registerEmail" class="form-input" 
-                        placeholder="Seu email" required>
-                  <input type="password" id="registerPassword" class="form-input" 
-                        placeholder="Sua senha" required>
-                  <button type="submit" class="register-btn">
-                     Criar Conta
-                  </button>
+               <form id="registerForm" onsubmit="event.preventDefault(); createAccount(this.email.value, this.password.value, this.name.value)">
+                  <input type="text" name="name" class="form-input" placeholder="Seu nome" required>
+                  <input type="email" name="email" class="form-input" placeholder="Seu email" required>
+                  <input type="password" name="password" class="form-input" placeholder="Sua senha" required>
+                  <button type="submit" class="register-btn">Criar Conta</button>
                </form>
             </div>
 
