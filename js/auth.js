@@ -90,27 +90,40 @@ onAuthStateChanged(auth, user => {
 
   const nomeEl = document.querySelector(".user-name");
   const statusEl = document.querySelector(".user-status");
-  const iconEl = document.querySelector("#user ion-icon:first-child"); // o ícone da esquerda
+  const iconEl = document.querySelector("#user ion-icon:first-child");
   const userDiv = document.getElementById("user");
 
   if (user) {
     const nome = user.displayName || "Usuário Logado";
+    const foto = user.photoURL;
+
     nomeEl.textContent = nome;
     statusEl.textContent = "Você está logado";
-    iconEl.setAttribute("name", "happy-outline");
 
-    // Impede de abrir o modal novamente
+    if (foto) {
+      // Substituir o ícone por imagem de perfil
+      iconEl.outerHTML = `<img src="${foto}" style="width:56px;height:56px;border-radius:50%;margin-right:10px;">`;
+    } else {
+      iconEl.setAttribute("name", "happy-outline");
+    }
+
     userDiv?.removeAttribute("data-auth-lock");
   } else {
     nomeEl.textContent = "Usuário";
     statusEl.textContent = "Faça login aqui";
-    iconEl.setAttribute("name", "person-circle-outline");
 
-    // Reativa o modal se não estiver logado
+    // Restaurar o ícone padrão
+    const existingImg = document.querySelector("#user img");
+    if (existingImg) {
+      existingImg.outerHTML = `<ion-icon style="font-size: 56px; margin-right: 10px;" name="person-circle-outline"></ion-icon>`;
+    } else {
+      iconEl?.setAttribute("name", "person-circle-outline");
+    }
+
     userDiv?.setAttribute("data-auth-lock", "");
   }
-
 });
+
 
 // Mensagem
 function mostrarMensagem(msg) {
@@ -121,3 +134,26 @@ function mostrarMensagem(msg) {
   setTimeout(() => el.style.display = "none", 5000);
 }
 
+// Bloquear qualquer elemento com data-auth-lock se não estiver logado
+
+function ativarProtecoes() {
+  document.querySelectorAll('[data-auth-lock]').forEach(el => {
+    el.onclick = (e) => {
+      if (!auth.currentUser || !auth.currentUser.emailVerified) {
+        e.preventDefault();
+        abrirModalAcesso();
+      }
+    };
+  });
+
+  document.querySelectorAll('[data-auth-free]').forEach(el => {
+    el.onclick = () => {
+      if (auth.currentUser) {
+        deslogar();
+      }
+    };
+  });
+}
+
+// Chamar quando o DOM estiver pronto
+document.addEventListener("DOMContentLoaded", ativarProtecoes);
