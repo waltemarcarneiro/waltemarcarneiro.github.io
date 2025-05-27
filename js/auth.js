@@ -97,3 +97,23 @@ function mostrarMensagem(msg) {
   el.style.display = "block";
   setTimeout(() => el.style.display = "none", 5000);
 }
+
+// Traduz erros do Firebase para mensagens amigáveis
+function traduzirErroFirebase(codigo) {
+  switch (codigo) {
+    case "auth/email-already-in-use":
+      return "Este email já está em uso.";
+    case "auth/invalid-email":
+      return "Email inválido.";
+    case "auth/weak-password":
+      return "A senha deve ter pelo menos 6 caracteres.";
+    case "auth/user-not-found":
+      return "Usuário não encontrado.";
+    case "auth/wrong-password":
+      return "Senha incorreta.";
+    case "auth/popup-closed-by-user":
+      return "Login cancelado.";
+    default:
+      return "Erro desconhecido: " + codigo;
+  }
+}
