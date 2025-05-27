@@ -87,6 +87,29 @@ function protegerLinks() {
 // Estado de autenticação
 onAuthStateChanged(auth, user => {
   protegerLinks();
+
+  const nomeEl = document.querySelector(".user-name");
+  const statusEl = document.querySelector(".user-status");
+  const iconEl = document.querySelector("#user ion-icon:first-child"); // o ícone da esquerda
+  const userDiv = document.getElementById("user");
+
+  if (user) {
+    const nome = user.displayName || "Usuário Logado";
+    nomeEl.textContent = nome;
+    statusEl.textContent = "Você está logado";
+    iconEl.setAttribute("name", "happy-outline");
+
+    // Impede de abrir o modal novamente
+    userDiv?.removeAttribute("data-auth-lock");
+  } else {
+    nomeEl.textContent = "Usuário";
+    statusEl.textContent = "Faça login aqui";
+    iconEl.setAttribute("name", "person-circle-outline");
+
+    // Reativa o modal se não estiver logado
+    userDiv?.setAttribute("data-auth-lock", "");
+  }
+
 });
 
 // Mensagem
@@ -98,22 +121,3 @@ function mostrarMensagem(msg) {
   setTimeout(() => el.style.display = "none", 5000);
 }
 
-// Traduz erros do Firebase para mensagens amigáveis
-function traduzirErroFirebase(codigo) {
-  switch (codigo) {
-    case "auth/email-already-in-use":
-      return "Este email já está em uso.";
-    case "auth/invalid-email":
-      return "Email inválido.";
-    case "auth/weak-password":
-      return "A senha deve ter pelo menos 6 caracteres.";
-    case "auth/user-not-found":
-      return "Usuário não encontrado.";
-    case "auth/wrong-password":
-      return "Senha incorreta.";
-    case "auth/popup-closed-by-user":
-      return "Login cancelado.";
-    default:
-      return "Erro desconhecido: " + codigo;
-  }
-}
