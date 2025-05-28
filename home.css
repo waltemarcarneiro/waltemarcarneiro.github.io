@@ -22,15 +22,20 @@
         font-display: swap;
     }
 
+    @font-face {
+        font-family: 'Inter';
+        src: url('./fonts/Inter-Regular.ttf') format('true-type');
+        font-weight: 400;
+        font-style: Normal;
+        font-display: swap;
+    }
+
     * {
         margin: 0;
         padding: 0;
         -webkit-tap-highlight-color: transparent;
         box-sizing: border-box;
         -webkit-user-drag: none;
-        /*image*/
-        -webkit-touch-callout: none;
-        /* iOS */
         user-select: none;
         touch-action: manipulation;
     }
@@ -122,6 +127,7 @@
         font-weight: 500;
         font-family: 'Segoe UI', sans-serif;
     }
+
     .user-status p {
         font-size: 1.4rem;
         font-weight: 500;
@@ -251,13 +257,20 @@
         display: flex;
         position: absolute;
         bottom: 10px;
-        left: 20x;
+        left: 20px;
         color: #fff;
         background: rgba(0, 0, 0, 0.2);
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-        padding: 5px 5px 2px 5px;
+        padding: 10px;
+        height:60px;
+        width: 60px;
+    }
+
+    #backIconLink {
+        margin-bottom: -10px;
+        font-size: 34px;
     }
 
     .footer {
@@ -336,7 +349,7 @@
     }
 
     a {
-        color: #151515;
+        color: #fff;
         text-decoration: none;
         cursor: pointer;
     }
@@ -553,10 +566,10 @@
         font-family: 'Roboto', sans-serif;
     }
 
-    .message {
+    .install-message {
         clear: both;
         font-weight: bold;
-        color: #000624;
+        color: #4E4E4D;
         font-size: 1.1rem;
         display: flex;
         align-items: center;
@@ -592,7 +605,7 @@
 
     .header-app ion-icon {
         font-size: 32px;
-        color: #999;
+        color: #4E4E4D;
         cursor: pointer;
     }
 

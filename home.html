@@ -108,7 +108,7 @@
          <img src="image/logo.svg" alt="Logotipo Waltemar" class="logo">
 
          <div class="icon-top-right">
-            <img src="image/download2.svg" height="24" style="margin-right: 0;" onclick="abrirSuporte()" data-auth-lock>
+            <img src="image/down-white.svg" height="24" style="margin-right: 0;" onclick="abrirSuporte()" data-auth-lock>
 
             <ion-icon name="person-outline" onclick="abrirProfile()" data-auth-lock></ion-icon>
 
@@ -138,7 +138,7 @@
             <div class="icon-acesso">
                <div class="icon-acesso" onclick="cota()" >
                   <ion-icon name="repeat-outline"></ion-icon>
-                  <span>Cota</span>
+                  <span>Sair</span>
                </div>
                <div class="icon-acesso"  onclick="openSantander()">
                   <img src="image/pix.svg" height="24">
@@ -174,7 +174,7 @@
       <div class="background"></div>
       <div id="options"></div>
       <div class="container-bloco">
-         <a href="https://lovesongsapp.github.io/" target="_blank" class="block">
+         <a href="https://lovesongsapp.github.io/" data-auth-lock target="_blank" class="block">
             <div class="icon-wrapper">
                <ion-icon name="heart-outline"></ion-icon>
             </div>
@@ -187,25 +187,25 @@
             <span class="block-label">Radio</span>
          </a>
          <!-- Link protegido -->
-         <a href="./videos/filmes.html" class="block" data-auth="required">
+         <a href="./videos/filmes.html" class="block" data-auth-lock>
             <div class="icon-wrapper">
                <ion-icon name="film-outline"></ion-icon>
             </div>
             <span class="block-label">Filmes</span>
          </a>
-         <a href="./youtube/index.html" class="block">
+         <a href="./youtube/index.html" class="block" data-auth-lock>
             <div class="icon-wrapper">
                <ion-icon name="logo-youtube"></ion-icon>
             </div>
             <span class="block-label">TubeMusic</span>
          </a>
-         <a href="./videos/playlist.html" class="block">
+         <a href="./videos/playlist.html" class="block" data-auth-lock>
             <div class="icon-wrapper">
                <ion-icon name="camera-outline"></ion-icon>
             </div>
             <span class="block-label">Playlist</span>
          </a>
-         <a href="./pages/downloads.html" class="block">
+         <a href="./pages/downloads.html" class="block" data-auth-lock>
             <div class="icon-wrapper">
                <ion-icon name="apps-outline"></ion-icon>
             </div>
@@ -217,42 +217,42 @@
             </div>
             <span class="block-label">WebBoard</span>
          </a>
-         <a href="./videos/bolero.html" class="block">
+         <a href="./videos/bolero.html" class="block" data-auth-lock>
             <div class="icon-wrapper">
                <ion-icon name="musical-notes-outline"></ion-icon>
             </div>
             <span class="block-label">Boleros</span>
          </a>
          <!-- Link livre -->
-         <a href="./bank/santander.html" class="block">
+         <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link" class="block" data-auth-lock>
             <div class="icon-wrapper">
-               <ion-icon name="logo-windows"></ion-icon>
+               <ion-icon name="logo-google-playstore"></ion-icon>
             </div>
-            <span class="block-label">Windows</span>
+            <span class="block-label">G-Drive Apk</span>
          </a>
-         <a href="#" class="block">
+         <a href="#" class="block" data-auth-lock>
             <div class="icon-wrapper">
                <ion-icon name="logo-apple"></ion-icon>
             </div>
             <span class="block-label">MacOsX</span>
          </a>
-         <a href="#" class="block">
+         <a href="#" class="block" data-auth-lock>
             <div class="icon-wrapper">
                <ion-icon name="logo-tux"></ion-icon>
             </div>
             <span class="block-label">Linux</span>
          </a>
-         <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link"
+         <a href="#"
             class="block">
             <div class="icon-wrapper">
-               <ion-icon name="logo-google-playstore"></ion-icon>
+               <ion-icon name="logo-windows"></ion-icon>
             </div>
-            <span class="block-label">Apk</span>
+            <span class="block-label">Windows</span>
          </a>
       </div>
       <div id="divBack">
          <a href="#logo" id="backIconLink">
-            <ion-icon size="large" id="backIcon" name="chevron-back-outline"></ion-icon>
+            <ion-icon id="backIcon" name="chevron-back-outline"></ion-icon>
          </a>
       </div>
    </div>
@@ -277,7 +277,7 @@
             <ion-icon name="close-outline" onclick="closeApp()"></ion-icon>
          </div>
       </div>
-      <p class="message">Deseja adicionar o App a sua tela inicial?</p>
+      <p class="install-message">Deseja adicionar o aplicativo a sua tela inicial?</p>
       <button class="install-btn-app" id="installButton">Adicionar</button>
    </div>
 
