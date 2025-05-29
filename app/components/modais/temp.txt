@@ -1,0 +1,108 @@
+/*new css*/
+.perfil-profissao {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f76700;
+    margin-bottom: 10px;
+}
+
+.perfil-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.perfil-social img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.perfil-social img:hover {
+    transform: scale(1.1);
+}
+
+.perfil-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.perfil-info p {
+    margin: 4px 0;
+}
+
+.perfil-skills,
+.perfil-bio,
+.perfil-trajetoria {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.perfil-skills h3,
+.perfil-bio h3,
+.perfil-trajetoria h3 {
+    color: #123354;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.perfil-skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.perfil-skills li {
+    margin: 4px 0;
+    padding-left: 1em;
+    text-indent: -0.8em;
+}
+
+.perfil-skills li::before {
+    content: "•";
+    color: #1e90ff;
+    font-weight: bold;
+    margin-right: 6px;
+}
+.........
+
+<div class="perfil-box">
+  <img src="../../assets/avatar.webp" alt="Foto de perfil" class="perfil-avatar">
+  <h2>Waltemar Carneiro</h2>
+  <p class="perfil-profissao">Desenvolvedor Full Stack</p>
+
+  <div class="perfil-social">
+    <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub"></a>
+    <a href="#"><img src="../../assets/icons/linkedin.svg" alt="LinkedIn"></a>
+    <a href="#"><img src="../../assets/icons/twitter.svg" alt="Twitter"></a>
+    <a href="#"><img src="../../assets/icons/instagram.svg" alt="Instagram"></a>
+  </div>
+
+  <div class="perfil-info">
+    <p><strong>Email:</strong> waltemardev@icloud.com</p>
+    <p><strong>Cidade:</strong> Paulista - PE</p>
+    <p><strong>Assinante desde:</strong> Jan/2021</p>
+  </div>
+
+  <div class="perfil-skills">
+    <h3>Habilidades</h3>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>React, Vue, Angular</li>
+      <li>Node.js, PHP, Python</li>
+      <li>Firebase, MySQL, MongoDB</li>
+    </ul>
+  </div>
+
+  <div class="perfil-bio">
+    <h3>Sobre Mim</h3>
+    <p>Sou um entusiasta por tecnologia e apaixonado por resolver problemas com código limpo e eficiente. Tenho trabalhado em projetos diversos, desde pequenos sistemas até aplicações web completas e responsivas.</p>
+  </div>
+
+  <div class="perfil-trajetoria">
+    <h3>Trajetória</h3>
+    <p>Comecei minha jornada em 2016, aprendendo HTML por conta própria. Aos poucos, fui me aprofundando em CSS e JavaScript. Após alguns projetos freelancers, entrei para uma startup, onde aprendi a trabalhar em equipe e liderar projetos. Hoje, busco sempre inovar, entregar valor e evoluir como dev e como pessoa.</p>
+  </div>
+</div>
+
+

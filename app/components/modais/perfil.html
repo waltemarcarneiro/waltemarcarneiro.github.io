@@ -1,0 +1,193 @@
+<style>
+    @font-face {
+        font-family: 'Inter';
+        src: url('../../fonts/Inter-Regular.ttf') format('TrueType');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        src: url('../../fonts/Poppins-Regular.ttf') format('TrueType');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+    }
+
+    body {
+        font-family: 'Inter';
+        color: #123354;
+        background: #eff1f4;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .perfil-box {
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        max-width: 480px;
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .perfil-box h2 {
+        font-size: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+
+    .perfil-box h3 {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .perfil-box p {
+        font-size: 1.1rem;
+        margin: 0px 0px 20px;
+        font-weight: 400;
+    }
+
+    .perfil-avatar {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #f39f64;
+    }
+
+    /*new css*/
+    .perfil-profissao {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #f76700;
+        margin-bottom: 10px;
+    }
+
+    .perfil-social {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
+
+    .perfil-social img {
+        width: 28px;
+        height: 28px;
+        transition: transform 0.3s ease;
+    }
+
+    .perfil-social img:hover {
+        transform: scale(1.1);
+    }
+
+    .perfil-info {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .perfil-info p {
+        margin: 4px 0;
+    }
+
+    .perfil-skills, .perfil-bio, .perfil-trajetoria {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .perfil-bio, .perfil-trajetoria p {
+        line-height: 1.5;
+    }
+
+    .perfil-skills h3, .perfil-bio h3, .perfil-trajetoria h3 {
+        color: #123354;
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+
+    .perfil-skills ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .perfil-skills li {
+        margin: 4px 0;
+        padding-left: 1em;
+        text-indent: -0.8em;
+    }
+
+    .perfil-skills li::before {
+        content: "•";
+        color: #1e90ff;
+        font-weight: bold;
+        margin-right: 6px;
+    }
+
+    .meu-icone path {
+        fill: #61646d;
+    }
+</style>
+<div class="perfil-box">
+    <img src="../../assets/avatar.webp" alt="Foto de perfil" class="perfil-avatar">
+    <h2>Waltemar Carneiro</h2>
+    <p class="perfil-profissao">Desenvolvedor Full Stack</p>
+    <div class="perfil-social">
+        <a href="#">
+            <img src="../../assets/icons/github.svg" alt="GitHub">
+        </a>
+        <a href="#">
+            <img src="../../assets/icons/linkedin.svg" alt="LinkedIn">
+        </a>
+        <a href="#">
+            <img src="../../assets/icons/twitter.svg" alt="Twitter">
+        </a>
+        <a href="#">
+            <img src="../../assets/icons/instagram.svg" alt="Instagram">
+        </a>
+        <a href="#">
+            <img src="../../assets/icons/mail-outline.svg" alt="email">
+        </a>
+    </div>
+    <div class="perfil-info">
+        <p>
+            <strong>Email:</strong>
+            waltemardev@icloud.com
+        </p>
+        <p>
+            <strong>Cidade:</strong>
+            Paulista - PE
+        </p>
+        <p>
+            <strong>Assinante desde:</strong>
+            Jan/2021
+        </p>
+    </div>
+    <div class="perfil-skills">
+        <h3>Habilidades</h3>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>React, Vue, Angular</li>
+            <li>Node.js, PHP, Python</li>
+            <li>Firebase, MySQL, MongoDB</li>
+        </ul>
+    </div>
+    <div class="perfil-bio">
+        <h3>Sobre Mim</h3>
+        <p>Sou um entusiasta por tecnologia e apaixonado por resolver problemas com código limpo e eficiente. Tenho trabalhado em projetos diversos, desde pequenos sistemas até aplicações web completas e responsivas.</p>
+    </div>
+    <div class="perfil-trajetoria">
+        <h3>Trajetória</h3>
+        <p>Comecei minha jornada em 2009, aprendendo HTML por conta própria. Aos poucos, fui me aprofundando em CSS e JavaScript. Após alguns projetos freelancers, entrei para uma startup, onde aprendi a trabalhar em equipe e liderar projetos. Hoje, busco sempre inovar, entregar valor e evoluir como dev e como pessoa.</p>
+    </div>
+</div>
+

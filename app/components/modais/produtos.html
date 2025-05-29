@@ -1,0 +1,66 @@
+<style>
+@font-face {
+    font-family: 'Inter';
+    src: url('../../fonts/Inter-Regular.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {font-family: 'Poppins';
+    src: url('../../fonts/Poppins-Regular.ttf') format('TrueType');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+body{
+    font-family: 'Inter';
+    color: #2b374a;
+    background: #eff1f4;
+    text-align: center;
+    padding: 20px;
+}
+.title{
+	font-size: 1.5rem;
+	}
+.aproveite{
+	background: #ffffff;
+	padding: 20px;
+	border-radius: 5px;
+	
+	font-size: 1.5rem;
+	font-family: 'Poppins';
+	line-height: 1.5;
+	
+}
+.codepen{
+background: #2b374a;
+padding: 10px;
+border-radius: 5px;
+}
+code{
+color: #19ff00;
+font-size: 0.9rem;
+}
+p{
+font-size: 1.2rem;
+line-height: 1.5;
+
+}
+</style>
+<div class="title">
+  <h2>Produtos</h2>
+  <p class="aproveite">Aproveite 50% de desconto em todos os produtos hoje!</p>
+
+<p>Para usar a fonte Poppins-Regular.ttf localizada em /fonts no arquivo <b>components/modais/promo.html</b>, você precisa entender que o caminho do @font-face é relativo ao arquivo que o carrega.
+
+Como promo.html está em components/modais/, o caminho relativo para acessar <b>/fonts/Poppins-Regular.ttf</b> a partir dele será:<br>
+
+<div class="codepen">
+<code>
+../../fonts/Poppins-Regular.ttf
+</code>
+</div>
+</p>
+</div>
+
+
