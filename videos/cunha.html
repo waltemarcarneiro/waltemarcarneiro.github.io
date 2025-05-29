@@ -321,12 +321,17 @@
          .icons {
          position: fixed;
          bottom: 28%;
-         right: 10px;
+         right: 0px;
          z-index: 1;
          display: flex;
          flex-direction: column;
          text-align: center;
          align-items: center;
+         padding: 10px 5px;
+         background: rgba(0,0,0,0.2);
+         border-top-left-radius: 15px;
+         border-bottom-left-radius: 15px;
+         gap: 20px;
          }
          .pulsing-icon {
          animation: pulse 2s infinite;
@@ -341,25 +346,27 @@
       </div>
       <div class="icons">
          <a href="../home.html#options">
-            <ion-icon name="apps-outline"></ion-icon>
-            <p class="icons-name">Opções</p>
+            <img src="../image/kwai.svg" width="22">
+            <p class="icons-name">Options</p>
          </a>
          <a href="#" id="pixLink">
-            <ion-icon name="heart-outline" class="pulsing-icon"></ion-icon>
-            <p class="icons-name"></p>
+            <img src="../image/kwai.svg" width="22">
+            <p class="icons-name">Pix</p>
          </a>
          <a href="https://bit.ly/lovesongsapp" target="_blank">
-            <ion-icon name="musical-notes-outline"></ion-icon>
+            <img src="../image/kwai.svg" width="22">
             <p class="icons-name">Player</p>
          </a>
-         <a href="https://waltemar.com.br/videos/" id="shareLink">
-            <ion-icon name="arrow-redo-outline"></ion-icon>
-            <p class="icons-name">Compartilhe</p>
+         <a href="./videos/filmes.html" id="shareLink">
+            <img src="../image/kwai.svg" width="22">
+            <p class="icons-name">Share</p>
          </a>
+        
          <a href="https://k.kwai.com/p/Mgm06CGc">
             <img src="../image/kwai.svg" width="22">
             <p class="icons-name">Kwai</p>
          </a>
+
       </div>
       <video id="meuVideo" controls loop preload="none" poster="cunha.jpg">
          <source src="https://aws-br-cdn.kwai.net/bs2/newWatermark/c8447e24249293dbfa5f3525b3bc8845_en_29.mp4" type="video/mp4">
