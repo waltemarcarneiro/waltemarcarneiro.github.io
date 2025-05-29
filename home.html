@@ -108,11 +108,13 @@
          <img src="image/logo.svg" alt="logo App" class="logo">
 
          <div class="icon-top-right">
-            <img src="image/down-white.svg" height="24" style="margin-right: 0;" onclick="abrirSuporte()" data-auth-lock>
+            <img src="image/down-white.svg" height="24" style="margin-right: 10px;" onclick="abrirSuporte()" data-auth-lock>
 
-            <ion-icon name="person-outline" onclick="abrirProfile()"></ion-icon>
+            <img src="image/person-outline.svg" height="24" style="margin-right: 10px;" onclick="abrirProfile()" data-auth-lock>
 
-            <ion-icon  name="exit-outline" onclick="deslogar()"></ion-icon>
+            <img src="image/exit-outline.svg" height="24" style="margin-right: 0;" onclick="deslogar()" data-auth-lock>
+
+            
          </div>
 
       </div>
@@ -127,7 +129,11 @@
 
          <div class="digital">
             <div id="user" class="user-info" data-auth-lock style="cursor: pointer;">
-               <ion-icon style="font-size: 56px; margin-right: 10px;" name="person-circle-outline"></ion-icon>
+               
+               <!--<ion-icon style="font-size: 56px; margin-right: 10px;" name="person-circle-outline"></ion-icon>-->
+
+               <img src="./image/person-outline.svg" height="56" style="margin-right: 10px;" alt="">
+
                <div>
                   <h3 class="user-name">Usuário</h3>
                   <p class="user-status">Faça login aquí</p>
