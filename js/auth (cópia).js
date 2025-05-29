@@ -90,10 +90,8 @@ onAuthStateChanged(auth, user => {
 
   const nomeEl = document.querySelector(".user-name");
   const statusEl = document.querySelector(".user-status");
+  const iconEl = document.querySelector("#user ion-icon:first-child");
   const userDiv = document.getElementById("user");
-
-  // Seleciona tanto <ion-icon> quanto <img> dentro de #user
-  let iconEl = userDiv.querySelector("ion-icon, img");
 
   if (user) {
     const nome = user.displayName || "Usuário Logado";
@@ -103,15 +101,10 @@ onAuthStateChanged(auth, user => {
     statusEl.textContent = "Você está logado";
 
     if (foto) {
-      // Substitui qualquer ícone existente (ion-icon ou img) pela foto do usuário
-      iconEl?.replaceWith(createProfileImage(foto));
+      // Substituir o ícone por imagem de perfil
+      iconEl.outerHTML = `<img src="${foto}" style="width:56px;height:56px;border-radius:50%;margin-right:10px;">`;
     } else {
-      // Se não tiver foto, mostra o ícone alternativo
-      if (iconEl?.tagName === "ION-ICON") {
-        iconEl.setAttribute("name", "happy-outline");
-      } else {
-        iconEl?.replaceWith(createIonIcon("happy-outline"));
-      }
+      iconEl.setAttribute("name", "happy-outline");
     }
 
     userDiv?.removeAttribute("data-auth-lock");
@@ -119,34 +112,17 @@ onAuthStateChanged(auth, user => {
     nomeEl.textContent = "Usuário";
     statusEl.textContent = "Faça login aqui";
 
-    // Substitui qualquer ícone/imagem atual pelo ícone padrão
-    iconEl?.replaceWith(createIonIcon("person-circle-outline"));
+    // Restaurar o ícone padrão
+    const existingImg = document.querySelector("#user img");
+    if (existingImg) {
+      existingImg.outerHTML = `<ion-icon style="font-size: 56px; margin-right: 10px;" name="person-circle-outline"></ion-icon>`;
+    } else {
+      iconEl?.setAttribute("name", "person-circle-outline");
+    }
 
     userDiv?.setAttribute("data-auth-lock", "");
   }
 });
-
-// 🔧 Função auxiliar para criar uma imagem de perfil
-function createProfileImage(foto) {
-  const img = document.createElement("img");
-  img.src = foto;
-  img.alt = "Foto do usuário";
-  img.style.width = "56px";
-  img.style.height = "56px";
-  img.style.borderRadius = "50%";
-  img.style.marginRight = "10px";
-  return img;
-}
-
-// 🔧 Função auxiliar para criar um ícone ion-icon
-function createIonIcon(name) {
-  const icon = document.createElement("ion-icon");
-  icon.setAttribute("name", name);
-  icon.style.fontSize = "56px";
-  icon.style.marginRight = "10px";
-  return icon;
-}
-
 
 
 // Mensagem
