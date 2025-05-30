@@ -170,5 +170,7 @@ function ativarProtecoes() {
     };
   });
 
+}
+
 // Chamar quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", ativarProtecoes);
