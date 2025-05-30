@@ -7,8 +7,7 @@ import {
   sendEmailVerification,
   sendPasswordResetEmail,
   signOut,
-  onAuthStateChanged,
-  updateProfile // ✅ Importado aqui
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
 // Login com Google
@@ -30,12 +29,6 @@ window.loginComGoogle = async () => {
 window.criarConta = async (email, senha, nome) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
-
-    // ✅ Define o nome no perfil do usuário
-    await updateProfile(userCredential.user, {
-      displayName: nome
-    });
-
     await sendEmailVerification(userCredential.user);
     mostrarMensagem("Verifique seu email para ativar a conta.");
   } catch (error) {
@@ -78,6 +71,7 @@ window.deslogar = async () => {
     mostrarMensagem(error.message);
   }
 };
+
 
 // Estado de autenticação
 onAuthStateChanged(auth, user => {
@@ -142,6 +136,8 @@ function createIonIcon(name) {
   return icon;
 }
 
+
+
 // Mensagem
 function mostrarMensagem(msg) {
   const el = document.getElementById("auth-message");
@@ -152,6 +148,7 @@ function mostrarMensagem(msg) {
 }
 
 // Bloquear qualquer elemento com data-auth-lock se não estiver logado
+
 function ativarProtecoes() {
   document.querySelectorAll('[data-auth-lock]').forEach(el => {
     el.onclick = (e) => {
@@ -161,15 +158,6 @@ function ativarProtecoes() {
       }
     };
   });
-
-  document.querySelectorAll('[data-auth-free]').forEach(el => {
-    el.onclick = () => {
-      if (auth.currentUser) {
-        deslogar();
-      }
-    };
-  });
-}
 
 // Chamar quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", ativarProtecoes);
