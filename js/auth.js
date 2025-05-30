@@ -72,6 +72,17 @@ window.deslogar = async () => {
   }
 };
 
+// Proteção de links com ID "link-lock"
+function protegerLinks() {
+  document.querySelectorAll('[id="link-lock"]').forEach(el => {
+    el.addEventListener("click", e => {
+      if (!auth.currentUser || !auth.currentUser.emailVerified) {
+        e.preventDefault();
+        abrirModalAcesso();
+      }
+    });
+  });
+}
 
 // Estado de autenticação
 onAuthStateChanged(auth, user => {
@@ -158,6 +169,15 @@ function ativarProtecoes() {
       }
     };
   });
+
+  document.querySelectorAll('[data-auth-free]').forEach(el => {
+    el.onclick = () => {
+      if (auth.currentUser) {
+        deslogar();
+      }
+    };
+  });
+}
 
 // Chamar quando o DOM estiver pronto
 document.addEventListener("DOMContentLoaded", ativarProtecoes);
