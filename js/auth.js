@@ -10,7 +10,7 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
-// Login com Google
+// === LOGIN COM GOOGLE ===
 window.loginComGoogle = async () => {
   const provider = new GoogleAuthProvider();
   try {
@@ -25,7 +25,7 @@ window.loginComGoogle = async () => {
   }
 };
 
-// Criar conta com email/senha
+// === CRIAR CONTA COM EMAIL/SENHA ===
 window.criarConta = async (email, senha, nome) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
@@ -36,7 +36,7 @@ window.criarConta = async (email, senha, nome) => {
   }
 };
 
-// Login com email/senha
+// === LOGIN COM EMAIL/SENHA ===
 window.loginComEmail = async (email, senha) => {
   try {
     const result = await signInWithEmailAndPassword(auth, email, senha);
@@ -50,7 +50,7 @@ window.loginComEmail = async (email, senha) => {
   }
 };
 
-// Recuperar senha
+// === RECUPERAÇÃO DE SENHA ===
 window.recuperarSenha = async () => {
   const email = prompt("Digite seu email para redefinir a senha:");
   if (!email) return;
@@ -62,7 +62,7 @@ window.recuperarSenha = async () => {
   }
 };
 
-// Sair
+// === LOGOUT ===
 window.deslogar = async () => {
   try {
     await signOut(auth);
@@ -72,28 +72,44 @@ window.deslogar = async () => {
   }
 };
 
-// Proteção de links com ID "link-lock"
-function protegerLinks() {
-  document.querySelectorAll('[id="link-lock"]').forEach(el => {
-    el.addEventListener("click", e => {
+// === BLOQUEIO DE LINKS E EVENTOS COM ATRIBUTO 'lock' ===
+// Funciona tanto para <a href="..."> quanto para onclicks
+function protegerElementosLock() {
+  document.querySelectorAll('[lock]').forEach(el => {
+    const originalClick = el.onclick;
+
+    el.addEventListener('click', e => {
       if (!auth.currentUser || !auth.currentUser.emailVerified) {
         e.preventDefault();
         abrirModalAcesso();
+      } else {
+        if (typeof originalClick === 'function') {
+          originalClick.call(el, e);
+        }
       }
     });
+
+    // Se for <a href="..."> também impede a navegação
+    if (el.tagName === 'A') {
+      el.addEventListener('click', e => {
+        if (!auth.currentUser || !auth.currentUser.emailVerified) {
+          e.preventDefault();
+          abrirModalAcesso();
+        }
+      });
+    }
   });
 }
 
-// Estado de autenticação
+// === MONITORAMENTO DE ESTADO DE LOGIN ===
 onAuthStateChanged(auth, user => {
-  protegerLinks();
+  protegerElementosLock(); // aplica proteção sempre que o estado muda
 
   const nomeEl = document.querySelector(".user-name");
   const statusEl = document.querySelector(".user-status");
   const userDiv = document.getElementById("user");
 
-  // Seleciona tanto <ion-icon> quanto <img> dentro de #user
-  let iconEl = userDiv.querySelector("ion-icon, img");
+  let iconEl = userDiv?.querySelector("ion-icon, img");
 
   if (user) {
     const nome = user.displayName || "Usuário Logado";
@@ -103,10 +119,8 @@ onAuthStateChanged(auth, user => {
     statusEl.textContent = "Você está logado";
 
     if (foto) {
-      // Substitui qualquer ícone existente (ion-icon ou img) pela foto do usuário
       iconEl?.replaceWith(createProfileImage(foto));
     } else {
-      // Se não tiver foto, mostra o ícone alternativo
       if (iconEl?.tagName === "ION-ICON") {
         iconEl.setAttribute("name", "happy-outline");
       } else {
@@ -114,19 +128,17 @@ onAuthStateChanged(auth, user => {
       }
     }
 
-    userDiv?.removeAttribute("data-auth-lock");
+    userDiv?.removeAttribute("lock");
   } else {
     nomeEl.textContent = "Usuário";
     statusEl.textContent = "Faça login aqui";
 
-    // Substitui qualquer ícone/imagem atual pelo ícone padrão
     iconEl?.replaceWith(createIonIcon("person-circle-outline"));
-
-    userDiv?.setAttribute("data-auth-lock", "");
+    userDiv?.setAttribute("lock", "");
   }
 });
 
-// 🔧 Função auxiliar para criar uma imagem de perfil
+// === CRIA IMG DE PERFIL DO USUÁRIO ===
 function createProfileImage(foto) {
   const img = document.createElement("img");
   img.src = foto;
@@ -138,7 +150,7 @@ function createProfileImage(foto) {
   return img;
 }
 
-// 🔧 Função auxiliar para criar um ícone ion-icon
+// === CRIA ÍCONE ION-ICON ===
 function createIonIcon(name) {
   const icon = document.createElement("ion-icon");
   icon.setAttribute("name", name);
@@ -147,9 +159,7 @@ function createIonIcon(name) {
   return icon;
 }
 
-
-
-// Mensagem
+// === MENSAGEM DE ERRO/SUCESSO ===
 function mostrarMensagem(msg) {
   const el = document.getElementById("auth-message");
   if (!el) return;
@@ -158,28 +168,7 @@ function mostrarMensagem(msg) {
   setTimeout(() => el.style.display = "none", 5000);
 }
 
-// Bloquear qualquer elemento com data-auth-lock se não estiver logado
-function ativarProtecoes() {
-  document.querySelectorAll('[data-auth-lock]').forEach(el => {
-    // Clonamos qualquer função original para reaplicar após o login, se necessário
-    const originalClick = el.onclick;
-
-    el.onclick = (e) => {
-      if (!auth.currentUser || !auth.currentUser.emailVerified) {
-        e.preventDefault(); // Impede a execução do onclick (inclusive funções JS)
-        abrirModalAcesso();
-      } else {
-        // Se estiver logado, executa a função original (caso exista)
-        if (typeof originalClick === 'function') {
-          originalClick.call(el, e);
-        }
-      }
-    };
-  });
-}
-
-// retirado do modal-login.js
-
+// === CARREGA O MODAL DE LOGIN E DEFINE AS FUNÇÕES ===
 fetch('/components/modals/modalLogin.html')
   .then(res => res.text())
   .then(html => {
@@ -201,7 +190,8 @@ fetch('/components/modals/modalLogin.html')
       document.getElementById(`${aba}-tab`).classList.add("active");
     };
 
-    const trigger = document.querySelector('#user[data-auth-lock]');
+    // Clique no avatar do usuário abre o modal (se bloqueado)
+    const trigger = document.querySelector('#user[lock]');
     if (trigger) {
       trigger.addEventListener('click', () => {
         abrirModalAcesso();
