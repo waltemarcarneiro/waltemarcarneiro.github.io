@@ -159,18 +159,21 @@ function mostrarMensagem(msg) {
 }
 
 // Bloquear qualquer elemento com data-auth-lock se não estiver logado
-
 function ativarProtecoes() {
   document.querySelectorAll('[data-auth-lock]').forEach(el => {
+    // Clonamos qualquer função original para reaplicar após o login, se necessário
+    const originalClick = el.onclick;
+
     el.onclick = (e) => {
       if (!auth.currentUser || !auth.currentUser.emailVerified) {
-        e.preventDefault();
+        e.preventDefault(); // Impede a execução do onclick (inclusive funções JS)
         abrirModalAcesso();
+      } else {
+        // Se estiver logado, executa a função original (caso exista)
+        if (typeof originalClick === 'function') {
+          originalClick.call(el, e);
+        }
       }
     };
   });
-
 }
-
-// Chamar quando o DOM estiver pronto
-document.addEventListener("DOMContentLoaded", ativarProtecoes);
