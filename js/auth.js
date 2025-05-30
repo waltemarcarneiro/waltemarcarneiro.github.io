@@ -177,3 +177,34 @@ function ativarProtecoes() {
     };
   });
 }
+
+// retirado do modal-login.js
+
+fetch('/components/modals/modalLogin.html')
+  .then(res => res.text())
+  .then(html => {
+    document.body.insertAdjacentHTML('beforeend', html);
+
+    window.abrirModalAcesso = () => {
+      document.getElementById("modalAcesso").style.display = "flex";
+    };
+
+    window.fecharModalAcesso = () => {
+      document.getElementById("modalAcesso").style.display = "none";
+    };
+
+    window.alternarAba = (aba) => {
+      document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
+
+      document.querySelector(`[data-tab="${aba}"]`).classList.add("active");
+      document.getElementById(`${aba}-tab`).classList.add("active");
+    };
+
+    const trigger = document.querySelector('#user[data-auth-lock]');
+    if (trigger) {
+      trigger.addEventListener('click', () => {
+        abrirModalAcesso();
+      });
+    }
+  });
