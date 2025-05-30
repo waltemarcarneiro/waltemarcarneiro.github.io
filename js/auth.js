@@ -72,32 +72,28 @@ window.deslogar = async () => {
   }
 };
 
-// === BLOQUEIO DE LINKS E EVENTOS COM ATRIBUTO 'lock' ===
-// Funciona tanto para <a href="..."> quanto para onclicks
+// === QUALQUER ELEMENTO LOCK ===
 function protegerElementosLock() {
   document.querySelectorAll('[lock]').forEach(el => {
-    const originalClick = el.onclick;
+    // Clona o conteúdo original do onclick (se houver)
+    const inlineClick = el.getAttribute('onclick');
 
+    // Remove o atributo padrão para evitar execução dupla
+    if (inlineClick) el.removeAttribute('onclick');
+
+    // Adiciona o listener manualmente para controlar
     el.addEventListener('click', e => {
       if (!auth.currentUser || !auth.currentUser.emailVerified) {
-        e.preventDefault();
+        e.preventDefault?.();
+        e.stopImmediatePropagation?.();
         abrirModalAcesso();
       } else {
-        if (typeof originalClick === 'function') {
-          originalClick.call(el, e);
+        if (inlineClick) {
+          // Executa o código original do onclick
+          new Function(inlineClick).call(el, e);
         }
       }
     });
-
-    // Se for <a href="..."> também impede a navegação
-    if (el.tagName === 'A') {
-      el.addEventListener('click', e => {
-        if (!auth.currentUser || !auth.currentUser.emailVerified) {
-          e.preventDefault();
-          abrirModalAcesso();
-        }
-      });
-    }
   });
 }
 
