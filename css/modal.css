@@ -64,6 +64,7 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 9999;
     font-family: 'Inter', sans-serif;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.95);
     position: fixed;
 }
 
