@@ -86,7 +86,7 @@
 }
 .google-btn {
     width: 100%;
-    padding: 14px;
+    padding: 18px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 25px;
     background: none;
@@ -97,6 +97,7 @@
     display: flex;
     justify-content: center;
     font-size: 1rem;
+    margin-bottom: 25px;
 }
 
 .login-btn {
@@ -192,7 +193,7 @@
     align-items: center;
     text-align: center;
     color: #fff;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 
 .login-separator::before,
