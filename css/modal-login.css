@@ -98,6 +98,12 @@
     justify-content: center;
     font-size: 1rem;
 }
+
+.google-btn:hover {
+    
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 17px;
+}
 .google-btn img {
     width: 20px;
     height: 20px;
@@ -186,9 +192,6 @@
 
 /*LOGIN CSS*/
 
-.google-btn:hover {
-    background: rgba(255, 169, 10, 0.158);
-}
 
 .login-separator {
     width: 100%;
