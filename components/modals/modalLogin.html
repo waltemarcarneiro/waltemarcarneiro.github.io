@@ -19,10 +19,10 @@
          <div class="login-separator"><span>ou</span></div>
 
          <form onsubmit="event.preventDefault(); loginComEmail(this.email.value, this.password.value)">
-            <input type="email" name="email" class="form-input" placeholder="Seu email" required>
+            <input type="email" name="email" class="form-input" placeholder="Email" required>
 
             <div class="senha-container">
-               <input type="password" name="password" class="form-input senha-input" placeholder="Sua senha" required>
+               <input type="password" name="password" class="form-input senha-input" placeholder="Senha" required>
                  <img src="image/eye-off.svg" width="24" class="senha-toggle" onclick="toggleSenha(this)" alt="Mostrar senha">
 
             </div>
@@ -37,11 +37,11 @@
       <!-- Registro -->
       <div id="register-tab" class="tab-content">
          <form onsubmit="event.preventDefault(); criarConta(this.email.value, this.password.value, this.nome.value)">
-            <input type="text" name="nome" class="form-input" placeholder="Seu nome" required>
-            <input type="email" name="email" class="form-input" placeholder="Seu email" required>
+            <input type="text" name="nome" class="form-input" placeholder="Nome de usuário" required>
+            <input type="email" name="email" class="form-input" placeholder="Email" required>
             
             <div class="senha-container">
-               <input type="password" name="password" class="form-input senha-input" placeholder="Sua senha" required>
+               <input type="password" name="password" class="form-input senha-input" placeholder="Senha" required>
                  <img src="image/eye-off.svg" width="24" class="senha-toggle" onclick="toggleSenha(this)" alt="Mostrar senha">
 
             </div>
