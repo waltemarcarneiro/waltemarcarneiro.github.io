@@ -87,7 +87,7 @@
 .google-btn {
     width: 100%;
     padding: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: none;
     border-radius: 25px;
     background: none;
     color: #fff;
