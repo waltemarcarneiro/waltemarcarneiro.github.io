@@ -311,12 +311,6 @@
 
 
 /* Estilos para as tabs de login */
-.login-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
 
 .tab-btn {
     background: none;

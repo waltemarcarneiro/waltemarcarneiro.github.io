@@ -199,11 +199,9 @@ fetch('/components/modals/modalLogin.html')
 window.toggleSenha = function(icon) {
    const container = icon.closest('.senha-container');
    const input = container.querySelector('input');
-   if (input.type === "password") {
-      input.type = "text";
-      icon.name = "eye-off-outline";
-   } else {
-      input.type = "password";
-      icon.name = "eye-outline";
-   }
+   const mostrando = input.type === "text";
+
+   input.type = mostrando ? "password" : "text";
+   icon.src = mostrando ? "image/eye-off.svg" : "image/eye.svg";
 }
+

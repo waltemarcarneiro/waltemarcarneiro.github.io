@@ -97,7 +97,6 @@
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    margin-bottom: 25px;
 }
 
 .login-btn {
@@ -248,7 +247,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     width: 100%;
 }
 
@@ -284,15 +283,7 @@
     transform: scaleX(1);
 }
 
-..tab-content {
-    display: none;
-    width: 100%;
-    max-width: 300px;
-    padding: 20px 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-}
+
 
 .tab-content.active {
     display: block;
@@ -336,6 +327,6 @@
    transform: translateY(-50%);
    font-size: 20px;
    cursor: pointer;
-   color: #555;
+   color: #ffffff7c
 }
 
