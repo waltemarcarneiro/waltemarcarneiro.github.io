@@ -12,31 +12,48 @@
                 </div>
                 <!-- Mensagem para QR Code -->
                 <p class="mensagem-alert" id="mensagemQRCode" style="display:none">
-                    <span class="texto-principal">💬 QRCode PIX copiado!</span> <br>
-                    <span class="destaque">Use a opção <b style="color: #181818">Copia e Cola</b> no aplicativo do seu banco</span>
+                    <span class="texto-principal">💬 QRCode copiado!</span> <br><br>
+                    <span class="destaque">Use a opção <b style="color: #181818">Copia e Cola</b> no app do seu banco</span>
                 </p>
 
                 <!-- Mensagem para Chave PIX -->
                 <p class="mensagem-alert" id="mensagemChave" style="display:none">
-                    <span class="texto-principal">💬 Chave PIX copiada!</span> <br>
-                    <span class="destaque">Use a opção <b style="color:#181818">Chave Aleatória</b> no aplicativo do seu banco</span>
+                    <span class="texto-principal">💬 Chave copiada!</span> <br><br>
+                    <span class="destaque">Use a opção <b style="color:#181818;">Chave Aleatória</b> no app do seu banco</span>
                 </p>
 
-                <!-- Resto do conteúdo permanece igual -->
-                <div class="mensagem-steps">
-                    <div class="step">
-                        <span class="step-number">1</span>
-                        <p>No aplicativo do seu banco ou carteira digital, vá em Pix.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">2</span>
-                        <p>Escolha a opção Copia e cola.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-number">3</span>
-                        <p>Cole o código copiado e pronto.</p>
-                    </div>
-                </div>
+                <!-- Etapas para QR Code (Copia e Cola) -->
+<div class="mensagem-steps" id="etapasQRCode" style="display: none;">
+    <div class="step">
+        <span class="step-number">1</span>
+        <p>No aplicativo do seu banco ou carteira digital, vá em Pix.</p>
+    </div>
+    <div class="step">
+        <span class="step-number">2</span>
+        <p>Escolha a opção <b style="color:#181818;">Copia e Cola</b>.</p>
+    </div>
+    <div class="step">
+        <span class="step-number">3</span>
+        <p>Cole o código copiado e pronto.</p>
+    </div>
+</div>
+
+<!-- Etapas para Chave PIX (Chave Aleatória) -->
+<div class="mensagem-steps" id="etapasChave" style="display: none;">
+    <div class="step">
+        <span class="step-number">1</span>
+        <p>No aplicativo do seu banco ou carteira digital, vá em Pix.</p>
+    </div>
+    <div class="step">
+        <span class="step-number">2</span>
+        <p>Escolha a opção <b style="color:#181818;">Chave Aleatória</b>.</p>
+    </div>
+    <div class="step">
+        <span class="step-number">3</span>
+        <p>Cole a chave copiada e pronto.</p>
+    </div>
+</div>
+
 
                 <button class="btn-entendi">Ok, Entendi!</button>
             </div>

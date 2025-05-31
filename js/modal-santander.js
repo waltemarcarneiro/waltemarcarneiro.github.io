@@ -19,9 +19,15 @@ window.openSantander = function() {
 window.copiarCodigo = function(codigo) {
     navigator.clipboard.writeText(codigo).then(() => {
         const mensagem = document.getElementById('mensagem');
-        // Mostra mensagem QR Code e esconde a outra
+
+        // Mensagens
         document.getElementById('mensagemQRCode').style.display = 'block';
         document.getElementById('mensagemChave').style.display = 'none';
+
+        // Etapas
+        document.getElementById('etapasQRCode').style.display = 'block';
+        document.getElementById('etapasChave').style.display = 'none';
+
         mensagem.style.display = 'block';
         setTimeout(() => {
             mensagem.style.bottom = '0';
@@ -32,9 +38,15 @@ window.copiarCodigo = function(codigo) {
 window.copiarChave = function(chave) {
     navigator.clipboard.writeText(chave).then(() => {
         const mensagem = document.getElementById('mensagem');
-        // Mostra mensagem Chave e esconde a outra
+
+        // Mensagens
         document.getElementById('mensagemChave').style.display = 'block';
         document.getElementById('mensagemQRCode').style.display = 'none';
+
+        // Etapas
+        document.getElementById('etapasChave').style.display = 'block';
+        document.getElementById('etapasQRCode').style.display = 'none';
+
         mensagem.style.display = 'block';
         setTimeout(() => {
             mensagem.style.bottom = '0';
