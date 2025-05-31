@@ -70,7 +70,7 @@
 
 .modal-acesso .register-btn {
   width: 100%;
-  padding: 20px;
+  padding: 18px;
   background: #f76700;
   border: none;
   color: white;
@@ -82,18 +82,49 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  font-size: 1.1rem;
+}
+.google-btn {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    background: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    background: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.logout-area{
+  justify-content: center;
+  display: flex;
 }
 .logout-btn {
-  width: 100%;
-  padding: 10px;
-  background: transparent;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  margin: auto;
-  position: relative;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    background: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+    
 }
 
 
@@ -278,27 +309,4 @@
 .form-input:focus {
     outline: none;
     border-color: #f76700;
-}
-.google-btn {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 25px;
-    background: #f767001c;
-    color: #fff;
-    font-weight: 500;
-    cursor: pointer;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-.login-btn {
-    width: 100%;
-    padding: 20px;
-    border: none;
-    border-radius: 25px;
-    background: #f767001c;
-    color: #fff;
-    font-weight: 500;
-    cursor: pointer;
 }
