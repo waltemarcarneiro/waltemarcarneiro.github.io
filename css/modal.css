@@ -115,7 +115,7 @@
     width: 95%;
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
-    color:#4e4e4d;
+    color:#151515;
 }
 
 .modal-santander .pix-logo {
@@ -125,13 +125,13 @@
 
 .modal-santander h2 {
     font-size: 24px;
-    color: #4e4e4d;
+    color: #151515;
     margin: 0;
     font-weight: 600;
 }
 
 .modal-santander p {
-    color: #4e4e4d;
+    color: #151515;
     margin: 0px 0 0;
     font-size: 1.2rem;
     line-height: 1.5;
@@ -222,12 +222,12 @@
     color: #f76700;
     padding: 16px;
     background: #FFF;
-    border-radius: 50%;
-    border: 1px solid #f76700;
+    border-radius: 25%;
+    border: 1px solid #e6d9d0;
 }
 
 .modal-santander .pix-option span {
-    color: #4e4e4d;
+    color: #151515;
     font-size: 16px;
     font-weight: 600;
 }
@@ -245,7 +245,7 @@
 
 .mensagem-alert {
     margin: 15px 0;
-    color: #4e4e4d;
+    color: #151515;
     font-size: 1.2rem;
     line-height: 1.4;
     font-weight: 600;
@@ -259,7 +259,7 @@
 }
 
 .mensagem-alert .destaque {
-    color: #4e4e4d;
+    color: #151515;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -296,7 +296,7 @@
     color: white;
     border: none;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
     margin-top: 20px;
@@ -464,7 +464,7 @@
 
 .mensagem-alert {
     margin: 15px 0;
-    color: #4e4e4d;
+    color: #151515;
     font-size: 1.2rem;
     line-height: 1.4;
     font-weight: 600;
@@ -473,20 +473,6 @@
 
 .mensagem-steps {
     margin: 25px 0;
-}
-
-
-.btn-entendi {
-    width: 100%;
-    background: #F76700;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 20px;
-    font-weight: 600;
 }
 
 .btn-entendi:hover {
