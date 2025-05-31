@@ -16,7 +16,7 @@
   background: rgba(39, 31, 34, 0.7);
   padding: 30px 20px;
   border-radius: 12px;
-  width: 90%;
+  /*width: 90%;*/
   max-width: 480px;
   position: relative;
   /*box-shadow: 0 0 20px rgba(0,0,0,0.5);*/
@@ -182,17 +182,17 @@
 /*LOGIN CSS*/
 
 .google-btn:hover {
-    background: rgba(12, 30, 133, 0.5);
+    background: rgba(255, 169, 10, 0.158);
 }
 
 .login-separator {
     width: 100%;
-    max-width: 300px;
+    max-width: 480px;
     display: flex;
     align-items: center;
     text-align: center;
     color: #fff;
-    margin: 20px 0;
+    margin: 20px auto;
 }
 
 .login-separator::before,
@@ -279,7 +279,7 @@
     transform: scaleX(1);
 }
 
-.tab-content {
+..tab-content {
     display: none;
     width: 100%;
     max-width: 300px;
@@ -299,8 +299,9 @@
 .tab-content {
     display: none;
     width: 100%;
-    max-width: 300px;
+    max-width: 480px;
     padding: 20px 0;
+    margin: 0 auto;
 }
 
 .tab-content.active {
