@@ -14,7 +14,7 @@
 
 .modal-acesso-content {
   background: rgba(39, 31, 34, 0.7);
-  padding: 30px 20px;
+  padding: 30px;
   border-radius: 12px;
   /*width: 90%;*/
   max-width: 480px;
@@ -27,7 +27,7 @@
 .modal-acesso-close {
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 30px;
   font-size: 24px;
   cursor: pointer;
 }
