@@ -194,3 +194,16 @@ fetch('/components/modals/modalLogin.html')
       });
     }
   });
+
+// Deixe global para funcionar mesmo com onclick no HTML
+window.toggleSenha = function(icon) {
+   const container = icon.closest('.senha-container');
+   const input = container.querySelector('input');
+   if (input.type === "password") {
+      input.type = "text";
+      icon.name = "eye-off-outline";
+   } else {
+      input.type = "password";
+      icon.name = "eye-outline";
+   }
+}

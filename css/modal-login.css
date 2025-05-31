@@ -318,3 +318,24 @@
     outline: none;
     border-color: #f76700;
 }
+
+/*senha*/
+.senha-container {
+   position: relative;
+}
+
+.senha-input {
+   width: 100%;
+   padding-right: 40px; /* espaço pro ícone */
+}
+
+.senha-toggle {
+   position: absolute;
+   top: 45%;
+   right: 20px;
+   transform: translateY(-50%);
+   font-size: 20px;
+   cursor: pointer;
+   color: #555;
+}
+
