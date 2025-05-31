@@ -6,7 +6,7 @@
    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
    <link rel="stylesheet" href="./home.css">
    <link rel="manifest" href="./manifest.json" />
-   <meta name="theme-color" content="#49433A">
+   <meta name="theme-color" content="#5d4f3f">
    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
    <title>Waltemar Carneiro | Home</title>
@@ -138,16 +138,16 @@
                   <h3 class="user-name">Usuário</h3>
                   <p class="user-status">Faça login aquí</p>
                </div>
-               <ion-icon class="digital-image" name="finger-print-outline" alt="digital"></ion-icon>
+               <img class="digital-image" src="./image/finger-print-outline.svg" height="48">
             </div>
 
             <div class="icon-acesso">
                <div class="icon-acesso" onclick="cota()" >
-                  <ion-icon name="repeat-outline"></ion-icon>
-                  <span>Solicitações</span>
+                  <img style="border-radius: 20px" src="./image/cart-outline.svg" height="24">
+                  <span> Loja Virtual</span>
                </div>
                <div class="icon-acesso"  onclick="openSantander()">
-                  <img src="image/pix.svg" height="24">
+                  <img src="./image/pix-outline.svg" height="24">
                   <span> Transferência Pix</span>
                </div>
             </div>
@@ -158,12 +158,12 @@
       <!--BANNER PROMO TYPE BB-->
       <a href="https://amzn.to/42UCCtn" target="_blank">
          <div class="promo">
-            <img src="https://m.media-amazon.com/images/I/61ewperrpOL._AC_SL1500_.jpg" width="70" class="logo-promo">
+            <img src="./image/monitor.webp" class="logo-promo">
             <div class="promo-texto">
                <span>Monitor Gamer Samsung</span>
                <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto por R$
                   <span style="font-weight: 700;">1.080,00</span></p>
-               <span style="color:#f76700;font-size:0.95rem">Em até 10x R$ 108,00 sem juros</span>
+               <span style="color:#007fff;font-size:0.95rem">Em até 10x R$ 108,00 sem juros</span>
                <button class="btn-promo">Saiba mais</button>
             </div>
          </div>
@@ -171,7 +171,10 @@
       <!--END CONTENT-->
       <div class="footer" id="footer">
          <a href="#options" id="chevronIconLink">
-            <ion-icon name="chevron-down-outline" size="large" id="chevronIcon"></ion-icon>
+
+<img style="border-radius: 20px" src="./image/chevron-down-outline.svg" id="chevronIcon" height="24">
+
+      
          </a>
       </div>
    </div>
@@ -182,83 +185,84 @@
       <div class="container-bloco">
          <a href="https://lovesongsapp.github.io/" lock target="_blank" class="block">
             <div class="icon-wrapper">
-               <ion-icon name="heart-outline"></ion-icon>
+               <img style="border-radius: 20px" src="./image/logo-lovesongs.png" width="100">
             </div>
             <span class="block-label">LoveSongs</span>
          </a>
          <a href="./radio/index.html" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="radio-outline"></ion-icon>
+               
+               <img style="border-radius: 20px" src="./radio/img/album.webp" width="100">
             </div>
             <span class="block-label">Radio</span>
          </a>
          <!-- Link protegido -->
          <a href="./videos/filmes.html" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="film-outline"></ion-icon>
+               <img style="border-radius: 20px" src="./image/film-outline.svg" height="80">
             </div>
             <span class="block-label">Filmes</span>
          </a>
          <a href="./youtube/index.html" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="logo-youtube"></ion-icon>
+               <img style="border-radius: 20px" src="./image/logo-youtube.svg" height="80">
             </div>
             <span class="block-label">TubeMusic</span>
          </a>
          <a href="./videos/playlist.html" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="camera-outline"></ion-icon>
+               <img style="border-radius: 20px" src="./image/musical-notes.svg" height="80">
             </div>
             <span class="block-label">Playlist</span>
          </a>
          <a href="./pages/downloads.html" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="apps-outline"></ion-icon>
+               <img style="border-radius: 20px" src="./image/cloud-download.svg" height="80">
             </div>
-            <span class="block-label">Apps</span>
+            <span class="block-label">Download</span>
          </a>
          <a href="https://webboard.app/" class="block">
             <div class="icon-wrapper">
-               <ion-icon name="color-palette-outline"></ion-icon>
+               <img style="border-radius: 20px" src="./image/WebBoard.jpg" height="100">
             </div>
             <span class="block-label">WebBoard</span>
          </a>
          <a href="./videos/bolero.html" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="musical-notes-outline"></ion-icon>
+               <img style="border-radius: 20px" src="./image/bolero.png" height="80">
             </div>
             <span class="block-label">Boleros</span>
          </a>
          <!-- Link livre -->
          <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="logo-google-playstore"></ion-icon>
+               <img style="border-radius: 20px" src="./image/logo-android.svg" height="80">
             </div>
-            <span class="block-label">G-Drive Apk</span>
+            <span class="block-label">Android Apps</span>
          </a>
          <a href="#" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="logo-apple"></ion-icon>
+               <img style="border-radius: 20px" src="./image/logo-apple.svg" height="80">
             </div>
             <span class="block-label">MacOsX</span>
          </a>
          <a href="#" class="block" lock>
             <div class="icon-wrapper">
-               <ion-icon name="logo-tux"></ion-icon>
+               <img style="border-radius: 20px" src="./image/logo-tux.svg" height="80">
             </div>
             <span class="block-label">Linux</span>
          </a>
          <a href="#"
             class="block">
             <div class="icon-wrapper">
-               <ion-icon name="logo-windows"></ion-icon>
+               <img style="border-radius: 20px" src="./image/logo-windows.svg" height="80">
             </div>
-            <span class="block-label">Windows</span>
+              <span class="block-label">Windows</span>
          </a>
       </div>
       <div id="divBack">
          <a href="#logo" id="backIconLink">
-            <ion-icon id="backIcon" name="chevron-back-outline"></ion-icon>
+            <img src="./image/chevron-back.svg" height="32">
          </a>
       </div>
    </div>

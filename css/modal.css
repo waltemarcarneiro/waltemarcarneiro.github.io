@@ -207,29 +207,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     cursor: pointer;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     transition: background 0.2s;
+    width: 110px;
+    height: 100px;
+    background: #FFF;    
 }
+
 
 .modal-santander .pix-option:hover {
-    background: #f5f5f5;
+    background: #fff1b4;
 }
 
-.modal-santander .pix-option ion-icon {
-    font-size: 44px;
-    color: #f76700;
-    padding: 16px;
-    background: #FFF;
-    border-radius: 25%;
-    border: 1px solid #e6d9d0;
-}
 
 .modal-santander .pix-option span {
     color: #151515;
-    font-size: 16px;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
@@ -443,14 +439,6 @@
 
 .modal-santander .pix-button:hover {
     background: #e65e00;
-}
-
-.modal-santander .pix-button ion-icon {
-    font-size: 24px;
-}
-
-.modal-santander .pix-option:hover {
-    background: #f5f5f5;
 }
 
 .mensagem.show {
