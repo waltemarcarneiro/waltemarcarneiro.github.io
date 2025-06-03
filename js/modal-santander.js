@@ -1,6 +1,6 @@
 // ...existing code...
 
-window.openSantander = function() {
+window.openModalSantander = function() {
     fetch('./components/modals/modalSantander.html')
         .then(response => response.text())
         .then(html => {

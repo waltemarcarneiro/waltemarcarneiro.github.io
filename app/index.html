@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Projeto</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Waltemar - App</title>
+  <link rel="stylesheet" href="./css/app.css" />
 </head>
 <body>
 
 
   <!-- HEADER -->
 <header class="header">
-  <div class="logo">
+  <div class="logo" onclick="openHome()">
     <img style="border-radius: 50%;" src="./assets/logo.png" width="40" alt="logo">  
   </div>
 
@@ -26,6 +26,7 @@
   <a href="#modal-promo"><img src="./assets/icon-footer/pricetags-outline.svg" alt="Promoções" class="icon"> Promoções</a>
   <a href="#modal-produtos"><img src="./assets/icon-footer/bag-outline.svg" alt="Produtos" class="icon"> Produtos</a>
   <a href="#modal-perfil"><img src="./assets/icon-footer/person-outline.svg" alt="Perfil" class="icon"> Autor</a>
+  <a href="#modal-vivo"><img src="./assets/icon-footer/person-outline.svg" alt="Vivo" class="icon"> Vivo Recarga</a>
 </nav>
 
 
@@ -47,7 +48,7 @@
   </a>
   <a href="#modal-produtos">
     <img src="./assets/icon-footer/bag-handle-outline.svg" alt="Produtos" class="icon">
-    <span>Loja</span>
+    <span>Produtos</span>
   </a>
   <a href="#modal-perfil">
     <img src="./assets/icon-footer/person-outline.svg" alt="Perfil" class="icon">
@@ -88,7 +89,19 @@
     </div>
   </div>
 
+  <div id="modal-vivo" class="modal">
+    <div class="modal-container">
+      <iframe src="./components/modais/vivo-recarga.html" class="modal-frame"></iframe>
+      
+      <a href="#" class="close-ionic">
+        <img src="./assets/icon-footer/close.svg" alt="fechar" class="ionic">
+      </a>
+
+    </div>
+  </div>
+
 <script src="./js/menu-lateral.js"></script>
+<script src="../js/links.js"></script>
 
 </body>
 

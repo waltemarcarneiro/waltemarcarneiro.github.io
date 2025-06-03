@@ -115,7 +115,7 @@ header {
 .actions {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 100px;
     margin-top: 20px;
 }
 
@@ -200,7 +200,6 @@ header {
     border-radius: 60px;
     margin: 20px auto;
     display: block;
-    border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .about-body h2 {
@@ -228,12 +227,16 @@ header {
 
 .about-social {
     margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
 }
 
 .about-social ion-icon {
-    font-size: 24px;
-    margin: 0 10px;
+    
     cursor: pointer;
+   
 }
 
 .about-social a {
@@ -266,6 +269,7 @@ header {
 .donate-header {
     text-align: right;
     padding: 20px;
+    z-index: 2;
 }
 
 .donate-header ion-icon {
@@ -282,6 +286,11 @@ header {
     align-items: center;
     color: white;
     padding: 20px;
+    background-color: #45009e;
+    height: 100dvh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
 }
 
 .success-icon {
@@ -324,7 +333,7 @@ header {
     min-width: 24px;
     margin-right: 10px;
     font-weight: bold;
-    color: #028f4e;
+    color: #45009e;
     background: rgba(255,255,255,0.9);
     border-radius: 50%;
     width: 24px;

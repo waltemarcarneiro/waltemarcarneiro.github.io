@@ -52,14 +52,15 @@
 <body>
     <header>
         <div class="menu-icon">
-            <ion-icon name="chevron-back-outline" onclick="backOptions()"></ion-icon>
+            <img src="../image/chevron-back.svg" height="28" onclick="backOptions()" alt="">
         </div>
         <div class="header-text">
             <h1>LOVE SONGS</h1>
             <p>A Trilha Sonora do Amor</p>
         </div>
         <div class="menu-icon">
-            <ion-icon name="alert-circle-outline" onclick="viewAbout()"></ion-icon>
+            <img src="../image/alert-circle-outline.svg" height="28" onclick="viewAbout()" alt="">
+            </div>
         </div>
     </header>
 
@@ -71,16 +72,16 @@
             
             <div class="controls-container">
                 <button id="playPauseBtn" class="play-button">
-                    <ion-icon name="play"></ion-icon>
+                    <img src="../image/play.svg" height="46" alt="">
                 </button>
                 
                 <div class="actions">
                     <button onclick="sharePage()">
-                        <ion-icon name="arrow-redo-outline"></ion-icon>
+                        <img src="../image/arrow-redo-outline.svg" height="32" alt="">
                         <p>Compartilhe</p>
                     </button>
                     <button id="donateBtn">
-                        <ion-icon name="cafe-outline"></ion-icon>
+                        <img src="../image/cafe-outline.svg" height="32" alt="">
                         <p>Contribuir</p>
                     </button>
                 </div>
@@ -92,7 +93,8 @@
     <div id="aboutSection" class="about-section">
         <div class="about-content">
             <div class="about-header">
-                <ion-icon name="close-outline" onclick="closeAbout()"></ion-icon>
+                
+                <img src="../image/close-outline-white.svg" height="32" onclick="closeAbout()" alt="">
             </div>
             <div class="about-body">
                 <img src="img/album.webp" alt="Logo Radio Love Songs" class="about-logo">
@@ -105,13 +107,15 @@
                 </div>
                 <div class="about-social">
                     <a href="https://wa.me/+5581971027858" target="_blank">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
+                        <img src="../image/logo-whatsapp.svg" height="24" alt="">
                     </a>
                     <a href="#" target="_blank">
-                        <ion-icon name="logo-instagram"></ion-icon>
+                        <img src="../image/logo-instagram.svg" height="24" alt="">
                     </a>
                     <a href="#" target="_blank">
-                        <ion-icon name="logo-github"></ion-icon>
+                        <img src="../image/logo-github.svg" height="24" alt="">
+
+                        
                     </a>
                 </div>
             </div>
@@ -122,10 +126,11 @@
     <div id="donateModal" class="donate-section">
         <div class="donate-content">
             <div class="donate-header">
-                <ion-icon name="close-outline" onclick="closeDonate()"></ion-icon>
+                <img src="../image/close-outline-white.svg" height="32" onclick="closeDonate()" alt="">
             </div>
             <div class="donate-body">
-                <ion-icon name="checkmark-circle" class="success-icon"></ion-icon>
+                <img src="../image/checkmark-circle.svg" height="64" alt="" class="success-icon">
+
                 <h2>Código PIX Copiado!</h2>
                 <p class="donate-description">Use a opção "Copia e Cola" no app do seu banco</p>
                 <div class="donate-steps">
@@ -135,7 +140,8 @@
                     <p>Cole o código e confirme</p>
                 </div>
                 <button onclick="copyPIX()" class="copy-again">
-                    <ion-icon name="copy-outline"></ion-icon>
+                    
+                    <img src="../image/copy-outline.svg" height="32" alt="">
                     Copiar Novamente
                 </button>
             </div>

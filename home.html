@@ -6,22 +6,20 @@
    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
    <link rel="stylesheet" href="./home.css">
    <link rel="manifest" href="./manifest.json" />
-   <meta name="theme-color" content="#5d4f3f">
-   <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   <meta name="theme-color" content="#4f4337">
+
    <title>Waltemar Carneiro | Home</title>
    <meta name="description" content="Web Desenvolvimentos" />
    <!-- FAVICON-->
-   <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
-   <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
-   <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
+   <link rel="shortcut icon" href="./icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon16.png" />
    <!--AppleTouchIcon-->
-   <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
-   <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
-   <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
-   <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
-   <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon512.png" sizes="512x512">
-   <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#120912" />
+   <link rel="apple-touch-icon" href="./icons/icon76.png" sizes="76x76">
+   <link rel="apple-touch-icon" href="./icons/icon120.png" sizes="120x120">
+   <link rel="apple-touch-icon" href="./icons/icon152.png" sizes="152x152">
+   <link rel="apple-touch-icon" href="./icons/icon180.png" sizes="180x180">
+   <link rel="apple-touch-icon" href="./icons/icon512.png" sizes="512x512">
    <!-- SEO | OG -->
    <meta name="apple-mobile-web-app-capable" content="yes" />
    <meta name="keywords" content="Waltemar" />
@@ -36,7 +34,7 @@
    <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
    <script type="module" src="./firebase-config.js"></script>
 
-   
+
    <link rel="stylesheet" href="./css/modal.css">
    <link rel="stylesheet" href="./css/modal-login.css">
 </head>
@@ -54,22 +52,27 @@
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                <h2 style="margin-bottom: 20px; font-size:1rem; font-weight: 300">Filmes completos e dublados.</h2>
-               <ion-icon name="arrow-forward-outline" class="next-slide"></ion-icon>
+               <img src="./image/chevron-forward.svg" height="40" class="next-slide">
             </div>
          </div>
       </div>
       <!-- KWAI CHANNEL LOVESONGSAPP-->
-      <div class="carrossel-slide" style="background-image: url('carrossel/image2.jpg');">
+      <div class="carrossel-slide" style="background-image: url('carrossel/image5.jpg');">
          <div class="carrossel-content">
-            <video controls poster="carrossel/image2.jpg">
-               <source
+            <video controls poster="./carrossel/image2.jpg">
+               <!--<source
                   src="https://aws-br-cdn.kwai.net/upic/2024/06/23/15/BMjAyNDA2MjMxNTA4MzZfMTUwMDAxNTY4MjQ1MjEyXzE1MDEwNjM4OTExMTMwMF8yXzM=_b_B9e629afd5fcac2886547aea4db264ae5.mp4"
+                  type="video/mp4">
+               Seu navegador não suporta a tag de vídeo.
+            </video>-->
+            <source
+                  src="./carrossel/videos/clip.mp4"
                   type="video/mp4">
                Seu navegador não suporta a tag de vídeo.
             </video>
             <p style="color:#00ffbf">Kwai Channel LoveSongsApp</p>
-            <ion-icon name="arrow-back-outline" class="prev-slide"></ion-icon>
-            <ion-icon name="arrow-forward-outline" class="next-slide"></ion-icon>
+            <img src="./image/chevron-back.svg" height="40" class="prev-slide">
+            <img src="./image/chevron-forward.svg" height="40" class="next-slide">
          </div>
       </div>
       <!-- LOVESONGS APP PLAYER-->
@@ -80,8 +83,8 @@
             <p style="margin-bottom:50px">LoveSongs App</p>
             <h2 style="margin-bottom: 200px; font-size: 1.8rem; font-weight: 300;">O Player de música mais romântico do
                planeta.</h2>
-            <ion-icon name="arrow-back-outline" class="prev-slide"></ion-icon>
-            <ion-icon name="arrow-forward-outline" class="next-slide"></ion-icon>
+            <img src="./image/chevron-back.svg" height="40" class="prev-slide">
+            <img src="./image/chevron-forward.svg" height="40" class="next-slide">
          </div>
       </div>
       <div class="carrossel-slide" style="background-image: url('carrossel/image4.jpg');">
@@ -97,24 +100,22 @@
             <br>
             <br>
             <br>
-            <ion-icon name="arrow-back-outline" class="prev-slide"></ion-icon>
-            <ion-icon name="checkmark-outline" class="finish-intro"></ion-icon>
+            <img src="./image/chevron-back.svg" height="40" class="prev-slide">
+            <img src="./image/checkmark-outline.svg" height="40" class="finish-intro">
          </div>
       </div>
    </div>
    <!--END CARROSSEL-->
    <div class="container" id="logo">
       <div class="header">
-         <img src="image/logo.svg" alt="logo App" class="logo">
+         <img src="image/logo.svg" alt="logo App" class="logo-header">
 
          <div class="icon-top-right">
-            <img src="image/down-white.svg" height="24" style="margin-right: 25px;" onclick="abrirSuporte()">
+            <img src="image/down-white.svg" onclick="openSuporte()">
 
-            <img src="image/person-outline.svg" height="26" style="margin-right: 25px;" onclick="abrirProfile()" lock>
+            <img src="image/person-outline.svg" onclick="openProfile()" lock>
 
-            <img src="image/exit-outline.svg" height="26" style="margin-right: 0;">
-
-            
+            <img src="image/exit-outline.svg" onclick="openBancoBrasil()">
          </div>
 
       </div>
@@ -129,10 +130,8 @@
 
          <div class="digital">
             <div id="user" class="user-info" lock style="cursor: pointer;">
-               
-               <!--<ion-icon style="font-size: 56px; margin-right: 10px;" name="person-circle-outline"></ion-icon>-->
 
-               <img src="./image/person-circle-outline.svg" height="56" style="margin-right: 10px;" alt="">
+            <img src="./image/person-circle-outline.svg" height="56" style="margin-right: 10px;" alt="">
 
                <div>
                   <h3 class="user-name">Usuário</h3>
@@ -142,11 +141,11 @@
             </div>
 
             <div class="icon-acesso">
-               <div class="icon-acesso" onclick="cota()" >
+               <div class="icon-acesso" onclick="cota()">
                   <img style="border-radius: 20px" src="./image/cart-outline.svg" height="24">
                   <span> Loja Virtual</span>
                </div>
-               <div class="icon-acesso"  onclick="openSantander()">
+               <div class="icon-acesso" onclick="openModalSantander()">
                   <img src="./image/pix-outline.svg" height="24">
                   <span> Transferência Pix</span>
                </div>
@@ -158,13 +157,17 @@
       <!--BANNER PROMO TYPE BB-->
       <a href="https://amzn.to/42UCCtn" target="_blank">
          <div class="promo">
-            <img src="./image/monitor.webp" class="logo-promo">
+            <div>
+               <img src="./image/monitor.webp" class="logo-promo">
+               <button class="btn-promo">Saiba mais</button>
+            </div>
             <div class="promo-texto">
                <span>Monitor Gamer Samsung</span>
                <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto por R$
-                  <span style="font-weight: 700;">1.080,00</span></p>
-               <span style="color:#007fff;font-size:0.95rem">Em até 10x R$ 108,00 sem juros</span>
-               <button class="btn-promo">Saiba mais</button>
+                  <span style="font-weight: 700;">1.080,00.</span>
+               </p>
+               <b style="color:#005fff">Em até 10x R$ 108,00 sem juros</b>
+
             </div>
          </div>
       </a>
@@ -172,9 +175,9 @@
       <div class="footer" id="footer">
          <a href="#options" id="chevronIconLink">
 
-<img style="border-radius: 20px" src="./image/chevron-down-outline.svg" id="chevronIcon" height="24">
+            <img style="border-radius: 20px" src="./image/chevron-down-outline.svg" id="chevronIcon" height="24">
 
-      
+
          </a>
       </div>
    </div>
@@ -185,14 +188,14 @@
       <div class="container-bloco">
          <a href="https://lovesongsapp.github.io/" lock target="_blank" class="block">
             <div class="icon-wrapper">
-               <img style="border-radius: 20px" src="./image/logo-lovesongs.png" width="100">
+               <img src="./image/logo-lovesongs.png" style="border-radius: 15px; height: 70px; width: 70px">
             </div>
             <span class="block-label">LoveSongs</span>
          </a>
          <a href="./radio/index.html" class="block" lock>
             <div class="icon-wrapper">
-               
-               <img style="border-radius: 20px" src="./radio/img/album.webp" width="100">
+
+               <img src="./radio/img/album.webp" style="border-radius: 15px; height: 70px; width: 70px">
             </div>
             <span class="block-label">Radio</span>
          </a>
@@ -223,7 +226,7 @@
          </a>
          <a href="https://webboard.app/" class="block">
             <div class="icon-wrapper">
-               <img style="border-radius: 20px" src="./image/WebBoard.jpg" height="100">
+               <img src="./image/WebBoard.jpg" style="border-radius: 15px; height: 70px; width: 70px" >
             </div>
             <span class="block-label">WebBoard</span>
          </a>
@@ -233,31 +236,31 @@
             </div>
             <span class="block-label">Boleros</span>
          </a>
-         <!-- Link livre -->
-         <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link" class="block" lock>
+         
+         <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link" class="block"
+            lock>
             <div class="icon-wrapper">
-               <img style="border-radius: 20px" src="./image/logo-android.svg" height="80">
+               <img src="./image/logo-android.svg">
             </div>
             <span class="block-label">Android Apps</span>
          </a>
          <a href="#" class="block" lock>
             <div class="icon-wrapper">
-               <img style="border-radius: 20px" src="./image/logo-apple.svg" height="80">
+               <img src="./image/logo-apple.svg">
             </div>
             <span class="block-label">MacOsX</span>
          </a>
          <a href="#" class="block" lock>
             <div class="icon-wrapper">
-               <img style="border-radius: 20px" src="./image/logo-tux.svg" height="80">
+               <img src="./image/logo-tux.svg">
             </div>
             <span class="block-label">Linux</span>
          </a>
-         <a href="#"
-            class="block">
+         <a href="#" class="block">
             <div class="icon-wrapper">
-               <img style="border-radius: 20px" src="./image/logo-windows.svg" height="80">
+               <img src="./image/logo-windows.svg">
             </div>
-              <span class="block-label">Windows</span>
+            <span class="block-label">Windows</span>
          </a>
       </div>
       <div id="divBack">
@@ -279,7 +282,8 @@
             <p class="add-info">Não contém anúncio</p>
          </div>
          <div class="close-button">
-            <ion-icon name="close-outline" onclick="closeApp()"></ion-icon>
+
+            <img src="./image/close-outline.svg" height="24" alt="" onclick="closeApp()">
          </div>
       </div>
       <p class="install-message">Deseja adicionar o aplicativo a sua tela inicial?</p>
@@ -293,7 +297,7 @@
    <script src="./js/links.js"></script>
    <script src="./carrossel/carrossel.js"></script>
    <script type="module" src="./js/auth.js"></script>
-   <!--<script src="./pro.js"></script>-->
+   <script src="./proo.js"></script>
 
 
 </body>
