@@ -129,7 +129,8 @@ onAuthStateChanged(auth, user => {
     nomeEl.textContent = "Usuário";
     statusEl.textContent = "Faça login aqui";
 
-    iconEl?.replaceWith(createIonIcon("person-circle-outline"));
+    iconEl?.replaceWith(createProfileImage("./image/person-circle-outline.svg"));
+
     userDiv?.setAttribute("lock", "");
   }
 });
