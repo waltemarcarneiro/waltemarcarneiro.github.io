@@ -177,6 +177,13 @@ fetch('/components/modals/modalLogin.html')
 
     window.fecharModalAcesso = () => {
       document.getElementById("modalAcesso").style.display = "none";
+      
+      // Verifica se há URL salva para redirecionar
+      const redirectUrl = sessionStorage.getItem('redirectUrl');
+      if (redirectUrl) {
+          sessionStorage.removeItem('redirectUrl');
+          window.location.href = redirectUrl;
+      }
     };
 
     window.alternarAba = (aba) => {
