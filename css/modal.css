@@ -322,13 +322,6 @@
     border-bottom: 2px solid #fff;
 }
 
-..tab-content {
-    display: none;
-    padding: 20px;
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-}
 
 .tab-content.active {
     display: block;
@@ -340,15 +333,6 @@
     flex-direction: column;
     gap: 15px;
 }
-
-..form-input {
-    padding: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
 
 .auth-message.error {
     background: rgba(255, 59, 48, 0.1);
