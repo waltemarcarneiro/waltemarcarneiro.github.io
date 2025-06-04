@@ -29,9 +29,9 @@
 html, body {
     height: 100%;
     font-family: 'Inter', sans-serif;
-    color: #123354;
+    color: #151515;
     padding: 10px;
-    background-color: #f0ecf4;
+    background-color: #f1f2f4;
 }
 h1{
     font-family: 'Poppins', sans-serif;
@@ -115,7 +115,7 @@ h1{
 .header-icons ion-icon {
     font-size: 24px;
     margin-left: 20x;
-    color: #123354;
+    color: #151515;
     cursor: pointer;
 }
 .header-icons img {
@@ -146,7 +146,7 @@ h1{
 }
 .sidebar a {
     text-decoration: none;
-    color: #123354;
+    color: #151515;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -182,7 +182,7 @@ h1{
 }
 
 .footer-nav a {
-    color: #123354;
+    color: #151515;
     text-decoration: none;
     font-size: 12px;
     display: flex;
