@@ -72,39 +72,13 @@ window.deslogar = async () => {
   }
 };
 
-// === QUALQUER ELEMENTO LOCK ===
-function protegerElementosLock() {
-  document.querySelectorAll('[lock]').forEach(el => {
-    // Clona o conteúdo original do onclick (se houver)
-    const inlineClick = el.getAttribute('onclick');
-
-    // Remove o atributo padrão para evitar execução dupla
-    if (inlineClick) el.removeAttribute('onclick');
-
-    // Adiciona o listener manualmente para controlar
-    el.addEventListener('click', e => {
-      if (!auth.currentUser || !auth.currentUser.emailVerified) {
-        e.preventDefault?.();
-        e.stopImmediatePropagation?.();
-        abrirModalAcesso();
-      } else {
-        if (inlineClick) {
-          // Executa o código original do onclick
-          new Function(inlineClick).call(el, e);
-        }
-      }
-    });
-  });
-}
-
-// === MONITORAMENTO DE ESTADO DE LOGIN ===
+// === MONITORA USUÁRIO LOGADO ===
 onAuthStateChanged(auth, user => {
-  protegerElementosLock(); // aplica proteção sempre que o estado muda
+  protegerElementosLock();
 
   const nomeEl = document.querySelector(".user-name");
   const statusEl = document.querySelector(".user-status");
   const userDiv = document.getElementById("user");
-
   let iconEl = userDiv?.querySelector("ion-icon, img");
 
   if (user) {
@@ -128,12 +102,28 @@ onAuthStateChanged(auth, user => {
   } else {
     nomeEl.textContent = "Usuário";
     statusEl.textContent = "Faça login aqui";
-
     iconEl?.replaceWith(createProfileImage("./image/person-circle-outline.svg"));
-
     userDiv?.setAttribute("lock", "");
   }
 });
+
+// === BLOQUEIA ELEMENTOS COM lock ===
+function protegerElementosLock() {
+  document.querySelectorAll('[lock]').forEach(el => {
+    const inlineClick = el.getAttribute('onclick');
+    if (inlineClick) el.removeAttribute('onclick');
+
+    el.addEventListener('click', e => {
+      if (!auth.currentUser || !auth.currentUser.emailVerified) {
+        e.preventDefault?.();
+        e.stopImmediatePropagation?.();
+        abrirModalAcesso();
+      } else {
+        if (inlineClick) new Function(inlineClick).call(el, e);
+      }
+    });
+  });
+}
 
 // === CRIA IMG DE PERFIL DO USUÁRIO ===
 function createProfileImage(foto) {
@@ -156,7 +146,7 @@ function createIonIcon(name) {
   return icon;
 }
 
-// === MENSAGEM DE ERRO/SUCESSO ===
+// === MOSTRA MENSAGEM NA TELA ===
 function mostrarMensagem(msg) {
   const el = document.getElementById("auth-message");
   if (!el) return;
@@ -165,11 +155,20 @@ function mostrarMensagem(msg) {
   setTimeout(() => el.style.display = "none", 5000);
 }
 
-// === CARREGA O MODAL DE LOGIN E DEFINE AS FUNÇÕES ===
-fetch('/components/modals/modalLogin.html')
+// === REDIRECIONA SE TIVER URL GUARDADA ===
+function redirecionarSeNecessario() {
+  const destino = sessionStorage.getItem("destino_protegido");
+  if (destino) {
+    sessionStorage.removeItem("destino_protegido");
+    window.location.href = destino;
+  }
+}
+
+// === CARREGA O MODAL DE LOGIN ===
+fetch("/components/modals/modalLogin.html")
   .then(res => res.text())
   .then(html => {
-    document.body.insertAdjacentHTML('beforeend', html);
+    document.body.insertAdjacentHTML("beforeend", html);
 
     window.abrirModalAcesso = () => {
       document.getElementById("modalAcesso").style.display = "flex";
@@ -177,32 +176,28 @@ fetch('/components/modals/modalLogin.html')
 
     window.fecharModalAcesso = () => {
       document.getElementById("modalAcesso").style.display = "none";
+      redirecionarSeNecessario();
     };
 
     window.alternarAba = (aba) => {
       document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
       document.querySelectorAll(".tab-content").forEach(tab => tab.classList.remove("active"));
-
       document.querySelector(`[data-tab="${aba}"]`).classList.add("active");
       document.getElementById(`${aba}-tab`).classList.add("active");
     };
 
-    // Clique no avatar do usuário abre o modal (se bloqueado)
     const trigger = document.querySelector('#user[lock]');
     if (trigger) {
-      trigger.addEventListener('click', () => {
-        abrirModalAcesso();
-      });
+      trigger.addEventListener('click', () => abrirModalAcesso());
     }
   });
 
-// Deixe global para funcionar mesmo com onclick no HTML
-window.toggleSenha = function(icon) {
-   const container = icon.closest('.senha-container');
-   const input = container.querySelector('input');
-   const mostrando = input.type === "text";
+// === MOSTRAR/ESCONDER SENHA ===
+window.toggleSenha = function (icon) {
+  const container = icon.closest(".senha-container");
+  const input = container.querySelector("input");
+  const mostrando = input.type === "text";
 
-   input.type = mostrando ? "password" : "text";
-   icon.src = mostrando ? "image/eye-off.svg" : "image/eye.svg";
-}
-
+  input.type = mostrando ? "password" : "text";
+  icon.src = mostrando ? "image/eye-off.svg" : "image/eye.svg";
+};
