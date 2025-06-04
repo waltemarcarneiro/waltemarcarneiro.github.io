@@ -26,16 +26,15 @@
     html,
     body {
         touch-action: pan-x pan-y;
-        height: 100%;         
+        height: 100%;
         font-size: 18px;
+        background-color: #f5f1eb;
     }
 
     body {
 
         Font-family: 'Inter', sans-serif;
-        
         font-weight: 500;
-        background-color: #f0ecf4;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,17 +42,17 @@
     }
 
     .content {
-            max-width: 480px;
-    width: 100%;
-    padding: 20px;
-    height: 100%;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background: #f0ecf4;
-    color: #1b1b21;
+        max-width: 480px;
+        width: 100%;
+        padding: 20px;
+        height: 100%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: #f5f1eb;
+        color: #1b1b21;
 
     }
 
@@ -102,15 +101,15 @@
 
     /*DEFINED*/
     .qrcode-container {
-    text-align: center;
-    margin: 15px auto;
-    border-radius: 5px;
-    background: #fff;
-    width: 110px;
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        text-align: center;
+        margin: 15px auto;
+        border-radius: 5px;
+        background: #fff;
+        width: 110px;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .qrcode {
@@ -133,7 +132,7 @@
         width: 100%;
         text-align: center;
         font-size: 1rem;
-        
+
     }
 
     .action {
@@ -151,11 +150,13 @@
         /*box-shadow: 0px 0px 25px -5px rgba(80, 80, 80, 0.1);*/
         margin-bottom: 10px;
     }
-.actions-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
+    .actions-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .notification {
         display: none;
         position: fixed;
@@ -235,13 +236,15 @@
         font-weight: 400;
         font-style: normal;
     }
-    .conta img{
+
+    .conta img {
         height: 18px;
     }
+
     .conta strong {
-        
+
         font-weight: 400;
-        
+
 
     }
 
@@ -346,7 +349,7 @@
         font-size: 1.4rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
-        
+
         margin-bottom: 20px;
     }
 
