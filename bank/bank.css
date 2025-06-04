@@ -228,10 +228,10 @@
         justify-content: space-between;
         padding: 4px 10px;
         background: #FCF8FF;
-        margin-bottom: 2px;
+        margin-bottom: 1px;
         border-radius: 5px;
         width: 100%;
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         font-weight: 400;
         font-style: normal;
     }
