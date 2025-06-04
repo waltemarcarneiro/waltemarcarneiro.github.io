@@ -34,7 +34,11 @@
    user-select: none;
    -webkit-tap-highlight-color: transparent;
    box-sizing: border-box;
+   background: #e6e7d8;
 
+}
+html, body {
+   background-color: #e6e7d8;
 }
 
 body {
