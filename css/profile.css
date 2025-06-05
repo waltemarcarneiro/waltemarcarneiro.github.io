@@ -46,9 +46,7 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 100dvh;
-   background: #e6e7d8;
-   
+   height: 100dvh;   
 }
 
 .container-profile {
