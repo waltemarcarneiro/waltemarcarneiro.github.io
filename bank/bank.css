@@ -146,8 +146,8 @@
         height: 90px;
         width: 90px;
         background: #FCF8FF;
-        border-radius: 20px;
-        /*box-shadow: 0px 0px 25px -5px rgba(80, 80, 80, 0.1);*/
+        border-radius: 10px;
+        box-shadow: 0px 0px 25px -5px rgba(80, 80, 80, 0.1);
         margin-bottom: 10px;
     }
 
