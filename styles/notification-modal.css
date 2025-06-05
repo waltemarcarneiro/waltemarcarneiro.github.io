@@ -44,8 +44,8 @@
 }
 
 .modal-header img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 15px;
     border-radius: 50%;
 }
@@ -58,14 +58,15 @@
 }
 
 .modal-content {
-    text-align: center;
+    text-align: left;
     margin-bottom: 25px;
+    font-size: 1.2rem;
 }
 
-.modal-content p {
+.modal-content ol {
     line-height: 1.5;
     margin: 10px 0;
-    font-size: 1.2rem;
+    
 }
 
 .modal-buttons {
