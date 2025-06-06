@@ -5,6 +5,13 @@
         font-style: Normal;
         font-display: swap;
     }
+    @font-face {
+        font-family: 'Inter';
+        src: url('../fonts/Inter-Bold.ttf') format('true-type');
+        font-weight: 800;
+        font-style: bold;
+        font-display: swap;
+    }
 
     @font-face {
         font-family: 'Montserrat';
@@ -27,19 +34,19 @@
     body {
         touch-action: pan-x pan-y;
         height: 100%;
-        font-size: 18px;
+        font-size: 16px;
         background-color: #f1f2f4;
     }
 
     body {
-        
+
         Font-family: 'Inter', sans-serif;
         font-weight: 500;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100dvh;
-        color: #151515
+        color: #151515;
     }
 
     .content {
@@ -52,7 +59,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        
+
 
     }
 
@@ -70,9 +77,11 @@
         max-width: 480px;
         background: transparent;
         font-weight: 600;
-        
-    }
 
+    }
+    .header img{
+        cursor: pointer;
+    }
     /*posicioando icons e titulo a esquerda*/
     header .icon:first-child {
         margin-right: 10px;
@@ -163,7 +172,6 @@
         bottom: 0;
         left: 0;
         right: 0;
-        color: #1B1B21;
         background-color: #fcf8ff;
         padding: 20px;
         border-top-left-radius: 25px;
@@ -177,11 +185,9 @@
         max-width: 480px;
         margin: auto;
         -webkit-box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
-        /* Para compatibilidade com navegadores antigos */
         -moz-box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
-        /* Para Firefox antigo */
         box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
-        /* Padrão */
+        
     }
 
     .notification.show {
@@ -215,37 +221,26 @@
         font-weight: 600;
     }
 
-    .logo-site {
-        width: 100%;
-    }
-
-    .logo-site img {
-        border-radius: 10px;
-    }
-
     .conta {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 4px 10px;
         background: #FCF8FF;
-        margin-bottom: 1px;
-        border-radius: 5px;
+        margin-bottom: 2px;
+        border-radius: 20px;
         width: 100%;
         font-size: 0.875rem;
         font-weight: 400;
         font-style: normal;
     }
 
-    .conta img {
-        height: 18px;
+    .logo-banco {
+        height: 25px;
     }
 
-    .conta strong {
-
-        font-weight: 400;
-
-
+    .conta .next {
+        height: 20px;
     }
 
     .copyright {
@@ -253,15 +248,14 @@
         justify-content: center;
         align-items: center;
         position: fixed;
+        text-align: center;
         bottom: 0;
-        max-width: 480px;
         right: 0;
         left: 0;
         margin: auto;
         font-size: 0.778rem;
-        height: 20px;
-        color: #999;
-    }
+        color: #bbb;
+}
 
     .overlay {
         position: fixed;
@@ -313,6 +307,10 @@
         display: flex;
         align-items: center;
     }
+    .lista b{
+        font-weight: 800;
+        margin-left: 5px;;
+    }
 
     .styled-list li:before {
         content: counter(li);
@@ -344,6 +342,10 @@
     }
 
     /* TITULO E SUBTITULO*/
+    .pix-full{
+        height: 80px;
+        margin: 15px 0px;;
+    }
     .title-sucesso {
         font-size: 1.4rem;
         font-family: 'Montserrat', sans-serif;
@@ -354,4 +356,7 @@
 
     .subtitle-sucesso {
         font-size: 1.2rem;
+    }
+    .subtitle-sucesso b{
+        font-weight: 800;
     }

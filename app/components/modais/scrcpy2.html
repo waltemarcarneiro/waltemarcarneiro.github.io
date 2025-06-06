@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conectar Android via Wi-Fi (ADB)</title>
+  <style>
+    @font-face {
+      font-family: 'Roboto';
+      src: local('Roboto'), url('fonts/roboto.woff2') format('woff2');
+      font-weight: 400;
+    }
+
+    :root {
+      --cor-principal: #f57c00;
+      --bg-claro: #fff8f0;
+      --texto-claro: #333;
+      --bg-escuro: #121212;
+      --texto-escuro: #f0f0f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-claro);
+      color: var(--texto-claro);
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: var(--bg-escuro);
+      color: var(--texto-escuro);
+    }
+
+    header {
+      background-color: var(--cor-principal);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    #toggle-theme {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--cor-principal);
+      margin-bottom: 10px;
+    }
+
+    code {
+      background-color: #eee;
+      padding: 4px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      display: block;
+      margin: 8px 0;
+      white-space: pre-wrap;
+    }
+
+    body.dark code {
+      background-color: #1e1e1e;
+    }
+
+    .dica {
+      background-color: #fff3e0;
+      border-left: 4px solid var(--cor-principal);
+      padding: 10px 15px;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    body.dark .dica {
+      background-color: #2a2a2a;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Como Conectar seu Android via Wi-Fi no Linux Mint com ADB</h1>
+    <!--BOTAO DO TEMA-->
+    <button id="toggle-theme" title="Alternar tema">🌓</button>
+
+  </header>
+
+  <section>
+    <h2>✅ Pré-requisitos</h2>
+    <ul>
+      <li>Ativar <strong>Depuração USB</strong> no Android.</li>
+      <li>Instalar o <strong>ADB</strong> no Linux Mint:</li>
+    </ul>
+    <code>sudo apt update && sudo apt install adb -y</code>
+    <div class="dica">
+      Celular e PC devem estar na mesma rede Wi-Fi.
+    </div>
+  </section>
+
+  <section>
+    <h2>🔌 1. Conecte via USB e autorize</h2>
+    <p>Conecte o celular com o cabo USB e execute:</p>
+    <code>adb devices</code>
+    <p>No celular, toque em <strong>"Permitir depuração USB"</strong> se solicitado.</p>
+  </section>
+
+  <section>
+    <h2>📡 2. Descubra o IP do celular</h2>
+    <code>adb shell ip route</code>
+    <p>Procure a linha com <code>src</code>, por exemplo:</p>
+    <code>192.168.0.0/24 dev wlan0 ... src 192.168.0.105</code>
+    <p><strong>Anote o IP:</strong> neste exemplo é <code>192.168.0.105</code></p>
+  </section>
+
+  <section>
+    <h2>🟢 3. Ative o ADB via Wi-Fi</h2>
+    <code>adb tcpip 5555</code>
+    <p>O celular agora escutará conexões na porta 5555.</p>
+  </section>
+
+  <section>
+    <h2>📶 4. Conecte-se via Wi-Fi</h2>
+    <p>Desconecte o cabo USB e conecte-se com o IP anotado:</p>
+    <code>adb connect 192.168.0.105:5555</code>
+  </section>
+
+  <section>
+    <h2>✅ 5. Verifique a conexão</h2>
+    <code>adb devices</code>
+    <p>Você verá algo como:</p>
+    <code>192.168.0.105:5555 device</code>
+  </section>
+
+  <section>
+    <h2>🖥️ 6. Espelhar a tela com Scrcpy</h2>
+    <p>Instale o Scrcpy:</p>
+    <code>sudo apt install scrcpy -y</code>
+
+    <p>Espelhe seu celular:</p>
+    <code>scrcpy</code>
+
+    <div class="dica">
+      O celular já deve estar conectado via ADB Wi-Fi.
+    </div>
+
+    <h3>⚙️ Comandos úteis:</h3>
+    <ul>
+      <li><strong>Tela cheia:</strong> <code>scrcpy --fullscreen</code></li>
+      <li><strong>Reduzir resolução:</strong> <code>scrcpy --max-size 1024</code></li>
+      <li><strong>Sem bordas:</strong> <code>scrcpy --borderless</code></li>
+      <li><strong>Gravar a tela:</strong> <code>scrcpy --record tela.mp4</code></li>
+    </ul>
+
+    <h3>🔊 Transmitir áudio?</h3>
+    <p>Por padrão, o Scrcpy não transmite áudio. Para isso, use o <strong>sndcpy</strong>:</p>
+    <code>git clone https://github.com/rom1v/sndcpy.git<br>
+cd sndcpy<br>
+./sndcpy</code>
+    <div class="dica">
+      No celular, aceite a solicitação de gravação de áudio. O som sairá no PC.
+    </div>
+  </section>
+
+  <section>
+    <h2>❌ Para desconectar:</h2>
+    <code>adb disconnect 192.168.0.105:5555</code>
+  </section>
+
+  <footer>
+    Tutorial por você – Desenvolvido com ❤️ em HTML + CSS
+  </footer>
+
+<!--SCRIPT DO TEMA-->
+<script>
+    const btn = document.getElementById('toggle-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    const setTheme = (mode) => {
+      document.body.classList.toggle('dark', mode === 'dark');
+      localStorage.setItem('theme', mode);
+    };
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+
+    btn.addEventListener('click', () => {
+      const isDark = document.body.classList.contains('dark');
+      setTheme(isDark ? 'light' : 'dark');
+    });
+  </script>
+
+</body>
+</html>
+

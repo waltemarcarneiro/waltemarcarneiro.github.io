@@ -147,7 +147,6 @@
     .container {
         max-width: 480px;
         margin: 0 auto;
-        padding: 15px;
         z-index: 4;
     }
 
@@ -177,7 +176,7 @@
         padding: 10px;
         justify-content: center;
         display: flex;
-        align-items: baseline;
+        align-items: center;
     }
 
     .background {
@@ -367,7 +366,6 @@
     .icon-acesso ion-icon,
     img {
         font-size: 32px;
-
         cursor: pointer;
     }
 
@@ -446,7 +444,6 @@
     .carrossel-content {
         background: rgba(0, 0, 0, 0.5);
         padding: 40px;
-
         line-height: 1.5;
         width: 100%;
         height: 100%;

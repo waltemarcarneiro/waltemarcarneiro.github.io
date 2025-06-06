@@ -42,8 +42,8 @@
 
          <img src="../image/arrow-redo-outline-header.svg" height="24" alt="" onclick="sharePage()">
       </div>
-      <div class="logo">
-         <img src="logos/bb.svg" height="25">
+      <div>
+         <img src="logos/bb.svg" class="logo-banco" alt="Banco do Brasil">
       </div>
       <div class="qrcode-container">
          <img src="qrcodes/qrcode-bb.png" alt="QRCode" class="qrcode">
@@ -64,12 +64,12 @@
                   style="display:none;">00020126770014br.gov.bcb.pix0136aa8b3fd0-0c76-422f-9f3a-844bd7f6b6270215Solicitacao Pix5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62290525l0mRiVkLmDEtcAVLaD8SUuLO46304BD9F</span>
                <div id="qr-message" class="success-message" style="display:none;">
                   <p class="title-sucesso">💬 QRCode® copiado!</p>
-                  <p class="subtitle-sucesso">use a opção <b style="color:#1d1d1f">Copia e Cola</b> no aplicativo do seu banco!</p>
+                  <p class="subtitle-sucesso">use a opção <b>Copia e Cola</b> no aplicativo do seu banco!</p>
 
                   <div class="lista">
                      <ol class="styled-list">
                         <li>No app de seu banco ou carteira digital, vá em Pix.</li>
-                        <li>Escolha a opção Copia e Cola.</li>
+                        <li>Escolha a opção <b>Copia e Cola</b>.</li>
                         <li>Cole o código copiado e pronto.</li>
                      </ol>
                   </div>
@@ -86,12 +86,12 @@
                <div id="key-message" class="success-message" style="display:none;">
                   
                   <p class="title-sucesso">💬 Chave copiada!</p>
-                  <p class="subtitle-sucesso">use a opção <b>Chave aleatória</b> no aplicativo do seu banco!</p>
+                  <p class="subtitle-sucesso">use a opção <b>Chave Aleatória</b> no aplicativo do seu banco!</p>
 
                   <div class="lista">
                      <ol class="styled-list">
                         <li>No app de seu banco ou carteira digital, vá em Pix.</li>
-                        <li>Escolha a opção Chave aleatória.</li>
+                        <li>Escolha a opção <b>Chave aleatória</b>.</li>
                         <li>Cole a chave copiada e pronto.</li>
                      </ol>
                   </div>
@@ -102,20 +102,20 @@
       </div>
 
       <div class="conta">
-         <img src="../image/chevron-forward-dark.svg" alt="">
-         <strong>Banco do Brasil S.A.</strong>
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         Banco do Brasil S.A.
       </div>
       <div class="conta">
-         <img src="../image/chevron-forward-dark.svg" alt="">
-         <strong>1862-7</strong>
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         1862-7
       </div>
       <div class="conta">
-         <img src="../image/chevron-forward-dark.svg" alt="">
-         <strong>65800-6</strong>
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         65800-6
       </div>
       <div class="conta">
-         <img src="../image/chevron-forward-dark.svg" alt="">
-         <strong>Waltemar Carneiro</strong>
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         Waltemar Carneiro
       </div>
       <div class="copyright">Waltemar Carneiro © 2001-2025</div>
    </div>
@@ -123,8 +123,11 @@
    </div>
    </div>
    <div id="notification" class="notification" onclick="closeNotification(event)">
+
       <div class="line"></div>
 
+      <!--<img src="../image/logo-pix-full.svg" class="pix-full" alt="">-->
+      <img src="../image/sim.webp" class="pix-full" alt="">    
       <p id="notification-message" class="msn"></p>
       <button onclick="closeNotification()" class="close-button">Ok, entendi</button>
    </div>
