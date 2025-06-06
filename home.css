@@ -43,31 +43,28 @@
         padding: 0;
         -webkit-tap-highlight-color: transparent;
         box-sizing: border-box;
-        /*LOCK MANUPULATION TOUCH*/
         -webkit-user-drag: none;
         user-select: none;
         -webkit-touch-callout: none;
         touch-action: manipulation;
+       
+
     }
 
-    body,
-    html {
-        user-select: none;
+   html, body {
+        background-color: #4e1d02;
         font-family: 'Roboto', sans-serif;
-        background: #726232;
         background: linear-gradient(180deg, rgba(79, 28, 1, 0.1), rgba(79, 28, 1, 0.9)), url('./image/bgabout.webp') no-repeat center center fixed;
         background-size: cover;
         background-attachment: fixed;
-        color: #fff;
+        color: #eee;
         font-size: 16px;
-        font-weight: 500;
         height: 100%;
-        /*overscroll-behavior: none;*/
-
-        /* Força o comportamento correto em navegadores que ignoram 'fixed' */
+        
         @supports (-webkit-touch-callout: none) {
             html {
                 background-attachment: scroll;
+                
             }
 
             body {
@@ -106,7 +103,7 @@
     }
 
     .date {
-        
+
         font-size: 0.875rem;
         opacity: 0.8;
         padding: 10px
@@ -566,7 +563,7 @@
         display: flex;
         align-items: center;
         padding: 15px 0px;
-        text-align: center;
+        text-align: left;
     }
 
     .app .install-btn-app {
@@ -575,7 +572,7 @@
         width: 100%;
         background: #f76700;
         color: #fff;
-        border-radius: 8px;
+        border-radius: 25px;
         border: none;
         padding: 10px;
         cursor: pointer;
