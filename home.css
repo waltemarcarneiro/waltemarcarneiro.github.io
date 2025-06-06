@@ -17,6 +17,14 @@
     @font-face {
         font-family: 'Segoe UI';
         src: url('./fonts/SegoeUI-Variable-Static-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Segoe UI';
+        src: url('./fonts/SegoeUILight.ttf') format('truetype');
         font-weight: 300;
         font-style: light;
         font-display: swap;
@@ -24,7 +32,7 @@
 
     @font-face {
         font-family: 'Inter';
-        src: url('./fonts/Inter-Regular.ttf') format('true-type');
+        src: url('./fonts/Inter-Regular.ttf') format('truetype');
         font-weight: 400;
         font-style: Normal;
         font-display: swap;
@@ -70,7 +78,7 @@
     }
 
     .header {
-        padding: 0px 0px 10px 0px;
+        padding: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -98,9 +106,32 @@
     }
 
     .date {
-        font-weight: 300;
+        
         font-size: 0.875rem;
         opacity: 0.7;
+        padding: 10px
+    }
+
+    .bem-vindo {
+        max-width: 480px;
+        margin: 0 auto;
+        text-align: left;
+        position: absolute;
+    }
+
+    .bem-vindo h1 {
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 3.2rem;
+        font-weight: 300;
+        color: #eee;
+        opacity: 0.5;
+        padding: 10px;
+        line-height: 1;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 500;
     }
 
     #user {
@@ -208,26 +239,6 @@
 
     }
 
-    .bem-vindo {
-        max-width: 480px;
-        margin: 0 auto;
-        text-align: left;
-
-        position: absolute;
-    }
-
-    .bem-vindo h1 {
-        font-family: 'Segoe UI', sans-serif;
-        font-size: 2.7rem;
-        font-weight: 300;
-        color: white;
-        opacity: 0.5;
-    }
-
-    h2 {
-        font-size: 2rem;
-        font-weight: 500;
-    }
 
     .animated-link {
         margin-bottom: 10px;
