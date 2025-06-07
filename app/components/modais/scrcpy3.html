@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial ADB Wi-Fi + scrcpy</title>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('../fonts/Inter-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      --bg: #fff;
+      --text: #333;
+      --accent: #ff6600;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1e1e1e;
+      --text: #eee;
+      --accent: #ffa94d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 20px;
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: var(--accent);
+      font-size: 24px;
+    }
+
+    button.theme-toggle {
+      background: none;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button.theme-toggle:hover {
+      background-color: var(--accent);
+      color: #fff;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    [data-theme="dark"] code {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tutorial: ADB via Wi-Fi e scrcpy</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">Alternar tema</button>
+  </header>
+
+  <section>
+    <h2>1. Conecte via USB</h2>
+    <p>Ative a opção <strong>"Depuração USB"</strong> no seu Android:<br>
+      <em>Configurações > Sistema > Opções do desenvolvedor > Depuração USB</em></p>
+    <p>Conecte o celular via cabo USB ao seu computador.</p>
+  </section>
+
+  <section>
+    <h2>2. Verifique a conexão com ADB</h2>
+    <p>Abra um terminal no computador e digite:</p>
+    <code>adb devices</code>
+    <p>Confirme a permissão no celular caso solicitado.</p>
+  </section>
+
+  <section>
+    <h2>3. Ative o modo Wi-Fi</h2>
+    <p>Digite o comando:</p>
+    <code>adb tcpip 5555</code>
+    <p>Em seguida descubra o IP do celular:</p>
+    <code>adb shell ip route</code>
+    <p>Ou veja nas configurações Wi-Fi do Android.</p>
+    <p>Agora conecte-se via Wi-Fi:</p>
+    <code>adb connect 192.168.0.101:5555</code>
+    <p>Substitua pelo IP do seu celular.</p>
+  </section>
+
+  <section>
+    <h2>4. Use o scrcpy</h2>
+    <p>Com o celular conectado via Wi-Fi, use o scrcpy:</p>
+    <code>scrcpy</code>
+    <p>Para abrir diretamente com tela espelhada sem fio.</p>
+    <p>Você também pode usar:</p>
+    <code>scrcpy --bit-rate 2M --max-size 1024</code>
+    <p>Para conexões Wi-Fi mais leves.</p>
+  </section>
+
+  <section>
+    <h2>Dicas</h2>
+    <ul>
+      <li>Mantenha o celular e o PC na <strong>mesma rede Wi-Fi</strong>.</li>
+      <li>Se a conexão cair, reconecte com <code>adb connect</code>.</li>
+      <li>Use <code>adb disconnect</code> para encerrar a sessão.</li>
+      <li>Você pode automatizar com scripts <code>.sh</code> ou <code>.bat</code>.</li>
+    </ul>
+  </section>
+
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+    // tema padrão claro
+    document.documentElement.setAttribute('data-theme', 'light');
+  </script>
+</body>
+</html>
