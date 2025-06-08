@@ -113,14 +113,14 @@
 
 .login-btn {
     width: 100%;
-    padding: 18px;
+    padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
+    border-radius: 8px;
     background: #f76700;
     color: #fff;
     font-weight: 500;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 .logout-area{
@@ -238,9 +238,9 @@
 }
 .form-input {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
     font-size: 20px;
