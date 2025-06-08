@@ -2,24 +2,18 @@ const CACHE_NAME = 'waltemar-v4.1.3';
 const MAX_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
 const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; // 7 dias em milissegundos
 
+// Ajustar lista de URLs para cachear (removendo pastas genéricas)
 const urlsToCache = [
-  '/',
+  '/index.html',
   '/manifest.json',
   '/favicon.ico',
-  '/icons/',  // Pasta de ícones
-  '/css/',    // Pasta de estilos
-  '/js/',     // Pasta de scripts
-  '/fonts/', 
-  '/pro.js',
-  '/index.html',
   '/404.html',
-  '/image/bg.webp',
+  '/offline.html',
   '/preloader.css',
   '/home.html',
-  '/image/bgabout.jpg',
   '/home.css',
-  // Recursos de fallback
-  '/offline.html',
+  '/image/bg.webp',
+  '/image/bgabout.jpg',
   '/image/offline.svg',
   '/bank/santander.html',
   '/bank/script.js',
@@ -31,7 +25,7 @@ const urlsToCache = [
   '/components/modals/modalSantander.html',
   '/css/modal-login.css',
   '/css/modal.css',
-  '/css/profile.css',
+  '/css/profile.css'
 ];
 
 // Função para verificar e solicitar permissão
@@ -87,10 +81,18 @@ self.addEventListener('install', event => {
   console.log('Nova versão:', CACHE_NAME);
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-      .then(() => {
-        return self.skipWaiting();
+      .then(cache => {
+        return Promise.all(
+          urlsToCache.map(url => {
+            return cache.add(url)
+              .catch(error => {
+                console.error(`Falha ao cachear: ${url}`, error);
+                return Promise.resolve(); // Continua mesmo com erro
+              });
+          })
+        );
       })
+      .then(() => self.skipWaiting())
   );
   console.groupEnd();
 });

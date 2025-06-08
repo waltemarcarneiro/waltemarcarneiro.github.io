@@ -1,10 +1,12 @@
 if ('serviceWorker' in navigator) {
     let refreshing = false;
 
-    // Registrar service worker
-    navigator.serviceWorker.register('/service-worker.js')
+    // Registrar service worker com escopo específico
+    navigator.serviceWorker.register('/service-worker.js', {
+        scope: '/'
+    })
         .then(registration => {
-            console.log('ServiceWorker registrado com sucesso');
+            console.log('ServiceWorker registrado com sucesso. Escopo:', registration.scope);
             
             // Verificar atualizações imediatamente
             registration.update();
