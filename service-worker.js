@@ -89,21 +89,16 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
       .then(() => {
-        // Força a ativação imediata
         return self.skipWaiting();
-      })
-      .then(() => {
-        return showUpdateNotification();
       })
   );
   console.groupEnd();
 });
 
-// Ativação do Service Worker
+// Ativação do Service Worker - Aqui é o melhor lugar para notificar
 self.addEventListener('activate', event => {
   console.group('🚀 Service Worker Activate');
   console.log('Versão ativada:', CACHE_NAME);
-  console.log('Service Worker: Ativando nova versão');
   event.waitUntil(
     Promise.all([
       caches.keys().then(cacheNames => {
@@ -117,8 +112,8 @@ self.addEventListener('activate', event => {
         );
       }),
       self.clients.claim(),
+      showUpdateNotification(), // Movido para aqui
       self.clients.matchAll().then(clients => {
-        console.log('Service Worker: Notificando clientes:', clients.length);
         clients.forEach(client => {
           client.postMessage({
             type: 'UPDATE_AVAILABLE'
