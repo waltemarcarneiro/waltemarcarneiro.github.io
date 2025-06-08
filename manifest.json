@@ -225,9 +225,15 @@
     }
   },
   "display_override": [
-    "standalone",
-    "browser"
+    "window-controls-overlay"
   ],
+  "window-controls-overlay": {
+    "type": "overlay",
+    "settings": {
+      "color": "#120912",
+      "foreground": "#ffffff"
+    }
+  },
   "handle_links": "preferred",
   "file_handlers": [
     {
