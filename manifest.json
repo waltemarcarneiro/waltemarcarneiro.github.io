@@ -257,5 +257,16 @@
   ],
   "launch_handler": {
     "client_mode": ["navigate-existing", "auto"]
-  }
+  },
+  "scope_extensions": [
+    {
+      "origin": "https://waltemar.com.br"
+    },
+    {
+      "origin": "https://www.youtube.com"
+    },
+    {
+      "origin": "https://youtube.com"
+    }
+  ]
 }
