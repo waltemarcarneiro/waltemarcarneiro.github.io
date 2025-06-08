@@ -133,7 +133,7 @@
   "shortcuts": [
     {
       "name": "Contribuir",
-      "description": "Contribuir",
+      "description": "Fazer uma contribuição via PIX",
       "url": "/bank/bb.html",
       "icons": [
         {
@@ -141,43 +141,60 @@
           "sizes": "96x96",
           "type": "image/svg+xml"
         }
-      ]
+      ],
+      "short_name": "PIX"
     },
     {
       "name": "Rádio",
       "url": "/radio/index.html",
-      "description": "Radio",
+      "description": "Ouvir música ao vivo",
       "icons": [
         {
           "src": "shortcuts/playlist.svg",
           "sizes": "96x96",
           "type": "image/svg+xml"
         }
-      ]
+      ],
+      "short_name": "Play"
     },
     {
-      "name": "LoveSongs Momento",
-      "url": "/videos/index.html",
-      "description": "Momento Love Songs",
+      "name": "Play List",
+      "url": "/youtube/index.html",
+      "description": "Playlist de vídeos do YouTube",
       "icons": [
         {
           "src": "shortcuts/filme.svg",
           "sizes": "96x96",
           "type": "image/svg+xml"
         }
-      ]
+      ],
+      "short_name": "PlayList"
     },
     {
-      "name": "Menu",
+      "name": "Menu Principal",
       "url": "/home.html#options",
-      "description": "Menu de Opções",
+      "description": "Acessar configurações do app",
       "icons": [
         {
           "src": "shortcuts/menu.svg",
           "sizes": "96x96",
           "type": "image/svg+xml"
         }
-      ]
+      ],
+      "short_name": "Config"
+    },
+    {
+      "name": "Buscar",
+      "url": "/search.html",
+      "description": "Pesquisar no app",
+      "icons": [
+        {
+          "src": "shortcuts/search.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ],
+      "short_name": "Busca"
     }
   ],
   "screenshots": [
