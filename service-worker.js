@@ -1,6 +1,15 @@
-const CACHE_NAME = 'waltemar-v4.1.2';
+const CACHE_NAME = 'waltemar-v4.1.3';
+const MAX_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
+const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; // 7 dias em milissegundos
+
 const urlsToCache = [
   '/',
+  '/manifest.json',
+  '/favicon.ico',
+  '/icons/',  // Pasta de ícones
+  '/css/',    // Pasta de estilos
+  '/js/',     // Pasta de scripts
+  '/fonts/', 
   '/pro.js',
   '/index.html',
   '/404.html',
@@ -9,6 +18,7 @@ const urlsToCache = [
   '/home.html',
   '/image/bgabout.jpg',
   '/home.css',
+  // Recursos de fallback
   '/offline.html',
   '/image/offline.svg',
   '/bank/santander.html',
@@ -122,37 +132,85 @@ self.addEventListener('message', event => {
   }
 });
 
-// Modificar o evento fetch para implementar a estratégia "Somente cache"
+// Função para verificar o tamanho do cache
+async function checkCacheSize(cacheName) {
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  let size = 0;
+  
+  for (const request of keys) {
+    const response = await cache.match(request);
+    const blob = await response.blob();
+    size += blob.size;
+  }
+  
+  return size;
+}
+
+// Função para limpar cache antigo
+async function cleanOldCache(cacheName) {
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  const now = Date.now();
+  
+  for (const request of keys) {
+    const response = await cache.match(request);
+    const cacheDate = new Date(response.headers.get('date')).getTime();
+    
+    if (now - cacheDate > MAX_CACHE_AGE) {
+      await cache.delete(request);
+      console.log('Removido do cache (antigo):', request.url);
+    }
+  }
+}
+
+// Função para limpar cache quando excede o tamanho máximo
+async function trimCache(cacheName) {
+  const cache = await caches.open(cacheName);
+  const keys = await cache.keys();
+  const size = await checkCacheSize(cacheName);
+  
+  if (size > MAX_CACHE_SIZE) {
+    console.log('Cache excedeu limite:', (size / 1024 / 1024).toFixed(2) + 'MB');
+    // Remove os itens mais antigos primeiro
+    const itemsToRemove = keys.slice(0, Math.floor(keys.length / 2));
+    await Promise.all(itemsToRemove.map(key => cache.delete(key)));
+  }
+}
+
+// Modificar o evento fetch existente
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
     caches.match(event.request)
-      .then(cached => {
-        // Retorna do cache se existir
+      .then(async cached => {
         if (cached) {
-          console.log('Serving from cache:', event.request.url);
+          // Verificar idade do cache
+          const cacheDate = new Date(cached.headers.get('date')).getTime();
+          if (Date.now() - cacheDate > MAX_CACHE_AGE) {
+            console.log('Cache expirado:', event.request.url);
+            return fetch(event.request);
+          }
           return cached;
         }
 
-        // Se não estiver no cache, tenta buscar da rede e guarda no cache
         return fetch(event.request)
-          .then(response => {
+          .then(async response => {
             if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
 
             const responseToCache = response.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-                console.log('Added to cache:', event.request.url);
-              });
-
+            const cache = await caches.open(CACHE_NAME);
+            
+            // Verificar tamanho do cache antes de adicionar
+            await trimCache(CACHE_NAME);
+            await cache.put(event.request, responseToCache);
+            
             return response;
           })
           .catch(() => {
-            console.log('Fetch failed, returning offline page');
             return caches.match('/offline.html');
           });
       })
@@ -235,4 +293,14 @@ self.addEventListener('notificationclick', event => {
 self.addEventListener('notificationclick', event => {
   event.notification.close();
   event.waitUntil(clients.openWindow('/'));
+});
+
+// Adicionar limpeza periódica do cache
+self.addEventListener('periodicsync', event => {
+  if (event.tag === 'cache-cleanup') {
+    event.waitUntil(Promise.all([
+      cleanOldCache(CACHE_NAME),
+      trimCache(CACHE_NAME)
+    ]));
+  }
 });
