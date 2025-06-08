@@ -70,12 +70,12 @@
 
 .modal-acesso .register-btn {
   width: 100%;
-  padding: 18px;
+  padding: 10px;
   background: #f76700;
   border: none;
   color: white;
   font-weight: 500;
-  border-radius: 25px;
+  border-radius: 8px;
   cursor: pointer;
   margin-top: 8px;
   display: flex;
@@ -87,9 +87,9 @@
 }
 .google-btn {
     width: 100%;
-    padding: 18px;
-    border: none;
-    border-radius: 25px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
     background: none;
     color: #fff;
     font-weight: 500;
@@ -102,8 +102,8 @@
 
 .google-btn:hover {
     
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 17px;
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     background: none;
 }
 .google-btn img {
     width: 20px;
