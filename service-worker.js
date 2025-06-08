@@ -60,10 +60,11 @@ async function showUpdateNotification() {
   }
 
   const options = {
-    body: 'Uma nova versão do aplicativo está disponível com melhorias de desempenho e novos recursos.',
+    body: 'Clique em "Atualizar Agora" para usar a nova versão.',
     icon: '/bank/logos/icon192.png',
     badge: '/bank/logos/icon192.png',
     tag: 'update-notification',
+    renotify: true, // Força nova notificação mesmo com mesmo tag
     requireInteraction: true,
     actions: [
       {
@@ -77,7 +78,7 @@ async function showUpdateNotification() {
     ]
   };
 
-  return self.registration.showNotification('Nova Atualização Disponível', options);
+  await self.registration.showNotification('Nova versão disponível!', options);
 }
 
 // Instalação do Service Worker
@@ -85,11 +86,15 @@ self.addEventListener('install', event => {
   console.group('⚙️ Service Worker Install');
   console.log('Nova versão:', CACHE_NAME);
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache);
-    }).then(() => {
-      return showUpdateNotification();
-    })
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(urlsToCache))
+      .then(() => {
+        // Força a ativação imediata
+        return self.skipWaiting();
+      })
+      .then(() => {
+        return showUpdateNotification();
+      })
   );
   console.groupEnd();
 });
@@ -276,24 +281,27 @@ self.addEventListener('push', event => {
   );
 });
 
-// Manipular cliques na notificação
+// Remover o listener duplicado e manter apenas um mais completo
 self.addEventListener('notificationclick', event => {
   event.notification.close();
 
   if (event.action === 'update-now') {
-    // Forçar atualização
-    self.skipWaiting().then(() => {
-      self.clients.matchAll().then(clients => {
-        clients.forEach(client => client.navigate(client.url));
+    // Força atualização e recarrega todas as abas
+    self.skipWaiting()
+      .then(() => self.clients.matchAll())
+      .then(clients => {
+        clients.forEach(client => {
+          client.postMessage({ type: 'RELOAD_PAGE' });
+          client.navigate(client.url);
+        });
       });
-    });
   }
 });
 
-self.addEventListener('notificationclick', event => {
-  event.notification.close();
-  event.waitUntil(clients.openWindow('/'));
-});
+// Adicionar verificação periódica de atualizações
+setInterval(() => {
+  self.registration.update();
+}, 60 * 60 * 1000); // Verifica a cada 1 hora
 
 // Adicionar limpeza periódica do cache
 self.addEventListener('periodicsync', event => {
