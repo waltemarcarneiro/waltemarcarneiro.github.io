@@ -1,4 +1,4 @@
-const CACHE_NAME = 'waltemar-v4.1.1';
+const CACHE_NAME = 'waltemar-v4.1.2';
 const urlsToCache = [
   '/',
   '/pro.js',
