@@ -264,16 +264,67 @@
   ],
   "widgets": [
     {
-      "name": "Meu Widget",
-      "short_name": "Widget",
-      "description": "Este é um widget de exemplo",
-      "url": "/widget",
-      "tag": "meu-widget",
+      "name": "Rádio Player",
+      "short_name": "Player",
+      "description": "Controle rápido do player de rádio",
+      "tag": "radio-widget",
+      "url": "/widgets/radio-player.html",
+      "update_frequency": "hourly",
+      "icons": [
+        {
+          "src": "icons/widget-radio.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ],
+      "screenshots": [
+        {
+          "src": "screenshots/widget-radio.png",
+          "sizes": "400x300",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Love Songs Status",
+      "short_name": "Love Songs",
+      "description": "Veja as músicas mais pedidas",
+      "tag": "love-songs-widget",
+      "url": "/widgets/love-songs.html",
       "update_frequency": "daily",
       "icons": [
         {
-          "src": "icons/widget-icon.png",
+          "src": "icons/widget-love.png",
           "sizes": "96x96",
+          "type": "image/png"
+        }
+      ],
+      "screenshots": [
+        {
+          "src": "screenshots/widget-love.png",
+          "sizes": "400x300",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Atalhos Rápidos",
+      "short_name": "Atalhos",
+      "description": "Acesso rápido às funcionalidades principais",
+      "tag": "quick-actions",
+      "url": "/widgets/quick-actions.html",
+      "update_frequency": "daily",
+      "icons": [
+        {
+          "src": "icons/widget-shortcuts.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ],
+      "screenshots": [
+        {
+          "src": "screenshots/widget-shortcuts.png",
+          "sizes": "400x300",
           "type": "image/png"
         }
       ]

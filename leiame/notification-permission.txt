@@ -1,0 +1,20 @@
+Este arquivo tem uma função específica e importante:
+
+Ele atua como um "intermediário" (middleware) para permissões de notificação:
+
+Escuta mensagens do service worker
+Especificamente procura por mensagens do tipo 'REQUEST_NOTIFICATION_PERMISSION'
+Gerencia o fluxo de solicitação de permissão de notificações
+Fluxo de funcionamento:
+
+O service worker não pode solicitar permissões diretamente
+Quando o SW precisa de permissão, envia uma mensagem
+Este arquivo intercepta essa mensagem
+Solicita a permissão ao usuário via Notification.requestPermission()
+Se concedida, atualiza o service worker para permitir notificações
+Papel crucial:
+
+É a ponte entre o service worker e as APIs de permissão do navegador
+Resolve a limitação do service worker em solicitar permissões diretamente
+Mantém o fluxo de permissões organizado e centralizado
+Em resumo: Este arquivo é um componente essencial para o funcionamento correto das notificações no seu PWA, atuando como um "tradutor" entre o service worker e as APIs de permissão do navegador.
