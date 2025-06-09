@@ -54,7 +54,7 @@
    html, body {
         background-color: #4e1d02;
         font-family: 'Roboto', sans-serif;
-        background: linear-gradient(180deg, rgba(79, 28, 1, 0.1), rgba(79, 28, 1, 0.9)), url('./image/bgabout.webp') no-repeat center center fixed;
+        background: linear-gradient(180deg, rgba(79, 28, 1, 0.1), rgba(79, 28, 1, 0.9)), url('../image/bgabout.webp') no-repeat center center fixed;
         background-size: cover;
         background-attachment: fixed;
         color: #eee;

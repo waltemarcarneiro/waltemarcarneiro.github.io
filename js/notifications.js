@@ -18,7 +18,7 @@ async function showNotificationModal() {
 
 async function initializeNotifications() {
     // Aguarda 40 segundos antes de verificar
-    await new Promise(resolve => setTimeout(resolve, 40000));
+    await new Promise(resolve => setTimeout(resolve, 50000));
 
     // Verifica se já tem permissão
     if (Notification.permission === 'granted') {
