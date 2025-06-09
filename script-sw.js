@@ -2,9 +2,9 @@ if ('serviceWorker' in navigator) {
     let refreshing = false;
     const isHomePage = window.location.pathname.includes('home.html');
 
-    // Registrar service worker com escopo específico
-    navigator.serviceWorker.register('/service-worker.js', {
-        scope: '/'
+    // Corrigir o caminho do service worker para corresponder à URL do site
+    navigator.serviceWorker.register('./service-worker.js', {
+        scope: './'
     })
         .then(registration => {
             console.log('ServiceWorker registrado com sucesso. Escopo:', registration.scope);
