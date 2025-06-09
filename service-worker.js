@@ -2,30 +2,30 @@ const CACHE_NAME = 'waltemar-v4.1.4';
 const MAX_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
 const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; // 7 dias em milissegundos
 
-// Ajustar lista de URLs para cachear (removendo pastas genéricas)
+// Ajustar lista de URLs para cachear - usando caminhos relativos
 const urlsToCache = [
-  '/index.html',
-  '/manifest.json',
-  '/icons/favicon.ico',
-  '/404.html',
-  '/offline.html',
-  '/css/preloader.css',
-  '/home.html',
-  '/css/home.css',
-  '/image/bg.webp',
-  '/image/bgabout.webp',
-  '/image/offline.svg',
-  '/bank/santander.html',
-  '/bank/script.js',
-  '/bank/bank.css',
-  '/bank/qrcodes/qrcode-santander.png',
-  '/bank/logos/icon192.png',
-  '/bank/logos/santander.svg',
-  '/components/modals/modalLogin.html',
-  '/components/modals/modalSantander.html',
-  '/css/modal-login.css',
-  '/css/modal.css',
-  '/css/profile.css'
+  './index.html',
+  './manifest.json',
+  './icons/favicon.ico',
+  './404.html',
+  './offline.html',
+  './css/preloader.css',
+  './home.html',
+  './css/home.css',
+  './image/bg.webp',
+  './image/bgabout.webp',
+  './image/offline.svg',
+  './bank/santander.html',
+  './bank/script.js',
+  './bank/bank.css',
+  './bank/qrcodes/qrcode-santander.png',
+  './bank/logos/icon192.png',
+  './bank/logos/santander.svg',
+  './components/modals/modalLogin.html',
+  './components/modals/modalSantander.html',
+  './css/modal-login.css',
+  './css/modal.css',
+  './css/profile.css'
 ];
 
 // Função para verificar e solicitar permissão
@@ -55,8 +55,8 @@ async function showUpdateNotification() {
 
   const options = {
     body: 'Clique em "Atualizar Agora" para usar a nova versão.',
-    icon: '/bank/logos/icon192.png',
-    badge: '/bank/logos/icon192.png',
+    icon: './bank/logos/icon192.png', // Corrigido caminho do ícone
+    badge: './bank/logos/icon192.png', // Corrigido caminho do badge
     tag: 'update-notification',
     renotify: true, // Força nova notificação mesmo com mesmo tag
     requireInteraction: true,
@@ -180,7 +180,7 @@ async function trimCache(cacheName) {
   }
 }
 
-// Modificar o evento fetch existente
+// Modificar o evento fetch para usar caminhos relativos
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
@@ -213,7 +213,7 @@ self.addEventListener('fetch', event => {
             return response;
           })
           .catch(() => {
-            return caches.match('/offline.html');
+            return caches.match('./offline.html');
           });
       })
   );
