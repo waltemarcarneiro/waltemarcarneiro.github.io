@@ -146,8 +146,8 @@
     },
     {
       "name": "Rádio",
-      "url": "/radio/index.html",
-      "description": "Ouvir música ao vivo",
+      "url": "/radio/index.html?action=play&last=true",
+      "description": "Continuar ouvindo",
       "icons": [
         {
           "src": "shortcuts/playlist.svg",
@@ -159,8 +159,8 @@
     },
     {
       "name": "Play List",
-      "url": "/youtube/index.html",
-      "description": "Playlist de vídeos do YouTube",
+      "url": "/youtube/index.html?continue=true&from=shortcut",
+      "description": "Continuar assistindo",
       "icons": [
         {
           "src": "shortcuts/filme.svg",
@@ -221,7 +221,7 @@
       "form_factor": "narrow"
     },
     {
-      "src": "screenshots/screenshot-desktop-wide.jpg",
+      "src": "screenshots/screenshot-desktop-wide2.jpg",
       "sizes": "1920x1080",
       "type": "image/jpg",
       "form_factor": "wide"
