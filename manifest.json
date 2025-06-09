@@ -3,7 +3,7 @@
   "name": "Waltemar Carneiro",
   "short_name": "waltemar.com.br",
   "description": "Web Developments",
-  "display": "fullscreen",
+  "display": "standalone",
   "offline_enabled": true,
   "iarc_rating_id": "ESRB_E",
   "lang": "pt-BR",
