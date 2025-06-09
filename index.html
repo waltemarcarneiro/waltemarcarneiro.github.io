@@ -12,7 +12,6 @@
       <meta name="description" content="Web Developer">
       
       <link rel="stylesheet" href="preloader.css">
-      <link rel="stylesheet" href="./styles/notification-modal.css">
       <!-- FAVICON-->
       <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
@@ -92,60 +91,9 @@
       </div>
       <!-- preloader end -->
       
-      <div id="notificationModal" class="modal-overlay" style="display: none;">
-         <div class="notification-modal">
-            <div class="modal-header">
-               <img src="image/sim.webp" alt="Ícone do App">
-               <h2 class="modal-title">Permitir Notificações?</h2>
-            </div>
-            <div class="modal-content">
-               <ol>
-                  <li>Receber avisos sobre novas atualizações</li>
-                  <li>Ser notificado sobre melhorias importantes</li>
-                  <li>Nunca perder novidades do app</li>
-               </ol>
-               
-
-            </div>
-            <div class="modal-buttons">
-               <button id="allowNotifications" class="modal-btn allow-btn">Permitir</button>
-               <button id="denyNotifications" class="modal-btn deny-btn">Agora Não</button>
-            </div>
-         </div>
-      </div>
-
+      <!--SCRIPT 02-->
       <script>
-        async function showNotificationModal() {
-            const modal = document.getElementById('notificationModal');
-            modal.style.display = 'block';
-
-            return new Promise((resolve) => {
-                document.getElementById('allowNotifications').onclick = async () => {
-                    modal.style.display = 'none';
-                    const permission = await Notification.requestPermission();
-                    resolve(permission);
-                };
-
-                document.getElementById('denyNotifications').onclick = () => {
-                    modal.style.display = 'none';
-                    resolve('denied');
-                };
-            });
-        }
-
         async function initializeApp() {
-            // Verifica se já tem permissão
-            if (Notification.permission === 'granted') {
-                // Já tem permissão, não precisa fazer nada
-                console.log('Notificações já estão permitidas');
-            } else if (Notification.permission === 'default') {
-                // Só mostra o modal se a permissão ainda não foi decidida
-                const permission = await showNotificationModal();
-                if (permission === 'granted') {
-                    console.log('Permissão de notificação concedida');
-                }
-            }
-
             // Redirecionar para home.html após 5 segundos
             setTimeout(() => {
                 window.location.href = 'home.html';
@@ -154,12 +102,6 @@
 
         document.addEventListener('DOMContentLoaded', initializeApp);
       </script>
-      <script>
-        navigator.serviceWorker.addEventListener('message', event => {
-          if (event.data.type === 'RELOAD_PAGE') {
-            window.location.reload();
-          }
-        });
-      </script>
+
    </body>
 </html>
