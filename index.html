@@ -6,7 +6,7 @@
       <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
       <meta name="theme-color" content="#120912">
       <meta name="msapplication-TileColor" content="#f76700" />
-      <link rel="manifest" href="manifest.json"/>
+      <link rel="manifest" href="./manifest.json"/>
       <title>Waltemar Carneiro</title>
       <meta name="description" content="Web Developer">
       
@@ -32,7 +32,7 @@
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta name="mobile-web-app-capable" content="yes" />
       <!--<script src="/update-manager.js"></script>-->
-      <script src="/script-sw.js" defer></script>
+      <script src="./script-sw.js" defer></script>
    </head>
    <body>
 
@@ -95,7 +95,7 @@
         async function initializeApp() {
             // Redirecionar para home.html após 5 segundos
             setTimeout(() => {
-                window.location.href = 'home.html';
+                window.location.href = './home.html';
             }, 5000);
         }
 
