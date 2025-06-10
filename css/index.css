@@ -13,9 +13,12 @@
   font-style: normal;
   font-display: swap;
 }
-body, html {
-    margin: 0;
-    padding: 0;
+html {
+  background: #f76700;
+  margin: 0;
+  padding: 0;
+}
+body {
     color: #eeeeee;
     background: #f76700;
     text-align: center;

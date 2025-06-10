@@ -103,7 +103,7 @@
     .icon-top-right {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 20px;
     }
 
     .icon-top-right img {
@@ -313,20 +313,6 @@
         }
     }
 
-    /*
-    .contato {
-        display: flex;
-        padding: 10px;
-        align-items: center;
-        margin-top: 8px;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #ddd;
-        background: white;
-        margin-right: 40px;
-        -webkit-tap-highlight-color: transparent;
-
-    }*/
-
     .video {
         display: flex;
         align-items: center;
@@ -337,9 +323,6 @@
         margin-right: 40px;
     }
 
-    */ .video iframe {
-        border-radius: 5px;
-    }
 
     /* Adiciona a classe 'show-about' quando a página é rolada para cima */
     body.show-about .about {
@@ -352,7 +335,6 @@
         height: 40px;
         align-items: center;
         display: flex;
-        color: #67BB00;
         font-size: 26px;
     }
 
@@ -526,7 +508,7 @@
         border-radius: 20px 20px 0 0;
         transition: bottom 3s ease-in-out;
         z-index: 2000;
-        color: #333;
+        color: #151515;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -556,17 +538,18 @@
 
     .app-subtitle {
         font-size: 0.9rem;
+        font-weight: 600;
     }
 
     .add-info {
         font-size: 0.875rem;
-        color: #555;
+        font-weight: 600;
     }
 
     .install-message {
         clear: both;
         font-weight: bold;
-        color: #222;
+        
         font-size: 1.3rem;
         display: flex;
         align-items: center;
