@@ -14,7 +14,7 @@
   font-display: swap;
 }
 html {
-  background: #4f4337;
+  background: #2bf111; /* cor de fundo da tela de carregamento */
   margin: 0;
   padding: 0;
 }
@@ -55,7 +55,7 @@ body {
   top: 0;
   width: 100%;
   z-index: 998;
-  background: purple;
+  background: #f76700; /* cor de fundo da tela de carregamento */
   /*background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../image/bg.webp') no-repeat center center fixed;*/
   background-size: cover;
 
