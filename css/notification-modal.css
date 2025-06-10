@@ -1,21 +1,60 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/roboto-bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: bold;
-    font-display: swap;
-  }
+        font-family: 'Roboto';
+        src: url('/fonts/Roboto-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+     @font-face {
+        font-family: 'Roboto';
+        src: url('/fonts/Roboto-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: medium;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('/fonts/Roboto-Bold.woff2') format('woff2');
+        font-weight: 800;
+        font-style: bold;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Segoe UI';
+        src: url('/fonts/SegoeUI-Variable-Static-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Segoe UI';
+        src: url('/fonts/SegoeUILight.ttf') format('truetype');
+        font-weight: 300;
+        font-style: light;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        src: url('/fonts/Inter-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Inter';
+        src: url('../fonts/Inter-Bold.ttf') format('truetype');
+        font-weight: 800;
+        font-style: Bold;
+        font-display: swap;
+    }
   
 .notification-modal {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     position: absolute;
     background: #f1f2f4;
     color: #151515;
@@ -53,17 +92,16 @@
 }
 
 .modal-title {
-    color: #f76700;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 800;
     margin: 0;
 }
 
 .modal-notification {
     text-align: left;
-    margin-bottom: 25px;
     font-size: 1.2rem;
-    padding: 0 20px;
+    padding: 20px;
+    margin-bottom: 10px;
 }
 
 /*config da ol usando list-style-type utilisanso estilo manual ::marker*/
@@ -87,7 +125,6 @@
   content: counter(item);
   position: absolute;
   left: 0;
-  top: 0;
   width: 1.8em;
   height: 1.8em;
   line-height: 1.8em;
@@ -105,9 +142,7 @@
 .modal-buttons {
     display: flex;
     gap: 20px;
-    justify-content: center;
-    margin-top: 10px;
-    
+    justify-content: center;    
 }
 
 .modal-btn {
