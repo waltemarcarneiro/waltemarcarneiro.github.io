@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# Quando tiver um sitemap gerado, adicione aqui:
+# Sitemap: https://waltemar.com.br/sitemap.xml

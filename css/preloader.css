@@ -16,7 +16,8 @@
 body, html {
     margin: 0;
     padding: 0;
-    color: #1D1D1F;
+    color: #eeeeee;
+    background: #f76700;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -51,8 +52,8 @@ body, html {
   top: 0;
   width: 100%;
   z-index: 998;
-
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../image/bg.webp') no-repeat center center fixed;
+  background: #f76700;
+  /*background: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../image/bg.webp') no-repeat center center fixed;*/
   background-size: cover;
 
 }
