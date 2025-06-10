@@ -75,6 +75,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
 
 }
 
@@ -104,11 +105,12 @@
     width: 95%;
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
-    color:#151515;
+    color: #151515;
 }
 
 .modal-santander .pix-logo {
-    width: 80%;
+    width: 100%;
+    height: auto;
     margin-bottom: 20px;
 }
 
@@ -116,7 +118,7 @@
     font-size: 24px;
     color: #151515;
     margin: 0;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .modal-santander p {
@@ -166,7 +168,8 @@
 .modal-santander .mensagem {
     position: fixed;
     width: 100%;
-    max-width: 480px;;
+    max-width: 480px;
+    ;
     background: #fff;
     color: white;
     padding: 16px;
@@ -174,12 +177,12 @@
     text-align: center;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     display: none;
     z-index: 10;
     transition: bottom 0.5s ease-in-out;
-    
-    
+
+
 }
 
 .modal-santander .pix-options {
@@ -202,7 +205,7 @@
     transition: background 0.2s;
     width: 110px;
     height: 100px;
-    background: #fcf8ff;    
+    background: #fcf8ff;
 }
 
 
@@ -334,102 +337,7 @@
     border: 1px solid rgba(52, 199, 89, 0.2);
 }
 
-/* Animações */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes modalSantanderIn {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Modal Santander */
-
-.modal-santander .close-btn {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 36px;
-    color: #666;
-    cursor: pointer;
-}
-
-
-.modal-conta strong{
+.modal-conta strong {
     font-weight: 400;
 
-}
-.modal-santander .pix-logo {
-    width: 80%;
-    margin-bottom: 20px;
-}
-
-.modal-santander .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 0 16px;
-}
-
-.modal-santander .button-wrapper {
-    background: #f1f2f4;
-    border-radius: 12px;
-    padding: 16px;
-}
-
-.modal-santander .pix-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px;
-    background: #f76700;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.modal-santander .pix-button:hover {
-    background: #e65e00;
-}
-
-.mensagem.show {
-    bottom: 0;
-}
-
-.mensagem-alert {
-    margin: 15px 0;
-    color: #151515;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    font-weight: 600;
-    text-align: center;
-}
-
-.mensagem-steps {
-    margin: 25px 0;
-}
-
-.btn-entendi:hover {
-    background: #e55f00;
 }
