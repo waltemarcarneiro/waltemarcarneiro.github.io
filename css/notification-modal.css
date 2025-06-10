@@ -66,16 +66,48 @@
     padding: 0 20px;
 }
 
+/*config da ol usando list-style-type utilisanso estilo manual ::marker*/
+
 .modal-notification ol {
-    line-height: 1.5;
-    margin: 10px 0;
-    
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
 }
+
+.modal-notification ol li {
+  position: relative;
+  padding-left: 2.5em;
+  margin-bottom: 0.75em;
+  counter-increment: item;
+  align-items: center;
+  display: flex;
+}
+
+.modal-notification ol li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8em;
+  background-color: #f76700;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+/*end*/
+
+
 
 .modal-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
+    margin-top: 10px;
+    
 }
 
 .modal-btn {
@@ -85,6 +117,7 @@
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s, opacity 0.2s;
+    font-size: 1rem;
 }
 
 .modal-btn:hover {
@@ -93,7 +126,8 @@
 
 .allow-btn {
     background: #f76700;
-    color: white;
+    color: #fff;
+    border: 1px solid #f76700;
 }
 
 .deny-btn {
