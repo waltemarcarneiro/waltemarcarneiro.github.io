@@ -4,7 +4,7 @@ function isFirstPWAEntry() {
   if (document.referrer && document.referrer.includes(window.location.host)) {
     return false;
   }
-  
+
   // Verifica se já mostrou splash nesta sessão
   if (sessionStorage.getItem('splashShown')) {
     return false;
@@ -24,7 +24,7 @@ if (isFirstPWAEntry()) {
       window.addEventListener('load', () => {
         const splash = document.getElementById('splash-preloader');
         splash.classList.add('splash-loaded');
-        
+
         setTimeout(() => {
           splash.remove();
           // Marca que já mostrou a splash
@@ -40,3 +40,15 @@ window.addEventListener('unload', () => {
   localStorage.removeItem('splashShown');
 });
 
+///
+
+splash.remove();
+sessionStorage.setItem('splashShown', 'true');
+localStorage.setItem('splashShown', 'true');
+document.body.style.visibility = 'visible'; // 👈 ATIVA VISUALIZAÇÃO
+
+
+// ⚠️ Libera a verificação de proteção
+if (typeof iniciarProtecaoGlobal === "function") {
+  iniciarProtecaoGlobal();
+}

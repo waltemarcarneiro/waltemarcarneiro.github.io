@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
-   
+
    <link rel="manifest" href="./manifest.json" />
    <script src="./script-sw.js" defer></script>
    <meta name="theme-color" content="#4e3e30">
@@ -42,7 +42,11 @@
    <!---SPLASH-->
    <link rel="stylesheet" href="./css/splash.css">
    <script defer src="./js/splash.js"></script>
-   
+   <style>
+      body {
+         visibility: hidden;
+      }
+   </style>
 </head>
 
 <body>
@@ -66,10 +70,8 @@
       <div class="carrossel-slide" style="background-image: url('carrossel/carrossel-bg.webp');">
          <div class="carrossel-content">
             <video controls poster="./carrossel/image5.jpg">
-               
-            <source
-                  src="./carrossel/videos/clip.mp4"
-                  type="video/mp4">
+
+               <source src="./carrossel/videos/clip.mp4" type="video/mp4">
                Seu navegador não suporta a tag de vídeo.
             </video>
             <p style="color:#eee; letter-spacing: 1px;">LoveSongsApp</p>
@@ -132,7 +134,7 @@
          <div class="digital">
             <div id="user" class="user-info" lock style="cursor: pointer;">
 
-            <img src="./image/person-circle-outline.svg" height="56" style="margin-right: 10px;" alt="">
+               <img src="./image/person-circle-outline.svg" height="56" style="margin-right: 10px;" alt="">
 
                <div>
                   <h3 class="user-name">Usuário</h3>
@@ -164,7 +166,8 @@
             </div>
             <div class="promo-texto">
                <span>Monitor Gamer Samsung</span>
-               <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto, <span style="color:#f76700">(-8%)</span> por R$ <span>999,00.</span>
+               <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto, <span
+                     style="color:#f76700">(-8%)</span> por R$ <span>999,00.</span>
                </p>
                <b style="color:#f76700;">Em até 10x R$ 108,00 sem juros</b>
 
@@ -192,7 +195,7 @@
             </div>
             <span class="block-label">LoveSongs</span>
          </a>
-         <a href="./radio/index.html" class="block" >
+         <a href="./radio/index.html" class="block">
             <div class="icon-wrapper">
 
                <img src="./radio/img/album.webp" style="border-radius: 15px; height: 70px; width: 70px">
@@ -226,7 +229,7 @@
          </a>
          <a href="https://webboard.app/" class="block">
             <div class="icon-wrapper">
-               <img src="./image/WebBoard.jpg" style="border-radius: 15px; height: 70px; width: 70px" >
+               <img src="./image/WebBoard.jpg" style="border-radius: 15px; height: 70px; width: 70px">
             </div>
             <span class="block-label">WebBoard</span>
          </a>
@@ -236,7 +239,7 @@
             </div>
             <span class="block-label">Boleros</span>
          </a>
-         
+
          <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link" class="block"
             lock>
             <div class="icon-wrapper">
@@ -319,7 +322,7 @@
    <script src="./js/links.js"></script>
    <script src="./carrossel/carrossel.js"></script>
    <script src="./js/notifications.js"></script>
-   
+
    <!-- Script para atualização da página via Service Worker -->
    <script>
       // Escuta mensagens do Service Worker para atualização da página
@@ -332,4 +335,5 @@
 
    <!--<script src="./pro.js"></script>-->
 </body>
+
 </html>
