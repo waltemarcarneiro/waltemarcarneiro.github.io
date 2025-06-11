@@ -19,7 +19,7 @@ function openApp() {
     window.location.href = "../app/index.html";
 }
 function openHome() {
-    window.location.href = "../home.html";
+    window.location.href = "#";
 }
 
 
