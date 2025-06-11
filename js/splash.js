@@ -39,8 +39,3 @@ if (isFirstPWAEntry()) {
 window.addEventListener('unload', () => {
   localStorage.removeItem('splashShown');
 });
-
-// ⚠️ Chama o carregamento do auth.js APÓS splash
-if (typeof iniciarProtecaoGlobal === "function") {
-  iniciarProtecaoGlobal();
-}
