@@ -5,7 +5,8 @@
         font-style: normal;
         font-display: swap;
     }
-     @font-face {
+
+    @font-face {
         font-family: 'Roboto';
         src: url('../fonts/Roboto-Medium.ttf') format('truetype');
         font-weight: 500;
@@ -67,18 +68,20 @@
         border: none !important;
 
     }
+
     html {
-        
+
         background: linear-gradient(180deg, rgba(79, 28, 1, 0.1), rgba(79, 28, 1, 0.95)), url('../image/background2.webp') no-repeat center center fixed;
         background: #4f1c02 !important;
         background-size: cover;
         background-attachment: fixed;
         height: 100%;
         font-size: 16px;
-        
+
     }
+
     body {
-        
+
         font-family: 'Roboto', sans-serif;
         background: linear-gradient(180deg, rgba(79, 28, 1, 0.1), rgba(79, 28, 1, 0.95)), url('../image/background2.webp') no-repeat center center fixed;
         background-size: cover;
@@ -86,11 +89,11 @@
         color: #eee;
         font-size: 16px;
         height: 100%;
-        
+
         @supports (-webkit-touch-callout: none) {
             html {
                 background-attachment: scroll;
-                
+
             }
 
             body {
@@ -177,7 +180,7 @@
         font-family: 'Segoe UI', sans-serif;
     }
 
-    .user-status{
+    .user-status {
         font-size: 1.1rem;
         opacity: 0.7;
         font-family: 'Segoe UI', sans-serif;
@@ -565,7 +568,7 @@
     .install-message {
         clear: both;
         font-weight: bold;
-        
+
         font-size: 1.3rem;
         display: flex;
         align-items: center;
