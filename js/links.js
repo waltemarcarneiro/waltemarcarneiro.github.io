@@ -26,8 +26,8 @@ function openHome() {
 
 // telefonia
 
-function openVivoRecarga() {
-    window.location.href = "https://recarga.vivo.com.br/mobile/recarga";
+function openAppLima() {
+    window.location.href = "https://applima.blogspot.com/";
 }
 
 //Garantir que o elemento já exista antes de adicionar o evento
