@@ -1,7 +1,7 @@
 document.addEventListener('contextmenu', e => e.preventDefault());
 
 function openBancoBrasil() {
-    window.location.href = "./bank/bb.html";
+    window.location.href = "/bank/bb.html";
 }
 
 function openWhatsApp() {
@@ -9,17 +9,17 @@ function openWhatsApp() {
 }
 
 function openProfile() {
-    window.location.href = "./pages/profile.html";
+    window.location.href = "/pages/profile.html";
 }
 
 function openSuporte() {
-    window.location.href = "./pages/suporte.html";
+    window.location.href = "/pages/suporte.html";
 }
 function openApp() {
-    window.location.href = "../app/index.html";
+    window.location.href = "/app/app.html";
 }
 function openHome() {
-    window.location.href = "#";
+    window.location.href = "/index.html";
 }
 
 
