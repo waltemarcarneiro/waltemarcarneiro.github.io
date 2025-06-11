@@ -2,7 +2,7 @@ if ('serviceWorker' in navigator) {
     let refreshing = false;
     const isHomePage = window.location.pathname.includes('home.html');
 
-    navigator.serviceWorker.register('/service-worker.js', {
+    navigator.serviceWorker.register('./service-worker.js', {
         scope: '/'
     })
         .then(registration => {
