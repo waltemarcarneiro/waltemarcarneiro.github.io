@@ -39,3 +39,10 @@ if (isFirstPWAEntry()) {
 window.addEventListener('unload', () => {
   localStorage.removeItem('splashShown');
 });
+//==== THEME COLOR CHANGE ====
+document.addEventListener('DOMContentLoaded', () => {
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) {
+    themeColor.setAttribute('content', '#f76700'); // Define a cor do tema
+  }
+});
