@@ -32,6 +32,5 @@ function openVivoRecarga() {
 
 // Adicione o evento de clique ao ícone de seta à esquerda
 document.getElementById('backButton').addEventListener('click', () => {
-    // Volta para a página anterior
-    history.back();
+    history.back(); // Volta para a página anterior
 });
