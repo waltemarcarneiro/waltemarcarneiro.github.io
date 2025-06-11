@@ -44,3 +44,5 @@ window.addEventListener('unload', () => {
 if (typeof iniciarProtecaoGlobal === "function") {
   iniciarProtecaoGlobal();
 }
+
+document.body.style.visibility = 'visible'; // <-- Exibe a página após splash
