@@ -1,6 +1,6 @@
 const CACHE_NAME = 'waltemar-v4.1.7';
-const MAX_CACHE_SIZE = 50 * 1024 * 1024; // 50MB
-const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; // 7 dias
+const MAX_CACHE_SIZE = 50 * 1024 * 1024; 
+const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; 
 
 const urlsToCache = [
   '/index.html',

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,8 +8,8 @@
    <meta name="description" content="Web & Android Applications">
    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport' />
    <meta name="theme-color" content="#2862bc">
-
-
+   
+   
    <!-- FAVICON-->
    <link rel="shortcut icon" href="../icons/favicon32.png" />
    <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
@@ -19,7 +20,7 @@
    <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
    <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
    <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
-
+   
    <!-- SEO | OG -->
    <meta name="apple-mobile-web-app-capable" content="yes" />
    <meta name="keywords" content="Waltemar" />
@@ -33,7 +34,10 @@
    <!-- Firebase SDK -->
    <script type="module" src="https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js"></script>
    <script type="module" src="https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js"></script>
+   <!-- Verificação de autenticação -->
+   <script type="module" src="../firebase-config.js"></script>
    
+
 </head>
 
 <body>
@@ -83,20 +87,21 @@
       </div>
    </div>
    <div id="volume-controls">
-
-      <img src="../image/volume-high-outline.svg" height="34" alt="" id="volume-high"
-         style="cursor: pointer; display: none;">
-
-
-      <img src="../image/volume-mute-outline.svg" height="34" alt="" id="volume-mute" '   style="cursor: pointer;" >
+      
+         <img src="../image/volume-high-outline.svg" height="34" alt="" id="volume-high" style="cursor: pointer; display: none;" >
+      
+      
+         <img src="../image/volume-mute-outline.svg" height="34" alt="" id="volume-mute" '   style="cursor: pointer;" >
       
    </div>
-   <div class="voltar" id="backButton">
-      <img src="../image/chevron-back.svg" height="34" alt="" style="cursor: pointer;"">
+   <div class="voltar" onclick="abrirHome()">
+      
+         <img src="../image/chevron-back.svg" height="34" alt="" style="cursor: pointer;"">
+      
    </div>
       
    <script>
-      document.addEventListener(' DOMContentLoaded', (event) => {
+      document.addEventListener('DOMContentLoaded', (event) => {
          let video = document.querySelector('video');
          let volumeHigh = document.getElementById('volume-high');
          let volumeMute = document.getElementById('volume-mute');
@@ -130,11 +135,15 @@
       }
       );
    </script>
-
-      <script type="module" src="../js/auth.js"></script>
-      <script src="../js/links.js"></script>
-      <script src="../proo.js"></script>
-
+   <script>
+      function abrirHome() {
+         window.location.href = "/";
+      }
+   </script>
+   
+   <script src="../proo.js"></script>
+   <script src="../pro.js"></script>
+   <script type="module" src="../js/auth-.js"></script>
 </body>
 
 </html>
