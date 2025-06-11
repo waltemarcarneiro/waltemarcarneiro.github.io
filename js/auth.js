@@ -1,35 +1,16 @@
-// === PROTEÇÃO GLOBAL DE PÁGINAS (versão com integração da splash) ===
-
-let usuarioAutenticado = false;
-
+// === PROTEÇÃO GLOBAL DE PÁGINAS ===
 const paginasProtegidas = [
   "/pages/profile.html",
-  // outras páginas protegidas
+  // adicione aqui outras páginas protegidas
 ];
 
 const estaPaginaProtegida = paginasProtegidas.includes(location.pathname);
 
 onAuthStateChanged(auth, user => {
-  usuarioAutenticado = !!(user && user.emailVerified);
-
-  // Só verifica a proteção após a splash
-  if (window.splashJaCarregou) {
-    verificarProtecao();
+  if (estaPaginaProtegida && (!user || !user.emailVerified)) {
+    location.href = "/index.html"; // ou redirecione para o login, se quiser
   }
 });
-
-function verificarProtecao() {
-  if (estaPaginaProtegida && !usuarioAutenticado) {
-    location.href = "/index.html";
-  }
-}
-
-// Função chamada ao final da splash animada
-window.iniciarProtecaoGlobal = function () {
-  window.splashJaCarregou = true;
-  verificarProtecao();
-};
-
 
 //END
 

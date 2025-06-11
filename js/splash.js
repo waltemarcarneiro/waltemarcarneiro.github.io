@@ -40,15 +40,7 @@ window.addEventListener('unload', () => {
   localStorage.removeItem('splashShown');
 });
 
-///
-
-splash.remove();
-sessionStorage.setItem('splashShown', 'true');
-localStorage.setItem('splashShown', 'true');
-document.body.style.visibility = 'visible'; // 👈 ATIVA VISUALIZAÇÃO
-
-
-// ⚠️ Libera a verificação de proteção
+// ⚠️ Chama o carregamento do auth.js APÓS splash
 if (typeof iniciarProtecaoGlobal === "function") {
   iniciarProtecaoGlobal();
 }
