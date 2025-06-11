@@ -30,7 +30,11 @@ function openVivoRecarga() {
     window.location.href = "https://recarga.vivo.com.br/mobile/recarga";
 }
 
-// Adicione o evento de clique ao ícone de seta à esquerda
-document.getElementById('backButton').addEventListener('click', () => {
-    history.back(); // Volta para a página anterior
-});
+//Garantir que o elemento já exista antes de adicionar o evento
+const backButton = document.getElementById('backButton');
+if (backButton) {
+  backButton.addEventListener('click', () => {
+    history.back();
+  });
+}
+
