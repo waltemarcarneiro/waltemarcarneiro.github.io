@@ -1,12 +1,7 @@
-//SEGUNRANÇA DO USUÁRIO COM FIREBASE
-
-import { auth } from "/firebase-config.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-
 // === PROTEÇÃO GLOBAL DE PÁGINAS ===
 const paginasProtegidas = [
   "/pages/profile.html",
-  // adicione aqui todas as páginas que precisam estar protegidas
+  // adicione aqui outras páginas protegidas
 ];
 
 const estaPaginaProtegida = paginasProtegidas.includes(location.pathname);
@@ -16,9 +11,8 @@ onAuthStateChanged(auth, user => {
     location.href = "/index.html"; // ou redirecione para o login, se quiser
   }
 });
+
 //END
-
-
 
 import { auth } from "/firebase-config.js";
 import {
