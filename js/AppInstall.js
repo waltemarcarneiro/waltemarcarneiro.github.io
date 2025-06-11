@@ -32,7 +32,7 @@ function closeApp() {
 function showApp() {
     const app = document.getElementById('InstallBanner');
     app.classList.add('show');
-    setTimeout(hideApp, 30000); // Esconde o banner após 30 segundos
+    setTimeout(hideApp, 15000); // Esconde o banner após 30 segundos
 }
 
 function hideApp() {
@@ -40,4 +40,4 @@ function hideApp() {
     app.classList.remove('show');
 }
 
-setTimeout(showApp, 5000); // Mostra o banner após 5 segundos
+setTimeout(showApp, 20000); // Mostra o banner após 5 segundos

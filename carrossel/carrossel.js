@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
             stopMedia(slides[currentSlide]);
             carrossel.style.display = "none";
             localStorage.setItem("introShown", "true");
-            window.location.href = "home.html"; // Redirect to the specific URL
+            window.location.href = "index.html"; // Redirect to the specific URL
         });
     }
 
