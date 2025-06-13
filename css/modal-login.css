@@ -7,13 +7,13 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(39, 31, 34, 0.99);
+  background: #F9F9F9;
   backdrop-filter: blur(5px);
   z-index: 9999;
 }
 
 .modal-acesso-content {
-  background: rgba(39, 31, 34, 0.7);
+  background: #F9F9F9;
   padding: 30px;
   border-radius: 12px;
   /*width: 90%;*/
@@ -21,7 +21,7 @@
   position: relative;
   /*box-shadow: 0 0 20px rgba(0,0,0,0.5);*/
   font-family: 'Inter', sans-serif;
-  color: #fff;
+  color: #151515;
 }
 
 .modal-acesso-close {
@@ -30,6 +30,7 @@
   right: 30px;
   font-size: 28px;
   cursor: pointer;
+  background: rgba(0,0,0,0.2);
 }
 
 .modal-acesso-login-tabs {
@@ -75,7 +76,7 @@
   border: none;
   color: white;
   font-weight: 500;
-  border-radius: 25px;
+  border-radius: 8px;
   cursor: pointer;
   margin-top: 8px;
   display: flex;
@@ -88,10 +89,10 @@
 .google-btn {
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
-    background: none;
-    color: #fff;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    /* background: none; */
+    /* color: #fff; */
     font-weight: 500;
     cursor: pointer;
     align-items: center;
@@ -115,7 +116,7 @@
     width: 100%;
     padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 25px;
+    border-radius: 8px;
     background: #f76700;
     color: #fff;
     font-weight: 500;
@@ -133,11 +134,10 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     background: none;
-    color: #fff;
+    color: #555;
     font-weight: 500;
     cursor: pointer;
     font-size: 1rem;
-    
 }
 
 
@@ -185,11 +185,9 @@
   margin-top: 10px;
 }
 .modal-acesso .recuperar-senha a {
-  
-  color: #fff;
+  color: #151515;
   opacity: 0.8;
   text-decoration: underline;
-  
 }
 
 /*LOGIN CSS*/
@@ -201,7 +199,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: #555;
     margin: 40px auto;
 }
 
@@ -209,12 +207,12 @@
 .login-separator::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .login-separator span {
     padding: 0 10px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.3);
 }
 
 #loginForm {
@@ -233,7 +231,7 @@
     gap: 15px;
 }
 ::placeholder {
-    color: #ffffffa1;
+    color: #777;
     font-size: 16px;
 }
 .form-input {
@@ -241,10 +239,10 @@
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
+    /* background: rgba(255, 255, 255, 0.05); */
+    color: #151515;
     font-size: 20px;
-    letter-spacing: 1px;;
+    letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
@@ -264,7 +262,7 @@
 .tab-btn {
     background: none;
     border: none;
-    color: #fff;
+    color: #333;
     font-size: 16px;
     padding: 10px 20px;
     cursor: pointer;
@@ -339,4 +337,3 @@
    cursor: pointer;
    color: #ffffff7c
 }
-
