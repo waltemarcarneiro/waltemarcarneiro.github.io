@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Partição FAT32 (EFI)</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #000;
+    }
+    code {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background: #eee;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .step {
+      margin-bottom: 2rem;
+      border-left: 4px solid #007aff;
+      padding-left: 1rem;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📦 Criando uma Partição FAT32 com o Parted</h1>
+
+  <div class="step">
+    <h2>1. Verifique os discos conectados</h2>
+    <pre><code>lsblk</code></pre>
+    <p>Localize seu disco principal (ex: <code>/dev/sda</code>) e anote se ele está vazio ou se possui partições.</p>
+  </div>
+
+  <div class="step">
+    <h2>2. Inicie o Parted</h2>
+    <pre><code>sudo parted /dev/sda</code></pre>
+    <p>Substitua <code>/dev/sda</code> pelo disco correto, caso seja diferente no seu sistema.</p>
+  </div>
+
+  <div class="step">
+    <h2>3. Liste as partições existentes</h2>
+    <pre><code>print</code></pre>
+    <p>Você verá as partições já criadas, como no exemplo:</p>
+    <pre><code>
+Número  Início  Fim     Tamanho  Sistema de arquivos  Nome     Opções
+1      1049kB  34,1GB  34,1GB                        Ventoy   msftdata
+2      34,1GB  34,1GB  33,6MB   fat16                VTOYEFI  msftdata
+    </code></pre>
+  </div>
+
+  <div class="step">
+    <h2>4. Crie uma nova partição FAT32</h2>
+    <p>Digite:</p>
+    <pre><code>mkpart primary fat32 33MiB 545MiB</code></pre>
+    <p>Confirme com <code>Yes</code> e depois <code>Ignore</code> quando for perguntado sobre alinhamento.</p>
+  </div>
+
+  <div class="step">
+    <h2>5. Marque a partição como de boot</h2>
+    <pre><code>set 3 boot on</code></pre>
+    <p>Substitua <code>3</code> pelo número correspondente da nova partição criada.</p>
+  </div>
+
+  <div class="step">
+    <h2>6. Saia do parted</h2>
+    <pre><code>quit</code></pre>
+  </div>
+
+  <div class="step">
+    <h2>7. Formate a partição como FAT32</h2>
+    <pre><code>sudo mkfs.fat -F32 /dev/sda3</code></pre>
+    <p>⚠️ Se aparecer erro como <code>Too few blocks for viable filesystem</code>, significa que a partição foi criada com tamanho inválido (muito pequena ou bug de alinhamento).</p>
+  </div>
+
+  <div class="step">
+    <h2>8. Verifique se a partição foi criada</h2>
+    <pre><code>lsblk</code></pre>
+    <p>Ela deve aparecer listada, mesmo que o tamanho pareça errado (<code>512B</code> indica falha).</p>
+  </div>
+
+  <footer>
+    Feito com ⚙️ por Waltemar - Ajuste os valores conforme seu disco e plano de particionamento.<br>
+    Use com cuidado e sempre tenha backup!
+  </footer>
+
+</body>
+</html>
