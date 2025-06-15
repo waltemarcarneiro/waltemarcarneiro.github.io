@@ -207,7 +207,7 @@
 .login-separator::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .login-separator span {
