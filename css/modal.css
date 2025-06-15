@@ -357,10 +357,7 @@
     background: #e55f00;
 }
 
-
-
-/* Estilos para as tabs de login */
-
+/*
 .tab-btn {
     background: none;
     border: none;
@@ -369,7 +366,7 @@
     cursor: pointer;
     opacity: 0.7;
 }
-
+*/
 .tab-btn.active {
     opacity: 1;
     border-bottom: 2px solid #fff;
