@@ -8,7 +8,6 @@ const urlsToCache = [
   '/icons/favicon.ico',
   '/404.html',
   '/offline.html',
-  '/image/offline.svg',
   '/css/index.css',
   '/image/background2.webp',
   '/bank/santander.html',
