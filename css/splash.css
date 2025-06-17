@@ -37,7 +37,7 @@
   background: url('../image/logo.png') no-repeat center;
   background-size: 90%;
   position: relative;
-  margin: 0 auto 3em auto;
+  margin: 0 auto 2.7em auto;
 }
 .splash-spinner::after {
   content: '';
