@@ -1,4 +1,4 @@
-const CACHE_NAME = 'waltemar-v4.1.8';
+const CACHE_NAME = 'waltemar-v4.1.9';
 const MAX_CACHE_SIZE = 50 * 1024 * 1024; 
 const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; 
 
@@ -39,8 +39,8 @@ async function showUpdateNotification() {
 
   const options = {
     body: 'Clique em "Atualizar Agora" para usar a nova versão.',
-    icon: './bank/logos/icon192.png',
-    badge: './bank/logos/icon192.png',
+    icon: './bank/logos/icon192-vn.png',
+    badge: './bank/logos/icon192.nv.png',
     tag: 'update-notification',
     renotify: true,
     requireInteraction: true,
