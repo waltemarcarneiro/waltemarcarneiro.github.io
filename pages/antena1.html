@@ -78,6 +78,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      cursor: pointer;
     }
 
     .brave::before {
@@ -168,7 +169,7 @@
 <body>
   <div class="brave"></div>
 
-  <div class="logo-radio-antena1">
+  <div class="logo-radio-antena1" id="share-Button">
     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="ionicon" viewBox="0 0 512 512">
       <circle style="fill: currentColor;" cx="256" cy="256.02" r="32" />
       <path
@@ -210,6 +211,9 @@
         applyTheme(e.matches);
       }
     });
+  </script>
+  <script src="../js/share-antena1.js">
+
   </script>
 </body>
 
