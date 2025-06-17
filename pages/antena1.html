@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <title>Player Antena 1</title>
@@ -7,31 +8,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f76700" />
   <!-- FAVICON-->
-   <link rel="shortcut icon" href="../icons/favicon32.png" />
-   <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon32.png" />
-   <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon16.png" />
-   <!--AppleTouchIcon-->
-   <link rel="apple-touch-icon" href="../icons/icon76.png" sizes="76x76">
-   <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
-   <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
-   <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
-   <link rel="apple-touch-icon" href="../icons/icon512.png" sizes="512x512">
-   <!-- SEO | OG -->
-   <meta name="apple-mobile-web-app-capable" content="yes" />
-   <meta name="keywords" content="Waltemar" />
-   <meta property="og:title" content="Waltemar Carneiro - Player Antena 1" />
-   <meta property="og:description" content="Player Antena 1" />
-   <meta property="og:image" content="https://waltemar.com.br/image/og-radio-antena1.webp" />
-   <meta content='website' property='og:type' />
-   <meta property="og:site_name" content="Waltemar Carneiro" />
-   <meta name="mobile-web-app-capable" content="yes" />
-  
+  <link rel="shortcut icon" href="../icons/favicon32.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon16.png" />
+  <!--AppleTouchIcon-->
+  <link rel="apple-touch-icon" href="../icons/icon76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="../icons/icon512.png" sizes="512x512">
+  <!-- SEO | OG -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="keywords" content="Waltemar" />
+  <meta property="og:title" content="Waltemar Carneiro - Player Antena 1" />
+  <meta property="og:description" content="Player Antena 1" />
+  <meta property="og:image" content="https://waltemar.com.br/image/og-radio-antena1.webp" />
+  <meta content='website' property='og:type' />
+  <meta property="og:site_name" content="Waltemar Carneiro" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     :root {
       --bg: #f9f9f9;
       --fg: #111;
@@ -59,7 +61,23 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-     
+
+    }
+
+    .logo-radio-antena1 {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      height: 90px;
+      width: 90px;
+      padding: 5px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
 
     .brave::before {
@@ -95,26 +113,26 @@
       background: var(--glass-bg-dark);
     }
 
-   audio {
-  flex: 1;
-  max-width: 100%;
-  background-color: transparent !important;
-  background: none !important;
-  border: none;
-  box-shadow: none;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: filter 0.3s ease;
-}
+    audio {
+      flex: 1;
+      max-width: 100%;
+      background-color: transparent !important;
+      background: none !important;
+      border: none;
+      box-shadow: none;
+      -webkit-appearance: none;
+      appearance: none;
+      transition: filter 0.3s ease;
+    }
 
-/* Clarity visual por tema */
-body:not(.dark) audio {
-  filter: brightness(1) contrast(1);
-}
+    /* Clarity visual por tema */
+    body:not(.dark) audio {
+      filter: brightness(1) contrast(1);
+    }
 
-body.dark audio {
-  filter: invert(1) brightness(1.3) contrast(0.9) saturate(1.2);
-}
+    body.dark audio {
+      filter: invert(1) brightness(1.3) contrast(0.9) saturate(1.2);
+    }
 
 
     /* WebKit: controles nativos */
@@ -144,27 +162,19 @@ body.dark audio {
     .toggle-theme:hover {
       text-decoration: underline;
     }
-    .logo-radio-antena1 {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      height: 100px;
-      width: 100px;
-      padding: 10px;
-      border-radius: 20px;
-      background: rgba(0, 0, 0, 0.1) !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
   </style>
 </head>
+
 <body>
   <div class="brave"></div>
 
   <div class="logo-radio-antena1">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="ionicon" viewBox="0 0 512 512"><circle style="fill: #eee;" cx="256" cy="256.02" r="32"/><path d="M184.25 192.25a96 96 0 000 127.52M327.77 319.77a96 96 0 000-127.52M133.28 141.28a168 168 0 000 229.44M378.72 370.72a168 168 0 000-229.44M435 416a240.34 240.34 0 000-320M77 96a240.34 240.34 0 000 320" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="ionicon" viewBox="0 0 512 512">
+      <circle style="fill: currentColor;" cx="256" cy="256.02" r="32" />
+      <path
+        d="M184.25 192.25a96 96 0 000 127.52M327.77 319.77a96 96 0 000-127.52M133.28 141.28a168 168 0 000 229.44M378.72 370.72a168 168 0 000-229.44M435 416a240.34 240.34 0 000-320M77 96a240.34 240.34 0 000 320"
+        fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+    </svg>
     <p>Antena 1</p>
   </div>
 
@@ -202,5 +212,5 @@ body.dark audio {
     });
   </script>
 </body>
-</html>
 
+</html>
