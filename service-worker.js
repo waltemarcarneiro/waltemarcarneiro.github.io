@@ -1,4 +1,4 @@
-const CACHE_NAME = 'waltemar-v4.1.7';
+const CACHE_NAME = 'waltemar-v4.1.8';
 const MAX_CACHE_SIZE = 50 * 1024 * 1024; 
 const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; 
 

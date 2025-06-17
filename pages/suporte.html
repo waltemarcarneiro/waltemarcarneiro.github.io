@@ -1,87 +1,131 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Waltemar App | Download</title>
-      <meta name="description" content="Aplicativo de Suporte ao Cliente">
-      
-      <link rel="stylesheet" href="./suporte.css">
-      <!-- FAVICON-->
-      <meta name="theme-color" content="#F76700">
-      <link rel="shortcut icon" href="../icons/favicon32.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon16.png" />
-      <!--AppleTouchIcon-->
-      <link rel="apple-touch-icon" href="../icons/icon76.png" sizes="76x76">
-      <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
-      <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
-      <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
-      <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#e77000" />
-      <!-- SEO | OG -->
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="keywords" content="Waltemar" />
-      <meta property="og:title" content="App Download | Waltemar Carneiro" />
-      <meta property="og:description" content="Tenha acesso premium e libere as funções protegidas!" />
-      <meta property="og:image" content="../image/suporte.webp" />
-      <meta content='website' property='og:type' />
-      <meta property="og:site_name" content="Waltemar Carneiro" />
-      <meta name="mobile-web-app-capable" content="yes" />
-   </head>
-   <body>
-      <div class="content">
 
-         <div class="header">
-            <img src="../image/chevron-back.svg" height="24" class="icon" id="backButton">
-            <div>Suporte</div>
-            <img src="../image/arrow-redo-outline.svg" height="24" class="icon" onclick="sharePage()" id="share-Button">
-            
-         </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waltemar App | Download</title>
+  <meta name="description" content="Aplicativo de Suporte ao Cliente">
 
-         <div class="logo-site"></div>
-
-            <a href="./AllianceShieldX.apk"><img src="../image/logo-box.svg" width="150"></a>
-
-         <p>Você está baixando<br> [ Alliance Shield X ]</p>
-
-         
-
-         <div class="play-protect">            
-           <ion-icon name="logo-google-playstore"></ion-icon>
-          Não verificado por Google Play Protect.
-        </div>  
-                  
-         <div onclick="openApp()" class="copyright">Waltemar Carneiro © 2001-2025</div>
-      
-      </div><!--END CONTENT-->
+  <link rel="stylesheet" href="./suporte.css">
+  <!-- FAVICON-->
+  <meta name="theme-color" content="#F76700">
+  <link rel="shortcut icon" href="../icons/favicon32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon16.png" />
+  <!--AppleTouchIcon-->
+  <link rel="apple-touch-icon" href="../icons/icon76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
+  <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#e77000" />
+  <!-- SEO | OG -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="keywords" content="Waltemar" />
+  <meta property="og:title" content="App Download | Waltemar Carneiro" />
+  <meta property="og:description" content="Tenha acesso premium e libere as funções protegidas!" />
+  <meta property="og:image" content="../image/suporte.webp" />
+  <meta content='website' property='og:type' />
+  <meta property="og:site_name" content="Waltemar Carneiro" />
+  <meta name="mobile-web-app-capable" content="yes" />
 
 
-<script>
-   
-  const shareIcon = document.getElementById('share-Button');
-
-  shareIcon.addEventListener('click', async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'waltemar.com.br',
-          text: 'Suporte',
-          url: 'https://waltemar.com.br/pages/suporte.html'
-        });
-        console.log('Conteúdo compartilhado com sucesso!');
-      } catch (error) {
-        console.error('Erro ao compartilhar:', error);
-      }
-    } else {
-      console.log('A API de compartilhamento não é suportada neste navegador.');
-      // Exibir um modal ou mensagem alternativa de compartilhamento
+  <style>
+    .copy-box {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #f76700;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
     }
-  });
 
-</script>
+    .copy-box:hover {
+      background-color: #d45500;
+    }
 
-<script src="../js/links.js"></script>
+    .copy-box:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+
+    <div class="header">
+      <img src="../image/chevron-back.svg" height="24" class="icon" id="backButton">
+      <div>Suporte</div>
+      <img src="../image/arrow-redo-outline.svg" height="24" class="icon" onclick="sharePage()" id="share-Button">
+
+    </div>
+
+    <div class="logo-site"></div>
+
+    <a href="./AllianceShieldX.apk"><img src="../image/logo-box.svg" width="150"></a>
+
+    <p>Você está baixando<br> [ WaltemarApp ]</p><br><br>
+
+    <!--################ script de copia texto ##############################-->
+
+    <div class="copy-box" onclick="copyToClipboard()">9NKSQGP7F2NH</div><br>
+    WhatsApp Code
+
+   <script>
+    function copyToClipboard() {
+      const text = "9NKSQGP7F2NH";
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Texto copiado: " + text);
+        
+        // Redirecionamento:
+        window.location.href = "https://store.rg-adguard.net/";
+        
+      }).catch(err => {
+        console.error("Erro ao copiar texto:", err);
+      });
+    }
+  </script>
+    <!---------------------------------------------------------->
+
+    <div class="play-protect">
+      <ion-icon name="logo-google-playstore"></ion-icon>
+      Não verificado por Google Play Protect.
+    </div>
+
+    <div onclick="openApp()" class="copyright">Waltemar Carneiro © 2001-2025</div>
+
+  </div><!--END CONTENT-->
+
+
+  <script>
+
+    const shareIcon = document.getElementById('share-Button');
+
+    shareIcon.addEventListener('click', async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({
+            title: 'waltemar.com.br',
+            text: 'Suporte',
+            url: 'https://waltemar.com.br/pages/suporte.html'
+          });
+          console.log('Conteúdo compartilhado com sucesso!');
+        } catch (error) {
+          console.error('Erro ao compartilhar:', error);
+        }
+      } else {
+        console.log('A API de compartilhamento não é suportada neste navegador.');
+        // Exibir um modal ou mensagem alternativa de compartilhamento
+      }
+    });
+
+  </script>
+
+  <script src="../js/links.js"></script>
 
 </body>
 
