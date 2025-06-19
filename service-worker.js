@@ -39,8 +39,8 @@ async function showUpdateNotification() {
 
   const options = {
     body: 'Clique em "Atualizar Agora" para usar a nova versão.',
-    icon: './bank/logos/icon192-vn.png',
-    badge: './bank/logos/icon192.nv.png',
+    icon: '/bank/logos/icon192-vn.png',
+    badge: '/bank/logos/icon192.nv.png',
     tag: 'update-notification',
     renotify: true,
     requireInteraction: true,
