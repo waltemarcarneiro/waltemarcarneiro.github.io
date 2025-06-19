@@ -684,10 +684,9 @@
     .container-bloco {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
+        gap: 1.3rem;
         justify-items: center;
         align-items: center;
-        width: 100%;
     }
 
     .block {
