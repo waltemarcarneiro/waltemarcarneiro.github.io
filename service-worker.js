@@ -73,18 +73,25 @@ self.addEventListener('activate', event => {
   console.group('🚀 Service Worker Activate');
   console.log('Versão ativada:', CACHE_NAME);
   event.waitUntil(
-    Promise.all([
-      caches.keys().then(cacheNames =>
-        Promise.all(cacheNames.map(cache =>
-          cache !== CACHE_NAME ? caches.delete(cache) : null
-        ))
-      ),
-      self.clients.claim(),
-      showUpdateNotification(),
-      self.clients.matchAll().then(clients => {
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(keys.map(cache =>
+        cache !== CACHE_NAME ? caches.delete(cache) : null
+      ));
+      await self.clients.claim();
+
+      // Só dispara notificação se o cache novo for diferente do anterior
+      const previousCache = await caches.open('__version');
+      const versionData = await previousCache.match('version');
+      const oldVersion = versionData ? await versionData.text() : null;
+
+      if (oldVersion !== CACHE_NAME) {
+        await previousCache.put('version', new Response(CACHE_NAME));
+        await showUpdateNotification(); // só dispara se for uma nova versão mesmo
+        const clients = await self.clients.matchAll();
         clients.forEach(client => client.postMessage({ type: 'UPDATE_AVAILABLE' }));
-      })
-    ])
+      }
+    })()
   );
   console.groupEnd();
 });
