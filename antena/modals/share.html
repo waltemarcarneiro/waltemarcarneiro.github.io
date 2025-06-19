@@ -4,6 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compartilhar Rádio</title>
   
+<style>
+    h2 {
+        margin-bottom: 0.3rem;  
+    }
+
+    body {
+        line-height: 1.5;
+    }
+    
+</style>
+
 </head>
 <body>
     <h2>Compartilhar Rádio</h2>
@@ -13,27 +24,6 @@
 <button onclick="sharePage()" style="padding:0.7rem 2rem;border:none;border-radius:6px;background:#F76700;color:#fff;cursor:pointer;font-size:1.1rem;">
   Compartilhar
 </button>
-
-
-
-<script>
-  //evento de compartilhamento        
-function sharePage() {
-    if (navigator.share) {
-        navigator.share({
-            title: document.title,
-            text: '👉 Link de pagamentos e Transferências via Pix!',
-            url: window.location.href
-        }).then(() => {
-            console.log('Página compartilhada com sucesso!');
-        }).catch((error) => {
-            console.error('Erro ao compartilhar a página:', error);
-        });
-    } else {
-        alert('Compartilhamento não suportado neste navegador.');
-    }
-}
-</script>
 
 </body>
 </html>
