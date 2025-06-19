@@ -297,15 +297,7 @@
       <script src="/js/links.js"></script>
       <script src="/carrossel/carrossel.js"></script>
       <script src="/js/notifications.js"></script>
-      <!-- Script para atualização da página via Service Worker -->
-      <script>
-         // Escuta mensagens do Service Worker para atualização da página
-         navigator.serviceWorker.addEventListener('message', event => {
-            if (event.data.type === 'RELOAD_PAGE') {
-               window.location.reload();
-            }
-         });
-      </script>
+      
       <!--<script src="./pro.js"></script>-->
    </body>
 </html>
