@@ -26,16 +26,9 @@ const urlsToCache = [
   '/css/profile.css'
 ];
 
-async function requestNotificationPermission() {
-  if (Notification.permission === 'granted') return true;
-  const clients = await self.clients.matchAll();
-  clients.forEach(client => client.postMessage({ type: 'REQUEST_NOTIFICATION_PERMISSION' }));
-  return false;
-}
-
 async function showUpdateNotification() {
-  const hasPermission = await requestNotificationPermission();
-  if (!hasPermission) return;
+  // Só mostra a notificação se já houver permissão
+  if (Notification.permission !== 'granted') return;
 
   const options = {
     body: 'Clique em "Atualizar Agora" para usar a nova versão.',
@@ -233,6 +226,13 @@ self.addEventListener('notificationclick', event => {
 
   if (event.action === 'update-now') {
     self.skipWaiting().then(() => self.clients.matchAll()).then(clients => {
+      clients.forEach(client => {
+        client.postMessage({ type: 'RELOAD_PAGE' });
+        client.navigate(client.url);
+      });
+    });
+  }
+});
       clients.forEach(client => {
         client.postMessage({ type: 'RELOAD_PAGE' });
         client.navigate(client.url);
