@@ -132,18 +132,16 @@ async function trimCache(cacheName) {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
+  const isNavigate = event.request.mode === 'navigate';
+
   event.respondWith(
     caches.match(event.request).then(async cached => {
       if (cached) {
-        const dateHeader = cached.headers.get('date');
-        const cacheDate = dateHeader ? new Date(dateHeader).getTime() : null;
-        if (cacheDate && Date.now() - cacheDate > MAX_CACHE_AGE) {
-          console.log('Cache expirado:', event.request.url);
-          return fetch(event.request);
-        }
+        // Sempre retorna o cache se existir, mesmo offline
         return cached;
       }
 
+      // Tenta buscar na rede
       return fetch(event.request)
         .then(async response => {
           if (!response || response.status !== 200 || response.type !== 'basic') {
@@ -156,7 +154,17 @@ self.addEventListener('fetch', event => {
           await cache.put(event.request, responseToCache);
           return response;
         })
-        .catch(() => caches.match('/offline.html'));
+        .catch(async () => {
+          // Só mostra offline.html se for navegação e não houver cache nem rede
+          if (isNavigate) {
+            const offlinePage = await caches.match('/offline.html');
+            if (offlinePage) {
+              return offlinePage;
+            }
+          }
+          // Para outros recursos, retorna erro padrão
+          return Response.error();
+        });
     })
   );
 });
@@ -233,10 +241,4 @@ self.addEventListener('notificationclick', event => {
     });
   }
 });
-      clients.forEach(client => {
-        client.postMessage({ type: 'RELOAD_PAGE' });
-        client.navigate(client.url);
-      });
-    });
-  }
-});
+ 
