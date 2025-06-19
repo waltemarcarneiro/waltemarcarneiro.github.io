@@ -3,7 +3,7 @@ function sharePage() {
     if (navigator.share) {
         navigator.share({
             title: document.title,
-            text: '👉 Link de pagamentos e Transferências via Pix!',
+            text: 'Experimente a Antena 1 com uma interface moderna e recursos interativos. Ouça música, veja letras originais e traduzidas, compartilhe sua experiência.',
             url: window.location.href
         }).then(() => {
             console.log('Página compartilhada com sucesso!');
