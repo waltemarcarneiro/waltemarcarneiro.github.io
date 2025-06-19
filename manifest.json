@@ -10,7 +10,7 @@
   "dir": "ltr",
   "background_color": "#f1f2f4",
   "theme_color": "#f1f2f4",
-  "start_url": "/index.html",
+  "start_url": "/",
   "orientation": "portrait",
   "scope": "/",
   "default_locale": "pt-BR",
