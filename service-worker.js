@@ -145,6 +145,13 @@ async function trimCache(cacheName) {
 
 //fetch pra priorizar a rede SEMPRE (e atualizar o cache)
 self.addEventListener('fetch', event => {
+  const url = event.request.url;
+
+  // ❌ Ignorar tudo que for da pasta /carrossel
+  if (url.includes('/carrossel/')) {
+    console.log('[SW] ⛔ Ignorando conteúdo de /carrossel:', url);
+    return;
+  }
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
