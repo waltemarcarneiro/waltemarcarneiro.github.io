@@ -1,4 +1,4 @@
-const CACHE_NAME = 'waltemar-v4.1.10';
+const CACHE_NAME = 'waltemar-v4.1.9';
 const MAX_CACHE_SIZE = 50 * 1024 * 1024; 
 const MAX_CACHE_AGE = 7 * 24 * 60 * 60 * 1000; 
 
@@ -39,8 +39,8 @@ async function showUpdateNotification() {
 
   const options = {
     body: 'Clique em "Atualizar Agora" para usar a nova versão.',
-    icon: '/bank/logos/icon192-vn.png',
-    badge: '/bank/logos/icon192.nv.png',
+    icon: '/bank/logos/icon192.png',
+    badge: '/bank/logos/icon192.png',
     tag: 'update-notification',
     renotify: true,
     requireInteraction: true,
@@ -54,7 +54,7 @@ async function showUpdateNotification() {
 }
 
 self.addEventListener('install', event => {
-  console.group('Service Worker Install');
+  console.group('⚙️ Service Worker Install');
   console.log('Nova versão:', CACHE_NAME);
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache =>
@@ -70,28 +70,21 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  console.group('Service Worker Activate');
+  console.group('🚀 Service Worker Activate');
   console.log('Versão ativada:', CACHE_NAME);
   event.waitUntil(
-    (async () => {
-      const keys = await caches.keys();
-      await Promise.all(keys.map(cache =>
-        cache !== CACHE_NAME ? caches.delete(cache) : null
-      ));
-      await self.clients.claim();
-
-      // Só dispara notificação se o cache novo for diferente do anterior
-      const previousCache = await caches.open('__version');
-      const versionData = await previousCache.match('version');
-      const oldVersion = versionData ? await versionData.text() : null;
-
-      if (oldVersion !== CACHE_NAME) {
-        await previousCache.put('version', new Response(CACHE_NAME));
-        await showUpdateNotification(); // só dispara se for uma nova versão mesmo
-        const clients = await self.clients.matchAll();
+    Promise.all([
+      caches.keys().then(cacheNames =>
+        Promise.all(cacheNames.map(cache =>
+          cache !== CACHE_NAME ? caches.delete(cache) : null
+        ))
+      ),
+      self.clients.claim(),
+      showUpdateNotification(),
+      self.clients.matchAll().then(clients => {
         clients.forEach(client => client.postMessage({ type: 'UPDATE_AVAILABLE' }));
-      }
-    })()
+      })
+    ])
   );
   console.groupEnd();
 });
@@ -143,36 +136,38 @@ async function trimCache(cacheName) {
   }
 }
 
-//fetch pra priorizar a rede SEMPRE (e atualizar o cache)
 self.addEventListener('fetch', event => {
-  const url = event.request.url;
+  if (event.request.method !== 'GET') return;
 
-  // ✅ Deixa tudo de /carrossel passar direto pela rede (sem cache)
-  if (url.includes('/carrossel/')) {
-    console.log('[SW] 🎠 Passando direto: conteúdo de /carrossel não será cacheado:', url);
-    event.respondWith(fetch(event.request));
-    return;
-  }
-
-  // 🔁 Resto do tratamento normal (network first com fallback pro cache)
   event.respondWith(
-    fetch(event.request)
-      .then(async networkResponse => {
-        const cache = await caches.open(CACHE_NAME);
-        await cache.put(event.request, networkResponse.clone());
-        return networkResponse;
-      })
-      .catch(async () => {
-        return caches.match(event.request) || caches.match('/offline.html');
-      })
+    caches.match(event.request).then(async cached => {
+      if (cached) {
+        const dateHeader = cached.headers.get('date');
+        const cacheDate = dateHeader ? new Date(dateHeader).getTime() : null;
+        if (cacheDate && Date.now() - cacheDate > MAX_CACHE_AGE) {
+          console.log('Cache expirado:', event.request.url);
+          return fetch(event.request);
+        }
+        return cached;
+      }
+
+      return fetch(event.request)
+        .then(async response => {
+          if (!response || response.status !== 200 || response.type !== 'basic') {
+            return response;
+          }
+
+          const responseToCache = response.clone();
+          const cache = await caches.open(CACHE_NAME);
+          await trimCache(CACHE_NAME);
+          await cache.put(event.request, responseToCache);
+          return response;
+        })
+        .catch(() => caches.match('/offline.html'));
+    })
   );
 });
 
-
-//O evento 'sync' é disparado quando o navegador 
-//detecta que voltou a ter conexão, e existe uma
-//tarefa pendente registrada com SyncManager.
-// Ou seja: "Quando o app estiver offline e voltar pra online, execute essa ação."
 self.addEventListener('sync', event => {
   if (event.tag === 'sync-user-data') {
     event.waitUntil(syncUserData());
