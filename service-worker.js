@@ -147,27 +147,27 @@ async function trimCache(cacheName) {
 self.addEventListener('fetch', event => {
   const url = event.request.url;
 
-  // ❌ Ignorar tudo que for da pasta /carrossel
+  // ✅ Deixa tudo de /carrossel passar direto pela rede (sem cache)
   if (url.includes('/carrossel/')) {
-    console.log('[SW] ⛔ Ignorando conteúdo de /carrossel:', url);
+    console.log('[SW] 🎠 Passando direto: conteúdo de /carrossel não será cacheado:', url);
+    event.respondWith(fetch(event.request));
     return;
   }
-  if (event.request.method !== 'GET') return;
 
+  // 🔁 Resto do tratamento normal (network first com fallback pro cache)
   event.respondWith(
     fetch(event.request)
       .then(async networkResponse => {
-        console.log('[SW] 🔄 Conteúdo atualizado da rede:', event.request.url);
         const cache = await caches.open(CACHE_NAME);
         await cache.put(event.request, networkResponse.clone());
         return networkResponse;
       })
       .catch(async () => {
-        console.warn('[SW] ⚠️ Rede indisponível, usando cache:', event.request.url);
         return caches.match(event.request) || caches.match('/offline.html');
       })
   );
 });
+
 
 //O evento 'sync' é disparado quando o navegador 
 //detecta que voltou a ter conexão, e existe uma
