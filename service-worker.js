@@ -143,38 +143,29 @@ async function trimCache(cacheName) {
   }
 }
 
+//fetch pra priorizar a rede SEMPRE (e atualizar o cache)
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
-    caches.match(event.request).then(async cached => {
-      if (cached) {
-        const dateHeader = cached.headers.get('date');
-        const cacheDate = dateHeader ? new Date(dateHeader).getTime() : null;
-        if (cacheDate && Date.now() - cacheDate > MAX_CACHE_AGE) {
-          console.log('Cache expirado:', event.request.url);
-          return fetch(event.request);
-        }
-        return cached;
-      }
-
-      return fetch(event.request)
-        .then(async response => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-
-          const responseToCache = response.clone();
-          const cache = await caches.open(CACHE_NAME);
-          await trimCache(CACHE_NAME);
-          await cache.put(event.request, responseToCache);
-          return response;
-        })
-        .catch(() => caches.match('./offline.html'));
-    })
+    fetch(event.request)
+      .then(async networkResponse => {
+        console.log('[SW] 🔄 Conteúdo atualizado da rede:', event.request.url);
+        const cache = await caches.open(CACHE_NAME);
+        await cache.put(event.request, networkResponse.clone());
+        return networkResponse;
+      })
+      .catch(async () => {
+        console.warn('[SW] ⚠️ Rede indisponível, usando cache:', event.request.url);
+        return caches.match(event.request) || caches.match('/offline.html');
+      })
   );
 });
 
+//O evento 'sync' é disparado quando o navegador 
+//detecta que voltou a ter conexão, e existe uma
+//tarefa pendente registrada com SyncManager.
+// Ou seja: "Quando o app estiver offline e voltar pra online, execute essa ação."
 self.addEventListener('sync', event => {
   if (event.tag === 'sync-user-data') {
     event.waitUntil(syncUserData());
