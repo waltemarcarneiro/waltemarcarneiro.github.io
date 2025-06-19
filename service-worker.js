@@ -54,7 +54,7 @@ async function showUpdateNotification() {
 }
 
 self.addEventListener('install', event => {
-  console.group('⚙️ Service Worker Install');
+  console.group('Service Worker Install');
   console.log('Nova versão:', CACHE_NAME);
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache =>
@@ -70,7 +70,7 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  console.group('🚀 Service Worker Activate');
+  console.group('Service Worker Activate');
   console.log('Versão ativada:', CACHE_NAME);
   event.waitUntil(
     (async () => {
