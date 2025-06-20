@@ -1,20 +1,23 @@
 @font-face {
-        font-family: 'Inter';
-        src: url('../fonts/Inter-Regular.ttf') format('true-type');
-        font-weight: 400;
-        font-style: Normal;
-        font-display: swap;
-    }
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.ttf') format('true-type');
+    font-weight: 400;
+    font-style: Normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
+
+html,
+body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(251,235,211,1) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(251, 235, 211, 1) 100%);
     display: flex;
     color: #151515;
     font-size: 16px;
@@ -23,6 +26,7 @@ html, body {
     height: 100dvh;
     text-shadow: 0px 1px 1px #fff;
 }
+
 .content {
     max-width: 480px;
     width: 90%;
@@ -34,6 +38,7 @@ html, body {
     flex-direction: column;
     flex: 1;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -48,20 +53,17 @@ html, body {
     height: 50px;
     z-index: 1000;
     font-weight: 500;
-    background: #F76700;
-    color: #fff;
+
+    color: #151515;
 }
-.header .icon {
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-}
-h2{
+
+h2 {
     margin-bottom: 50px;
     font-size: 2.5rem;
     font-weight: 500;
 }
-p{
+
+p {
     line-height: 1.5;
     margin-top: 20px;
     font-weight: 600;
@@ -70,25 +72,27 @@ p{
 
 
 
-.down{
+.down {
     font-size: 5rem;
 }
-.play-protect{
+
+.play-protect {
     margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    
+
     gap: 5px;
     font-size: 0.875rem;
 }
-.play-protect ion-icon{
+
+.play-protect ion-icon {
     font-size: 24px;
 }
 
 .copyright {
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,5 +105,5 @@ p{
     font-size: 0.875rem;
     padding-bottom: 2px;
     color: #999;
-    
+
 }

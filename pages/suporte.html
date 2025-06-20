@@ -7,19 +7,19 @@
   <title>Waltemar App | Download</title>
   <meta name="description" content="Aplicativo de Suporte ao Cliente">
 
-  <link rel="stylesheet" href="./suporte.css">
+  <link rel="stylesheet" href="../css/suporte.css">
   <!-- FAVICON-->
   <meta name="theme-color" content="#F76700">
-  <link rel="shortcut icon" href="../icons/favicon32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon16.png" />
+  <link rel="shortcut icon" href="/icons/favicon32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon180.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon16.png" />
   <!--AppleTouchIcon-->
-  <link rel="apple-touch-icon" href="../icons/icon76.png" sizes="76x76">
-  <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
-  <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
-  <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
-  <link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#e77000" />
+  <link rel="apple-touch-icon" href="/icons/icon76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/icons/icon120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/icons/icon152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/icons/icon180.png" sizes="180x180">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#e77000" />
   <!-- SEO | OG -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="keywords" content="Waltemar" />
@@ -58,42 +58,54 @@
   <div class="content">
 
     <div class="header">
-      <img src="../image/chevron-back.svg" height="24" class="icon" id="backButton">
+      <div style="cursor: pointer;" id="backButton"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          viewBox="0 0 512 512">
+          <polyline points="328 112 184 256 328 400"
+            style="fill:none;stroke:#151515;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
+        </svg></div>
       <div>Suporte</div>
-      <img src="../image/arrow-redo-outline.svg" height="24" class="icon" onclick="sharePage()" id="share-Button">
-
+      <div style="cursor: pointer;" onclick="sharePage()" id="share-Button"><svg xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24" viewBox="0 0 512 512">
+          <path d="M448,256,272,88v96C103.57,184,64,304.77,64,424c48.61-62.24,91.6-96,208-96v96Z"
+            style="fill:none;stroke:#151515;stroke-linejoin:round;stroke-width:32px" />
+        </svg></div>
     </div>
 
     <div class="logo-site"></div>
 
-    <a href="./AllianceShieldX.apk"><img src="../image/logo-box.svg" width="150"></a>
+    <a href="./waltemarApp.apk"><img src="../image/logo-box.svg" width="150"></a>
 
     <p>Você está baixando<br> [ WaltemarApp ]</p><br><br>
 
-    <!--################ script de copia texto ##############################-->
 
-    <div class="copy-box" onclick="copyToClipboard()">9NKSQGP7F2NH</div><br>
-    WhatsApp Code
+    <!-- Botão para copiar o código -->
+    <button id="copyCodeBtn"
+      style="margin-top:20px;border:none; padding: 5px 10px;border-radius:3px; background: #f76700; color: #fff;">Copiar código</button>
 
-   <script>
-    function copyToClipboard() {
-      const text = "9NKSQGP7F2NH";
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Texto copiado: " + text);
-        
-        // Redirecionamento:
-        //window.location.href = "https://store.rg-adguard.net/";
-        
-      }).catch(err => {
-        console.error("Erro ao copiar texto:", err);
-      });
-    }
-  </script>
-    <!---------------------------------------------------------->
+    <!-- Feedback visual no topo -->
+    <div id="copyFeedback"
+      style="display:none;position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:12px 24px;border-radius:8px;z-index:9999;font-size:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,0.2);transition:opacity 0.3s;">
+      Código copiado
+    </div>
+
+    <script>
+      document.getElementById('copyCodeBtn').onclick = function () {
+        const code = '9NKSQGP7F2NH';
+        navigator.clipboard.writeText(code).then(() => {
+          const feedback = document.getElementById('copyFeedback');
+          feedback.style.display = 'block';
+          feedback.style.opacity = '1';
+          setTimeout(() => {
+            feedback.style.opacity = '0';
+            setTimeout(() => { feedback.style.display = 'none'; }, 400);
+          }, 1800);
+        });
+      };
+    </script>
 
     <div class="play-protect">
       <ion-icon name="logo-google-playstore"></ion-icon>
-      Não verificado por Google Play Protect.
+      Verificado por Google Play Protect.
     </div>
 
     <div onclick="openApp()" class="copyright">Waltemar Carneiro © 2001-2025</div>
