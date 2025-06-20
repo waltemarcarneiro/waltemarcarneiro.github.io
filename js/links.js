@@ -19,7 +19,8 @@ function openApp() {
     window.location.href = "/app/app.html";
 }
 function openHome() {
-    window.location.href = "/index.html";
+    // Use location.replace para evitar o aviso do Chrome ao voltar para a home
+    location.replace("/index.html");
 }
 
 
