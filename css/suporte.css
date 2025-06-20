@@ -19,8 +19,8 @@ body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 97, 24) 100%);
     display: flex;
-    color: #151515;
-    font-size: 16px;
+    color: #000;
+    font-size: 1.2rem;
     align-items: center;
     justify-content: center;
     height: 100dvh;
