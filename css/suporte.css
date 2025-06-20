@@ -17,14 +17,14 @@ body {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(251, 235, 211, 1) 100%);
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(255, 97, 24) 100%);
     display: flex;
     color: #151515;
     font-size: 16px;
     align-items: center;
     justify-content: center;
     height: 100dvh;
-    text-shadow: 0px 1px 1px #fff;
+    
 }
 
 .content {
@@ -54,7 +54,7 @@ body {
     z-index: 1000;
     font-weight: 500;
 
-    color: #151515;
+    color: #fff;
 }
 
 h2 {
@@ -104,6 +104,6 @@ p {
     margin: auto;
     font-size: 0.875rem;
     padding-bottom: 2px;
-    color: #999;
+    color: #151515;
 
 }
