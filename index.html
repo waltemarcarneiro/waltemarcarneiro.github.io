@@ -1,303 +1,367 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-   <head>
-      <meta charset="UTF-8">
-      <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
-      <link rel="manifest" href="/manifest.json" />
-      <script src="/script-sw.js" defer></script>
-      <meta name="theme-color" content="#4e3e30">
-      <title>Waltemar Carneiro | Home</title>
-      <meta name="description" content="Web Desenvolvimentos" />
-      <!-- FAVICON-->
-      <link rel="shortcut icon" href="/icons/favicon32.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon16.png" />
-      <!--AppleTouchIcon-->
-      <link rel="apple-touch-icon" href="/icons/icon76.png" sizes="76x76">
-      <link rel="apple-touch-icon" href="/icons/icon120.png" sizes="120x120">
-      <link rel="apple-touch-icon" href="/icons/icon152.png" sizes="152x152">
-      <link rel="apple-touch-icon" href="/icons/icon180.png" sizes="180x180">
-      <link rel="apple-touch-icon" href="/icons/icon512.png" sizes="512x512">
-      <!-- SEO | OG -->
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="keywords" content="Waltemar" />
-      <meta property="og:title" content="Waltemar Carneiro" />
-      <meta property="og:description" content="Web Desenvolvimentos" />
-      <meta property="og:image" content="https://waltemar.com.br/image/og-image.webp" />
-      <meta content='website' property='og:type' />
-      <meta property="og:site_name" content="Waltemar Carneiro" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <!-- Firebase SDK -->
-      <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
-      <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
-      <script type="module" src="/firebase-config.js"></script>
-      <link rel="stylesheet" href="/css/index.css">
-      <link rel="stylesheet" href="/css/modal.css">
-      <link rel="stylesheet" href="/css/modal-login.css">
-      <link rel="stylesheet" href="/css/notification-modal.css">
-      <!---SPLASH-->
-      <link rel="stylesheet" href="./css/splash.css">
-      <script defer src="/js/splash.js"></script>
-   </head>
-   <body>
-      <!-- Carrossel de introdução -->
-      <div id="introCarrossel" class="carrossel">
-         <!-- FILMES PLAYLIST -->
-         <div class="carrossel-slide" style="background-image: url('carrossel/image1.jpg');">
-            <div class="carrossel-content">
-               <div class="container">
-                  <h2 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 300;">Assista Online</h2>
-                  <iframe width="100%" height="300" src="https://www.youtube.com/embed/JKoJNdjOHe8?si=cI0w_9IeeepX8EbT"
-                     title="YouTube video player" frameborder="0" style="border-radius: 5px;"
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                  <h2 style="margin-bottom: 20px; font-size:1rem; font-weight: 300">Playlist de Filmes Online.</h2>
-                  <img src="/image/chevron-forward.svg" height="40" class="next-slide">
-               </div>
-            </div>
-         </div>
-         <!-- KWAI CHANNEL LOVESONGSAPP-->
-         <div class="carrossel-slide" style="background-image: url('carrossel/carrossel-bg.webp');">
-            <div class="carrossel-content">
-               <video controls poster="/carrossel/image5.jpg">
-                  <source src="/carrossel/videos/clip.mp4" type="video/mp4">
-                  Seu navegador não suporta a tag de vídeo.
-               </video>
-               <p style="color:#eee; letter-spacing: 1px;">LoveSongsApp</p>
-               <img src="/image/chevron-back.svg" height="40" class="prev-slide">
+
+<head>
+   <meta charset="UTF-8">
+   <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
+   <link rel="manifest" href="/manifest.json" />
+   <script src="/script-sw.js" defer></script>
+   <meta name="theme-color" content="#4e3e30">
+   <title>Waltemar Carneiro | Home</title>
+   <meta name="description" content="Web Desenvolvimentos" />
+   <!-- FAVICON-->
+   <link rel="shortcut icon" href="/icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon16.png" />
+   <!--AppleTouchIcon-->
+   <link rel="apple-touch-icon" href="/icons/icon76.png" sizes="76x76">
+   <link rel="apple-touch-icon" href="/icons/icon120.png" sizes="120x120">
+   <link rel="apple-touch-icon" href="/icons/icon152.png" sizes="152x152">
+   <link rel="apple-touch-icon" href="/icons/icon180.png" sizes="180x180">
+   <link rel="apple-touch-icon" href="/icons/icon512.png" sizes="512x512">
+   <!-- SEO | OG -->
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="Waltemar Carneiro" />
+   <meta property="og:description" content="Web Desenvolvimentos" />
+   <meta property="og:image" content="https://waltemar.com.br/image/og-image.webp" />
+   <meta content='website' property='og:type' />
+   <meta property="og:site_name" content="Waltemar Carneiro" />
+   <meta name="mobile-web-app-capable" content="yes" />
+   <!-- Firebase SDK -->
+   <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+   <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
+   <script type="module" src="/firebase-config.js"></script>
+   <link rel="stylesheet" href="/css/index.css">
+   <link rel="stylesheet" href="/css/modal.css">
+   <link rel="stylesheet" href="/css/modal-login.css">
+   <link rel="stylesheet" href="/css/notification-modal.css">
+   <!---SPLASH-->
+   <link rel="stylesheet" href="./css/splash.css">
+   <script defer src="/js/splash.js"></script>
+</head>
+
+<body>
+   <!-- Carrossel de introdução -->
+   <div id="introCarrossel" class="carrossel">
+      <!-- FILMES PLAYLIST -->
+      <div class="carrossel-slide" style="background-image: url('carrossel/image1.jpg');">
+         <div class="carrossel-content">
+            <div class="container">
+               <h2 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 300;">Assista Online</h2>
+               <iframe width="100%" height="300" src="https://www.youtube.com/embed/JKoJNdjOHe8?si=cI0w_9IeeepX8EbT"
+                  title="YouTube video player" frameborder="0" style="border-radius: 5px;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+               <h2 style="margin-bottom: 20px; font-size:1rem; font-weight: 300">Playlist de Filmes Online.</h2>
                <img src="/image/chevron-forward.svg" height="40" class="next-slide">
-            </div>
-         </div>
-         <!-- LOVESONGS APP PLAYER-->
-         <div class="carrossel-slide"
-            style="background-image: url('carrossel/image3.jpg'); background-size: cover; background-position: bottom;">
-            <div class="carrossel-content">
-               <img src="carrossel/logo-lovesongs.png" style="width:100px">
-               <p style="margin-bottom:50px">LoveSongsApp</p>
-               <h2 style="margin-bottom: 200px; font-size: 1.8rem; font-weight: 300;">O Player das músicas românticas.</h2>
-               <img src="/image/chevron-back.svg" height="40" class="prev-slide">
-               <img src="/image/chevron-forward.svg" height="40" class="next-slide">
-            </div>
-         </div>
-         <div class="carrossel-slide" style="background-image: url('carrossel/image4.jpg');">
-            <div class="carrossel-content">
-               <img src="carrossel/tube.png" style="width: 150px; margin-bottom: 20px;">
-               <h2 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 300;">Playlist YouTube Music</h2>
-               <div class="container">
-                  <iframe width="100%" height="300" src="https://www.youtube.com/embed/Sz9Ad81xBuY?si=h-Afkd8vAEchoYZ-"
-                     title="YouTube video player" frameborder="0" style="border-radius:5px;"
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-               </div>
-               <br>
-               <br>
-               <br>
-               <img src="/image/chevron-back.svg" height="40" class="prev-slide">
-               <img src="/image/checkmark-outline.svg" height="40" class="finish-intro">
             </div>
          </div>
       </div>
-      <!--END CARROSSEL-->
-      <div class="container" id="logo">
-         <div class="header">
-            <img src="/image/logo.svg" alt="logo App" class="logo-header">
-            <div class="icon-top-right">
-               <img src="/image/down-white.svg" onclick="openSuporte()">
-               <img src="/image/person-outline.svg" onclick="openProfile()" lock>
-               <img src="/image/msn.svg" onclick="openBancoBrasil()">
-            </div>
+      <!-- KWAI CHANNEL LOVESONGSAPP-->
+      <div class="carrossel-slide" style="background-image: url('carrossel/carrossel-bg.webp');">
+         <div class="carrossel-content">
+            <video controls poster="/carrossel/image5.jpg">
+               <source src="/carrossel/videos/clip.mp4" type="video/mp4">
+               Seu navegador não suporta a tag de vídeo.
+            </video>
+            <p style="color:#eee; letter-spacing: 1px;">LoveSongsApp</p>
+            <img src="/image/chevron-back.svg" height="40" class="prev-slide">
+            <img src="/image/chevron-forward.svg" height="40" class="next-slide">
          </div>
-         <!--END HEADER-->
-         <div class="date" id="dataContainer"></div>
-         <div class="content">
-            <div class="bem-vindo">
-               <h1>Que bom você por aquí</h1>
-            </div>
-            <div class="digital">
-               <div id="user" class="user-info" lock style="cursor: pointer;">
-                  <img src="/image/person-circle-outline.svg" height="56" style="margin-right: 10px;" alt="">
-                  <div>
-                     <h3 class="user-name">Usuário</h3>
-                     <p class="user-status">Faça login aquí</p>
-                  </div>
-                  <img class="digital-image" src="./image/finger-print-outline.svg" height="48">
-               </div>
-               <div class="icon-acesso">
-                  <div class="icon-acesso" onclick="cota()">
-                     <img style="border-radius: 20px" src="/image/cart-outline.svg" height="24">
-                     <span> Loja Virtual</span>
-                  </div>
-                  <div class="icon-acesso" onclick="openModalSantander()">
-                     <img src="/image/pix-outline.svg" height="24">
-                     <span> Transferência Pix</span>
-                  </div>
-               </div>
-            </div>
+      </div>
+      <!-- LOVESONGS APP PLAYER-->
+      <div class="carrossel-slide"
+         style="background-image: url('carrossel/image3.jpg'); background-size: cover; background-position: bottom;">
+         <div class="carrossel-content">
+            <img src="carrossel/logo-lovesongs.png" style="width:100px">
+            <p style="margin-bottom:50px">LoveSongsApp</p>
+            <h2 style="margin-bottom: 200px; font-size: 1.8rem; font-weight: 300;">O Player das músicas românticas.</h2>
+            <img src="/image/chevron-back.svg" height="40" class="prev-slide">
+            <img src="/image/chevron-forward.svg" height="40" class="next-slide">
          </div>
-         <!--BANNER PROMO TYPE BB-->
-         <a href="https://amzn.to/42UCCtn" target="_blank">
-            <div class="promo">
+      </div>
+      <div class="carrossel-slide" style="background-image: url('carrossel/image4.jpg');">
+         <div class="carrossel-content">
+            <img src="carrossel/tube.png" style="width: 150px; margin-bottom: 20px;">
+            <h2 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 300;">Playlist YouTube Music</h2>
+            <div class="container">
+               <iframe width="100%" height="300" src="https://www.youtube.com/embed/Sz9Ad81xBuY?si=h-Afkd8vAEchoYZ-"
+                  title="YouTube video player" frameborder="0" style="border-radius:5px;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <br>
+            <br>
+            <br>
+            <img src="/image/chevron-back.svg" height="40" class="prev-slide">
+            <img src="/image/checkmark-outline.svg" height="40" class="finish-intro">
+         </div>
+      </div>
+   </div>
+   <!--END CARROSSEL-->
+   <div class="container" id="logo">
+      <div class="header">
+         <img src="/image/logo.svg" alt="logo App" class="logo-header">
+         <div class="icon-top-right">
+            <img src="/image/down-white.svg" onclick="openSuporte()">
+            <img src="/image/person-outline.svg" onclick="openProfile()" lock>
+            <img src="/image/msn.svg" onclick="openBancoBrasil()">
+         </div>
+      </div>
+      <!--END HEADER-->
+      <div class="date" id="dataContainer"></div>
+      <div class="content">
+         <div class="bem-vindo">
+            <h1>Que bom você por aquí</h1>
+         </div>
+         <div class="digital">
+            <div id="user" class="user-info" lock style="cursor: pointer;">
+               <img src="/image/person-circle-outline.svg" height="56" style="margin-right: 10px;" alt="">
                <div>
-                  <img src="/image/monitor.jpg" class="logo-promo">
-                  <button class="btn-promo">Saiba mais</button>
+                  <h3 class="user-name">Usuário</h3>
+                  <p class="user-status">Faça login aquí</p>
                </div>
-               <div class="promo-texto">
-                  <span>Monitor Gamer Samsung</span>
-                  <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto, <span
-                     style="color:#f76700">(-8%)</span> por R$ <span>999,00.</span>
-                  </p>
-                  <b style="color:#f76700;">Em até 10x R$ 108,00 sem juros</b>
+               <img class="digital-image" src="./image/finger-print-outline.svg" height="48">
+            </div>
+            <div class="icon-acesso">
+               <div class="icon-acesso" onclick="cota()">
+                  <img style="border-radius: 20px" src="/image/cart-outline.svg" height="24">
+                  <span> Loja Virtual</span>
+               </div>
+               <div class="icon-acesso" onclick="openModalSantander()">
+                  <img src="/image/pix-outline.svg" height="24">
+                  <span> Transferência Pix</span>
                </div>
             </div>
-         </a>
-         <!--END CONTENT-->
-         <div class="footer" id="footer">
-            <a href="#options" id="chevronIconLink">
-            <img style="border-radius: 20px" src="./image/chevron-down-outline.svg" id="chevronIcon" height="24">
-            </a>
          </div>
       </div>
-      <!--END CONTAINER-->
-      <div class="about" id="about">
-         <div class="background"></div>
-         <div id="options"></div>
-         <div class="container-bloco">
-            <a href="https://lovesongsapp.github.io/" lock target="_blank" class="block">
-               <div class="icon-wrapper">
-                  <img src="/image/logo-lovesongs.png" style="border-radius: 15px; height: 70px; width: 70px">
-               </div>
-               <span class="block-label">LoveSongs</span>
-            </a>
-            <a href="/radio/index.html" class="block">
-               <div class="icon-wrapper">
-                  <img src="/radio/img/album.webp" style="border-radius: 15px; height: 70px; width: 70px">
-               </div>
-               <span class="block-label">Radio LS</span>
-            </a>
-            <!-- Link protegido -->
-            <a href="/videos/filmes.html" class="block" lock>
-               <div class="icon-wrapper">
-                  <img style="border-radius: 20px" src="./image/film-outline.svg" height="80">
-               </div>
-               <span class="block-label">Filmes</span>
-            </a>
-            <a href="/youtube/index.html" class="block" lock>
-               <div class="icon-wrapper">
-                  <img style="border-radius: 20px" src="./image/logo-youtube.svg" height="80">
-               </div>
-               <span class="block-label">TubeMusic</span>
-            </a>
-            <a href="/videos/playlist.html" class="block" lock>
-               <div class="icon-wrapper">
-                  <img style="border-radius: 20px" src="./image/musical-notes.svg" height="80">
-               </div>
-               <span class="block-label">Playlist</span>
-            </a>
-            <a href="/pages/downloads.html" class="block" lock>
-               <div class="icon-wrapper">
-                  <img style="border-radius: 20px" src="./image/cloud-download.svg" height="80">
-               </div>
-               <span class="block-label">Download</span>
-            </a>
-            <a href="https://webboard.app/" class="block">
-               <div class="icon-wrapper">
-                  <img src="/image/WebBoard.jpg" style="border-radius: 15px; height: 70px; width: 70px">
-               </div>
-               <span class="block-label">WebBoard</span>
-            </a>
-            <a href="/videos/bolero.html" class="block" lock>
-               <div class="icon-wrapper">
-                  <img style="border-radius: 20px" src="./image/bolero.png" height="80">
-               </div>
-               <span class="block-label">Boleros</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link" class="block"
-               lock>
-               <div class="icon-wrapper">
-                  <img src="/image/logo-android.svg">
-               </div>
-               <span class="block-label">Android Apps</span>
-            </a>
-            <a href="#" class="block" lock>
-               <div class="icon-wrapper">
-                  <img src="/image/logo-apple.svg">
-               </div>
-               <span class="block-label">MacOsX</span>
-            </a>
-            <a href="#" class="block" lock>
-               <div class="icon-wrapper">
-                  <img src="/image/logo-tux.svg">
-               </div>
-               <span class="block-label">Linux</span>
-            </a>
-            <a href="https://store.rg-adguard.net/" class="block">
-               <div class="icon-wrapper">
-                  <img src="/image/logo-windows.svg">
-               </div>
-               <span class="block-label">Windows</span>
-            </a>
-            <a href="/antena/index.html" class="block">
-               <div class="icon-wrapper">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="ionicon" viewBox="0 0 512 512">
-                     <circle style="fill: #eee;" cx="256" cy="256.02" r="32"/>
-                     <path d="M184.25 192.25a96 96 0 000 127.52M327.77 319.77a96 96 0 000-127.52M133.28 141.28a168 168 0 000 229.44M378.72 370.72a168 168 0 000-229.44M435 416a240.34 240.34 0 000-320M77 96a240.34 240.34 0 000 320" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
-                  </svg>
-               </div>
-               <span class="block-label">Antena 1 Experience</span>
-            </a>
-         </div>
-         <div id="divBack">
-            <a href="#logo" id="backIconLink">
-            <img src="/image/chevron-back.svg" height="32">
-            </a>
-         </div>
-      </div>
-      <!--end about-->
-      <!-- Banner de instalação -->
-      <div class="app" id="InstallBanner" style="display:none;">
-         <div class="logo-app"></div>
-         <div class="header-app">
+      <!--BANNER PROMO TYPE BB-->
+      <a href="https://amzn.to/42UCCtn" target="_blank">
+         <div class="promo">
             <div>
-               <p class="app-title">waltemar.com.br</p>
-               <p class="app-subtitle">Desenvolvimentos Web</p>
-               <p class="add-info">Não contém anúncio</p>
+               <img src="/image/monitor.jpg" class="logo-promo">
+               <button class="btn-promo">Saiba mais</button>
             </div>
-            <div class="close-button">
-               <img src="/image/close-outline.svg" height="24" alt="" onclick="closeApp()">
-            </div>
-         </div>
-         <p class="install-message">Deseja adicionar o aplicativo a sua tela inicial?</p>
-         <button class="install-btn-app" id="installButton">Adicionar</button>
-      </div>
-      <!-- Adicionar antes dos scripts -->
-      <div id="notificationModal" class="modal-overlay" style="display: none;">
-         <div class="notification-modal">
-            <div class="modal-header">
-               <img src="image/sim.webp" alt="Ícone do App">
-               <h2 class="modal-title">Permitirr Notificações?</h2>
-            </div>
-            <div class="modal-notification">
-               <ol>
-                  <li>Receber avisos sobre novas atualizações</li>
-                  <li>Ser notificado sobre melhorias importantes</li>
-                  <li>Nunca perder novidades do app</li>
-               </ol>
-            </div>
-            <div class="modal-buttons">
-               <button id="allowNotifications" class="modal-btn allow-btn">Permitir</button>
-               <button id="denyNotifications" class="modal-btn deny-btn">Agora Não</button>
+            <div class="promo-texto">
+               <span>Monitor Gamer Samsung</span>
+               <p>Gamer Samsung Odyssey G3", 27", 180Hz, 1ms, Ajuste de Altura, Freesync, DP, HDMI, FHD, Preto, <span
+                     style="color:#f76700">(-8%)</span> por R$ <span>999,00.</span>
+               </p>
+               <b style="color:#f76700;">Em até 10x R$ 108,00 sem juros</b>
             </div>
          </div>
+      </a>
+      <!--END CONTENT-->
+      <div class="footer" id="footer">
+         <a href="#options" id="chevronIconLink">
+            <img style="border-radius: 20px" src="./image/chevron-down-outline.svg" id="chevronIcon" height="24">
+         </a>
       </div>
-      <!-- Scripts -->
-      <script type="module" src="./js/auth.js"></script>
-      <script src="/js/data-hora.js"></script>
-      <script src="/js/modal-santander.js"></script>
-      <script src="/js/AppInstall.js"></script>
-      <script src="/js/links.js"></script>
-      <script src="/carrossel/carrossel.js"></script>
-      <script src="/js/notifications.js"></script>
-      
-      <!--<script src="./pro.js"></script>-->
-   </body>
+   </div>
+   <!--END CONTAINER-->
+   <div class="about" id="about">
+      <div class="background"></div>
+      <div id="options"></div>
+      <div class="container-bloco">
+         <a href="https://lovesongsapp.github.io/" lock target="_blank" class="block">
+            <div class="icon-wrapper">
+               <img src="/image/logo-lovesongs.png" style="border-radius: 15px; height: 70px; width: 70px">
+            </div>
+            <span class="block-label">LoveSongs</span>
+         </a>
+         <a href="/radio/index.html" class="block">
+            <div class="icon-wrapper">
+               <img src="/radio/img/album.webp" style="border-radius: 15px; height: 70px; width: 70px">
+            </div>
+            <span class="block-label">Radio LS</span>
+         </a>
+         <!-- Link protegido -->
+         <a href="/videos/filmes.html" class="block" lock>
+            <div class="icon-wrapper">
+               <img style="border-radius: 20px" src="./image/film-outline.svg" height="80">
+            </div>
+            <span class="block-label">Filmes</span>
+         </a>
+         <a href="/youtube/index.html" class="block" lock>
+            <div class="icon-wrapper">
+               <img style="border-radius: 20px" src="./image/logo-youtube.svg" height="80">
+            </div>
+            <span class="block-label">TubeMusic</span>
+         </a>
+         <a href="/videos/playlist.html" class="block" lock>
+            <div class="icon-wrapper">
+               <img style="border-radius: 20px" src="./image/musical-notes.svg" height="80">
+            </div>
+            <span class="block-label">Playlist</span>
+         </a>
+         <a href="/pages/downloads.html" class="block" lock>
+            <div class="icon-wrapper">
+               <img style="border-radius: 20px" src="./image/cloud-download.svg" height="80">
+            </div>
+            <span class="block-label">Download</span>
+         </a>
+         <a href="https://webboard.app/" class="block">
+            <div class="icon-wrapper">
+               <img src="/image/WebBoard.jpg" style="border-radius: 15px; height: 70px; width: 70px">
+            </div>
+            <span class="block-label">WebBoard</span>
+         </a>
+         <a href="/videos/bolero.html" class="block" lock>
+            <div class="icon-wrapper">
+               <img style="border-radius: 20px" src="./image/bolero.png" height="80">
+            </div>
+            <span class="block-label">Boleros</span>
+         </a>
+         <a href="https://drive.google.com/drive/folders/1rjAYhItRHrHauutjp5YSDvDj--MXV4FA?usp=drive_link" class="block"
+            lock>
+            <div class="icon-wrapper">
+               <img src="/image/logo-android.svg">
+            </div>
+            <span class="block-label">Android Apps</span>
+         </a>
+         <a href="#" class="block" lock>
+            <div class="icon-wrapper">
+               <img src="/image/logo-apple.svg">
+            </div>
+            <span class="block-label">MacOsX</span>
+         </a>
+         <a href="#" class="block" lock>
+            <div class="icon-wrapper">
+               <img src="/image/logo-tux.svg">
+            </div>
+            <span class="block-label">Linux</span>
+         </a>
+         <a href="https://store.rg-adguard.net/" class="block">
+            <div class="icon-wrapper">
+               <img src="/image/logo-windows.svg">
+            </div>
+            <span class="block-label">Windows</span>
+         </a>
+         <a href="/antena/index.html" class="block">
+            <div class="icon-wrapper">
+               <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="ionicon" viewBox="0 0 512 512">
+                  <circle style="fill: #eee;" cx="256" cy="256.02" r="32" />
+                  <path
+                     d="M184.25 192.25a96 96 0 000 127.52M327.77 319.77a96 96 0 000-127.52M133.28 141.28a168 168 0 000 229.44M378.72 370.72a168 168 0 000-229.44M435 416a240.34 240.34 0 000-320M77 96a240.34 240.34 0 000 320"
+                     fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                     stroke-width="32" />
+               </svg>
+            </div>
+            <span class="block-label">Antena 1 Experience</span>
+         </a>
+      </div>
+      <div id="divBack">
+         <a href="#logo" id="backIconLink">
+            <img src="/image/chevron-back.svg" height="32">
+         </a>
+      </div>
+   </div>
+   <!--end about-->
+   <!-- Banner de instalação -->
+   <div class="app" id="InstallBanner" style="display:none;">
+      <div class="logo-app"></div>
+      <div class="header-app">
+         <div>
+            <p class="app-title">waltemar.com.br</p>
+            <p class="app-subtitle">Desenvolvimentos Web</p>
+            <p class="add-info">Não contém anúncio</p>
+         </div>
+         <div class="close-button">
+            <img src="/image/close-outline.svg" height="24" alt="" onclick="closeApp()">
+         </div>
+      </div>
+      <p class="install-message">Deseja adicionar o aplicativo a sua tela inicial?</p>
+      <button class="install-btn-app" id="installButton">Adicionar</button>
+   </div>
+   <!-- Adicionar antes dos scripts -->
+   <div id="notificationModal" class="modal-overlay" style="display: none;">
+      <div class="notification-modal">
+         <div class="modal-header">
+            <img src="image/sim.webp" alt="Ícone do App">
+            <h2 class="modal-title">Permitirr Notificações?</h2>
+         </div>
+         <div class="modal-notification">
+            <ol>
+               <li>Receber avisos sobre novas atualizações</li>
+               <li>Ser notificado sobre melhorias importantes</li>
+               <li>Nunca perder novidades do app</li>
+            </ol>
+         </div>
+         <div class="modal-buttons">
+            <button id="allowNotifications" class="modal-btn allow-btn">Permitir</button>
+            <button id="denyNotifications" class="modal-btn deny-btn">Agora Não</button>
+         </div>
+      </div>
+   </div>
+   <!-- Modal de aviso sobre o banner do Chrome -->
+   <div id="chromeBannerInfoModal" class="modal-overlay" style="display:none;z-index:9999;">
+      <div class="notification-modal" style="max-width: 400px;">
+         <div class="modal-header">
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 64 64">
+               <path d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184 184-82.39 184-184S349.61 64 248 64z"
+                  fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                  d="M220 220h32v116" />
+               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"
+                  d="M208 340h88" />
+               <path d="M248 130a26 26 0 1026 26 26 26 0 00-26-26z" />
+            </svg>
+
+
+            <h2 class="modal-title">Aviso Importante</h2>
+         </div>
+         <div class="modal-notification">
+            <p>
+               Se você visualizar um aviso no topo do app como<br>
+               <b>"Toque para copiar a URL deste app"</b> ou <b>"Abrir no Navegador"</b>,<br>
+               <b>não se preocupe!</b><br>
+               Esse aviso é exibido automaticamente pelo navegador Chrome em PWAs instalados.<br>
+               <br>
+               <b>O app não está tentando incomodar você.</b>
+            </p>
+         </div>
+         <div class="modal-buttons">
+            <button id="closeChromeBannerInfo" class="modal-btn allow-btn">Entendi</button>
+         </div>
+      </div>
+   </div>
+   <!-- Scripts -->
+   <script type="module" src="./js/auth.js"></script>
+   <script src="/js/data-hora.js"></script>
+   <script src="/js/modal-santander.js"></script>
+   <script src="/js/AppInstall.js"></script>
+   <script src="/js/links.js"></script>
+   <script src="/carrossel/carrossel.js"></script>
+   <script src="/js/notifications.js"></script>
+
+   <!--<script src="./pro.js"></script>-->
+   <script>
+      // ...existing code...
+
+      // Modal de aviso sobre o banner do Chrome (máx 3 vezes, só na home, só em standalone/fullscreen)
+      function isStandaloneOrFullscreen() {
+         return (window.matchMedia('(display-mode: standalone)').matches ||
+            window.matchMedia('(display-mode: fullscreen)').matches ||
+            window.navigator.standalone === true);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+         if (isStandaloneOrFullscreen() && window.location.pathname === "/index.html") {
+            let count = parseInt(localStorage.getItem('chromeBannerInfoCount') || '0', 10);
+            if (count < 3) {
+               const modal = document.getElementById('chromeBannerInfoModal');
+               modal.style.display = 'block';
+               document.getElementById('closeChromeBannerInfo').onclick = function () {
+                  modal.style.display = 'none';
+                  localStorage.setItem('chromeBannerInfoCount', (count + 1).toString());
+               };
+            }
+         }
+      });
+
+   </script>
+</body>
+
 </html>
