@@ -1,5 +1,6 @@
 :root {
   --primary: #F76700;
+  --artist: #bbbbbb;
   --surface-dark: #181818;
   --surface-light: #f1f1f1;
   --text-primary: #f1f1f1;
@@ -11,12 +12,32 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+@font-face {
+        font-family: 'Onest';
+        src: url('../fonts/Onest-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+@font-face {
+        font-family: 'Montserrat';
+        src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+@font-face {
+        font-family: 'Poppins';
+        src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }        
 body {
   min-height: 100vh;
   background: var(--surface-dark);
   color: var(--text-primary);
-  font-family: system-ui, sans-serif;
+  font-family: 'Onest', system-ui, sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -113,16 +134,13 @@ body {
 }
 
 .no-cover {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-secondary);
-    background-image: url(https://waltemar.com.br/img/cd.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
 }
 
 .info-wrapper {
@@ -143,11 +161,14 @@ body {
 .info-wrapper h1 {
   font-size: clamp(1.5rem, 5vw, 2rem);
   color: var(--text-primary);
+  font-family: 'Onest', system-ui, sans-serif;
+  letter-spacing: .07rem;
 }
 
 .info-wrapper p {
   font-size: clamp(1.2rem, 3vw, 1.25rem);
-  color: var(--primary);
+  color: var(--artist);
+  letter-spacing: .05rem;
 }
 
 .controls-wrapper {
