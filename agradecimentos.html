@@ -1,8 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta property="og:image" content="https://waltemar.com.br/agradecimentos.jpg" />
+<meta name="theme-color" content="#0f0f0f" />
+  <meta charse<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta property="og:image" content="https://waltemar.com.br/agradecimentos.jpg" />
 <meta name="theme-color" content="#0f0f0f" />
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado pelas felicitações!</title>
+  <style>
+    @font-face {
+      font-family: 'Poppins Regular';
+      src: url('./fonts/Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    :root {
+      --text-color: #eeeeee;
+      --accent-color: orange;
+      --font-family: 'Poppins Regular', sans-serif;
+      --max-width: 600px;
+      --spacing: clamp(1rem, 4vw, 2rem);
+      --font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: var(--font-family);
+    }
+
+    body {
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--spacing);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Vídeo ocupa todo o fundo */
+    video.bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      z-index: 1;
+      backdrop-filter: blur(4px);
+      background-color: #00000055;
+      border-radius: 1rem;
+      padding: var(--spacing);
+    }
+
+    h1 {
+      color: var(--accent-color);
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: var(--spacing);
+    }
+
+    p {
+      font-size: var(--font-size);
+      line-height: 1.6;
+      margin-bottom: var(--spacing);
+    }
+
+    .assinatura {
+      margin-top: var(--spacing);
+      font-weight: bold;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: var(--accent-color);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      opacity: 0.5;
+    }
+    html{background-color:#0f0f0f}
+  </style>
+</head>
+<body>
+  <!-- Fundo em vídeo -->
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="./bg.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeo em HTML5.
+  </video>
+
+  <!-- Conteúdo sobre o vídeo -->
+  <div class="container">
+    <h1>✨ Obrigado pelas Felicitações!</h1>
+    <p>
+      Hoje celebro <strong>52 anos de vida</strong> e cada mensagem recebida tornou esse dia ainda mais especial.<br />
+      Sou imensamente grato por ter pessoas como você nesse caminho.<br />
+      Que Deus retribua em dobro cada gesto de carinho!
+    </p>
+    <div class="assinatura"> Waltemar Carneiro</div>
+    <footer>
+      Deus é Fiel
+    </footer>
+  </div>
+</body>
+</html>
+t="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Obrigado pelas felicitações!</title>
   <style>
