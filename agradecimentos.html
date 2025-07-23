@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado pelas felicitações!</title>
+  <style>
+    @font-face {
+      font-family: 'Onest';
+      src: url('https://cdn.jsdelivr.net/gh/devpromptwc/assets/fonts/Onest-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    :root {
+      --bg-color: #000000;
+      --text-color: #ffffff;
+      --accent-color: #f76700;
+      --font-family: 'Onest', sans-serif;
+      --max-width: 600px;
+      --spacing: clamp(1rem, 4vw, 2rem);
+      --font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-family);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--spacing);
+      text-align: center;
+    }
+
+    .container {
+      max-width: var(--max-width);
+    }
+
+    h1 {
+      color: var(--accent-color);
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: var(--spacing);
+    }
+
+    p {
+      font-size: var(--font-size);
+      line-height: 1.6;
+      margin-bottom: var(--spacing);
+    }
+
+    .assinatura {
+      margin-top: var(--spacing);
+      font-weight: bold;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: var(--accent-color);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Obrigado pelas felicitações!</h1>
+    <p>
+      Hoje celebro <strong>52 anos de vida</strong> e cada mensagem recebida tornou esse dia ainda mais especial.<br />
+      Sou imensamente grato por ter pessoas como você nesse caminho.<br />
+      Que Deus retribua em dobro cada gesto de carinho!
+    </p>
+    <div class="assinatura">Waltemar Carneiro</div>
+    <footer>
+      Deus é fiel
+    </footer>
+  </div>
+</body>
+</html>
