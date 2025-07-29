@@ -135,7 +135,7 @@
     {
       "name": "Contribuir",
       "description": "Fazer uma contribuição via PIX",
-      "url": "/bank/bb.html",
+      "url": "/bank/brb.html",
       "icons": [
         {
           "src": "shortcuts/pix.svg",
