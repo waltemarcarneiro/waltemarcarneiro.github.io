@@ -1,7 +1,7 @@
 {
   "id": "waltemarapp",
   "name": "Waltemar Carneiro",
-  "short_name": "WaltemarApp",
+  "short_name": "Waltemar Carneiro",
   "description": "Experiência digital integrada com rádio online, vídeos e conteúdos interativos",
   "display": "standalone",
   "offline_enabled": true,
