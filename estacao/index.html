@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antena 1 Experience</title>
+  <meta name="description" content="Experimente a Antena 1 com uma interface moderna e recursos interativos. Ouça música, veja letras originais e traduzidas, compartilhe sua experiência." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="theme-color" content="#F76700">
+</head>
+<body>
+  <div class="app-wrapper">
+    <header class="header-controls">
+      <button class="icon-button" aria-label="Menu">
+        <span class="material-icons">menu</span>
+      </button>
+      <h4>Antena 1 Experience</h4>
+      <div style="margin-left:auto; display:flex; gap:0.5rem;">
+        <button class="icon-button" aria-label="Sobre o App" onclick="window.modalManager.open('about.html')">
+          <span class="material-icons">info</span>
+        </button>
+        <button class="icon-button" aria-label="Artista" onclick="window.modalManager.open('artist-info.html')">
+          <span class="material-icons">person</span>
+        </button>
+        <button class="icon-button" aria-label="Compartilhar" onclick="window.modalManager.open('share.html')">
+          <span class="material-icons">share</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="player">
+      <div class="cover-wrapper">
+        <div class="cover-container">
+          <img id="cover" alt="Capa do álbum atual" loading="lazy">
+          <div class="no-cover">
+            <span class="material-icons">album</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-wrapper">
+        <h1 id="title">Carregando...</h1>
+        <p id="artist">Aguardando artista</p>
+        
+        <div class="player-controls">
+          <button class="control-button" id="lyricsOriginalBtn" aria-label="Letra Original" onclick="window.modalManager.open('lyrics-original.html')">
+            <span class="material-icons">library_music</span>
+          </button>
+          <button class="control-button" id="playButton" aria-label="Play/Pause">
+            <span class="material-icons">play_arrow</span>
+          </button>
+          <button class="control-button" id="lyricsTranslationBtn" aria-label="Letra Traduzida" onclick="window.modalManager.open('lyrics-translation.html')">
+            <span class="material-icons">translate</span>
+          </button>
+        </div>
+
+        <audio id="audio-player" preload="auto">
+          <source src="https://antenaone.crossradio.com.br/stream/1;?FYC=1749987381219" type="audio/mpeg">
+        </audio>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/share.js"></script>
+  <script src="https://waltemar.com.br/pro.js"></script>
+
+
+</body>
+</html>
+
