@@ -6,6 +6,7 @@
     <title>Mercado Pago | Waltemar Carneiro</title>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
       <link rel="stylesheet" href="./bank.css">
       <!-- FAVICON-->
       <meta name="theme-color" content="#F76700">
@@ -24,7 +25,7 @@
       <meta name="keywords" content="Waltemar" />
       <meta property="og:title" content="Você tem um Pix para fazer" />
       <meta property="og:description" content="Acesse o link para efetuar o pagamento" />
-      <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-mercadopago.webp" />
+      <meta property="og:image" content="https://waltemar.com.br/bank/image/og-santander.webp" />
       <meta content='website' property='og:type' />
       <meta property="og:site_name" content="Waltemar Carneiro" />
       <meta name="mobile-web-app-capable" content="yes" />
@@ -32,12 +33,12 @@
 <body>
     <div class="content">
         <div class="header">
-            <ion-icon name="arrow-back-outline" class="icon" id="backButton"></ion-icon>
+            <img src="../image/chevron-back-outline-header.svg" height="24" class="icon" id="backButton">
             <div>Pagamentos</div>
-            <ion-icon name="arrow-redo-outline" class="icon" onclick="sharePage()"></ion-icon>
+            <img src="../image/arrow-redo-outline-header.svg" height="24" alt="" class="icon" onclick="sharePage()">
         </div>
         <div class="logo">
-            <img src="logos/mercadopago.svg">
+            <a href="https://associados.amazon.com.br/home" target="_blank"><img src="logos/santander.svg" height="34"></a>
         </div>
         <div class="qrcode-container">
             <img src="qrcodes/qrcode-mercadopago.png" alt="QRCode" class="qrcode">
@@ -46,62 +47,71 @@
             Se preferir, leia o QR Code® Pix com seu app de pagamentos
         </div>
         <div class="actions">
+
+        <div class="actions-center">
             <div class="action" onclick="copyText('qr')">
-                <ion-icon name="qr-code-outline" class="icon"></ion-icon>
-                <p>Copia e Cola</p>
+                <img src="../image/qr-code-outline.svg" class="icon" height="64" alt="">
+                
                 <span class="copy-text" style="display:none;">00020126580014br.gov.bcb.pix01361305cc98-e210-4cac-91cf-12f9e2a6ed0a5204000053039865802BR5922Waltemar Lima Carneiro6008Brasilia62080504mpda63041874</span>
                 
                                     <div id="qr-message" class="success-message" style="display:none;">
 
-                    <p><b>QRCode®</b> copiado com <b style="color:#1d1d1f">sucesso</b>, use a opção <b style="color:#1d1d1f">Copia e Cola</b> no aplicativo do seu banco!</p>
+                    <p class="title-sucesso">💬 QRCode® copiado!</p>
+                    <p class="subtitle-sucesso">use a opção <b style="color:#1d1d1f">Copia e Cola</b> no aplicativo do seu banco!</p>
 
                     <div class="lista">
                             <ol class="styled-list">
                                 <li>No app de seu banco ou carteira digital, vá em Pix.</li>
-                                <li>Escolha a opção <b style="color: #1d1d1f;">Copia e Cola</b>.</li>
+                                <li>Escolha a opção Copia e Cola.</li>
                                 <li>Cole o código copiado e pronto.</li>
                             </ol>
                     </div>
                 </div>
-
             </div>
+            <div>Copia e Cola</div>
+        </div>    
+
+        <div class="actions-center">
             <div class="action" onclick="copyText('key')">
-                <ion-icon name="key-outline" class="icon"></ion-icon>
-                <p>Copiar Chave</p>
+                <img src="../image/key-outline.svg" class="icon" height="64" alt="">
+                
                 <span class="copy-text" style="display:none;">1305cc98-e210-4cac-91cf-12f9e2a6ed0a</span>
                     
                     <div id="key-message" class="success-message" style="display:none;">
 
-                    <p><b>Chave Aleatória</b> copiada com <b style="color: #1d1d1f;">sucesso</b>.</p>
+                    <p class="title-sucesso">💬 Chave copiada!</p>
+                  <p class="subtitle-sucesso">use a opção <b>Chave Aleatória</b> no aplicativo do seu banco!</p>
 
                     <div class="lista">
                         <ol class="styled-list">
                             <li>No app de seu banco ou carteira digital, vá em Pix.</li>
-                            <li>Escolha a opção <b style="color:#1d1d1f">Chave Aleatória</b>.</li>
+                            <li>Escolha a opção Chave Aleatória.</li>
                             <li>Cole a chave copiada e pronto.</li>
                         </ol>
                     </div>
                 </div>
-                
             </div>
+            <div>Chave Pix</div>
         </div>
+        </div><!--END ACTIONS-->
+
         <div class="conta">
-            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+            <img src="../image/chevron-forward-dark.svg" alt="">
             <strong>Mercado Pago IP Ltda</strong>
         </div>
         <div class="conta">
-            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+            <img src="../image/chevron-forward-dark.svg" alt="">
             <strong>0001</strong>
         </div>
         <div class="conta">
-            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
+            <img src="../image/chevron-forward-dark.svg" alt="">
             <strong>9990570134-8</strong>
         </div>
         <div class="conta">
-            <ion-icon name="person-outline" class="icon" size="small"></ion-icon>
+            <img src="../image/chevron-forward-dark.svg" alt="">
             <strong>Waltemar Carneiro</strong>
         </div>
-        <div class="copyright">Waltemar Carneiro © 2001-2025</div>
+        <div class="copyright"><a href="https://associados.amazon.com.br/">Waltemar Carneiro © 2001-2025</a></div>
     </div>
     
     <div id="overlay" class="overlay">
@@ -114,17 +124,9 @@
 
     <div id="notification" class="notification" onclick="closeNotification(event)">
         <div class="line"></div>
-        <div class="logo-site">
-            <div class="notification-content" onclick="event.stopPropagation();">
-                <img src="logos/icon192.png" alt="Logo" class="notification-logo">
-                <div>
-                    <p class="notification-text">waltemar.com.br</p>
-                    <p class="notification-subtext">Web Development</p>
-                </div>
-            </div>
-        </div>
+        
         <p id="notification-message" class="msn"></p>
-        <button onclick="closeNotification()" class="close-button">Entendi</button>
+        <button onclick="closeNotification()" class="close-button">Ok, entendi</button>
         
     </div>
 
@@ -132,6 +134,6 @@
 
 
     <script src="./script.js"></script>
-    <script src="../pr.js"></script>
+    <script src="../pr0o.js"></script>
 </body>
 </html>
