@@ -1,136 +1,138 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
-    <title>Banco BV | Waltemar Carneiro</title>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>      <link rel="stylesheet" href="./bank.css">
-      <!-- FAVICON-->
-      <meta name="theme-color" content="#F76700">
-      <link rel="shortcut icon" href="https://waltemar.com.br/icons/favicon32.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="https://waltemar.com.br/icons/icon180.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="https://waltemar.com.br/icons/favicon32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="https://waltemar.com.br/icons/favicon16.png" />
-      <!--AppleTouchIcon-->
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon76.png" sizes="76x76">
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon120.png" sizes="120x120">
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon152.png" sizes="152x152">
-      <link rel="apple-touch-icon" href="https://waltemar.com.br/icons/icon180.png" sizes="180x180">
-      <link rel="mask-icon" href="https://waltemar.com.br/icons/safari-pinned-tab.svg" color="#e77000" />
-      <!-- SEO | OG -->
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="keywords" content="Waltemar" />
-      <meta property="og:title" content="Você tem um Pix para fazer" />
-      <meta property="og:description" content="Acesse o link para efetuar o pagamento" />
-      <meta property="og:image" content="https://waltemarcarneiro.github.io/bank/image/og-bv.webp" />
-      <meta content='website' property='og:type' />
-      <meta property="og:site_name" content="Waltemar Carneiro" />
-      <meta name="mobile-web-app-capable" content="yes" />
+   <meta charset="UTF-8">
+   <meta name="robots" content="noindex, nofollow">
+   <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport' />
+   <title>Banco BV | Waltemar Carneiro</title>
+
+
+   <link rel="stylesheet" href="./bank.css">
+   <!-- FAVICON-->
+   <meta name="theme-color" content="#f76700">
+   <meta name="msapplication-TileColor" content="#f76700" />
+   <link rel="shortcut icon" href="../icons/favicon32.png" />
+   <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon16.png" />
+   <!--AppleTouchIcon-->
+   <link rel="apple-touch-icon" href="../icons/icon76.png" sizes="76x76">
+   <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
+   <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
+   <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
+
+   <!-- SEO | OG -->
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="Você tem um Pix para fazer" />
+   <meta property="og:description" content="Acesse o link para efetuar o pagamento" />
+   <meta property="og:image" content="https://waltemar.com.br/bank/image/og-bv.webp" />
+   <meta content='website' property='og:type' />
+   <meta property="og:site_name" content="Waltemar Carneiro" />
+   <meta name="mobile-web-app-capable" content="yes" />
 </head>
+
 <body>
-    <div class="content">
-        <div class="header">
-            <ion-icon name="arrow-back-outline" class="icon" id="backButton"></ion-icon>
-            <div>Pagamentos</div>
-            <ion-icon name="arrow-redo-outline" class="icon" onclick="sharePage()"></ion-icon>
-        </div>
-        <div class="logo">
-            <img src="logos/bv.svg">
-        </div>
-        <div class="qrcode-container">
-            <img src="qrcodes/qrcode-bv.png" alt="QRCode" class="qrcode">
-        </div>
-        <div class="dica">
-            Se preferir, leia o QR Code® Pix com seu app de pagamentos
-        </div>
-        <div class="actions">
+   <div class="content">
+      <div class="header">
+
+         <img src="../image/chevron-back-header.svg" height="24" alt="" id="backButton">
+         <div>Pagamentos</div>
+
+         <img src="../image/arrow-redo-outline-header.svg" height="24" alt="" onclick="sharePage()">
+      </div>
+      <div>
+         <img src="logos/bv.svg" class="logo-banco" alt="Banco do Brasil">
+      </div>
+      <div class="qrcode-container">
+         <img src="qrcodes/qrcode-bv.png" alt="QRCode" class="qrcode">
+      </div>
+      <div class="dica">
+         Se preferir, leia o QR Code® Pix com seu app de pagamentos
+      </div>
+
+
+      <div class="actions">
+
+         <div class="actions-center">
             <div class="action" onclick="copyText('qr')">
-                <ion-icon name="qr-code-outline" class="icon"></ion-icon>
-                <p>Copia e Cola</p>
-                <span class="copy-text" style="display:none;">00020126580014br.gov.bcb.pix0136629a0ecc-70b8-492f-9a26-c75a9af4781e5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62410503***50300017BR.GOV.BCB.BRCODE01051.0.06304B75A</span>
-                
-                                    <div id="qr-message" class="success-message" style="display:none;">
 
-                    <p><b>QRCode®</b> copiado com <b style="color:#1d1d1f">sucesso</b>, use a opção <b style="color:#1d1d1f">Copia e Cola</b> no aplicativo do seu banco!</p>
+               <img src="../image/qr-code-outline.svg" class="icon" height="64" alt="">
 
-                    <div class="lista">
-                            <ol class="styled-list">
-                                <li>No app de seu banco ou carteira digital, vá em Pix.</li>
-                                <li>Escolha a opção <b style="color: #1d1d1f;">Copia e Cola</b>.</li>
-                                <li>Cole o código copiado e pronto.</li>
-                            </ol>
-                    </div>
-                </div>
+               <span class="copy-text"
+                  style="display:none;">00020126580014br.gov.bcb.pix0136629a0ecc-70b8-492f-9a26-c75a9af4781e5204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62410503***50300017BR.GOV.BCB.BRCODE01051.0.06304B75A</span>
+               <div id="qr-message" class="success-message" style="display:none;">
+                  <p class="title-sucesso">💬 QRCode® copiado!</p>
+                  <p class="subtitle-sucesso">use a opção <b>Copia e Cola</b> no aplicativo do seu banco!</p>
 
+                  <div class="lista">
+                     <ol class="styled-list">
+                        <li>No app de seu banco ou carteira digital, vá em Pix.</li>
+                        <li>Escolha a opção <b>Copia e Cola</b>.</li>
+                        <li>Cole o código copiado e pronto.</li>
+                     </ol>
+                  </div>
+               </div>
             </div>
+            <div>Copia e Cola</div>
+         </div>
+
+         <div class="actions-center">
             <div class="action" onclick="copyText('key')">
-                <ion-icon name="key-outline" class="icon"></ion-icon>
-                <p>Copiar Chave</p>
-                <span class="copy-text" style="display:none;">629a0ecc-70b8-492f-9a26-c75a9af4781e</span>
-                    
-                    <div id="key-message" class="success-message" style="display:none;">
+               <img src="../image/key-outline.svg" class="icon" height="64" alt="">
 
-                    <p><b>Chave Aleatória</b> copiada com <b style="color: #1d1d1f;">sucesso</b>.</p>
+               <span class="copy-text" style="display:none;">629a0ecc-70b8-492f-9a26-c75a9af4781e</span>
+               <div id="key-message" class="success-message" style="display:none;">
+                  
+                  <p class="title-sucesso">💬 Chave copiada!</p>
+                  <p class="subtitle-sucesso">use a opção <b>Chave Aleatória</b> no aplicativo do seu banco!</p>
 
-                    <div class="lista">
-                        <ol class="styled-list">
-                            <li>No app de seu banco ou carteira digital, vá em Pix.</li>
-                            <li>Escolha a opção <b style="color:#1d1d1f">Chave Aleatória</b>.</li>
-                            <li>Cole a chave copiada e pronto.</li>
-                        </ol>
-                    </div>
-                </div>
-                
+                  <div class="lista">
+                     <ol class="styled-list">
+                        <li>No app de seu banco ou carteira digital, vá em Pix.</li>
+                        <li>Escolha a opção <b>Chave aleatória</b>.</li>
+                        <li>Cole a chave copiada e pronto.</li>
+                     </ol>
+                  </div>
+               </div>
             </div>
-        </div>
-        <div class="conta">
-            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
-            <strong>BCO BV S.A.</strong>
-        </div>
-        <div class="conta">
-            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
-            <strong>2020</strong>
-        </div>
-        <div class="conta">
-            <ion-icon name="business-outline" class="icon" size="small"></ion-icon>
-            <strong>32711760</strong>
-        </div>
-        <div class="conta">
-            <ion-icon name="person-outline" class="icon" size="small"></ion-icon>
-            <strong>Waltemar Carneiro</strong>
-        </div>
-        <div class="copyright">Waltemar Carneiro © 2001-2025</div>
-    </div>
-    
-    <div id="overlay" class="overlay">
-        
-    
-</div>
+            <div>Copiar Chave</div>
+         </div>
+      </div>
 
-    </div>
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         BRB - Banco de Brasilia S.A.
+      </div>
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         2020
+      </div>
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         32711760
+      </div>
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         Waltemar Carneiro
+      </div>
+      <div class="copyright">Waltemar Carneiro © 2001-2025</div>
+   </div>
+   <div id="overlay" class="overlay">
+   </div>
+   </div>
+   <div id="notification" class="notification" onclick="closeNotification(event)">
 
+      <div class="line"></div>
 
-    <div id="notification" class="notification" onclick="closeNotification(event)">
-        <div class="line"></div>
-        <div class="logo-site">
-            <div class="notification-content" onclick="event.stopPropagation();">
-                <img src="logos/icon192.png" alt="Logo" class="notification-logo">
-                <div>
-                    <p class="notification-text">waltemar.com.br</p>
-                    <p class="notification-subtext">Web Development</p>
-                </div>
-            </div>
-        </div>
-        <p id="notification-message" class="msn"></p>
-        <button onclick="closeNotification()" class="close-button">Entendi</button>
-        
-    </div>
-
-
-
-
-    <script src="./script.js"></script>
-    <script src="../pro.js"></script>
+      <!--<img src="../image/logo-pix-full.svg" class="pix-full" alt="">-->
+      <img src="../image/sim.webp" class="pix-full" alt="">    
+      <p id="notification-message" class="msn"></p>
+      <button onclick="closeNotification()" class="close-button">Ok, entendi</button>
+   </div>
+   <script src="./script.js"></script>
+   <script src="../pro.js"></script>
 </body>
+
 </html>
