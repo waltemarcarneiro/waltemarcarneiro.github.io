@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O PULSO AINDA PULSA</title>
+
+<!-- SEO | OG -->
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="SOLIDARIEDADE" />
+   <meta property="og:description" content="Nosso amigo precisa de você!" />
+   <meta property="og:image" content="https://waltemar.com.br/image/og-doe.webp" />
+   <meta content='website' property='og:type' />
+   <meta property="og:site_name" content="Apps e Desenvolvimentos" />
+   <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Fonte moderna do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(135deg, #f0f8ff, #e6f7f1);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem;
+      max-width: 420px;
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+    }
+
+    p {
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1.2rem, 2vw, 1.3rem);
+      font-weight: 400;
+    }
+
+    .pix-btn {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      width: 100%;
+    }
+
+    .pix-btn:hover {
+      background: #218838;
+      transform: scale(1.02);
+    }
+
+    .message {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #e8f9f1;
+      border-left: 5px solid #28a745;
+      border-radius: 10px;
+      font-weight: 600;
+      color: #2c3e50;
+      display: none;
+      animation: fadeIn 0.6s ease forwards;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #qrcode canvas, #qrcode img {
+    display: block;
+    margin: 1.5rem auto 0;
+    }
+
+
+    footer {
+      margin-top: 1.5rem;
+      font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ajude nesta causa ❤️</h1>
+    <img src="https://waltemar.com.br/image/doginho.webp" height="80">
+    <p>Nosso amigo está em <strong>repouso médico</strong>, e <strong>sem internet</strong> e precisa da sua solidariedade.  
+    <strong>Qualquer valor</strong> faz a diferença para ajudá-lo neste momento difícil.</p>
+
+    <button class="pix-btn" onclick="copiarPix()">Copiar chave Pix</button>
+    <div id="agradecimento" class="message">🙏 Obrigado! Sua solidariedade faz a diferença!</div>
+
+    <!-- QR Code será gerado aqui -->
+    <div id="qrcode"></div>
+
+    <footer>Todas as doações vão diretamente para <strong>Waltemar Carneiro</strong>.<br>
+      Banco: <strong>Caixa Economica Federal</strong><br>
+      Agência: <strong>3880</strong> - Conta: <strong>938243671-0</strong>
+
+    </footer>
+  </div>
+
+  <!-- Lib qrcode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+    const chavePix = "4fdf9c54-ad1c-4ad6-9149-81eed0bee319"; // 🔑 Troque pela chave Pix real
+
+    function copiarPix() {
+      navigator.clipboard.writeText(chavePix).then(() => {
+        const msg = document.getElementById("agradecimento");
+        msg.style.display = "block";
+      });
+    }
+
+    // Gera o QR Code automaticamente ao carregar a página
+    new QRCode(document.getElementById("qrcode"), {
+      text: chavePix,
+      width: 180,
+      height: 180,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.H
+    });
+  </script>
+</body>
+</html>
