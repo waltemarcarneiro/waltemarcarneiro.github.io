@@ -1,1 +1,112 @@
-...
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Contas Bancárias</title>
+  <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+  
+  <!-- Fonte Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <h1>Minhas Contas</h1>
+
+    <section class="cards">
+      <!-- Itaú -->
+      <div class="card" 
+           data-pix="2d5b5e13-e0b6-4dca-99c2-12c6b0ec1848" 
+           data-qr="00020126580014BR.GOV.BCB.PIX01362d5b5e13-e0b6-4dca-99c2-12c6b0ec18485204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62250521AZAqtRyntNtzaEZrrhjt46304D3A2">
+
+        <div class="card-content">
+          <img src="logos/itau.png" alt="Itaú Unibanco S.A." class="logo">
+          <div class="info">
+            <h2>Itaú Unibanco S.A. (ITI)</h2>
+            <p>Agência: 1014</p>
+            <p>Conta: 09244-7</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="icon-btn copiar-pix">
+            <img src="logos/key.svg" alt="Copiar Pix">
+          </button>
+          <button class="icon-btn mostrar-qr">
+            <img src="logos/qrcode.svg" alt="Mostrar QR">
+          </button>
+        </div>
+      </div>
+
+      <!-- Bradesco -->
+      <div class="card" 
+           data-pix="98765432100" 
+           data-qr="00020126580014BR.GOV.BCB.PIX0136987654321005204000053039865802BR5920CICLANO DA SILVA6009RIO DE JANEIRO62070503***6304EFGH">
+
+        <div class="card-content">
+          <img src="logos/bradesco.png" class="logo">
+          <div class="info">
+            <h2>Bradesco</h2>
+            <p>Agência: 3733</p>
+            <p>Conta: 99681-5-6</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="icon-btn copiar-pix">
+            <img src="logos/key.svg" alt="Copiar Pix">
+          </button>
+          <button class="icon-btn mostrar-qr">
+            <img src="logos/qrcode.svg" alt="Mostrar QR">
+          </button>
+        </div>
+      </div>
+
+      <!-- Nubank -->
+      <div class="card" 
+           data-pix="728593f2-6f4f-4f98-ad9d-1914e5a15e15" 
+           data-qr="00020126580014BR.GOV.BCB.PIX0136728593f2-6f4f-4f98-ad9d-1914e5a15e155204000053039865802BR5922Waltemar Lima Carneiro6009SAO PAULO61080540900062070503***63049B84">
+
+        <div class="card-content">
+          <img src="logos/nubank.png" alt="Nubank" class="logo">
+          <div class="info">
+            <h2>Nubank</h2>
+            <p>Agência: 0001</p>
+            <p>Conta: 98765-4</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="icon-btn copiar-pix">
+            <img src="logos/key.svg" alt="Copiar Pix">
+          </button>
+          <button class="icon-btn mostrar-qr">
+            <img src="logos/qrcode.svg" alt="Mostrar QR">
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ 
+  <!-- Modal principal do QR -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 class="modal-msg">Código Pix Copiado</h2>
+    <div id="qrcode"></div>
+    <button class="btn fechar-modal">Fechar</button>
+  </div>
+</div>
+
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">Copiado com sucesso!</div>
+
+  <!-- Lib e script -->
+  <script src="script.js"></script>
+</body>
+</html>
