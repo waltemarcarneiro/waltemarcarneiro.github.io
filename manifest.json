@@ -1,28 +1,258 @@
 {
-  "id": "waltemar",
-  "name": "Waltemar",
-  "short_name": "Waltemar",
+  "id": "waltemar.com.br",
+  "name": "waltemar.com.br",
+  "short_name": "Waltemar Carneiro",
   "description": "Experiência digital integrada com rádio online, vídeos e conteúdos interativos",
+  "display": "standalone",
+  "offline_enabled": true,
+  "iarc_rating_id": "ESRB_E",
+  "capture_links": "existing-client-navigate",
   "lang": "pt-BR",
   "dir": "ltr",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "display_override": ["window-controls-overlay", "tabbed"],
-  "offline_enabled": true,
   "background_color": "#f1f2f4",
   "theme_color": "#f1f2f4",
+  "start_url": "/index.html",
   "orientation": "portrait",
-  "iarc_rating_id": "SEU-CODIGO-IARC-AQUI",
   "scope": "/",
-  "scope_extensions": [
-    { "origin": "https://waltemar.com.br" },
-    { "origin": "https://www.waltemar.com.br" }
-  ],
+  "default_locale": "pt-BR",
   "prefer_related_applications": false,
-  "related_applications": [],
-  "capture_links": "existing-client-navigate",
-  "handle_links": "preferred",
   "protocol_handlers": [],
+  "related_applications": [],
+  "icons": [
+    {
+      "src": "icons/icon48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "shortcuts": [
+    {
+      "name": "Contribuir",
+      "description": "Fazer uma contribuição via PIX",
+      "url": "/bank/brb.html",
+      "icons": [
+        {
+          "src": "shortcuts/pix.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ],
+      "short_name": "PIX"
+    },
+    {
+      "name": "Rádio",
+      "url": "/radio/index.html?action=play&last=true",
+      "description": "Continuar ouvindo",
+      "icons": [
+        {
+          "src": "shortcuts/playlist.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ],
+      "short_name": "Play"
+    },
+    {
+      "name": "Play List",
+      "url": "/youtube/index.html?continue=true&from=shortcut",
+      "description": "Continuar assistindo",
+      "icons": [
+        {
+          "src": "shortcuts/filme.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ],
+      "short_name": "PlayList"
+    },
+    {
+      "name": "Menu Principal",
+      "url": "/home.html#options",
+      "description": "Acessar configurações do app",
+      "icons": [
+        {
+          "src": "shortcuts/menu.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ],
+      "short_name": "Config"
+    },
+    {
+      "name": "Buscar",
+      "url": "/search.html",
+      "description": "Pesquisar no app",
+      "icons": [
+        {
+          "src": "shortcuts/search.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ],
+      "short_name": "Busca"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot-desktop-wide.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshots/1.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/3.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg"
+    },
+    {
+      "src": "screenshots/screenshot-mobile.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/screenshot-desktop-wide2.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": [
+    "entertainment",
+    "productivity"
+  ],
+  "share_target": {
+    "action": "/shared-content-receiver/",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "window-controls-overlay": {
+    "type": "overlay",
+    "settings": {
+      "color": "#120912",
+      "foreground": "#ffffff"
+    }
+  },
+  "handle_links": "preferred",
   "file_handlers": [
     {
       "action": "/open-file",
@@ -33,37 +263,83 @@
       }
     }
   ],
-  "icons": [
-    { "src": "icons/icon48.png", "sizes": "48x48", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon48.png", "sizes": "48x48", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon72.png", "sizes": "72x72", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon96.png", "sizes": "96x96", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon144.png", "sizes": "144x144", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon152.png", "sizes": "152x152", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon256.png", "sizes": "256x256", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon384.png", "sizes": "384x384", "type": "image/png", "purpose": "maskable" },
-    { "src": "icons/icon512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
-  ],
-  "shortcuts": [
-    { "name": "Contribuir", "short_name": "PIX", "description": "Fazer uma contribuição via PIX", "url": "/bank/brb.html", "icons": [{ "src": "shortcuts/pix.svg", "sizes": "96x96", "type": "image/svg+xml" }] },
-    { "name": "Rádio", "short_name": "Play", "description": "Continuar ouvindo", "url": "/radio/index.html?action=play&last=true", "icons": [{ "src": "shortcuts/playlist.svg", "sizes": "96x96", "type": "image/svg+xml" }] },
-    { "name": "Play List", "short_name": "PlayList", "description": "Continuar assistindo", "url": "/youtube/index.html?continue=true&from=shortcut", "icons": [{ "src": "shortcuts/filme.svg", "sizes": "96x96", "type": "image/svg+xml" }] },
-    { "name": "Menu Principal", "short_name": "Config", "description": "Acessar configurações do app", "url": "/home.html#options", "icons": [{ "src": "shortcuts/menu.svg", "sizes": "96x96", "type": "image/svg+xml" }] },
-    { "name": "Buscar", "short_name": "Busca", "description": "Pesquisar no app", "url": "/search.html", "icons": [{ "src": "shortcuts/search.svg", "sizes": "96x96", "type": "image/svg+xml" }] }
-  ],
   "widgets": [
-    { "name": "Rádio Player", "short_name": "Player", "description": "Controle rápido do player de rádio", "tag": "radio-widget", "url": "/widgets/radio-player.html", "update_frequency": "hourly", "icons": [{ "src": "icons/widget-radio.png", "sizes": "96x96", "type": "image/png" }] },
-    { "name": "Love Songs Status", "short_name": "Love Songs", "description": "Veja as músicas mais pedidas", "tag": "love-songs-widget", "url": "/widgets/love-songs.html", "update_frequency": "daily", "icons": [{ "src": "icons/widget-love.png", "sizes": "96x96", "type": "image/png" }] },
-    { "name": "Atalhos Rápidos", "short_name": "Atalhos", "description": "Acesso rápido às funcionalidades principais", "tag": "quick-actions", "url": "/widgets/quick-actions.html", "update_frequency": "daily", "icons": [{ "src": "icons/widget-shortcuts.png", "sizes": "96x96", "type": "image/png" }] }
+    {
+      "name": "Rádio Player",
+      "short_name": "Player",
+      "description": "Controle rápido do player de rádio",
+      "tag": "radio-widget",
+      "url": "/widgets/radio-player.html",
+      "update_frequency": "hourly",
+      "icons": [
+        {
+          "src": "icons/widget-radio.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ],
+      "screenshots": [
+        {
+          "src": "screenshots/widget-radio.png",
+          "sizes": "400x300",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Love Songs Status",
+      "short_name": "Love Songs",
+      "description": "Veja as músicas mais pedidas",
+      "tag": "love-songs-widget",
+      "url": "/widgets/love-songs.html",
+      "update_frequency": "daily",
+      "icons": [
+        {
+          "src": "icons/widget-love.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ],
+      "screenshots": [
+        {
+          "src": "screenshots/widget-love.png",
+          "sizes": "400x300",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Atalhos Rápidos",
+      "short_name": "Atalhos",
+      "description": "Acesso rápido às funcionalidades principais",
+      "tag": "quick-actions",
+      "url": "/widgets/quick-actions.html",
+      "update_frequency": "daily",
+      "icons": [
+        {
+          "src": "icons/widget-shortcuts.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ],
+      "screenshots": [
+        {
+          "src": "screenshots/widget-shortcuts.png",
+          "sizes": "400x300",
+          "type": "image/png"
+        }
+      ]
+    }
   ],
-  "launch_handler": { "client_mode": ["navigate-existing", "auto"] }
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "scope_extensions": [
+    {
+      "origin": "https://www.waltemar.com.br"
+    },
+    {
+      "origin": "https://waltemar.com.br"
+    }
+  ]
 }
