@@ -1,0 +1,120 @@
+:root{
+      --bg: #f1f2f4; /* itau-like */
+      --text: #000000;
+      --primary: #ff6200; /* botao ativo */
+      --muted: #E3E3E3;
+      --card-bg: #f1f2f4;
+      --radius: 12px;
+      --gap: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    /* Header */
+    .header{
+      position:fixed;left:0;right:0;top:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:#f1f2f4;z-index:30;
+    }
+    .left-header{display:flex;align-items:center;gap:12px}
+    .btn-icon{width:35px;height:35px;border-radius:50%;background:rgba(0,0,0,0.01);display:flex;align-items:center;justify-content:center;border:none}
+    .logo{width:150px;height:50px;display:inline-block;border-radius:8px;display: flex; align-items: center;}
+    .right-header{display:flex;gap:5px;align-items:center}
+
+    main{padding:90px 20px 40px;max-width:920px;margin:0 auto}
+    .card{background:var(--card-bg);border-radius:var(--radius);}
+
+    h1{font-size:22px;margin-bottom:8px}
+    .hint{color:#555;font-size:16px;font-weight:bold;margin-bottom:16px}
+
+    /* valor input */
+    .field{display:flex;flex-direction:column;gap:8px}
+    .input-money{color:#ff6200;font-family:'Inter', sans-serif;font-size:22px;font-weight:800;padding:14px;border-radius:10px;border:1px solid rgba(0,0,0,0.08);background:#fff;text-align: center;}
+    input:focus {
+  outline: none; /* remove o padrão */
+  border-color: #ff6600; /* cor da borda */
+
+}
+    /* opcoes pagamento */
+    .options{display:flex;gap:10px;margin-top:10px}
+    .option{flex:1;padding:12px;background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.06);display:flex;align-items:center;gap:12px;cursor:pointer}
+    .option input{accent-color:var(--primary)}
+
+    .actions{display:flex;justify-content:center;margin-top:16px}
+    .btn{padding:12px 18px;border-radius:5px;border:none;font-weight:600;font-size:16px;cursor:pointer}
+    .btn.primary{background:var(--muted);color:#fff;width: 100%;}
+    .btn.primary.active{background:var(--primary);color:#fff;width: 100%;}
+    #btn-copy{background: #ff6200;color: #fff;}
+    #btn-download{background: #dddddd;color: #000;}
+    #btn-fechar-modal{background: #ff6200;color: #fff;margin-top: 20px; padding: 10px 20px; border: none; border-radius: 5px; font-weight: 600; font-size: 16px; cursor: pointer;width: 100%;}
+
+    /* Secoes dinâmicas */
+    .hidden{display:none}
+    .section{margin-top:20px}
+
+    /* QR area */
+    .qr-wrap{display:flex;gap:20px;align-items:center;flex-direction:column;padding:14px}
+    .payload{width:100%;background:#fafafa;padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.05);font-family:monospace;word-break:break-all}
+
+    /* bancos carrossel */
+    .banks{display:flex;overflow-x:auto;gap:12px;padding:12px 6px;scroll-snap-type:x mandatory}
+    .bank{flex:0 0 auto;width:92px;height:110px;background:#fff;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(0,0,0,0.06);padding:10px;scroll-snap-align:center;cursor:pointer}
+    .bank img{width:60px;height:60px;object-fit:contain;}
+    .bank small{font-size:13px;font-weight: 600;text-align: center;}
+
+    /* preloader overlay */
+    .overlay{display:none;position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.18);align-items:center;justify-content:center;z-index:60}
+    .spinner{width:56px;height:56px;border-radius:50%;border:6px solid rgba(255,255,255,0.3);border-top-color:var(--primary);animation:spin .9s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* toast */
+    .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:#fff;padding:12px 16px;display:none;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.12);gap:10px;align-items:center;font-weight:600}
+
+    /* modal */
+    .modal-info {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  z-index: 100;
+  display: none;
+  animation: modalUp 0.35s cubic-bezier(.42,0,.58,1) forwards;
+}
+.modal-info.show {
+  display: block;
+}
+.modal-content {
+  padding: 28px 20px 20px;
+  text-align: center;
+}
+.modal-content p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  margin-top: 10px;
+  font-weight: 600;
+}
+@keyframes modalUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+    /* responsiveness */
+    @media(min-width:768px){
+      h1{font-size:28px}
+      .qr-wrap{flex-direction:row}
+      .banks{padding:18px}
+    }
+
+    /* scrollbar cleanup */
+    .banks::-webkit-scrollbar{height:8px}
+    .banks::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.08);border-radius:6px}
