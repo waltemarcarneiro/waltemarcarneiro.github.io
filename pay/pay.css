@@ -55,7 +55,7 @@
     #btn-copy{background: #ff6200;color: #fff;}
     #btn-download{background: #dddddd;color: #000;}
     #btn-fechar-modal{background: #ff6200;color: #fff;margin-top: 20px; padding: 10px 20px; border: none; border-radius: 5px; font-weight: 600; font-size: 16px; cursor: pointer;width: 100%;}
-
+  #btn-abrir-banco{background: #ff6200;color: #fff;margin-top: 20px; padding: 10px 20px; border: none; border-radius: 5px; font-weight: 600; font-size: 16px; cursor: pointer;width: 100%;}
     /* Secoes dinâmicas */
     .hidden{display:none}
     .section{margin-top:20px}
@@ -106,6 +106,39 @@
 @keyframes modalUp {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+.modal-banco-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.modal-banco-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  min-height: 48px;
+}
+.modal-banco-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff6200;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.modal-banco-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
 }
 
     /* responsiveness */

@@ -15,7 +15,7 @@
       {id:'neon', name:'Neon', link:'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;', logo:'./logos/neon.svg'},
       {id:'bmg', name:'BMG', link:'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;', logo:'./logos/bmg.svg'},
       {id:'inter', name:'Inter', link:'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;', logo:'./logos/inter.svg'},
-      {id:'dimo', name:'Dimo', link:'intent://com.motorola.dimo#Intent;scheme=dimo;package=com.motorola.dimo;end;', logo:'./logos/dimo.svg'},
+      {id:'dimo', name:'Dimo', link:'intent://com.motorola.ccc.notification#Intent;scheme=dimo;package=com.motorola.ccc.notification;end;', logo:'./logos/dimo.svg'},
       {id:'pagbank', name:'PagBank', link:'intent://br.com.uol.ps.myaccount#Intent;scheme=pagbank;package=br.com.uol.ps.myaccount;end;', logo:'./logos/pagbank.svg'},
       {id:'mercadopago', name:'M. Pago', link:'intent:com.mercadopago.wallet#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end;', logo:'./logos/mercadopago.svg'},
       {id:'bv', name:'Banco BV', link:'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;', logo:'./logos/bv.svg'},
@@ -163,12 +163,28 @@
       });
     }
 
-    // select bank -> update qr logo and try opening app
+    // Modal banco
+    const modalBanco = document.getElementById('modal-banco');
+    const btnAbrirBanco = document.getElementById('btn-abrir-banco');
+    let bancoSelecionado = null;
+
+    // select bank -> mostra modal antes de abrir app
     async function selectBank(bank){
+      bancoSelecionado = bank;
+      modalBanco.classList.remove('hidden');
+      modalBanco.removeAttribute('aria-hidden');
+      modalBanco.classList.add('show');
+    }
+
+    btnAbrirBanco.addEventListener('click', async ()=>{
+      if (!bancoSelecionado) return;
+      modalBanco.classList.add('hidden');
+      modalBanco.setAttribute('aria-hidden','true');
+      modalBanco.classList.remove('show');
       await showPreloader(600);
       // Cria um link e dispara o clique para tentar abrir o app
       const a = document.createElement('a');
-      a.href = bank.link;
+      a.href = bancoSelecionado.link;
       a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
@@ -176,7 +192,8 @@
         showToast('Se o app não abriu, instale ou atualize o aplicativo do banco.');
         a.remove();
       }, 1200);
-    }
+      bancoSelecionado = null;
+    });
 
     function makeLogoDataURI(text, bg){
       const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><rect width='100%' height='100%' fill='${bg}' rx='20'/><text x='50%' y='50%' font-family='Inter,Arial' font-weight='700' font-size='60' fill='#fff' dominant-baseline='middle' text-anchor='middle'>${text[0] || 'B'}</text></svg>`;

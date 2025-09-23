@@ -118,6 +118,24 @@
     </div>
   </div>
 
+  <!-- Modal de aviso ao escolher banco -->
+  <div id="modal-banco" class="modal-info hidden" aria-hidden="true">
+    <div class="modal-content">
+      <h2>Atenção</h2>
+      <ul class="modal-banco-list">
+        <li>
+          <span class="modal-banco-circle">1</span>
+          <span class="modal-banco-text">Seu aplicativo bancário irá detectar automaticamente o código Pix.</span>
+        </li>
+        <li>
+          <span class="modal-banco-circle">2</span>
+          <span class="modal-banco-text">Caso não ocorra, use a opção <strong>Copia e Cola</strong>.</span>
+        </li>
+      </ul>
+      <button id="btn-abrir-banco" class="btn">Entendi, abrir meu banco agora</button>
+    </div>
+  </div>
+
   <!-- dependencias -->
   <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 
