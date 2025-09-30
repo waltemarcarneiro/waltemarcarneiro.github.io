@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WaltemarPay</title>
+   <meta name="theme-color" content="#f76700">
+    <link rel="preload" href="./images/logo.svg" as="image" />
+    <link rel="preload" href="./images/share.svg" as="image" />
+    <link rel="stylesheet" href="pay.css" />
+
+    <!-- FAVICON-->
+   <link rel="shortcut icon" href="/icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon16.png" />
+   <!--AppleTouchIcon-->
+   <link rel="apple-touch-icon" href="/icons/icon76.png" sizes="76x76">
+   <link rel="apple-touch-icon" href="/icons/icon120.png" sizes="120x120">
+   <link rel="apple-touch-icon" href="/icons/icon152.png" sizes="152x152">
+   <link rel="apple-touch-icon" href="/icons/icon180.png" sizes="180x180">
+   <link rel="apple-touch-icon" href="/icons/icon512.png" sizes="512x512">
+  <!-- SEO | OG -->
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="Pagamentos via Pix | Rápido, Seguro e Fácil" />
+   
+   <meta property="og:description" content="Pague com Pix de forma rápida e prática! Defina o valor, escolha seu banco preferido e finalize a transação escaneando o QR Code ou copiando a chave. Pagamento instantâneo, seguro e disponível para todos os bancos e carteiras digitais." />
+   
+   <meta property="og:image" content="https://waltemar.com.br/pay/images/og-pay.jpg" />
+   <meta content='website' property='og:type' />
+   <meta property="og:site_name" content="Waltemar Carneiro" />
+   <meta name="mobile-web-app-capable" content="yes" />
+  
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container">
+        <a id="brandLink" class="brand" href="#" aria-label="Página inicial">
+          <img id="brandLogo" src="./images/logo.svg" alt="Logo" class="logo" />
+        </a>
+        <h3 id="headerTitle">PAGAMENTOS PIX</h3>
+        <button id="shareButton" class="icon-button" type="button" aria-label="Compartilhar esta página">
+          <img src="./images/share.svg" alt="Compartilhar" class="icon" />
+        </button>
+      </div>
+    </header>
+
+    <main class="content" role="main">
+      <!-- Seção 1: Inserir valor -->
+      <section id="section-amount" class="section section-amount" aria-labelledby="amount-title">
+        <div class="container">
+          <div class="stack">
+            <h1 id="amount-title" class="title">Insira o valor</h1>
+            <form id="amountForm" class="amount-form" novalidate>
+              <div class="field">
+                <label for="amountInput" class="label"></label>
+                <input
+                  id="amountInput"
+                  name="amount"
+                  class="input"
+                  type="text"
+                  inputmode="decimal"
+                  min="0.01"
+                  step="0.01"
+                  placeholder="0,00"
+                  aria-describedby="amountHelp"
+                  required
+                />
+                <small id="amountHelp" class="help">Informe um valor maior que zero.</small>
+              </div>
+
+              <button id="continueButton" class="btn" type="submit" disabled>
+                Continuar
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 3: Bancos -->
+      <section id="section-banks" class="section section-banks" hidden>
+        <div class="container">
+          <div class="stack-banks">
+            <div class="banks-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 2: Resumo/QR Code PIX -->
+      <section id="section-summary" class="section section-summary" hidden>
+        <div class="container">
+          <div class="stack">
+            <div class="qr-wrap">
+              <img id="pixQr" alt="QR Code PIX" />
+              <textarea id="pixCopyPaste" class="pix-text" readonly aria-label="Copia e Cola PIX"></textarea>
+            </div>
+
+            <div class="pix-details">
+              <p><strong>Favorecido:</strong> Waltemar Lima Carneiro</p>
+              <p><strong>Banco:</strong> Bradesco</p>
+              <p><strong>Agencia:</strong> 3733</p>
+              <p><strong>Conta:</strong> 99681-5</p>
+              <p><strong>Valor do Pix:</strong> <strong id="pixAmountRef">R$ 0,00</strong></p>
+            </div>
+
+            <p class="pix-hint">“O Senhor te abençoe e te guarde.” – Números 6:24</p>
+
+            <button id="continueButton2" class="btn" type="button">
+              Continuar
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom sheet aviso antes de abrir o app do banco -->
+    <div id="handoffSheet" class="sheet" hidden>
+      <div class="sheet-backdrop" data-sheet-close></div>
+      <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="handoffTitle">
+        <div class="sheet-content">
+          <ol class="sheet-steps">
+            <li>Seu aplicativo bancário vai detectar automaticamente o código Pix.</li>
+            <li>Use a opção Copia e Cola.</li>
+          </ol>
+          <button id="handoffContinue" class="btn" type="button">Continuar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="pay.js" defer></script>
+  </body>
+  </html>
