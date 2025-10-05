@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function goToSummary(amountNumber) {
     // Atualiza header
-    headerTitle.textContent = 'RESUMO';
+    headerTitle.textContent = 'REVISÃO';
     brandLink.hidden = true;
     document.getElementById('brandLogo')?.setAttribute('hidden', '');
     // garantir remoção visual do logo na segunda seção
