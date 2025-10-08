@@ -344,7 +344,7 @@ body {
 
 .pix-details p {
     margin: 0;
-    font-weight: 400;
+    font-weight: 400 !important;
     line-height: 1.2;
 }
 
