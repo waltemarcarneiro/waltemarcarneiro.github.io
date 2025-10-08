@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sheetBackdrop = handoffSheet?.querySelector('[data-sheet-close]');
   let pendingBankLink = null;
 
-  const PIX_KEY = 'edcebd46-2b0e-4822-9eda-538c32196c56';
+  const PIX_KEY = 'eaaccac3-e4be-4f6b-a597-9af2d941290a';
   const MERCHANT_NAME = 'Waltemar Lima Carneiro';
   const MERCHANT_CITY = 'SAO PAULO';
 
