@@ -4,8 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
-   <link rel="manifest" href="/manifest.json" />
-   <script src="/script-sw.js" defer></script>
+   <link rel="manifest" href="./manifest.json" />
    <meta name="theme-color" content="#4D3A2A">
    <title>Waltemar Carneiro | Home</title>
    <meta name="description" content="Web Desenvolvimentos" />
@@ -31,17 +30,91 @@
    <!-- Firebase SDK -->
    <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
    <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
-   <script type="module" src="/firebase-config.js"></script>
-   <link rel="stylesheet" href="/css/index.css">
-   <link rel="stylesheet" href="/css/modal.css">
-   <link rel="stylesheet" href="/css/modal-login.css">
-   <link rel="stylesheet" href="/css/notification-modal.css">
-   <!---SPLASH-->
-   <link rel="stylesheet" href="./css/splash.css">
-   <script defer src="/js/splash.js"></script>
+   <script type="module" src="./firebase-config.js"></script>
+   <link rel="stylesheet" href="./css/index.css">
+   <link rel="stylesheet" href="./css/modal.css">
+   <link rel="stylesheet" href="./css/modal-login.css">
+   <link rel="stylesheet" href="./css/notification-modal.css">
+   <!---SPLASH (substitui link externo ./css/splash.css e /js/splash.js) -->
+   <style>
+    /* Splash importado de splash-modelo.html; pulse aumentado para 4s */
+    #splash-screen {
+      position: fixed;
+      inset: 0;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, #f76700, #602900);
+      color: #fff;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #splash-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .splash-content {
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .splash-logo {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 1.2rem;
+      animation: pulse 4s infinite ease-in-out; /* atualizado para 4s */
+      filter: invert(100%);
+      transform-origin: center;
+    }
+
+    .splash-logo-text {
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #splash-screen {
+        background: radial-gradient(circle at center, #ff7c24, #2b1300);
+      }
+
+      .splash-logo {
+        filter: invert(90%);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+   </style>
+   <!-- Preconnects para acelerar conexões com CDNs/iframes externos -->
+	<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://www.youtube.com" crossorigin>
+	<link rel="preconnect" href="https://s.ytimg.com" crossorigin>
 </head>
 
 <body>
+   <!-- Inserção do Splash (modelo novo) -->
+   <div id="splash-screen" aria-hidden="false" role="dialog" aria-modal="true">
+     <div class="splash-content">
+       <!-- src inicial relativo (sem ./) — rotina JS tentará alternativas se necessário -->
+       <img id="splash-logo-img" src="icons/splash.svg" alt="Logo do App" class="splash-logo" role="img" aria-label="Logo do Aplicativo">
+       <h1 class="splash-logo-text">Waltemar Carneiro</h1>
+     </div>
+   </div>
    <!-- Carrossel de introdução -->
    <div id="introCarrossel" class="carrossel">
       <!-- FILMES PLAYLIST -->
@@ -49,25 +122,25 @@
          <div class="carrossel-content">
             <div class="container">
                <h2 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 300;">Assista Online</h2>
-               <iframe width="100%" height="300" src="https://www.youtube.com/embed/JKoJNdjOHe8?si=cI0w_9IeeepX8EbT"
+               <iframe loading="lazy" width="100%" height="300" src="https://www.youtube.com/embed/JKoJNdjOHe8?si=cI0w_9IeeepX8EbT"
                   title="YouTube video player" frameborder="0" style="border-radius: 5px;"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                <h2 style="margin-bottom: 20px; font-size:1rem; font-weight: 300">Playlist de Filmes Online.</h2>
-               <img src="/image/chevron-forward.svg" height="40" class="next-slide">
+               <img src="/image/chevron-forward.svg" height="40" class="next-slide" loading="lazy" decoding="async" alt="">
             </div>
          </div>
       </div>
       <!-- KWAI CHANNEL LOVESONGSAPP-->
       <div class="carrossel-slide" style="background-image: url('carrossel/carrossel-bg.webp');">
          <div class="carrossel-content">
-            <video controls poster="/carrossel/image5.jpg">
+            <video controls poster="/carrossel/image5.jpg" preload="none">
                <source src="/carrossel/videos/clip.mp4" type="video/mp4">
                Seu navegador não suporta a tag de vídeo.
             </video>
             <p style="color:#eee; letter-spacing: 1px;">LoveSongsApp</p>
-            <img src="/image/chevron-back.svg" height="40" class="prev-slide">
-            <img src="/image/chevron-forward.svg" height="40" class="next-slide">
+            <img src="/image/chevron-back.svg" height="40" class="prev-slide" loading="lazy" decoding="async" alt="">
+            <img src="/image/chevron-forward.svg" height="40" class="next-slide" loading="lazy" decoding="async" alt="">
          </div>
       </div>
       <!-- LOVESONGS APP PLAYER-->
@@ -77,8 +150,8 @@
             <img src="carrossel/logo-lovesongs.png" style="width:100px">
             <p style="margin-bottom:50px">LoveSongsApp</p>
             <h2 style="margin-bottom: 200px; font-size: 1.8rem; font-weight: 300;">O Player das músicas românticas.</h2>
-            <img src="/image/chevron-back.svg" height="40" class="prev-slide">
-            <img src="/image/chevron-forward.svg" height="40" class="next-slide">
+            <img src="/image/chevron-back.svg" height="40" class="prev-slide" loading="lazy" decoding="async" alt="">
+            <img src="/image/chevron-forward.svg" height="40" class="next-slide" loading="lazy" decoding="async" alt="">
          </div>
       </div>
       <div class="carrossel-slide" style="background-image: url('carrossel/image4.jpg');">
@@ -94,8 +167,8 @@
             <br>
             <br>
             <br>
-            <img src="/image/chevron-back.svg" height="40" class="prev-slide">
-            <img src="/image/checkmark-outline.svg" height="40" class="finish-intro">
+            <img src="/image/chevron-back.svg" height="40" class="prev-slide" loading="lazy" decoding="async" alt="">
+            <img src="/image/checkmark-outline.svg" height="40" class="finish-intro" loading="lazy" decoding="async" alt="">
          </div>
       </div>
    </div>
@@ -137,7 +210,7 @@
          </div>
       </div>
       <!--BANNER PROMO TYPE BB-->
-      <a href="https://amzn.to/42UCCtn" target="_blank">
+      <a href="https://amzn.to/42UCCtn" target="_blank" rel="noopener noreferrer">
          <div class="promo">
             <div>
                <img src="/image/monitor.jpg" class="logo-promo">
@@ -164,9 +237,9 @@
       <div class="background"></div>
       <div id="options"></div>
       <div class="container-bloco">
-         <a href="https://lovesongsapp.github.io/" lock target="_blank" class="block">
+         <a href="https://lovesongsapp.github.io/" lock target="_blank" class="block" rel="noopener noreferrer">
             <div class="icon-wrapper">
-               <img src="/image/logo-lovesongs.png" style="border-radius: 15px; height: 70px; width: 70px">
+               <img src="/image/logo-lovesongs.png" style="border-radius: 15px; height: 70px; width: 70px" loading="lazy" decoding="async" alt="LoveSongs">
             </div>
             <span class="block-label">LoveSongs</span>
          </a>
@@ -337,29 +410,105 @@
 
    <!--<script src="./pro.js"></script>-->
    <script>
-      // ...existing code...
+      // Registro seguro do Service Worker: não força update/reload automático
+     if ('serviceWorker' in navigator) {
+       window.addEventListener('load', async () => {
+         try {
+           const registration = await navigator.serviceWorker.register('/sw.js');
+           console.info('ServiceWorker registrado:', registration);
 
-      // Modal de aviso sobre o banner do Chrome (máx 3 vezes, só na home, só em standalone/fullscreen)
-      function isStandaloneOrFullscreen() {
-         return (window.matchMedia('(display-mode: standalone)').matches ||
-            window.matchMedia('(display-mode: fullscreen)').matches ||
-            window.navigator.standalone === true);
-      }
+           // Se já houver um SW aguardando, apenas logamos — não forçamos reload.
+           if (registration.waiting) {
+             console.info('ServiceWorker: nova versão disponível (waiting). Aguardar ação do usuário.');
+             // Aqui você pode disparar uma notificação/banner para o usuário permitir atualizar.
+           }
 
-      document.addEventListener('DOMContentLoaded', function () {
-         if (isStandaloneOrFullscreen() && window.location.pathname === "/index.html") {
-            let count = parseInt(localStorage.getItem('chromeBannerInfoCount') || '0', 10);
-            if (count < 3) {
-               const modal = document.getElementById('chromeBannerInfoModal');
-               modal.style.display = 'block';
-               document.getElementById('closeChromeBannerInfo').onclick = function () {
-                  modal.style.display = 'none';
-                  localStorage.setItem('chromeBannerInfoCount', (count + 1).toString());
-               };
-            }
+           // Observa novas instalações (updatefound) sem forçar reload
+           registration.addEventListener && registration.addEventListener('updatefound', () => {
+             const newWorker = registration.installing;
+             if (!newWorker) return;
+             newWorker.addEventListener('statechange', () => {
+               if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                 console.info('ServiceWorker: nova versão instalada (aguardando ativação).');
+                 // Notificar usuário se quiser (sem reload automático).
+               }
+             });
+           });
+
+         } catch (err) {
+           console.error('Falha ao registrar ServiceWorker:', err);
          }
-      });
+       });
 
+       // Escuta mensagens do SW (p.ex. confirmação de skip/waiting), sem forçar reload aqui.
+       navigator.serviceWorker.addEventListener && navigator.serviceWorker.addEventListener('message', (event) => {
+         // Exemplo: o SW pode enviar { type: 'SW_ACTIVATED' } após skipWaiting
+         if (event.data && event.data.type === 'SW_ACTIVATED') {
+           console.info('ServiceWorker ativado: considerar reload se usuário confirmar.');
+           // Se desejar recarregar automaticamente após confirmação: window.location.reload();
+         }
+       });
+     }
+   </script>
+   <!-- Script inline do splash (duração 4000ms) -->
+   <script>
+   (function(){
+     window.addEventListener("load", () => {
+       const splash = document.getElementById("splash-screen");
+       const splashImg = document.getElementById("splash-logo-img");
+       if (!splash || !splashImg) return;
+
+       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+       // aplica fundo temporário para evitar flash branco
+       const prevBg = document.documentElement.style.background || "";
+       document.documentElement.style.background = prefersDark ? "#0f1724" : "#f76700";
+
+       // tenta carregar o primeiro caminho válido para o logo (local e produção)
+       function setSplashImage(imgEl, candidates, cb){
+         let i = 0;
+         function tryNext(){
+           if(i >= candidates.length){ if(cb) cb(); return; }
+           const url = candidates[i++];
+           const tester = new Image();
+           tester.onload = function(){ imgEl.src = url; if(cb) cb(); };
+           tester.onerror = tryNext;
+           tester.src = url;
+         }
+         tryNext();
+       }
+
+       const candidates = [
+         "icons/splash.svg",
+         "./icons/splash.svg",
+         "/icons/splash.svg"
+       ];
+
+       setSplashImage(splashImg, candidates, function(){
+         // Após garantir a imagem, controla o tempo do splash
+         const DURATION = 4000; // 4 segundos
+
+         const removeSplash = () => {
+           if (!splash) return;
+           splash.classList.add("hidden");
+           splash.setAttribute("aria-hidden", "true");
+           document.documentElement.style.background = prefersDark ? "#0f1724" : "#f8fafc";
+           const tryRemove = () => { try { splash.remove(); } catch(e){} };
+           splash.addEventListener("transitionend", tryRemove, { once: true });
+           setTimeout(tryRemove, 800);
+         };
+
+         // Respeita preferência por reduzir movimento
+         const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+         if (prefersReduced) {
+           removeSplash();
+           return;
+         }
+
+         setTimeout(removeSplash, DURATION);
+       });
+     });
+   })();
    </script>
 </body>
 

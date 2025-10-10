@@ -8,8 +8,9 @@ if ('serviceWorker' in navigator) {
         .then(registration => {
             console.log('ServiceWorker registrado com sucesso. Escopo:', registration.scope);
             
+            // Exemplo de alteração proposta: comentar chamadas que forçam atualização/reload
             // Verificar atualizações imediatamente
-            registration.update();
+            // registration.update();
 
             // Só registra os listeners de atualização na home.html
             if (isHomePage) {
@@ -20,8 +21,11 @@ if ('serviceWorker' in navigator) {
                     newWorker.addEventListener('statechange', () => {
                         console.log('Service Worker estado:', newWorker.state);
                         if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                            console.log('Nova versão instalada');
-                            showUpdateToast();
+                            // Nova versão disponível — não recarrega automaticamente.
+                            // Aqui você pode notificar o usuário (toast/modal) e, se confirmar, chamar:
+                            // registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+                            // ou window.location.reload() após o user aceitar.
+                            console.info('Service Worker: nova versão disponível (aguardando confirmação do usuário).');
                         }
                     });
                 });
