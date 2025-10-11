@@ -75,7 +75,7 @@
     width: 1.75em;
     height: 1.75em;
     border-radius: 999rem;
-    background: #f76700;
+    background: #fb2d7d;
     color: #ffffff;
     font-family: var(--font-family-bold);
     line-height: 1;
@@ -128,7 +128,7 @@
     --icon-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
     --logo-h: clamp(1.25rem, 1rem + 1.2vw, 2rem);
     /* Cores (suporte a dark/light) */
-    --bg: #f0f0f4;
+    --bg: #0c0b2e;
     --fg: #4d4d4d;
     --muted: #535863;
     --surface: #f3f4f6;
@@ -157,8 +157,8 @@ html, body {
 body {
     margin: 0;
     font-family: var(--font-family-base);
-    color: var(--fg);
-    background: var(--bg);
+    color: #717886;
+    background: radial-gradient(circle,rgba(42, 46, 80, 1) 0%, rgba(12, 11, 46, 1) 50%, rgba(12, 11, 46, 1) 100%);
     font-size: var(--fs-0);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -173,6 +173,7 @@ body {
 #pixAmountRef {
     font-weight: 700;
     font-size: 1.5rem;
+    COLOR: #EEE;
 }
 
 .pix-text {
@@ -197,7 +198,7 @@ body {
     z-index: 10;
     background: color-mix(in oklab, var(--bg) 92%, transparent);
     backdrop-filter: blur(clamp(4px, 0.2vw, 8px));
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid #1f2937;
 }
 
 .site-header .container {
@@ -224,8 +225,8 @@ body {
     height: calc(var(--icon-size) * 1.75);
     width: calc(var(--icon-size) * 1.75);
     border-radius: 999rem;
-    border: 1px solid var(--border);
-    background: var(--surface);
+    border: 1px solid #dddddd33;
+    background: #0c0b2e;
     color: inherit;
     padding: 0;
     cursor: pointer;
@@ -297,8 +298,8 @@ body {
     width: 100%;
     aspect-ratio: 1 / 1;
     /* quadrado 1:1 */
-    background: #fff;
-    border: 1px solid var(--border);
+    background: #0c0b2e;
+    border: 1px solid #0c0b2e;
     border-radius: var(--radius);
     padding: 0;
     cursor: pointer;
@@ -395,9 +396,9 @@ body {
 
 .input {
     font: inherit;
-    color: #000000;
-    background: #ffffff;
-    border: 1px solid #f0f0f4;
+    color: #FFFFFF;
+    background: #1C183E;
+    border: 1px solid #53586380;
     padding: clamp(0.75rem, 0.6rem + 0.8vw, 1rem);
     outline: none;
     font-size: 36px;
@@ -405,7 +406,7 @@ body {
     font-weight: 700;
     width: 100%;
     font-family: system-ui;
-    border-bottom-color: #ccc;
+    border-radius: 8px;
 }
 
 .input:focus-visible {
@@ -413,7 +414,7 @@ body {
 }
 
 .help {
-    color: var(--muted);
+    color: #717886;
     font-weight: 600;
 }
 
@@ -436,14 +437,14 @@ body {
 /* Estado desabilitado deve SOBREPOR o estado padrÃ£o */
 .btn[disabled] {
     cursor: not-allowed;
-    background: #dddddd;
+    background: #1c183e;
     color: #777777;
-    border-color: #dddddd;
+    border-color: #1c183e;
 }
 
 /* InteraÃ§Ãµes apenas quando nÃ£o estÃ¡ desabilitado */
 .btn:not([disabled]) {
-    background: #f76700;
+    background: #FB2D7D;
     color: #ffffff;
     border-color: color-mix(in oklab, #f76700 70%, #0000);
 }
@@ -551,6 +552,7 @@ body {
     font-size: 1rem;
     font-weight: 800;
     margin: 0;
+    color: #dddddd;
 }
 
 .bank {
