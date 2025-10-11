@@ -167,10 +167,10 @@ body {
 }
 
 .bem-vindo {
-    
     margin: 0 auto;
     text-align: left;
-    position: absolute;
+    /position: absolute;
+    left: 15px;
 }
 
 .bem-vindo h1 {
@@ -228,7 +228,7 @@ h2 {
 }
 
 .container {
-    max-width: 80%;
+    max-width: 100;
     margin: 0 auto;
     z-index: 4;
 }
@@ -236,14 +236,13 @@ h2 {
 .digital {
 
     position: relative;
-    left: 20px;
+    left: 15px;
     top: 42%;
     bottom: 42%;
     position: absolute;
     height: 100px;
     margin: auto;
-    right: 20px;
-    max-width: 80%;
+    right: 15px;
 }
 
 /*START ABOUT*/
@@ -254,7 +253,7 @@ h2 {
     left: 0;
     right: 0;
     transition: top 0.5s ease-in-out;
-    max-width: 480px;
+    
     margin: 0 auto;
     padding: 10px;
     justify-content: center;
@@ -646,13 +645,11 @@ img {
     align-items: flex-start;
     color: #151515;
     position: absolute;
-    
-    right: 10%;
+    right: 15px;
     max-width: 480px;
     margin: auto;
     text-align: left;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .logo-promo {
@@ -719,7 +716,6 @@ a ion-icon {
     align-items: center;
     text-decoration: none;
     color: white;
-
 }
 
 .icon-wrapper {
