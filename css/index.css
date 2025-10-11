@@ -169,8 +169,31 @@ body {
 .bem-vindo {
     margin: 0 auto;
     text-align: left;
-    /position: absolute;
+    position: absolute;
     left: 15px;
+    top: 150px;
+}
+
+/*MODO PAISAGEM*/
+
+@media (orientation: landscape) {
+  .bem-vindo{
+      display: none;
+  }
+    .digital{
+        margin: 0;
+        width: 60% !important;
+    }
+    .promo{
+        display: none !important;
+    }
+    .container-bloco{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 0.5rem !important;
+    justify-items: center;
+    align-items: center;
+    }
 }
 
 .bem-vindo h1 {
@@ -228,22 +251,12 @@ h2 {
 }
 
 .container {
-    max-width: 100;
+    width: 100%;
     margin: 0 auto;
     z-index: 4;
 }
 
-.digital {
-
-    position: relative;
-    left: 15px;
-    top: 42%;
-    bottom: 42%;
-    position: absolute;
-    height: 100px;
-    margin: auto;
-    right: 15px;
-}
+.digital {position: relative;left: 15px;top: 42%;bottom: 42%;position: absolute;height: 100px;margin: auto;right: 15px;width: 80%;}
 
 /*START ABOUT*/
 .about {
@@ -253,7 +266,6 @@ h2 {
     left: 0;
     right: 0;
     transition: top 0.5s ease-in-out;
-    
     margin: 0 auto;
     padding: 10px;
     justify-content: center;
@@ -705,7 +717,7 @@ a ion-icon {
 .container-bloco {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.3rem;
+    gap: 0.5rem;
     justify-items: center;
     align-items: center;
 }
