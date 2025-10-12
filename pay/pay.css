@@ -578,3 +578,10 @@ body {
     text-overflow: ellipsis;
     width: 180px;
 }
+.btn-chave-pix{
+    background: none;
+    padding: 0;
+    margin-rigth: 5px;
+    display: flex;
+    align-itens: center;
+}
