@@ -577,6 +577,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 180px;
+    display: flex;
 }
 .btn-chave-pix{
     background: none;
@@ -585,4 +586,5 @@ body {
     display: flex;
     align-itens: center;
     cursor: pointer;
+    border: none;
 }
