@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {id:'bv', name:'Banco BV', link:'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;', logo:'./logos/bv.svg'},
       {id:'brb', name:'BRB', link:'intent://br.com.brb.digitalflamengo#Intent;scheme=brb;package=br.com.brb.digitalflamengo;end;', logo:'./logos/brb.svg'},
       {id:'recargapay', name:'Rec. Pay', link:'intent://com.recarga.recarga#Intent;scheme=recargapay;package=com.recarga.recarga;end;', logo:'./logos/recargapay.svg'},
-      {id:'efi', name:'EFI Bank', link:'intent://br.com.gerencianet.app#Intent;scheme=efi;package=br.com.gerencianet.app;end;', logo:'./logos/efi.svg'},
+      {id:'efi', name:'EFI Bank', link:'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite&utm_campaign=Campanha+nao+identificada&utm_medium=Portal&utm_source=[LinkLoja]+em+login.sejaefi.com.br', logo:'./logos/efi.svg'},
       {id:'sofisa', name:'Sofisa', link:'intent://goova.sofisa.client.v2#Intent;scheme=sofisa;package=goova.sofisa.client.v2;end;', logo:'./logos/sofisa.svg'},
       {id:'caixatem', name:'CaixaTem', link:'intent://br.gov.caixa.tem#Intent;scheme=caixatem;package=br.gov.caixa.tem;end;', logo:'./logos/caixatem.svg'},
   ];
