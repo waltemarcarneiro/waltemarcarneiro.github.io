@@ -1,26 +1,339 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Links oficiais dos bancos (intents) fornecidos pelo usuário
-  const BANKS = [
-      {id:'itau', name:'Itaú', link:'intent://com.itau#Intent;scheme=itau;package=com.itau;end;', logo:'./logos/itau.svg'},
-      {id:'nubank', name:'Nubank', link:'intent://com.nu.production#Intent;scheme=nubank;package=com.nu.production;end;', logo:'./logos/nubank.svg'},
-      {id:'bradesco', name:'Bradesco', link:'intent://com.bradesco#Intent;scheme=bradesco;package=com.bradesco;end;', logo:'./logos/bradesco.svg'},
-      {id:'santander', name:'Santander', link:'intent://com.santander.app#Intent;scheme=picpay;package=com.santander.app;end;', logo:'./logos/santander.svg'},
-      {id:'caixa', name:'Caixa', link:'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;', logo:'./logos/caixa.svg'},
-      {id:'bb', name:'BB', link:'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;', logo:'./logos/bb.svg'},
-      {id:'picpay', name:'PicPay', link:'intent://com.picpay#Intent;scheme=picpay;package=com.picpay;end;', logo:'./logos/picpay.svg'},
-      {id:'neon', name:'Neon', link:'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;', logo:'./logos/neon.svg'},
-      {id:'bmg', name:'BMG', link:'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;', logo:'./logos/bmg.svg'},
-      {id:'inter', name:'Inter', link:'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;', logo:'./logos/inter.svg'},
-      {id:'dimo', name:'Dimo', link:'intent://com.motorola.dimo#Intent;scheme=dimo;package=com.motorola.dimo;end;', logo:'./logos/dimo.svg'},
-      {id:'pagbank', name:'PagBank', link:'intent://br.com.uol.ps.myaccount#Intent;scheme=pagbank;package=br.com.uol.ps.myaccount;end;', logo:'./logos/pagbank.svg'},
-      {id:'mercadopago', name:'M. Pago', link:'intent:com.mercadopago.wallet#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end;', logo:'./logos/mercadopago.svg'},
-      {id:'bv', name:'Banco BV', link:'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;', logo:'./logos/bv.svg'},
-      {id:'brb', name:'BRB', link:'intent://br.com.brb.digitalflamengo#Intent;scheme=brb;package=br.com.brb.digitalflamengo;end;', logo:'./logos/brb.svg'},
-      {id:'recargapay', name:'Rec. Pay', link:'intent://com.recarga.recarga#Intent;scheme=recargapay;package=com.recarga.recarga;end;', logo:'./logos/recargapay.svg'},
-      {id:'efi', name:'EFI Bank', link:'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite&utm_campaign=Campanha+nao+identificada&utm_medium=Portal&utm_source=[LinkLoja]+em+login.sejaefi.com.br', logo:'./logos/efi.svg'},
-      {id:'sofisa', name:'Sofisa', link:'intent://goova.sofisa.client.v2#Intent;scheme=sofisa;package=goova.sofisa.client.v2;end;', logo:'./logos/sofisa.svg'},
-      {id:'caixatem', name:'CaixaTem', link:'intent://br.gov.caixa.tem#Intent;scheme=caixatem;package=br.gov.caixa.tem;end;', logo:'./logos/caixatem.svg'},
-  ];
+
+  /* helpers gerais */
+function extractSchemeName(s) {
+  if (!s) return null;
+  // aceita "nubank://home" ou "nubank:" ou "nubank"
+  return String(s).split(':')[0].replace(/\/+$/, '');
+}
+
+/**
+ * openBank: tenta abrir o app na ordem:
+ * 1) directLink (ex.: Firebase Dynamic Link / URL que abre o app)
+ * 2) scheme (ex.: nubank://home)
+ * 3) intent:// com browser_fallback_url (usando package se disponível)
+ * 4) Play Store (store) ou web
+ *
+ * Usa visibilitychange para detectar se o app abriu (document.hidden).
+ */
+function openBank(bank) {
+  const start = Date.now();
+  let fallbackTimer = null;
+  let handled = false;
+
+  function cleanup() {
+    document.removeEventListener('visibilitychange', onVisibilityChange);
+    if (fallbackTimer) clearTimeout(fallbackTimer);
+  }
+
+  function onVisibilityChange() {
+    if (document.visibilityState === 'hidden') {
+      handled = true;
+      cleanup();
+    }
+  }
+
+  document.addEventListener('visibilitychange', onVisibilityChange);
+
+  // 1) directLink (quando você já tem link tipo EFI)
+  if (bank.directLink) {
+    // abre no mesmo contexto; Android resolverá abrir o app se registrado
+    window.location.href = bank.directLink;
+
+    fallbackTimer = setTimeout(() => {
+      if (!handled) {
+        if (bank.store) window.location.href = bank.store;
+        else if (bank.web) window.location.href = bank.web;
+        cleanup();
+      }
+    }, 1400);
+    return;
+  }
+
+  // 2) scheme (deep scheme)
+  if (bank.scheme) {
+    // tentar abrir diretamente pelo scheme
+    try {
+      window.location.href = bank.scheme;
+    } catch (e) {
+      // fallback se navegador bloquear
+      console.warn('Erro ao usar scheme:', e);
+    }
+
+    fallbackTimer = setTimeout(() => {
+      if (!handled) {
+        // 3) montar intent e tentar
+        if (bank.package) {
+          const fallbackUrl = bank.store ? encodeURIComponent(bank.store) : '';
+          // usa o nome do scheme sem :// se possível
+          const schemeName = extractSchemeName(bank.scheme) || bank.package;
+          const intentUri = `intent://#Intent;scheme=${schemeName};package=${bank.package};S.browser_fallback_url=${fallbackUrl};end;`;
+          window.location.href = intentUri;
+        } else if (bank.store) {
+          window.location.href = bank.store;
+        } else if (bank.web) {
+          window.location.href = bank.web;
+        }
+        cleanup();
+      }
+    }, 1200);
+
+    return;
+  }
+
+  // 3) se já tem intent pronto (string intentUri)
+  if (bank.intent) {
+    // garante // após intent:
+    const intentUri = bank.intent.startsWith('intent://') ? bank.intent : bank.intent.replace(/^intent:/, 'intent://');
+    window.location.href = intentUri;
+
+    fallbackTimer = setTimeout(() => {
+      if (!handled) {
+        if (bank.store) window.location.href = bank.store;
+        else if (bank.web) window.location.href = bank.web;
+        cleanup();
+      }
+    }, 1200);
+    return;
+  }
+
+  // 4) último recurso: open store / web
+  if (bank.store) {
+    window.location.href = bank.store;
+  } else if (bank.web) {
+    window.location.href = bank.web;
+  } else {
+    console.warn('Nenhuma ação disponível para', bank && bank.id);
+  }
+}
+
+/* RAW: sua lista original (mantive a ordem e logos) */
+/* OBS: directLink preenchido apenas para EFI (conforme seu input) */
+const BANKS = [
+  {
+    id: 'itau',
+    name: 'Itaú',
+    logo: './logos/itau.svg',
+    // tentativa de scheme — se não abrir, substitua por directLink quando achar
+    scheme: 'itau://',
+    package: 'com.itau',
+    store: 'https://play.google.com/store/apps/details?id=com.itau',
+    intent: 'intent://com.itau#Intent;scheme=itau;package=com.itau;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'nubank',
+    name: 'Nubank',
+    logo: './logos/nubank.svg',
+    scheme: 'nubank://',
+    package: 'com.nu.production',
+    store: 'https://play.google.com/store/apps/details?id=com.nu.production',
+    intent: 'intent://com.nu.production#Intent;scheme=nubank;package=com.nu.production;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'bradesco',
+    name: 'Bradesco',
+    logo: './logos/bradesco.svg',
+    scheme: 'bradesco://',
+    package: 'com.bradesco',
+    store: 'https://play.google.com/store/apps/details?id=com.bradesco',
+    intent: 'intent://com.bradesco#Intent;scheme=bradesco;package=com.bradesco;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'santander',
+    name: 'Santander',
+    logo: './logos/santander.svg',
+    // observação: seu intent anterior tinha scheme=picpay (parece erro).
+    // uso scheme genérico 'santander://' — ajuste se você tiver link direto.
+    scheme: 'santander://',
+    package: 'com.santander.app',
+    store: 'https://play.google.com/store/apps/details?id=com.santander.app',
+    intent: 'intent://com.santander.app#Intent;scheme=santander;package=com.santander.app;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'caixa',
+    name: 'Caixa',
+    logo: './logos/caixa.svg',
+    scheme: 'caixa://',
+    package: 'br.com.gabba.Caixa',
+    store: 'https://play.google.com/store/apps/details?id=br.com.gabba.Caixa',
+    intent: 'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'bb',
+    name: 'BB',
+    logo: './logos/bb.svg',
+    scheme: 'bb://',
+    package: 'br.com.bb.android',
+    store: 'https://play.google.com/store/apps/details?id=br.com.bb.android',
+    intent: 'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'picpay',
+    name: 'PicPay',
+    logo: './logos/picpay.svg',
+    scheme: 'picpay://',
+    package: 'com.picpay',
+    store: 'https://play.google.com/store/apps/details?id=com.picpay',
+    intent: 'intent://com.picpay#Intent;scheme=picpay;package=com.picpay;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'neon',
+    name: 'Neon',
+    logo: './logos/neon.svg',
+    scheme: 'neon://',
+    package: 'br.com.neon',
+    store: 'https://play.google.com/store/apps/details?id=br.com.neon',
+    intent: 'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'bmg',
+    name: 'BMG',
+    logo: './logos/bmg.svg',
+    scheme: 'bmg://',
+    package: 'br.com.bancobmg.bancodigital',
+    store: 'https://play.google.com/store/apps/details?id=br.com.bancobmg.bancodigital',
+    intent: 'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'inter',
+    name: 'Inter',
+    logo: './logos/inter.svg',
+    scheme: 'inter://',
+    package: 'br.com.intermedium',
+    store: 'https://play.google.com/store/apps/details?id=br.com.intermedium',
+    intent: 'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'dimo',
+    name: 'Dimo',
+    logo: './logos/dimo.svg',
+    scheme: 'dimo://',
+    package: 'com.motorola.dimo',
+    store: 'https://play.google.com/store/apps/details?id=com.motorola.dimo',
+    intent: 'intent://com.motorola.dimo#Intent;scheme=dimo;package=com.motorola.dimo;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'pagbank',
+    name: 'PagBank',
+    logo: './logos/pagbank.svg',
+    scheme: 'pagbank://',
+    package: 'br.com.uol.ps.myaccount',
+    store: 'https://play.google.com/store/apps/details?id=br.com.uol.ps.myaccount',
+    intent: 'intent://br.com.uol.ps.myaccount#Intent;scheme=pagbank;package=br.com.uol.ps.myaccount;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'mercadopago',
+    name: 'M. Pago',
+    logo: './logos/mercadopago.svg',
+    // corrigi a falta de '//' no intent original
+    scheme: 'mercadopago://',
+    package: 'com.mercadopago.wallet',
+    store: 'https://play.google.com/store/apps/details?id=com.mercadopago.wallet',
+    intent: 'intent://com.mercadopago.wallet#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'bv',
+    name: 'Banco BV',
+    logo: './logos/bv.svg',
+    scheme: 'bv://',
+    package: 'com.votorantim.bvpd',
+    store: 'https://play.google.com/store/apps/details?id=com.votorantim.bvpd',
+    intent: 'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'brb',
+    name: 'BRB',
+    logo: './logos/brb.svg',
+    scheme: 'brb://',
+    package: 'br.com.brb.digitalflamengo',
+    store: 'https://play.google.com/store/apps/details?id=br.com.brb.digitalflamengo',
+    intent: 'intent://br.com.brb.digitalflamengo#Intent;scheme=brb;package=br.com.brb.digitalflamengo;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'recargapay',
+    name: 'Rec. Pay',
+    logo: './logos/recargapay.svg',
+    scheme: 'recargapay://',
+    package: 'com.recarga.recarga',
+    store: 'https://play.google.com/store/apps/details?id=com.recarga.recarga',
+    intent: 'intent://com.recarga.recarga#Intent;scheme=recargapay;package=com.recarga.recarga;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'efi',
+    name: 'EFI Bank',
+    logo: './logos/efi.svg',
+    // seu link que você disse abrir direto: mantive aqui como directLink
+    directLink: 'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite&utm_campaign=Campanha+nao+identificada&utm_medium=Portal&utm_source=[LinkLoja]+em+login.sejaefi.com.br',
+    package: 'br.com.gerencianet.app',
+    store: 'https://play.google.com/store/apps/details?id=br.com.gerencianet.app',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'sofisa',
+    name: 'Sofisa',
+    logo: './logos/sofisa.svg',
+    scheme: 'sofisa://',
+    package: 'goova.sofisa.client.v2',
+    store: 'https://play.google.com/store/apps/details?id=goova.sofisa.client.v2',
+    intent: 'intent://goova.sofisa.client.v2#Intent;scheme=sofisa;package=goova.sofisa.client.v2;end;',
+    open() { openBank(this); }
+  },
+
+  {
+    id: 'caixatem',
+    name: 'CaixaTem',
+    logo: './logos/caixatem.svg',
+    scheme: 'caixatem://',
+    package: 'br.gov.caixa.tem',
+    store: 'https://play.google.com/store/apps/details?id=br.gov.caixa.tem',
+    intent: 'intent://br.gov.caixa.tem#Intent;scheme=caixatem;package=br.gov.caixa.tem;end;',
+    open() { openBank(this); }
+  }
+];
+
+/* Uso:
+   BANKS.find(b => b.id === 'efi').open();
+   BANKS.find(b => b.id === 'nubank').open();
+*/
+
+/* Dica de UX: coloque um fallback visual (spinner) e desabilite o botão por ~2s enquanto tenta abrir. */
+
+  
+  // segue o resto dos codigos
   const btn = document.getElementById('shareButton');
 
   const getShareData = () => ({
