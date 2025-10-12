@@ -201,10 +201,17 @@ body {
     background: color-mix(in oklab, var(--bg) 92%, transparent);
     backdrop-filter: blur(clamp(4px, 0.2vw, 8px));
     border-bottom: 1px solid #1f2937;
+    height: 60px;
+    align-items: center;
+    display:flex;
+}
+.site-header h3{
+    font-size: 18px
 }
 
 .site-header .container {
     min-height: clamp(3rem, 2.5rem + 2vw, 4.25rem);
+    
 }
 
 .brand {
