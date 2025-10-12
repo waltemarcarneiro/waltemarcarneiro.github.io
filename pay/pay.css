@@ -573,4 +573,8 @@ body {
     font-size: 0.9rem;
     font-weight: 600 !important;
     font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 180px;
 }
