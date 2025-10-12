@@ -149,7 +149,9 @@
 * {
     box-sizing: border-box;
 }
-
+html {
+    background: #0B092C;
+}
 html, body {
     height: 100%;
 }
@@ -157,7 +159,7 @@ html, body {
 body {
     margin: 0;
     font-family: var(--font-family-base);
-    color: #717886;
+    color: #9aa3b6;
     background: radial-gradient(circle,rgba(42, 46, 80, 1) 0%, rgba(12, 11, 46, 1) 50%, rgba(12, 11, 46, 1) 100%);
     font-size: var(--fs-0);
     line-height: 1.5;
@@ -414,7 +416,7 @@ body {
 }
 
 .help {
-    color: #717886;
+    color: #9aa3b6;
     font-weight: 600;
 }
 
