@@ -318,3 +318,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+//botao copiar chave pix
+<script>
+    function copiarTexto() {
+      const texto = "eaaccac3-e4be-4f6b-a597-9af2d941290a";
+      navigator.clipboard.writeText(texto).then(() => {
+        const feedback = document.getElementById("feedback");
+        feedback.style.display = "block";
+        setTimeout(() => {
+          feedback.style.display = "none";
+        }, 2000); // esconde após 2 segundos
+      }).catch(err => {
+        alert("Erro ao copiar: " + err);
+      });
+    }
+  </script>
