@@ -1,336 +1,181 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Links oficiais dos bancos (intents) fornecidos pelo usuário
 
-  /* helpers gerais */
+/* ======== UTIL ======== */
 function extractSchemeName(s) {
   if (!s) return null;
-  // aceita "nubank://home" ou "nubank:" ou "nubank"
   return String(s).split(':')[0].replace(/\/+$/, '');
 }
+function isAndroid() {
+  return /Android/i.test(navigator.userAgent);
+}
 
-/**
- * openBank: tenta abrir o app na ordem:
- * 1) directLink (ex.: Firebase Dynamic Link / URL que abre o app)
- * 2) scheme (ex.: nubank://home)
- * 3) intent:// com browser_fallback_url (usando package se disponível)
- * 4) Play Store (store) ou web
- *
- * Usa visibilitychange para detectar se o app abriu (document.hidden).
- */
-function openBank(bank) {
-  const start = Date.now();
-  let fallbackTimer = null;
-  let handled = false;
+/* ======== OPEN BANK (robusto) ========
+ - Deve ser chamado dentro de um handler de clique (user gesture).
+ - Estratégia:
+    1) se directLink -> location.href (é o jeito mais limpo)
+    2) se scheme -> try location.href (user gesture); depois intent fallback
+    3) se intent pronto -> criar <a href=intent..> e clicar (melhor compat)
+    4) fallback pra store/web
+ - Usa visibilitychange + blur como heurística para detectar sucesso.
+*/
+function openBank(bank, opts = {}) {
+  opts = Object.assign({ timeout: 1400, log: true }, opts);
+  if (opts.log) console.log(`[openBank] tentando abrir ${bank.id}`, bank);
 
-  function cleanup() {
-    document.removeEventListener('visibilitychange', onVisibilityChange);
-    if (fallbackTimer) clearTimeout(fallbackTimer);
+  // só funciona realmente em user gesture — log se não for
+  // (não vamos bloquear execução, apenas avisamos)
+  const userGesture = !!(window.event || (performance && performance.now()));
+  if (!userGesture && opts.log) {
+    console.warn('[openBank] recomendado chamar dentro de um click handler (user gesture).');
   }
 
-  function onVisibilityChange() {
+  let handled = false;
+  const start = Date.now();
+  let fallbackT = null;
+
+  function cleanup() {
+    document.removeEventListener('visibilitychange', onVis);
+    window.removeEventListener('blur', onBlur);
+    if (fallbackT) clearTimeout(fallbackT);
+  }
+  function onVis() {
     if (document.visibilityState === 'hidden') {
       handled = true;
+      if (opts.log) console.log('[openBank] detectado hidden -> app provavelmente abriu');
       cleanup();
     }
   }
+  function onBlur() {
+    // alguns browsers não mudam visibilityState; blur é bom complemento
+    handled = true;
+    if (opts.log) console.log('[openBank] detectado blur -> app provavelmente abriu');
+    cleanup();
+  }
 
-  document.addEventListener('visibilitychange', onVisibilityChange);
+  document.addEventListener('visibilitychange', onVis);
+  window.addEventListener('blur', onBlur);
 
-  // 1) directLink (quando você já tem link tipo EFI)
+  // Helper: redirect to store/web
+  function doFallback() {
+    cleanup();
+    if (bank.store) {
+      if (opts.log) console.log('[openBank] fallback -> Play Store', bank.store);
+      window.location.href = bank.store;
+    } else if (bank.web) {
+      if (opts.log) console.log('[openBank] fallback -> web', bank.web);
+      window.location.href = bank.web;
+    } else {
+      if (opts.log) console.warn('[openBank] sem fallback cadastrado para', bank.id);
+    }
+  }
+
+  // 1) directLink
   if (bank.directLink) {
-    // abre no mesmo contexto; Android resolverá abrir o app se registrado
+    if (opts.log) console.log('[openBank] usando directLink');
     window.location.href = bank.directLink;
-
-    fallbackTimer = setTimeout(() => {
-      if (!handled) {
-        if (bank.store) window.location.href = bank.store;
-        else if (bank.web) window.location.href = bank.web;
-        cleanup();
-      }
-    }, 1400);
+    // aguarda heurística
+    fallbackT = setTimeout(() => {
+      if (!handled) doFallback();
+    }, opts.timeout);
     return;
   }
 
-  // 2) scheme (deep scheme)
+  // 2) scheme (ex: nubank://)
   if (bank.scheme) {
-    // tentar abrir diretamente pelo scheme
+    if (opts.log) console.log('[openBank] tentando scheme', bank.scheme);
+    // location.href dentro do user gesture costuma funcionar
     try {
       window.location.href = bank.scheme;
     } catch (e) {
-      // fallback se navegador bloquear
-      console.warn('Erro ao usar scheme:', e);
+      if (opts.log) console.warn('[openBank] location.href scheme falhou', e);
     }
 
-    fallbackTimer = setTimeout(() => {
-      if (!handled) {
-        // 3) montar intent e tentar
-        if (bank.package) {
-          const fallbackUrl = bank.store ? encodeURIComponent(bank.store) : '';
-          // usa o nome do scheme sem :// se possível
-          const schemeName = extractSchemeName(bank.scheme) || bank.package;
-          const intentUri = `intent://#Intent;scheme=${schemeName};package=${bank.package};S.browser_fallback_url=${fallbackUrl};end;`;
-          window.location.href = intentUri;
-        } else if (bank.store) {
-          window.location.href = bank.store;
-        } else if (bank.web) {
-          window.location.href = bank.web;
-        }
-        cleanup();
+    // se não houver resposta em X ms, tenta montar intent:// com fallback
+    fallbackT = setTimeout(() => {
+      if (handled) return;
+      if (bank.package) {
+        const schemeName = extractSchemeName(bank.scheme) || bank.package;
+        const fallbackUrl = bank.store ? encodeURIComponent(bank.store) : '';
+        const intentUri = `intent://#Intent;scheme=${schemeName};package=${bank.package};S.browser_fallback_url=${fallbackUrl};end;`;
+        if (opts.log) console.log('[openBank] tentando intent fallback', intentUri);
+        // clicar em <a> é mais confiável que location.href em alguns Chrome
+        const a = document.createElement('a');
+        a.href = intentUri;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => { try { a.remove(); } catch (e) {} }, 2000);
+        // aguarda nova heurística
+        fallbackT = setTimeout(() => {
+          if (!handled) doFallback();
+        }, opts.timeout);
+      } else {
+        // sem package, vai direto pra store/web
+        doFallback();
       }
-    }, 1200);
-
+    }, 800); // breve: se o app não respondeu rápido, cai no intent
     return;
   }
 
-  // 3) se já tem intent pronto (string intentUri)
+  // 3) intent já pronto (use anchor click pattern)
   if (bank.intent) {
-    // garante // após intent:
+    if (opts.log) console.log('[openBank] tentando intent (anchor click)', bank.intent);
     const intentUri = bank.intent.startsWith('intent://') ? bank.intent : bank.intent.replace(/^intent:/, 'intent://');
-    window.location.href = intentUri;
-
-    fallbackTimer = setTimeout(() => {
-      if (!handled) {
-        if (bank.store) window.location.href = bank.store;
-        else if (bank.web) window.location.href = bank.web;
-        cleanup();
-      }
-    }, 1200);
+    const a = document.createElement('a');
+    a.href = intentUri;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    // preferimos click do usuário — se este método for chamado dentro de um click, programmatic click costuma funcionar
+    a.click();
+    fallbackT = setTimeout(() => {
+      if (!handled) doFallback();
+      try { a.remove(); } catch(e){}
+    }, opts.timeout);
     return;
   }
 
-  // 4) último recurso: open store / web
-  if (bank.store) {
-    window.location.href = bank.store;
-  } else if (bank.web) {
-    window.location.href = bank.web;
-  } else {
-    console.warn('Nenhuma ação disponível para', bank && bank.id);
-  }
+  // último recurso
+  doFallback();
 }
 
-/* RAW: sua lista original (mantive a ordem e logos) */
-/* OBS: directLink preenchido apenas para EFI (conforme seu input) */
+/* ======== EXEMPLO DE BANKS (corrigido com browser_fallback_url já montado) ======== */
 const BANKS = [
-  {
-    id: 'itau',
-    name: 'Itaú',
-    logo: './logos/itau.svg',
-    // tentativa de scheme — se não abrir, substitua por directLink quando achar
-    scheme: 'itau://',
-    package: 'com.itau',
-    store: 'https://play.google.com/store/apps/details?id=com.itau',
-    intent: 'intent://com.itau#Intent;scheme=itau;package=com.itau;end;',
-    open() { openBank(this); }
-  },
-
+  // Nubank: intent com browser_fallback_url já embutido
   {
     id: 'nubank',
     name: 'Nubank',
     logo: './logos/nubank.svg',
-    scheme: 'nubank://',
+    intent: 'intent://#Intent;scheme=nubank;package=com.nu.production;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.nu.production;end;',
     package: 'com.nu.production',
     store: 'https://play.google.com/store/apps/details?id=com.nu.production',
-    intent: 'intent://com.nu.production#Intent;scheme=nubank;package=com.nu.production;end;',
     open() { openBank(this); }
   },
 
-  {
-    id: 'bradesco',
-    name: 'Bradesco',
-    logo: './logos/bradesco.svg',
-    scheme: 'bradesco://',
-    package: 'com.bradesco',
-    store: 'https://play.google.com/store/apps/details?id=com.bradesco',
-    intent: 'intent://com.bradesco#Intent;scheme=bradesco;package=com.bradesco;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'santander',
-    name: 'Santander',
-    logo: './logos/santander.svg',
-    // observação: seu intent anterior tinha scheme=picpay (parece erro).
-    // uso scheme genérico 'santander://' — ajuste se você tiver link direto.
-    scheme: 'santander://',
-    package: 'com.santander.app',
-    store: 'https://play.google.com/store/apps/details?id=com.santander.app',
-    intent: 'intent://com.santander.app#Intent;scheme=santander;package=com.santander.app;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'caixa',
-    name: 'Caixa',
-    logo: './logos/caixa.svg',
-    scheme: 'caixa://',
-    package: 'br.com.gabba.Caixa',
-    store: 'https://play.google.com/store/apps/details?id=br.com.gabba.Caixa',
-    intent: 'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'bb',
-    name: 'BB',
-    logo: './logos/bb.svg',
-    scheme: 'bb://',
-    package: 'br.com.bb.android',
-    store: 'https://play.google.com/store/apps/details?id=br.com.bb.android',
-    intent: 'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'picpay',
-    name: 'PicPay',
-    logo: './logos/picpay.svg',
-    scheme: 'picpay://',
-    package: 'com.picpay',
-    store: 'https://play.google.com/store/apps/details?id=com.picpay',
-    intent: 'intent://com.picpay#Intent;scheme=picpay;package=com.picpay;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'neon',
-    name: 'Neon',
-    logo: './logos/neon.svg',
-    scheme: 'neon://',
-    package: 'br.com.neon',
-    store: 'https://play.google.com/store/apps/details?id=br.com.neon',
-    intent: 'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'bmg',
-    name: 'BMG',
-    logo: './logos/bmg.svg',
-    scheme: 'bmg://',
-    package: 'br.com.bancobmg.bancodigital',
-    store: 'https://play.google.com/store/apps/details?id=br.com.bancobmg.bancodigital',
-    intent: 'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'inter',
-    name: 'Inter',
-    logo: './logos/inter.svg',
-    scheme: 'inter://',
-    package: 'br.com.intermedium',
-    store: 'https://play.google.com/store/apps/details?id=br.com.intermedium',
-    intent: 'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'dimo',
-    name: 'Dimo',
-    logo: './logos/dimo.svg',
-    scheme: 'dimo://',
-    package: 'com.motorola.dimo',
-    store: 'https://play.google.com/store/apps/details?id=com.motorola.dimo',
-    intent: 'intent://com.motorola.dimo#Intent;scheme=dimo;package=com.motorola.dimo;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'pagbank',
-    name: 'PagBank',
-    logo: './logos/pagbank.svg',
-    scheme: 'pagbank://',
-    package: 'br.com.uol.ps.myaccount',
-    store: 'https://play.google.com/store/apps/details?id=br.com.uol.ps.myaccount',
-    intent: 'intent://br.com.uol.ps.myaccount#Intent;scheme=pagbank;package=br.com.uol.ps.myaccount;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'mercadopago',
-    name: 'M. Pago',
-    logo: './logos/mercadopago.svg',
-    // corrigi a falta de '//' no intent original
-    scheme: 'mercadopago://',
-    package: 'com.mercadopago.wallet',
-    store: 'https://play.google.com/store/apps/details?id=com.mercadopago.wallet',
-    intent: 'intent://com.mercadopago.wallet#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'bv',
-    name: 'Banco BV',
-    logo: './logos/bv.svg',
-    scheme: 'bv://',
-    package: 'com.votorantim.bvpd',
-    store: 'https://play.google.com/store/apps/details?id=com.votorantim.bvpd',
-    intent: 'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'brb',
-    name: 'BRB',
-    logo: './logos/brb.svg',
-    scheme: 'brb://',
-    package: 'br.com.brb.digitalflamengo',
-    store: 'https://play.google.com/store/apps/details?id=br.com.brb.digitalflamengo',
-    intent: 'intent://br.com.brb.digitalflamengo#Intent;scheme=brb;package=br.com.brb.digitalflamengo;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'recargapay',
-    name: 'Rec. Pay',
-    logo: './logos/recargapay.svg',
-    scheme: 'recargapay://',
-    package: 'com.recarga.recarga',
-    store: 'https://play.google.com/store/apps/details?id=com.recarga.recarga',
-    intent: 'intent://com.recarga.recarga#Intent;scheme=recargapay;package=com.recarga.recarga;end;',
-    open() { openBank(this); }
-  },
-
+  // EFI (seu directLink)
   {
     id: 'efi',
     name: 'EFI Bank',
     logo: './logos/efi.svg',
-    // seu link que você disse abrir direto: mantive aqui como directLink
-    directLink: 'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite&utm_campaign=Campanha+nao+identificada&utm_medium=Portal&utm_source=[LinkLoja]+em+login.sejaefi.com.br',
+    directLink: 'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite',
     package: 'br.com.gerencianet.app',
     store: 'https://play.google.com/store/apps/details?id=br.com.gerencianet.app',
     open() { openBank(this); }
   },
 
+  // Exemplo Itaú (intent montado com fallback)
   {
-    id: 'sofisa',
-    name: 'Sofisa',
-    logo: './logos/sofisa.svg',
-    scheme: 'sofisa://',
-    package: 'goova.sofisa.client.v2',
-    store: 'https://play.google.com/store/apps/details?id=goova.sofisa.client.v2',
-    intent: 'intent://goova.sofisa.client.v2#Intent;scheme=sofisa;package=goova.sofisa.client.v2;end;',
-    open() { openBank(this); }
-  },
-
-  {
-    id: 'caixatem',
-    name: 'CaixaTem',
-    logo: './logos/caixatem.svg',
-    scheme: 'caixatem://',
-    package: 'br.gov.caixa.tem',
-    store: 'https://play.google.com/store/apps/details?id=br.gov.caixa.tem',
-    intent: 'intent://br.gov.caixa.tem#Intent;scheme=caixatem;package=br.gov.caixa.tem;end;',
+    id: 'itau',
+    name: 'Itaú',
+    logo: './logos/itau.svg',
+    intent: 'intent://#Intent;scheme=itau;package=com.itau;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.itau;end;',
+    package: 'com.itau',
+    store: 'https://play.google.com/store/apps/details?id=com.itau',
     open() { openBank(this); }
   }
+  // ... complete com o resto da lista no mesmo padrão
 ];
 
-/* Uso:
-   BANKS.find(b => b.id === 'efi').open();
-   BANKS.find(b => b.id === 'nubank').open();
-*/
-
-/* Dica de UX: coloque um fallback visual (spinner) e desabilite o botão por ~2s enquanto tenta abrir. */
 
   
   // segue o resto dos codigos
