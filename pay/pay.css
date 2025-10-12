@@ -584,4 +584,5 @@ body {
     margin-rigth: 5px;
     display: flex;
     align-itens: center;
+    cursor: pointer;
 }
