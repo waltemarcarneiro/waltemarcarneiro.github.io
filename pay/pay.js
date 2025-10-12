@@ -318,8 +318,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-//botao copiar chave pix
-<script>
+
+// botao copiar chave pix
     function copiarTexto() {
       const texto = "eaaccac3-e4be-4f6b-a597-9af2d941290a";
       navigator.clipboard.writeText(texto).then(() => {
@@ -332,4 +332,4 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Erro ao copiar: " + err);
       });
     }
-  </script>
+  
