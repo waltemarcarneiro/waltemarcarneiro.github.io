@@ -591,6 +591,7 @@ body {
 #feedback {
       color: #FB2D7D;
       font-size: 16px;
-      margin-top: 10px;
+      margin-top: 80px;
       display: none;
+      position: absolute;
     }
