@@ -125,7 +125,7 @@
     --container-max: min(100% - var(--space-3), 72rem);
     --radius: clamp(0.5rem, 0.4rem + 1vw, 1rem);
     /* DimensÃµes dos Ã­cones e logotipo */
-    --icon-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    --icon-size: clamp(1.25rem, 1.28rem + 1vw, 1.75rem);
     --logo-h: clamp(1.25rem, 1rem + 1.2vw, 2rem);
     /* Cores (suporte a dark/light) */
     --bg: #0c0b2e;
