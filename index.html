@@ -38,27 +38,24 @@
    <!---SPLASH (substitui link externo ./css/splash.css e /js/splash.js) -->
    <style>
     /* Splash importado de splash-modelo.html; pulse aumentado para 4s */
-    #splash-screen {
-      position: fixed;
-      inset: 0;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, #f76700, #602900);
-      color: #fff;
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
+    /* Estilo inicial do splash */
+#splash-screen {
+  position: fixed;
+  inset: 0;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
 
-    #splash-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
+/* Quando for escondido */
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 
     .splash-content {
       text-align: center;
@@ -450,69 +447,52 @@
        });
      }
    </script>
-   <!-- Script inline do splash (duração 4000ms) -->
-   <script>
-   (function(){
-     window.addEventListener("load", () => {
-       const splash = document.getElementById("splash-screen");
-       const splashImg = document.getElementById("splash-logo-img");
-       if (!splash || !splashImg) return;
+	
+   <!-- Script inline do splash -->
 
-       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+	<script>
+(function(){
+  window.addEventListener("load", () => {
+    const splash = document.getElementById("splash-screen");
+    const splashImg = document.getElementById("splash-logo-img");
+    if (!splash || !splashImg) return;
 
-       // aplica fundo temporário para evitar flash branco
-       const prevBg = document.documentElement.style.background || "";
-       document.documentElement.style.background = prefersDark ? "#0f1724" : "#f76700";
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-       // tenta carregar o primeiro caminho válido para o logo (local e produção)
-       function setSplashImage(imgEl, candidates, cb){
-         let i = 0;
-         function tryNext(){
-           if(i >= candidates.length){ if(cb) cb(); return; }
-           const url = candidates[i++];
-           const tester = new Image();
-           tester.onload = function(){ imgEl.src = url; if(cb) cb(); };
-           tester.onerror = tryNext;
-           tester.src = url;
-         }
-         tryNext();
-       }
+    // Aplica fundo temporário para evitar flash branco
+    document.documentElement.style.background = prefersDark ? "#0f1724" : "#f76700";
 
-       const candidates = [
-         "icons/splash.svg",
-         "./icons/splash.svg",
-         "/icons/splash.svg"
-       ];
+    // Define a imagem do logo diretamente
+    splashImg.src = "/icons/splash.svg";
 
-       setSplashImage(splashImg, candidates, function(){
-         // Após garantir a imagem, controla o tempo do splash
-         const DURATION = 2000; // 2.5 segundos
+    // Função para remover o splash
+    const removeSplash = () => {
+      splash.classList.add("hidden");
+      splash.setAttribute("aria-hidden", "true");
+      document.documentElement.style.background = prefersDark ? "#0f1724" : "#f8fafc";
+      const tryRemove = () => { try { splash.remove(); } catch(e){} };
+      splash.addEventListener("transitionend", tryRemove, { once: true });
+      setTimeout(tryRemove, 800);
+    };
 
-         const removeSplash = () => {
-           if (!splash) return;
-           splash.classList.add("hidden");
-           splash.setAttribute("aria-hidden", "true");
-           document.documentElement.style.background = prefersDark ? "#0f1724" : "#f8fafc";
-           const tryRemove = () => { try { splash.remove(); } catch(e){} };
-           splash.addEventListener("transitionend", tryRemove, { once: true });
-           setTimeout(tryRemove, 800);
-         };
+    // Se o usuário prefere menos movimento, remove imediatamente
+    if (prefersReduced) {
+      removeSplash();
+      return;
+    }
 
-         // Respeita preferência por reduzir movimento
-         const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-         if (prefersReduced) {
-           removeSplash();
-           return;
-         }
+    // Remove após 2 segundos, independentemente do tempo de carregamento da imagem
+    setTimeout(removeSplash, 2000);
+  });
+})();
+</script>
 
-         setTimeout(removeSplash, DURATION);
-       });
-     });
-   })();
-   </script>
+   
 </body>
 
 </html>
+
 
 
 
