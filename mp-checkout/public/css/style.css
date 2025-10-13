@@ -1,0 +1,103 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  color: #333;
+}
+
+/* Título */
+h1 {
+  margin-bottom: 20px;
+  color: #ff6f61;
+  text-align: center;
+}
+
+/* Inputs */
+input[type="number"],
+input[type="email"] {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* Botões de método de pagamento */
+#metodos {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+#metodos button {
+  flex: 1 1 100px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#metodos button[data-metodo="pix"] {
+  background: #34af23; /* verde PIX */
+}
+
+#metodos button[data-metodo="bolbradesco"] {
+  background: #0070c0; /* azul Boleto */
+}
+
+#metodos button[data-metodo="visa"] {
+  background: #ffcc00; /* amarelo Cartão */
+  color: #000;
+}
+
+#metodos button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Resultado do pagamento */
+#resultado {
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+#resultado img {
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+  #metodos {
+    flex-direction: column;
+  }
+
+  #metodos button {
+    width: 100%;
+  }
+}

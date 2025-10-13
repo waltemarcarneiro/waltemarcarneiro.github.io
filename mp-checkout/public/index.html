@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout de Teste</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>💇 Pagamento - Teste Mercado Pago</h1>
+
+  <input type="number" id="valor" placeholder="Valor (R$)">
+  <input type="email" id="email" placeholder="Email do cliente">
+
+  <div id="metodos">
+    <button data-metodo="pix">Pagar via PIX</button>
+    <button data-metodo="bolbradesco">Pagar via Boleto</button>
+    <button data-metodo="visa">Pagar via Cartão</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script src="js/checkout.js"></script>
+</body>
+</html>
