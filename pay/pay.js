@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // botao copiar chave pix
     function copiarTexto() {
-      const texto = "eaaccac3-e4be-4f6b-a597-9af2d941290a";
+      const texto = "edcebd46-2b0e-4822-9eda-538c32196c56";
       navigator.clipboard.writeText(texto).then(() => {
         const feedback = document.getElementById("feedback");
         feedback.style.display = "block";
