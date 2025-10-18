@@ -149,11 +149,10 @@
 * {
     box-sizing: border-box;
 }
-html {
-    background: #0B092C;
-}
+
 html, body {
     height: 100%;
+    backgronnd: #0B092C;
 }
 
 body {
