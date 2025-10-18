@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       {id:'santander', name:'Santander', link:'intent://com.santander.app#Intent;scheme=picpay;package=com.santander.app;end;', logo:'./logos/santander.svg'},
       {id:'caixa', name:'Caixa', link:'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;', logo:'./logos/caixa.svg'},
       {id:'bb', name:'BB', link:'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;', logo:'./logos/bb.svg'},
-      {id:'picpay', name:'PicPay', link:'intent://com.picpay#Intent;scheme=picpay;package=com.picpay;end;', logo:'./logos/picpay.svg'},
+      {id:'picpay', name:'PicPay', link:'https://tracking.transacional.picpay.com/tracking/1/click/b_weAEZcTaH4G8O8eJVBSPiQTK2yos1GotmYQsuTksv4FNbx3NuEjz0OnPHVUmP_HJs6QL7WNLtxvd1Y089BL491Y1-rI-So86QlcKaZ1m1UlzeWNEZr8CB99xvXNP6egEFsh3pMp0tSh6lOvDMuK3j1A3HHOkYVdaGZBpQ5HTwRhTpwQtXYZls-n-vklbBG03mx0jBrIinxoiUJmXFmokZHs2Gx6QOJXJG1lp2v1eXjaczN-N7VpmNctyNGhkJjqr-Gp0mZzthrTfwQqsHatx3PGU6ghK5DXIcRtxCLWbfom8Tds-ZpxG2Z9jIzMhl0ZmaBs4ruuSpr6pq0WVuBH7zK7GwI_ChQ0bXuqNjU6468ECBxpPWs0OVxFlg5ap6_7M3vZni6299CT9-P5yANW9WG0jjKjiczxdNJ2vxfX4tLFaVDQczDhxvIBdPNyVTyjms_15aSgyS3AJT2p4woTM6gBKrZNKVujbQZpYDpMp3a8G9QzYGSh8M3P3dcY-NdGzAGEa1m-cttvAiVfY2uQg==', logo:'./logos/picpay.svg'},
       {id:'neon', name:'Neon', link:'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;', logo:'./logos/neon.svg'},
       {id:'bmg', name:'BMG', link:'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;', logo:'./logos/bmg.svg'},
       {id:'inter', name:'Inter', link:'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;', logo:'./logos/inter.svg'},
