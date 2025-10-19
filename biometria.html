@@ -2,28 +2,23 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
-
-  <title>Autenticação Biométrica PWA</title>
+  <title>Biometria com WebAuthn</title>
   <style>
-    *{
-      margin: 0;
-      padding: 0;
-    }
     body {
       font-family: Arial, sans-serif;
-      background: #f0f4f8;
+      background: #eef2f7;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100dvh;
+      height: 100vh;
       font-size: 18px;
     }
     h1 {
       color: #333;
     }
     button {
+      margin: 10px;
       padding: 12px 24px;
       font-size: 16px;
       background-color: #0078d4;
@@ -42,12 +37,17 @@
   </style>
 </head>
 <body>
-  <h1>Desbloqueio com Biometria</h1>
-  <button onclick="desbloquearComBiometria()">Autenticar</button>
+  <h1>Teste de Biometria</h1>
+  <button onclick="registrarBiometria()">Registrar Biometria</button>
+  <button onclick="autenticarBiometria()">Autenticar</button>
   <div id="status"></div>
 
   <script>
-    async function desbloquearComBiometria() {
+    function gerarDesafio() {
+      return new Uint8Array(32);
+    }
+
+    async function registrarBiometria() {
       const status = document.getElementById("status");
 
       if (!window.PublicKeyCredential) {
@@ -55,17 +55,57 @@
         return;
       }
 
-      try {
-        await navigator.credentials.get({
-          publicKey: {
-            challenge: new Uint8Array(32), // Simulado; idealmente vem do servidor
-            timeout: 60000,
-            userVerification: "required"
-          }
-        });
+      const publicKey = {
+        challenge: gerarDesafio(),
+        rp: {
+          name: "waltemar.com.br"
+        },
+        user: {
+          id: new Uint8Array(16),
+          name: "waltemar@exemplo.com",
+          displayName: "Waltemar"
+        },
+        pubKeyCredParams: [
+          { type: "public-key", alg: -7 }
+        ],
+        authenticatorSelection: {
+          authenticatorAttachment: "platform",
+          userVerification: "required"
+        },
+        timeout: 60000,
+        attestation: "none"
+      };
 
-        status.textContent = "✅ Biometria validada com sucesso!";
+      try {
+        const credential = await navigator.credentials.create({ publicKey });
+        console.log("Credencial registrada:", credential);
+        status.textContent = "✅ Biometria registrada com sucesso!";
       } catch (err) {
+        console.warn("Erro ao registrar:", err);
+        status.textContent = "❌ Falha ao registrar: " + err.message;
+      }
+    }
+
+    async function autenticarBiometria() {
+      const status = document.getElementById("status");
+
+      if (!window.PublicKeyCredential) {
+        status.textContent = "❌ Biometria não suportada neste navegador.";
+        return;
+      }
+
+      const publicKeyRequest = {
+        challenge: gerarDesafio(),
+        timeout: 60000,
+        userVerification: "required"
+      };
+
+      try {
+        const assertion = await navigator.credentials.get({ publicKey: publicKeyRequest });
+        console.log("Autenticação bem-sucedida:", assertion);
+        status.textContent = "✅ Autenticação biométrica validada!";
+      } catch (err) {
+        console.warn("Erro na autenticação:", err);
         status.textContent = "❌ Falha na autenticação: " + err.message;
       }
     }
