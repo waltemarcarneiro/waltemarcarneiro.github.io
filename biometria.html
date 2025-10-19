@@ -2,8 +2,6 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-     <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5' name='viewport' />
-
   <title>Biometria com WebAuthn</title>
   <style>
     body {
@@ -14,7 +12,6 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      font-size: 18px;
     }
     h1 {
       color: #333;
@@ -45,8 +42,10 @@
   <div id="status"></div>
 
   <script>
+    let credencialID = null;
+
     function gerarDesafio() {
-      return new Uint8Array(32);
+      return window.crypto.getRandomValues(new Uint8Array(32));
     }
 
     async function registrarBiometria() {
@@ -80,6 +79,7 @@
 
       try {
         const credential = await navigator.credentials.create({ publicKey });
+        credencialID = credential.rawId;
         console.log("Credencial registrada:", credential);
         status.textContent = "✅ Biometria registrada com sucesso!";
       } catch (err) {
@@ -96,10 +96,19 @@
         return;
       }
 
+      if (!credencialID) {
+        status.textContent = "⚠️ Nenhuma credencial registrada. Registre primeiro.";
+        return;
+      }
+
       const publicKeyRequest = {
         challenge: gerarDesafio(),
         timeout: 60000,
-        userVerification: "required"
+        userVerification: "required",
+        allowCredentials: [{
+          type: "public-key",
+          id: credencialID
+        }]
       };
 
       try {
