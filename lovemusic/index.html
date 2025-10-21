@@ -1,1 +1,86 @@
-index
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoveMusic</title>
+  <meta name="theme-color" content="#0f0f0f">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Player (iframe ocupa 50% da tela, sem bordas/margens) -->
+  <div class="player-container">
+    <div id="video-frame"></div>
+  </div>
+
+  <!-- Controles -->
+  <div class="controls-container">
+    
+    <!-- Playlist (scroll vertical) -->
+<div class="section playlist">
+  <ul id="playlist-videos">
+    <!-- Itens da playlist serão injetados via JavaScript -->
+  </ul>
+</div>
+
+
+    <!-- Botões de interação -->
+    <div class="section interaction-buttons">
+      <button><svg><!-- compartilhar --></svg></button>
+      <button><svg><!-- doar --></svg></button>
+    </div>
+
+<div class="player-footer">
+  <div class="section info">
+    <h2 class="video-title">Titulo</h2>
+    <p class="video-artist">Artista</p>
+  </div>
+
+  <div class="section progress-bar">
+    <span class="time current-time">00:00</span>
+    <div class="bar">
+      <div class="progress"></div>
+    </div>
+    <span class="time total-time">00:00</span>
+  </div>
+
+  <div class="section control-buttons">
+    <img src="./icons/shuffle.svg" alt="Play" />
+    <img src="./icons/prev.svg" alt="Play" />
+    <img src="./icons/play.svg" alt="Play" />
+    <img src="./icons/next.svg" alt="Play" />
+    <img src="./icons/playlist.svg" alt="Play" />
+  </div>
+</div>
+
+
+
+<!-- Modal da playlist (inicialmente oculto) -->
+<div id="modal-playlist" class="modal hidden">
+  <div class="playlist-fullscreen">
+
+    <div class="playlist-header">
+      <input
+        type="text"
+        id="playlist-search"
+        placeholder="Buscar vídeo na playlist..."
+        class="search-bar"
+      />
+      <button id="closePlaylist" aria-label="Fechar Playlist">✖</button>
+  </div>
+<div id="playlist-content" class="playlist-content">
+  <!-- Itens da playlist serão injetados dinamicamente -->
+</div>
+
+</div>
+
+
+
+
+
+<script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./js/app.js"></script>
+  
+</body>
+</html>
