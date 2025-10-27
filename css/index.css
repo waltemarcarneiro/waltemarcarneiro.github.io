@@ -650,12 +650,12 @@ img {
 
 .promo {
     bottom: 5%;
-    background: #fff;
+    background: rgba(0,0,0,0.2);
     padding: 10px;
     display: flex;
     border-radius: 5px;
     align-items: flex-start;
-    color: #151515;
+    color: #fff;
     position: absolute;
     right: 15px;
     max-width: 480px;
