@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de OS - Waltemar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gerador.css">
+</head>
+<body>
+  <h1>Gerar Ordem de Serviço</h1>
+  <form id="osForm">
+    <label>Cliente</label>
+    <input type="text" id="cliente" required>
+
+    <label>Telefone</label>
+    <input type="tel" id="telefone" placeholder="(00) 00000-0000" maxlength="15">
+
+    <label>Endereço</label>
+    <input type="text" id="endereco">
+
+    <label>Equipamento</label>
+    <input type="text" id="equipamento">
+
+    <label>Problema Relatado</label>
+    <textarea id="problema" required></textarea>
+
+    <label>Solução Implementada</label>
+    <textarea id="solucao"></textarea>
+
+    <label>Produto</label>
+    <input type="text" id="produto">
+
+    <label>Serviço</label>
+    <input type="text" id="servico">
+
+    <label>Valor (R$)</label>
+    <input type="text" id="valor" required inputmode="numeric" placeholder="0,00">
+
+    <button type="submit">Gerar OS</button>
+  </form>
+
+  <div class="preview" id="preview" style="display:none;">
+    <iframe id="framePreview"></iframe>
+  </div>
+
+  <!-- Modal PIX -->
+  <div class="modal" id="modalPix">
+    <div class="modal-content">
+      <h2>Pagamento via PIX</h2>
+      <div class="pix-info" id="pixResumo"></div>
+      <div id="qrcode"></div>
+      <p><strong>Chave PIX:</strong> <br> edcebd46-2b0e-4822-9eda-538c32196c56</p>
+      <button class="close" onclick="fecharModal()">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal Bancos (usado pelo gerador.js) -->
+  <div class="modal" id="modalBancos" style="display:none;">
+    <div class="modal-content">
+      <h2>Escolha do Banco</h2>
+      <div id="listaBancos" style="text-align:left;max-height:260px;overflow:auto;margin-top:.6rem;padding-right:.2rem;"></div>
+      <div style="display:flex;gap:.5rem;justify-content:center;margin-top:1rem;">
+        <button class="close" onclick="fecharModalBancos()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="gerador.js"></script>
+ </body>
+ </html>
