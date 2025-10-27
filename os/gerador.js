@@ -272,7 +272,31 @@ window.abrirPix = function(cliente, os, valor) {
   function tlv(id, value){ const len=String(value.length).padStart(2,'0'); return id+len+value; }
   function crc16ccitt(str){ let crc=0xffff; for(let i=0;i<str.length;i++){ crc ^= str.charCodeAt(i)<<8; for(let j=0;j<8;j++){ crc = (crc & 0x8000) ? (((crc<<1)^0x1021)&0xffff) : ((crc<<1)&0xffff); } } return crc.toString(16).toUpperCase().padStart(4,'0'); }
   function buildPix(amount, key, merchant, city, txid){ const id00=tlv('00','01'); const id01=tlv('01','12'); const gui=tlv('00','br.gov.bcb.pix'); const idKey=tlv('01',key); const desc=tlv('02','Pagamento'); const id26=tlv('26',gui+idKey+desc); const id52=tlv('52','0000'); const id53=tlv('53','986'); const id54=tlv('54', (Number(amount)||0).toFixed(2)); const id58=tlv('58','BR'); const id59=tlv('59',merchant.slice(0,25)); const id60=tlv('60',city); const tx=tlv('05',String(txid).slice(0,25)); const id62=tlv('62',tx); const partial = id00+id01+id26+id52+id53+id54+id58+id59+id60+id62+'6304'; const crc=crc16ccitt(partial); return partial+crc; }
-  function copyToClipboard(text){ if(!text) return; if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).catch(()=>{}); return; } try{ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }catch(e){} }
+  
+  function copyToClipboard(text) {
+  if (!text) return;
+  try {
+    // Cria um input temporário visível fora da tela (garante compatibilidade iOS)
+    const input = document.createElement('input');
+    input.value = text;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    input.style.pointerEvents = 'none';
+    document.body.appendChild(input);
+    input.focus();
+    input.select();
+    const success = document.execCommand('copy');
+    document.body.removeChild(input);
+
+    if (!success && navigator.clipboard) {
+      // Fallback assíncrono (executa depois do clique, se permitido)
+      navigator.clipboard.writeText(text).catch(() => {});
+    }
+  } catch (e) {
+    console.error('Falha ao copiar PIX:', e);
+  }
+}
+
 
   function openDrawer(html){ document.getElementById('drawerContent').innerHTML = html; document.getElementById('drawerBackdrop').style.display='block'; const d=document.getElementById('drawer'); d.classList.add('open'); d.setAttribute('aria-hidden','false'); }
   function closeDrawer(){ const d=document.getElementById('drawer'); d.classList.remove('open'); d.setAttribute('aria-hidden','true'); setTimeout(()=>{ document.getElementById('drawerBackdrop').style.display='none'; document.getElementById('drawerContent').innerHTML=''; },300); }
@@ -306,6 +330,7 @@ window.abrirPix = function(cliente, os, valor) {
       });
     };
   }
+    
 </script>
 </body>
 </html>`;
