@@ -665,7 +665,7 @@ img {
 }
 
 .logo-promo {
-    background: #fff;
+    
     margin-right: 8px;
     width: 80px;
     height: 80px;
@@ -680,7 +680,6 @@ img {
 
 .promo span {
     font-weight: bold;
-    font-size: 1.1rem;
 }
 
 .promo p {
