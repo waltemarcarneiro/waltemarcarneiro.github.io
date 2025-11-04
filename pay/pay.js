@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gui = tlv('00', 'br.gov.bcb.pix');
     const key = tlv('01', PIX_KEY);
     // opcional: descrição (até 99)
-    const desc = tlv('02', 'Pagamento');
+    const desc = tlv('02', 'WALTEMAR PAY');
     const id26 = tlv('26', gui + key + desc);
     // 52 - Merchant Category Code
     const id52 = tlv('52', '0000');
