@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pix Fácil - Checkout</title>
+    <meta name="description" content="Web Desenvolvimentos" />
+    <!--============ FAVICON / OG / SEO ============-->
+    <!-- FAVICON-->
+   <link rel="shortcut icon" href="/icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon16.png" />
+   <!--AppleTouchIcon-->
+   <link rel="apple-touch-icon" href="/icons/icon76.png" sizes="76x76">
+   <link rel="apple-touch-icon" href="/icons/icon120.png" sizes="120x120">
+   <link rel="apple-touch-icon" href="/icons/icon152.png" sizes="152x152">
+   <link rel="apple-touch-icon" href="/icons/icon180.png" sizes="180x180">
+   <link rel="apple-touch-icon" href="/icons/icon512.png" sizes="512x512">
+   <!-- SEO | OG -->
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="Waltemar Carneiro" />
+   <meta property="og:description" content="Web Desenvolvimentos" />
+   <meta property="og:image" content="https://waltemar.com.br/image/og-frp-moto.png" />
+   <meta content='website' property='og:type' />
+   <meta property="og:site_name" content="Waltemar Carneiro" />
+   <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Carrega Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração de fontes e cores do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pix-blue': '#f76700',
+                        'pix-green': '#00B99B',
+                        'pix-orange': '#f76700', /* Cor do Botão Principal */
+                        'bg-gray': '#f5f7fa',
+                        'text-dark': '#1f2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 1. Layout Principal: Simula o corpo de um App */
+        .app-wrapper {
+            /* Desktop Max Width (<= 900px) */
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            /* Garante que o conteúdo role dentro do wrapper na tela cheia */
+            min-height: 100vh;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* 2. Conteúdo Rolável: Evita que o conteúdo seja escondido pelos elementos fixos */
+        .scrollable-content {
+            /* Altura do header (56px) + margin/padding (16px) */
+            padding-top: 72px; 
+            /* Altura do footer (80px) */
+            padding-bottom: 80px; 
+            overflow-y: auto;
+            min-height: 100vh; /* Garante que o rolamento ocorra aqui */
+        }
+        
+        /* 3. Ajuste de Padding Mobile (10px) */
+        /* Aplicamos um padding de 10px nas laterais das seções principais no mobile */
+        @media (max-width: 640px) {
+            .app-section-padding {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .app-wrapper {
+                box-shadow: none; /* Sem sombra no mobile */
+            }
+        }
+
+        /* 4. Estilos de Logo */
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+        /* Fallback para logo (quadrado cinza com letra inicial) */
+        .bank-logo-placeholder-fallback {
+            width: 48px;
+            height: 48px;
+            background-color: #e2e8f0; 
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a5568;
+            border: 2px solid #cbd5e1;
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bank-thumb {
+            position: relative;
+        }
+        table{
+            font-size: 1rem;
+        }
+        .service{
+            text-align: center;
+            padding-bottom: 15px;
+        }
+        .right{
+            font-weight: bold;
+        }
+        tr{
+            border-bottom: 1px solid #ddd;
+        }
+       
+    </style>
+</head>
+<body class="bg-bg-gray font-sans min-h-screen">
+
+    <!-- Wrapper principal para Max-Width e centralização (simula a tela do app) -->
+    <div class="app-wrapper">
+
+        <!-- CABEÇALHO FIXO -->
+        <header class="fixed top-0 left-0 right-0 z-20 bg-white border-b shadow-md w-full max-w-[900px] mx-auto">
+            <div class="container flex items-center justify-start relative p-3">
+                <!-- Botão Voltar (Visível apenas na seção de bancos) -->
+                <button id="backButton" class="icon-button text-gray-500 hover:text-gray-700 hidden mr-3 p-1" type="button" aria-label="Voltar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </button>
+                <!-- Título -->
+                <h2 id="headerTitle" class="text-lg font-bold text-text-dark">PAGAMENTO PIX</h2>
+                <!-- Placeholder para Link da Marca (Visível apenas na seção de resumo) -->
+                <a href="#" id="brandLink" class="text-sm text-pix-blue font-medium ml-auto p-1">
+                    <span id="brandLogo" class="text-xl"><img style="border-radius:50%" src="https://waltemar.com.br/icons/icon192.png" width="32"></span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Feedback de Cópia (Fixo, mas escondido) -->
+        <div id="feedback" class="fixed top-14 left-0 right-0 p-3 text-center bg-pix-green text-white font-medium hidden z-30 w-full max-w-[900px] mx-auto">
+            ✅ Código Pix Copia e Cola copiado!
+        </div>
+        
+        <!-- CONTEÚDO ROLÁVEL -->
+        <div class="scrollable-content bg-white">
+
+            <!-- SEÇÃO 2: RESUMO E QR CODE (TELA INICIAL) -->
+            <section id="section-summary" class="p-4 app-section-padding">
+                <div class="service">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                      <tr>
+                        <td align="left">Cliente:</td>
+                        <td align="right" class="right">Warlen A L Haack</td>
+                      </tr>
+                      <tr>
+                        <td align="left">Valor do Serviço:</td>
+                        <td align="right" class="right">R$ 80,00</td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="desconto">Desconto:</td>
+                        <td align="right" class="right">R$ 30,00</td>
+                      </tr>
+                    </table>    
+                </div>
+                <div class="flex justify-center flex-col items-center mb-6">
+                    <!-- QR Code -->
+                    <img id="pixQr" alt="QR Code Pix" class="w-48 h-48 border border-gray-200 rounded-lg shadow-lg p-2" src="https://placehold.co/200x200/eeeeee/777777?text=QR+Code">
+                    
+                    <!-- Valor da Transação - ABAIXO DO QR CODE -->
+                    <div class="mt-4 text-center">
+                        <p class="text-base text-gray-600 mb-1">Valor Fixo da Transação:</p>
+                        <p id="pixAmountRef" class="text-3xl font-extrabold text-pix-blue">R$ 50,00</p>
+                    </div>
+                </div>
+
+                <!-- Copia e Cola -->
+                <div class="mb-6">
+                    <label for="pixCopyPaste" class="block text-sm font-medium text-gray-700 mb-2">Pix Copia e Cola:</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="pixCopyPaste" readonly class="flex-grow p-3 text-sm bg-gray-100 border border-gray-300 rounded-lg overflow-x-scroll">
+                        <button type="button" onclick="copiarPayload()" class="bg-pix-green text-white px-4 py-3 rounded-lg font-medium hover:bg-pix-green/90 transition duration-150 shadow-md" aria-label="Copiar código Pix">
+                            Copiar
+                        </button>
+                    </div>
+                </div>
+
+                <p class="text-xs text-center text-gray-400 mt-4">Pague escaneando o QR Code ou usando o código Copia e Cola.</p>
+            </section>
+
+            <!-- SEÇÃO 3: SELEÇÃO DE BANCO -->
+            <section id="section-banks" class="p-4 app-section-padding hidden">
+                <!-- Título de instrução - NOVO TEXTO SOLICITADO -->
+                <p id="bankInstruction" class="text-gray-700 mb-6 text-center font-semibold text-base px-2 py-3 bg-gray-100 border border-gray-200 rounded-lg">
+                    O código Pix foi copiado. Escolha o seu banco, e use a opção Copia e Cola.
+                </p>
+                
+                <div class="banks-grid grid grid-cols-3 gap-4" id="banksGrid">
+                    <!-- Bancos serão renderizados aqui pelo JS -->
+                </div>
+                
+            </section>
+
+        </div>
+
+        <!-- RODAPÉ FIXO (CONTÉM O BOTÃO DE AÇÃO) -->
+        <!-- Visibilidade do rodapé controlada pelo JS -->
+        <div id="fixedFooter" class="fixed-footer fixed bottom-0 left-0 right-0 z-10 p-4 bg-white border-t w-full max-w-[900px] mx-auto shadow-2xl">
+            <button id="continueButton2" type="button" class="w-full py-4 bg-pix-orange text-white rounded-xl font-bold text-lg shadow-lg hover:bg-pix-orange/90 transition duration-150">
+                Pagar com App do Banco
+            </button>
+        </div>
+
+    </div>
+
+<script>
+    // --- VARIÁVEIS DE CONFIGURAÇÃO ---
+    const FIXED_AMOUNT_NUMBER = 50.00; 
+    // ATENÇÃO: BASE_LOGO_URL FOI REMOVIDA. OS LOGOS USAM CAMINHO RELATIVO PADRÃO.
+    const PIX_CONFIG = {
+        KEY: 'edcebd46-2b0e-4822-9eda-538c32196c56',
+        NAME: 'Waltemar Lima Carneiro',
+        CITY: 'SAO PAULO',
+        DESCRIPTION: 'WALTEMAR PAY'
+    };
+
+    // Lista de bancos (abreviada para brevidade)
+    const BANKS = [
+      {id:'itau', name:'Itaú', link:'intent://com.itau#Intent;scheme=itau;package=com.itau;end;', logo:'https://waltemar.com.br/pay/logos/itau.svg'},
+      {id:'nubank', name:'Nubank', link:'https://url2333.nubank.com.br/ls/click?upn=u001.iKIqtKJvgjuNco1005EWNaT7sQHv5KztgKcP-2BFzlVuQKHXX4-2B9N-2FziSPKJXCNqZu9gYUw4aof1BwHis6ldpFjH8q9nXqjOxV... (link abreviado)', logo:'https://waltemar.com.br/pay/logos/nubank.svg'},
+      {id:'bradesco', name:'Bradesco', link:'intent://com.bradesco#Intent;scheme=bradesco;package=com.bradesco;end;', logo:'https://waltemar.com.br/pay/logos/bradesco.svg'},
+      {id:'santander', name:'Santander', link:'intent://com.santander.app#Intent;scheme=santander;package=com.santander.app;end;', logo:'https://waltemar.com.br/pay/logos/santander.svg'},
+      {id:'caixa', name:'Caixa', link:'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;', logo:'https://waltemar.com.br/pay/logos/caixa.svg'},
+      {id:'bb', name:'BB', link:'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;', logo:'https://waltemar.com.br/pay/logos/bb.svg'},
+      {id:'picpay', name:'PicPay', link:'https://tracking.transacional.picpay.com/tracking/1/click/b_weAEZcTaH4G8O8eJVBSPiQTK2yos1GotmYQsuTksv4FNbx3NuEjz0OnPHVUmP_HJ... (link abreviado)', logo:'https://waltemar.com.br/pay/logos/picpay.svg'},
+      {id:'neon', name:'Neon', link:'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;', logo:'https://waltemar.com.br/pay/logos/neon.svg'},
+      {id:'bmg', name:'BMG', link:'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;', logo:'https://waltemar.com.br/pay/logos/bmg.svg'},
+      {id:'inter', name:'Inter', link:'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;', logo:'https://waltemar.com.br/pay/logos/inter.svg'},
+      {id:'dimo', name:'Dimo', link:'intent://com.motorola.dimo#Intent;scheme=dimo;package=com.motorola.dimo;end;', logo:'https://waltemar.com.br/pay/logos/dimo.svg'},
+      {id:'pagbank', name:'PagBank', link:'intent://br.com.uol.ps.myaccount#Intent;scheme=pagbank;package=br.com.uol.ps.myaccount;end;', logo:'https://waltemar.com.br/pay/logos/pagbank.svg'},
+      {id:'mercadopago', name:'M. Pago', link:'intent:com.mercadopago.wallet#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end;', logo:'https://waltemar.com.br/pay/logos/mercadopago.svg'},
+      {id:'bv', name:'Banco BV', link:'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;', logo:'https://waltemar.com.br/pay/logos/bv.svg'},
+      {id:'brb', name:'BRB', link:'intent://br.com.brb.digitalflamengo#Intent;scheme=brb;package=br.com.brb.digitalflamengo;end;', logo:'https://waltemar.com.br/pay/logos/brb.svg'},
+      {id:'recargapay', name:'Rec. Pay', link:'intent://com.recarga.recarga#Intent;scheme=recargapay;package=com.recarga.recarga;end;', logo:'https://waltemar.com.br/pay/logos/recargapay.svg'},
+      {id:'efi', name:'EFI Bank', link:'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite&utm_campaign=Campanha+nao+identificada&utm_medium=Portal&utm_source=[LinkLoja]+em+login.sejaefi.com.br', logo:'https://waltemar.com.br/pay/logos/efi.svg'},
+      {id:'sofisa', name:'Sofisa', link:'intent://goova.sofisa.client.v2#Intent;scheme=sofisa;package=goova.sofisa.client.v2;end;', logo:'https://waltemar.com.br/pay/logos/sofisa.svg'},
+      {id:'caixatem', name:'CaixaTem', link:'intent://br.gov.caixa.tem#Intent;scheme=caixatem;package=br.gov.caixa.tem;end;', logo:'https://waltemar.com.br/pay/logos/caixatem.svg'},
+    ];
+
+
+    // --- FUNÇÕES UTILITÁRIAS DE PIX (MANTIDAS) ---
+
+    function tlv(id, value) {
+        const len = String(value.length).padStart(2, '0');
+        return `${id}${len}${value}`;
+    }
+
+    function crc16ccitt(str) {
+        let crc = 0xffff;
+        for (let i = 0; i < str.length; i++) {
+            crc ^= str.charCodeAt(i) << 8;
+            for (let j = 0; j < 8; j++) {
+                crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) : (crc << 1);
+                crc &= 0xffff;
+            }
+        }
+        return crc.toString(16).toUpperCase().padStart(4, '0');
+    }
+
+    function buildPixPayload({ amount, txid = 'PAY' }) {
+        const id00 = tlv('00', '01');
+        const id01 = tlv('01', '12');
+        const gui = tlv('00', 'br.gov.bcb.pix');
+        const key = tlv('01', PIX_CONFIG.KEY);
+        const desc = tlv('02', PIX_CONFIG.DESCRIPTION);
+        const id26 = tlv('26', gui + key + desc);
+        const id52 = tlv('52', '0000');
+        const id53 = tlv('53', '986');
+        const amt = amount.toFixed(2);
+        const id54 = tlv('54', amt);
+        const id58 = tlv('58', 'BR');
+        const id59 = tlv('59', PIX_CONFIG.NAME.toUpperCase());
+        const id60 = tlv('60', PIX_CONFIG.CITY.toUpperCase());
+        const tx = tlv('05', (txid || 'PAY').slice(0, 25));
+        const id62 = tlv('62', tx);
+        const partial = id00 + id01 + id26 + id52 + id53 + id54 + id58 + id59 + id60 + id62 + '6304';
+        const crc = crc16ccitt(partial);
+        return partial + crc;
+    }
+
+    const formatBRL = (rawCents) => {
+        const cents = Math.round(Number(rawCents));
+        const abs = Math.abs(cents);
+        const intPart = Math.floor(abs / 100);
+        const decPart = String(abs % 100).padStart(2, '0');
+        const intStr = intPart.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        return `${intStr},${decPart}`;
+    };
+
+
+    // --- VARIÁVEIS DE ESTADO E REFERÊNCIAS DOM ---
+    let currentPixPayload = '';
+    const sectionSummary = document.getElementById('section-summary');
+    const sectionBanks = document.getElementById('section-banks');
+    const headerTitle = document.getElementById('headerTitle');
+    const brandLink = document.getElementById('brandLink');
+    const pixQr = document.getElementById('pixQr');
+    const pixCopyPaste = document.getElementById('pixCopyPaste');
+    const pixAmountRef = document.getElementById('pixAmountRef');
+    const continueButton2 = document.getElementById('continueButton2');
+    const banksGrid = document.getElementById('banksGrid');
+    const feedbackDiv = document.getElementById('feedback');
+    const backButton = document.getElementById('backButton');
+    const fixedFooter = document.getElementById('fixedFooter'); 
+    
+    // --- LÓGICA DE FEEDBACK E NAVEGAÇÃO GERAL ---
+
+    function showFeedback(message) {
+        feedbackDiv.textContent = message;
+        feedbackDiv.classList.remove('hidden');
+        setTimeout(() => {
+            feedbackDiv.classList.add('hidden');
+        }, 3000);
+    }
+
+    // Navegação: volta de Bancos para Resumo
+    function handleBack() {
+        if (!sectionBanks.classList.contains('hidden')) { 
+            headerTitle.textContent = 'PAGAMENTO PIX';
+            brandLink.classList.remove('hidden');
+            backButton.classList.add('hidden');
+            sectionBanks.classList.add('hidden');
+            sectionSummary.classList.remove('hidden');
+            fixedFooter.classList.remove('hidden'); // Mostra o botão principal
+        }
+    }
+    
+    // --- LÓGICA DE GERAÇÃO E EXIBIÇÃO DO PIX (TELA INICIAL) ---
+
+    function goToSummary(amountNumber) {
+        // Navegação (Garante que a tela de resumo está visível)
+        headerTitle.textContent = 'PAGAMENTO PIX';
+        brandLink.classList.remove('hidden');
+        backButton.classList.add('hidden');
+        sectionSummary.classList.remove('hidden');
+        sectionBanks.classList.add('hidden');
+        fixedFooter.classList.remove('hidden'); // Mostra o botão
+
+        // Atualiza valor formatado
+        const brlCents = Math.round(amountNumber * 100);
+        const brl = formatBRL(brlCents);
+        if (pixAmountRef) pixAmountRef.textContent = `R$ ${brl}`;
+
+        // Gera Payload Pix e TXID único
+        const payload = buildPixPayload({ amount: amountNumber, txid: `PAY${Date.now()}` });
+        currentPixPayload = payload;
+        if (pixCopyPaste) pixCopyPaste.value = payload;
+        
+        // Gera QR Code (QuickChart URL)
+        if (pixQr) {
+            const encoded = encodeURIComponent(payload);
+            pixQr.src = `https://quickchart.io/qr?text=${encoded}&margin=2&size=512&dark=000000&light=ffffff`;
+        }
+
+        if (continueButton2) continueButton2.disabled = false;
+    }
+    
+    async function copiarPayload() {
+        if (!currentPixPayload) return;
+        try {
+            await navigator.clipboard.writeText(currentPixPayload);
+            showFeedback('✅ Código Pix Copia e Cola copiado!');
+        } catch (err) {
+            pixCopyPaste.select();
+            document.execCommand('copy');
+            showFeedback('✅ Código Pix Copia e Cola copiado!');
+        }
+    }
+    
+    // --- SEÇÃO 3: SELEÇÃO DE BANCO E HANDOFF ---
+    
+    function renderBanks() {
+        if (!banksGrid) return;
+        
+        banksGrid.innerHTML = BANKS.map(b => {
+            // CORRIGIDO: Usa diretamente o caminho relativo (b.logo)
+            const logoUrl = b.logo; 
+            const firstLetter = b.name.charAt(0);
+
+            return (
+                `<div class="flex flex-col items-center gap-1 cursor-pointer transform hover:scale-105 transition duration-150 bank-card" data-bank="${b.id}" data-link="${b.link}">` +
+                    `<button class="bank-thumb p-0 rounded-full shadow-lg bg-white w-20 h-20 flex items-center justify-center border-2 border-gray-100 overflow-hidden" type="button" aria-label="${b.name}">` +
+                        // Fallback (onerror) mantido para segurança
+                        `<img src="${logoUrl}" alt="Logo do ${b.name}" class="w-full h-full object-cover rounded-full" ` +
+                        `onerror="this.onerror=null; this.src='https://placehold.co/48x48/e2e8f0/4a5568?text=${firstLetter}'; this.classList.remove('object-cover', 'rounded-full'); this.classList.add('bank-logo-placeholder-fallback');">` +
+                    `</button>` +
+                    `<div class="text-xs font-medium text-gray-700 text-center">${b.name}</div>` +
+                `</div>`
+            );
+        }).join('');
+    }
+
+ 
+    // --- EVENT LISTENERS ---
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        renderBanks(); // Renderiza os cartões dos bancos
+        backButton.addEventListener('click', handleBack); // Botão Voltar
+
+        // 1. CHAMA O FLUXO DIRETO COM O VALOR FIXO AO CARREGAR A PÁGINA
+        goToSummary(FIXED_AMOUNT_NUMBER);
+        
+        // 2. RESUMO PIX -> NAVEGAÇÃO PARA SELEÇÃO DE BANCO
+        continueButton2.addEventListener('click', () => {
+            // 2.1. Copia o Payload (Pix Copia e Cola) antes de ir para a próxima tela
+            copiarPayload(); 
+
+            // 2.2. Navegação para a tela de bancos
+            headerTitle.textContent = 'ESCOLHA SEU BANCO';
+            brandLink.classList.add('hidden');
+            backButton.classList.remove('hidden');
+            sectionSummary.classList.add('hidden');
+            sectionBanks.classList.remove('hidden');
+            fixedFooter.classList.add('hidden'); // Oculta o botão "Pagar com App" na tela de seleção de bancos
+        });
+
+        // 3. SELEÇÃO DE BANCO (Redirecionamento direto sem overlay)
+        banksGrid?.addEventListener('click', (e) => {
+            const el = e.target.closest('.bank-card');
+            if (!el) return;
+            const link = el.getAttribute('data-link');
+            
+            if (link) {
+                window.location.href = link; 
+            }
+        });
+    });
+
+</script>
+
+<script src="neve.js"></script>
+</body>
+</html>
