@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pay-Fix</title>
+    <title>Pay Fixed</title>
     <meta name="description" content="Web Desenvolvimentos" />
     <!--============ FAVICON / OG / SEO ============-->
     <!-- FAVICON-->
@@ -25,8 +26,8 @@
    <meta content='website' property='og:type' />
    <meta property="og:site_name" content="Waltemar Carneiro" />
    <meta name="mobile-web-app-capable" content="yes" />
-    
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 
@@ -52,16 +53,10 @@
         }
     </script>
     <style>
-        
-        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
-
-
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Onest', sans-serif;
         }
         /* 1. Layout Principal: Simula o corpo de um App */
         .app-wrapper {
@@ -150,8 +145,7 @@
     <div class="app-wrapper">
 
         <!-- CABEÇALHO FIXO -->
-        <!--<header class="fixed top-0 left-0 right-0 z-20 bg-white border-b shadow-md w-full max-w-[900px] mx-auto">-->
-            <header class="fixed top-0 left-0 right-0 z-20 bg-white border-b w-full max-w-[900px] mx-auto">
+        <header class="fixed top-0 left-0 right-0 z-20 bg-white border-b w-full max-w-[900px] mx-auto">
             <div class="container flex items-center justify-start relative p-3">
                 <!-- Botão Voltar (Visível apenas na seção de bancos) -->
                 <button id="backButton" class="icon-button text-gray-500 hover:text-gray-700 hidden mr-3 p-1" type="button" aria-label="Voltar">
@@ -162,16 +156,10 @@
                 <!-- Título -->
                 <h2 id="headerTitle" class="text-lg font-bold text-text-dark">PAGAMENTO PIX</h2>
                 <!-- Placeholder para Link da Marca (Visível apenas na seção de resumo) -->
-                
-            </div>
-               
                 <a href="#" id="brandLink" class="text-sm text-pix-blue font-medium ml-auto p-1">
-                    <span id="brandLogo" class="text-xl">
-                       <img style="border-radius:50%" src="https://waltemar.com.br/icons/icon192.png" width="32"> 
-                    </span>
-                </a>-
-                    
-                   
+                    <span id="brandLogo" class="text-xl"><img style="border-radius:50%" src="https://waltemar.com.br/icons/icon192.png" width="32"></span>
+                </a>
+            </div>
         </header>
 
         <!-- Feedback de Cópia (Fixo, mas escondido) -->
@@ -222,7 +210,7 @@
                     </div>
                 </div>
 
-                <p class="text-xx text-center text-gray-700 mt-4" style="font-weight: 500;">Pague escaneando o QR Code ou usando o código Copia e Cola.</p>
+                <p class="text-xx text-center text-gray-700 mt-4">Pague escaneando o QR Code ou usando o código Copia e Cola.</p>
             </section>
 
             <!-- SEÇÃO 3: SELEÇÃO DE BANCO -->
