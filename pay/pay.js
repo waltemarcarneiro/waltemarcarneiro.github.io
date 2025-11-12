@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const BANKS = [
       {id:'itau', name:'Itaú', link:'intent://com.itau#Intent;scheme=itau;package=com.itau;end;', logo:'./logos/itau.svg'},
       {id:'nubank', name:'Nubank', link:'https://url2333.nubank.com.br/ls/click?upn=u001.iKIqtKJvgjuNco1005EWNaT7sQHv5KztgKcP-2BFzlVuQKHXX4-2B9N-2FziSPKJXCNqZu9gYUw4aof1BwHis6ldpFjH8q9nXqjOxYVmVsNTWaDeTYhlRdr39ZZWNz4SWdTmnxxvxAkmGESGdB9pbo1ZQkADpicnJpDUi3PPVMDQ4OqMKMuff4BxDqbUb4w606Q8cyZDOmgM6yaAJC02VmNFO6yw-3D-3D0MDR_Pdz2YYJ34JE07lO1JziN41toRlq4CsiTgf3XTW1JYgZsTxAoEtKvjcTeg70r4Zm9wYzTRJ5GLW99S5b2y8KaONQwe3DOSpjej82Yxork0KgtYpY22NaJxa8gbSszJMRJr9d7O2oudhfmAof365NWfOfU3VmvJSDS-2F8h-2Fp3DRNl0tH5xJZS6Aj0BUw9GQKqXcHl8nfa20mb6QE55R0GbrXeoinKpAfSRyR6K7iynpWv2dpHU4R3NhOGwalUDS3sl5obkGq7VptWg6uNiF4o8C7StB7eGovThl51ouzZtEJNThZ6lAhmSdkplPZRPDFCNMNpevugAWN3d3SLk2UwbmDLumDEdOxLCQ2zeSoKYsNvz1965Be5-2FpdSQFzjxKHqMfOOJh6GzT93-2BpESwXnAmhsVcu37pBGJJO9XXklU5wspZsciqh5qqhQY4H2T-2BfQ4skML2AKnNVie1lW4OugiF4qA-3D-3D', logo:'./logos/nubank.svg'},
-      {id:'bradesco', name:'Bradesco', link:'intent://com.bradesco#Intent;scheme=bradesco;package=com.bradesco;end;', logo:'./logos/bradesco.svg'},
+      {id:'bradesco', name:'Bradesco', link:'https://bradesco.onelink.me/61vz/iuia6p3i', logo:'./logos/bradesco.svg'},
       {id:'santander', name:'Santander', link:'intent://com.santander.app#Intent;scheme=santander;package=com.santander.app;end;', logo:'./logos/santander.svg'},
       {id:'caixa', name:'Caixa Economica', link:'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;', logo:'./logos/caixa.svg'},
       {id:'bb', name:'Banco do Brasil', link:'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;', logo:'./logos/bb.svg'},
