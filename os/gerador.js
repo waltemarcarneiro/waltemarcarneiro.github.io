@@ -115,7 +115,7 @@
             const id01 = tlv('01', '12');
             const gui = tlv('00', 'br.gov.bcb.pix');
             const idKey = tlv('01', key);
-            const desc = tlv('02', 'Ordem de Serviço');
+            const desc = tlv('02', 'Ordem de Servico');
             const id26 = tlv('26', gui + idKey + desc);
             const id52 = tlv('52', '0000');
             const id53 = tlv('53', '986');
@@ -284,7 +284,7 @@ window.abrirPix = function(cliente, os, valor) {
   // Payload/QR helpers incorporados na OS
   function tlv(id, value){ const len=String(value.length).padStart(2,'0'); return id+len+value; }
   function crc16ccitt(str){ let crc=0xffff; for(let i=0;i<str.length;i++){ crc ^= str.charCodeAt(i)<<8; for(let j=0;j<8;j++){ crc = (crc & 0x8000) ? (((crc<<1)^0x1021)&0xffff) : ((crc<<1)&0xffff); } } return crc.toString(16).toUpperCase().padStart(4,'0'); }
-  function buildPix(amount, key, merchant, city, txid){ const id00=tlv('00','01'); const id01=tlv('01','12'); const gui=tlv('00','br.gov.bcb.pix'); const idKey=tlv('01',key); const desc=tlv('02','Pagamento'); const id26=tlv('26',gui+idKey+desc); const id52=tlv('52','0000'); const id53=tlv('53','986'); const id54=tlv('54', (Number(amount)||0).toFixed(2)); const id58=tlv('58','BR'); const id59=tlv('59',merchant.slice(0,25)); const id60=tlv('60',city); const tx=tlv('05',String(txid).slice(0,25)); const id62=tlv('62',tx); const partial = id00+id01+id26+id52+id53+id54+id58+id59+id60+id62+'6304'; const crc=crc16ccitt(partial); return partial+crc; }
+  function buildPix(amount, key, merchant, city, txid){ const id00=tlv('00','01'); const id01=tlv('01','12'); const gui=tlv('00','br.gov.bcb.pix'); const idKey=tlv('01',key); const desc=tlv('02','Ordem de Servico'); const id26=tlv('26',gui+idKey+desc); const id52=tlv('52','0000'); const id53=tlv('53','986'); const id54=tlv('54', (Number(amount)||0).toFixed(2)); const id58=tlv('58','BR'); const id59=tlv('59',merchant.slice(0,25)); const id60=tlv('60',city); const tx=tlv('05',String(txid).slice(0,25)); const id62=tlv('62',tx); const partial = id00+id01+id26+id52+id53+id54+id58+id59+id60+id62+'6304'; const crc=crc16ccitt(partial); return partial+crc; }
   
   function copyToClipboard(text) {
   if (!text) return;
@@ -430,4 +430,5 @@ window.abrirPix = function(cliente, os, valor) {
         };
     }); // end onReady
 })();
+
 
