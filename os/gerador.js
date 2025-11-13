@@ -115,7 +115,7 @@
             const id01 = tlv('01', '12');
             const gui = tlv('00', 'br.gov.bcb.pix');
             const idKey = tlv('01', key);
-            const desc = tlv('02', 'Pagamento');
+            const desc = tlv('02', 'Ordem de Serviço');
             const id26 = tlv('26', gui + idKey + desc);
             const id52 = tlv('52', '0000');
             const id53 = tlv('53', '986');
@@ -430,3 +430,4 @@ window.abrirPix = function(cliente, os, valor) {
         };
     }); // end onReady
 })();
+
