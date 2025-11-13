@@ -201,9 +201,9 @@ window.abrirPix = function(cliente, os, valor) {
             return `<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f76700">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#f76700" />
 
    <meta name="keywords" content="Waltemar" />
    <meta property="og:title" content="Waltemar Carneiro" />
