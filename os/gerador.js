@@ -11,24 +11,24 @@
         const MERCHANT_NAME = 'WALTEMAR LIMA CARNEIRO';
         const MERCHANT_CITY = 'SAO PAULO';
         const FALLBACK_BANKS = [
-            { id: 'itau', name: 'Itaú', link: 'intent://com.itau#Intent;scheme=itau;package=com.itau;end;', logo: './logos/itau.svg' },
-            { id: 'nubank', name: 'Nubank', link: 'https://url2333.nubank.com.br/ls/click?upn=u001.iKIqtKJvgjuNco1005EWNaT7sQHv5KztgKcP-2BFzlVuQKHXX4-2B9N-2FziSPKJXCNqZu9gYUw4aof1BwHis6ldpFjH8q9nXqjOxYVmVsNTWaDeTYhlRdr39ZZWNz4SWdTmnxxvxAkmGESGdB9pbo1ZQkADpicnJpDUi3PPVMDQ4OqMKMuff4BxDqbUb4w606Q8cyZDOmgM6yaAJC02VmNFO6yw-3D-3D0MDR_Pdz2YYJ34JE07lO1JziN41toRlq4CsiTgf3XTW1JYgZsTxAoEtKvjcTeg70r4Zm9wYzTRJ5GLW99S5b2y8KaONQwe3DOSpjej82Yxork0KgtYpY22NaJxa8gbSszJMRJr9d7O2oudhfmAof365NWfOfU3VmvJSDS-2F8h-2Fp3DRNl0tH5xJZS6Aj0BUw9GQKqXcHl8nfa20mb6QE55R0GbrXeoinKpAfSRyR6K7iynpWv2dpHU4R3NhOGwalUDS3sl5obkGq7VptWg6uNiF4o8C7StB7eGovThl51ouzZtEJNThZ6lAhmSdkplPZRPDFCNMNpevugAWN3d3SLk2UwbmDLumDEdOxLCQ2zeSoKYsNvz1965Be5-2FpdSQFzjxKHqMfOOJh6GzT93-2BpESwXnAmhsVcu37pBGJJO9XXklU5wspZsciqh5qqhQY4H2T-2BfQ4skML2AKnNVie1lW4OugiF4qA-3D-3D', logo: './logos/nubank.svg' },
-            { id: 'bradesco', name: 'Bradesco', link: 'intent://com.bradesco#Intent;scheme=bradesco;package=com.bradesco;end;', logo: './logos/bradesco.svg' },
-            { id: 'santander', name: 'Santander', link: 'intent://com.santander.app#Intent;scheme=picpay;package=com.santander.app;end;', logo: './logos/santander.svg' },
-            { id: 'caixa', name: 'Caixa', link: 'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;', logo: './logos/caixa.svg' },
-            { id: 'bb', name: 'BB', link: 'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;', logo: './logos/bb.svg' },
-            { id: 'picpay', name: 'PicPay', link: 'https://tracking.transacional.picpay.com/tracking/1/click/b_weAEZcTaH4G8O8eJVBSPiQTK2yos1GotmYQsuTksv4FNbx3NuEjz0OnPHVUmP_HJs6QL7WNLtxvd1Y089BL491Y1-rI-So86QlcKaZ1m1UlzeWNEZr8CB99xvXNP6egEFsh3pMp0tSh6lOvDMuK3j1A3HHOkYVdaGZBpQ5HTwRhTpwQtXYZls-n-vklbBG03mx0jBrIinxoiUJmXFmokZHs2Gx6QOJXJG1lp2v1eXjaczN-N7VpmNctyNGhkJjqr-Gp0mZzthrTfwQqsHatx3PGU6ghK5DXIcRtxCLWbfom8Tds-ZpxG2Z9jIzMhl0ZmaBs4ruuSpr6pq0WVuBH7zK7GwI_ChQ0bXuqNjU6468ECBxpPWs0OVxFlg5ap6_7M3vZni6299CT9-P5yANW9WG0jjKjiczxdNJ2vxfX4tLFaVDQczDhxvIBdPNyVTyjms_15aSgyS3AJT2p4woTM6gBKrZNKVujbQZpYDpMp3a8G9QzYGSh8M3P3dcY-NdGzAGEa1m-cttvAiVfY2uQg==', logo: './logos/picpay.svg' },
-            { id: 'neon', name: 'Neon', link: 'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;', logo: './logos/neon.svg' },
-            { id: 'bmg', name: 'BMG', link: 'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;', logo: './logos/bmg.svg' },
-            { id: 'inter', name: 'Inter', link: 'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;', logo: './logos/inter.svg' },
-            { id: 'dimo', name: 'Dimo', link: 'intent://com.motorola.dimo#Intent;scheme=dimo;package=com.motorola.dimo;end;', logo: './logos/dimo.svg' },
-            { id: 'pagbank', name: 'PagBank', link: 'intent://br.com.uol.ps.myaccount#Intent;scheme=pagbank;package=br.com.uol.ps.myaccount;end;', logo: './logos/pagbank.svg' },
-            { id: 'mercadopago', name: 'M. Pago', link: 'intent:com.mercadopago.wallet#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end;', logo: './logos/mercadopago.svg' },
-            { id: 'bv', name: 'Banco BV', link: 'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;', logo: './logos/bv.svg' },
-            { id: 'brb', name: 'BRB', link: 'intent://br.com.brb.digitalflamengo#Intent;scheme=brb;package=br.com.brb.digitalflamengo;end;', logo: './logos/brb.svg' },
-            { id: 'recargapay', name: 'Rec. Pay', link: 'intent://com.recarga.recarga#Intent;scheme=recargapay;package=com.recarga.recarga;end;', logo: './logos/recargapay.svg' },
-            { id: 'efi', name: 'EFI Bank', link: 'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite&utm_campaign=Campanha+nao+identificada&utm_medium=Portal&utm_source=[LinkLoja]+em+login.sejaefi.com.br', logo: './logos/efi.svg' },
-            { id: 'sofisa', name: 'Sofisa', link: 'intent://goova.sofisa.client.v2#Intent;scheme=sofisa;package=goova.sofisa.client.v2;end;', logo: './logos/sofisa.svg' },
+            { id: 'itau', name: 'Itaú', link: 'intent://com.itau#Intent;scheme=itau;package=com.itau;end;', logo: 'https://waltemar.com.br/pay/logos/itau.svg' },
+            { id: 'nubank', name: 'Nubank', link: 'https://url2333.nubank.com.br/ls/click?upn=u001.iKIqtKJvgjuNco1005EWNaT7sQHv5KztgKcP-2BFzlVuQKHXX4-2B9N-2FziSPKJXCNqZu9gYUw4aof1BwHis6ldpFjH8q9nXqjOxYVmVsNTWaDeTYhlRdr39ZZWNz4SWdTmnxxvxAkmGESGdB9pbo1ZQkADpicnJpDUi3PPVMDQ4OqMKMuff4BxDqbUb4w606Q8cyZDOmgM6yaAJC02VmNFO6yw-3D-3D0MDR_Pdz2YYJ34JE07lO1JziN41toRlq4CsiTgf3XTW1JYgZsTxAoEtKvjcTeg70r4Zm9wYzTRJ5GLW99S5b2y8KaONQwe3DOSpjej82Yxork0KgtYpY22NaJxa8gbSszJMRJr9d7O2oudhfmAof365NWfOfU3VmvJSDS-2F8h-2Fp3DRNl0tH5xJZS6Aj0BUw9GQKqXcHl8nfa20mb6QE55R0GbrXeoinKpAfSRyR6K7iynpWv2dpHU4R3NhOGwalUDS3sl5obkGq7VptWg6uNiF4o8C7StB7eGovThl51ouzZtEJNThZ6lAhmSdkplPZRPDFCNMNpevugAWN3d3SLk2UwbmDLumDEdOxLCQ2zeSoKYsNvz1965Be5-2FpdSQFzjxKHqMfOOJh6GzT93-2BpESwXnAmhsVcu37pBGJJO9XXklU5wspZsciqh5qqhQY4H2T-2BfQ4skML2AKnNVie1lW4OugiF4qA-3D-3D', logo: 'https://waltemar.com.br/pay/logos/nubank.svg' },
+            { id: 'bradesco', name: 'Bradesco', link: 'intent://com.bradesco#Intent;scheme=bradesco;package=com.bradesco;end;', logo: 'https://waltemar.com.br/pay/logos/bradesco.svg' },
+            { id: 'santander', name: 'Santander', link: 'intent://com.santander.app#Intent;scheme=picpay;package=com.santander.app;end;', logo: 'https://waltemar.com.br/pay/logos/santander.svg' },
+            { id: 'caixa', name: 'Caixa', link: 'intent://br.com.gabba.Caixa#Intent;scheme=caixa;package=br.com.gabba.Caixa;end;', logo: 'https://waltemar.com.br/pay/logos/caixa.svg' },
+            { id: 'bb', name: 'BB', link: 'intent://br.com.bb.android#Intent;scheme=bb;package=br.com.bb.android;end;', logo: 'https://waltemar.com.br/pay/logos/bb.svg' },
+            { id: 'picpay', name: 'PicPay', link: 'https://tracking.transacional.picpay.com/tracking/1/click/b_weAEZcTaH4G8O8eJVBSPiQTK2yos1GotmYQsuTksv4FNbx3NuEjz0OnPHVUmP_HJs6QL7WNLtxvd1Y089BL491Y1-rI-So86QlcKaZ1m1UlzeWNEZr8CB99xvXNP6egEFsh3pMp0tSh6lOvDMuK3j1A3HHOkYVdaGZBpQ5HTwRhTpwQtXYZls-n-vklbBG03mx0jBrIinxoiUJmXFmokZHs2Gx6QOJXJG1lp2v1eXjaczN-N7VpmNctyNGhkJjqr-Gp0mZzthrTfwQqsHatx3PGU6ghK5DXIcRtxCLWbfom8Tds-ZpxG2Z9jIzMhl0ZmaBs4ruuSpr6pq0WVuBH7zK7GwI_ChQ0bXuqNjU6468ECBxpPWs0OVxFlg5ap6_7M3vZni6299CT9-P5yANW9WG0jjKjiczxdNJ2vxfX4tLFaVDQczDhxvIBdPNyVTyjms_15aSgyS3AJT2p4woTM6gBKrZNKVujbQZpYDpMp3a8G9QzYGSh8M3P3dcY-NdGzAGEa1m-cttvAiVfY2uQg==', logo: 'https://waltemar.com.br/pay/logos/picpay.svg' },
+            { id: 'neon', name: 'Neon', link: 'intent://br.com.neon#Intent;scheme=neon;package=br.com.neon;end;', logo: 'https://waltemar.com.br/pay/logos/neon.svg' },
+            { id: 'bmg', name: 'BMG', link: 'intent://br.com.bancobmg.bancodigital#Intent;scheme=bmg;package=br.com.bancobmg.bancodigital;end;', logo: 'https://waltemar.com.br/pay/logos/bmg.svg' },
+            { id: 'inter', name: 'Inter', link: 'intent://br.com.intermedium#Intent;scheme=inter;package=br.com.intermedium;end;', logo: 'https://waltemar.com.br/pay/logos/inter.svg' },
+            { id: 'dimo', name: 'Dimo', link: 'intent://com.motorola.dimo#Intent;scheme=dimo;package=com.motorola.dimo;end;', logo: 'https://waltemar.com.br/pay/logos/dimo.svg' },
+            { id: 'pagbank', name: 'PagBank', link: 'intent://br.com.uol.ps.myaccount#Intent;scheme=pagbank;package=br.com.uol.ps.myaccount;end;', logo: 'https://waltemar.com.br/pay/logos/pagbank.svg' },
+            { id: 'mercadopago', name: 'M. Pago', link: 'intent:com.mercadopago.wallet#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end;', logo: 'https://waltemar.com.br/pay/logos/mercadopago.svg' },
+            { id: 'bv', name: 'Banco BV', link: 'intent://com.votorantim.bvpd#Intent;scheme=bv;package=com.votorantim.bvpd;end;', logo: 'https://waltemar.com.br/pay/logos/bv.svg' },
+            { id: 'brb', name: 'BRB', link: 'intent://br.com.brb.digitalflamengo#Intent;scheme=brb;package=br.com.brb.digitalflamengo;end;', logo: 'https://waltemar.com.br/pay/logos/brb.svg' },
+            { id: 'recargapay', name: 'Rec. Pay', link: 'intent://com.recarga.recarga#Intent;scheme=recargapay;package=com.recarga.recarga;end;', logo: 'https://waltemar.com.br/pay/logos/recargapay.svg' },
+            { id: 'efi', name: 'EFI Bank', link: 'https://gerencianetapp.page.link/?link=https://play.google.com/store/apps/details?id=br.com.gerencianet.app&hl=pt-BR&apn=br.com.gerencianet.app&ibi=br.com.gerencianet.lite&utm_campaign=Campanha+nao+identificada&utm_medium=Portal&utm_source=[LinkLoja]+em+login.sejaefi.com.br', logo: 'https://waltemar.com.br/pay/logos/efi.svg' },
+            { id: 'sofisa', name: 'Sofisa', link: 'intent://goova.sofisa.client.v2#Intent;scheme=sofisa;package=goova.sofisa.client.v2;end;', logo: 'https://waltemar.com.br/pay/logos/sofisa.svg' },
             { id: 'caixatem', name: 'CaixaTem', link: 'intent://br.gov.caixa.tem#Intent;scheme=caixatem;package=br.gov.caixa.tem;end;', logo: 'https://waltemar.com.br/pay/logos/caixatem.svg' },
         ];
 
@@ -209,7 +209,7 @@ window.abrirPix = function(cliente, os, valor) {
   body{font-family:Inter,Arial;margin:0;padding:18px;color:#222;background:#fff}
   h1{color:#f76700;margin:0 0 10px;font-size:1.2rem}
   table{width:100%;border-collapse:collapse;margin-top:10px}
-  td,th{border:1px solid #eee;padding:8px;font-size:14px;text-align:left}
+  td,th{border:1px solid #ddd;padding:8px;font-size:14px;text-align:left}
   th{background:#fafafa}
   footer{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:14px}
   /* Botões */
@@ -233,7 +233,7 @@ window.abrirPix = function(cliente, os, valor) {
 </style>
 </head>
 <body>
-  <h1>WALTEMAR SERVIÇOS</h1>
+  <h1>WALTEMAR.COM.BR</h1>
   <p><strong>Ordem de Serviço nº:</strong> ${esc(numOS)} — ${esc(dataStr)} ${esc(horaStr)}</p>
 
   <table>
