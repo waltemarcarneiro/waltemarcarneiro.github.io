@@ -203,18 +203,28 @@ window.abrirPix = function(cliente, os, valor) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f76700"
+
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="Waltemar Carneiro" />
+   <meta property="og:description" content="Ordem de Serviço Online" />
+   <meta property="og:image" content="https://waltemar.com.br/image/og-image.jpg" />
+   <meta content='website' property='og:type' />
+   <meta property="og:site_name" content="Waltemar Carneiro" />
+   <meta name="mobile-web-app-capable" content="yes" />
+
 <title>OS ${esc(numOS)} - ${esc(cliente)}</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
   body{font-family:Inter,Arial;margin:0;padding:18px;color:#222;background:#fff}
-  h1{color:#f76700;margin:0 0 10px;font-size:1.2rem}
+  h1{color:#f76700;font-size:1.2rem}
   table{width:100%;border-collapse:collapse;margin-top:10px}
   td,th{border:1px solid #ddd;padding:8px;font-size:14px;text-align:left}
-  th{background:#fafafa}
+  th{background:#eee;}
   footer{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:14px}
   /* Botões */
   .btn-pay{font-weight:bold;background:#f76700;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
-  .btn-print{background:#fff;color:#f76700;font-weight:bold;border:1px solid #f0f0f0;padding:8px 12px;border-radius:6px;cursor:pointer}
+  .btn-print{background:#eeeeee;color:#222222;font-weight:bold;border:1px solid #f0f0f0;padding:8px 12px;border-radius:6px;cursor:pointer}
   .btn-white{width:100%;font-weight:bold;background:#ffffff;color:#f76700;border:1px solid #f0f0f0;padding:8px 12px;border-radius:6px;cursor:pointer}
   /* drawer & bancos */
   .drawer .actions .btn-pay{width:100%}
@@ -233,19 +243,22 @@ window.abrirPix = function(cliente, os, valor) {
 </style>
 </head>
 <body>
+<div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ddd;padding-bottom:10px;">
   <h1>WALTEMAR.COM.BR</h1>
+  <img src="https://waltemar.com.br/icons/icon192.png" width="32" height="32" style="border-radius:10px;" />
+</div>
   <p><strong>Ordem de Serviço nº:</strong> ${esc(numOS)} — ${esc(dataStr)} ${esc(horaStr)}</p>
 
   <table>
     <tr><th colspan="2">Dados do Cliente</th></tr>
-    <tr><td>Nome</td><td>${esc(cliente)}</td></tr>
-    <tr><td>Telefone</td><td>${esc(telefone)}</td></tr>
+    <tr><td>Nome</td><td style="font-weight:bold">${esc(cliente)}</td></tr>
+    <tr><td>Telefone</td><td style="font-weight:bold">${esc(telefone)}</td></tr>
     <tr><td>Endereço</td><td>${esc(endereco)}</td></tr>
   </table>
 
   <table>
     <tr><th colspan="2">Dados Técnicos</th></tr>
-    <tr><td>Equipamento</td><td>${esc(equipamento)}</td></tr>
+    <tr><td>Equipamento</td><td style="font-weight:bold">${esc(equipamento)}</td></tr>
     <tr><td>Problema Relatado</td><td>${esc(problema)}</td></tr>
     <tr><td>Solução Implementada</td><td>${esc(solucao)}</td></tr>
     <tr><td>Produto</td><td>${esc(produto)}</td></tr>
