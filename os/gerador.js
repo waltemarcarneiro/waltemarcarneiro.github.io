@@ -205,9 +205,9 @@ window.abrirPix = function(cliente, os, valor) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f76700"
 
-   <meta name="keywords" content="Waltemar" />
-   <meta property="og:title" content="Waltemar Carneiro" />
-   <meta property="og:description" content="Ordem de Serviço Online" />
+   <meta name="keywords" content="Waltemar, Carneiro, Ordem de Serviço" />
+   <meta property="og:title" content="Ordem de Serviço Online" />
+   <meta property="og:description" content="Sua Ordem de Serviço está pronta!" />
    <meta property="og:image" content="https://waltemar.com.br/image/og-image.jpg" />
    <meta content='website' property='og:type' />
    <meta property="og:site_name" content="Waltemar Carneiro" />
@@ -430,5 +430,6 @@ window.abrirPix = function(cliente, os, valor) {
         };
     }); // end onReady
 })();
+
 
 
