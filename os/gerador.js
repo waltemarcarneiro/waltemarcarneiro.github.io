@@ -115,7 +115,7 @@
             const id01 = tlv('01', '12');
             const gui = tlv('00', 'br.gov.bcb.pix');
             const idKey = tlv('01', key);
-            const desc = tlv('02', 'Ordem de Servico');
+            const desc = tlv('02', 'Ordem de Serviço');
             const id26 = tlv('26', gui + idKey + desc);
             const id52 = tlv('52', '0000');
             const id53 = tlv('53', '986');
@@ -205,9 +205,9 @@ window.abrirPix = function(cliente, os, valor) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f76700"
 
-   <meta name="keywords" content="Waltemar, Carneiro, Ordem de Serviço" />
-   <meta property="og:title" content="Ordem de Serviço Online" />
-   <meta property="og:description" content="Sua Ordem de Serviço está pronta!" />
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="Waltemar Carneiro" />
+   <meta property="og:description" content="Ordem de Serviço Online" />
    <meta property="og:image" content="https://waltemar.com.br/image/og-image.jpg" />
    <meta content='website' property='og:type' />
    <meta property="og:site_name" content="Waltemar Carneiro" />
@@ -223,7 +223,7 @@ window.abrirPix = function(cliente, os, valor) {
   th{background:#eee;}
   footer{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:14px}
   /* Botões */
-  .btn-pay{font-weight:bold;background:#f76700;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+  .btn-pay{font-weight:bold;background:#f76700;color:#fff;border:none;padding:10px 12px;border-radius:6px;cursor:pointer}
   .btn-print{background:#eeeeee;color:#222222;font-weight:bold;border:1px solid #f0f0f0;padding:8px 12px;border-radius:6px;cursor:pointer}
   .btn-white{width:100%;font-weight:bold;background:#ffffff;color:#f76700;border:1px solid #f0f0f0;padding:8px 12px;border-radius:6px;cursor:pointer}
   /* drawer & bancos */
@@ -263,7 +263,7 @@ window.abrirPix = function(cliente, os, valor) {
     <tr><td>Solução Implementada</td><td>${esc(solucao)}</td></tr>
     <tr><td>Produto</td><td>${esc(produto)}</td></tr>
     <tr><td>Serviço</td><td>${esc(servico)}</td></tr>
-    <tr><td>Valor</td><td>R$ <strong>${esc(formatBRL(valor))}</strong></td></tr>
+    <tr><td>Valor</td><td>R$ <strong style="color:#f76700;font-size:1.3rem;">${esc(formatBRL(valor))}</strong></td></tr>
   </table>
 
   <footer>
@@ -430,6 +430,3 @@ window.abrirPix = function(cliente, os, valor) {
         };
     }); // end onReady
 })();
-
-
-
