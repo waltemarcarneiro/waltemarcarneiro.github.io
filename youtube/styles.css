@@ -153,7 +153,7 @@ position: fixed;
 bottom: 0;
 left: 0;
 right: 0;
-background: rgb(35 42 93 / 40%);
+background: rgb(35 42 93 / 90%);
 backdrop-filter: blur(15px);
 padding: 20px;
 display: flex;
@@ -412,3 +412,4 @@ margin: 0 auto;
     align-items: baseline;
     display: flex;
 }
+
