@@ -18,10 +18,10 @@ font-family: 'Roboto', sans-serif;
 background: linear-gradient(135deg, var(--background-dark), var(--background-light));
 color: var(--text-color);
 min-height: 100vh;
-background-image: url('tubebg.jpeg');
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
+/*background-image: url('tubebg.jpeg');*/
+/*background-size: cover;*/
+/*background-repeat: no-repeat;*/
+/*background-attachment: fixed;*/
 background-position: top;
 }
 .container {
