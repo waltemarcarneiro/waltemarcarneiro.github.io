@@ -12,6 +12,9 @@
     font-style: normal;
     font-display: swap;
 }
+html{
+color: ##008165;
+}
 
 /* Layout Principal */
 body {
