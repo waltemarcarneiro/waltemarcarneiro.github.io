@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="robots" content="noindex, nofollow">
+   <meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport' />
+   <title>CEF | Waltemar Carneiro</title>
+
+
+   <link rel="stylesheet" href="./bank.css">
+   <!-- FAVICON-->
+   <meta name="theme-color" content="#f76700">
+   <meta name="msapplication-TileColor" content="#f76700" />
+   <link rel="shortcut icon" href="../icons/favicon32.png" />
+   <link rel="apple-touch-icon" sizes="180x180" href="../icons/icon180.png" />
+   <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon32.png" />
+   <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon16.png" />
+   <!--AppleTouchIcon-->
+   <link rel="apple-touch-icon" href="../icons/icon76.png" sizes="76x76">
+   <link rel="apple-touch-icon" href="../icons/icon120.png" sizes="120x120">
+   <link rel="apple-touch-icon" href="../icons/icon152.png" sizes="152x152">
+   <link rel="apple-touch-icon" href="../icons/icon180.png" sizes="180x180">
+
+   <!-- SEO | OG -->
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="keywords" content="Waltemar" />
+   <meta property="og:title" content="Você tem um Pix para fazer" />
+   <meta property="og:description" content="Acesse o link para efetuar o pagamento" />
+   <meta property="og:image" content="https://waltemar.com.br/bank/image/og-caixa.webp" />
+   <meta content='website' property='og:type' />
+   <meta property="og:site_name" content="Waltemar Carneiro" />
+   <meta name="mobile-web-app-capable" content="yes" />
+</head>
+
+<body>
+   <div class="content">
+      <div class="header">
+
+         <img src="../image/chevron-back-header.svg" height="24" alt="" id="backButton">
+         <div>Pagamentos</div>
+
+         <img src="../image/arrow-redo-outline-header.svg" height="24" alt="" onclick="sharePage()">
+      </div>
+      <div>
+         <img src="logos/caixa.svg" class="logo-banco" alt="Banco do Brasil">
+      </div>
+      <div class="qrcode-container">
+         <img src="qrcodes/qrcode-caixa.png" alt="QRCode" class="qrcode">
+      </div>
+      <div class="dica">
+         Se preferir, leia o QR Code® Pix com seu app de pagamentos
+      </div>
+
+
+      <div class="actions">
+
+         <div class="actions-center">
+            <div class="action" onclick="copyText('qr')">
+
+               <img src="../image/qr-code-outline.svg" class="icon" height="64" alt="">
+
+               <span class="copy-text"
+                  style="display:none;">00020126580014br.gov.bcb.pix013686641ca0-0985-43d0-9229-16df98fd8ad85204000053039865802BR5922WALTEMAR LIMA CARNEIRO6006MANAUS62070503***63045D6A</span>
+               <div id="qr-message" class="success-message" style="display:none;">
+                  <p class="title-sucesso">💬 QRCode® copiado!</p>
+                  <p class="subtitle-sucesso">use a opção <b>Copia e Cola</b> no aplicativo do seu banco!</p>
+
+                  <div class="lista">
+                     <ol class="styled-list">
+                        <li>No app de seu banco ou carteira digital, vá em Pix.</li>
+                        <li>Escolha a opção <b>Copia e Cola</b>.</li>
+                        <li>Cole o código copiado e pronto.</li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div>Copia e Cola</div>
+         </div>
+
+         <div class="actions-center">
+            <div class="action" onclick="copyText('key')">
+               <img src="../image/key-outline.svg" class="icon" height="64" alt="">
+
+               <span class="copy-text" style="display:none;">86641ca0-0985-43d0-9229-16df98fd8ad8</span>
+               <div id="key-message" class="success-message" style="display:none;">
+                  
+                  <p class="title-sucesso">💬 Chave copiada!</p>
+                  <p class="subtitle-sucesso">use a opção <b>Chave Aleatória</b> no aplicativo do seu banco!</p>
+
+                  <div class="lista">
+                     <ol class="styled-list">
+                        <li>No app de seu banco ou carteira digital, vá em Pix.</li>
+                        <li>Escolha a opção <b>Chave aleatória</b>.</li>
+                        <li>Cole a chave copiada e pronto.</li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div>Copiar Chave</div>
+         </div>
+      </div>
+
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         Caixa Economica Federal
+      </div>
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         3768
+      </div>
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         576642275-9
+      </div>
+      <div class="conta">
+         <img src="../image/chevron-forward-dark.svg" class="next" alt="">
+         Waltemar Carneiro
+      </div>
+      <div class="copyright">Waltemar Carneiro © 2001-2025</div>
+   </div>
+   <div id="overlay" class="overlay">
+   </div>
+   </div>
+   <div id="notification" class="notification" onclick="closeNotification(event)">
+
+      <div class="line"></div>
+
+      <!--<img src="../image/logo-pix-full.svg" class="pix-full" alt="">-->
+      <img src="../image/sim.webp" class="pix-full" alt="">    
+      <p id="notification-message" class="msn"></p>
+      <button onclick="closeNotification()" class="close-button">Ok, entendi</button>
+   </div>
+   <script src="./script.js"></script>
+   <script src="../pro.js"></script>
+</body>
+
+</html>
