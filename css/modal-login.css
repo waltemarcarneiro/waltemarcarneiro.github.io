@@ -82,7 +82,7 @@
 .google-btn {
     width: 100%;
     padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: none;
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
@@ -90,14 +90,14 @@
     display: flex;
     justify-content: center;
     font-size: 1rem;
-    /* background: #191919; */
     color: #0f0f0f;
+    margin: 0 auto;
 }
 
 .google-btn:hover {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #191919;
-    color: #f2f2f2;
+    border: none;
+    background: #ffffff;
+    color: #0071e3;
 }
 .google-btn img {
     width: 20px;
@@ -115,7 +115,11 @@
     font-weight: 600;
     cursor: pointer;
     font-size: 1rem;
-    margin-top: 10px;
+    margin: 10px auto;
+    display: flex;
+    text-align: center;
+    max-width: 50%;
+    justify-content: center;
 }
 .logout-area{
   justify-content: center;
