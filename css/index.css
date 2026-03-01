@@ -524,7 +524,7 @@ img {
     bottom: 20px;
     font-size: 2rem;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgb(71 36 111);
     border-radius: 100%;
     padding: 10px;
 }
