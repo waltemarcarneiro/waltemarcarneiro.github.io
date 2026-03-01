@@ -276,8 +276,8 @@
 
 .tab-btn.active {
     opacity: 1;
-    background: #f76700;
-    color: #fff;
+    color: #0f0f0f;
+    font-weight: 600;
 }
 
 .tab-btn.active::after {
