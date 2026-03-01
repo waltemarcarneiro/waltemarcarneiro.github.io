@@ -63,24 +63,24 @@
 }
 
 .modal-acesso .register-btn {
-  width: 100%;
-  padding: 15px;
-  background: #f76700;
-  border: none;
-  color: white;
-  font-weight: 600;
-  border-radius: 25px;
-  cursor: pointer;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 1rem;
-  letter-spacing: 1px;
+    width: 100%;
+    padding: 15px;
+    background: #f76700;
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    max-width: 50%;
+    margin: 10px auto;
 }
 .google-btn {
-    width: 100%;
     padding: 15px;
     border: none;
     border-radius: 25px;
