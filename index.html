@@ -35,71 +35,7 @@
    <link rel="stylesheet" href="./css/modal.css">
    <link rel="stylesheet" href="./css/modal-login.css">
    <link rel="stylesheet" href="./css/notification-modal.css">
-   <!---SPLASH (substitui link externo ./css/splash.css e /js/splash.js) -->
-   <style>
-    /* Splash importado de splash-modelo.html; pulse aumentado para 4s */
-    #splash-screen {
-      position: fixed;
-      inset: 0;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at center, #f76700, #602900);
-      color: #fff;
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
 
-    #splash-screen.hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .splash-content {
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .splash-logo {
-      width: 90px;
-      height: 90px;
-      margin-bottom: 1.2rem;
-      animation: pulse 4s infinite ease-in-out; /* atualizado para 4s */
-      filter: invert(100%);
-      transform-origin: center;
-    }
-
-    .splash-logo-text {
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: 3px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      #splash-screen {
-        background: radial-gradient(circle at center, #ff7c24, #2b1300);
-      }
-
-      .splash-logo {
-        filter: invert(90%);
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-   </style>
    <!-- Preconnects para acelerar conexões com CDNs/iframes externos -->
 	<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 	<link rel="preconnect" href="https://www.youtube.com" crossorigin>
@@ -107,14 +43,7 @@
 </head>
 
 <body>
-   <!-- Inserção do Splash (modelo novo) -->
-   <div id="splash-screen" aria-hidden="false" role="dialog" aria-modal="true">
-     <div class="splash-content">
-       <!-- src inicial relativo (sem ./) — rotina JS tentará alternativas se necessário -->
-       <img id="splash-logo-img" src="icons/splash.svg" alt="Logo do App" class="splash-logo" role="img" aria-label="Logo do Aplicativo">
-       <h1 class="splash-logo-text">Waltemar Carneiro</h1>
-     </div>
-   </div>
+
    <!-- Carrossel de introdução -->
    <div id="introCarrossel" class="carrossel">
       <!-- FILMES PLAYLIST -->
@@ -450,75 +379,7 @@
        });
      }
    </script>
-   <!-- Script inline do splash (duração 4000ms) -->
-   <script>
-   (function(){
-     window.addEventListener("load", () => {
-       const splash = document.getElementById("splash-screen");
-       const splashImg = document.getElementById("splash-logo-img");
-       if (!splash || !splashImg) return;
 
-       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-       // aplica fundo temporário para evitar flash branco
-       const prevBg = document.documentElement.style.background || "";
-       document.documentElement.style.background = prefersDark ? "#0f1724" : "#f76700";
-
-       // tenta carregar o primeiro caminho válido para o logo (local e produção)
-       function setSplashImage(imgEl, candidates, cb){
-         let i = 0;
-         function tryNext(){
-           if(i >= candidates.length){ if(cb) cb(); return; }
-           const url = candidates[i++];
-           const tester = new Image();
-           tester.onload = function(){ imgEl.src = url; if(cb) cb(); };
-           tester.onerror = tryNext;
-           tester.src = url;
-         }
-         tryNext();
-       }
-
-       const candidates = [
-         "icons/splash.svg",
-         "./icons/splash.svg",
-         "/icons/splash.svg"
-       ];
-
-       setSplashImage(splashImg, candidates, function(){
-         // Após garantir a imagem, controla o tempo do splash
-         const DURATION = 0; // tempo mínimo; elimina a espera
-
-         const removeSplash = () => {
-           if (!splash) return;
-           splash.classList.add("hidden");
-           splash.setAttribute("aria-hidden", "true");
-           document.documentElement.style.background = prefersDark ? "#0f1724" : "#f8fafc";
-           const tryRemove = () => { try { splash.remove(); } catch(e){} };
-           splash.addEventListener("transitionend", tryRemove, { once: true });
-           setTimeout(tryRemove, 800);
-         };
-
-         // Respeita preferência por reduzir movimento
-         const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-         if (prefersReduced) {
-           removeSplash();
-           return;
-         }
-
-         // remove imediatamente quando não há delay
-         if (DURATION === 0) {
-           removeSplash();
-         } else {
-           setTimeout(removeSplash, DURATION);
-         }
-       });
-     });
-   })();
-   </script>
 </body>
 
 </html>
-
-
-
-
