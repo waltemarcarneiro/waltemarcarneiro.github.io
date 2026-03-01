@@ -486,7 +486,7 @@
 
        setSplashImage(splashImg, candidates, function(){
          // Após garantir a imagem, controla o tempo do splash
-         const DURATION = 4000; // 4 segundos
+         const DURATION = 0; // tempo mínimo; elimina a espera
 
          const removeSplash = () => {
            if (!splash) return;
@@ -505,7 +505,12 @@
            return;
          }
 
-         setTimeout(removeSplash, DURATION);
+         // remove imediatamente quando não há delay
+         if (DURATION === 0) {
+           removeSplash();
+         } else {
+           setTimeout(removeSplash, DURATION);
+         }
        });
      });
    })();
