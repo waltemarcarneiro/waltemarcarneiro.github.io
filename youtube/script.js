@@ -142,7 +142,7 @@ function extractPlaylistId(url) {
 
 // Função para buscar dados da playlist
 async function fetchPlaylistData(playlistId) {
-    const API_KEY = 'AIzaSyDSD1qRSM61xXXDk6CBHfbhnLfoXbQPsYY'; // Você precisa substituir por uma chave API válida
+    const API_KEY = 'AIzaSyDSD1qRSM61xXXDk6CBHfbhnLfoXbQPsYY';
     const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}`;
 
     try {
