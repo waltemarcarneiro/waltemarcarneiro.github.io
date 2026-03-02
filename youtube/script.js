@@ -68,7 +68,7 @@ suggestedPlaylists.addEventListener('click', (e) => {
     if (!playlistId) return;
     // Verificar se a playlist já existe no array
     const existingPlaylist = playlists.find(p => p.id === playlistId);
-    if (existingPlaylist) {
+    if (existingPlaylist && existingPlaylist.songs && existingPlaylist.songs.length > 0) {
         loadPlaylist(existingPlaylist);
     } else {
         // para depuração, logamos
@@ -76,6 +76,16 @@ suggestedPlaylists.addEventListener('click', (e) => {
         fetchPlaylistData(playlistId);
     }
     sideMenu.classList.remove('active');
+});
+
+// auto-ocultar side-menu ao clicar fora
+document.addEventListener('click', (e) => {
+    if (!sideMenu.classList.contains('active')) return;
+    const inside = e.target.closest && e.target.closest('#side-menu');
+    const clickedMenuBtn = e.target.closest && e.target.closest('#menu-btn');
+    if (!inside && !clickedMenuBtn) {
+        sideMenu.classList.remove('active');
+    }
 });
 
 // Adicione esta função que será chamada automaticamente quando a API do YouTube carregar
@@ -106,7 +116,18 @@ function onPlayerStateChange(event) {
         clearInterval(progressInterval);
     } else if (event.data === YT.PlayerState.ENDED) {
         clearInterval(progressInterval);
-        playNext(); // Avança para a próxima música automaticamente
+        // Se repeat estiver ativo, reinicia a mesma faixa
+        if (isRepeatActive && player && typeof player.seekTo === 'function' && typeof player.playVideo === 'function') {
+            try {
+                player.seekTo(0, true);
+                player.playVideo();
+            } catch (e) {
+                // fallback: carregar novamente pela lista
+                playNext();
+            }
+        } else {
+            playNext(); // Avança para a próxima música automaticamente
+        }
     }
 }
 
@@ -334,6 +355,11 @@ function playNext() {
 function updatePlayButton() {
     const playBtn = document.getElementById('play-btn');
     playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+    // Atualiza também o botão do modal, se existir
+    const modalPlay = document.getElementById('modal-play');
+    if (modalPlay) {
+        modalPlay.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+    }
 }
 
 // Carregar playlists do LocalStorage quando a página carregar
@@ -374,6 +400,57 @@ function updateProgressBar() {
     currentTimeElement.textContent = formatTime(currentTime);
     durationElement.textContent = formatTime(duration);
 }
+
+// Modal player: abrir/fechar e sincronizar informações
+function openPlayerModal() {
+    const modal = document.getElementById('player-modal');
+    if (!modal) return;
+    updateModalInfo();
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+}
+
+function closePlayerModal() {
+    const modal = document.getElementById('player-modal');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+}
+
+function updateModalInfo() {
+    const songEl = document.getElementById('modal-song');
+    const artistEl = document.getElementById('modal-artist');
+    const thumb = document.getElementById('modal-thumbnail');
+    if (!currentPlaylist || !currentPlaylist.songs[currentSongIndex]) {
+        if (songEl) songEl.textContent = 'Nenhuma música selecionada';
+        if (artistEl) artistEl.textContent = '-';
+        if (thumb) thumb.src = 'placeholder.jpg';
+        return;
+    }
+    const song = currentPlaylist.songs[currentSongIndex];
+    if (songEl) songEl.textContent = song.title;
+    if (artistEl) artistEl.textContent = song.artist;
+    if (thumb) thumb.src = song.thumbnail || 'placeholder.jpg';
+}
+
+// vincular controles do modal
+document.addEventListener('DOMContentLoaded', () => {
+    const thumb = document.getElementById('current-thumbnail');
+    if (thumb) thumb.addEventListener('click', openPlayerModal);
+
+    const modalClose = document.getElementById('player-modal-close');
+    if (modalClose) modalClose.addEventListener('click', closePlayerModal);
+
+    const modalMin = document.getElementById('player-modal-minimize');
+    if (modalMin) modalMin.addEventListener('click', closePlayerModal);
+
+    const modalPrev = document.getElementById('modal-prev');
+    if (modalPrev) modalPrev.addEventListener('click', playPrevious);
+    const modalNext = document.getElementById('modal-next');
+    if (modalNext) modalNext.addEventListener('click', playNext);
+    const modalPlay = document.getElementById('modal-play');
+    if (modalPlay) modalPlay.addEventListener('click', () => { togglePlay(); updateModalInfo(); });
+});
 
 // helper para formatar tempo mm:ss
 function formatTime(seconds) {

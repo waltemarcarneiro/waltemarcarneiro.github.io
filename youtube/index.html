@@ -102,6 +102,23 @@
     </div>
 
     <div id="youtube-player"></div>
+    <!-- Player modal (maximizado) -->
+    <div id="player-modal" class="player-modal hidden" aria-hidden="true">
+        <div class="player-modal-inner">
+            <button id="player-modal-close" class="modal-close" aria-label="Fechar">✕</button>
+            <img id="modal-thumbnail" src="placeholder.jpg" alt="Thumbnail" class="modal-thumb">
+            <div class="modal-info">
+                <div id="modal-song">Nenhuma música selecionada</div>
+                <div id="modal-artist">-</div>
+            </div>
+            <div class="modal-controls">
+                <button id="modal-prev" class="control-btn"><i class="fas fa-backward"></i></button>
+                <button id="modal-play" class="control-btn"><i class="fas fa-play"></i></button>
+                <button id="modal-next" class="control-btn"><i class="fas fa-forward"></i></button>
+            </div>
+            <button id="player-modal-minimize" class="modal-minimize" aria-label="Minimizar">_</button>
+        </div>
+    </div>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="script.js"></script>
 </body>
