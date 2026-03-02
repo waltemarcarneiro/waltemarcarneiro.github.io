@@ -62,17 +62,20 @@ searchInput.addEventListener('input', (e) => {
 
 // Manipulação das playlists sugeridas
 suggestedPlaylists.addEventListener('click', (e) => {
-    if (e.target.tagName === 'LI') {
-        const playlistId = e.target.dataset.playlistId;
-        // Verificar se a playlist já existe no array
-        const existingPlaylist = playlists.find(p => p.id === playlistId);
-        if (existingPlaylist) {
-            loadPlaylist(existingPlaylist);
-        } else {
-            fetchPlaylistData(playlistId);
-        }
-        sideMenu.classList.remove('active');
+    const li = e.target.closest && e.target.closest('li');
+    if (!li) return;
+    const playlistId = li.dataset.playlistId;
+    if (!playlistId) return;
+    // Verificar se a playlist já existe no array
+    const existingPlaylist = playlists.find(p => p.id === playlistId);
+    if (existingPlaylist) {
+        loadPlaylist(existingPlaylist);
+    } else {
+        // para depuração, logamos
+        console.info('Carregando playlist sugerida:', playlistId);
+        fetchPlaylistData(playlistId);
     }
+    sideMenu.classList.remove('active');
 });
 
 // Adicione esta função que será chamada automaticamente quando a API do YouTube carregar
@@ -143,53 +146,56 @@ function extractPlaylistId(url) {
 // Função para buscar dados da playlist
 async function fetchPlaylistData(playlistId) {
     const API_KEY = 'AIzaSyDSD1qRSM61xXXDk6CBHfbhnLfoXbQPsYY';
-    const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}`;
+    const baseUrl = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
-    try {
-        const response = await fetch(apiUrl);
+    // a API retorna no máximo 50 itens por chamada; precisamos paginar
+    let allItems = [];
+    let pageToken = '';
+
+    do {
+        const url = `${baseUrl}?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}` +
+                    (pageToken ? `&pageToken=${pageToken}` : '');
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Erro na resposta da API');
         }
-        
         const data = await response.json();
-        
-        if (!data.items || data.items.length === 0) {
-            throw new Error('Playlist vazia ou não encontrada');
-        }
+        allItems = allItems.concat(data.items || []);
+        pageToken = data.nextPageToken || '';
+    } while (pageToken);
 
-        // Buscar informações adicionais da playlist
-        const playlistInfoUrl = `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${API_KEY}`;
-        const playlistResponse = await fetch(playlistInfoUrl);
-        const playlistData = await playlistResponse.json();
-        
-        const playlistTitle = playlistData.items?.[0]?.snippet?.title || 'Nova Playlist';
-
-        const playlist = {
-            id: playlistId,
-            name: playlistTitle,
-            songs: data.items.map(item => ({
-                id: item.snippet.resourceId.videoId,
-                title: item.snippet.title,
-                // Alterado para usar a miniatura de alta qualidade
-                thumbnail: item.snippet.thumbnails.high.url || item.snippet.thumbnails.default.url,
-                artist: item.snippet.videoOwnerChannelTitle || 'Artista Desconhecido'
-            }))
-        };
-
-        playlists.push(playlist);
-        // Salvar no LocalStorage
-        localStorage.setItem('playlists', JSON.stringify(playlists));
-        updatePlaylistDisplay();
-        loadPlaylist(playlist);
-        
-        // Feedback visual para o usuário
-        document.getElementById('playlist-url').value = '';
-        alert('Playlist carregada com sucesso!');
-        
-    } catch (error) {
-        console.error('Erro ao carregar playlist:', error);
-        alert('Erro ao carregar playlist: ' + error.message);
+    if (allItems.length === 0) {
+        throw new Error('Playlist vazia ou não encontrada');
     }
+
+    // Buscar informações adicionais da playlist
+    const playlistInfoUrl = `https://www.googleapis.com/youtube/v3/playlists?part=snippet&id=${playlistId}&key=${API_KEY}`;
+    const playlistResponse = await fetch(playlistInfoUrl);
+    const playlistData = await playlistResponse.json();
+
+    const playlistTitle = playlistData.items?.[0]?.snippet?.title || 'Nova Playlist';
+
+    const playlist = {
+        id: playlistId,
+        name: playlistTitle,
+        songs: allItems.map(item => ({
+            id: item.snippet.resourceId.videoId,
+            title: item.snippet.title,
+            // Alterado para usar a miniatura de alta qualidade
+            thumbnail: item.snippet.thumbnails.high?.url || item.snippet.thumbnails.default.url,
+            artist: item.snippet.videoOwnerChannelTitle || 'Artista Desconhecido'
+        }))
+    };
+
+    playlists.push(playlist);
+    // Salvar no LocalStorage
+    localStorage.setItem('playlists', JSON.stringify(playlists));
+    updatePlaylistDisplay();
+    loadPlaylist(playlist);
+    
+    // Feedback visual para o usuário
+    document.getElementById('playlist-url').value = '';
+    alert('Playlist carregada com sucesso!');
 }
 
 // Função para atualizar display das playlists
@@ -277,13 +283,49 @@ function togglePlay() {
 }
 
 function playPrevious() {
+    if (!currentPlaylist || currentPlaylist.songs.length === 0) return;
+
+    // shuffle mode chooses a random different track
+    if (isShuffleActive) {
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() * currentPlaylist.songs.length);
+        } while (newIndex === currentSongIndex && currentPlaylist.songs.length > 1);
+        loadSong(newIndex);
+        return;
+    }
+
+    // repeat mode simply reloads current track
+    if (isRepeatActive) {
+        loadSong(currentSongIndex);
+        return;
+    }
+
     if (currentSongIndex > 0) {
         loadSong(currentSongIndex - 1);
     }
 }
 
 function playNext() {
-    if (currentPlaylist && currentSongIndex < currentPlaylist.songs.length - 1) {
+    if (!currentPlaylist || currentPlaylist.songs.length === 0) return;
+
+    // shuffle mode chooses a random different track
+    if (isShuffleActive) {
+        let newIndex;
+        do {
+            newIndex = Math.floor(Math.random() * currentPlaylist.songs.length);
+        } while (newIndex === currentSongIndex && currentPlaylist.songs.length > 1);
+        loadSong(newIndex);
+        return;
+    }
+
+    // repeat mode simply reloads current track
+    if (isRepeatActive) {
+        loadSong(currentSongIndex);
+        return;
+    }
+
+    if (currentSongIndex < currentPlaylist.songs.length - 1) {
         loadSong(currentSongIndex + 1);
     }
 }
@@ -333,33 +375,16 @@ function updateProgressBar() {
     durationElement.textContent = formatTime(duration);
 }
 
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-}
-
-function seekTo(event) {
-    if (!player || typeof player.seekTo !== 'function' || typeof player.getDuration !== 'function') return;
-
-    const rect = progressBar.getBoundingClientRect();
-    const clickX = event.clientX - rect.left;
-    const width = rect.width;
-    const duration = player.getDuration();
-
-    const newTime = (clickX / width) * duration;
-    player.seekTo(newTime, true);
-}
-
-
+// helper para formatar tempo mm:ss
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
 
+// busca posição clicada na barra de progresso
 function seekTo(e) {
-    if (player && player.getDuration) {
+    if (player && typeof player.seekTo === 'function' && typeof player.getDuration === 'function') {
         const rect = progressBar.getBoundingClientRect();
         const clickPosition = e.clientX - rect.left;
         const progressWidth = rect.width;
