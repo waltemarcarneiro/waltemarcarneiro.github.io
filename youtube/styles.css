@@ -131,7 +131,7 @@ padding: 10px;
 .song-title {
 font-weight: 500;
 margin-bottom: 5px;
--webkit-line-clamp: 2;
+/*-webkit-line-clamp: 2;*/
 -webkit-box-orient: vertical;
 display: -webkit-box;
 overflow: hidden;
@@ -141,7 +141,7 @@ font-size: 0.875rem;
 .song-artist {
 font-size: 0.875em;
 color: rgba(255, 255, 255, 0.7);
--webkit-line-clamp: 1;
+
 -webkit-box-orient: vertical;
 display: -webkit-box;
 overflow: hidden;
@@ -246,7 +246,7 @@ object-fit: cover;
 .song-details #current-song{
 color: white;
 font-weight: 500;
--webkit-line-clamp: 2;
+
 -webkit-box-orient: vertical;
 display: -webkit-box;
 overflow: hidden;
@@ -303,9 +303,7 @@ align-items: center;
 padding: 0 20px;
 z-index: 1000;
 }
-.header-left, .header-right {
-/*flex: 1;*/
-}
+
 .header-center {
 flex: 2;
 text-align: center;
