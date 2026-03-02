@@ -223,10 +223,10 @@ box-shadow: 0 0 5px rgba(78, 84, 255, 0.5);
 opacity: 1;
 }
 .control-btn {
-color: #b3b3b3;
+color: #ffffff;
 }
 .control-btn.active {
-color: #1db954;
+color: #ff00d4;
 }
 /* Ajuste o padding-top dos controles existentes */
 .controls {
